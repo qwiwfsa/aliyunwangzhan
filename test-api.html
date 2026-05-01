@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API测试 - 案例同步</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }
+        h1 { color: #1e3a8a; }
+        .test-section { background: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .test-result { padding: 10px; margin: 10px 0; border-radius: 4px; }
+        .success { background: #d1fae5; color: #059669; }
+        .error { background: #fee2e2; color: #dc2626; }
+        .info { background: #dbeafe; color: #2563eb; }
+        button { padding: 10px 20px; background: #3b82f6; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #2563eb; }
+        pre { background: #1e293b; color: #e5e7eb; padding: 15px; border-radius: 4px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>🔧 案例API同步测试</h1>
+    
+    <div class="test-section">
+        <h2>测试1: 获取案例列表 (admin/api/case/list.php)</h2>
+        <button onclick="testListAPI()">测试列表API</button>
+        <div id="listResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>测试2: 保存案例 (admin/api/case/save.php)</h2>
+        <button onclick="testSaveAPI()">测试保存API</button>
+        <div id="saveResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>测试3: localStorage 数据</h2>
+        <button onclick="checkLocalStorage()">检查localStorage</button>
+        <div id="localResult"></div>
+    </div>
+
+    <script>
+        // 测试列表API
+        async function testListAPI() {
+            const resultDiv = document.getElementById('listResult');
+            resultDiv.innerHTML = '<div class="test-result info">正在测试...</div>';
+            
+            try {
+                const response = await fetch('admin/api/case/list.php');
+                const data = await response.json();
+                
+                if (data.success) {
+                    resultDiv.innerHTML = `
+                        <div class="test-result success">
+                            ✅ API调用成功！共找到 ${data.total} 个案例
+                        </div>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="test-result error">
+                            ❌ API返回错误: ${data.message}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="test-result error">
+                        ❌ API调用失败: ${error.message}
+                    </div>
+                `;
+            }
+        }
+        
+        // 测试保存API
+        async function testSaveAPI() {
+            const resultDiv = document.getElementById('saveResult');
+            resultDiv.innerHTML = '<div class="test-result info">正在测试...</div>';
+            
+            const testCase = {
+                id: 'test_' + Date.now(),
+                title: '测试案例 ' + new Date().toLocaleString(),
+                type: '过桥',
+                city: '北京',
+                summary: '这是一个测试案例',
+                amount: '1000万',
+                period: '7天',
+                year: '2024',
+                status: 'published',
+                images: [],
+                highlights: ['快速响应', '专业服务']
+            };
+            
+            try {
+                const response = await fetch('admin/api/case/save.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(testCase)
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    resultDiv.innerHTML = `
+                        <div class="test-result success">
+                            ✅ 案例保存成功！
+                        </div>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="test-result error">
+                            ❌ 保存失败: ${data.message}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="test-result error">
+                        ❌ API调用失败: ${error.message}
+                    </div>
+                `;
+            }
+        }
+        
+        // 检查localStorage
+        function checkLocalStorage() {
+            const resultDiv = document.getElementById('localResult');
+            const cases = JSON.parse(localStorage.getItem('cms_cases') || '[]');
+            
+            if (cases.length === 0) {
+                resultDiv.innerHTML = `
+                    <div class="test-result info">
+                        ℹ️ localStorage中没有案例数据
+                    </div>
+                `;
+            } else {
+                resultDiv.innerHTML = `
+                    <div class="test-result success">
+                        ✅ localStorage中有 ${cases.length} 个案例
+                    </div>
+                    <pre>${JSON.stringify(cases, null, 2)}</pre>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

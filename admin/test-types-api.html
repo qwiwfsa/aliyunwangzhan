@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>业务类型API测试</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 8px; }
+        .success { background: #d4edda; border-color: #c3e6cb; }
+        .error { background: #f8d7da; border-color: #f5c6cb; }
+        button { padding: 10px 20px; margin: 5px; cursor: pointer; }
+        pre { background: #f5f5f5; padding: 10px; overflow-x: auto; }
+        h2 { margin-top: 0; }
+    </style>
+</head>
+<body>
+    <h1>业务类型API测试页面</h1>
+    
+    <div class="test-section">
+        <h2>1. 测试获取列表 (GET)</h2>
+        <button onclick="testGet()">测试获取</button>
+        <div id="getResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>2. 测试创建 (POST)</h2>
+        <input type="text" id="newTypeName" placeholder="类型名称" value="测试类型">
+        <input type="text" id="newTypeDesc" placeholder="描述" value="测试描述">
+        <input type="color" id="newTypeColor" value="#ff0000">
+        <button onclick="testPost()">测试创建</button>
+        <div id="postResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>3. 测试更新 (PUT)</h2>
+        <input type="number" id="updateId" placeholder="ID" value="1">
+        <input type="text" id="updateName" placeholder="新名称" value="修改后的名称">
+        <button onclick="testPut()">测试更新</button>
+        <div id="putResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>4. 测试删除 (DELETE)</h2>
+        <input type="number" id="deleteId" placeholder="要删除的ID">
+        <button onclick="testDelete()">测试删除</button>
+        <div id="deleteResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>5. 测试排序 (POST types-sort.php)</h2>
+        <button onclick="testSort()">测试排序</button>
+        <div id="sortResult"></div>
+    </div>
+
+    <script>
+        const API_BASE = 'api/case/';
+        
+        async function testGet() {
+            const resultDiv = document.getElementById('getResult');
+            resultDiv.innerHTML = '请求中...';
+            try {
+                const response = await fetch(API_BASE + 'types.php');
+                const data = await response.json();
+                resultDiv.innerHTML = `<pre class="${data.success ? 'success' : 'error'}">${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (e) {
+                resultDiv.innerHTML = `<pre class="error">错误: ${e.message}</pre>`;
+            }
+        }
+        
+        async function testPost() {
+            const resultDiv = document.getElementById('postResult');
+            const name = document.getElementById('newTypeName').value;
+            const desc = document.getElementById('newTypeDesc').value;
+            const color = document.getElementById('newTypeColor').value;
+            
+            resultDiv.innerHTML = '请求中...';
+            try {
+                const response = await fetch(API_BASE + 'types.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, description: desc, color })
+                });
+                const data = await response.json();
+                resultDiv.innerHTML = `<pre class="${data.success ? 'success' : 'error'}">${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (e) {
+                resultDiv.innerHTML = `<pre class="error">错误: ${e.message}</pre>`;
+            }
+        }
+        
+        async function testPut() {
+            const resultDiv = document.getElementById('putResult');
+            const id = document.getElementById('updateId').value;
+            const name = document.getElementById('updateName').value;
+            
+            resultDiv.innerHTML = '请求中...';
+            try {
+                const response = await fetch(API_BASE + 'types.php', {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id: parseInt(id), name, description: '修改后的描述', color: '#00ff00' })
+                });
+                const data = await response.json();
+                resultDiv.innerHTML = `<pre class="${data.success ? 'success' : 'error'}">${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (e) {
+                resultDiv.innerHTML = `<pre class="error">错误: ${e.message}</pre>`;
+            }
+        }
+        
+        async function testDelete() {
+            const resultDiv = document.getElementById('deleteResult');
+            const id = document.getElementById('deleteId').value;
+            
+            if (!id) {
+                resultDiv.innerHTML = '<pre class="error">请输入要删除的ID</pre>';
+                return;
+            }
+            
+            resultDiv.innerHTML = '请求中...';
+            try {
+                const response = await fetch(API_BASE + 'types.php?id=' + id, {
+                    method: 'DELETE',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id: parseInt(id) })
+                });
+                const data = await response.json();
+                resultDiv.innerHTML = `<pre class="${data.success ? 'success' : 'error'}">${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (e) {
+                resultDiv.innerHTML = `<pre class="error">错误: ${e.message}</pre>`;
+            }
+        }
+        
+        async function testSort() {
+            const resultDiv = document.getElementById('sortResult');
+            resultDiv.innerHTML = '请求中...';
+            try {
+                // 先获取列表
+                const getResponse = await fetch(API_BASE + 'types.php');
+                const getData = await getResponse.json();
+                
+                if (!getData.success || !getData.data || getData.data.length === 0) {
+                    resultDiv.innerHTML = '<pre class="error">没有可排序的数据</pre>';
+                    return;
+                }
+                
+                // 反转顺序测试排序
+                const reversedTypes = [...getData.data].reverse();
+                
+                const response = await fetch(API_BASE + 'types-sort.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ types: reversedTypes })
+                });
+                const data = await response.json();
+                resultDiv.innerHTML = `<pre class="${data.success ? 'success' : 'error'}">${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (e) {
+                resultDiv.innerHTML = `<pre class="error">错误: ${e.message}</pre>`;
+            }
+        }
+    </script>
+</body>
+</html>
