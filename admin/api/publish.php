@@ -285,9 +285,9 @@ function syncContactPage($data, &$htmlContent) {
             $replacements[] = '联系人(cms-footer-name): ' . $data['contactName'];
         }
         
-        // 替换其他位置的王立力
+        // 替换其他位置的王总
         $htmlContent = preg_replace(
-            '/(<i class="fas fa-user"><\/i>\s*<span[^>]*>)王立力(<\/span>)/i',
+            '/(<i class="fas fa-user"><\/i>\s*<span[^>]*>)王总(<\/span>)/i',
             '${1}' . escapeRegexReplacement($data['contactName']) . '${2}',
             $htmlContent,
             1,
