@@ -15,19 +15,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
-// 数据库配置
-$dbHost = 'localhost';
-$dbPort = '3306';
-$dbUser = 'root';
-$dbPass = '';
-$dbName = 'hongdu';
+// 使用统一数据库配置
+require_once __DIR__ . '/../../config/db.php';
 
 try {
-    $conn = @new mysqli($dbHost, $dbUser, $dbPass, $dbName, $dbPort);
-    if ($conn->connect_error) {
-        throw new Exception('数据库连接失败');
-    }
-    $conn->set_charset('utf8mb4');
+    $conn = getDB();
     
     // 确保表存在
     $conn->query("CREATE TABLE IF NOT EXISTS seo_settings (
