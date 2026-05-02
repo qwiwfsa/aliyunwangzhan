@@ -1,7 +1,7 @@
 {
   "name": "hengxin-api",
   "version": "1.0.0",
-  "description": "恒信资本CMS后端API",
+  "description": "Yao资金网CMS后端API",
   "main": "api-server.js",
   "scripts": {
     "start": "node api-server.js",

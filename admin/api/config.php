@@ -57,7 +57,7 @@ function initDatabase($conn) {
 
     // 插入默认页面数据
     $defaultPages = [
-        ['index', '首页', '恒信资本 - 专业资金服务'],
+        ['index', '首页', 'Yao资金网 - 专业资金服务'],
         ['services', '业务范围', '业务范围'],
         ['cases', '成功案例', '成功案例'],
         ['contact', '联系我们', '联系我们']
