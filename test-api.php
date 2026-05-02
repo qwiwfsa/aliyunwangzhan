@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API娴嬭瘯 - 妗堜緥鍚屾��</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }
+        h1 { color: #1e3a8a; }
+        .test-section { background: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .test-result { padding: 10px; margin: 10px 0; border-radius: 4px; }
+        .success { background: #d1fae5; color: #059669; }
+        .error { background: #fee2e2; color: #dc2626; }
+        .info { background: #dbeafe; color: #2563eb; }
+        button { padding: 10px 20px; background: #3b82f6; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #2563eb; }
+        pre { background: #1e293b; color: #e5e7eb; padding: 15px; border-radius: 4px; overflow-x: auto; }
+    </style>
+<script>
+(function() {
+    var pageName = window.location.pathname.split('/').pop() || 'index.html';
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'admin/api/fetch-seo.php?page=' + pageName + '&t=' + Date.now(), true);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            try {
+                var data = JSON.parse(xhr.responseText);
+                if (data && data.code === 0 && data.data) {
+                    var seo = data.data;
+                    if (seo.page_title) document.title = seo.page_title;
+                    if (seo.meta_keywords) {
+                        var kw = document.querySelector('meta[name="keywords"]');
+                        if (kw) kw.content = seo.meta_keywords;
+                    }
+                    if (seo.meta_description) {
+                        var desc = document.querySelector('meta[name="description"]');
+                        if (desc) desc.content = seo.meta_description;
+                    }
+                }
+            } catch(e) {}
+        }
+    };
+    xhr.send();
+})();
+</script>
+<script>
+(function() {
+    var pageName = window.location.pathname.split('/').pop() || 'index.html';
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'admin/api/fetch-seo.php?page=' + pageName + '&t=' + Date.now(), true);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            try {
+                var data = JSON.parse(xhr.responseText);
+                if (data && data.code === 0 && data.data) {
+                    var seo = data.data;
+                    if (seo.page_title) document.title = seo.page_title;
+                    if (seo.meta_keywords) {
+                        var kw = document.querySelector('meta[name="keywords"]');
+                        if (kw) kw.content = seo.meta_keywords;
+                    }
+                    if (seo.meta_description) {
+                        var desc = document.querySelector('meta[name="description"]');
+                        if (desc) desc.content = seo.meta_description;
+                    }
+                }
+            } catch(e) {}
+        }
+    };
+    xhr.send();
+})();
+</script>
+</head>
+<body>
+    <h1>馃敡 妗堜緥API鍚屾�ユ祴璇�</h1>
+    
+    <div class="test-section">
+        <h2>娴嬭瘯1: 鑾峰彇妗堜緥鍒楄〃 (admin/api/case/list.php)</h2>
+        <button onclick="testListAPI()">娴嬭瘯鍒楄〃API</button>
+        <div id="listResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>娴嬭瘯2: 淇濆瓨妗堜緥 (admin/api/case/save.php)</h2>
+        <button onclick="testSaveAPI()">娴嬭瘯淇濆瓨API</button>
+        <div id="saveResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>娴嬭瘯3: localStorage 鏁版嵁</h2>
+        <button onclick="checkLocalStorage()">妫�鏌�localStorage</button>
+        <div id="localResult"></div>
+    </div>
+
+    <script>
+        // 娴嬭瘯鍒楄〃API
+        async function testListAPI() {
+            const resultDiv = document.getElementById('listResult');
+            resultDiv.innerHTML = '<div class="test-result info">姝ｅ湪娴嬭瘯...</div>';
+            
+            try {
+                const response = await fetch('admin/api/case/list.php');
+                const data = await response.json();
+                
+                if (data.success) {
+                    resultDiv.innerHTML = `
+                        <div class="test-result success">
+                            鉁?API璋冪敤鎴愬姛锛佸叡鎵惧埌 ${data.total} 涓�妗堜�?                        </div>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="test-result error">
+                            鉂?API杩斿洖閿欒��: ${data.message}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="test-result error">
+                        鉂?API璋冪敤澶辫触: ${error.message}
+                    </div>
+                `;
+            }
+        }
+        
+        // 娴嬭瘯淇濆瓨API
+        async function testSaveAPI() {
+            const resultDiv = document.getElementById('saveResult');
+            resultDiv.innerHTML = '<div class="test-result info">姝ｅ湪娴嬭瘯...</div>';
+            
+            const testCase = {
+                id: 'test_' + Date.now(),
+                title: '娴嬭瘯妗堜緥 ' + new Date().toLocaleString(),
+                type: '杩囨ˉ',
+                city: '鍖椾含',
+                summary: '杩欐槸涓�涓�娴嬭瘯妗堜�?,
+                amount: '1000涓?,
+                period: '7澶?,
+                year: '2024',
+                status: 'published',
+                images: [],
+                highlights: ['蹇�閫熷搷搴?, '涓撲笟鏈嶅姟']
+            };
+            
+            try {
+                const response = await fetch('admin/api/case/save.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(testCase)
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    resultDiv.innerHTML = `
+                        <div class="test-result success">
+                            鉁?妗堜緥淇濆瓨鎴愬姛锛?                        </div>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="test-result error">
+                            鉂?淇濆瓨澶辫触: ${data.message}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="test-result error">
+                        鉂?API璋冪敤澶辫触: ${error.message}
+                    </div>
+                `;
+            }
+        }
+        
+        // 妫�鏌�localStorage
+        function checkLocalStorage() {
+            const resultDiv = document.getElementById('localResult');
+            const cases = JSON.parse(localStorage.getItem('cms_cases') || '[]');
+            
+            if (cases.length === 0) {
+                resultDiv.innerHTML = `
+                    <div class="test-result info">
+                        鈩癸笍 localStorage涓�娌℃湁妗堜緥鏁版�?                    </div>
+                `;
+            } else {
+                resultDiv.innerHTML = `
+                    <div class="test-result success">
+                        鉁?localStorage涓�鏈� ${cases.length} 涓�妗堜�?                    </div>
+                    <pre>${JSON.stringify(cases, null, 2)}</pre>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Yao×Ê½ðÍø³£¼ûÎÊÌâ - ½â´ðÄú¹ØÓÚ×Ê½ðÒµÎñµÄ³£¼ûÒÉÎÊ">
-    <meta name="keywords" content="³£¼ûÎÊÌâ,ÁÁ×ÊÒµÎñ,¹ýÇÅ×Ê½ð,°ÚÕËÒµÎñ,Ó¦ÊÕÕË¿îÈÚ×Ê,FAQ">
-    <title>³£¼ûÎÊÌâ - Yao×Ê½ðÍø</title>
+    <meta name="description" content="Yaoèµ„é‡‘ç½‘å¸¸è§é—®é¢˜ - è§£ç­”æ‚¨å…³äºŽèµ„é‡‘ä¸šåŠ¡çš„å¸¸è§ç–‘é—®">
+    <meta name="keywords" content="å¸¸è§é—®é¢˜,äº®èµ„ä¸šåŠ¡,è¿‡æ¡¥èµ„é‡‘,æ‘†è´¦ä¸šåŠ¡,åº”æ”¶è´¦æ¬¾èžèµ„,FAQ">
+    <title>å¸¸è§é—®é¢˜ - Yaoèµ„é‡‘ç½‘</title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -66,27 +66,27 @@
 </script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Ìø×ªµ½Ö÷ÒªÄÚÈÝ</a>
+    <a href="#main-content" class="skip-link">è·³è½¬åˆ°ä¸»è¦å†…å®¹</a>
 
-    <!-- µ¼º½À¸ -->
-    <nav class="navbar" id="navbar" role="navigation" aria-label="Ö÷µ¼º½">
+    <!-- å¯¼èˆªæ  -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="ä¸»å¯¼èˆª">
         <div class="navbar-container">
-<a href="index.html" class="logo" aria-label="Yao×Ê½ðÍøÊ×Ò³"><img src="images/logo.png?v=20260502040820" alt="Yao×Ê½ðÍø" style="height:48px;width:auto;"></a>
+<a href="index.html" class="logo" aria-label="Yaoèµ„é‡‘ç½‘é¦–é¡µ"><img src="images/logo.png?v=20260502040820" alt="Yaoèµ„é‡‘ç½‘" style="height:48px;width:auto;"></a>
             <ul class="nav-menu" role="menubar">
-                <li role="none"><a href="index.html" class="nav-link" role="menuitem">Ê×Ò³</a></li>
-                <li role="none"><a href="services.html" class="nav-link" role="menuitem">ÒµÎñ·¶Î§</a></li>
-                <li role="none"><a href="cases.html" class="nav-link" role="menuitem">³É¹¦°¸Àý</a></li>
-                <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">·þÎñÓÅÊÆ</a></li>
-                <li role="none"><a href="news.html" class="nav-link" role="menuitem">ÐÐÒµ×ÊÑ¶</a></li>
-                <li role="none"><a href="faq.html" class="nav-link active" role="menuitem">³£¼ûÎÊÌâ</a></li>
-                <li role="none"><a href="contact.html" class="nav-link" role="menuitem">ÁªÏµÎÒÃÇ</a></li>
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem">é¦–é¡µ</a></li>
+                <li role="none"><a href="services.html" class="nav-link" role="menuitem">ä¸šåŠ¡èŒƒå›´</a></li>
+                <li role="none"><a href="cases.html" class="nav-link" role="menuitem">æˆåŠŸæ¡ˆä¾‹</a></li>
+                <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">æœåŠ¡ä¼˜åŠ¿</a></li>
+                <li role="none"><a href="news.html" class="nav-link" role="menuitem">è¡Œä¸šèµ„è®¯</a></li>
+                <li role="none"><a href="faq.html" class="nav-link active" role="menuitem">å¸¸è§é—®é¢˜</a></li>
+                <li role="none"><a href="contact.html" class="nav-link" role="menuitem">è”ç³»æˆ‘ä»¬</a></li>
             </ul>
 
-            <button class="search-toggle" id="searchToggle" aria-label="´ò¿ªËÑË÷" aria-expanded="false">
+            <button class="search-toggle" id="searchToggle" aria-label="æ‰“å¼€æœç´¢" aria-expanded="false">
                 <i class="fas fa-search" aria-hidden="true"></i>
             </button>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="´ò¿ª²Ëµ¥" aria-expanded="false">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="æ‰“å¼€èœå•" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -95,348 +95,348 @@
     </nav>
 
     <main id="main-content">
-        <!-- Ò³Ãæ±êÌâÇø -->
+        <!-- é¡µé¢æ ‡é¢˜åŒº -->
         <section class="page-header">
             <div class="page-header-container">
                 <div class="page-header-badge">
                     <i class="fas fa-question-circle"></i>
                     <span>FAQ</span>
                 </div>
-                <h1 class="page-header-title">³£¼ûÎÊÌâ</h1>
-                <p class="page-header-subtitle">½â´ðÄú¹ØÓÚ×Ê½ðÒµÎñµÄ³£¼ûÒÉÎÊ</p>
+                <h1 class="page-header-title">å¸¸è§é—®é¢˜</h1>
+                <p class="page-header-subtitle">è§£ç­”æ‚¨å…³äºŽèµ„é‡‘ä¸šåŠ¡çš„å¸¸è§ç–‘é—®</p>
             </div>
         </section>
 
-        <!-- FAQÄÚÈÝ - ¿É±à¼­ÇøÓò -->
+        <!-- FAQå†…å®¹ - å¯ç¼–è¾‘åŒºåŸŸ -->
         <section class="page-content">
             <div class="section-container">
                 
-                <!-- FAQËÑË÷ -->
+                <!-- FAQæœç´¢ -->
                 <div class="editable-section" data-section="faq-search">
                     <div class="faq-search-box">
                         <i class="fas fa-search"></i>
-                        <input type="text" class="faq-search-input" placeholder="ËÑË÷ÎÊÌâ¹Ø¼ü´Ê...">
-                        <button class="faq-search-btn">ËÑË÷</button>
+                        <input type="text" class="faq-search-input" placeholder="æœç´¢é—®é¢˜å…³é”®è¯...">
+                        <button class="faq-search-btn">æœç´¢</button>
                     </div>
                 </div>
 
-                <!-- FAQ·ÖÀà -->
+                <!-- FAQåˆ†ç±» -->
                 <div class="editable-section" data-section="faq-categories">
                     <div class="faq-categories" id="faqCategoryButtons">
                         <div class="faq-category-item active" data-category="all">
                             <i class="fas fa-th-large"></i>
-                            <span>È«²¿ÎÊÌâ</span>
+                            <span>å…¨éƒ¨é—®é¢˜</span>
                         </div>
-                        <!-- ¶¯Ì¬Éú³É·ÖÀà°´Å¥ -->
+                        <!-- åŠ¨æ€ç”Ÿæˆåˆ†ç±»æŒ‰é’® -->
                     </div>
                 </div>
 
-                <!-- FAQÁÐ±í -->
+                <!-- FAQåˆ—è¡¨ -->
                 <div class="editable-section" data-section="faq-list">
                     <div class="faq-custom-container">
-                        <!-- ÁÁ×ÊÒµÎñ -->
+                        <!-- äº®èµ„ä¸šåŠ¡ -->
                         <div class="faq-custom-category" data-category="liangzi">
                             <h3 class="faq-custom-category-title">
                                 <i class="fas fa-lightbulb"></i>
-                                ÁÁ×ÊÒµÎñ
+                                äº®èµ„ä¸šåŠ¡
                             </h3>
                             <div class="faq-custom-list">
                                 <details class="faq-custom-item">
                                     <summary class="faq-custom-question">
-                                        <span>Ê²Ã´ÊÇÁÁ×ÊÒµÎñ£¿</span>
+                                        <span>ä»€ä¹ˆæ˜¯äº®èµ„ä¸šåŠ¡ï¼Ÿ</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </summary>
                                     <div class="faq-custom-answer">
-                                        <p>ÁÁ×ÊÒµÎñÊÇÖ¸ÆóÒµÔÚ²ÎÓëÕÐÍ¶±ê¡¢ÏîÄ¿Ç¢Ì¸¡¢ÉÌÎñºÏ×÷µÈ³¡¾°Ê±£¬ÐèÒªÏò¶Ô·½Õ¹Ê¾×Ê½ðÊµÁ¦µÄ·þÎñ¡£ÎÒÃÇÌá¹©´ó¶î×Ê½ðÔÚ¿Í»§ÕË»§ÖÐÕ¹Ê¾£¬Ö¤Ã÷ÆóÒµ¾ß±¸ÏàÓ¦µÄ×Ê½ðÂÄÔ¼ÄÜÁ¦¡£</p>
-                                        <p>ÁÁ×ÊÒµÎñÍ¨³£·ÖÎªÊ±µãÁÁ×ÊºÍÊ±ÆÚÁÁ×ÊÁ½ÖÖÐÎÊ½£º</p>
+                                        <p>äº®èµ„ä¸šåŠ¡æ˜¯æŒ‡ä¼ä¸šåœ¨å‚ä¸Žæ‹›æŠ•æ ‡ã€é¡¹ç›®æ´½è°ˆã€å•†åŠ¡åˆä½œç­‰åœºæ™¯æ—¶ï¼Œéœ€è¦å‘å¯¹æ–¹å±•ç¤ºèµ„é‡‘å®žåŠ›çš„æœåŠ¡ã€‚æˆ‘ä»¬æä¾›å¤§é¢èµ„é‡‘åœ¨å®¢æˆ·è´¦æˆ·ä¸­å±•ç¤ºï¼Œè¯æ˜Žä¼ä¸šå…·å¤‡ç›¸åº”çš„èµ„é‡‘å±¥çº¦èƒ½åŠ›ã€‚</p>
+                                        <p>äº®èµ„ä¸šåŠ¡é€šå¸¸åˆ†ä¸ºæ—¶ç‚¹äº®èµ„å’Œæ—¶æœŸäº®èµ„ä¸¤ç§å½¢å¼ï¼š</p>
                                         <ul>
-                                            <li><strong>Ê±µãÁÁ×Ê</strong>£ºÔÚÌØ¶¨Ê±¼äµãÕ¹Ê¾×Ê½ð£¬Í¨³£ÓÃÓÚÍ¶±êÏÖ³¡¡¢ÉÌÎñÌ¸ÅÐµÈ³¡¾°</li>
-                                            <li><strong>Ê±ÆÚÁÁ×Ê</strong>£ºÔÚÒ»¶ÎÊ±¼äÄÚ±£³Ö×Ê½ðÔÚÕË£¬Í¨³£ÓÃÓÚÏîÄ¿ÂÄÔ¼±£Ö¤½ð¡¢ºÏÍ¬ÂÄÔ¼µÈ</li>
+                                            <li><strong>æ—¶ç‚¹äº®èµ„</strong>ï¼šåœ¨ç‰¹å®šæ—¶é—´ç‚¹å±•ç¤ºèµ„é‡‘ï¼Œé€šå¸¸ç”¨äºŽæŠ•æ ‡çŽ°åœºã€å•†åŠ¡è°ˆåˆ¤ç­‰åœºæ™¯</li>
+                                            <li><strong>æ—¶æœŸäº®èµ„</strong>ï¼šåœ¨ä¸€æ®µæ—¶é—´å†…ä¿æŒèµ„é‡‘åœ¨è´¦ï¼Œé€šå¸¸ç”¨äºŽé¡¹ç›®å±¥çº¦ä¿è¯é‡‘ã€åˆåŒå±¥çº¦ç­‰</li>
                                         </ul>
                                     </div>
                                 </details>
                                 <details class="faq-custom-item">
                                     <summary class="faq-custom-question">
-                                        <span>ÁÁ×ÊÒµÎñÐèÒª¶à³¤Ê±¼ä£¿</span>
+                                        <span>äº®èµ„ä¸šåŠ¡éœ€è¦å¤šé•¿æ—¶é—´ï¼Ÿ</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </summary>
                                     <div class="faq-custom-answer">
-                                        <p>¸ù¾Ý¿Í»§ÐèÇó£¬ÁÁ×ÊÒµÎñ¿É·ÖÎªÊ±µãÁÁ×ÊºÍÊ±ÆÚÁÁ×Ê£º</p>
+                                        <p>æ ¹æ®å®¢æˆ·éœ€æ±‚ï¼Œäº®èµ„ä¸šåŠ¡å¯åˆ†ä¸ºæ—¶ç‚¹äº®èµ„å’Œæ—¶æœŸäº®èµ„ï¼š</p>
                                         <ul>
-                                            <li><strong>Ê±µãÁÁ×Ê</strong>£ºÍ¨³£ÔÚ1-3¸ö¹¤×÷ÈÕÄÚÍê³É£¬×Ê½ðÔÚÔ¼¶¨Ê±¼äµãÕ¹Ê¾</li>
-                                            <li><strong>Ê±ÆÚÁÁ×Ê</strong>£º¸ù¾ÝÔ¼¶¨ÆÚÏÞ£¬´Ó¼¸Ììµ½ÊýÔÂ²»µÈ£¬×Ê½ðÔÚÔ¼¶¨ÆÚÏÞÄÚ±£³ÖÔÚÕË</li>
+                                            <li><strong>æ—¶ç‚¹äº®èµ„</strong>ï¼šé€šå¸¸åœ¨1-3ä¸ªå·¥ä½œæ—¥å†…å®Œæˆï¼Œèµ„é‡‘åœ¨çº¦å®šæ—¶é—´ç‚¹å±•ç¤º</li>
+                                            <li><strong>æ—¶æœŸäº®èµ„</strong>ï¼šæ ¹æ®çº¦å®šæœŸé™ï¼Œä»Žå‡ å¤©åˆ°æ•°æœˆä¸ç­‰ï¼Œèµ„é‡‘åœ¨çº¦å®šæœŸé™å†…ä¿æŒåœ¨è´¦</li>
                                         </ul>
-                                        <p>¾ßÌåÊ±³¤ÐèÒª¸ù¾Ý¿Í»§µÄ¾ßÌåÐèÇóºÍÒµÎñ³¡¾°À´È·¶¨¡£</p>
+                                        <p>å…·ä½“æ—¶é•¿éœ€è¦æ ¹æ®å®¢æˆ·çš„å…·ä½“éœ€æ±‚å’Œä¸šåŠ¡åœºæ™¯æ¥ç¡®å®šã€‚</p>
                                     </div>
                                 </details>
                                 <details class="faq-custom-item">
                                     <summary class="faq-custom-question">
-                                        <span>ÁÁ×ÊÒµÎñÊÕ·ÑÈçºÎ¼ÆËã£¿</span>
+                                        <span>äº®èµ„ä¸šåŠ¡æ”¶è´¹å¦‚ä½•è®¡ç®—ï¼Ÿ</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </summary>
                                     <div class="faq-custom-answer">
-                                        <p>ÁÁ×ÊÒµÎñÊÕ·ÑÖ÷Òª¸ù¾ÝÒÔÏÂÒòËØ×ÛºÏÈ·¶¨£º</p>
+                                        <p>äº®èµ„ä¸šåŠ¡æ”¶è´¹ä¸»è¦æ ¹æ®ä»¥ä¸‹å› ç´ ç»¼åˆç¡®å®šï¼š</p>
                                         <ul>
-                                            <li>×Ê½ð¹æÄ££ºÕ¹Ê¾µÄ×Ê½ð½ð¶î´óÐ¡</li>
-                                            <li>ÁÁ×ÊÊ±³¤£ºÕ¹Ê¾×Ê½ðµÄÊ±¼ä³¤¶È</li>
-                                            <li>²Ù×÷¸´ÔÓ³Ì¶È£ºÊÇ·ñÐèÒª¿çÐÐ¡¢ÒìµØµÈ²Ù×÷</li>
-                                            <li>Ê±Ð§ÒªÇó£ºÊÇ·ñÐèÒª¼Ó¼±´¦Àí</li>
+                                            <li>èµ„é‡‘è§„æ¨¡ï¼šå±•ç¤ºçš„èµ„é‡‘é‡‘é¢å¤§å°</li>
+                                            <li>äº®èµ„æ—¶é•¿ï¼šå±•ç¤ºèµ„é‡‘çš„æ—¶é—´é•¿åº¦</li>
+                                            <li>æ“ä½œå¤æ‚ç¨‹åº¦ï¼šæ˜¯å¦éœ€è¦è·¨è¡Œã€å¼‚åœ°ç­‰æ“ä½œ</li>
+                                            <li>æ—¶æ•ˆè¦æ±‚ï¼šæ˜¯å¦éœ€è¦åŠ æ€¥å¤„ç†</li>
                                         </ul>
-                                        <p>¾ßÌå·ÑÓÃÐèÒª¸ù¾ÝÊµ¼ÊÇé¿öÆÀ¹À£¬»¶Ó­À´µç×ÉÑ¯»ñÈ¡ÏêÏ¸±¨¼Û¡£</p>
+                                        <p>å…·ä½“è´¹ç”¨éœ€è¦æ ¹æ®å®žé™…æƒ…å†µè¯„ä¼°ï¼Œæ¬¢è¿Žæ¥ç”µå’¨è¯¢èŽ·å–è¯¦ç»†æŠ¥ä»·ã€‚</p>
                                     </div>
                                 </details>
                             </div>
                         </div>
 
-                        <!-- ¹ýÇÅ×Ê½ð -->
+                        <!-- è¿‡æ¡¥èµ„é‡‘ -->
                         <div class="faq-custom-category" data-category="bridge">
                             <h3 class="faq-custom-category-title">
                                 <i class="fas fa-exchange-alt"></i>
-                                ¹ýÇÅ×Ê½ð
+                                è¿‡æ¡¥èµ„é‡‘
                             </h3>
                             <div class="faq-custom-list">
                                 <details class="faq-custom-item">
                                     <summary class="faq-custom-question">
-                                        <span>¹ýÇÅ×Ê½ðÊÊÓÃÓÚÄÄÐ©³¡¾°£¿</span>
+                                        <span>è¿‡æ¡¥èµ„é‡‘é€‚ç”¨äºŽå“ªäº›åœºæ™¯ï¼Ÿ</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </summary>
                                     <div class="faq-custom-answer">
-                                        <p>¹ýÇÅ×Ê½ðÖ÷ÒªÊÊÓÃÓÚÒÔÏÂ³¡¾°£º</p>
+                                        <p>è¿‡æ¡¥èµ„é‡‘ä¸»è¦é€‚ç”¨äºŽä»¥ä¸‹åœºæ™¯ï¼š</p>
                                         <ul>
-                                            <li><strong>ÒøÐÐ´û¿îÐø´û</strong>£ºÔ­´û¿îµ½ÆÚ£¬ÐÂ´û¿îÉÐÎ´·Å¿îÆÚ¼äµÄÁÙÊ±ÖÜ×ª</li>
-                                            <li><strong>¹ÉÆ±½âÖÊÑº</strong>£ºÉÏÊÐ¹«Ë¾¹É¶«½â³ý¹ÉÆ±ÖÊÑºÊ±µÄÁÙÊ±×Ê½ðÐèÇó</li>
-                                            <li><strong>Ä¼¼¯ÕË»§¹é»¹</strong>£ºÉÏÊÐ¹«Ë¾Ä¼¼¯×Ê½ð¹é»¹Ê±µÄÁÙÊ±ÖÜ×ª</li>
-                                            <li><strong>ÆóÒµ²¢¹º</strong>£º²¢¹º½»Ò×ÖÐµÄÁÙÊ±×Ê½ð°²ÅÅ</li>
-                                            <li><strong>ÏîÄ¿±£Ö¤½ð</strong>£ºÕÐÍ¶±ê¡¢ÂÄÔ¼±£Ö¤½ðµÈÁÙÊ±×Ê½ðÐèÇó</li>
-                                            <li><strong>×Ê½ðÖÜ×ª</strong>£ºÆóÒµ¶ÌÆÚ×Ê½ðÖÜ×ªÀ§ÄÑÊ±µÄÁÙÊ±Ö§³Ö</li>
+                                            <li><strong>é“¶è¡Œè´·æ¬¾ç»­è´·</strong>ï¼šåŽŸè´·æ¬¾åˆ°æœŸï¼Œæ–°è´·æ¬¾å°šæœªæ”¾æ¬¾æœŸé—´çš„ä¸´æ—¶å‘¨è½¬</li>
+                                            <li><strong>è‚¡ç¥¨è§£è´¨æŠ¼</strong>ï¼šä¸Šå¸‚å…¬å¸è‚¡ä¸œè§£é™¤è‚¡ç¥¨è´¨æŠ¼æ—¶çš„ä¸´æ—¶èµ„é‡‘éœ€æ±‚</li>
+                                            <li><strong>å‹Ÿé›†è´¦æˆ·å½’è¿˜</strong>ï¼šä¸Šå¸‚å…¬å¸å‹Ÿé›†èµ„é‡‘å½’è¿˜æ—¶çš„ä¸´æ—¶å‘¨è½¬</li>
+                                            <li><strong>ä¼ä¸šå¹¶è´­</strong>ï¼šå¹¶è´­äº¤æ˜“ä¸­çš„ä¸´æ—¶èµ„é‡‘å®‰æŽ’</li>
+                                            <li><strong>é¡¹ç›®ä¿è¯é‡‘</strong>ï¼šæ‹›æŠ•æ ‡ã€å±¥çº¦ä¿è¯é‡‘ç­‰ä¸´æ—¶èµ„é‡‘éœ€æ±‚</li>
+                                            <li><strong>èµ„é‡‘å‘¨è½¬</strong>ï¼šä¼ä¸šçŸ­æœŸèµ„é‡‘å‘¨è½¬å›°éš¾æ—¶çš„ä¸´æ—¶æ”¯æŒ</li>
                                         </ul>
                                     </div>
                                 </details>
                                 <details class="faq-custom-item">
                                     <summary class="faq-custom-question">
-                                        <span>ÉêÇë¹ýÇÅ×Ê½ðÐèÒªÊ²Ã´Ìõ¼þ£¿</span>
+                                        <span>ç”³è¯·è¿‡æ¡¥èµ„é‡‘éœ€è¦ä»€ä¹ˆæ¡ä»¶ï¼Ÿ</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </summary>
                                     <div class="faq-custom-answer">
-                                        <p>ÉêÇë¹ýÇÅ×Ê½ðÍ¨³£ÐèÒªÌá¹©ÒÔÏÂ×ÊÁÏ£º</p>
+                                        <p>ç”³è¯·è¿‡æ¡¥èµ„é‡‘é€šå¸¸éœ€è¦æä¾›ä»¥ä¸‹èµ„æ–™ï¼š</p>
                                         <ul>
-                                            <li>ÆóÒµÓªÒµÖ´ÕÕ¡¢×éÖ¯»ú¹¹´úÂëÖ¤</li>
-                                            <li>·¨¶¨´ú±íÈËÉí·ÝÖ¤Ã÷</li>
-                                            <li>²ÆÎñ±¨±í£¨½üÈý¸öÔÂ£©</li>
-                                            <li>×Ê½ðÓÃÍ¾ËµÃ÷</li>
-                                            <li>»¹¿îÀ´Ô´Ö¤Ã÷£¨ÈçÒøÐÐÅú´ûº¯¡¢Ó¦ÊÕÕË¿îÖ¤Ã÷µÈ£©</li>
-                                            <li>µÖÑºµ£±£×ÊÁÏ£¨ÈçÓÐ£©</li>
+                                            <li>ä¼ä¸šè¥ä¸šæ‰§ç…§ã€ç»„ç»‡æœºæž„ä»£ç è¯</li>
+                                            <li>æ³•å®šä»£è¡¨äººèº«ä»½è¯æ˜Ž</li>
+                                            <li>è´¢åŠ¡æŠ¥è¡¨ï¼ˆè¿‘ä¸‰ä¸ªæœˆï¼‰</li>
+                                            <li>èµ„é‡‘ç”¨é€”è¯´æ˜Ž</li>
+                                            <li>è¿˜æ¬¾æ¥æºè¯æ˜Žï¼ˆå¦‚é“¶è¡Œæ‰¹è´·å‡½ã€åº”æ”¶è´¦æ¬¾è¯æ˜Žç­‰ï¼‰</li>
+                                            <li>æŠµæŠ¼æ‹…ä¿èµ„æ–™ï¼ˆå¦‚æœ‰ï¼‰</li>
                                         </ul>
-                                        <p>¾ßÌå×ÊÁÏÇåµ¥¸ù¾ÝÒµÎñÀàÐÍÓÐËù²»Í¬£¬ÎÒÃÇµÄ¿Í»§¾­Àí»á¸ù¾ÝÄúµÄ¾ßÌåÇé¿öÌá¹©ÏêÏ¸µÄ×ÊÁÏÇåµ¥¡£</p>
+                                        <p>å…·ä½“èµ„æ–™æ¸…å•æ ¹æ®ä¸šåŠ¡ç±»åž‹æœ‰æ‰€ä¸åŒï¼Œæˆ‘ä»¬çš„å®¢æˆ·ç»ç†ä¼šæ ¹æ®æ‚¨çš„å…·ä½“æƒ…å†µæä¾›è¯¦ç»†çš„èµ„æ–™æ¸…å•ã€‚</p>
                                     </div>
                                 </details>
                                 <details class="faq-custom-item">
                                     <summary class="faq-custom-question">
-                                        <span>¹ýÇÅ×Ê½ð¶à¾Ã¿ÉÒÔ·Å¿î£¿</span>
+                                        <span>è¿‡æ¡¥èµ„é‡‘å¤šä¹…å¯ä»¥æ”¾æ¬¾ï¼Ÿ</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </summary>
                                     <div class="faq-custom-answer">
-                                        <p>×ÊÁÏÆëÈ«ÇÒÉóºËÍ¨¹ýºó£¬×î¿ì¿ÉÔÚµ±ÈÕ·Å¿î¡£Ò»°ãÇé¿öÏÂ£¬´ÓÉêÇëµ½·Å¿îÐèÒª1-3¸ö¹¤×÷ÈÕ¡£</p>
-                                        <p>·Å¿îËÙ¶ÈÖ÷ÒªÈ¡¾öÓÚ£º</p>
+                                        <p>èµ„æ–™é½å…¨ä¸”å®¡æ ¸é€šè¿‡åŽï¼Œæœ€å¿«å¯åœ¨å½“æ—¥æ”¾æ¬¾ã€‚ä¸€èˆ¬æƒ…å†µä¸‹ï¼Œä»Žç”³è¯·åˆ°æ”¾æ¬¾éœ€è¦1-3ä¸ªå·¥ä½œæ—¥ã€‚</p>
+                                        <p>æ”¾æ¬¾é€Ÿåº¦ä¸»è¦å–å†³äºŽï¼š</p>
                                         <ul>
-                                            <li>×ÊÁÏ×¼±¸µÄÍêÕû³Ì¶È</li>
-                                            <li>ÉóºËÁ÷³ÌµÄ¸´ÔÓ³Ì¶È</li>
-                                            <li>×Ê½ðµ÷¶ÈµÄ°²ÅÅ</li>
+                                            <li>èµ„æ–™å‡†å¤‡çš„å®Œæ•´ç¨‹åº¦</li>
+                                            <li>å®¡æ ¸æµç¨‹çš„å¤æ‚ç¨‹åº¦</li>
+                                            <li>èµ„é‡‘è°ƒåº¦çš„å®‰æŽ’</li>
                                         </ul>
-                                        <p>¶ÔÓÚ½ô¼±ÐèÇó£¬ÎÒÃÇÌá¹©¼Ó¼±·þÎñ£¬¿ÉÔÚ×î¶ÌÊ±¼äÄÚÍê³É·Å¿î¡£</p>
+                                        <p>å¯¹äºŽç´§æ€¥éœ€æ±‚ï¼Œæˆ‘ä»¬æä¾›åŠ æ€¥æœåŠ¡ï¼Œå¯åœ¨æœ€çŸ­æ—¶é—´å†…å®Œæˆæ”¾æ¬¾ã€‚</p>
                                     </div>
                                 </details>
                             </div>
                         </div>
 
-                        <!-- °ÚÕËÒµÎñ -->
+                        <!-- æ‘†è´¦ä¸šåŠ¡ -->
                         <div class="faq-custom-category" data-category="baizhang">
                             <h3 class="faq-custom-category-title">
                                 <i class="fas fa-university"></i>
-                                °ÚÕËÒµÎñ
+                                æ‘†è´¦ä¸šåŠ¡
                             </h3>
                             <div class="faq-custom-list">
                                 <details class="faq-custom-item">
                                     <summary class="faq-custom-question">
-                                        <span>°ÚÕËºÍÁÁ×ÊÓÐÊ²Ã´Çø±ð£¿</span>
+                                        <span>æ‘†è´¦å’Œäº®èµ„æœ‰ä»€ä¹ˆåŒºåˆ«ï¼Ÿ</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </summary>
                                     <div class="faq-custom-answer">
-                                        <p>°ÚÕËºÍÁÁ×ÊËäÈ»¶¼Éæ¼°×Ê½ðÕ¹Ê¾£¬µ«ÔÚ²Ù×÷·½Ê½ºÍÓ¦ÓÃ³¡¾°ÉÏÓÐËù²»Í¬£º</p>
+                                        <p>æ‘†è´¦å’Œäº®èµ„è™½ç„¶éƒ½æ¶‰åŠèµ„é‡‘å±•ç¤ºï¼Œä½†åœ¨æ“ä½œæ–¹å¼å’Œåº”ç”¨åœºæ™¯ä¸Šæœ‰æ‰€ä¸åŒï¼š</p>
                                         <table class="faq-custom-table">
                                             <tr>
-                                                <th>¶Ô±ÈÏî</th>
-                                                <th>°ÚÕË</th>
-                                                <th>ÁÁ×Ê</th>
+                                                <th>å¯¹æ¯”é¡¹</th>
+                                                <th>æ‘†è´¦</th>
+                                                <th>äº®èµ„</th>
                                             </tr>
                                             <tr>
-                                                <td>Ö÷ÒªÓÃÍ¾</td>
-                                                <td>²ÆÎñ±¨±íÓÅ»¯¡¢Éó¼Æ¡¢Äê¼ì</td>
-                                                <td>ÏòµÚÈý·½Õ¹Ê¾×Ê½ðÊµÁ¦</td>
+                                                <td>ä¸»è¦ç”¨é€”</td>
+                                                <td>è´¢åŠ¡æŠ¥è¡¨ä¼˜åŒ–ã€å®¡è®¡ã€å¹´æ£€</td>
+                                                <td>å‘ç¬¬ä¸‰æ–¹å±•ç¤ºèµ„é‡‘å®žåŠ›</td>
                                             </tr>
                                             <tr>
-                                                <td>Õ¹Ê¾¶ÔÏó</td>
-                                                <td>Éó¼Æ»ú¹¹¡¢¼à¹Ü²¿ÃÅ</td>
-                                                <td>ºÏ×÷·½¡¢ÕÐ±ê·½µÈ</td>
+                                                <td>å±•ç¤ºå¯¹è±¡</td>
+                                                <td>å®¡è®¡æœºæž„ã€ç›‘ç®¡éƒ¨é—¨</td>
+                                                <td>åˆä½œæ–¹ã€æ‹›æ ‡æ–¹ç­‰</td>
                                             </tr>
                                             <tr>
-                                                <td>Ê±¼äÒªÇó</td>
-                                                <td>Í¨³£ÐèÒª±£³ÖÒ»¶¨Ê±ÆÚ</td>
-                                                <td>Ê±µã»ò¶ÌÆÚÕ¹Ê¾</td>
+                                                <td>æ—¶é—´è¦æ±‚</td>
+                                                <td>é€šå¸¸éœ€è¦ä¿æŒä¸€å®šæ—¶æœŸ</td>
+                                                <td>æ—¶ç‚¹æˆ–çŸ­æœŸå±•ç¤º</td>
                                             </tr>
                                             <tr>
-                                                <td>²Ù×÷·½Ê½</td>
-                                                <td>×Ê½ð´æÈëÕË»§²¢±£³Ö</td>
-                                                <td>×Ê½ðÕ¹Ê¾ºó¿ÉÄÜ×ª³ö</td>
+                                                <td>æ“ä½œæ–¹å¼</td>
+                                                <td>èµ„é‡‘å­˜å…¥è´¦æˆ·å¹¶ä¿æŒ</td>
+                                                <td>èµ„é‡‘å±•ç¤ºåŽå¯èƒ½è½¬å‡º</td>
                                             </tr>
                                         </table>
                                     </div>
                                 </details>
                                 <details class="faq-custom-item">
                                     <summary class="faq-custom-question">
-                                        <span>°ÚÕËÒµÎñ°²È«Âð£¿</span>
+                                        <span>æ‘†è´¦ä¸šåŠ¡å®‰å…¨å—ï¼Ÿ</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </summary>
                                     <div class="faq-custom-answer">
-                                        <p>ÎÒÃÇÑÏ¸ñ°´ÕÕ·¨ÂÉ·¨¹æºÍ¼à¹ÜÒªÇó¿ªÕ¹ÒµÎñ£¬È·±£°ÚÕËÒµÎñµÄ°²È«ÐÔ£º</p>
+                                        <p>æˆ‘ä»¬ä¸¥æ ¼æŒ‰ç…§æ³•å¾‹æ³•è§„å’Œç›‘ç®¡è¦æ±‚å¼€å±•ä¸šåŠ¡ï¼Œç¡®ä¿æ‘†è´¦ä¸šåŠ¡çš„å®‰å…¨æ€§ï¼š</p>
                                         <ul>
-                                            <li><strong>ºÏ¹æ²Ù×÷</strong>£ºËùÓÐÒµÎñ²Ù×÷¾ù·ûºÏÏà¹Ø·¨ÂÉ·¨¹æÒªÇó</li>
-                                            <li><strong>ºÏÍ¬±£ÕÏ</strong>£ºËùÓÐ²Ù×÷¾ùÓÐÕý¹æºÏÍ¬±£ÕÏ£¬Ã÷È·Ë«·½È¨ÀûÒåÎñ</li>
-                                            <li><strong>×Ê½ð°²È«</strong>£º×Ê½ð´æ·ÅÔÚÕý¹æÒøÐÐÕË»§£¬°²È«ÓÐ±£ÕÏ</li>
-                                            <li><strong>ÐÅÏ¢±£ÃÜ</strong>£º¿Í»§ÐÅÏ¢ÑÏ¸ñ±£ÃÜ£¬²»»áÐ¹Â¶¸øµÚÈý·½</li>
+                                            <li><strong>åˆè§„æ“ä½œ</strong>ï¼šæ‰€æœ‰ä¸šåŠ¡æ“ä½œå‡ç¬¦åˆç›¸å…³æ³•å¾‹æ³•è§„è¦æ±‚</li>
+                                            <li><strong>åˆåŒä¿éšœ</strong>ï¼šæ‰€æœ‰æ“ä½œå‡æœ‰æ­£è§„åˆåŒä¿éšœï¼Œæ˜Žç¡®åŒæ–¹æƒåˆ©ä¹‰åŠ¡</li>
+                                            <li><strong>èµ„é‡‘å®‰å…¨</strong>ï¼šèµ„é‡‘å­˜æ”¾åœ¨æ­£è§„é“¶è¡Œè´¦æˆ·ï¼Œå®‰å…¨æœ‰ä¿éšœ</li>
+                                            <li><strong>ä¿¡æ¯ä¿å¯†</strong>ï¼šå®¢æˆ·ä¿¡æ¯ä¸¥æ ¼ä¿å¯†ï¼Œä¸ä¼šæ³„éœ²ç»™ç¬¬ä¸‰æ–¹</li>
                                         </ul>
-                                        <p>½¨Òé¿Í»§Ñ¡ÔñÕý¹æ¡¢ÓÐ×ÊÖÊµÄ×Ê½ð·þÎñ»ú¹¹ºÏ×÷£¬È·±£ÒµÎñ°²È«¡£</p>
+                                        <p>å»ºè®®å®¢æˆ·é€‰æ‹©æ­£è§„ã€æœ‰èµ„è´¨çš„èµ„é‡‘æœåŠ¡æœºæž„åˆä½œï¼Œç¡®ä¿ä¸šåŠ¡å®‰å…¨ã€‚</p>
                                     </div>
                                 </details>
                                 <details class="faq-custom-item">
                                     <summary class="faq-custom-question">
-                                        <span>°ÚÕËÒµÎñÓÐÄÄÐ©ÀàÐÍ£¿</span>
+                                        <span>æ‘†è´¦ä¸šåŠ¡æœ‰å“ªäº›ç±»åž‹ï¼Ÿ</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </summary>
                                     <div class="faq-custom-answer">
-                                        <p>¸ù¾Ý¿Í»§ÐèÇóºÍÓÃÍ¾£¬°ÚÕËÒµÎñÖ÷Òª·ÖÎªÒÔÏÂÀàÐÍ£º</p>
+                                        <p>æ ¹æ®å®¢æˆ·éœ€æ±‚å’Œç”¨é€”ï¼Œæ‘†è´¦ä¸šåŠ¡ä¸»è¦åˆ†ä¸ºä»¥ä¸‹ç±»åž‹ï¼š</p>
                                         <ul>
-                                            <li><strong>Ê±µã°ÚÕË</strong>£ºÔÚÌØ¶¨Ê±¼äµã£¨ÈçÔÂÄ©¡¢¼¾Ä©¡¢ÄêÄ©£©±£³Ö×Ê½ðÔÚÕË</li>
-                                            <li><strong>ÈÕ¾ù°ÚÕË</strong>£ºÔÚÒ»¶ÎÊ±¼äÄÚ±£³ÖÈÕ¾ù´æ¿îÓà¶î´ï±ê</li>
-                                            <li><strong>¶¨ÆÚ°ÚÕË</strong>£ºÒÔ¶¨ÆÚ´æ¿îÐÎÊ½°ÚÕË£¬ÆÚÏÞÁé»î</li>
-                                            <li><strong>Êµ½ÉÑé×Ê</strong>£ºÓÃÓÚÆóÒµ×¢²á×Ê±¾Êµ½ÉÑé×Ê</li>
-                                            <li><strong>×Ê½ðÖ¤Ã÷</strong>£ºÓÃÓÚ¿ª¾ß×Ê½ðÖ¤Ã÷¡¢ÒøÐÐ±£º¯µÈ</li>
+                                            <li><strong>æ—¶ç‚¹æ‘†è´¦</strong>ï¼šåœ¨ç‰¹å®šæ—¶é—´ç‚¹ï¼ˆå¦‚æœˆæœ«ã€å­£æœ«ã€å¹´æœ«ï¼‰ä¿æŒèµ„é‡‘åœ¨è´¦</li>
+                                            <li><strong>æ—¥å‡æ‘†è´¦</strong>ï¼šåœ¨ä¸€æ®µæ—¶é—´å†…ä¿æŒæ—¥å‡å­˜æ¬¾ä½™é¢è¾¾æ ‡</li>
+                                            <li><strong>å®šæœŸæ‘†è´¦</strong>ï¼šä»¥å®šæœŸå­˜æ¬¾å½¢å¼æ‘†è´¦ï¼ŒæœŸé™çµæ´»</li>
+                                            <li><strong>å®žç¼´éªŒèµ„</strong>ï¼šç”¨äºŽä¼ä¸šæ³¨å†Œèµ„æœ¬å®žç¼´éªŒèµ„</li>
+                                            <li><strong>èµ„é‡‘è¯æ˜Ž</strong>ï¼šç”¨äºŽå¼€å…·èµ„é‡‘è¯æ˜Žã€é“¶è¡Œä¿å‡½ç­‰</li>
                                         </ul>
                                     </div>
                                 </details>
                             </div>
                         </div>
 
-                        <!-- Ó¦ÊÕÕË¿îÈÚ×Ê -->
+                        <!-- åº”æ”¶è´¦æ¬¾èžèµ„ -->
                         <div class="faq-custom-category" data-category="receivable">
                             <h3 class="faq-custom-category-title">
                                 <i class="fas fa-file-invoice-dollar"></i>
-                                Ó¦ÊÕÕË¿îÈÚ×Ê
+                                åº”æ”¶è´¦æ¬¾èžèµ„
                             </h3>
                             <div class="faq-custom-list">
                                 <details class="faq-custom-item">
                                     <summary class="faq-custom-question">
-                                        <span>Ê²Ã´ÑùµÄÓ¦ÊÕÕË¿î¿ÉÒÔÈÚ×Ê£¿</span>
+                                        <span>ä»€ä¹ˆæ ·çš„åº”æ”¶è´¦æ¬¾å¯ä»¥èžèµ„ï¼Ÿ</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </summary>
                                     <div class="faq-custom-answer">
-                                        <p>Ò»°ãÀ´Ëµ£¬ÒÔÏÂÀàÐÍµÄÓ¦ÊÕÕË¿î¸üÈÝÒ×»ñµÃÈÚ×Ê£º</p>
+                                        <p>ä¸€èˆ¬æ¥è¯´ï¼Œä»¥ä¸‹ç±»åž‹çš„åº”æ”¶è´¦æ¬¾æ›´å®¹æ˜“èŽ·å¾—èžèµ„ï¼š</p>
                                         <ul>
-                                            <li>ÓëºËÐÄÆóÒµ£¨¹úÆó¡¢ÑëÆó¡¢ÉÏÊÐ¹«Ë¾µÈ£©²úÉúµÄÓ¦ÊÕÕË¿î</li>
-                                            <li>ÕËÆÚÔÚ6¸öÔÂÒÔÄÚµÄÓ¦ÊÕÕË¿î</li>
-                                            <li>Ã³Ò×±³¾°ÕæÊµ¡¢ºÏÍ¬·¢Æ±ÆëÈ«µÄÓ¦ÊÕÕË¿î</li>
-                                            <li>¸¶¿î·½ÐÅÓÃÁ¼ºÃµÄÓ¦ÊÕÕË¿î</li>
+                                            <li>ä¸Žæ ¸å¿ƒä¼ä¸šï¼ˆå›½ä¼ã€å¤®ä¼ã€ä¸Šå¸‚å…¬å¸ç­‰ï¼‰äº§ç”Ÿçš„åº”æ”¶è´¦æ¬¾</li>
+                                            <li>è´¦æœŸåœ¨6ä¸ªæœˆä»¥å†…çš„åº”æ”¶è´¦æ¬¾</li>
+                                            <li>è´¸æ˜“èƒŒæ™¯çœŸå®žã€åˆåŒå‘ç¥¨é½å…¨çš„åº”æ”¶è´¦æ¬¾</li>
+                                            <li>ä»˜æ¬¾æ–¹ä¿¡ç”¨è‰¯å¥½çš„åº”æ”¶è´¦æ¬¾</li>
                                         </ul>
-                                        <p>ÎÒÃÇ½ÓÊÜÔÆÐÅ¡¢ÉÌÆ±µÈ¶àÖÖÐÎÊ½µÄÓ¦ÊÕÕË¿îÈÚ×ÊÉêÇë£¬¾ßÌå¿ÉÈÚ×Ê¶î¶ÈÐèÒª¸ù¾ÝÓ¦ÊÕÕË¿îµÄ¾ßÌåÇé¿öÆÀ¹À¡£</p>
+                                        <p>æˆ‘ä»¬æŽ¥å—äº‘ä¿¡ã€å•†ç¥¨ç­‰å¤šç§å½¢å¼çš„åº”æ”¶è´¦æ¬¾èžèµ„ç”³è¯·ï¼Œå…·ä½“å¯èžèµ„é¢åº¦éœ€è¦æ ¹æ®åº”æ”¶è´¦æ¬¾çš„å…·ä½“æƒ…å†µè¯„ä¼°ã€‚</p>
                                     </div>
                                 </details>
                                 <details class="faq-custom-item">
                                     <summary class="faq-custom-question">
-                                        <span>Ó¦ÊÕÕË¿îÈÚ×Ê¶î¶ÈÈçºÎÈ·¶¨£¿</span>
+                                        <span>åº”æ”¶è´¦æ¬¾èžèµ„é¢åº¦å¦‚ä½•ç¡®å®šï¼Ÿ</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </summary>
                                     <div class="faq-custom-answer">
-                                        <p>ÈÚ×Ê¶î¶ÈÖ÷Òª¸ù¾ÝÒÔÏÂÒòËØ×ÛºÏÆÀ¹À£º</p>
+                                        <p>èžèµ„é¢åº¦ä¸»è¦æ ¹æ®ä»¥ä¸‹å› ç´ ç»¼åˆè¯„ä¼°ï¼š</p>
                                         <ul>
-                                            <li><strong>Ó¦ÊÕÕË¿î½ð¶î</strong>£ºÈÚ×Ê½ð¶îÍ¨³£²»³¬¹ýÓ¦ÊÕÕË¿îÃæ¶î</li>
-                                            <li><strong>¸¶¿î·½ÐÅÓÃµÈ¼¶</strong>£º¹úÆó¡¢ÑëÆó¡¢ÉÏÊÐ¹«Ë¾µÈÐÅÓÃµÈ¼¶¸ß£¬ÈÚ×Ê±ÈÀý¸ß</li>
-                                            <li><strong>ÕËÆÚ³¤¶Ì</strong>£ºÕËÆÚÔ½¶Ì£¬ÈÚ×Ê±ÈÀýÔ½¸ß</li>
-                                            <li><strong>ÀúÊ·½»Ò×¼ÇÂ¼</strong>£º³¤ÆÚºÏ×÷¿Í»§¿ÉÏíÊÜ¸ü¸ßÈÚ×Ê±ÈÀý</li>
+                                            <li><strong>åº”æ”¶è´¦æ¬¾é‡‘é¢</strong>ï¼šèžèµ„é‡‘é¢é€šå¸¸ä¸è¶…è¿‡åº”æ”¶è´¦æ¬¾é¢é¢</li>
+                                            <li><strong>ä»˜æ¬¾æ–¹ä¿¡ç”¨ç­‰çº§</strong>ï¼šå›½ä¼ã€å¤®ä¼ã€ä¸Šå¸‚å…¬å¸ç­‰ä¿¡ç”¨ç­‰çº§é«˜ï¼Œèžèµ„æ¯”ä¾‹é«˜</li>
+                                            <li><strong>è´¦æœŸé•¿çŸ­</strong>ï¼šè´¦æœŸè¶ŠçŸ­ï¼Œèžèµ„æ¯”ä¾‹è¶Šé«˜</li>
+                                            <li><strong>åŽ†å²äº¤æ˜“è®°å½•</strong>ï¼šé•¿æœŸåˆä½œå®¢æˆ·å¯äº«å—æ›´é«˜èžèµ„æ¯”ä¾‹</li>
                                         </ul>
-                                        <p>Ò»°ã¿ÉÈÚ×Ê½ð¶îÎªÓ¦ÊÕÕË¿îÃæ¶îµÄ70%-95%£¬¾ßÌå±ÈÀý¸ù¾ÝÊµ¼ÊÇé¿öÈ·¶¨¡£</p>
+                                        <p>ä¸€èˆ¬å¯èžèµ„é‡‘é¢ä¸ºåº”æ”¶è´¦æ¬¾é¢é¢çš„70%-95%ï¼Œå…·ä½“æ¯”ä¾‹æ ¹æ®å®žé™…æƒ…å†µç¡®å®šã€‚</p>
                                     </div>
                                 </details>
                                 <details class="faq-custom-item">
                                     <summary class="faq-custom-question">
-                                        <span>ÔÆÐÅÆ±¾ÝÈÚ×ÊÓÐÊ²Ã´ÓÅÊÆ£¿</span>
+                                        <span>äº‘ä¿¡ç¥¨æ®èžèµ„æœ‰ä»€ä¹ˆä¼˜åŠ¿ï¼Ÿ</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </summary>
                                     <div class="faq-custom-answer">
-                                        <p>ÔÆÐÅÆ±¾ÝÈÚ×ÊÏà±È´«Í³ÈÚ×Ê·½Ê½¾ßÓÐÒÔÏÂÓÅÊÆ£º</p>
+                                        <p>äº‘ä¿¡ç¥¨æ®èžèµ„ç›¸æ¯”ä¼ ç»Ÿèžèµ„æ–¹å¼å…·æœ‰ä»¥ä¸‹ä¼˜åŠ¿ï¼š</p>
                                         <ul>
-                                            <li><strong>×¼Èë¿íËÉ</strong>£º¶ÔÈÚ×ÊÆóÒµ×ÊÖÊÒªÇóÏà¶Ô¿íËÉ</li>
-                                            <li><strong>²»¿´Õ÷ÐÅ</strong>£º²»²éÑ¯ÆóÒµÕ÷ÐÅ¼ÇÂ¼</li>
-                                            <li><strong>°üÈÝÖ´ÐÐ</strong>£º¿É½ÓÊÜÓÐÖ´ÐÐËßËÏ¼ÇÂ¼µÄÆóÒµ</li>
-                                            <li><strong>Áé»îÁ÷×ª</strong>£ºÔÆÐÅÆ±¾Ý¿É²ð·Ö¡¢¿ÉÁ÷×ª¡¢¿ÉÖ§¸¶</li>
-                                            <li><strong>ÈÚ×Ê±ã½Ý</strong>£ºÉóÅúÁ÷³Ì¼òµ¥£¬·Å¿îËÙ¶È¿ì</li>
-                                            <li><strong>³É±¾¿É¿Ø</strong>£ºÈÚ×Ê³É±¾Í¸Ã÷£¬×ÛºÏ³É±¾½ÏµÍ</li>
+                                            <li><strong>å‡†å…¥å®½æ¾</strong>ï¼šå¯¹èžèµ„ä¼ä¸šèµ„è´¨è¦æ±‚ç›¸å¯¹å®½æ¾</li>
+                                            <li><strong>ä¸çœ‹å¾ä¿¡</strong>ï¼šä¸æŸ¥è¯¢ä¼ä¸šå¾ä¿¡è®°å½•</li>
+                                            <li><strong>åŒ…å®¹æ‰§è¡Œ</strong>ï¼šå¯æŽ¥å—æœ‰æ‰§è¡Œè¯‰è®¼è®°å½•çš„ä¼ä¸š</li>
+                                            <li><strong>çµæ´»æµè½¬</strong>ï¼šäº‘ä¿¡ç¥¨æ®å¯æ‹†åˆ†ã€å¯æµè½¬ã€å¯æ”¯ä»˜</li>
+                                            <li><strong>èžèµ„ä¾¿æ·</strong>ï¼šå®¡æ‰¹æµç¨‹ç®€å•ï¼Œæ”¾æ¬¾é€Ÿåº¦å¿«</li>
+                                            <li><strong>æˆæœ¬å¯æŽ§</strong>ï¼šèžèµ„æˆæœ¬é€æ˜Žï¼Œç»¼åˆæˆæœ¬è¾ƒä½Ž</li>
                                         </ul>
                                     </div>
                                 </details>
                             </div>
                         </div>
 
-                        <!-- Ò»°ãÎÊÌâ -->
+                        <!-- ä¸€èˆ¬é—®é¢˜ -->
                         <div class="faq-custom-category" data-category="general">
                             <h3 class="faq-custom-category-title">
                                 <i class="fas fa-info-circle"></i>
-                                Ò»°ãÎÊÌâ
+                                ä¸€èˆ¬é—®é¢˜
                             </h3>
                             <div class="faq-custom-list">
                                 <details class="faq-custom-item">
                                     <summary class="faq-custom-question">
-                                        <span>Yao×Ê½ðÍøµÄ·þÎñÁ÷³ÌÊÇÔõÑùµÄ£¿</span>
+                                        <span>Yaoèµ„é‡‘ç½‘çš„æœåŠ¡æµç¨‹æ˜¯æ€Žæ ·çš„ï¼Ÿ</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </summary>
                                     <div class="faq-custom-answer">
-                                        <p>ÎÒÃÇµÄ·þÎñÁ÷³ÌÈçÏÂ£º</p>
+                                        <p>æˆ‘ä»¬çš„æœåŠ¡æµç¨‹å¦‚ä¸‹ï¼š</p>
                                         <ol>
-                                            <li><strong>ÐèÇó¹µÍ¨</strong>£ºÁË½â¿Í»§×Ê½ðÐèÇó£¬ÆÀ¹ÀÒµÎñ¿ÉÐÐÐÔ</li>
-                                            <li><strong>×ÊÁÏÉóºË</strong>£º·ç¿ØÉóºË£¬È·Á¢²Ù×÷ÐÔ</li>
-                                            <li><strong>ÕË»§ÐÂ¿ª</strong>£ºÕË»§¼¤»îºó£¬Ç©ÊðÐ­Òé¿Ø²ÄÁÏ</li>
-                                            <li><strong>½ø¿îºÍ³ö¿î</strong>£º³ö¿îºó¹é»¹²ÄÁÏ£¬Ð­ÒéËº»Ù½áÊø</li>
+                                            <li><strong>éœ€æ±‚æ²Ÿé€š</strong>ï¼šäº†è§£å®¢æˆ·èµ„é‡‘éœ€æ±‚ï¼Œè¯„ä¼°ä¸šåŠ¡å¯è¡Œæ€§</li>
+                                            <li><strong>èµ„æ–™å®¡æ ¸</strong>ï¼šé£ŽæŽ§å®¡æ ¸ï¼Œç¡®ç«‹æ“ä½œæ€§</li>
+                                            <li><strong>è´¦æˆ·æ–°å¼€</strong>ï¼šè´¦æˆ·æ¿€æ´»åŽï¼Œç­¾ç½²åè®®æŽ§ææ–™</li>
+                                            <li><strong>è¿›æ¬¾å’Œå‡ºæ¬¾</strong>ï¼šå‡ºæ¬¾åŽå½’è¿˜ææ–™ï¼Œåè®®æ’•æ¯ç»“æŸ</li>
                                         </ol>
                                     </div>
                                 </details>
                                 <details class="faq-custom-item">
                                     <summary class="faq-custom-question">
-                                        <span>ÈçºÎÁªÏµYao×Ê½ðÍø£¿</span>
+                                        <span>å¦‚ä½•è”ç³»Yaoèµ„é‡‘ç½‘ï¼Ÿ</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </summary>
                                     <div class="faq-custom-answer">
-                                        <p>Äú¿ÉÒÔÍ¨¹ýÒÔÏÂ·½Ê½ÁªÏµÎÒÃÇ£º</p>
+                                        <p>æ‚¨å¯ä»¥é€šè¿‡ä»¥ä¸‹æ–¹å¼è”ç³»æˆ‘ä»¬ï¼š</p>
                                         <ul>
-                                            <li><strong>µç»°×ÉÑ¯</strong>£º13552883008£¨Íõ×Ü£©</li>
-                                            <li><strong>ÓÊÏäÁªÏµ</strong>£ºwanglizhongguo@126.com</li>
-                                            <li><strong>Î¢ÐÅ×ÉÑ¯</strong>£ºÉ¨ÃèÍøÕ¾ÓÒ²à¶þÎ¬ÂëÌí¼ÓÎ¢ÐÅ</li>
-                                            <li><strong>ÔÚÏßÁôÑÔ</strong>£ºÍ¨¹ýÍøÕ¾ÁªÏµÒ³ÃæÁôÑÔ</li>
+                                            <li><strong>ç”µè¯å’¨è¯¢</strong>ï¼š13552883008ï¼ˆçŽ‹æ€»ï¼‰</li>
+                                            <li><strong>é‚®ç®±è”ç³»</strong>ï¼šwanglizhongguo@126.com</li>
+                                            <li><strong>å¾®ä¿¡å’¨è¯¢</strong>ï¼šæ‰«æç½‘ç«™å³ä¾§äºŒç»´ç æ·»åŠ å¾®ä¿¡</li>
+                                            <li><strong>åœ¨çº¿ç•™è¨€</strong>ï¼šé€šè¿‡ç½‘ç«™è”ç³»é¡µé¢ç•™è¨€</li>
                                         </ul>
-                                        <p>ÎÒÃÇµÄ¹¤×÷Ê±¼äÎªÖÜÒ»ÖÁÖÜÎå 9:00-18:00£¬½ô¼±ÐèÇó¿ÉËæÊ±ÁªÏµ¡£</p>
+                                        <p>æˆ‘ä»¬çš„å·¥ä½œæ—¶é—´ä¸ºå‘¨ä¸€è‡³å‘¨äº” 9:00-18:00ï¼Œç´§æ€¥éœ€æ±‚å¯éšæ—¶è”ç³»ã€‚</p>
                                     </div>
                                 </details>
                                 <details class="faq-custom-item">
                                     <summary class="faq-custom-question">
-                                        <span>ÒµÎñºÏ×÷ÐèÒªÄÄÐ©×ÊÖÊ£¿</span>
+                                        <span>ä¸šåŠ¡åˆä½œéœ€è¦å“ªäº›èµ„è´¨ï¼Ÿ</span>
                                         <i class="fas fa-chevron-down"></i>
                                     </summary>
                                     <div class="faq-custom-answer">
-                                        <p>¸ù¾ÝÒµÎñÀàÐÍ²»Í¬£¬ËùÐè×ÊÖÊÒ²ÓÐËù²»Í¬£º</p>
+                                        <p>æ ¹æ®ä¸šåŠ¡ç±»åž‹ä¸åŒï¼Œæ‰€éœ€èµ„è´¨ä¹Ÿæœ‰æ‰€ä¸åŒï¼š</p>
                                         <ul>
-                                            <li><strong>ÆóÒµ¿Í»§</strong>£ºÓªÒµÖ´ÕÕ¡¢·¨ÈËÉí·ÝÖ¤¡¢²ÆÎñ±¨±íµÈ</li>
-                                            <li><strong>ÉÏÊÐ¹«Ë¾</strong>£º³ý»ù±¾×ÊÖÊÍâ£¬¿ÉÄÜÐèÒª¶­ÊÂ»á¾öÒéµÈ</li>
-                                            <li><strong>¸öÈË¿Í»§</strong>£ºÉí·ÝÖ¤¡¢ÊÕÈëÖ¤Ã÷¡¢×Ê²úÖ¤Ã÷µÈ</li>
+                                            <li><strong>ä¼ä¸šå®¢æˆ·</strong>ï¼šè¥ä¸šæ‰§ç…§ã€æ³•äººèº«ä»½è¯ã€è´¢åŠ¡æŠ¥è¡¨ç­‰</li>
+                                            <li><strong>ä¸Šå¸‚å…¬å¸</strong>ï¼šé™¤åŸºæœ¬èµ„è´¨å¤–ï¼Œå¯èƒ½éœ€è¦è‘£äº‹ä¼šå†³è®®ç­‰</li>
+                                            <li><strong>ä¸ªäººå®¢æˆ·</strong>ï¼šèº«ä»½è¯ã€æ”¶å…¥è¯æ˜Žã€èµ„äº§è¯æ˜Žç­‰</li>
                                         </ul>
-                                        <p>¾ßÌå×ÊÖÊÒªÇóÇë×ÉÑ¯ÎÒÃÇµÄ¿Í»§¾­Àí£¬ÎÒÃÇ»á¸ù¾ÝÄúµÄÒµÎñÀàÐÍÌá¹©ÏêÏ¸µÄ×ÊÁÏÇåµ¥¡£</p>
+                                        <p>å…·ä½“èµ„è´¨è¦æ±‚è¯·å’¨è¯¢æˆ‘ä»¬çš„å®¢æˆ·ç»ç†ï¼Œæˆ‘ä»¬ä¼šæ ¹æ®æ‚¨çš„ä¸šåŠ¡ç±»åž‹æä¾›è¯¦ç»†çš„èµ„æ–™æ¸…å•ã€‚</p>
                                     </div>
                                 </details>
                             </div>
@@ -444,20 +444,20 @@
                     </div>
                 </div>
 
-                <!-- ¸ü¶àÎÊÌâ -->
+                <!-- æ›´å¤šé—®é¢˜ -->
                 <div class="editable-section" data-section="faq-more">
                     <div class="faq-more-box">
                         <div class="faq-more-icon">
                             <i class="fas fa-headset"></i>
                         </div>
                         <div class="faq-more-content">
-                            <h3>»¹ÓÐÆäËûÎÊÌâ£¿</h3>
-                            <p>»¶Ó­ËæÊ±ÁªÏµÎÒÃÇµÄ×¨Òµ¹ËÎÊ£¬ÎÒÃÇ½«½ß³ÏÎªÄú½â´ð</p>
+                            <h3>è¿˜æœ‰å…¶ä»–é—®é¢˜ï¼Ÿ</h3>
+                            <p>æ¬¢è¿Žéšæ—¶è”ç³»æˆ‘ä»¬çš„ä¸“ä¸šé¡¾é—®ï¼Œæˆ‘ä»¬å°†ç«­è¯šä¸ºæ‚¨è§£ç­”</p>
                         </div>
                         <div class="contact-button-wrapper">
                             <button class="btn btn-primary" id="faqConsultBtn">
                                 <i class="fas fa-phone-alt"></i>
-                                ÁªÏµÎÒÃÇ
+                                è”ç³»æˆ‘ä»¬
                             </button>
                             <span id="faqPhoneDisplay" style="display:none;font-size:18px;font-weight:700;color:#1e3a8a;letter-spacing:2px;white-space:nowrap;">13552883008</span>
                         </div>
@@ -469,35 +469,35 @@
 
     </main>
 
-    <!-- ÓÒ²à±ß¸¡¶¯µç»°°´Å¥ -->
-    <div class="chat-widget" id="chatWidget" aria-label="ÁªÏµµç»°">
-        <button class="chat-widget-btn" id="chatWidgetBtn" aria-label="²¦´òµç»°" aria-expanded="false">
+    <!-- å³ä¾§è¾¹æµ®åŠ¨ç”µè¯æŒ‰é’® -->
+    <div class="chat-widget" id="chatWidget" aria-label="è”ç³»ç”µè¯">
+        <button class="chat-widget-btn" id="chatWidgetBtn" aria-label="æ‹¨æ‰“ç”µè¯" aria-expanded="false">
             <i class="fas fa-phone-alt" aria-hidden="true"></i>
         </button>
     </div>
 
-    <!-- ¶¯Ì¬¼ÓÔØFAQÊý¾Ý -->
+    <!-- åŠ¨æ€åŠ è½½FAQæ•°æ® -->
     <script>
-        // ´ÓlocalStorage¼ÓÔØºóÌ¨±£´æµÄFAQÊý¾Ý
+        // ä»ŽlocalStorageåŠ è½½åŽå°ä¿å­˜çš„FAQæ•°æ®
         (function() {
-            // ¼ÓÔØ·ÖÀà
+            // åŠ è½½åˆ†ç±»
             let categoryLabels = {};
             const savedCategories = localStorage.getItem('cms_faq_categories');
             if (savedCategories) {
                 categoryLabels = JSON.parse(savedCategories);
             } else {
-                // Ä¬ÈÏ·ÖÀà
+                // é»˜è®¤åˆ†ç±»
                 categoryLabels = {
-                    'liangzi': 'ÁÁ×ÊÒµÎñ',
-                    'bridge': '¹ýÇÅ×Ê½ð',
-                    'baizhang': '°ÚÕËÒµÎñ',
-                    'receivable': 'Ó¦ÊÕÕË¿î',
-                    'deposit': 'ÒøÐÐ´æ¿î',
-                    'general': 'Ò»°ãÎÊÌâ'
+                    'liangzi': 'äº®èµ„ä¸šåŠ¡',
+                    'bridge': 'è¿‡æ¡¥èµ„é‡‘',
+                    'baizhang': 'æ‘†è´¦ä¸šåŠ¡',
+                    'receivable': 'åº”æ”¶è´¦æ¬¾',
+                    'deposit': 'é“¶è¡Œå­˜æ¬¾',
+                    'general': 'ä¸€èˆ¬é—®é¢˜'
                 };
             }
             
-            // ·ÖÀàÍ¼±êÓ³Éä
+            // åˆ†ç±»å›¾æ ‡æ˜ å°„
             const categoryIcons = {
                 'liangzi': 'fa-lightbulb',
                 'bridge': 'fa-exchange-alt',
@@ -507,13 +507,13 @@
                 'general': 'fa-info-circle'
             };
             
-            // ¶¯Ì¬Éú³É·ÖÀà°´Å¥
+            // åŠ¨æ€ç”Ÿæˆåˆ†ç±»æŒ‰é’®
             const categoryButtonsContainer = document.getElementById('faqCategoryButtons');
             if (categoryButtonsContainer) {
                 let buttonsHtml = `
                     <div class="faq-category-item active" data-category="all">
                         <i class="fas fa-th-large"></i>
-                        <span>È«²¿ÎÊÌâ</span>
+                        <span>å…¨éƒ¨é—®é¢˜</span>
                     </div>
                 `;
                 
@@ -530,11 +530,11 @@
                 
                 categoryButtonsContainer.innerHTML = buttonsHtml;
                 
-                // ÖØÐÂ°ó¶¨·ÖÀàµã»÷ÊÂ¼þ
+                // é‡æ–°ç»‘å®šåˆ†ç±»ç‚¹å‡»äº‹ä»¶
                 bindCategoryEvents();
             }
             
-            // °ó¶¨·ÖÀàµã»÷ÊÂ¼þ
+            // ç»‘å®šåˆ†ç±»ç‚¹å‡»äº‹ä»¶
             function bindCategoryEvents() {
                 document.querySelectorAll('.faq-category-item').forEach(item => {
                     item.addEventListener('click', function() {
@@ -547,7 +547,7 @@
                 });
             }
             
-            // °´·ÖÀàÉ¸Ñ¡FAQ
+            // æŒ‰åˆ†ç±»ç­›é€‰FAQ
             function filterFAQByCategory(category) {
                 const categories = document.querySelectorAll('.faq-custom-category');
                 categories.forEach(cat => {
@@ -563,10 +563,10 @@
             if (savedFAQ) {
                 try {
                     const faqs = JSON.parse(savedFAQ);
-                    console.log('¼ÓÔØºóÌ¨FAQÊý¾Ý:', faqs);
-                    console.log('¼ÓÔØ·ÖÀà:', categoryLabels);
+                    console.log('åŠ è½½åŽå°FAQæ•°æ®:', faqs);
+                    console.log('åŠ è½½åˆ†ç±»:', categoryLabels);
                     
-                    // °´·ÖÀà·Ö×é
+                    // æŒ‰åˆ†ç±»åˆ†ç»„
                     const groupedFAQs = {};
                     faqs.forEach(faq => {
                         const cat = faq.category || 'general';
@@ -576,13 +576,13 @@
                         groupedFAQs[cat].push(faq);
                     });
                     
-                    // Ê¹ÓÃºóÌ¨·ÖÀàË³Ðò£¬°üÀ¨¿Õ·ÖÀà
+                    // ä½¿ç”¨åŽå°åˆ†ç±»é¡ºåºï¼ŒåŒ…æ‹¬ç©ºåˆ†ç±»
                     const container = document.querySelector('.faq-custom-container');
                     if (container) {
                         let html = '';
                         let hasContent = false;
                         
-                        // ±éÀúËùÓÐ·ÖÀà£¨°üÀ¨Ã»ÓÐFAQµÄ·ÖÀà£©
+                        // éåŽ†æ‰€æœ‰åˆ†ç±»ï¼ˆåŒ…æ‹¬æ²¡æœ‰FAQçš„åˆ†ç±»ï¼‰
                         Object.keys(categoryLabels).forEach(cat => {
                             const catName = categoryLabels[cat];
                             const catIcon = categoryIcons[cat] || 'fa-question';
@@ -613,69 +613,31 @@
                                     `;
                                 });
                             } else {
-                                html += '<p style="padding: 20px; color: #9ca3af; text-align: center;">¸Ã·ÖÀàÏÂÔÝÎÞÎÊÌâ</p>';
+                                html += '<p style="padding: 20px; color: #9ca3af; text-align: center;">è¯¥åˆ†ç±»ä¸‹æš‚æ— é—®é¢˜</p>';
                             }
                             
                             html += '</div></div>';
                         });
                         
-                        // Èç¹ûºóÌ¨ÓÐÊý¾Ý£¬Ìæ»»ÏÔÊ¾
+                        // å¦‚æžœåŽå°æœ‰æ•°æ®ï¼Œæ›¿æ¢æ˜¾ç¤º
                         if (hasContent || Object.keys(categoryLabels).length > 0) {
                             container.innerHTML = html;
                         }
                     }
                 } catch (e) {
-                    console.log('FAQÊý¾Ý½âÎöÊ§°Ü:', e);
+                    console.log('FAQæ•°æ®è§£æžå¤±è´¥:', e);
                 }
             }
         })();
     </script>
 
-    <!-- Ò³½Å -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-main">
-                <div class="footer-brand">
-                    <div class="footer-logo"><img src="images/logo.png?v=20260502041100" alt="Yao×Ê½ðÍø" style="height:48px;width:auto;"></div>
+    <!-- é¡µè„š -->
+<?php include 'includes/footer.php'; ?>
 
-                    <p class="footer-desc">×¨Òµ×Ê½ðÒµÎñ·þÎñÉÌ£¬Ìá¹©ÉÏÊÐ¹«Ë¾¹ýÇÅ¡¢ÆóÒµ°ÚÕË¡¢ÒøÐÐ´æ¿î¡¢Ó¦ÊÕÕË¿îÈÚ×ÊµÈÈ«·½Î»×Ê½ð·þÎñ</p>
-                </div>
-                <div class="footer-nav">
-                    <h4 class="footer-nav-title">¿ìËÙÁ´½Ó</h4>
-                    <ul class="footer-nav-list">
-                        <li><a href="index.html">Ê×Ò³</a></li>
-                        <li><a href="services.html">ÒµÎñ·¶Î§</a></li>
-                        <li><a href="cases.html">³É¹¦°¸Àý</a></li>
-                        <li><a href="advantages.html">·þÎñÓÅÊÆ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-nav">
-                    <h4 class="footer-nav-title">¸ü¶àÄÚÈÝ</h4>
-                    <ul class="footer-nav-list">
-                        <li><a href="news.html">ÐÐÒµ×ÊÑ¶</a></li>
-                        <li><a href="faq.html">³£¼ûÎÊÌâ</a></li>
-                        <li><a href="contact.html">ÁªÏµÎÒÃÇ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-nav">
-                    <h4 class="footer-nav-title">ÁªÏµ·½Ê½</h4>
-                    <ul class="footer-nav-list">
-                        <li><i class="fas fa-phone"></i> 13552883008</li>
-                        <li><i class="fas fa-user"></i> Íõ×Ü</li>
-                        <li><i class="fas fa-envelope"></i> wanglizhongguo@126.com</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2024 Yao×Ê½ðÍø °æÈ¨ËùÓÐ</p>
-                <p class="footer-disclaimer">Í¶×ÊÓÐ·çÏÕ£¬ÈëÊÐÐè½÷É÷¡£±¾ÍøÕ¾ÄÚÈÝ½ö¹©²Î¿¼£¬²»¹¹³ÉÍ¶×Ê½¨Òé¡£</p>
-            </div>
-        </div>
-    </footer>
 
     <script src="js/main.js"></script>
     <script>
-        // ÏÔÊ¾/Òþ²Øµç»°ºÅÂë
+        // æ˜¾ç¤º/éšè—ç”µè¯å·ç 
         function showPhoneNumber() {
             const phoneDisplay = document.getElementById('phone-display');
             if (phoneDisplay.style.display === 'none') {
@@ -686,7 +648,7 @@
         }
     </script>
     <script>
-        // FAQ·ÖÀàÇÐ»»
+        // FAQåˆ†ç±»åˆ‡æ¢
         document.addEventListener('DOMContentLoaded', function() {
             const categoryItems = document.querySelectorAll('.faq-category-item');
             const faqCategories = document.querySelectorAll('.faq-custom-category');
@@ -695,11 +657,11 @@
                 item.addEventListener('click', function() {
                     const category = this.dataset.category;
                     
-                    // ¸üÐÂ·ÖÀà×´Ì¬
+                    // æ›´æ–°åˆ†ç±»çŠ¶æ€
                     categoryItems.forEach(ci => ci.classList.remove('active'));
                     this.classList.add('active');
                     
-                    // ÏÔÊ¾/Òþ²ØFAQ·ÖÀà
+                    // æ˜¾ç¤º/éšè—FAQåˆ†ç±»
                     if (category === 'all') {
                         faqCategories.forEach(fc => {
                             fc.style.display = 'block';
@@ -732,46 +694,46 @@
     
         <!-- CMS Editor -->
     <script>
-        // ¼ì²éÊÇ·ñÐèÒª¼ÓÔØ±à¼­Æ÷
+        // æ£€æŸ¥æ˜¯å¦éœ€è¦åŠ è½½ç¼–è¾‘å™¨
         (function() {
-            console.log('[CMS] ³õÊ¼»¯¼ì²é...');
+            console.log('[CMS] åˆå§‹åŒ–æ£€æŸ¥...');
             
             const urlParams = new URLSearchParams(window.location.search);
             const isEditMode = urlParams.get('edit') === 'true';
             const isLoggedIn = localStorage.getItem('cms_logged_in') === 'true';
             
-            console.log('[CMS] ±à¼­Ä£Ê½:', isEditMode);
-            console.log('[CMS] µÇÂ¼×´Ì¬:', isLoggedIn);
+            console.log('[CMS] ç¼–è¾‘æ¨¡å¼:', isEditMode);
+            console.log('[CMS] ç™»å½•çŠ¶æ€:', isLoggedIn);
             
             if (isEditMode && isLoggedIn) {
-                console.log('[CMS] ¿ªÊ¼¼ÓÔØ±à¼­Æ÷...');
+                console.log('[CMS] å¼€å§‹åŠ è½½ç¼–è¾‘å™¨...');
                 
-                // ¼ÓÔØ±à¼­Æ÷ÑùÊ½
+                // åŠ è½½ç¼–è¾‘å™¨æ ·å¼
                 const editorCss = document.createElement('link');
                 editorCss.rel = 'stylesheet';
                 editorCss.href = 'admin/editor.css';
                 editorCss.onerror = function() {
-                    console.error('[CMS] ±à¼­Æ÷ÑùÊ½¼ÓÔØÊ§°Ü');
+                    console.error('[CMS] ç¼–è¾‘å™¨æ ·å¼åŠ è½½å¤±è´¥');
                 };
                 document.head.appendChild(editorCss);
                 
-                // ¼ÓÔØ±à¼­Æ÷½Å±¾
+                // åŠ è½½ç¼–è¾‘å™¨è„šæœ¬
                 const editorScript = document.createElement('script');
                 editorScript.src = 'admin/editor.js';
                 editorScript.onload = function() {
-                    console.log('[CMS] ±à¼­Æ÷½Å±¾¼ÓÔØ³É¹¦');
+                    console.log('[CMS] ç¼–è¾‘å™¨è„šæœ¬åŠ è½½æˆåŠŸ');
                 };
                 editorScript.onerror = function() {
-                    console.error('[CMS] ±à¼­Æ÷½Å±¾¼ÓÔØÊ§°Ü');
+                    console.error('[CMS] ç¼–è¾‘å™¨è„šæœ¬åŠ è½½å¤±è´¥');
                 };
                 document.body.appendChild(editorScript);
             } else if (isEditMode && !isLoggedIn) {
-                console.log('[CMS] Î´µÇÂ¼£¬ÖØ¶¨Ïòµ½µÇÂ¼Ò³');
+                console.log('[CMS] æœªç™»å½•ï¼Œé‡å®šå‘åˆ°ç™»å½•é¡µ');
                 window.location.href = 'admin/login.html?redirect=' + encodeURIComponent(window.location.href);
             }
         })();
 
-        // ÁªÏµÎÒÃÇ°´Å¥½»»¥£ºµã»÷°´Å¥¡ú°´Å¥Òþ²Ø£¬½öÏÔÊ¾ºÅÂë£»µã»÷Ò³Ãæ¿Õ°×´¦¡úºÅÂëÒþ²Ø£¬°´Å¥»Ö¸´
+        // è”ç³»æˆ‘ä»¬æŒ‰é’®äº¤äº’ï¼šç‚¹å‡»æŒ‰é’®â†’æŒ‰é’®éšè—ï¼Œä»…æ˜¾ç¤ºå·ç ï¼›ç‚¹å‡»é¡µé¢ç©ºç™½å¤„â†’å·ç éšè—ï¼ŒæŒ‰é’®æ¢å¤
         (function() {
             const btn = document.getElementById('faqConsultBtn');
             const phone = document.getElementById('faqPhoneDisplay');
@@ -780,7 +742,7 @@
             let isPhoneVisible = false;
 
             btn.addEventListener('click', function(e) {
-                e.stopPropagation(); // ×èÖ¹ÊÂ¼þÃ°ÅÝ£¬±ÜÃâ´¥·¢documentµÄµã»÷´¦Àí
+                e.stopPropagation(); // é˜»æ­¢äº‹ä»¶å†’æ³¡ï¼Œé¿å…è§¦å‘documentçš„ç‚¹å‡»å¤„ç†
                 btn.style.display = 'none';
                 phone.style.display = 'inline';
                 isPhoneVisible = true;
@@ -788,17 +750,16 @@
 
             document.addEventListener('click', function(e) {
                 if (!isPhoneVisible) return;
-                // µã»÷·¢ÉúÔÚcontact-button-wrapperÄÚ²¿Ê±²»´¦Àí£¨ÒÑÔÚbtnµã»÷Ê±×è¶ÏÁË£©
+                // ç‚¹å‡»å‘ç”Ÿåœ¨contact-button-wrapperå†…éƒ¨æ—¶ä¸å¤„ç†ï¼ˆå·²åœ¨btnç‚¹å‡»æ—¶é˜»æ–­äº†ï¼‰
                 const wrapper = document.querySelector('.contact-button-wrapper');
                 if (wrapper && wrapper.contains(e.target)) return;
                 
                 phone.style.display = 'none';
-                btn.style.display = ''; // »Ö¸´Ä¬ÈÏdisplay£¨ÓÉCSSÀà¿ØÖÆ£©
+                btn.style.display = ''; // æ¢å¤é»˜è®¤displayï¼ˆç”±CSSç±»æŽ§åˆ¶ï¼‰
                 isPhoneVisible = false;
             });
         })();
     </script>
-    <script src="admin/assets/cms.js"></script>
 </body>
 </html>
 

@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yao×Ê½ğÍøÍøÕ¾µØÍ¼£¬¿ìËÙµ¼º½µ½ÍøÕ¾µÄ¸÷¸öÒ³Ãæ¡£">
+    <meta name="description" content="Yaoèµ„é‡‘ç½‘ç½‘ç«™åœ°å›¾ï¼Œå¿«é€Ÿå¯¼èˆªåˆ°ç½‘ç«™çš„å„ä¸ªé¡µé¢ã€‚">
     <meta name="robots" content="noindex, follow">
-    <title>ÍøÕ¾µØÍ¼ - Yao×Ê½ğÍø</title>
+    <title>ç½‘ç«™åœ°å›¾ - Yaoèµ„é‡‘ç½‘</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
         .sitemap-page {
@@ -131,7 +131,7 @@
             }
         }
     </style>
-    <!-- Logo¶¯Ì¬¼ÓÔØ -->
+    <!-- LogoåŠ¨æ€åŠ è½½ -->
     <script>
     (function(){
         var xhr=new XMLHttpRequest();
@@ -217,62 +217,62 @@
 </script>
 </head>
 <body>
-    <!-- ¼ò»¯µ¼º½ -->
+    <!-- ç®€åŒ–å¯¼èˆª -->
     <nav class="navbar" style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-light);">
         <div class="navbar-container">
-<a href="index.html" class="logo" aria-label="Yao×Ê½ğÍøÊ×Ò³"><img src="images/logo.png?v=20260502040820" alt="Yao×Ê½ğÍø" style="height:48px;width:auto;"></a>
-            <a href="index.html" class="btn btn-outline">·µ»ØÊ×Ò³</a>
+<a href="index.html" class="logo" aria-label="Yaoèµ„é‡‘ç½‘é¦–é¡µ"><img src="images/logo.png?v=20260502040820" alt="Yaoèµ„é‡‘ç½‘" style="height:48px;width:auto;"></a>
+            <a href="index.html" class="btn btn-outline">è¿”å›é¦–é¡µ</a>
         </div>
     </nav>
 
     <main class="sitemap-page">
         <div class="sitemap-container">
             <header class="sitemap-header">
-                <h1 class="sitemap-title">ÍøÕ¾µØÍ¼</h1>
+                <h1 class="sitemap-title">ç½‘ç«™åœ°å›¾</h1>
             </header>
             
             <div class="sitemap-content">
                 <section class="sitemap-section">
                     <h2 class="sitemap-category">
                         <i class="fas fa-home"></i>
-                        Ö÷ÒªÒ³Ãæ
+                        ä¸»è¦é¡µé¢
                     </h2>
                     <div class="sitemap-list">
                         <a href="index.html" class="sitemap-item">
                             <i class="fas fa-chevron-right"></i>
-                            <span class="sitemap-link">Ê×Ò³</span>
+                            <span class="sitemap-link">é¦–é¡µ</span>
                         </a>
                         <a href="index.html#services" class="sitemap-item">
                             <i class="fas fa-chevron-right"></i>
-                            <span class="sitemap-link">ÒµÎñ·¶Î§</span>
+                            <span class="sitemap-link">ä¸šåŠ¡èŒƒå›´</span>
                         </a>
                         <a href="index.html#cases" class="sitemap-item">
                             <i class="fas fa-chevron-right"></i>
-                            <span class="sitemap-link">³É¹¦°¸Àı</span>
+                            <span class="sitemap-link">æˆåŠŸæ¡ˆä¾‹</span>
                         </a>
                         <a href="index.html#advantages" class="sitemap-item">
                             <i class="fas fa-chevron-right"></i>
-                            <span class="sitemap-link">·şÎñÓÅÊÆ</span>
+                            <span class="sitemap-link">æœåŠ¡ä¼˜åŠ¿</span>
                         </a>
                         <a href="index.html#about" class="sitemap-item">
                             <i class="fas fa-chevron-right"></i>
-                            <span class="sitemap-link">¹ØÓÚÎÒÃÇ</span>
+                            <span class="sitemap-link">å…³äºæˆ‘ä»¬</span>
                         </a>
                         <a href="index.html#testimonials" class="sitemap-item">
                             <i class="fas fa-chevron-right"></i>
-                            <span class="sitemap-link">¿Í»§ÆÀ¼Û</span>
+                            <span class="sitemap-link">å®¢æˆ·è¯„ä»·</span>
                         </a>
                         <a href="index.html#news" class="sitemap-item">
                             <i class="fas fa-chevron-right"></i>
-                            <span class="sitemap-link">ĞĞÒµ×ÊÑ¶</span>
+                            <span class="sitemap-link">è¡Œä¸šèµ„è®¯</span>
                         </a>
                         <a href="index.html#faq" class="sitemap-item">
                             <i class="fas fa-chevron-right"></i>
-                            <span class="sitemap-link">³£¼ûÎÊÌâ</span>
+                            <span class="sitemap-link">å¸¸è§é—®é¢˜</span>
                         </a>
                         <a href="index.html#contact" class="sitemap-item">
                             <i class="fas fa-chevron-right"></i>
-                            <span class="sitemap-link">ÁªÏµÎÒÃÇ</span>
+                            <span class="sitemap-link">è”ç³»æˆ‘ä»¬</span>
                         </a>
                     </div>
                 </section>
@@ -280,24 +280,24 @@
                 <section class="sitemap-section">
                     <h2 class="sitemap-category">
                         <i class="fas fa-briefcase"></i>
-                        ÒµÎñÏêÇé
+                        ä¸šåŠ¡è¯¦æƒ…
                     </h2>
                     <div class="sitemap-list">
                         <a href="index.html#services" class="sitemap-item">
                             <i class="fas fa-chevron-right"></i>
-                            <span class="sitemap-link">ÉÏÊĞ¹«Ë¾ÀàÒµÎñ</span>
+                            <span class="sitemap-link">ä¸Šå¸‚å…¬å¸ç±»ä¸šåŠ¡</span>
                         </a>
                         <a href="index.html#services" class="sitemap-item">
                             <i class="fas fa-chevron-right"></i>
-                            <span class="sitemap-link">ÆóÒµ/¸öÈË°ÚÕË</span>
+                            <span class="sitemap-link">ä¼ä¸š/ä¸ªäººæ‘†è´¦</span>
                         </a>
                         <a href="index.html#services" class="sitemap-item">
                             <i class="fas fa-chevron-right"></i>
-                            <span class="sitemap-link">ÒøĞĞ´æ¿îÀàÒµÎñ</span>
+                            <span class="sitemap-link">é“¶è¡Œå­˜æ¬¾ç±»ä¸šåŠ¡</span>
                         </a>
                         <a href="index.html#services" class="sitemap-item">
                             <i class="fas fa-chevron-right"></i>
-                            <span class="sitemap-link">Ó¦ÊÕÕË¿îÈÚ×Ê</span>
+                            <span class="sitemap-link">åº”æ”¶è´¦æ¬¾èèµ„</span>
                         </a>
                     </div>
                 </section>
@@ -305,20 +305,20 @@
                 <section class="sitemap-section">
                     <h2 class="sitemap-category">
                         <i class="fas fa-file-alt"></i>
-                        ·¨ÂÉºÏ¹æ
+                        æ³•å¾‹åˆè§„
                     </h2>
                     <div class="sitemap-list">
                         <a href="privacy.html" class="sitemap-item">
                             <i class="fas fa-chevron-right"></i>
-                            <span class="sitemap-link">ÒşË½Õş²ß</span>
+                            <span class="sitemap-link">éšç§æ”¿ç­–</span>
                         </a>
                         <a href="compliance.html" class="sitemap-item">
                             <i class="fas fa-chevron-right"></i>
-                            <span class="sitemap-link">ºÏ¹æÉùÃ÷</span>
+                            <span class="sitemap-link">åˆè§„å£°æ˜</span>
                         </a>
                         <a href="sitemap.html" class="sitemap-item">
                             <i class="fas fa-chevron-right"></i>
-                            <span class="sitemap-link">ÍøÕ¾µØÍ¼</span>
+                            <span class="sitemap-link">ç½‘ç«™åœ°å›¾</span>
                         </a>
                     </div>
                 </section>
@@ -326,93 +326,56 @@
             
             <a href="index.html" class="back-link">
                 <i class="fas fa-arrow-left"></i>
-                ·µ»ØÊ×Ò³
+                è¿”å›é¦–é¡µ
             </a>
         </div>
     </main>
 
-    <!-- ¼ò»¯Ò³½Å -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-main">
-                <div class="footer-brand">
-                    <div class="footer-logo"><img src="images/logo.png?v=20260502041100" alt="Yao×Ê½ğÍø" style="height:48px;width:auto;"></div>
-                    <p class="footer-desc">×¨Òµ×Ê½ğÒµÎñ·şÎñÉÌ£¬Ìá¹©ÉÏÊĞ¹«Ë¾¹ıÇÅ¡¢ÆóÒµ°ÚÕË¡¢ÒøĞĞ´æ¿î¡¢Ó¦ÊÕÕË¿îÈÚ×ÊµÈÈ«·½Î»×Ê½ğ·şÎñ</p>
-                </div>
-                <div class="footer-nav">
-                    <h4 class="footer-nav-title">¿ìËÙµ¼º½</h4>
-                    <ul class="footer-nav-list">
-                        <li><a href="index.html">Ê×Ò³</a></li>
-                        <li><a href="services.html">ÒµÎñ·¶Î§</a></li>
-                        <li><a href="cases.html">³É¹¦°¸Àı</a></li>
-                        <li><a href="advantages.html">ºËĞÄÓÅÊÆ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-nav">
-                    <h4 class="footer-nav-title">¸ü¶àĞÅÏ¢</h4>
-                    <ul class="footer-nav-list">
-                        <li><a href="news.html">ĞĞÒµ×ÊÑ¶</a></li>
-                        <li><a href="faq.html">³£¼ûÎÊÌâ</a></li>
-                        <li><a href="contact.html">ÁªÏµÎÒÃÇ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-nav">
-                    <h4 class="footer-nav-title">ÁªÏµ·½Ê½</h4>
-                    <ul class="footer-nav-list">
-                        <li><i class="fas fa-phone"></i> 13552883008</li>
-                        <li><i class="fas fa-user"></i> Íõ×Ü</li>
-                        <li><i class="fas fa-envelope"></i> wanglizhongguo@126.com</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2014-2024 Yao×Ê½ğÍø °æÈ¨ËùÓĞ</p>
-            </div>
-        </div>
-    </footer>
+    <!-- ç®€åŒ–é¡µè„š -->
+<?php include 'includes/footer.php'; ?>
+
     
         <!-- CMS Editor -->
     <script>
-        // ¼ì²éÊÇ·ñĞèÒª¼ÓÔØ±à¼­Æ÷
+        // æ£€æŸ¥æ˜¯å¦éœ€è¦åŠ è½½ç¼–è¾‘å™¨
         (function() {
-            console.log('[CMS] ³õÊ¼»¯¼ì²é...');
+            console.log('[CMS] åˆå§‹åŒ–æ£€æŸ¥...');
             
             const urlParams = new URLSearchParams(window.location.search);
             const isEditMode = urlParams.get('edit') === 'true';
             const isLoggedIn = localStorage.getItem('cms_logged_in') === 'true';
             
-            console.log('[CMS] ±à¼­Ä£Ê½:', isEditMode);
-            console.log('[CMS] µÇÂ¼×´Ì¬:', isLoggedIn);
+            console.log('[CMS] ç¼–è¾‘æ¨¡å¼:', isEditMode);
+            console.log('[CMS] ç™»å½•çŠ¶æ€:', isLoggedIn);
             
             if (isEditMode && isLoggedIn) {
-                console.log('[CMS] ¿ªÊ¼¼ÓÔØ±à¼­Æ÷...');
+                console.log('[CMS] å¼€å§‹åŠ è½½ç¼–è¾‘å™¨...');
                 
-                // ¼ÓÔØ±à¼­Æ÷ÑùÊ½
+                // åŠ è½½ç¼–è¾‘å™¨æ ·å¼
                 const editorCss = document.createElement('link');
                 editorCss.rel = 'stylesheet';
                 editorCss.href = 'admin/editor.css';
                 editorCss.onerror = function() {
-                    console.error('[CMS] ±à¼­Æ÷ÑùÊ½¼ÓÔØÊ§°Ü');
+                    console.error('[CMS] ç¼–è¾‘å™¨æ ·å¼åŠ è½½å¤±è´¥');
                 };
                 document.head.appendChild(editorCss);
                 
-                // ¼ÓÔØ±à¼­Æ÷½Å±¾
+                // åŠ è½½ç¼–è¾‘å™¨è„šæœ¬
                 const editorScript = document.createElement('script');
                 editorScript.src = 'admin/editor.js';
                 editorScript.onload = function() {
-                    console.log('[CMS] ±à¼­Æ÷½Å±¾¼ÓÔØ³É¹¦');
+                    console.log('[CMS] ç¼–è¾‘å™¨è„šæœ¬åŠ è½½æˆåŠŸ');
                 };
                 editorScript.onerror = function() {
-                    console.error('[CMS] ±à¼­Æ÷½Å±¾¼ÓÔØÊ§°Ü');
+                    console.error('[CMS] ç¼–è¾‘å™¨è„šæœ¬åŠ è½½å¤±è´¥');
                 };
                 document.body.appendChild(editorScript);
             } else if (isEditMode && !isLoggedIn) {
-                console.log('[CMS] Î´µÇÂ¼£¬ÖØ¶¨Ïòµ½µÇÂ¼Ò³');
+                console.log('[CMS] æœªç™»å½•ï¼Œé‡å®šå‘åˆ°ç™»å½•é¡µ');
                 window.location.href = 'admin/login.html?redirect=' + encodeURIComponent(window.location.href);
             }
         })();
     </script>
-    <script src="admin/assets/cms.js"></script>
 </body>
 </html>
 

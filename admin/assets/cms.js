@@ -1,4 +1,4 @@
-/**
+﻿/**
  * CMS数据集成脚本
  * 从JSON数据文件加载内容并应用到页面
  */
@@ -123,10 +123,72 @@
         return mappings[pageId] || [];
     }
 
+    // 加载页脚数据
+    async function loadFooter() {
+        try {
+            const resp = await fetch('admin/api/footer-data.php');
+            const result = await resp.json();
+            if (result.code !== 0 || !result.grouped) return;
+            const g = result.grouped;
+
+            // 品牌描述
+            const descEl = document.querySelector('.footer-desc');
+            if (descEl && g.brand) {
+                const descItem = g.brand.find(i => i.item_key === 'company_desc');
+                if (descItem && descItem.item_value) descEl.textContent = descItem.item_value;
+            }
+
+            // 快速链接
+            const quickNav = document.querySelector('.footer-nav[data-footer-group="quick_links"] .footer-nav-list');
+            if (quickNav && g.quick_links) {
+                quickNav.innerHTML = g.quick_links.map(link =>
+                    `<li><a href="${link.item_url || '#'}">${link.item_value || link.item_label}</a></li>`
+                ).join('');
+            }
+
+            // 业务链接（更多内容）
+            const svcNav = document.querySelector('.footer-nav[data-footer-group="service_links"] .footer-nav-list');
+            if (svcNav && g.service_links && g.service_links.length > 0) {
+                svcNav.innerHTML = g.service_links.map(link =>
+                    `<li><a href="${link.item_url || '#'}">${link.item_value || link.item_label}</a></li>`
+                ).join('');
+            }
+
+            // 联系方式
+            const contactNav = document.querySelector('.footer-nav[data-footer-group="contact"] .footer-nav-list');
+            if (contactNav && g.contact) {
+                contactNav.innerHTML = g.contact.map(item => {
+                    const icon = item.item_key === 'phone' ? 'fa-phone' :
+                                item.item_key === 'contact_person' ? 'fa-user' :
+                                item.item_key === 'email' ? 'fa-envelope' : 'fa-circle';
+                    return `<li><i class="fas ${icon}"></i> ${item.item_value || ''}</li>`;
+                }).join('');
+            }
+
+            // 底部信息
+            const copyrightEl = document.querySelector('.footer-copyright');
+            if (copyrightEl && g.bottom) {
+                const cr = g.bottom.find(i => i.item_key === 'copyright_text');
+                if (cr && cr.item_value) copyrightEl.innerHTML = cr.item_value;
+            }
+            const disclaimerEl = document.querySelector('.footer-disclaimer');
+            if (disclaimerEl && g.bottom) {
+                const ds = g.bottom.find(i => i.item_key === 'disclaimer_text');
+                if (ds && ds.item_value) disclaimerEl.textContent = ds.item_value;
+            }
+
+            console.log('[CMS] 页脚数据已同步');
+        } catch (e) {
+            console.log('[CMS] 加载页脚失败:', e);
+        }
+    }
+
     // 页面加载完成后执行
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadCMSData);
+        document.addEventListener('DOMContentLoaded', () => { loadCMSData(); loadFooter(); });
     } else {
         loadCMSData();
+        loadFooter();
     }
 })();
+

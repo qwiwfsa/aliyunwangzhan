@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yao�ʽ�����˽���ߣ�˵����������ռ���ʹ�úͱ������ĸ�����Ϣ��">
+    <meta name="description" content="Yao资金网合规声明，说明我们的业务合规性、风险提示和法律声明。">
     <meta name="robots" content="noindex, follow">
-    <title>��˽���� - Yao�ʽ���</title>
+    <title>合规声明 - Yao资金网</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
         .legal-page {
@@ -88,6 +88,27 @@
             margin-bottom: 8px;
         }
         
+        .risk-warning {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        
+        .risk-warning h3 {
+            color: #92400e;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .risk-warning p,
+        .risk-warning li {
+            color: #78350f;
+        }
+        
         .back-link {
             display: inline-flex;
             align-items: center;
@@ -115,7 +136,7 @@
             }
         }
     </style>
-    <!-- Logo��̬���� -->
+    <!-- Logo动态加载 -->
     <script>
     (function(){
         var xhr=new XMLHttpRequest();
@@ -201,219 +222,194 @@
 </script>
 </head>
 <body>
-    <!-- �򻯵��� -->
+    <!-- 简化导航 -->
     <nav class="navbar" style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-light);">
         <div class="navbar-container">
-<a href="index.html" class="logo" aria-label="Yao�ʽ�����ҳ"><img src="images/logo.png?v=20260502040820" alt="Yao�ʽ���" style="height:48px;width:auto;"></a>
-            <a href="index.html" class="btn btn-outline">������ҳ</a>
+<a href="index.html" class="logo" aria-label="Yao资金网首页"><img src="images/logo.png?v=20260502040820" alt="Yao资金网" style="height:48px;width:auto;"></a>
+            <a href="index.html" class="btn btn-outline">返回首页</a>
         </div>
     </nav>
 
     <main class="legal-page">
         <div class="legal-container">
             <header class="legal-header">
-                <h1 class="legal-title">��˽����</h1>
-                <p class="legal-date">���������ڣ�2024��4��20��</p>
+                <h1 class="legal-title">合规声明</h1>
+                <p class="legal-date">最后更新日期：2024年4月20日</p>
             </header>
             
             <article class="legal-content">
                 <section class="legal-section">
-                    <h2>����</h2>
-                    <p>Yao�ʽ��������¼��"����"��"��˾"���߶������û�����˽����������˽����ּ������˵����������ռ���ʹ�á��洢�ͱ������ĸ�����Ϣ��������ʹ�����ǵķ���ǰ��ϸ�Ķ������ߡ�</p>
-                    <p>ʹ�����ǵķ��񼴱�ʾ��ͬ�Ȿ��˽���ߵ�����������ͬ�Ȿ���ߵ��κ����ݣ���ֹͣʹ�����ǵķ���</p>
+                    <h2>合规经营承诺</h2>
+                    <p>Yao资金网严格遵守中华人民共和国相关法律法规，包括但不限于《中华人民共和国公司法》、《中华人民共和国合同法》、《中华人民共和国反洗钱法》等，坚持合规经营，规范运作。</p>
+                    <p>我们承诺：</p>
+                    <ul>
+                        <li>所有业务活动均在法律框架内进行</li>
+                        <li>严格遵守金融监管部门的各项规定</li>
+                        <li>建立完善的内部合规管理制度</li>
+                        <li>定期接受合规培训和审查</li>
+                        <li>积极配合监管部门的检查和指导</li>
+                    </ul>
                 </section>
 
                 <section class="legal-section">
-                    <h2>��Ϣ�ռ�</h2>
-                    <p>���ǿ���������������ռ����ĸ�����Ϣ��</p>
+                    <h2>业务范围说明</h2>
+                    <p>Yao资金网主要从事以下业务：</p>
                     <ul>
-                        <li>����ͨ����վ�������绰���ʼ���������ʽ��ϵ����ʱ</li>
-                        <li>������ѯ���ǵķ��������ҵ�����ʱ</li>
-                        <li>�����������ǵ���Ѷ��μ����ǵĻʱ</li>
-                        <li>����ʹ�����ǵ���վ����ʱ��ͨ��cookies�ȼ����Զ��ռ���</li>
+                        <li>企业资金咨询与信息服务</li>
+                        <li>过桥资金撮合服务</li>
+                        <li>企业财务顾问服务</li>
+                        <li>资金业务信息中介服务</li>
+                    </ul>
+                    <p><strong>重要声明：</strong>我们不从事吸收公众存款、发放贷款等需经金融监管部门批准的业务。我们提供的是资金业务咨询和信息服务，具体资金往来由合作金融机构或资金方与客户直接进行。</p>
+                </section>
+
+                <div class="risk-warning">
+                    <h3><i class="fas fa-exclamation-triangle"></i> 风险提示</h3>
+                    <p>使用我们的服务前，请您充分了解以下风险：</p>
+                    <ul>
+                        <li><strong>市场风险</strong>：资金业务受宏观经济、金融市场等多种因素影响，存在市场波动风险</li>
+                        <li><strong>信用风险</strong>：交易对手可能存在违约风险</li>
+                        <li><strong>流动性风险</strong>：资金安排可能因各种原因无法按时到位</li>
+                        <li><strong>政策风险</strong>：相关法律法规和政策可能发生变化</li>
+                        <li><strong>操作风险</strong>：业务流程中可能存在操作失误风险</li>
+                    </ul>
+                    <p><strong>请您根据自身风险承受能力谨慎决策，切勿超出自身承受能力进行交易。</strong></p>
+                </div>
+
+                <section class="legal-section">
+                    <h2>客户准入标准</h2>
+                    <p>为确保业务合规和风险可控，我们对客户实行严格的准入管理：</p>
+                    
+                    <h3>企业客户</h3>
+                    <ul>
+                        <li>依法设立并有效存续的企业法人</li>
+                        <li>具有真实的业务背景和资金需求</li>
+                        <li>信用状况良好，无重大不良记录</li>
+                        <li>具备相应的还款能力和资金来源</li>
+                        <li>能够提供真实、完整、有效的资料</li>
                     </ul>
                     
-                    <h3>�ռ�����Ϣ����</h3>
+                    <h3>禁止性规定</h3>
+                    <p>我们不为以下情形提供服务：</p>
                     <ul>
-                        <li><strong>��ϵ��Ϣ</strong>���������绰���롢�������䡢��˾���ơ�ְλ��</li>
-                        <li><strong>ҵ����Ϣ</strong>����ҵ���͡��ʽ�����ҵ�����͵�</li>
-                        <li><strong>������Ϣ</strong>��IP��ַ����������͡�����ʱ�䡢���ҳ���</li>
-                        <li><strong>��ͨ��¼</strong>�������ǵ�ͨ����¼���ʼ���������ѯ���ݵ�</li>
+                        <li>用于非法目的或违反法律法规的资金需求</li>
+                        <li>涉嫌洗钱、恐怖融资等违法活动</li>
+                        <li>提供虚假资料或隐瞒重要事实</li>
+                        <li>被列入失信被执行人名单</li>
+                        <li>其他不符合合规要求的情形</li>
                     </ul>
                 </section>
 
                 <section class="legal-section">
-                    <h2>��Ϣʹ��</h2>
-                    <p>�����ռ����ĸ�����Ϣ��Ҫ��������Ŀ�ģ�</p>
+                    <h2>反洗钱义务</h2>
+                    <p>我们严格遵守《中华人民共和国反洗钱法》及相关法规，履行反洗钱义务：</p>
                     <ul>
-                        <li>Ϊ���ṩ�ʽ�ҵ����ѯ�ͷ���</li>
-                        <li>��������ҵ�����������</li>
-                        <li>������ͨҵ���չ���������</li>
-                        <li>�Ľ����ǵķ����������û�����</li>
-                        <li>���������ܸ���Ȥ����ҵ��Ѷ�ͷ�����Ϣ</li>
-                        <li>���ط��ɷ���ͼ��Ҫ��</li>
-                        <li>�������ǵĺϷ�Ȩ��</li>
+                        <li>建立客户身份识别制度，核实客户身份信息</li>
+                        <li>对大额和可疑交易进行监测和报告</li>
+                        <li>保存客户身份资料和交易记录</li>
+                        <li>配合反洗钱行政主管部门的调查</li>
+                        <li>对员工进行反洗钱培训</li>
                     </ul>
                 </section>
 
                 <section class="legal-section">
-                    <h2>��Ϣ����</h2>
-                    <p>���ǲ�ȡ�ϸ�İ�ȫ��ʩ�������ĸ�����Ϣ��</p>
+                    <h2>信息安全</h2>
+                    <p>我们高度重视客户信息安全：</p>
                     <ul>
-                        <li>ʹ�ü��ܼ����������ݴ��䰲ȫ</li>
-                        <li>�����ϸ���ڲ����ݷ��ʿ����ƶ�</li>
-                        <li>���ڶ�ϵͳ���а�ȫ����©���޸�</li>
-                        <li>��Ա��������˽���������ݰ�ȫ��ѵ</li>
-                        <li>�����������ʱǩ����Э��</li>
+                        <li>采用加密技术保护客户数据传输和存储安全</li>
+                        <li>建立严格的内部信息访问控制制度</li>
+                        <li>与员工签署保密协议，明确保密义务</li>
+                        <li>未经客户授权，不向第三方披露客户信息</li>
+                        <li>定期进行信息安全风险评估</li>
                     </ul>
                 </section>
 
                 <section class="legal-section">
-                    <h2>��Ϣ����</h2>
-                    <p>���ǳ�ŵ�������޹ص������������ĸ�����Ϣ��������������¿��ܹ���������Ϣ��</p>
+                    <h2>免责声明</h2>
+                    <p>本网站及其内容仅供参考，不构成任何投资建议或承诺。我们不对以下情况承担责任：</p>
                     <ul>
-                        <li>���������ȷͬ��</li>
-                        <li>Ϊ�ṩ����������ĺ������������С����ڻ����ȣ�</li>
-                        <li>���ݷ��ɷ�����������ص�Ҫ��</li>
-                        <li>Ϊ�������ǵĺϷ�Ȩ��򹫹���ȫ</li>
+                        <li>因不可抗力导致的服务中断或延迟</li>
+                        <li>因客户提供虚假信息导致的损失</li>
+                        <li>因第三方原因导致的资金损失</li>
+                        <li>因市场波动导致的投资损失</li>
+                        <li>因客户自身决策失误导致的损失</li>
                     </ul>
+                    <p>我们保留随时修改、暂停或终止部分或全部服务的权利，恕不另行通知。</p>
                 </section>
 
                 <section class="legal-section">
-                    <h2>Cookieʹ��</h2>
-                    <p>���ǵ���վʹ��Cookies�����Ƽ����������û����顣Cookies�Ǵ洢�����豸�ϵ�С���ı��ļ������ڣ�</p>
+                    <h2>知识产权</h2>
+                    <p>本网站所有内容（包括但不限于文字、图片、标识、设计等）的知识产权均归Yao资金网所有，受法律保护。未经我们书面许可，任何单位或个人不得擅自使用、复制、修改或传播。</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>争议解决</h2>
+                    <p>因本声明或我们的服务产生的任何争议，双方应首先通过友好协商解决。协商不成的，任何一方均可向Yao资金网所在地有管辖权的人民法院提起诉讼。</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>联系我们</h2>
+                    <p>如果您对本合规声明有任何疑问，或需要了解更详细的合规信息，请通过以下方式联系我们：</p>
                     <ul>
-                        <li>��ס����ƫ������</li>
-                        <li>������վ�������û���Ϊ</li>
-                        <li>�Ż���վ���ܺ�����</li>
-                    </ul>
-                    <p>������ͨ����������þܾ���ɾ��Cookies���������Ӱ����վ��ĳЩ���ܡ�</p>
-                </section>
-
-                <section class="legal-section">
-                    <h2>����Ȩ��</h2>
-                    <p>������ط��ɷ��棬���Ը�����Ϣ��������Ȩ����</p>
-                    <ul>
-                        <li><strong>֪��Ȩ</strong>���˽�������δ������ĸ�����Ϣ</li>
-                        <li><strong>����Ȩ</strong>����ѯ���ǳ��е����ĸ�����Ϣ</li>
-                        <li><strong>����Ȩ</strong>��Ҫ�������׼ȷ�ĸ�����Ϣ</li>
-                        <li><strong>ɾ��Ȩ</strong>�����ض������Ҫ��ɾ�����ĸ�����Ϣ</li>
-                        <li><strong>���ƴ���Ȩ</strong>��Ҫ�����ƶ���������Ϣ�Ĵ���</li>
-                        <li><strong>����Ȩ</strong>���������ǻ��ںϷ����洦��������Ϣ</li>
-                    </ul>
-                    <p>������ʹ����Ȩ������ͨ��������ĩβ����ϵ��ʽ��������ϵ��</p>
-                </section>
-
-                <section class="legal-section">
-                    <h2>��Ϣ����</h2>
-                    <p>���ǽ���ʵ�ֱ���������Ŀ��������������ڱ������ĸ�����Ϣ�����Ƿ���Ҫ������������ı������ޡ������������޺����ǽ���ȫ��ɾ�������������ĸ�����Ϣ��</p>
-                </section>
-
-                <section class="legal-section">
-                    <h2>���߸���</h2>
-                    <p>���ǿ��ܻ᲻ʱ���±���˽���ߡ����º�����߽�����վ�Ϲ�������ע�����������ڡ��ش���ʱ�����ǽ�ͨ���ʵ���ʽ֪ͨ����</p>
-                </section>
-
-                <section class="legal-section">
-                    <h2>��ϵ����</h2>
-                    <p>������Ա���˽�������κ����ʡ������Ͷ�ߣ���ͨ�����·�ʽ��ϵ���ǣ�</p>
-                    <ul>
-                        <li>�绰��13552883008</li>
-                        <li>���䣺wanglizhongguo@126.com</li>
-                        <li>��ַ�������г��������ڽ�88��</li>
+                        <li>电话：13552883008</li>
+                        <li>邮箱：wanglizhongguo@126.com</li>
+                        <li>地址：北京市朝阳区金融街88号</li>
                     </ul>
                 </section>
             </article>
             
             <a href="index.html" class="back-link">
                 <i class="fas fa-arrow-left"></i>
-                ������ҳ
+                返回首页
             </a>
         </div>
     </main>
 
-    <!-- ��ҳ�� -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-main">
-                <div class="footer-brand">
-                    <div class="footer-logo"><img src="images/logo.png?v=20260502041100" alt="Yao�ʽ���" style="height:48px;width:auto;"></div>
-                    <p class="footer-desc">רҵ�ʽ�ҵ������̣��ṩ���й�˾���š���ҵ���ˡ����д�Ӧ���˿����ʵ�ȫ��λ�ʽ����</p>
-                </div>
-                <div class="footer-nav">
-                    <h4 class="footer-nav-title">���ٵ���</h4>
-                    <ul class="footer-nav-list">
-                        <li><a href="index.html">��ҳ</a></li>
-                        <li><a href="services.html">ҵ��Χ</a></li>
-                        <li><a href="cases.html">�ɹ�����</a></li>
-                        <li><a href="advantages.html">��������</a></li>
-                    </ul>
-                </div>
-                <div class="footer-nav">
-                    <h4 class="footer-nav-title">������Ϣ</h4>
-                    <ul class="footer-nav-list">
-                        <li><a href="news.html">��ҵ��Ѷ</a></li>
-                        <li><a href="faq.html">��������</a></li>
-                        <li><a href="contact.html">��ϵ����</a></li>
-                    </ul>
-                </div>
-                <div class="footer-nav">
-                    <h4 class="footer-nav-title">��ϵ��ʽ</h4>
-                    <ul class="footer-nav-list">
-                        <li><i class="fas fa-phone"></i> 13552883008</li>
-                        <li><i class="fas fa-user"></i> ����</li>
-                        <li><i class="fas fa-envelope"></i> wanglizhongguo@126.com</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2014-2024 Yao�ʽ��� ��Ȩ����</p>
-            </div>
-        </div>
-    </footer>
+    <!-- 简化页脚 -->
+<?php include 'includes/footer.php'; ?>
+
     
         <!-- CMS Editor -->
     <script>
-        // ����Ƿ���Ҫ���ر༭��
+        // 检查是否需要加载编辑器
         (function() {
-            console.log('[CMS] ��ʼ�����...');
+            console.log('[CMS] 初始化检查...');
             
             const urlParams = new URLSearchParams(window.location.search);
             const isEditMode = urlParams.get('edit') === 'true';
             const isLoggedIn = localStorage.getItem('cms_logged_in') === 'true';
             
-            console.log('[CMS] �༭ģʽ:', isEditMode);
-            console.log('[CMS] ��¼״̬:', isLoggedIn);
+            console.log('[CMS] 编辑模式:', isEditMode);
+            console.log('[CMS] 登录状态:', isLoggedIn);
             
             if (isEditMode && isLoggedIn) {
-                console.log('[CMS] ��ʼ���ر༭��...');
+                console.log('[CMS] 开始加载编辑器...');
                 
-                // ���ر༭����ʽ
+                // 加载编辑器样式
                 const editorCss = document.createElement('link');
                 editorCss.rel = 'stylesheet';
                 editorCss.href = 'admin/editor.css';
                 editorCss.onerror = function() {
-                    console.error('[CMS] �༭����ʽ����ʧ��');
+                    console.error('[CMS] 编辑器样式加载失败');
                 };
                 document.head.appendChild(editorCss);
                 
-                // ���ر༭���ű�
+                // 加载编辑器脚本
                 const editorScript = document.createElement('script');
                 editorScript.src = 'admin/editor.js';
                 editorScript.onload = function() {
-                    console.log('[CMS] �༭���ű����سɹ�');
+                    console.log('[CMS] 编辑器脚本加载成功');
                 };
                 editorScript.onerror = function() {
-                    console.error('[CMS] �༭���ű�����ʧ��');
+                    console.error('[CMS] 编辑器脚本加载失败');
                 };
                 document.body.appendChild(editorScript);
             } else if (isEditMode && !isLoggedIn) {
-                console.log('[CMS] δ��¼���ض��򵽵�¼ҳ');
+                console.log('[CMS] 未登录，重定向到登录页');
                 window.location.href = 'admin/login.html?redirect=' + encodeURIComponent(window.location.href);
             }
         })();
     </script>
-    <script src="admin/assets/cms.js"></script>
 </body>
 </html>
 
