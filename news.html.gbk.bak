@@ -1,16 +1,16 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Yooèµ„é‡‘ç½‘è¡Œä¸šèµ„è®¯ - äº®èµ„çŸ¥è¯†ã€æ‘†è´¦æµç¨‹ã€èµ„é‡‘è¡Œä¸šæ”¿ç­–ã€ä¼ä¸šèèµ„å¸¸è¯†ã€‚äº†è§£æœ€æ–°è¡Œä¸šåŠ¨æ€ä¸ä¸šåŠ¡èµ„è®¯">
-    <meta name="keywords" content="äº®èµ„çŸ¥è¯†,æ‘†è´¦æµç¨‹,èµ„é‡‘è¡Œä¸šæ”¿ç­–,ä¼ä¸šèèµ„å¸¸è¯†,è¿‡æ¡¥èµ„é‡‘,æ‘†è´¦ä¸šåŠ¡,é“¶è¡Œå­˜æ¬¾,åº”æ”¶è´¦æ¬¾èèµ„">
-    <title>è¡Œä¸šèµ„è®¯ - Yooèµ„é‡‘ç½‘</title>
+    <meta name="description" content="Yoo×Ê½ğÍøĞĞÒµ×ÊÑ¶ - ÁÁ×ÊÖªÊ¶¡¢°ÚÕËÁ÷³Ì¡¢×Ê½ğĞĞÒµÕş²ß¡¢ÆóÒµÈÚ×Ê³£Ê¶¡£ÁË½â×îĞÂĞĞÒµ¶¯Ì¬ÓëÒµÎñ×ÊÑ¶">
+    <meta name="keywords" content="ÁÁ×ÊÖªÊ¶,°ÚÕËÁ÷³Ì,×Ê½ğĞĞÒµÕş²ß,ÆóÒµÈÚ×Ê³£Ê¶,¹ıÇÅ×Ê½ğ,°ÚÕËÒµÎñ,ÒøĞĞ´æ¿î,Ó¦ÊÕÕË¿îÈÚ×Ê">
+    <title>ĞĞÒµ×ÊÑ¶ - Yoo×Ê½ğÍø</title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/page-custom.css">
-    <!-- LogoåŠ¨æ€åŠ è½½ -->
+    <!-- Logo¶¯Ì¬¼ÓÔØ -->
     <script>
     (function(){
         var xhr=new XMLHttpRequest();
@@ -96,27 +96,27 @@
 </script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">è·³è½¬åˆ°ä¸»è¦å†…å®¹</a>
+    <a href="#main-content" class="skip-link">Ìø×ªµ½Ö÷ÒªÄÚÈİ</a>
 
-    <!-- å¯¼èˆªæ  -->
-    <nav class="navbar" id="navbar" role="navigation" aria-label="ä¸»å¯¼èˆª">
+    <!-- µ¼º½À¸ -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Ö÷µ¼º½">
         <div class="navbar-container">
-<a href="index.html" class="logo" aria-label="Yooèµ„é‡‘ç½‘é¦–é¡µ"><img src="images/logo.png?v=20260502040820" alt="Yooèµ„é‡‘ç½‘" style="height:48px;width:auto;"></a>
+<a href="index.html" class="logo" aria-label="Yoo×Ê½ğÍøÊ×Ò³"><img src="images/logo.png?v=20260502040820" alt="Yoo×Ê½ğÍø" style="height:48px;width:auto;"></a>
             <ul class="nav-menu" role="menubar">
-                <li role="none"><a href="index.html" class="nav-link" role="menuitem">é¦–é¡µ</a></li>
-                <li role="none"><a href="services.html" class="nav-link" role="menuitem">ä¸šåŠ¡èŒƒå›´</a></li>
-                <li role="none"><a href="cases.html" class="nav-link" role="menuitem">æˆåŠŸæ¡ˆä¾‹</a></li>
-                <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">æœåŠ¡ä¼˜åŠ¿</a></li>
-                <li role="none"><a href="news.html" class="nav-link active" role="menuitem">è¡Œä¸šèµ„è®¯</a></li>
-                <li role="none"><a href="faq.html" class="nav-link" role="menuitem">å¸¸è§é—®é¢˜</a></li>
-                <li role="none"><a href="contact.html" class="nav-link" role="menuitem">è”ç³»æˆ‘ä»¬</a></li>
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem">Ê×Ò³</a></li>
+                <li role="none"><a href="services.html" class="nav-link" role="menuitem">ÒµÎñ·¶Î§</a></li>
+                <li role="none"><a href="cases.html" class="nav-link" role="menuitem">³É¹¦°¸Àı</a></li>
+                <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">·şÎñÓÅÊÆ</a></li>
+                <li role="none"><a href="news.html" class="nav-link active" role="menuitem">ĞĞÒµ×ÊÑ¶</a></li>
+                <li role="none"><a href="faq.html" class="nav-link" role="menuitem">³£¼ûÎÊÌâ</a></li>
+                <li role="none"><a href="contact.html" class="nav-link" role="menuitem">ÁªÏµÎÒÃÇ</a></li>
             </ul>
 
-            <button class="search-toggle" id="searchToggle" aria-label="æ‰“å¼€æœç´¢" aria-expanded="false">
+            <button class="search-toggle" id="searchToggle" aria-label="´ò¿ªËÑË÷" aria-expanded="false">
                 <i class="fas fa-search" aria-hidden="true"></i>
             </button>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="æ‰“å¼€èœå•" aria-expanded="false">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="´ò¿ª²Ëµ¥" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -125,95 +125,95 @@
     </nav>
 
     <main id="main-content">
-        <!-- é¡µé¢æ ‡é¢˜åŒº -->
+        <!-- Ò³Ãæ±êÌâÇø -->
         <section class="page-header">
             <div class="page-header-container">
                 <div class="page-header-badge">
                     <i class="fas fa-newspaper"></i>
                     <span>NEWS & INSIGHTS</span>
                 </div>
-                <h1 class="page-header-title">è¡Œä¸šèµ„è®¯</h1>
-                <p class="page-header-subtitle">äº†è§£æœ€æ–°è¡Œä¸šåŠ¨æ€ä¸ä¸šåŠ¡èµ„è®¯</p>
+                <h1 class="page-header-title">ĞĞÒµ×ÊÑ¶</h1>
+                <p class="page-header-subtitle">ÁË½â×îĞÂĞĞÒµ¶¯Ì¬ÓëÒµÎñ×ÊÑ¶</p>
             </div>
         </section>
 
-        <!-- èµ„è®¯å†…å®¹ - å¯ç¼–è¾‘åŒºåŸŸ -->
+        <!-- ×ÊÑ¶ÄÚÈİ - ¿É±à¼­ÇøÓò -->
         <section class="page-content">
             <div class="section-container">
                 
-                <!-- èµ„è®¯åˆ†ç±» -->
+                <!-- ×ÊÑ¶·ÖÀà -->
                 <div class="editable-section" data-section="news-categories">
                     <div class="news-categories" id="newsCategories">
-                        <a href="#" class="news-category active" data-cat-id="0">å…¨éƒ¨èµ„è®¯</a>
-                        <!-- åˆ†ç±»å°†é€šè¿‡JSåŠ¨æ€åŠ è½½ -->
+                        <a href="#" class="news-category active" data-cat-id="0">È«²¿×ÊÑ¶</a>
+                        <!-- ·ÖÀà½«Í¨¹ıJS¶¯Ì¬¼ÓÔØ -->
                     </div>
                 </div>
 
-                <!-- ç²¾é€‰èµ„è®¯ï¼ˆå¤§å›¾å±•ç¤ºï¼‰ -->
+                <!-- ¾«Ñ¡×ÊÑ¶£¨´óÍ¼Õ¹Ê¾£© -->
                 <div class="editable-section" data-section="news-featured">
                     <div class="news-featured-grid">
-                        <!-- ç²¾é€‰èµ„è®¯å¡ç‰‡å·²åˆ é™¤ -->
+                        <!-- ¾«Ñ¡×ÊÑ¶¿¨Æ¬ÒÑÉ¾³ı -->
                     </div>
                 </div>
 
-                <!-- èµ„è®¯åˆ—è¡¨ - å¡ç‰‡å¼è®¾è®¡ -->
+                <!-- ×ÊÑ¶ÁĞ±í - ¿¨Æ¬Ê½Éè¼Æ -->
                 <div class="editable-section" data-section="news-list">
                     <div class="news-list-container">
-                        <!-- èµ„è®¯æ–‡ç«  1 -->
+                        <!-- ×ÊÑ¶ÎÄÕÂ 1 -->
                         <article class="news-card">
                             <div class="news-thumb">
-                                <img src="images/news/news-1.jpg" alt="äº®èµ„ä¸šåŠ¡">
+                                <img src="images/news/news-1.jpg" alt="ÁÁ×ÊÒµÎñ">
                             </div>
                             <div class="news-content">
-                                <h3><a href="news-detail-1.html">äº®èµ„ä¸šåŠ¡åŠ©åŠ›ä¼ä¸šå±•ç¤ºèµ„é‡‘å®åŠ›</a></h3>
-                                <p class="news-excerpt">äº®èµ„ä¸šåŠ¡æ˜¯ä¼ä¸šåœ¨æŠ•æ ‡ã€éªŒèµ„ã€å®¡è®¡ç­‰åœºæ™¯ä¸‹å±•ç¤ºèµ„é‡‘å®åŠ›çš„é‡è¦æ–¹å¼ã€‚æœ¬æ–‡è¯¦ç»†ä»‹ç»äº®èµ„ä¸šåŠ¡çš„åº”ç”¨åœºæ™¯ä¸æ“ä½œè¦ç‚¹...</p>
+                                <h3><a href="news-detail-1.html">ÁÁ×ÊÒµÎñÖúÁ¦ÆóÒµÕ¹Ê¾×Ê½ğÊµÁ¦</a></h3>
+                                <p class="news-excerpt">ÁÁ×ÊÒµÎñÊÇÆóÒµÔÚÍ¶±ê¡¢Ñé×Ê¡¢Éó¼ÆµÈ³¡¾°ÏÂÕ¹Ê¾×Ê½ğÊµÁ¦µÄÖØÒª·½Ê½¡£±¾ÎÄÏêÏ¸½éÉÜÁÁ×ÊÒµÎñµÄÓ¦ÓÃ³¡¾°Óë²Ù×÷Òªµã...</p>
                                 <div class="news-footer">
-                                    <a href="news-detail-1.html" class="news-more">æŸ¥çœ‹æ›´å¤š â†’</a>
+                                    <a href="news-detail-1.html" class="news-more">²é¿´¸ü¶à ¡ú</a>
                                     <time class="news-date">2024-04-05</time>
                                 </div>
                             </div>
                         </article>
 
-                        <!-- èµ„è®¯æ–‡ç«  2 -->
+                        <!-- ×ÊÑ¶ÎÄÕÂ 2 -->
                         <article class="news-card">
                             <div class="news-thumb">
-                                <img src="images/news/news-2.jpg" alt="è¿‡æ¡¥èµ„é‡‘">
+                                <img src="images/news/news-2.jpg" alt="¹ıÇÅ×Ê½ğ">
                             </div>
                             <div class="news-content">
-                                <h3><a href="news-detail-2.html">è¿‡æ¡¥èµ„é‡‘ï¼šä¼ä¸šçŸ­æœŸèèµ„çš„æœ€ä½³é€‰æ‹©</a></h3>
-                                <p class="news-excerpt">è¿‡æ¡¥èµ„é‡‘æ˜¯è§£å†³ä¼ä¸šçŸ­æœŸèµ„é‡‘å‘¨è½¬é—®é¢˜çš„æœ‰æ•ˆå·¥å…·ã€‚æœ¬æ–‡åˆ†æè¿‡æ¡¥èµ„é‡‘çš„ç‰¹ç‚¹ã€é€‚ç”¨åœºæ™¯åŠç”³è¯·æµç¨‹...</p>
+                                <h3><a href="news-detail-2.html">¹ıÇÅ×Ê½ğ£ºÆóÒµ¶ÌÆÚÈÚ×ÊµÄ×î¼ÑÑ¡Ôñ</a></h3>
+                                <p class="news-excerpt">¹ıÇÅ×Ê½ğÊÇ½â¾öÆóÒµ¶ÌÆÚ×Ê½ğÖÜ×ªÎÊÌâµÄÓĞĞ§¹¤¾ß¡£±¾ÎÄ·ÖÎö¹ıÇÅ×Ê½ğµÄÌØµã¡¢ÊÊÓÃ³¡¾°¼°ÉêÇëÁ÷³Ì...</p>
                                 <div class="news-footer">
-                                    <a href="news-detail-2.html" class="news-more">æŸ¥çœ‹æ›´å¤š â†’</a>
+                                    <a href="news-detail-2.html" class="news-more">²é¿´¸ü¶à ¡ú</a>
                                     <time class="news-date">2024-03-28</time>
                                 </div>
                             </div>
                         </article>
 
-                        <!-- èµ„è®¯æ–‡ç«  3 -->
+                        <!-- ×ÊÑ¶ÎÄÕÂ 3 -->
                         <article class="news-card">
                             <div class="news-thumb">
-                                <img src="images/news/news-3.jpg" alt="åº”æ”¶è´¦æ¬¾èèµ„">
+                                <img src="images/news/news-3.jpg" alt="Ó¦ÊÕÕË¿îÈÚ×Ê">
                             </div>
                             <div class="news-content">
-                                <h3><a href="news-detail-3.html">åº”æ”¶è´¦æ¬¾èèµ„ï¼šç›˜æ´»ä¼ä¸šå­˜é‡èµ„äº§</a></h3>
-                                <p class="news-excerpt">åº”æ”¶è´¦æ¬¾èèµ„å¸®åŠ©ä¼ä¸šå°†é—²ç½®çš„åº”æ”¶è´¦æ¬¾è½¬åŒ–ä¸ºæµåŠ¨èµ„é‡‘ã€‚æœ¬æ–‡æ¢è®¨åº”æ”¶è´¦æ¬¾èèµ„çš„æ“ä½œæ¨¡å¼ä¸é£é™©æ§åˆ¶...</p>
+                                <h3><a href="news-detail-3.html">Ó¦ÊÕÕË¿îÈÚ×Ê£ºÅÌ»îÆóÒµ´æÁ¿×Ê²ú</a></h3>
+                                <p class="news-excerpt">Ó¦ÊÕÕË¿îÈÚ×Ê°ïÖúÆóÒµ½«ÏĞÖÃµÄÓ¦ÊÕÕË¿î×ª»¯ÎªÁ÷¶¯×Ê½ğ¡£±¾ÎÄÌ½ÌÖÓ¦ÊÕÕË¿îÈÚ×ÊµÄ²Ù×÷Ä£Ê½Óë·çÏÕ¿ØÖÆ...</p>
                                 <div class="news-footer">
-                                    <a href="news-detail-3.html" class="news-more">æŸ¥çœ‹æ›´å¤š â†’</a>
+                                    <a href="news-detail-3.html" class="news-more">²é¿´¸ü¶à ¡ú</a>
                                     <time class="news-date">2024-03-20</time>
                                 </div>
                             </div>
                         </article>
 
-                        <!-- èµ„è®¯æ–‡ç«  4 -->
+                        <!-- ×ÊÑ¶ÎÄÕÂ 4 -->
                         <article class="news-card">
                             <div class="news-thumb">
-                                <img src="images/news/news-4.jpg" alt="é“¶è¡Œå­˜æ¬¾ä¸šåŠ¡">
+                                <img src="images/news/news-4.jpg" alt="ÒøĞĞ´æ¿îÒµÎñ">
                             </div>
                             <div class="news-content">
-                                <h3><a href="news-detail-4.html">é“¶è¡Œå­˜æ¬¾ä¸šåŠ¡ï¼šä¼˜åŒ–ä¼ä¸šèµ„é‡‘é…ç½®</a></h3>
-                                <p class="news-excerpt">é“¶è¡Œå­˜æ¬¾ä¸šåŠ¡æ˜¯ä¼ä¸šèµ„é‡‘ç®¡ç†çš„åŸºç¡€ã€‚æœ¬æ–‡ä»‹ç»å¦‚ä½•é€šè¿‡åˆç†çš„å­˜æ¬¾å®‰æ’ä¼˜åŒ–ä¼ä¸šèµ„é‡‘é…ç½®ï¼Œæå‡èµ„é‡‘ä½¿ç”¨æ•ˆç‡...</p>
+                                <h3><a href="news-detail-4.html">ÒøĞĞ´æ¿îÒµÎñ£ºÓÅ»¯ÆóÒµ×Ê½ğÅäÖÃ</a></h3>
+                                <p class="news-excerpt">ÒøĞĞ´æ¿îÒµÎñÊÇÆóÒµ×Ê½ğ¹ÜÀíµÄ»ù´¡¡£±¾ÎÄ½éÉÜÈçºÎÍ¨¹ıºÏÀíµÄ´æ¿î°²ÅÅÓÅ»¯ÆóÒµ×Ê½ğÅäÖÃ£¬ÌáÉı×Ê½ğÊ¹ÓÃĞ§ÂÊ...</p>
                                 <div class="news-footer">
-                                    <a href="news-detail-4.html" class="news-more">æŸ¥çœ‹æ›´å¤š â†’</a>
+                                    <a href="news-detail-4.html" class="news-more">²é¿´¸ü¶à ¡ú</a>
                                     <time class="news-date">2024-03-15</time>
                                 </div>
                             </div>
@@ -221,7 +221,7 @@
                     </div>
                 </div>
 
-                <!-- åˆ†é¡µ -->
+                <!-- ·ÖÒ³ -->
                 <div class="editable-section" data-section="news-pagination">
                     <div class="news-pagination">
                         <a href="#" class="pagination-btn disabled"><i class="fas fa-chevron-left"></i></a>
@@ -235,76 +235,76 @@
 
     </main>
 
-    <!-- å³ä¾§è¾¹æµ®åŠ¨ç”µè¯æŒ‰é’® -->
-    <div class="chat-widget" id="chatWidget" aria-label="è”ç³»ç”µè¯">
-        <button class="chat-widget-btn" id="chatWidgetBtn" aria-label="æ‹¨æ‰“ç”µè¯" aria-expanded="false">
+    <!-- ÓÒ²à±ß¸¡¶¯µç»°°´Å¥ -->
+    <div class="chat-widget" id="chatWidget" aria-label="ÁªÏµµç»°">
+        <button class="chat-widget-btn" id="chatWidgetBtn" aria-label="²¦´òµç»°" aria-expanded="false">
             <i class="fas fa-phone-alt" aria-hidden="true"></i>
         </button>
     </div>
 
-    <!-- é¡µè„š -->
+    <!-- Ò³½Å -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-main">
                 <div class="footer-brand">
-                    <div class="footer-logo"><img src="images/logo.png?v=20260502041100" alt="Yooèµ„é‡‘ç½‘" style="height:48px;width:auto;"></div>
+                    <a href="index.html" class="footer-logo"><img src="images/logo.png?v=20260502041100" alt="Yoo×Ê½ğÍø" style="height:48px;width:auto;"></a>
 
-                    <p class="footer-desc">ä¸“ä¸šèµ„é‡‘ä¸šåŠ¡æœåŠ¡å•†ï¼Œæä¾›ä¸Šå¸‚å…¬å¸è¿‡æ¡¥ã€ä¼ä¸šæ‘†è´¦ã€é“¶è¡Œå­˜æ¬¾ã€åº”æ”¶è´¦æ¬¾èèµ„ç­‰å…¨æ–¹ä½èµ„é‡‘æœåŠ¡</p>
+                    <p class="footer-desc">×¨Òµ×Ê½ğÒµÎñ·şÎñÉÌ£¬Ìá¹©ÉÏÊĞ¹«Ë¾¹ıÇÅ¡¢ÆóÒµ°ÚÕË¡¢ÒøĞĞ´æ¿î¡¢Ó¦ÊÕÕË¿îÈÚ×ÊµÈÈ«·½Î»×Ê½ğ·şÎñ</p>
                 </div>
                 <div class="footer-nav">
-                    <h4 class="footer-nav-title">å¿«é€Ÿé“¾æ¥</h4>
+                    <h4 class="footer-nav-title">¿ìËÙÁ´½Ó</h4>
                     <ul class="footer-nav-list">
-                        <li><a href="index.html">é¦–é¡µ</a></li>
-                        <li><a href="services.html">ä¸šåŠ¡èŒƒå›´</a></li>
-                        <li><a href="cases.html">æˆåŠŸæ¡ˆä¾‹</a></li>
-                        <li><a href="advantages.html">æœåŠ¡ä¼˜åŠ¿</a></li>
+                        <li><a href="index.html">Ê×Ò³</a></li>
+                        <li><a href="services.html">ÒµÎñ·¶Î§</a></li>
+                        <li><a href="cases.html">³É¹¦°¸Àı</a></li>
+                        <li><a href="advantages.html">·şÎñÓÅÊÆ</a></li>
                     </ul>
                 </div>
                 <div class="footer-nav">
-                    <h4 class="footer-nav-title">æ›´å¤šå†…å®¹</h4>
+                    <h4 class="footer-nav-title">¸ü¶àÄÚÈİ</h4>
                     <ul class="footer-nav-list">
-                        <li><a href="news.html">è¡Œä¸šèµ„è®¯</a></li>
-                        <li><a href="faq.html">å¸¸è§é—®é¢˜</a></li>
-                        <li><a href="contact.html">è”ç³»æˆ‘ä»¬</a></li>
+                        <li><a href="news.html">ĞĞÒµ×ÊÑ¶</a></li>
+                        <li><a href="faq.html">³£¼ûÎÊÌâ</a></li>
+                        <li><a href="contact.html">ÁªÏµÎÒÃÇ</a></li>
                     </ul>
                 </div>
                 <div class="footer-nav">
-                    <h4 class="footer-nav-title">è”ç³»æ–¹å¼</h4>
+                    <h4 class="footer-nav-title">ÁªÏµ·½Ê½</h4>
                     <ul class="footer-nav-list">
                         <li><i class="fas fa-phone"></i> 13552883008</li>
-                        <li><i class="fas fa-user"></i> ç‹ç«‹åŠ›</li>
+                        <li><i class="fas fa-user"></i> ÍõÁ¢Á¦</li>
                         <li><i class="fas fa-envelope"></i> wanglizhongguo@126.com</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2024 Yooèµ„é‡‘ç½‘ ç‰ˆæƒæ‰€æœ‰</p>
-                <p class="footer-disclaimer">æŠ•èµ„æœ‰é£é™©ï¼Œå…¥å¸‚éœ€è°¨æ…ã€‚æœ¬ç½‘ç«™å†…å®¹ä»…ä¾›å‚è€ƒï¼Œä¸æ„æˆæŠ•èµ„å»ºè®®ã€‚</p>
+                <p class="footer-copyright">&copy; 2024 Yoo×Ê½ğÍø °æÈ¨ËùÓĞ</p>
+                <p class="footer-disclaimer">Í¶×ÊÓĞ·çÏÕ£¬ÈëÊĞĞè½÷É÷¡£±¾ÍøÕ¾ÄÚÈİ½ö¹©²Î¿¼£¬²»¹¹³ÉÍ¶×Ê½¨Òé¡£</p>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
     
-    <!-- åŠ¨æ€åŠ è½½èµ„è®¯æ–‡ç«  -->
+    <!-- ¶¯Ì¬¼ÓÔØ×ÊÑ¶ÎÄÕÂ -->
     <script>
-        // å½“å‰é€‰ä¸­çš„åˆ†ç±»
+        // µ±Ç°Ñ¡ÖĞµÄ·ÖÀà
         let currentCategoryId = 0;
         
-        // ä»localStorageåŠ è½½åˆ†ç±»
+        // ´ÓlocalStorage¼ÓÔØ·ÖÀà
         function loadCategories() {
-            console.log('[News] å¼€å§‹åŠ è½½åˆ†ç±»...');
+            console.log('[News] ¿ªÊ¼¼ÓÔØ·ÖÀà...');
             
             const categories = JSON.parse(localStorage.getItem('cms_categories') || '[]');
-            console.log('[News] æœ¬åœ°å­˜å‚¨åˆ†ç±»æ•°é‡:', categories.length);
+            console.log('[News] ±¾µØ´æ´¢·ÖÀàÊıÁ¿:', categories.length);
             
             const categoriesContainer = document.getElementById('newsCategories');
             if (!categoriesContainer) {
-                console.error('[News] æ‰¾ä¸åˆ°åˆ†ç±»å®¹å™¨');
+                console.error('[News] ÕÒ²»µ½·ÖÀàÈİÆ÷');
                 return;
             }
             
-            // ä¿ç•™"å…¨éƒ¨èµ„è®¯"ï¼Œç§»é™¤å…¶ä»–åˆ†ç±»
+            // ±£Áô"È«²¿×ÊÑ¶"£¬ÒÆ³ıÆäËû·ÖÀà
             const allLink = categoriesContainer.querySelector('[data-cat-id="0"]');
             categoriesContainer.innerHTML = '';
             if (allLink) {
@@ -317,7 +317,7 @@
                 categoriesContainer.appendChild(allLink);
             }
             
-            // æ·»åŠ CMSåˆ†ç±»
+            // Ìí¼ÓCMS·ÖÀà
             if (categories.length > 0) {
                 categories.forEach(cat => {
                     const catLink = document.createElement('a');
@@ -334,8 +334,8 @@
                     categoriesContainer.appendChild(catLink);
                 });
             } else {
-                // ä½¿ç”¨é»˜è®¤åˆ†ç±»
-                const defaultCategories = ['è¡Œä¸šåŠ¨æ€', 'æ”¿ç­–è§£è¯»', 'ä¸šåŠ¡çŸ¥è¯†', 'å…¬å¸æ–°é—»'];
+                // Ê¹ÓÃÄ¬ÈÏ·ÖÀà
+                const defaultCategories = ['ĞĞÒµ¶¯Ì¬', 'Õş²ß½â¶Á', 'ÒµÎñÖªÊ¶', '¹«Ë¾ĞÂÎÅ'];
                 defaultCategories.forEach((name, index) => {
                     const catLink = document.createElement('a');
                     catLink.href = '#';
@@ -352,10 +352,10 @@
                 });
             }
             
-            console.log('[News] åˆ†ç±»åŠ è½½å®Œæˆ');
+            console.log('[News] ·ÖÀà¼ÓÔØÍê³É');
         }
         
-        // æ›´æ–°æ´»è·ƒåˆ†ç±»æ ·å¼
+        // ¸üĞÂ»îÔ¾·ÖÀàÑùÊ½
         function updateActiveCategory() {
             document.querySelectorAll('.news-category').forEach(cat => {
                 cat.classList.remove('active');
@@ -365,102 +365,102 @@
             });
         }
         
-        // ä»localStorageåŠ è½½å·²å‘å¸ƒçš„æ–‡ç« 
+        // ´ÓlocalStorage¼ÓÔØÒÑ·¢²¼µÄÎÄÕÂ
         function loadNewsFromStorage() {
-            console.log('[News] å¼€å§‹åŠ è½½èµ„è®¯æ–‡ç« ...');
+            console.log('[News] ¿ªÊ¼¼ÓÔØ×ÊÑ¶ÎÄÕÂ...');
             
-            // è·å–localStorageä¸­çš„æ–‡ç« 
+            // »ñÈ¡localStorageÖĞµÄÎÄÕÂ
             const articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
-            console.log('[News] æœ¬åœ°å­˜å‚¨æ–‡ç« æ•°é‡:', articles.length);
+            console.log('[News] ±¾µØ´æ´¢ÎÄÕÂÊıÁ¿:', articles.length);
             
-            // è¿‡æ»¤å·²å‘å¸ƒçš„æ–‡ç« 
+            // ¹ıÂËÒÑ·¢²¼µÄÎÄÕÂ
             let publishedArticles = articles.filter(a => a.status === 'published');
-            console.log('[News] å·²å‘å¸ƒæ–‡ç« æ•°é‡:', publishedArticles.length);
+            console.log('[News] ÒÑ·¢²¼ÎÄÕÂÊıÁ¿:', publishedArticles.length);
             
-            // å¦‚æœæœ‰é€‰ä¸­çš„åˆ†ç±»ï¼Œè¿›ä¸€æ­¥ç­›é€‰
+            // Èç¹ûÓĞÑ¡ÖĞµÄ·ÖÀà£¬½øÒ»²½É¸Ñ¡
             if (currentCategoryId) {
                 publishedArticles = publishedArticles.filter(a => {
                     const articleCatId = a.categoryId || a.category_id;
                     return articleCatId == currentCategoryId;
                 });
-                console.log('[News] åˆ†ç±»ç­›é€‰åæ–‡ç« æ•°é‡:', publishedArticles.length);
+                console.log('[News] ·ÖÀàÉ¸Ñ¡ºóÎÄÕÂÊıÁ¿:', publishedArticles.length);
             }
             
             if (publishedArticles.length === 0) {
-                console.log('[News] æ²¡æœ‰å·²å‘å¸ƒçš„æ–‡ç« ï¼Œæ˜¾ç¤ºé»˜è®¤å†…å®¹');
+                console.log('[News] Ã»ÓĞÒÑ·¢²¼µÄÎÄÕÂ£¬ÏÔÊ¾Ä¬ÈÏÄÚÈİ');
                 const newsContainer = document.querySelector('.news-list-container');
                 if (newsContainer) {
-                    newsContainer.innerHTML = '<div class="news-empty"><p>è¯¥åˆ†ç±»ä¸‹æš‚æ— æ–‡ç« </p></div>';
+                    newsContainer.innerHTML = '<div class="news-empty"><p>¸Ã·ÖÀàÏÂÔİÎŞÎÄÕÂ</p></div>';
                 }
                 return;
             }
             
-            // æŒ‰æ—¥æœŸæ’åºï¼ˆæœ€æ–°çš„åœ¨å‰ï¼‰
+            // °´ÈÕÆÚÅÅĞò£¨×îĞÂµÄÔÚÇ°£©
             publishedArticles.sort((a, b) => {
                 const dateA = new Date(a.publishDate || a.created_at || 0);
                 const dateB = new Date(b.publishDate || b.created_at || 0);
                 return dateB - dateA;
             });
             
-            // ç”Ÿæˆæ–‡ç« HTML
+            // Éú³ÉÎÄÕÂHTML
             const newsContainer = document.querySelector('.news-list-container');
             if (!newsContainer) {
-                console.error('[News] æ‰¾ä¸åˆ°æ–‡ç« åˆ—è¡¨å®¹å™¨');
+                console.error('[News] ÕÒ²»µ½ÎÄÕÂÁĞ±íÈİÆ÷');
                 return;
             }
             
-            // æ¸…ç©ºç°æœ‰å†…å®¹
+            // Çå¿ÕÏÖÓĞÄÚÈİ
             newsContainer.innerHTML = '';
             
-            // æ·»åŠ æ¯ç¯‡æ–‡ç« 
+            // Ìí¼ÓÃ¿ÆªÎÄÕÂ
             publishedArticles.forEach(article => {
                 const articleHtml = createNewsCard(article);
                 newsContainer.insertAdjacentHTML('beforeend', articleHtml);
             });
             
-            console.log('[News] æ–‡ç« åŠ è½½å®Œæˆï¼Œå…±', publishedArticles.length, 'ç¯‡');
+            console.log('[News] ÎÄÕÂ¼ÓÔØÍê³É£¬¹²', publishedArticles.length, 'Æª');
         }
         
-        // éªŒè¯å›¾ç‰‡æ•°æ®æ˜¯å¦æœ‰æ•ˆ
+        // ÑéÖ¤Í¼Æ¬Êı¾İÊÇ·ñÓĞĞ§
         function isValidImage(imageData) {
             if (!imageData) return false;
             if (typeof imageData !== 'string') return false;
-            // æ£€æŸ¥æ˜¯å¦æ˜¯æœ‰æ•ˆçš„Base64å›¾ç‰‡
+            // ¼ì²éÊÇ·ñÊÇÓĞĞ§µÄBase64Í¼Æ¬
             if (imageData.startsWith('data:image')) {
-                // æ£€æŸ¥Base64æ•°æ®æ˜¯å¦å®Œæ•´ï¼ˆè‡³å°‘è¦æœ‰å¤´éƒ¨å’Œä¸€éƒ¨åˆ†æ•°æ®ï¼‰
+                // ¼ì²éBase64Êı¾İÊÇ·ñÍêÕû£¨ÖÁÉÙÒªÓĞÍ·²¿ºÍÒ»²¿·ÖÊı¾İ£©
                 return imageData.length > 100;
             }
-            // æ£€æŸ¥æ˜¯å¦æ˜¯æœ‰æ•ˆçš„URL
+            // ¼ì²éÊÇ·ñÊÇÓĞĞ§µÄURL
             if (imageData.startsWith('http://') || imageData.startsWith('https://') || imageData.startsWith('/')) {
                 return imageData.length > 10;
             }
-            // æ£€æŸ¥æ˜¯å¦æ˜¯ç›¸å¯¹è·¯å¾„
+            // ¼ì²éÊÇ·ñÊÇÏà¶ÔÂ·¾¶
             if (imageData.startsWith('images/')) {
                 return true;
             }
             return false;
         }
 
-        // è·å–æœ‰æ•ˆçš„å°é¢å›¾ç‰‡
+        // »ñÈ¡ÓĞĞ§µÄ·âÃæÍ¼Æ¬
         function getValidCoverImage(article) {
-            // å¦‚æœæœ‰å°é¢å›¾ï¼Œä½¿ç”¨å°é¢å›¾
+            // Èç¹ûÓĞ·âÃæÍ¼£¬Ê¹ÓÃ·âÃæÍ¼
             if (article.cover_image && isValidImage(article.cover_image)) {
                 return article.cover_image;
             }
-            // å¦‚æœæ²¡æœ‰å°é¢å›¾ï¼Œè¿”å› nullï¼ˆæ˜¾ç¤ºç©ºç™½å ä½å›¾ï¼‰
+            // Èç¹ûÃ»ÓĞ·âÃæÍ¼£¬·µ»Ø null£¨ÏÔÊ¾¿Õ°×Õ¼Î»Í¼£©
             return null;
         }
 
-        // åˆ›å»ºæ–‡ç« å¡ç‰‡HTML
+        // ´´½¨ÎÄÕÂ¿¨Æ¬HTML
         function createNewsCard(article) {
-            const title = article.title || 'æ— æ ‡é¢˜';
+            const title = article.title || 'ÎŞ±êÌâ';
             const summary = article.summary || article.content?.replace(/<[^>]*>/g, '').substring(0, 100) + '...' || '';
             const date = article.publishDate || article.created_at || new Date().toISOString();
             const formattedDate = new Date(date).toLocaleDateString('zh-CN');
             const coverImage = getValidCoverImage(article);
             const articleId = article.id;
             
-            // æ ¹æ®æ˜¯å¦æœ‰å°é¢å›¾ç”Ÿæˆä¸åŒçš„HTML
+            // ¸ù¾İÊÇ·ñÓĞ·âÃæÍ¼Éú³É²»Í¬µÄHTML
             const imageHtml = coverImage 
                 ? `<div class="news-thumb"><img src="${coverImage}" alt="${title}" loading="lazy"></div>`
                 : `<div class="news-thumb placeholder"><div class="placeholder-bg"></div></div>`;
@@ -472,7 +472,7 @@
                         <h3><a href="news-detail.html?id=${articleId}">${title}</a></h3>
                         <p class="news-excerpt">${summary}</p>
                         <div class="news-footer">
-                            <a href="news-detail.html?id=${articleId}" class="news-more">æŸ¥çœ‹æ›´å¤š â†’</a>
+                            <a href="news-detail.html?id=${articleId}" class="news-more">²é¿´¸ü¶à ¡ú</a>
                             <time class="news-date">${formattedDate}</time>
                         </div>
                     </div>
@@ -480,7 +480,7 @@
             `;
         }
         
-        // é¡µé¢åŠ è½½å®Œæˆåæ‰§è¡Œ
+        // Ò³Ãæ¼ÓÔØÍê³ÉºóÖ´ĞĞ
         document.addEventListener('DOMContentLoaded', function() {
             loadCategories();
             loadNewsFromStorage();
@@ -489,41 +489,41 @@
     
     <!-- CMS Editor -->
     <script>
-        // æ£€æŸ¥æ˜¯å¦éœ€è¦åŠ è½½ç¼–è¾‘å™¨
+        // ¼ì²éÊÇ·ñĞèÒª¼ÓÔØ±à¼­Æ÷
         (function() {
-            console.log('[CMS] åˆå§‹åŒ–æ£€æŸ¥...');
+            console.log('[CMS] ³õÊ¼»¯¼ì²é...');
             
             const urlParams = new URLSearchParams(window.location.search);
             const isEditMode = urlParams.get('edit') === 'true';
             const isLoggedIn = localStorage.getItem('cms_logged_in') === 'true';
             
-            console.log('[CMS] ç¼–è¾‘æ¨¡å¼:', isEditMode);
-            console.log('[CMS] ç™»å½•çŠ¶æ€:', isLoggedIn);
+            console.log('[CMS] ±à¼­Ä£Ê½:', isEditMode);
+            console.log('[CMS] µÇÂ¼×´Ì¬:', isLoggedIn);
             
             if (isEditMode && isLoggedIn) {
-                console.log('[CMS] å¼€å§‹åŠ è½½ç¼–è¾‘å™¨...');
+                console.log('[CMS] ¿ªÊ¼¼ÓÔØ±à¼­Æ÷...');
                 
-                // åŠ è½½ç¼–è¾‘å™¨æ ·å¼
+                // ¼ÓÔØ±à¼­Æ÷ÑùÊ½
                 const editorCss = document.createElement('link');
                 editorCss.rel = 'stylesheet';
                 editorCss.href = 'admin/editor.css';
                 editorCss.onerror = function() {
-                    console.error('[CMS] ç¼–è¾‘å™¨æ ·å¼åŠ è½½å¤±è´¥');
+                    console.error('[CMS] ±à¼­Æ÷ÑùÊ½¼ÓÔØÊ§°Ü');
                 };
                 document.head.appendChild(editorCss);
                 
-                // åŠ è½½ç¼–è¾‘å™¨è„šæœ¬
+                // ¼ÓÔØ±à¼­Æ÷½Å±¾
                 const editorScript = document.createElement('script');
                 editorScript.src = 'admin/editor.js';
                 editorScript.onload = function() {
-                    console.log('[CMS] ç¼–è¾‘å™¨è„šæœ¬åŠ è½½æˆåŠŸ');
+                    console.log('[CMS] ±à¼­Æ÷½Å±¾¼ÓÔØ³É¹¦');
                 };
                 editorScript.onerror = function() {
-                    console.error('[CMS] ç¼–è¾‘å™¨è„šæœ¬åŠ è½½å¤±è´¥');
+                    console.error('[CMS] ±à¼­Æ÷½Å±¾¼ÓÔØÊ§°Ü');
                 };
                 document.body.appendChild(editorScript);
             } else if (isEditMode && !isLoggedIn) {
-                console.log('[CMS] æœªç™»å½•ï¼Œé‡å®šå‘åˆ°ç™»å½•é¡µ');
+                console.log('[CMS] Î´µÇÂ¼£¬ÖØ¶¨Ïòµ½µÇÂ¼Ò³');
                 window.location.href = 'admin/login.html?redirect=' + encodeURIComponent(window.location.href);
             }
         })();

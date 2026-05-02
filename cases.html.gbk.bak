@@ -1,16 +1,16 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Yooèµ„é‡‘ç½‘æˆåŠŸæ¡ˆä¾‹ - å¤šå¹´æ¥å·²æˆåŠŸæœåŠ¡æ•°ç™¾å®¶ä¼ä¸šï¼Œç´¯è®¡ç®¡ç†å‡ºèµ„é‡‘é¢è¶…ç™¾äº¿ã€‚æŸ¥çœ‹æˆ‘ä»¬çš„è¿‡æ¡¥èµ„é‡‘ã€æ‘†è´¦äº®èµ„ã€åº”æ”¶è´¦æ¬¾èèµ„ç­‰æˆåŠŸæ¡ˆä¾‹ã€‚">
-    <meta name="keywords" content="æˆåŠŸæ¡ˆä¾‹,èµ„é‡‘æœåŠ¡æ¡ˆä¾‹,è¿‡æ¡¥èµ„é‡‘æ¡ˆä¾‹,æ‘†è´¦æ¡ˆä¾‹,äº®èµ„æ¡ˆä¾‹,èèµ„æ¡ˆä¾‹,Yooèµ„é‡‘ç½‘">
-    <title>æˆåŠŸæ¡ˆä¾‹ - Yooèµ„é‡‘ç½‘ | ä¸“ä¸šèµ„é‡‘ä¸šåŠ¡æœåŠ¡å•†</title>
+    <meta name="description" content="Yoo×Ê½ğÍø³É¹¦°¸Àı - ¶àÄêÀ´ÒÑ³É¹¦·şÎñÊı°Ù¼ÒÆóÒµ£¬ÀÛ¼Æ¹ÜÀí³ö×Ê½ğ¶î³¬°ÙÒÚ¡£²é¿´ÎÒÃÇµÄ¹ıÇÅ×Ê½ğ¡¢°ÚÕËÁÁ×Ê¡¢Ó¦ÊÕÕË¿îÈÚ×ÊµÈ³É¹¦°¸Àı¡£">
+    <meta name="keywords" content="³É¹¦°¸Àı,×Ê½ğ·şÎñ°¸Àı,¹ıÇÅ×Ê½ğ°¸Àı,°ÚÕË°¸Àı,ÁÁ×Ê°¸Àı,ÈÚ×Ê°¸Àı,Yoo×Ê½ğÍø">
+    <title>³É¹¦°¸Àı - Yoo×Ê½ğÍø | ×¨Òµ×Ê½ğÒµÎñ·şÎñÉÌ</title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cases-enhanced.css">
-    <!-- LogoåŠ¨æ€åŠ è½½ -->
+    <!-- Logo¶¯Ì¬¼ÓÔØ -->
     <script>
     (function(){
         var xhr=new XMLHttpRequest();
@@ -96,27 +96,27 @@
 </script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">è·³è½¬åˆ°ä¸»è¦å†…å®¹</a>
+    <a href="#main-content" class="skip-link">Ìø×ªµ½Ö÷ÒªÄÚÈİ</a>
 
-    <!-- å¯¼èˆªæ  -->
-    <nav class="navbar" id="navbar" role="navigation" aria-label="ä¸»å¯¼èˆª">
+    <!-- µ¼º½À¸ -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Ö÷µ¼º½">
         <div class="navbar-container">
-<a href="index.html" class="logo" aria-label="Yooèµ„é‡‘ç½‘é¦–é¡µ"><img src="images/logo.png?v=20260502040820" alt="Yooèµ„é‡‘ç½‘" style="height:48px;width:auto;"></a>
+<a href="index.html" class="logo" aria-label="Yoo×Ê½ğÍøÊ×Ò³"><img src="images/logo.png?v=20260502040820" alt="Yoo×Ê½ğÍø" style="height:48px;width:auto;"></a>
             <ul class="nav-menu" role="menubar">
-                <li role="none"><a href="index.html" class="nav-link" role="menuitem">é¦–é¡µ</a></li>
-                <li role="none"><a href="services.html" class="nav-link" role="menuitem">ä¸šåŠ¡èŒƒå›´</a></li>
-                <li role="none"><a href="cases.html" class="nav-link active" role="menuitem">æˆåŠŸæ¡ˆä¾‹</a></li>
-                <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">æœåŠ¡ä¼˜åŠ¿</a></li>
-                <li role="none"><a href="news.html" class="nav-link" role="menuitem">è¡Œä¸šèµ„è®¯</a></li>
-                <li role="none"><a href="faq.html" class="nav-link" role="menuitem">å¸¸è§é—®é¢˜</a></li>
-                <li role="none"><a href="contact.html" class="nav-link" role="menuitem">è”ç³»æˆ‘ä»¬</a></li>
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem">Ê×Ò³</a></li>
+                <li role="none"><a href="services.html" class="nav-link" role="menuitem">ÒµÎñ·¶Î§</a></li>
+                <li role="none"><a href="cases.html" class="nav-link active" role="menuitem">³É¹¦°¸Àı</a></li>
+                <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">·şÎñÓÅÊÆ</a></li>
+                <li role="none"><a href="news.html" class="nav-link" role="menuitem">ĞĞÒµ×ÊÑ¶</a></li>
+                <li role="none"><a href="faq.html" class="nav-link" role="menuitem">³£¼ûÎÊÌâ</a></li>
+                <li role="none"><a href="contact.html" class="nav-link" role="menuitem">ÁªÏµÎÒÃÇ</a></li>
             </ul>
 
-            <button class="search-toggle" id="searchToggle" aria-label="æ‰“å¼€æœç´¢" aria-expanded="false">
+            <button class="search-toggle" id="searchToggle" aria-label="´ò¿ªËÑË÷" aria-expanded="false">
                 <i class="fas fa-search" aria-hidden="true"></i>
             </button>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="æ‰“å¼€èœå•" aria-expanded="false">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="´ò¿ª²Ëµ¥" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -125,52 +125,52 @@
     </nav>
 
     <main id="main-content">
-        <!-- æˆåŠŸæ¡ˆä¾‹Bannerå›¾ç‰‡ -->
+        <!-- ³É¹¦°¸ÀıBannerÍ¼Æ¬ -->
         <div class="business-banner">
-            <img src="images/business-banner.jpg" alt="æˆåŠŸæ¡ˆä¾‹">
+            <img src="images/business-banner.jpg" alt="³É¹¦°¸Àı">
         </div>
 
-        <!-- é¡µé¢æ ‡é¢˜åŒº -->
+        <!-- Ò³Ãæ±êÌâÇø -->
         <section class="page-header">
             <div class="page-header-container">
                 <div class="page-header-badge">
                     <i class="fas fa-trophy"></i>
                     <span>SUCCESS CASES</span>
                 </div>
-                <h1 class="page-header-title">æˆåŠŸæ¡ˆä¾‹</h1>
-                <p class="page-header-subtitle">å¤šå¹´æ¥ï¼Œæˆ‘ä»¬å·²æˆåŠŸæœåŠ¡æ•°ç™¾å®¶ä¼ä¸šï¼Œç´¯è®¡ç®¡ç†èµ„é‡‘è§„æ¨¡è¶…ç™¾äº¿ã€‚æ¯ä¸€ä¸ªæ¡ˆä¾‹éƒ½æ˜¯æˆ‘ä»¬ä¸“ä¸šèƒ½åŠ›çš„è§è¯ã€‚</p>
+                <h1 class="page-header-title">³É¹¦°¸Àı</h1>
+                <p class="page-header-subtitle">¶àÄêÀ´£¬ÎÒÃÇÒÑ³É¹¦·şÎñÊı°Ù¼ÒÆóÒµ£¬ÀÛ¼Æ¹ÜÀí×Ê½ğ¹æÄ£³¬°ÙÒÚ¡£Ã¿Ò»¸ö°¸Àı¶¼ÊÇÎÒÃÇ×¨ÒµÄÜÁ¦µÄ¼ûÖ¤¡£</p>
             </div>
         </section>
 
-        <!-- æ¡ˆä¾‹å±•ç¤º -->
+        <!-- °¸ÀıÕ¹Ê¾ -->
         <section class="page-content">
             <div class="section-container">
                 
-                <!-- ç­›é€‰åŒºåŸŸ -->
+                <!-- É¸Ñ¡ÇøÓò -->
                 <div class="cases-filter-section">
-                    <!-- ä¸šåŠ¡ç±»å‹ç­›é€‰ -->
+                    <!-- ÒµÎñÀàĞÍÉ¸Ñ¡ -->
                     <div class="filter-group">
-                        <span class="filter-label">ä¸šåŠ¡ç±»å‹</span>
+                        <span class="filter-label">ÒµÎñÀàĞÍ</span>
                         <div class="filter-buttons" id="typeFilter">
-                            <button class="filter-btn active" data-filter="all" data-type="type">å…¨éƒ¨</button>
-                            <!-- ä¸šåŠ¡ç±»å‹æŒ‰é’®å°†é€šè¿‡JSåŠ¨æ€ç”Ÿæˆ -->
+                            <button class="filter-btn active" data-filter="all" data-type="type">È«²¿</button>
+                            <!-- ÒµÎñÀàĞÍ°´Å¥½«Í¨¹ıJS¶¯Ì¬Éú³É -->
                         </div>
                     </div>
                     
 
                 </div>
 
-                <!-- æ¡ˆä¾‹å¡ç‰‡ç½‘æ ¼ -->
+                <!-- °¸Àı¿¨Æ¬Íø¸ñ -->
                 <div class="cases-grid-enhanced" id="casesGrid">
-                    <!-- æ¡ˆä¾‹å¡ç‰‡å°†é€šè¿‡JSåŠ¨æ€ç”Ÿæˆ -->
+                    <!-- °¸Àı¿¨Æ¬½«Í¨¹ıJS¶¯Ì¬Éú³É -->
                 </div>
 
-                <!-- åˆ†é¡µ -->
+                <!-- ·ÖÒ³ -->
                 <div class="cases-pagination" id="paginationContainer" style="text-align: center; margin-top: 40px; padding: 20px;">
-                    <!-- åˆ†é¡µæŒ‰é’®ç”±JSç”Ÿæˆ -->
+                    <!-- ·ÖÒ³°´Å¥ÓÉJSÉú³É -->
                 </div>
 
-                <!-- æ¡ˆä¾‹ç»Ÿè®¡ -->
+                <!-- °¸ÀıÍ³¼Æ -->
                 <div class="cases-stats-section">
                     <div class="cases-stats-grid">
                         <div class="cases-stat-box">
@@ -178,28 +178,28 @@
                                 <i class="fas fa-handshake"></i>
                             </div>
                             <div class="cases-stat-number">500+</div>
-                            <div class="cases-stat-label">æœåŠ¡ä¼ä¸š</div>
+                            <div class="cases-stat-label">·şÎñÆóÒµ</div>
                         </div>
                         <div class="cases-stat-box">
                             <div class="cases-stat-icon">
                                 <i class="fas fa-coins"></i>
                             </div>
-                            <div class="cases-stat-number">100äº¿+</div>
-                            <div class="cases-stat-label">ç´¯è®¡ç®¡ç†è§„æ¨¡</div>
+                            <div class="cases-stat-number">100ÒÚ+</div>
+                            <div class="cases-stat-label">ÀÛ¼Æ¹ÜÀí¹æÄ£</div>
                         </div>
                         <div class="cases-stat-box">
                             <div class="cases-stat-icon">
                                 <i class="fas fa-check-circle"></i>
                             </div>
                             <div class="cases-stat-number">99%</div>
-                            <div class="cases-stat-label">ä¸šåŠ¡æˆåŠŸç‡</div>
+                            <div class="cases-stat-label">ÒµÎñ³É¹¦ÂÊ</div>
                         </div>
                         <div class="cases-stat-box">
                             <div class="cases-stat-icon">
                                 <i class="fas fa-star"></i>
                             </div>
                             <div class="cases-stat-number">98%</div>
-                            <div class="cases-stat-label">å®¢æˆ·æ»¡æ„åº¦</div>
+                            <div class="cases-stat-label">¿Í»§ÂúÒâ¶È</div>
                         </div>
                     </div>
                 </div>
@@ -207,15 +207,15 @@
             </div>
         </section>
 
-        <!-- CTAåŒºåŸŸ -->
+        <!-- CTAÇøÓò -->
         <section class="cta-section-cases" aria-labelledby="cta-title">
             <div class="cta-container">
-                <h2 class="cta-title" id="cta-title">æˆä¸ºæˆ‘ä»¬çš„ä¸‹ä¸€ä¸ªæˆåŠŸæ¡ˆä¾‹</h2>
-                <p class="cta-subtitle">æ— è®ºæ‚¨é¢ä¸´ä½•ç§èµ„é‡‘éœ€æ±‚ï¼Œæˆ‘ä»¬éƒ½èƒ½ä¸ºæ‚¨æä¾›ä¸“ä¸šè§£å†³æ–¹æ¡ˆ</p>
+                <h2 class="cta-title" id="cta-title">³ÉÎªÎÒÃÇµÄÏÂÒ»¸ö³É¹¦°¸Àı</h2>
+                <p class="cta-subtitle">ÎŞÂÛÄúÃæÁÙºÎÖÖ×Ê½ğĞèÇó£¬ÎÒÃÇ¶¼ÄÜÎªÄúÌá¹©×¨Òµ½â¾ö·½°¸</p>
                 <div class="cta-wrapper cta-center">
                     <button type="button" class="btn btn-white" style="cursor: default;" onclick="return false;">
                         <i class="fas fa-phone-alt"></i>
-                        ç«‹å³å’¨è¯¢
+                        Á¢¼´×ÉÑ¯
                     </button>
                     <span class="cta-contact-info-light">135-5288-3008</span>
                 </div>
@@ -223,108 +223,108 @@
         </section>
     </main>
 
-    <!-- å³ä¾§è¾¹æµ®åŠ¨ç”µè¯æŒ‰é’® -->
-    <div class="chat-widget" id="chatWidget" aria-label="è”ç³»ç”µè¯">
-        <button class="chat-widget-btn" id="chatWidgetBtn" aria-label="æ‹¨æ‰“ç”µè¯" aria-expanded="false">
+    <!-- ÓÒ²à±ß¸¡¶¯µç»°°´Å¥ -->
+    <div class="chat-widget" id="chatWidget" aria-label="ÁªÏµµç»°">
+        <button class="chat-widget-btn" id="chatWidgetBtn" aria-label="²¦´òµç»°" aria-expanded="false">
             <i class="fas fa-phone-alt" aria-hidden="true"></i>
         </button>
     </div>
 
-    <!-- é¡µè„š -->
+    <!-- Ò³½Å -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-main">
                 <div class="footer-brand">
-                    <div class="footer-logo"><img src="images/logo.png?v=20260502041100" alt="Yooèµ„é‡‘ç½‘" style="height:48px;width:auto;"></div>
+                    <a href="index.html" class="footer-logo"><img src="images/logo.png?v=20260502041100" alt="Yoo×Ê½ğÍø" style="height:48px;width:auto;"></a>
 
-                    <p class="footer-desc">ä¸“ä¸šèµ„é‡‘ä¸šåŠ¡æœåŠ¡å•†ï¼Œæä¾›ä¸Šå¸‚å…¬å¸è¿‡æ¡¥ã€ä¼ä¸šæ‘†è´¦ã€é“¶è¡Œå­˜æ¬¾ã€åº”æ”¶è´¦æ¬¾èèµ„ç­‰å…¨æ–¹ä½èµ„é‡‘æœåŠ¡</p>
+                    <p class="footer-desc">×¨Òµ×Ê½ğÒµÎñ·şÎñÉÌ£¬Ìá¹©ÉÏÊĞ¹«Ë¾¹ıÇÅ¡¢ÆóÒµ°ÚÕË¡¢ÒøĞĞ´æ¿î¡¢Ó¦ÊÕÕË¿îÈÚ×ÊµÈÈ«·½Î»×Ê½ğ·şÎñ</p>
                 </div>
                 <div class="footer-nav">
-                    <h4 class="footer-nav-title">å¿«é€Ÿé“¾æ¥</h4>
+                    <h4 class="footer-nav-title">¿ìËÙÁ´½Ó</h4>
                     <ul class="footer-nav-list">
-                        <li><a href="index.html">é¦–é¡µ</a></li>
-                        <li><a href="services.html">ä¸šåŠ¡èŒƒå›´</a></li>
-                        <li><a href="cases.html">æˆåŠŸæ¡ˆä¾‹</a></li>
-                        <li><a href="advantages.html">æœåŠ¡ä¼˜åŠ¿</a></li>
+                        <li><a href="index.html">Ê×Ò³</a></li>
+                        <li><a href="services.html">ÒµÎñ·¶Î§</a></li>
+                        <li><a href="cases.html">³É¹¦°¸Àı</a></li>
+                        <li><a href="advantages.html">·şÎñÓÅÊÆ</a></li>
                     </ul>
                 </div>
                 <div class="footer-nav">
-                    <h4 class="footer-nav-title">æ›´å¤šå†…å®¹</h4>
+                    <h4 class="footer-nav-title">¸ü¶àÄÚÈİ</h4>
                     <ul class="footer-nav-list">
-                        <li><a href="news.html">è¡Œä¸šèµ„è®¯</a></li>
-                        <li><a href="faq.html">å¸¸è§é—®é¢˜</a></li>
-                        <li><a href="contact.html">è”ç³»æˆ‘ä»¬</a></li>
+                        <li><a href="news.html">ĞĞÒµ×ÊÑ¶</a></li>
+                        <li><a href="faq.html">³£¼ûÎÊÌâ</a></li>
+                        <li><a href="contact.html">ÁªÏµÎÒÃÇ</a></li>
                     </ul>
                 </div>
                 <div class="footer-nav">
-                    <h4 class="footer-nav-title">è”ç³»æ–¹å¼</h4>
+                    <h4 class="footer-nav-title">ÁªÏµ·½Ê½</h4>
                     <ul class="footer-nav-list">
                         <li><i class="fas fa-phone"></i> 13552883008</li>
-                        <li><i class="fas fa-user"></i> ç‹ç«‹åŠ›</li>
+                        <li><i class="fas fa-user"></i> ÍõÁ¢Á¦</li>
                         <li><i class="fas fa-envelope"></i> wanglizhongguo@126.com</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2024 Yooèµ„é‡‘ç½‘ ç‰ˆæƒæ‰€æœ‰</p>
-                <p class="footer-disclaimer">æŠ•èµ„æœ‰é£é™©ï¼Œå…¥å¸‚éœ€è°¨æ…ã€‚æœ¬ç½‘ç«™å†…å®¹ä»…ä¾›å‚è€ƒï¼Œä¸æ„æˆæŠ•èµ„å»ºè®®ã€‚</p>
+                <p class="footer-copyright">&copy; 2024 Yoo×Ê½ğÍø °æÈ¨ËùÓĞ</p>
+                <p class="footer-disclaimer">Í¶×ÊÓĞ·çÏÕ£¬ÈëÊĞĞè½÷É÷¡£±¾ÍøÕ¾ÄÚÈİ½ö¹©²Î¿¼£¬²»¹¹³ÉÍ¶×Ê½¨Òé¡£</p>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
     <script>
-        // æ¡ˆä¾‹æ•°æ® - å°†ä»CMSæ•°æ®æºåŠ¨æ€åŠ è½½
+        // °¸ÀıÊı¾İ - ½«´ÓCMSÊı¾İÔ´¶¯Ì¬¼ÓÔØ
         let casesData = [];
 
-        // å½“å‰ç­›é€‰çŠ¶æ€
+        // µ±Ç°É¸Ñ¡×´Ì¬
         let currentFilters = {
             type: 'all'
         };
 
-        // è·å–ç±»å‹æ ‡ç­¾æ ·å¼ç±»å
+        // »ñÈ¡ÀàĞÍ±êÇ©ÑùÊ½ÀàÃû
         function getTypeClass(type) {
             const typeMap = {
-                'è¿‡æ¡¥': 'bridge',
-                'æ‘†è´¦': 'display',
-                'äº®èµ„': 'proof',
-                'å†²é‡': 'deposit',
-                'å®šå¢': 'placement',
-                'åº”æ”¶è´¦æ¬¾': 'receivable'
+                '¹ıÇÅ': 'bridge',
+                '°ÚÕË': 'display',
+                'ÁÁ×Ê': 'proof',
+                '³åÁ¿': 'deposit',
+                '¶¨Ôö': 'placement',
+                'Ó¦ÊÕÕË¿î': 'receivable'
             };
             return typeMap[type] || 'bridge';
         }
 
-        // è·å–ä¸šåŠ¡ç±»å‹å›¾æ ‡
+        // »ñÈ¡ÒµÎñÀàĞÍÍ¼±ê
         function getTypeIcon(type) {
             const iconMap = {
-                'è¿‡æ¡¥': 'fa-exchange-alt',
-                'æ‘†è´¦': 'fa-hand-holding-usd',
-                'äº®èµ„': 'fa-eye',
-                'å†²é‡': 'fa-chart-line',
-                'å®šå¢': 'fa-plus-circle',
-                'åº”æ”¶è´¦æ¬¾': 'fa-file-invoice-dollar'
+                '¹ıÇÅ': 'fa-exchange-alt',
+                '°ÚÕË': 'fa-hand-holding-usd',
+                'ÁÁ×Ê': 'fa-eye',
+                '³åÁ¿': 'fa-chart-line',
+                '¶¨Ôö': 'fa-plus-circle',
+                'Ó¦ÊÕÕË¿î': 'fa-file-invoice-dollar'
             };
             return iconMap[type] || 'fa-briefcase';
         }
 
-        // æ‰“å¼€å›¾ç‰‡é¢„è§ˆ
+        // ´ò¿ªÍ¼Æ¬Ô¤ÀÀ
         function openLightbox(imageSrc) {
             const lightbox = document.getElementById('imageLightbox');
             const lightboxImage = document.getElementById('lightboxImage');
             lightboxImage.src = imageSrc;
             lightbox.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // ç¦æ­¢èƒŒæ™¯æ»šåŠ¨
+            document.body.style.overflow = 'hidden'; // ½ûÖ¹±³¾°¹ö¶¯
         }
         
-        // å…³é—­å›¾ç‰‡é¢„è§ˆ
+        // ¹Ø±ÕÍ¼Æ¬Ô¤ÀÀ
         function closeLightbox() {
             const lightbox = document.getElementById('imageLightbox');
             lightbox.style.display = 'none';
-            document.body.style.overflow = ''; // æ¢å¤èƒŒæ™¯æ»šåŠ¨
+            document.body.style.overflow = ''; // »Ö¸´±³¾°¹ö¶¯
         }
         
-        // ç‚¹å‡»èƒŒæ™¯å…³é—­
+        // µã»÷±³¾°¹Ø±Õ
         document.addEventListener('click', function(e) {
             const lightbox = document.getElementById('imageLightbox');
             if (e.target === lightbox) {
@@ -332,14 +332,14 @@
             }
         });
         
-        // ESCé”®å…³é—­
+        // ESC¼ü¹Ø±Õ
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeLightbox();
             }
         });
 
-        // è®¾ç½®ç­›é€‰äº‹ä»¶
+        // ÉèÖÃÉ¸Ñ¡ÊÂ¼ş
         function setupFilters() {
             const typeButtons = document.querySelectorAll('#typeFilter .filter-btn');
 
@@ -353,12 +353,12 @@
             });
         }
 
-        // åˆ†é¡µå˜é‡
+        // ·ÖÒ³±äÁ¿
         let currentPage = 1;
         const itemsPerPage = 8;
         let filteredCases = [...casesData];
 
-        // æ¸²æŸ“åˆ†é¡µ
+        // äÖÈ¾·ÖÒ³
         function renderPagination() {
             const totalPages = Math.ceil(filteredCases.length / itemsPerPage);
             const container = document.getElementById('paginationContainer');
@@ -372,15 +372,15 @@
             container.innerHTML = `
                 <div style="display: inline-flex; align-items: center; gap: 15px;">
                     <button onclick="changePage(${currentPage - 1})" ${currentPage <= 1 ? 'disabled' : ''} 
-                        style="padding: 10px 20px; background: ${currentPage <= 1 ? '#ccc' : '#1e3a8a'}; color: white; border: none; border-radius: 4px; cursor: ${currentPage <= 1 ? 'not-allowed' : 'pointer'}; font-size: 14px;">ä¸Šä¸€é¡µ</button>
-                    <span style="font-size: 16px; color: #333;">ç¬¬ ${currentPage} é¡µ / å…± ${totalPages} é¡µ</span>
+                        style="padding: 10px 20px; background: ${currentPage <= 1 ? '#ccc' : '#1e3a8a'}; color: white; border: none; border-radius: 4px; cursor: ${currentPage <= 1 ? 'not-allowed' : 'pointer'}; font-size: 14px;">ÉÏÒ»Ò³</button>
+                    <span style="font-size: 16px; color: #333;">µÚ ${currentPage} Ò³ / ¹² ${totalPages} Ò³</span>
                     <button onclick="changePage(${currentPage + 1})" ${currentPage >= totalPages ? 'disabled' : ''} 
-                        style="padding: 10px 20px; background: ${currentPage >= totalPages ? '#ccc' : '#1e3a8a'}; color: white; border: none; border-radius: 4px; cursor: ${currentPage >= totalPages ? 'not-allowed' : 'pointer'}; font-size: 14px;">ä¸‹ä¸€é¡µ</button>
+                        style="padding: 10px 20px; background: ${currentPage >= totalPages ? '#ccc' : '#1e3a8a'}; color: white; border: none; border-radius: 4px; cursor: ${currentPage >= totalPages ? 'not-allowed' : 'pointer'}; font-size: 14px;">ÏÂÒ»Ò³</button>
                 </div>
             `;
         }
 
-        // åˆ‡æ¢é¡µé¢
+        // ÇĞ»»Ò³Ãæ
         function changePage(newPage) {
             const totalPages = Math.ceil(filteredCases.length / itemsPerPage);
             if (newPage < 1 || newPage > totalPages) return;
@@ -390,21 +390,21 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // æ¸²æŸ“å½“å‰é¡µæ¡ˆä¾‹
+        // äÖÈ¾µ±Ç°Ò³°¸Àı
         function renderCasesPage() {
             const grid = document.getElementById('casesGrid');
             const start = (currentPage - 1) * itemsPerPage;
             const end = start + itemsPerPage;
             const pageCases = filteredCases.slice(start, end);
             
-            // è·å–åŸºç¡€è·¯å¾„ï¼ˆå¦‚ /hongdu/ï¼‰
+            // »ñÈ¡»ù´¡Â·¾¶£¨Èç /hongdu/£©
             const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
             
-            // è¾…åŠ©å‡½æ•°ï¼šå°†ç›¸å¯¹è·¯å¾„è§£æä¸ºæ­£ç¡®URL
+            // ¸¨Öúº¯Êı£º½«Ïà¶ÔÂ·¾¶½âÎöÎªÕıÈ·URL
             function resolveImgUrl(path) {
                 if (!path) return '';
                 if (path.startsWith('http')) return path;
-                // å­˜å‚¨çš„è·¯å¾„æ˜¯ç›¸å¯¹è·¯å¾„å¦‚ uploads/xxx.jpgï¼Œéœ€è¦ç”¨ basePath æ‹¼ï¼Œä¸èƒ½ç”¨ /
+                // ´æ´¢µÄÂ·¾¶ÊÇÏà¶ÔÂ·¾¶Èç uploads/xxx.jpg£¬ĞèÒªÓÃ basePath Æ´£¬²»ÄÜÓÃ /
                 return path.startsWith('/') ? path : basePath + path;
             }
             
@@ -412,7 +412,7 @@
                 grid.innerHTML = `
                     <div class="cases-empty">
                         <i class="fas fa-folder-open"></i>
-                        <p class="cases-empty-text">æš‚æ— ç¬¦åˆæ¡ä»¶çš„æ¡ˆä¾‹</p>
+                        <p class="cases-empty-text">ÔİÎŞ·ûºÏÌõ¼şµÄ°¸Àı</p>
                     </div>
                 `;
                 return;
@@ -420,7 +420,7 @@
             
             grid.innerHTML = pageCases.map(caseItem => {
                 const typeClass = getTypeClass(caseItem.type);
-                // ä¼˜å…ˆä½¿ç”¨ coverImage å­—æ®µï¼Œå…¶æ¬¡ä½¿ç”¨ images æ•°ç»„çš„ç¬¬ä¸€å¼ ï¼Œæœ€åä½¿ç”¨ image å­—æ®µæˆ–é»˜è®¤å›¾ç‰‡
+                // ÓÅÏÈÊ¹ÓÃ coverImage ×Ö¶Î£¬Æä´ÎÊ¹ÓÃ images Êı×éµÄµÚÒ»ÕÅ£¬×îºóÊ¹ÓÃ image ×Ö¶Î»òÄ¬ÈÏÍ¼Æ¬
                 let imagePath = resolveImgUrl(caseItem.coverImage);
                 if (!imagePath && caseItem.images && caseItem.images.length > 0) {
                     imagePath = resolveImgUrl(caseItem.images[0]);
@@ -431,8 +431,8 @@
                 if (!imagePath) {
                     imagePath = basePath + 'images/cases/default.jpg';
                 }
-                // è·å–æ¡ˆä¾‹è¯¦æƒ…å†…å®¹ - ä¼˜å…ˆä½¿ç”¨ summary å­—æ®µï¼Œå…¶æ¬¡ä½¿ç”¨ detail å­—æ®µ
-                const caseDetail = caseItem.summary || caseItem.detail || 'æš‚æ— è¯¦æƒ…æè¿°';
+                // »ñÈ¡°¸ÀıÏêÇéÄÚÈİ - ÓÅÏÈÊ¹ÓÃ summary ×Ö¶Î£¬Æä´ÎÊ¹ÓÃ detail ×Ö¶Î
+                const caseDetail = caseItem.summary || caseItem.detail || 'ÔİÎŞÏêÇéÃèÊö';
                 return `
                     <article class="case-card-enhanced" data-id="${caseItem.id}">
                         <div class="case-card-image" onclick="openLightbox('${imagePath}')">
@@ -443,11 +443,11 @@
                             <p class="case-card-summary" onclick="window.location.href='case-detail.html?id=${caseItem.id}'" style="cursor: pointer;">${caseDetail}</p>
                             <div class="case-card-meta">
                                 <div class="case-card-amount" onclick="window.location.href='case-detail.html?id=${caseItem.id}'" style="cursor: pointer;">
-                                    <span class="case-card-amount-label">å‡ºèµ„é‡‘é¢</span>
+                                    <span class="case-card-amount-label">³ö×Ê½ğ¶î</span>
                                     <span class="case-card-amount-value">${caseItem.amount || '-'}</span>
                                 </div>
                                 <button class="btn-view-detail" onclick="window.location.href='case-detail.html?id=${caseItem.id}'">
-                                    æŸ¥çœ‹è¯¦æƒ…
+                                    ²é¿´ÏêÇé
                                 </button>
                             </div>
                         </div>
@@ -456,7 +456,7 @@
             }).join('');
         }
 
-        // ç­›é€‰æ¡ˆä¾‹
+        // É¸Ñ¡°¸Àı
         function filterCases() {
             currentPage = 1;
             filteredCases = casesData.filter(caseItem => {
@@ -466,31 +466,31 @@
             renderPagination();
         }
 
-        // ä»localStorageåŠ è½½æ¡ˆä¾‹æ•°æ®ï¼ˆä¸åå°ç®¡ç†ä¿æŒä¸€è‡´ï¼‰
+        // ´ÓlocalStorage¼ÓÔØ°¸ÀıÊı¾İ£¨ÓëºóÌ¨¹ÜÀí±£³ÖÒ»ÖÂ£©
         function loadCasesFromLocal() {
             try {
                 const cases = JSON.parse(localStorage.getItem('cms_cases') || '[]');
-                return cases.filter(c => c.status === 'published'); // åªæ˜¾ç¤ºå·²å‘å¸ƒçš„æ¡ˆä¾‹
+                return cases.filter(c => c.status === 'published'); // Ö»ÏÔÊ¾ÒÑ·¢²¼µÄ°¸Àı
             } catch (e) {
-                console.error('ä»localStorageåŠ è½½å¤±è´¥:', e);
+                console.error('´ÓlocalStorage¼ÓÔØÊ§°Ü:', e);
                 return [];
             }
         }
 
-        // ä»æœåŠ¡å™¨APIåŠ è½½æ¡ˆä¾‹æ•°æ®
+        // ´Ó·şÎñÆ÷API¼ÓÔØ°¸ÀıÊı¾İ
         async function loadCasesFromServer() {
             try {
-                // è·å–å½“å‰è·¯å¾„ï¼Œç¡®ä¿APIè·¯å¾„æ­£ç¡®
+                // »ñÈ¡µ±Ç°Â·¾¶£¬È·±£APIÂ·¾¶ÕıÈ·
                 const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
-                // æ·»åŠ æ—¶é—´æˆ³å’Œéšæœºæ•°é˜²æ­¢ç¼“å­˜
+                // Ìí¼ÓÊ±¼ä´ÁºÍËæ»úÊı·ÀÖ¹»º´æ
                 const timestamp = Date.now();
                 const random = Math.random().toString(36).substring(7);
                 const apiUrl = basePath + 'api/cases.php?t=' + timestamp + '&r=' + random;
-                console.log('[Cases] æ­£åœ¨ä»APIåŠ è½½:', apiUrl);
+                console.log('[Cases] ÕıÔÚ´ÓAPI¼ÓÔØ:', apiUrl);
                 
                 const response = await fetch(apiUrl, {
                     method: 'GET',
-                    cache: 'no-store', // å¼ºåˆ¶ä¸ä½¿ç”¨ç¼“å­˜
+                    cache: 'no-store', // Ç¿ÖÆ²»Ê¹ÓÃ»º´æ
                     headers: {
                         'Accept': 'application/json',
                         'Cache-Control': 'no-cache, no-store, must-revalidate',
@@ -499,26 +499,26 @@
                     }
                 });
                 
-                // æ£€æŸ¥å“åº”æ˜¯å¦ä¸ºJSON
+                // ¼ì²éÏìÓ¦ÊÇ·ñÎªJSON
                 const contentType = response.headers.get('content-type');
                 if (!contentType || !contentType.includes('application/json')) {
                     const text = await response.text();
-                    console.error('[Cases] APIè¿”å›éJSONæ ¼å¼:', text.substring(0, 200));
+                    console.error('[Cases] API·µ»Ø·ÇJSON¸ñÊ½:', text.substring(0, 200));
                     return [];
                 }
                 
                 const result = await response.json();
-                console.log('[Cases] APIè¿”å›:', result);
+                console.log('[Cases] API·µ»Ø:', result);
                 
                 if (result.success && result.cases) {
-                    // åªè¿”å›å·²å‘å¸ƒçš„æ¡ˆä¾‹ï¼Œå¹¶è½¬æ¢æ•°æ®æ ¼å¼
+                    // Ö»·µ»ØÒÑ·¢²¼µÄ°¸Àı£¬²¢×ª»»Êı¾İ¸ñÊ½
                     const publishedCases = result.cases
                         .filter(c => c.status === 'published')
                         .map(c => ({
                             id: c.id,
                             title: c.title,
                             type: c.type,
-                            city: c.city || 'æœªçŸ¥',
+                            city: c.city || 'Î´Öª',
                             summary: c.summary || '',
                             amount: c.amount || '-',
                             period: c.period || '-',
@@ -530,25 +530,25 @@
                             hasVideo: c.hasVideo || false,
                             video: c.video || null
                         }));
-                    console.log('[Cases] å·²å‘å¸ƒæ¡ˆä¾‹æ•°é‡:', publishedCases.length);
+                    console.log('[Cases] ÒÑ·¢²¼°¸ÀıÊıÁ¿:', publishedCases.length);
                     return publishedCases;
                 }
             } catch (error) {
-                console.error('[Cases] æœåŠ¡å™¨åŠ è½½å¤±è´¥:', error);
+                console.error('[Cases] ·şÎñÆ÷¼ÓÔØÊ§°Ü:', error);
             }
             return [];
         }
 
-        // ä¸šåŠ¡ç±»å‹æ•°æ®
+        // ÒµÎñÀàĞÍÊı¾İ
         let caseTypes = [];
 
-        // ä»æœåŠ¡å™¨åŠ è½½ä¸šåŠ¡ç±»å‹
+        // ´Ó·şÎñÆ÷¼ÓÔØÒµÎñÀàĞÍ
         async function loadCaseTypesFromServer() {
             try {
                 const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
                 const timestamp = Date.now();
                 const apiUrl = basePath + 'api/case/types.php?t=' + timestamp;
-                console.log('[Cases] æ­£åœ¨åŠ è½½ä¸šåŠ¡ç±»å‹:', apiUrl);
+                console.log('[Cases] ÕıÔÚ¼ÓÔØÒµÎñÀàĞÍ:', apiUrl);
                 
                 const response = await fetch(apiUrl, {
                     method: 'GET',
@@ -563,45 +563,45 @@
                     throw new Error('HTTP ' + response.status);
                 }
                 
-                // æ£€æŸ¥å“åº”ç±»å‹
+                // ¼ì²éÏìÓ¦ÀàĞÍ
                 const contentType = response.headers.get('content-type');
                 if (!contentType || !contentType.includes('application/json')) {
                     const text = await response.text();
-                    console.error('[Cases] ä¸šåŠ¡ç±»å‹APIè¿”å›éJSONæ ¼å¼:', text.substring(0, 200));
+                    console.error('[Cases] ÒµÎñÀàĞÍAPI·µ»Ø·ÇJSON¸ñÊ½:', text.substring(0, 200));
                     return [];
                 }
                 
                 const result = await response.json();
-                console.log('[Cases] ä¸šåŠ¡ç±»å‹APIè¿”å›:', result);
+                console.log('[Cases] ÒµÎñÀàĞÍAPI·µ»Ø:', result);
                 
                 if (result.success && result.data && Array.isArray(result.data)) {
-                    console.log('[Cases] æˆåŠŸåŠ è½½ä¸šåŠ¡ç±»å‹:', result.data.length, 'ä¸ª');
+                    console.log('[Cases] ³É¹¦¼ÓÔØÒµÎñÀàĞÍ:', result.data.length, '¸ö');
                     return result.data;
                 } else {
-                    console.warn('[Cases] ä¸šåŠ¡ç±»å‹APIè¿”å›æ•°æ®æ ¼å¼ä¸æ­£ç¡®:', result);
+                    console.warn('[Cases] ÒµÎñÀàĞÍAPI·µ»ØÊı¾İ¸ñÊ½²»ÕıÈ·:', result);
                 }
             } catch (error) {
-                console.error('[Cases] åŠ è½½ä¸šåŠ¡ç±»å‹å¤±è´¥:', error);
+                console.error('[Cases] ¼ÓÔØÒµÎñÀàĞÍÊ§°Ü:', error);
             }
             return [];
         }
 
-        // æ¸²æŸ“ä¸šåŠ¡ç±»å‹ç­›é€‰æŒ‰é’®
+        // äÖÈ¾ÒµÎñÀàĞÍÉ¸Ñ¡°´Å¥
         function renderTypeFilters() {
             const container = document.getElementById('typeFilter');
             if (!container) {
-                console.error('[Cases] typeFilterå®¹å™¨ä¸å­˜åœ¨');
+                console.error('[Cases] typeFilterÈİÆ÷²»´æÔÚ');
                 return;
             }
             
-            console.log('[Cases] æ¸²æŸ“ä¸šåŠ¡ç±»å‹æŒ‰é’®, æ•°é‡:', caseTypes.length);
+            console.log('[Cases] äÖÈ¾ÒµÎñÀàĞÍ°´Å¥, ÊıÁ¿:', caseTypes.length);
             
-            // ä¿ç•™"å…¨éƒ¨"æŒ‰é’®
-            let html = '<button class="filter-btn active" data-filter="all" data-type="type">å…¨éƒ¨</button>';
+            // ±£Áô"È«²¿"°´Å¥
+            let html = '<button class="filter-btn active" data-filter="all" data-type="type">È«²¿</button>';
             
-            // åŠ¨æ€ç”Ÿæˆä¸šåŠ¡ç±»å‹æŒ‰é’®
+            // ¶¯Ì¬Éú³ÉÒµÎñÀàĞÍ°´Å¥
             caseTypes.forEach(type => {
-                // ä½¿ç”¨nameä½œä¸ºæ˜¾ç¤ºåç§°å’Œç­›é€‰å€¼
+                // Ê¹ÓÃname×÷ÎªÏÔÊ¾Ãû³ÆºÍÉ¸Ñ¡Öµ
                 const displayName = type.name;
                 const filterValue = type.name;
                 html += `<button class="filter-btn" data-filter="${filterValue}" data-type="type">${displayName}</button>`;
@@ -609,58 +609,58 @@
             
             container.innerHTML = html;
             
-            // é‡æ–°ç»‘å®šç­›é€‰äº‹ä»¶
+            // ÖØĞÂ°ó¶¨É¸Ñ¡ÊÂ¼ş
             setupFilters();
         }
 
-        // åŠ è½½æ¡ˆä¾‹æ•°æ®ï¼ˆä¼˜å…ˆä»æœåŠ¡å™¨ï¼Œå¤±è´¥åˆ™æ˜¾ç¤ºç©ºçŠ¶æ€ï¼‰
+        // ¼ÓÔØ°¸ÀıÊı¾İ£¨ÓÅÏÈ´Ó·şÎñÆ÷£¬Ê§°ÜÔòÏÔÊ¾¿Õ×´Ì¬£©
         async function loadCasesData() {
-            console.log('[Cases] å¼€å§‹åŠ è½½æ¡ˆä¾‹æ•°æ®...');
+            console.log('[Cases] ¿ªÊ¼¼ÓÔØ°¸ÀıÊı¾İ...');
             
-            // æ¸…é™¤å¯èƒ½å­˜åœ¨çš„æ—§ç¼“å­˜ï¼Œç¡®ä¿è·å–æœ€æ–°æ•°æ®
+            // Çå³ı¿ÉÄÜ´æÔÚµÄ¾É»º´æ£¬È·±£»ñÈ¡×îĞÂÊı¾İ
             try {
                 localStorage.removeItem('cases_last_update');
                 localStorage.removeItem('cases_cache_time');
             } catch (e) {
-                console.log('[Cases] æ¸…ç†ç¼“å­˜æ ‡è®°å¤±è´¥:', e);
+                console.log('[Cases] ÇåÀí»º´æ±ê¼ÇÊ§°Ü:', e);
             }
             
-            // å¹¶è¡ŒåŠ è½½ä¸šåŠ¡ç±»å‹å’Œæ¡ˆä¾‹æ•°æ®
+            // ²¢ĞĞ¼ÓÔØÒµÎñÀàĞÍºÍ°¸ÀıÊı¾İ
             const [types, cases] = await Promise.all([
                 loadCaseTypesFromServer(),
                 loadCasesFromServer()
             ]);
             
-            console.log('[Cases] æ•°æ®åŠ è½½å®Œæˆ - ä¸šåŠ¡ç±»å‹:', types.length, 'ä¸ª, æ¡ˆä¾‹:', cases.length, 'ä¸ª');
+            console.log('[Cases] Êı¾İ¼ÓÔØÍê³É - ÒµÎñÀàĞÍ:', types.length, '¸ö, °¸Àı:', cases.length, '¸ö');
             
-            // æ›´æ–°ä¸šåŠ¡ç±»å‹
+            // ¸üĞÂÒµÎñÀàĞÍ
             if (types.length > 0) {
-                console.log('[Cases] ä½¿ç”¨æœåŠ¡å™¨è¿”å›çš„ä¸šåŠ¡ç±»å‹');
+                console.log('[Cases] Ê¹ÓÃ·şÎñÆ÷·µ»ØµÄÒµÎñÀàĞÍ');
                 caseTypes = types;
                 renderTypeFilters();
-                // ä¿å­˜åˆ°localStorageä¾›ç¦»çº¿ä½¿ç”¨
+                // ±£´æµ½localStorage¹©ÀëÏßÊ¹ÓÃ
                 localStorage.setItem('cms_case_types', JSON.stringify(caseTypes));
             } else {
-                console.log('[Cases] æœåŠ¡å™¨æ— ä¸šåŠ¡ç±»å‹ï¼Œå°è¯•ä»localStorageåŠ è½½');
-                // ä»localStorageåŠ è½½ä¸šåŠ¡ç±»å‹ä½œä¸ºåå¤‡
+                console.log('[Cases] ·şÎñÆ÷ÎŞÒµÎñÀàĞÍ£¬³¢ÊÔ´ÓlocalStorage¼ÓÔØ');
+                // ´ÓlocalStorage¼ÓÔØÒµÎñÀàĞÍ×÷Îªºó±¸
                 try {
                     const cachedTypes = JSON.parse(localStorage.getItem('cms_case_types') || '[]');
                     if (cachedTypes.length > 0) {
-                        console.log('[Cases] ä»localStorageåŠ è½½ä¸šåŠ¡ç±»å‹:', cachedTypes.length, 'ä¸ª');
+                        console.log('[Cases] ´ÓlocalStorage¼ÓÔØÒµÎñÀàĞÍ:', cachedTypes.length, '¸ö');
                         caseTypes = cachedTypes;
                         renderTypeFilters();
                     } else {
-                        console.warn('[Cases] localStorageä¸­ä¹Ÿæ²¡æœ‰ä¸šåŠ¡ç±»å‹æ•°æ®');
+                        console.warn('[Cases] localStorageÖĞÒ²Ã»ÓĞÒµÎñÀàĞÍÊı¾İ');
                     }
                 } catch (e) {
-                    console.log('[Cases] ä»localStorageåŠ è½½ä¸šåŠ¡ç±»å‹å¤±è´¥:', e);
+                    console.log('[Cases] ´ÓlocalStorage¼ÓÔØÒµÎñÀàĞÍÊ§°Ü:', e);
                 }
             }
             
-            // å¤„ç†æ¡ˆä¾‹æ•°æ® - åªä½¿ç”¨æœåŠ¡å™¨æ•°æ®ï¼Œä¸å†ä»localStorageåˆå¹¶
+            // ´¦Àí°¸ÀıÊı¾İ - Ö»Ê¹ÓÃ·şÎñÆ÷Êı¾İ£¬²»ÔÙ´ÓlocalStorageºÏ²¢
             let finalCases = cases;
             
-            // æŒ‰IDå»é‡ - é˜²æ­¢åŒä¸€æ¡ˆä¾‹é‡å¤æ˜¾ç¤º
+            // °´IDÈ¥ÖØ - ·ÀÖ¹Í¬Ò»°¸ÀıÖØ¸´ÏÔÊ¾
             const uniqueCases = [];
             const seenIds = new Set();
             for (const caseItem of finalCases) {
@@ -668,7 +668,7 @@
                     seenIds.add(caseItem.id);
                     uniqueCases.push(caseItem);
                 } else if (!caseItem.id) {
-                    // æ²¡æœ‰IDçš„æ¡ˆä¾‹ï¼Œä½¿ç”¨æ ‡é¢˜+ç±»å‹ç»„åˆä½œä¸ºå”¯ä¸€æ ‡è¯†
+                    // Ã»ÓĞIDµÄ°¸Àı£¬Ê¹ÓÃ±êÌâ+ÀàĞÍ×éºÏ×÷ÎªÎ¨Ò»±êÊ¶
                     const uniqueKey = (caseItem.title || '') + '|' + (caseItem.type || '');
                     if (!seenIds.has(uniqueKey)) {
                         seenIds.add(uniqueKey);
@@ -677,11 +677,11 @@
                 }
             }
             finalCases = uniqueCases;
-            console.log('[Cases] å»é‡åæ¡ˆä¾‹æ•°é‡:', finalCases.length);
+            console.log('[Cases] È¥ÖØºó°¸ÀıÊıÁ¿:', finalCases.length);
             
-            // å¦‚æœéƒ½æ²¡æœ‰æ•°æ®ï¼Œæ˜¾ç¤ºç©ºçŠ¶æ€
+            // Èç¹û¶¼Ã»ÓĞÊı¾İ£¬ÏÔÊ¾¿Õ×´Ì¬
             if (finalCases.length === 0) {
-                console.log('æš‚æ— æ¡ˆä¾‹æ•°æ®');
+                console.log('ÔİÎŞ°¸ÀıÊı¾İ');
             }
             
             casesData = finalCases;
@@ -690,50 +690,50 @@
             renderPagination();
         }
 
-        // åˆå§‹åŒ–
+        // ³õÊ¼»¯
         document.addEventListener('DOMContentLoaded', function() {
             loadCasesData();
             
-            // ç›‘å¬localStorageå˜åŒ–ï¼ˆç”¨äºåå°ä¿®æ”¹åè‡ªåŠ¨åˆ·æ–°ï¼‰
+            // ¼àÌılocalStorage±ä»¯£¨ÓÃÓÚºóÌ¨ĞŞ¸Äºó×Ô¶¯Ë¢ĞÂ£©
             window.addEventListener('storage', function(e) {
                 if (e.key === 'cms_case_types' || e.key === 'cms_cases' || e.key === 'cms_case_types_update') {
-                    console.log('[Cases] æ£€æµ‹åˆ°æ•°æ®å˜åŒ–ï¼Œé‡æ–°åŠ è½½...');
+                    console.log('[Cases] ¼ì²âµ½Êı¾İ±ä»¯£¬ÖØĞÂ¼ÓÔØ...');
                     loadCasesData();
                 }
             });
             
-            // é¡µé¢å¯è§æ€§å˜åŒ–æ—¶åˆ·æ–°ï¼ˆä»åå°è¿”å›æ—¶ï¼‰
+            // Ò³Ãæ¿É¼ûĞÔ±ä»¯Ê±Ë¢ĞÂ£¨´ÓºóÌ¨·µ»ØÊ±£©
             document.addEventListener('visibilitychange', function() {
                 if (document.visibilityState === 'visible') {
-                    console.log('[Cases] é¡µé¢é‡æ–°å¯è§ï¼Œæ£€æŸ¥æ•°æ®æ›´æ–°...');
+                    console.log('[Cases] Ò³ÃæÖØĞÂ¿É¼û£¬¼ì²éÊı¾İ¸üĞÂ...');
                     loadCasesData();
                 }
             });
         });
         
-        // å¼ºåˆ¶åˆ·æ–°æ•°æ®ï¼ˆä¾›å¤–éƒ¨è°ƒç”¨ï¼‰
+        // Ç¿ÖÆË¢ĞÂÊı¾İ£¨¹©Íâ²¿µ÷ÓÃ£©
         function forceRefreshCases() {
-            console.log('[Cases] å¼ºåˆ¶åˆ·æ–°æ•°æ®...');
-            // æ¸…é™¤æ‰€æœ‰ç¼“å­˜
+            console.log('[Cases] Ç¿ÖÆË¢ĞÂÊı¾İ...');
+            // Çå³ıËùÓĞ»º´æ
             localStorage.removeItem('cms_case_types');
             localStorage.removeItem('cases_last_update');
             localStorage.removeItem('cases_cache_time');
-            // é‡æ–°åŠ è½½
+            // ÖØĞÂ¼ÓÔØ
             loadCasesData();
         }
     </script>
     
-    <!-- å›¾ç‰‡é¢„è§ˆå¼¹çª— (Lightbox) -->
+    <!-- Í¼Æ¬Ô¤ÀÀµ¯´° (Lightbox) -->
     <div id="imageLightbox" class="lightbox-overlay" style="display: none;">
         <div class="lightbox-container">
-            <button class="lightbox-close" onclick="closeLightbox()" aria-label="å…³é—­é¢„è§ˆ">
+            <button class="lightbox-close" onclick="closeLightbox()" aria-label="¹Ø±ÕÔ¤ÀÀ">
                 <i class="fas fa-times"></i>
             </button>
-            <img id="lightboxImage" src="" alt="å¤§å›¾é¢„è§ˆ">
+            <img id="lightboxImage" src="" alt="´óÍ¼Ô¤ÀÀ">
         </div>
     </div>
 
-    <!-- Lightbox æ ·å¼ -->
+    <!-- Lightbox ÑùÊ½ -->
     <style>
         .lightbox-overlay {
             position: fixed;
@@ -790,7 +790,7 @@
             background: rgba(255, 255, 255, 0.4);
         }
         
-        /* ç‚¹å‡»å›¾ç‰‡çš„æŒ‡é’ˆæ ·å¼ */
+        /* µã»÷Í¼Æ¬µÄÖ¸ÕëÑùÊ½ */
         .case-card-image {
             cursor: pointer;
         }
@@ -806,41 +806,41 @@
 
     <!-- CMS Editor -->
     <script>
-        // æ£€æŸ¥æ˜¯å¦éœ€è¦åŠ è½½ç¼–è¾‘å™¨
+        // ¼ì²éÊÇ·ñĞèÒª¼ÓÔØ±à¼­Æ÷
         (function() {
-            console.log('[CMS] åˆå§‹åŒ–æ£€æŸ¥...');
+            console.log('[CMS] ³õÊ¼»¯¼ì²é...');
             
             const urlParams = new URLSearchParams(window.location.search);
             const isEditMode = urlParams.get('edit') === 'true';
             const isLoggedIn = localStorage.getItem('cms_logged_in') === 'true';
             
-            console.log('[CMS] ç¼–è¾‘æ¨¡å¼:', isEditMode);
-            console.log('[CMS] ç™»å½•çŠ¶æ€:', isLoggedIn);
+            console.log('[CMS] ±à¼­Ä£Ê½:', isEditMode);
+            console.log('[CMS] µÇÂ¼×´Ì¬:', isLoggedIn);
             
             if (isEditMode && isLoggedIn) {
-                console.log('[CMS] å¼€å§‹åŠ è½½ç¼–è¾‘å™¨...');
+                console.log('[CMS] ¿ªÊ¼¼ÓÔØ±à¼­Æ÷...');
                 
-                // åŠ è½½ç¼–è¾‘å™¨æ ·å¼
+                // ¼ÓÔØ±à¼­Æ÷ÑùÊ½
                 const editorCss = document.createElement('link');
                 editorCss.rel = 'stylesheet';
                 editorCss.href = 'admin/editor.css';
                 editorCss.onerror = function() {
-                    console.error('[CMS] ç¼–è¾‘å™¨æ ·å¼åŠ è½½å¤±è´¥');
+                    console.error('[CMS] ±à¼­Æ÷ÑùÊ½¼ÓÔØÊ§°Ü');
                 };
                 document.head.appendChild(editorCss);
                 
-                // åŠ è½½ç¼–è¾‘å™¨è„šæœ¬
+                // ¼ÓÔØ±à¼­Æ÷½Å±¾
                 const editorScript = document.createElement('script');
                 editorScript.src = 'admin/editor.js';
                 editorScript.onload = function() {
-                    console.log('[CMS] ç¼–è¾‘å™¨è„šæœ¬åŠ è½½æˆåŠŸ');
+                    console.log('[CMS] ±à¼­Æ÷½Å±¾¼ÓÔØ³É¹¦');
                 };
                 editorScript.onerror = function() {
-                    console.error('[CMS] ç¼–è¾‘å™¨è„šæœ¬åŠ è½½å¤±è´¥');
+                    console.error('[CMS] ±à¼­Æ÷½Å±¾¼ÓÔØÊ§°Ü');
                 };
                 document.body.appendChild(editorScript);
             } else if (isEditMode && !isLoggedIn) {
-                console.log('[CMS] æœªç™»å½•ï¼Œé‡å®šå‘åˆ°ç™»å½•é¡µ');
+                console.log('[CMS] Î´µÇÂ¼£¬ÖØ¶¨Ïòµ½µÇÂ¼Ò³');
                 window.location.href = 'admin/login.html?redirect=' + encodeURIComponent(window.location.href);
             }
         })();

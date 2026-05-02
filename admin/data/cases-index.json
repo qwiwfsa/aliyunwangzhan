@@ -134,20 +134,5 @@
         ],
         "status": "published",
         "lastModified": "2026-04-28 00:45:25"
-    },
-    {
-        "id": "case_1777666524729",
-        "title": "测试",
-        "type": "企业过桥",
-        "city": "北京",
-        "amount": "",
-        "summary": "",
-        "image": "uploads\/20260501_69f509e024f44.png",
-        "coverImage": "uploads\/20260501_69f509e024f44.png",
-        "images": [
-            "uploads\/20260501_69f509e024f44.png"
-        ],
-        "status": "published",
-        "lastModified": "2026-05-01 22:15:28"
     }
 ]

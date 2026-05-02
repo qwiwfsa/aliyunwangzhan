@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ç¼–è¾‘æ¡ˆä¾‹ - å®éƒ½èµ„æœ¬CMS</title>
+    <title>±à¼­°¸Àı - ºê¶¼×Ê±¾CMS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -138,30 +138,30 @@
             <div class="cms-sidebar-header">
                 <div class="cms-sidebar-brand">
                     <i class="fas fa-cog"></i>
-                    <span>CMSç®¡ç†åå°</span>
+                    <span>CMS¹ÜÀíºóÌ¨</span>
                 </div>
             </div>
             <nav class="cms-sidebar-nav">
                 <div class="cms-nav-section">
-                    <div class="cms-nav-title">ä¸»è¦</div>
+                    <div class="cms-nav-title">Ö÷Òª</div>
                     <a href="dashboard.html" class="cms-nav-item">
                         <i class="fas fa-home"></i>
-                        <span>ä»ªè¡¨æ¿</span>
+                        <span>ÒÇ±í°å</span>
                     </a>
                 </div>
                 <div class="cms-nav-section">
-                    <div class="cms-nav-title">å†…å®¹</div>
+                    <div class="cms-nav-title">ÄÚÈİ</div>
                     <a href="components/news/article-list.html" class="cms-nav-item">
                         <i class="fas fa-newspaper"></i>
-                        <span>æ–‡ç« ç®¡ç†</span>
+                        <span>ÎÄÕÂ¹ÜÀí</span>
                     </a>
                     <a href="case-management.html" class="cms-nav-item active">
                         <i class="fas fa-trophy"></i>
-                        <span>æˆåŠŸæ¡ˆä¾‹</span>
+                        <span>³É¹¦°¸Àı</span>
                     </a>
                     <a href="faq-management.html" class="cms-nav-item">
                         <i class="fas fa-question-circle"></i>
-                        <span>å¸¸è§é—®é¢˜</span>
+                        <span>³£¼ûÎÊÌâ</span>
                     </a>
                 </div>
             </nav>
@@ -170,28 +170,28 @@
         <main class="cms-main">
             <header class="cms-header">
                 <div class="cms-breadcrumb">
-                    <a href="dashboard.html">é¦–é¡µ</a>
+                    <a href="dashboard.html">Ê×Ò³</a>
                     <i class="fas fa-chevron-right" style="font-size: 12px;"></i>
-                    <a href="case-management.html">æ¡ˆä¾‹ç®¡ç†</a>
+                    <a href="case-management.html">°¸Àı¹ÜÀí</a>
                     <i class="fas fa-chevron-right" style="font-size: 12px;"></i>
-                    <span id="pageTitle">ç¼–è¾‘æ¡ˆä¾‹</span>
+                    <span id="pageTitle">±à¼­°¸Àı</span>
                 </div>
                 <div class="cms-header-right">
                     <button class="cms-header-btn" onclick="previewCase()">
                         <i class="fas fa-eye"></i>
-                        <span>é¢„è§ˆ</span>
+                        <span>Ô¤ÀÀ</span>
                     </button>
                     <button class="cms-header-btn cms-header-btn-danger" onclick="deleteCase()">
                         <i class="fas fa-trash"></i>
-                        <span>åˆ é™¤</span>
+                        <span>É¾³ı</span>
                     </button>
                     <button class="cms-header-btn cms-header-btn-success" onclick="saveCase()">
                         <i class="fas fa-save"></i>
-                        <span>ä¿å­˜</span>
+                        <span>±£´æ</span>
                     </button>
-                    <button class="cms-header-btn" onclick="showStorageInfo()" title="å­˜å‚¨ç©ºé—´">
+                    <button class="cms-header-btn" onclick="showStorageInfo()" title="´æ´¢¿Õ¼ä">
                         <i class="fas fa-database"></i>
-                        <span id="storageBtnText">å­˜å‚¨</span>
+                        <span id="storageBtnText">´æ´¢</span>
                     </button>
                 </div>
             </header>
@@ -201,44 +201,44 @@
                     <div class="form-section">
                         <div class="form-section-header">
                             <i class="fas fa-info-circle"></i>
-                            <span class="form-section-title">åŸºæœ¬ä¿¡æ¯</span>
+                            <span class="form-section-title">»ù±¾ĞÅÏ¢</span>
                         </div>
                         <div class="form-section-body">
                             <div class="form-grid">
                                 <div class="form-group">
-                                    <label class="form-label">æ¡ˆä¾‹æ ‡é¢˜ <span class="required">*</span></label>
-                                    <input type="text" class="form-input" id="caseTitle" placeholder="è¯·è¾“å…¥æ¡ˆä¾‹æ ‡é¢˜">
+                                    <label class="form-label">°¸Àı±êÌâ <span class="required">*</span></label>
+                                    <input type="text" class="form-input" id="caseTitle" placeholder="ÇëÊäÈë°¸Àı±êÌâ">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">ä¸šåŠ¡ç±»å‹</label>
+                                    <label class="form-label">ÒµÎñÀàĞÍ</label>
                                     <select class="form-select" id="caseType">
-                                        <option value="è¿‡æ¡¥">è¿‡æ¡¥</option>
-                                        <option value="æ‘†è´¦">æ‘†è´¦</option>
-                                        <option value="äº®èµ„">äº®èµ„</option>
-                                        <option value="å†²é‡">å†²é‡</option>
-                                        <option value="å®šå¢">å®šå¢</option>
-                                        <option value="åº”æ”¶è´¦æ¬¾">åº”æ”¶è´¦æ¬¾</option>
+                                        <option value="¹ıÇÅ">¹ıÇÅ</option>
+                                        <option value="°ÚÕË">°ÚÕË</option>
+                                        <option value="ÁÁ×Ê">ÁÁ×Ê</option>
+                                        <option value="³åÁ¿">³åÁ¿</option>
+                                        <option value="¶¨Ôö">¶¨Ôö</option>
+                                        <option value="Ó¦ÊÕÕË¿î">Ó¦ÊÕÕË¿î</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">æ‰€åœ¨åŸå¸‚</label>
-                                    <input type="text" class="form-input" id="caseCity" placeholder="å¦‚ï¼šåŒ—äº¬ã€ä¸Šæµ·">
+                                    <label class="form-label">ËùÔÚ³ÇÊĞ</label>
+                                    <input type="text" class="form-input" id="caseCity" placeholder="Èç£º±±¾©¡¢ÉÏº£">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">èµ„é‡‘è§„æ¨¡</label>
-                                    <input type="text" class="form-input" id="caseAmount" placeholder="å¦‚ï¼š2äº¿ã€5000ä¸‡">
+                                    <label class="form-label">×Ê½ğ¹æÄ£</label>
+                                    <input type="text" class="form-input" id="caseAmount" placeholder="Èç£º2ÒÚ¡¢5000Íò">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">æœåŠ¡å‘¨æœŸ</label>
-                                    <input type="text" class="form-input" id="casePeriod" placeholder="å¦‚ï¼š7å¤©ã€30å¤©">
+                                    <label class="form-label">·şÎñÖÜÆÚ</label>
+                                    <input type="text" class="form-input" id="casePeriod" placeholder="Èç£º7Ìì¡¢30Ìì">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">æœåŠ¡å¹´ä»½</label>
-                                    <input type="text" class="form-input" id="caseYear" placeholder="å¦‚ï¼š2024">
+                                    <label class="form-label">·şÎñÄê·İ</label>
+                                    <input type="text" class="form-input" id="caseYear" placeholder="Èç£º2024">
                                 </div>
                                 <div class="form-group full-width">
-                                    <label class="form-label">æ¡ˆä¾‹æ‘˜è¦</label>
-                                    <textarea class="form-textarea" id="caseSummary" placeholder="ç®€è¦æè¿°æ¡ˆä¾‹å†…å®¹"></textarea>
+                                    <label class="form-label">°¸ÀıÕªÒª</label>
+                                    <textarea class="form-textarea" id="caseSummary" placeholder="¼òÒªÃèÊö°¸ÀıÄÚÈİ"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -247,13 +247,13 @@
                     <div class="form-section">
                         <div class="form-section-header">
                             <i class="fas fa-images"></i>
-                            <span class="form-section-title">æ¡ˆä¾‹å›¾ç‰‡</span>
+                            <span class="form-section-title">°¸ÀıÍ¼Æ¬</span>
                         </div>
                         <div class="form-section-body">
                             <div class="media-preview" id="imagePreview"></div>
                             <div class="add-image-btn" onclick="addImage()" id="addImageBtn">
                                 <i class="fas fa-plus"></i>
-                                <span>æ·»åŠ å›¾ç‰‡</span>
+                                <span>Ìí¼ÓÍ¼Æ¬</span>
                             </div>
                         </div>
                     </div>
@@ -261,20 +261,20 @@
                     <div class="form-section">
                         <div class="form-section-header">
                             <i class="fas fa-video"></i>
-                            <span class="form-section-title">æ¡ˆä¾‹è§†é¢‘</span>
+                            <span class="form-section-title">°¸ÀıÊÓÆµ</span>
                         </div>
                         <div class="form-section-body">
                             <div class="form-group" style="margin-bottom: 16px;">
                                 <label class="form-label">
                                     <input type="checkbox" id="hasVideo" onchange="toggleVideo()">
-                                    åŒ…å«è§†é¢‘
+                                    °üº¬ÊÓÆµ
                                 </label>
                             </div>
                             <div id="videoSection" style="display: none;">
                                 <input type="file" id="videoInput" accept="video/*" style="display: none;" onchange="handleVideoUpload(event)">
                                 <button type="button" class="cms-header-btn" onclick="document.getElementById('videoInput').click()">
                                     <i class="fas fa-upload"></i>
-                                    <span>ä¸Šä¼ è§†é¢‘</span>
+                                    <span>ÉÏ´«ÊÓÆµ</span>
                                 </button>
                                 <div class="media-preview" id="videoPreview" style="margin-top: 16px;"></div>
                             </div>
@@ -284,13 +284,13 @@
                     <div class="form-section">
                         <div class="form-section-header">
                             <i class="fas fa-lightbulb"></i>
-                            <span class="form-section-title">æœåŠ¡äº®ç‚¹</span>
+                            <span class="form-section-title">·şÎñÁÁµã</span>
                         </div>
                         <div class="form-section-body">
                             <div class="highlights-list" id="highlightsList"></div>
                             <div class="add-highlight-row" onclick="addHighlight()">
                                 <i class="fas fa-plus"></i>
-                                <span>æ·»åŠ äº®ç‚¹</span>
+                                <span>Ìí¼ÓÁÁµã</span>
                             </div>
                         </div>
                     </div>
@@ -298,17 +298,17 @@
                     <div class="form-section">
                         <div class="form-section-header">
                             <i class="fas fa-toggle-on"></i>
-                            <span class="form-section-title">å‘å¸ƒçŠ¶æ€</span>
+                            <span class="form-section-title">·¢²¼×´Ì¬</span>
                         </div>
                         <div class="form-section-body">
                             <div class="status-options">
                                 <div class="status-option published" onclick="setStatus('published')">
                                     <i class="fas fa-check-circle"></i>
-                                    <span>å‘å¸ƒ</span>
+                                    <span>·¢²¼</span>
                                 </div>
                                 <div class="status-option draft active" onclick="setStatus('draft')">
                                     <i class="fas fa-edit"></i>
-                                    <span>è‰ç¨¿</span>
+                                    <span>²İ¸å</span>
                                 </div>
                             </div>
                         </div>
@@ -320,24 +320,24 @@
 
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-spinner"></div>
-        <div class="loading-text">æ­£åœ¨ä¿å­˜...</div>
+        <div class="loading-text">ÕıÔÚ±£´æ...</div>
     </div>
 
     <div class="toast" id="toast">
         <i class="fas fa-check-circle"></i>
-        <span id="toastMessage">æ“ä½œæˆåŠŸ</span>
+        <span id="toastMessage">²Ù×÷³É¹¦</span>
     </div>
 
     <script>
-        // APIé…ç½®
+        // APIÅäÖÃ
         const API_CONFIG = {
             baseUrl: '/api',
             uploadUrl: '/api/upload.php'
         };
 
-        // å›¾ç‰‡ä¸Šä¼ ç®¡ç†å™¨
+        // Í¼Æ¬ÉÏ´«¹ÜÀíÆ÷
         const ImageUploader = {
-            // ä¸Šä¼ å›¾ç‰‡åˆ°æœåŠ¡å™¨
+            // ÉÏ´«Í¼Æ¬µ½·şÎñÆ÷
             async upload(file) {
                 const formData = new FormData();
                 formData.append('image', file);
@@ -350,13 +350,13 @@
                 const result = await response.json();
                 
                 if (!result.success) {
-                    throw new Error(result.message || 'ä¸Šä¼ å¤±è´¥');
+                    throw new Error(result.message || 'ÉÏ´«Ê§°Ü');
                 }
 
                 return result.data;
             },
 
-            // å‹ç¼©å›¾ç‰‡
+            // Ñ¹ËõÍ¼Æ¬
             compressImage(file, maxWidth = 1200, maxHeight = 1200, quality = 0.8) {
                 return new Promise((resolve, reject) => {
                     const reader = new FileReader();
@@ -366,7 +366,7 @@
                             let width = img.width;
                             let height = img.height;
                             
-                            // è®¡ç®—ç¼©æ”¾æ¯”ä¾‹
+                            // ¼ÆËãËõ·Å±ÈÀı
                             if (width > maxWidth || height > maxHeight) {
                                 const ratio = Math.min(maxWidth / width, maxHeight / height);
                                 width *= ratio;
@@ -379,31 +379,31 @@
                             const ctx = canvas.getContext('2d');
                             ctx.drawImage(img, 0, 0, width, height);
                             
-                            // è½¬æ¢ä¸ºBlob
+                            // ×ª»»ÎªBlob
                             canvas.toBlob((blob) => {
                                 if (blob) {
-                                    // åˆ›å»ºæ–°çš„Fileå¯¹è±¡
+                                    // ´´½¨ĞÂµÄFile¶ÔÏó
                                     const compressedFile = new File([blob], file.name, {
                                         type: 'image/jpeg',
                                         lastModified: Date.now()
                                     });
                                     resolve(compressedFile);
                                 } else {
-                                    reject(new Error('å›¾ç‰‡å‹ç¼©å¤±è´¥'));
+                                    reject(new Error('Í¼Æ¬Ñ¹ËõÊ§°Ü'));
                                 }
                             }, 'image/jpeg', quality);
                         };
-                        img.onerror = () => reject(new Error('å›¾ç‰‡åŠ è½½å¤±è´¥'));
+                        img.onerror = () => reject(new Error('Í¼Æ¬¼ÓÔØÊ§°Ü'));
                         img.src = e.target.result;
                     };
-                    reader.onerror = () => reject(new Error('æ–‡ä»¶è¯»å–å¤±è´¥'));
+                    reader.onerror = () => reject(new Error('ÎÄ¼ş¶ÁÈ¡Ê§°Ü'));
                     reader.readAsDataURL(file);
                 });
             }
         };
 
         let currentCase = {
-            id: '', title: '', type: 'è¿‡æ¡¥', city: '', summary: '', amount: '', period: '',
+            id: '', title: '', type: '¹ıÇÅ', city: '', summary: '', amount: '', period: '',
             year: new Date().getFullYear().toString(), images: [], video: '', highlights: [], status: 'draft'
         };
 
@@ -414,10 +414,10 @@
             if (caseId) {
                 currentCase.id = caseId;
                 loadCase(caseId);
-                document.getElementById('pageTitle').textContent = 'ç¼–è¾‘æ¡ˆä¾‹';
+                document.getElementById('pageTitle').textContent = '±à¼­°¸Àı';
             } else {
                 currentCase.id = 'case_' + Date.now();
-                document.getElementById('pageTitle').textContent = 'æ–°å»ºæ¡ˆä¾‹';
+                document.getElementById('pageTitle').textContent = 'ĞÂ½¨°¸Àı';
                 addHighlight();
             }
         });
@@ -445,7 +445,7 @@
 
         function addImage() {
             if (currentCase.images.length >= 3) {
-                showToast('æœ€å¤šåªèƒ½ä¸Šä¼ 3å¼ å›¾ç‰‡', 'error');
+                showToast('×î¶àÖ»ÄÜÉÏ´«3ÕÅÍ¼Æ¬', 'error');
                 return;
             }
             
@@ -456,27 +456,27 @@
                 const file = e.target.files[0];
                 if (!file) return;
                 
-                // æ–‡ä»¶å¤§å°æ£€æŸ¥ï¼ˆæœ€å¤§5MBï¼‰
+                // ÎÄ¼ş´óĞ¡¼ì²é£¨×î´ó5MB£©
                 if (file.size > 5 * 1024 * 1024) {
-                    showToast('å›¾ç‰‡å¤§å°è¶…è¿‡5MBé™åˆ¶', 'error');
+                    showToast('Í¼Æ¬´óĞ¡³¬¹ı5MBÏŞÖÆ', 'error');
                     return;
                 }
                 
                 try {
                     showLoading();
-                    showToast('æ­£åœ¨ä¸Šä¼ å›¾ç‰‡...');
+                    showToast('ÕıÔÚÉÏ´«Í¼Æ¬...');
                     
-                    // å‹ç¼©å›¾ç‰‡
+                    // Ñ¹ËõÍ¼Æ¬
                     const compressedFile = await ImageUploader.compressImage(file, 1200, 1200, 0.8);
                     
-                    // ä¸Šä¼ åˆ°æœåŠ¡å™¨
+                    // ÉÏ´«µ½·şÎñÆ÷
                     const uploadResult = await ImageUploader.upload(compressedFile);
                     
-                    // å­˜å‚¨å›¾ç‰‡URL
+                    // ´æ´¢Í¼Æ¬URL
                     currentCase.images.push({
                         id: 'img_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
                         name: file.name,
-                        url: uploadResult.url,  // æœåŠ¡å™¨URL
+                        url: uploadResult.url,  // ·şÎñÆ÷URL
                         filename: uploadResult.filename,
                         size: uploadResult.size,
                         timestamp: Date.now()
@@ -484,10 +484,10 @@
                     
                     renderImages();
                     hideLoading();
-                    showToast('å›¾ç‰‡ä¸Šä¼ æˆåŠŸ');
+                    showToast('Í¼Æ¬ÉÏ´«³É¹¦');
                 } catch (err) {
                     hideLoading();
-                    showToast('å›¾ç‰‡ä¸Šä¼ å¤±è´¥: ' + err.message, 'error');
+                    showToast('Í¼Æ¬ÉÏ´«Ê§°Ü: ' + err.message, 'error');
                     console.error(err);
                 }
             };
@@ -497,24 +497,24 @@
         function renderImages() {
             const container = document.getElementById('imagePreview');
             container.innerHTML = currentCase.images.map((img, index) => {
-                // å…¼å®¹æ—§æ•°æ®æ ¼å¼å’Œæ–°æ ¼å¼
+                // ¼æÈİ¾ÉÊı¾İ¸ñÊ½ºÍĞÂ¸ñÊ½
                 let imageUrl;
                 if (typeof img === 'string') {
-                    // æ—§æ ¼å¼ Base64
+                    // ¾É¸ñÊ½ Base64
                     imageUrl = img;
                 } else if (img.url) {
-                    // æ–°æ ¼å¼ - æœåŠ¡å™¨URL
+                    // ĞÂ¸ñÊ½ - ·şÎñÆ÷URL
                     imageUrl = img.url;
                 } else {
                     imageUrl = '';
                 }
                 return `
                 <div class="media-preview-item">
-                    ${index === 0 ? '<span style="position: absolute; top: 8px; left: 8px; background: #3b82f6; color: white; font-size: 11px; padding: 4px 8px; border-radius: 4px;">ä¸»å›¾</span>' : ''}
-                    <img src="${imageUrl}" alt="æ¡ˆä¾‹å›¾ç‰‡" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect fill=%22%23f0f0f0%22 width=%22100%22 height=%22100%22/><text fill=%22%23999%22 x=%2250%22 y=%2255%22 text-anchor=%22middle%22>å›¾ç‰‡åŠ è½½å¤±è´¥</text></svg>'">
+                    ${index === 0 ? '<span style="position: absolute; top: 8px; left: 8px; background: #3b82f6; color: white; font-size: 11px; padding: 4px 8px; border-radius: 4px;">Ö÷Í¼</span>' : ''}
+                    <img src="${imageUrl}" alt="°¸ÀıÍ¼Æ¬" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect fill=%22%23f0f0f0%22 width=%22100%22 height=%22100%22/><text fill=%22%23999%22 x=%2250%22 y=%2255%22 text-anchor=%22middle%22>Í¼Æ¬¼ÓÔØÊ§°Ü</text></svg>'">
                     <div class="media-preview-overlay">
-                        ${index > 0 ? `<button class="media-preview-btn" onclick="setMainImage(${index})" title="è®¾ä¸ºä¸»å›¾"><i class="fas fa-star"></i></button>` : ''}
-                        <button class="media-preview-btn" onclick="deleteImage(${index})" title="åˆ é™¤"><i class="fas fa-trash"></i></button>
+                        ${index > 0 ? `<button class="media-preview-btn" onclick="setMainImage(${index})" title="ÉèÎªÖ÷Í¼"><i class="fas fa-star"></i></button>` : ''}
+                        <button class="media-preview-btn" onclick="deleteImage(${index})" title="É¾³ı"><i class="fas fa-trash"></i></button>
                     </div>
                 </div>
             `}).join('');
@@ -527,10 +527,10 @@
         }
 
         function deleteImage(index) {
-            if (!confirm('ç¡®å®šè¦åˆ é™¤è¿™å¼ å›¾ç‰‡å—ï¼Ÿ')) return;
+            if (!confirm('È·¶¨ÒªÉ¾³ıÕâÕÅÍ¼Æ¬Âğ£¿')) return;
             currentCase.images.splice(index, 1);
             renderImages();
-            showToast('å›¾ç‰‡å·²åˆ é™¤');
+            showToast('Í¼Æ¬ÒÑÉ¾³ı');
         }
 
         function toggleVideo() {
@@ -546,28 +546,28 @@
             const file = event.target.files[0];
             if (!file) return;
             
-            // æ£€æŸ¥å­˜å‚¨ç©ºé—´
+            // ¼ì²é´æ´¢¿Õ¼ä
             const space = StorageManager.getRemainingSpace();
-            if (space.remaining < 500 * 1024) { // è§†é¢‘éœ€è¦æ›´å¤šç©ºé—´
+            if (space.remaining < 500 * 1024) { // ÊÓÆµĞèÒª¸ü¶à¿Õ¼ä
                 StorageManager.cleanup();
                 const newSpace = StorageManager.getRemainingSpace();
                 if (newSpace.remaining < 500 * 1024) {
-                    showToast('å­˜å‚¨ç©ºé—´ä¸è¶³ï¼Œæ— æ³•ä¸Šä¼ è§†é¢‘', 'error');
+                    showToast('´æ´¢¿Õ¼ä²»×ã£¬ÎŞ·¨ÉÏ´«ÊÓÆµ', 'error');
                     return;
                 }
             }
             
             if (file.size > 10 * 1024 * 1024) {
-                showToast('è§†é¢‘å¤§å°è¶…è¿‡10MBé™åˆ¶', 'error');
+                showToast('ÊÓÆµ´óĞ¡³¬¹ı10MBÏŞÖÆ', 'error');
                 return;
             }
             
-            // ç”Ÿæˆæ–‡ä»¶å¼•ç”¨å¹¶ä½¿ç”¨ ObjectURL
+            // Éú³ÉÎÄ¼şÒıÓÃ²¢Ê¹ÓÃ ObjectURL
             const fileRef = StorageManager.generateFileRef(file, 'video');
             const objectUrl = FileStore.store(file, fileRef.id);
             fileRef.objectUrl = objectUrl;
             
-            // åªå­˜å‚¨å¼•ç”¨ä¿¡æ¯
+            // Ö»´æ´¢ÒıÓÃĞÅÏ¢
             currentCase.video = {
                 id: fileRef.id,
                 name: file.name,
@@ -577,7 +577,7 @@
             };
             
             renderVideo();
-            showToast('è§†é¢‘æ·»åŠ æˆåŠŸ');
+            showToast('ÊÓÆµÌí¼Ó³É¹¦');
         }
 
         function renderVideo() {
@@ -586,24 +586,24 @@
                 container.innerHTML = '';
                 return;
             }
-            // å…¼å®¹æ—§æ•°æ®æ ¼å¼ï¼ˆçº¯å­—ç¬¦ä¸² Base64ï¼‰å’Œæ–°æ ¼å¼ï¼ˆå¯¹è±¡ï¼‰
+            // ¼æÈİ¾ÉÊı¾İ¸ñÊ½£¨´¿×Ö·û´® Base64£©ºÍĞÂ¸ñÊ½£¨¶ÔÏó£©
             const videoUrl = typeof currentCase.video === 'string' ? currentCase.video : currentCase.video.url;
             container.innerHTML = `
                 <div class="media-preview-item video">
                     <video src="${videoUrl}" controls></video>
                     <div class="media-preview-overlay">
-                        <button class="media-preview-btn" onclick="deleteVideo()" title="åˆ é™¤"><i class="fas fa-trash"></i></button>
+                        <button class="media-preview-btn" onclick="deleteVideo()" title="É¾³ı"><i class="fas fa-trash"></i></button>
                     </div>
                 </div>
             `;
         }
 
         function deleteVideo() {
-            if (!confirm('ç¡®å®šè¦åˆ é™¤è§†é¢‘å—ï¼Ÿ')) return;
+            if (!confirm('È·¶¨ÒªÉ¾³ıÊÓÆµÂğ£¿')) return;
             currentCase.video = '';
             document.getElementById('hasVideo').checked = false;
             toggleVideo();
-            showToast('è§†é¢‘å·²åˆ é™¤');
+            showToast('ÊÓÆµÒÑÉ¾³ı');
         }
 
         function addHighlight() {
@@ -617,7 +617,7 @@
             const highlights = currentCase.highlights || [];
             container.innerHTML = highlights.map((h, i) => `
                 <div class="highlight-item">
-                    <input type="text" class="highlight-input" value="${h}" placeholder="è¾“å…¥æœåŠ¡äº®ç‚¹" onchange="updateHighlight(${i}, this.value)">
+                    <input type="text" class="highlight-input" value="${h}" placeholder="ÊäÈë·şÎñÁÁµã" onchange="updateHighlight(${i}, this.value)">
                     <button type="button" class="highlight-btn" onclick="removeHighlight(${i})"><i class="fas fa-times"></i></button>
                 </div>
             `).join('');
@@ -648,7 +648,7 @@
             currentCase.summary = document.getElementById('caseSummary').value.trim();
 
             if (!currentCase.title) {
-                showToast('è¯·è¾“å…¥æ¡ˆä¾‹æ ‡é¢˜', 'error');
+                showToast('ÇëÊäÈë°¸Àı±êÌâ', 'error');
                 document.getElementById('caseTitle').focus();
                 return;
             }
@@ -658,20 +658,20 @@
             currentCase.updatedAt = new Date().toISOString();
             if (!currentCase.createdAt) currentCase.createdAt = currentCase.updatedAt;
 
-            // å‡†å¤‡å­˜å‚¨çš„æ•°æ® - åªå­˜å‚¨å›¾ç‰‡URL
+            // ×¼±¸´æ´¢µÄÊı¾İ - Ö»´æ´¢Í¼Æ¬URL
             const caseToSave = { ...currentCase };
             
-            // å›¾ç‰‡åªä¿ç•™URLå’ŒåŸºæœ¬ä¿¡æ¯
+            // Í¼Æ¬Ö»±£ÁôURLºÍ»ù±¾ĞÅÏ¢
             caseToSave.images = currentCase.images.map(img => {
                 if (typeof img === 'string') {
-                    // æ—§æ ¼å¼ Base64
+                    // ¾É¸ñÊ½ Base64
                     return { url: img, isBase64: true };
                 }
-                // æ–°æ ¼å¼ - åªä¿ç•™URLå’Œå…ƒæ•°æ®
+                // ĞÂ¸ñÊ½ - Ö»±£ÁôURLºÍÔªÊı¾İ
                 return {
                     id: img.id,
                     name: img.name,
-                    url: img.url,  // æœåŠ¡å™¨URL
+                    url: img.url,  // ·şÎñÆ÷URL
                     filename: img.filename,
                     size: img.size,
                     timestamp: img.timestamp
@@ -688,10 +688,10 @@
                 }
                 
                 localStorage.setItem('cms_cases', JSON.stringify(cases));
-                showToast('æ¡ˆä¾‹ä¿å­˜æˆåŠŸ');
+                showToast('°¸Àı±£´æ³É¹¦');
             } catch (error) {
                 console.error('Save error:', error);
-                showToast('ä¿å­˜å¤±è´¥ï¼š' + error.message, 'error');
+                showToast('±£´æÊ§°Ü£º' + error.message, 'error');
             }
             
             hideLoading();
@@ -706,7 +706,7 @@
         }
 
         function deleteCase() {
-            if (!confirm('ç¡®å®šè¦åˆ é™¤è¿™ä¸ªæ¡ˆä¾‹å—ï¼Ÿæ­¤æ“ä½œä¸å¯æ¢å¤ã€‚')) return;
+            if (!confirm('È·¶¨ÒªÉ¾³ıÕâ¸ö°¸ÀıÂğ£¿´Ë²Ù×÷²»¿É»Ö¸´¡£')) return;
             
             const cases = JSON.parse(localStorage.getItem('cms_cases') || '[]');
             const index = cases.findIndex(c => c.id === currentCase.id);
@@ -715,7 +715,7 @@
                 localStorage.setItem('cms_cases', JSON.stringify(cases));
             }
             
-            showToast('æ¡ˆä¾‹åˆ é™¤æˆåŠŸ');
+            showToast('°¸ÀıÉ¾³ı³É¹¦');
             setTimeout(() => window.location.href = 'case-management.html', 1000);
         }
 
@@ -735,21 +735,21 @@
             setTimeout(() => toast.classList.remove('show'), 3000);
         }
 
-        // æ˜¾ç¤ºå­˜å‚¨ç©ºé—´ä¿¡æ¯ï¼ˆå·²åºŸå¼ƒï¼Œä¿ç•™å‡½æ•°é¿å…æŠ¥é”™ï¼‰
+        // ÏÔÊ¾´æ´¢¿Õ¼äĞÅÏ¢£¨ÒÑ·ÏÆú£¬±£Áôº¯Êı±ÜÃâ±¨´í£©
         function showStorageInfo() {
-            showToast('å›¾ç‰‡å·²ä¸Šä¼ åˆ°æœåŠ¡å™¨ï¼Œæ— éœ€æ‹…å¿ƒæœ¬åœ°å­˜å‚¨ç©ºé—´');
+            showToast('Í¼Æ¬ÒÑÉÏ´«µ½·şÎñÆ÷£¬ÎŞĞèµ£ĞÄ±¾µØ´æ´¢¿Õ¼ä');
         }
         
-        // æ›´æ–°å­˜å‚¨æŒ‰é’®æ–‡å­—ï¼ˆå·²åºŸå¼ƒï¼‰
+        // ¸üĞÂ´æ´¢°´Å¥ÎÄ×Ö£¨ÒÑ·ÏÆú£©
         function updateStorageBtnText() {
             const btnText = document.getElementById('storageBtnText');
             if (btnText) {
-                btnText.textContent = 'äº‘å­˜å‚¨';
-                btnText.style.color = '#10b981'; // ç»¿è‰²è¡¨ç¤ºäº‘å­˜å‚¨
+                btnText.textContent = 'ÔÆ´æ´¢';
+                btnText.style.color = '#10b981'; // ÂÌÉ«±íÊ¾ÔÆ´æ´¢
             }
         }
         
-        // é¡µé¢åŠ è½½æ—¶æ›´æ–°å­˜å‚¨æ˜¾ç¤º
+        // Ò³Ãæ¼ÓÔØÊ±¸üĞÂ´æ´¢ÏÔÊ¾
         document.addEventListener('DOMContentLoaded', function() {
             updateStorageBtnText();
         });

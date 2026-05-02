@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API娴嬭瘯 - 妗堜緥鍚屾��</title>
+    <title>API测试 - 案例同步</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }
         h1 { color: #1e3a8a; }
@@ -72,31 +72,31 @@
 </script>
 </head>
 <body>
-    <h1>馃敡 妗堜緥API鍚屾�ユ祴璇�</h1>
+    <h1>🔧 案例API同步测试</h1>
     
     <div class="test-section">
-        <h2>娴嬭瘯1: 鑾峰彇妗堜緥鍒楄〃 (admin/api/case/list.php)</h2>
-        <button onclick="testListAPI()">娴嬭瘯鍒楄〃API</button>
+        <h2>测试1: 获取案例列表 (admin/api/case/list.php)</h2>
+        <button onclick="testListAPI()">测试列表API</button>
         <div id="listResult"></div>
     </div>
     
     <div class="test-section">
-        <h2>娴嬭瘯2: 淇濆瓨妗堜緥 (admin/api/case/save.php)</h2>
-        <button onclick="testSaveAPI()">娴嬭瘯淇濆瓨API</button>
+        <h2>测试2: 保存案例 (admin/api/case/save.php)</h2>
+        <button onclick="testSaveAPI()">测试保存API</button>
         <div id="saveResult"></div>
     </div>
     
     <div class="test-section">
-        <h2>娴嬭瘯3: localStorage 鏁版嵁</h2>
-        <button onclick="checkLocalStorage()">妫�鏌�localStorage</button>
+        <h2>测试3: localStorage 数据</h2>
+        <button onclick="checkLocalStorage()">检查localStorage</button>
         <div id="localResult"></div>
     </div>
 
     <script>
-        // 娴嬭瘯鍒楄〃API
+        // 测试列表API
         async function testListAPI() {
             const resultDiv = document.getElementById('listResult');
-            resultDiv.innerHTML = '<div class="test-result info">姝ｅ湪娴嬭瘯...</div>';
+            resultDiv.innerHTML = '<div class="test-result info">正在测试...</div>';
             
             try {
                 const response = await fetch('admin/api/case/list.php');
@@ -105,42 +105,42 @@
                 if (data.success) {
                     resultDiv.innerHTML = `
                         <div class="test-result success">
-                            鉁?API璋冪敤鎴愬姛锛佸叡鎵惧埌 ${data.total} 涓�妗堜�?                        </div>
+                            �?API调用成功！共找到 ${data.total} 个案�?                        </div>
                         <pre>${JSON.stringify(data, null, 2)}</pre>
                     `;
                 } else {
                     resultDiv.innerHTML = `
                         <div class="test-result error">
-                            鉂?API杩斿洖閿欒��: ${data.message}
+                            �?API返回错误: ${data.message}
                         </div>
                     `;
                 }
             } catch (error) {
                 resultDiv.innerHTML = `
                     <div class="test-result error">
-                        鉂?API璋冪敤澶辫触: ${error.message}
+                        �?API调用失败: ${error.message}
                     </div>
                 `;
             }
         }
         
-        // 娴嬭瘯淇濆瓨API
+        // 测试保存API
         async function testSaveAPI() {
             const resultDiv = document.getElementById('saveResult');
-            resultDiv.innerHTML = '<div class="test-result info">姝ｅ湪娴嬭瘯...</div>';
+            resultDiv.innerHTML = '<div class="test-result info">正在测试...</div>';
             
             const testCase = {
                 id: 'test_' + Date.now(),
-                title: '娴嬭瘯妗堜緥 ' + new Date().toLocaleString(),
-                type: '杩囨ˉ',
-                city: '鍖椾含',
-                summary: '杩欐槸涓�涓�娴嬭瘯妗堜�?,
-                amount: '1000涓?,
-                period: '7澶?,
+                title: '测试案例 ' + new Date().toLocaleString(),
+                type: '过桥',
+                city: '北京',
+                summary: '这是一个测试案�?,
+                amount: '1000�?,
+                period: '7�?,
                 year: '2024',
                 status: 'published',
                 images: [],
-                highlights: ['蹇�閫熷搷搴?, '涓撲笟鏈嶅姟']
+                highlights: ['快速响�?, '专业服务']
             };
             
             try {
@@ -154,26 +154,26 @@
                 if (data.success) {
                     resultDiv.innerHTML = `
                         <div class="test-result success">
-                            鉁?妗堜緥淇濆瓨鎴愬姛锛?                        </div>
+                            �?案例保存成功�?                        </div>
                         <pre>${JSON.stringify(data, null, 2)}</pre>
                     `;
                 } else {
                     resultDiv.innerHTML = `
                         <div class="test-result error">
-                            鉂?淇濆瓨澶辫触: ${data.message}
+                            �?保存失败: ${data.message}
                         </div>
                     `;
                 }
             } catch (error) {
                 resultDiv.innerHTML = `
                     <div class="test-result error">
-                        鉂?API璋冪敤澶辫触: ${error.message}
+                        �?API调用失败: ${error.message}
                     </div>
                 `;
             }
         }
         
-        // 妫�鏌�localStorage
+        // 检查localStorage
         function checkLocalStorage() {
             const resultDiv = document.getElementById('localResult');
             const cases = JSON.parse(localStorage.getItem('cms_cases') || '[]');
@@ -181,12 +181,12 @@
             if (cases.length === 0) {
                 resultDiv.innerHTML = `
                     <div class="test-result info">
-                        鈩癸笍 localStorage涓�娌℃湁妗堜緥鏁版�?                    </div>
+                        ℹ️ localStorage中没有案例数�?                    </div>
                 `;
             } else {
                 resultDiv.innerHTML = `
                     <div class="test-result success">
-                        鉁?localStorage涓�鏈� ${cases.length} 涓�妗堜�?                    </div>
+                        �?localStorage中有 ${cases.length} 个案�?                    </div>
                     <pre>${JSON.stringify(cases, null, 2)}</pre>
                 `;
             }

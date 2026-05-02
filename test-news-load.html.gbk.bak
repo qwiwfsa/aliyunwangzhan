@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>娴嬭瘯鏂囩珷鍔犺浇</title>
+    <title>测试文章加载</title>
     <style>
         body { font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }
         .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 8px; }
@@ -69,40 +69,40 @@
 </script>
 </head>
 <body>
-    <h1>鏂囩珷鍙戝竷涓庡姞杞芥祴璇?/h1>
+    <h1>文章发布与加载测�?/h1>
     
     <div class="test-section">
-        <h2>1. 鍒涘缓娴嬭瘯鏂囩珷</h2>
-        <button onclick="createTestArticle()">鍒涘缓娴嬭瘯鏂囩珷</button>
+        <h2>1. 创建测试文章</h2>
+        <button onclick="createTestArticle()">创建测试文章</button>
         <div id="createResult"></div>
     </div>
     
     <div class="test-section">
-        <h2>2. 鏌ョ湅localStorage涓�鐨勬枃绔�</h2>
-        <button onclick="showArticles()">鏄剧ず鎵�鏈夋枃绔?/button>
+        <h2>2. 查看localStorage中的文章</h2>
+        <button onclick="showArticles()">显示所有文�?/button>
         <pre id="articlesDisplay"></pre>
     </div>
     
     <div class="test-section">
-        <h2>3. 妯℃嫙news.html鍔犺浇閫昏緫</h2>
-        <button onclick="testNewsLoad()">娴嬭瘯鍔犺浇閫昏緫</button>
+        <h2>3. 模拟news.html加载逻辑</h2>
+        <button onclick="testNewsLoad()">测试加载逻辑</button>
         <div id="loadResult"></div>
     </div>
     
     <div class="test-section">
-        <h2>4. 娓呯┖娴嬭瘯鏁版嵁</h2>
-        <button onclick="clearArticles()">娓呯┖鎵�鏈夋枃绔?/button>
+        <h2>4. 清空测试数据</h2>
+        <button onclick="clearArticles()">清空所有文�?/button>
     </div>
 
     <script>
-        // 鍒涘缓娴嬭瘯鏂囩珷
+        // 创建测试文章
         function createTestArticle() {
             const now = new Date().toISOString();
             const testArticle = {
                 id: Date.now(),
-                title: '娴嬭瘯鏂囩珷 - ' + new Date().toLocaleString(),
-                summary: '杩欐槸涓�绡囨祴璇曟枃绔狅紝鐢ㄤ簬楠岃瘉鍙戝竷鍔熻兘鏄�鍚︽�ｅ父銆?,
-                content: '<p>娴嬭瘯鏂囩珷鍐呭��...</p>',
+                title: '测试文章 - ' + new Date().toLocaleString(),
+                summary: '这是一篇测试文章，用于验证发布功能是否正常�?,
+                content: '<p>测试文章内容...</p>',
                 category_id: 1,
                 cover_image: 'images/news/news-1.jpg',
                 status: 'published',
@@ -118,57 +118,57 @@
             localStorage.setItem('cms_articles', JSON.stringify(articles));
             
             document.getElementById('createResult').innerHTML = 
-                '<p class="success">鉁?娴嬭瘯鏂囩珷鍒涘缓鎴愬姛锛両D: ' + testArticle.id + '</p>';
+                '<p class="success">�?测试文章创建成功！ID: ' + testArticle.id + '</p>';
         }
         
-        // 鏄剧ず鎵�鏈夋枃绔?        function showArticles() {
+        // 显示所有文�?        function showArticles() {
             const articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
             document.getElementById('articlesDisplay').textContent = JSON.stringify(articles, null, 2);
         }
         
-        // 娴嬭瘯鍔犺浇閫昏緫
+        // 测试加载逻辑
         function testNewsLoad() {
-            console.log('[News] 寮�濮嬪姞杞借祫璁�鏂囩�?..');
+            console.log('[News] 开始加载资讯文�?..');
             
             const articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
-            console.log('[News] 鏈�鍦板瓨鍌ㄦ枃绔犳暟閲�:', articles.length);
+            console.log('[News] 本地存储文章数量:', articles.length);
             
             const publishedArticles = articles.filter(a => a.status === 'published');
-            console.log('[News] 宸插彂甯冩枃绔犳暟閲?', publishedArticles.length);
+            console.log('[News] 已发布文章数�?', publishedArticles.length);
             
             if (publishedArticles.length === 0) {
                 document.getElementById('loadResult').innerHTML = 
-                    '<p class="error">鉁?娌℃湁鎵惧埌宸插彂甯冪殑鏂囩珷</p>';
+                    '<p class="error">�?没有找到已发布的文章</p>';
                 return;
             }
             
-            // 鎸夋棩鏈熸帓搴?            publishedArticles.sort((a, b) => {
+            // 按日期排�?            publishedArticles.sort((a, b) => {
                 const dateA = new Date(a.publishDate || a.created_at || 0);
                 const dateB = new Date(b.publishDate || b.created_at || 0);
                 return dateB - dateA;
             });
             
-            let html = '<p class="success">鉁?鎴愬姛鍔犺浇 ' + publishedArticles.length + ' 绡囧凡鍙戝竷鏂囩珷</p>';
+            let html = '<p class="success">�?成功加载 ' + publishedArticles.length + ' 篇已发布文章</p>';
             html += '<ul>';
             publishedArticles.forEach(article => {
                 html += '<li>ID: ' + article.id + ' - ' + article.title + 
-                        ' (鐘舵�? ' + article.status + ', 鍙戝竷鏃ユ湡: ' + (article.publishDate || '鏃?) + ')</li>';
+                        ' (状�? ' + article.status + ', 发布日期: ' + (article.publishDate || '�?) + ')</li>';
             });
             html += '</ul>';
             
             document.getElementById('loadResult').innerHTML = html;
         }
         
-        // 娓呯┖鏂囩珷
+        // 清空文章
         function clearArticles() {
             localStorage.removeItem('cms_articles');
             document.getElementById('articlesDisplay').textContent = '';
             document.getElementById('createResult').innerHTML = '';
             document.getElementById('loadResult').innerHTML = '';
-            alert('鎵�鏈夋枃绔犲凡娓呯┖');
+            alert('所有文章已清空');
         }
         
-        // 椤甸潰鍔犺浇鏃舵樉绀虹幇鏈夋枃绔?        showArticles();
+        // 页面加载时显示现有文�?        showArticles();
     </script>
 </body>
 </html>

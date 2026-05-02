@@ -1,16 +1,16 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Yooèµ„é‡‘ç½‘è¡Œä¸šèµ„è®¯è¯¦æƒ… - äº†è§£æœ€æ–°è¡Œä¸šåŠ¨æ€ä¸ä¸šåŠ¡èµ„è®¯">
-    <meta name="keywords" content="è¡Œä¸šèµ„è®¯,äº®èµ„çŸ¥è¯†,æ‘†è´¦æµç¨‹,èµ„é‡‘è¡Œä¸šæ”¿ç­–,ä¼ä¸šèèµ„å¸¸è¯†">
-    <title>æ–‡ç« è¯¦æƒ… - Yooèµ„é‡‘ç½‘</title>
+    <meta name="description" content="Yoo×Ê½ğÍøĞĞÒµ×ÊÑ¶ÏêÇé - ÁË½â×îĞÂĞĞÒµ¶¯Ì¬ÓëÒµÎñ×ÊÑ¶">
+    <meta name="keywords" content="ĞĞÒµ×ÊÑ¶,ÁÁ×ÊÖªÊ¶,°ÚÕËÁ÷³Ì,×Ê½ğĞĞÒµÕş²ß,ÆóÒµÈÚ×Ê³£Ê¶">
+    <title>ÎÄÕÂÏêÇé - Yoo×Ê½ğÍø</title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* æ–‡ç« è¯¦æƒ…é¡µæ ·å¼ */
+        /* ÎÄÕÂÏêÇéÒ³ÑùÊ½ */
         .article-detail-header {
             background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
             padding: 80px 0 60px;
@@ -78,7 +78,7 @@
             gap: 6px;
         }
         
-        /* æ–‡ç« å†…å®¹åŒº */
+        /* ÎÄÕÂÄÚÈİÇø */
         .article-detail-content {
             padding: 60px 0;
             background: #f8fafc;
@@ -145,7 +145,7 @@
             color: #1f2937;
         }
         
-        /* æ–‡ç« æ ‡ç­¾ */
+        /* ÎÄÕÂ±êÇ© */
         .article-tags {
             display: flex;
             flex-wrap: wrap;
@@ -163,7 +163,7 @@
             color: #6b7280;
         }
         
-        /* æ–‡ç« å¯¼èˆª */
+        /* ÎÄÕÂµ¼º½ */
         .article-navigation {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -213,7 +213,7 @@
             line-height: 1.5;
         }
         
-        /* ç›¸å…³æ–‡ç«  */
+        /* Ïà¹ØÎÄÕÂ */
         .related-articles {
             padding: 60px 0;
             background: white;
@@ -312,7 +312,7 @@
             margin-top: 8px;
         }
         
-        /* æœªæ‰¾åˆ°æ–‡ç«  */
+        /* Î´ÕÒµ½ÎÄÕÂ */
         .article-not-found {
             text-align: center;
             padding: 80px 20px;
@@ -352,7 +352,7 @@
             background: #2563eb;
         }
         
-        /* å“åº”å¼ */
+        /* ÏìÓ¦Ê½ */
         @media (max-width: 768px) {
             .article-detail-header {
                 padding: 60px 0 40px;
@@ -395,7 +395,7 @@
             }
         }
     </style>
-    <!-- LogoåŠ¨æ€åŠ è½½ -->
+    <!-- Logo¶¯Ì¬¼ÓÔØ -->
     <script>
     (function(){
         var xhr=new XMLHttpRequest();
@@ -481,27 +481,27 @@
 </script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">è·³è½¬åˆ°ä¸»è¦å†…å®¹</a>
+    <a href="#main-content" class="skip-link">Ìø×ªµ½Ö÷ÒªÄÚÈİ</a>
 
-    <!-- å¯¼èˆªæ  -->
-    <nav class="navbar" id="navbar" role="navigation" aria-label="ä¸»å¯¼èˆª">
+    <!-- µ¼º½À¸ -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Ö÷µ¼º½">
         <div class="navbar-container">
-<a href="index.html" class="logo" aria-label="Yooèµ„é‡‘ç½‘é¦–é¡µ"><img src="images/logo.png?v=20260502040820" alt="Yooèµ„é‡‘ç½‘" style="height:48px;width:auto;"></a>
+<a href="index.html" class="logo" aria-label="Yoo×Ê½ğÍøÊ×Ò³"><img src="images/logo.png?v=20260502040820" alt="Yoo×Ê½ğÍø" style="height:48px;width:auto;"></a>
             <ul class="nav-menu" role="menubar">
-                <li role="none"><a href="index.html" class="nav-link" role="menuitem">é¦–é¡µ</a></li>
-                <li role="none"><a href="services.html" class="nav-link" role="menuitem">ä¸šåŠ¡èŒƒå›´</a></li>
-                <li role="none"><a href="cases.html" class="nav-link" role="menuitem">æˆåŠŸæ¡ˆä¾‹</a></li>
-                <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">æœåŠ¡ä¼˜åŠ¿</a></li>
-                <li role="none"><a href="news.html" class="nav-link active" role="menuitem">è¡Œä¸šèµ„è®¯</a></li>
-                <li role="none"><a href="faq.html" class="nav-link" role="menuitem">å¸¸è§é—®é¢˜</a></li>
-                <li role="none"><a href="contact.html" class="nav-link" role="menuitem">è”ç³»æˆ‘ä»¬</a></li>
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem">Ê×Ò³</a></li>
+                <li role="none"><a href="services.html" class="nav-link" role="menuitem">ÒµÎñ·¶Î§</a></li>
+                <li role="none"><a href="cases.html" class="nav-link" role="menuitem">³É¹¦°¸Àı</a></li>
+                <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">·şÎñÓÅÊÆ</a></li>
+                <li role="none"><a href="news.html" class="nav-link active" role="menuitem">ĞĞÒµ×ÊÑ¶</a></li>
+                <li role="none"><a href="faq.html" class="nav-link" role="menuitem">³£¼ûÎÊÌâ</a></li>
+                <li role="none"><a href="contact.html" class="nav-link" role="menuitem">ÁªÏµÎÒÃÇ</a></li>
             </ul>
 
-            <button class="search-toggle" id="searchToggle" aria-label="æ‰“å¼€æœç´¢" aria-expanded="false">
+            <button class="search-toggle" id="searchToggle" aria-label="´ò¿ªËÑË÷" aria-expanded="false">
                 <i class="fas fa-search" aria-hidden="true"></i>
             </button>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="æ‰“å¼€èœå•" aria-expanded="false">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="´ò¿ª²Ëµ¥" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -510,99 +510,99 @@
     </nav>
 
     <main id="main-content">
-        <!-- æ–‡ç« å¤´éƒ¨ -->
+        <!-- ÎÄÕÂÍ·²¿ -->
         <section class="article-detail-header">
             <div class="article-detail-header-container">
                 <div id="articleHeader">
-                    <!-- åŠ¨æ€å¡«å…… -->
+                    <!-- ¶¯Ì¬Ìî³ä -->
                 </div>
             </div>
         </section>
 
-        <!-- æ–‡ç« å†…å®¹ -->
+        <!-- ÎÄÕÂÄÚÈİ -->
         <section class="article-detail-content">
             <div class="article-detail-container">
                 <div id="articleContent">
-                    <!-- åŠ¨æ€å¡«å…… -->
+                    <!-- ¶¯Ì¬Ìî³ä -->
                 </div>
             </div>
         </section>
 
-        <!-- ç›¸å…³æ–‡ç«  -->
+        <!-- Ïà¹ØÎÄÕÂ -->
         <section class="related-articles">
             <div class="related-articles-container">
                 <div class="related-articles-header">
-                    <h2 class="related-articles-title">ç›¸å…³èµ„è®¯</h2>
+                    <h2 class="related-articles-title">Ïà¹Ø×ÊÑ¶</h2>
                     <a href="news.html" class="related-articles-more">
-                        æŸ¥çœ‹å…¨éƒ¨ <i class="fas fa-arrow-right"></i>
+                        ²é¿´È«²¿ <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
                 <div class="related-articles-grid" id="relatedArticles">
-                    <!-- åŠ¨æ€å¡«å…… -->
+                    <!-- ¶¯Ì¬Ìî³ä -->
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- å³ä¾§è¾¹æµ®åŠ¨ç”µè¯æŒ‰é’® -->
-    <div class="chat-widget" id="chatWidget" aria-label="è”ç³»ç”µè¯">
-        <button class="chat-widget-btn" id="chatWidgetBtn" aria-label="æ‹¨æ‰“ç”µè¯" aria-expanded="false">
+    <!-- ÓÒ²à±ß¸¡¶¯µç»°°´Å¥ -->
+    <div class="chat-widget" id="chatWidget" aria-label="ÁªÏµµç»°">
+        <button class="chat-widget-btn" id="chatWidgetBtn" aria-label="²¦´òµç»°" aria-expanded="false">
             <i class="fas fa-phone-alt" aria-hidden="true"></i>
         </button>
     </div>
 
-    <!-- é¡µè„š -->
+    <!-- Ò³½Å -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-main">
                 <div class="footer-brand">
-                    <div class="footer-logo"><img src="images/logo.png?v=20260502041100" alt="Yooèµ„é‡‘ç½‘" style="height:48px;width:auto;"></div>
+                    <a href="index.html" class="footer-logo"><img src="images/logo.png?v=20260502041100" alt="Yoo×Ê½ğÍø" style="height:48px;width:auto;"></a>
 
-                    <p class="footer-desc">ä¸“ä¸šèµ„é‡‘ä¸šåŠ¡æœåŠ¡å•†ï¼Œæä¾›ä¸Šå¸‚å…¬å¸è¿‡æ¡¥ã€ä¼ä¸šæ‘†è´¦ã€é“¶è¡Œå­˜æ¬¾ã€åº”æ”¶è´¦æ¬¾èèµ„ç­‰å…¨æ–¹ä½èµ„é‡‘æœåŠ¡</p>
+                    <p class="footer-desc">×¨Òµ×Ê½ğÒµÎñ·şÎñÉÌ£¬Ìá¹©ÉÏÊĞ¹«Ë¾¹ıÇÅ¡¢ÆóÒµ°ÚÕË¡¢ÒøĞĞ´æ¿î¡¢Ó¦ÊÕÕË¿îÈÚ×ÊµÈÈ«·½Î»×Ê½ğ·şÎñ</p>
                 </div>
                 <div class="footer-nav">
-                    <h4 class="footer-nav-title">å¿«é€Ÿé“¾æ¥</h4>
+                    <h4 class="footer-nav-title">¿ìËÙÁ´½Ó</h4>
                     <ul class="footer-nav-list">
-                        <li><a href="index.html">é¦–é¡µ</a></li>
-                        <li><a href="services.html">ä¸šåŠ¡èŒƒå›´</a></li>
-                        <li><a href="cases.html">æˆåŠŸæ¡ˆä¾‹</a></li>
-                        <li><a href="advantages.html">æœåŠ¡ä¼˜åŠ¿</a></li>
+                        <li><a href="index.html">Ê×Ò³</a></li>
+                        <li><a href="services.html">ÒµÎñ·¶Î§</a></li>
+                        <li><a href="cases.html">³É¹¦°¸Àı</a></li>
+                        <li><a href="advantages.html">·şÎñÓÅÊÆ</a></li>
                     </ul>
                 </div>
                 <div class="footer-nav">
-                    <h4 class="footer-nav-title">æ›´å¤šå†…å®¹</h4>
+                    <h4 class="footer-nav-title">¸ü¶àÄÚÈİ</h4>
                     <ul class="footer-nav-list">
-                        <li><a href="news.html">è¡Œä¸šèµ„è®¯</a></li>
-                        <li><a href="faq.html">å¸¸è§é—®é¢˜</a></li>
-                        <li><a href="contact.html">è”ç³»æˆ‘ä»¬</a></li>
+                        <li><a href="news.html">ĞĞÒµ×ÊÑ¶</a></li>
+                        <li><a href="faq.html">³£¼ûÎÊÌâ</a></li>
+                        <li><a href="contact.html">ÁªÏµÎÒÃÇ</a></li>
                     </ul>
                 </div>
                 <div class="footer-nav">
-                    <h4 class="footer-nav-title">è”ç³»æ–¹å¼</h4>
+                    <h4 class="footer-nav-title">ÁªÏµ·½Ê½</h4>
                     <ul class="footer-nav-list">
                         <li><i class="fas fa-phone"></i> 13552883008</li>
-                        <li><i class="fas fa-user"></i> ç‹ç«‹åŠ›</li>
+                        <li><i class="fas fa-user"></i> ÍõÁ¢Á¦</li>
                         <li><i class="fas fa-envelope"></i> wanglizhongguo@126.com</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2024 Yooèµ„é‡‘ç½‘ ç‰ˆæƒæ‰€æœ‰</p>
-                <p class="footer-disclaimer">æŠ•èµ„æœ‰é£é™©ï¼Œå…¥å¸‚éœ€è°¨æ…ã€‚æœ¬ç½‘ç«™å†…å®¹ä»…ä¾›å‚è€ƒï¼Œä¸æ„æˆæŠ•èµ„å»ºè®®ã€‚</p>
+                <p class="footer-copyright">&copy; 2024 Yoo×Ê½ğÍø °æÈ¨ËùÓĞ</p>
+                <p class="footer-disclaimer">Í¶×ÊÓĞ·çÏÕ£¬ÈëÊĞĞè½÷É÷¡£±¾ÍøÕ¾ÄÚÈİ½ö¹©²Î¿¼£¬²»¹¹³ÉÍ¶×Ê½¨Òé¡£</p>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
     <script>
-        // ä»localStorageåŠ è½½æ–‡ç« 
+        // ´ÓlocalStorage¼ÓÔØÎÄÕÂ
         function loadArticleFromStorage(articleId) {
             const articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
-            // æ”¯æŒå­—ç¬¦ä¸²å’Œæ•°å­—IDæ¯”è¾ƒï¼Œç¡®ä¿ç±»å‹ä¸€è‡´
+            // Ö§³Ö×Ö·û´®ºÍÊı×ÖID±È½Ï£¬È·±£ÀàĞÍÒ»ÖÂ
             return articles.find(a => String(a.id) === String(articleId));
         }
         
-        // è·å–æ‰€æœ‰å·²å‘å¸ƒæ–‡ç« 
+        // »ñÈ¡ËùÓĞÒÑ·¢²¼ÎÄÕÂ
         function getAllPublishedArticles() {
             const articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
             return articles.filter(a => a.status === 'published').sort((a, b) => {
@@ -612,61 +612,61 @@
             });
         }
         
-        // æ¸²æŸ“æ–‡ç« å¤´éƒ¨
+        // äÖÈ¾ÎÄÕÂÍ·²¿
         function renderArticleHeader(article) {
-            const category = article.category || 'è¡Œä¸šèµ„è®¯';
-            const title = article.title || 'æ— æ ‡é¢˜';
+            const category = article.category || 'ĞĞÒµ×ÊÑ¶';
+            const title = article.title || 'ÎŞ±êÌâ';
             const date = article.publishDate || article.created_at || new Date().toISOString();
             const formattedDate = new Date(date).toLocaleDateString('zh-CN');
-            const author = article.author || 'Yooèµ„é‡‘ç½‘';
+            const author = article.author || 'Yoo×Ê½ğÍø';
             
             document.getElementById('articleHeader').innerHTML = `
                 <a href="news.html" class="article-back-btn-top">
                     <i class="fas fa-arrow-left"></i>
-                    è¿”å›èµ„è®¯åˆ—è¡¨
+                    ·µ»Ø×ÊÑ¶ÁĞ±í
                 </a>
                 <h1 class="article-detail-title">${title}</h1>
                 <div class="article-detail-meta">
                     <span><i class="far fa-calendar"></i> ${formattedDate}</span>
                     <span><i class="far fa-user"></i> ${author}</span>
-                    <span><i class="far fa-eye"></i> ${article.views || 0} é˜…è¯»</span>
+                    <span><i class="far fa-eye"></i> ${article.views || 0} ÔÄ¶Á</span>
                 </div>
             `;
         }
         
-        // éªŒè¯å›¾ç‰‡æ•°æ®æ˜¯å¦æœ‰æ•ˆ
+        // ÑéÖ¤Í¼Æ¬Êı¾İÊÇ·ñÓĞĞ§
         function isValidImage(imageData) {
             if (!imageData) return false;
             if (typeof imageData !== 'string') return false;
-            // æ£€æŸ¥æ˜¯å¦æ˜¯æœ‰æ•ˆçš„Base64å›¾ç‰‡
+            // ¼ì²éÊÇ·ñÊÇÓĞĞ§µÄBase64Í¼Æ¬
             if (imageData.startsWith('data:image')) {
-                // æ£€æŸ¥Base64æ•°æ®æ˜¯å¦å®Œæ•´ï¼ˆè‡³å°‘è¦æœ‰å¤´éƒ¨å’Œä¸€éƒ¨åˆ†æ•°æ®ï¼‰
+                // ¼ì²éBase64Êı¾İÊÇ·ñÍêÕû£¨ÖÁÉÙÒªÓĞÍ·²¿ºÍÒ»²¿·ÖÊı¾İ£©
                 return imageData.length > 100;
             }
-            // æ£€æŸ¥æ˜¯å¦æ˜¯æœ‰æ•ˆçš„URL
+            // ¼ì²éÊÇ·ñÊÇÓĞĞ§µÄURL
             if (imageData.startsWith('http://') || imageData.startsWith('https://') || imageData.startsWith('/')) {
                 return imageData.length > 10;
             }
-            // æ£€æŸ¥æ˜¯å¦æ˜¯ç›¸å¯¹è·¯å¾„
+            // ¼ì²éÊÇ·ñÊÇÏà¶ÔÂ·¾¶
             if (imageData.startsWith('images/')) {
                 return true;
             }
             return false;
         }
 
-        // è·å–æœ‰æ•ˆçš„å°é¢å›¾ç‰‡
+        // »ñÈ¡ÓĞĞ§µÄ·âÃæÍ¼Æ¬
         function getValidCoverImage(article) {
-            // å¦‚æœæœ‰å°é¢å›¾ï¼Œä½¿ç”¨å°é¢å›¾
+            // Èç¹ûÓĞ·âÃæÍ¼£¬Ê¹ÓÃ·âÃæÍ¼
             if (article.cover_image && isValidImage(article.cover_image)) {
                 return article.cover_image;
             }
-            // å¦‚æœæ²¡æœ‰å°é¢å›¾ï¼Œè¿”å› nullï¼ˆä¸æ˜¾ç¤ºå°é¢å›¾ï¼‰
+            // Èç¹ûÃ»ÓĞ·âÃæÍ¼£¬·µ»Ø null£¨²»ÏÔÊ¾·âÃæÍ¼£©
             return null;
         }
 
-        // æ¸²æŸ“æ–‡ç« å†…å®¹
+        // äÖÈ¾ÎÄÕÂÄÚÈİ
         function renderArticleContent(article) {
-            const content = article.content || '<p>æš‚æ— å†…å®¹</p>';
+            const content = article.content || '<p>ÔİÎŞÄÚÈİ</p>';
             const tags = article.tags || [];
             
             let tagsHtml = '';
@@ -678,7 +678,7 @@
                 `;
             }
             
-            // æ–‡ç« è¯¦æƒ…é¡µä¸æ˜¾ç¤ºå°é¢å›¾ï¼ˆè€æ¿è¦æ±‚ï¼‰
+            // ÎÄÕÂÏêÇéÒ³²»ÏÔÊ¾·âÃæÍ¼£¨ÀÏ°åÒªÇó£©
             document.getElementById('articleContent').innerHTML = `
                 <div class="article-detail-main">
                     <div class="article-body">
@@ -689,9 +689,9 @@
             `;
         }
         
-        // æ¸²æŸ“ç›¸å…³æ–‡ç« 
+        // äÖÈ¾Ïà¹ØÎÄÕÂ
         function renderRelatedArticles(currentArticleId, allArticles) {
-            // æ’é™¤å½“å‰æ–‡ç« ï¼Œå–å‰4ç¯‡
+            // ÅÅ³ıµ±Ç°ÎÄÕÂ£¬È¡Ç°4Æª
             const relatedArticles = allArticles
                 .filter(a => a.id !== currentArticleId)
                 .slice(0, 4);
@@ -699,19 +699,19 @@
             if (relatedArticles.length === 0) {
                 document.getElementById('relatedArticles').innerHTML = `
                     <div style="grid-column: 1 / -1; text-align: center; color: #9ca3af; padding: 40px;">
-                        æš‚æ— ç›¸å…³èµ„è®¯
+                        ÔİÎŞÏà¹Ø×ÊÑ¶
                     </div>
                 `;
                 return;
             }
             
             document.getElementById('relatedArticles').innerHTML = relatedArticles.map(article => {
-                const title = article.title || 'æ— æ ‡é¢˜';
+                const title = article.title || 'ÎŞ±êÌâ';
                 const date = article.publishDate || article.created_at || new Date().toISOString();
                 const formattedDate = new Date(date).toLocaleDateString('zh-CN');
                 const coverImage = getValidCoverImage(article);
                 
-                // æ ¹æ®æ˜¯å¦æœ‰å°é¢å›¾ç”Ÿæˆä¸åŒçš„HTML
+                // ¸ù¾İÊÇ·ñÓĞ·âÃæÍ¼Éú³É²»Í¬µÄHTML
                 const thumbHtml = coverImage 
                     ? `<div class="related-article-thumb"><img src="${coverImage}" alt="${title}" loading="lazy"></div>`
                     : `<div class="related-article-thumb placeholder"><div class="placeholder-bg"></div></div>`;
@@ -728,26 +728,26 @@
             }).join('');
         }
         
-        // æ¸²æŸ“æœªæ‰¾åˆ°æ–‡ç« 
+        // äÖÈ¾Î´ÕÒµ½ÎÄÕÂ
         function renderNotFound() {
             document.getElementById('articleHeader').innerHTML = '';
             document.getElementById('articleContent').innerHTML = `
                 <div class="article-not-found">
                     <i class="far fa-file-alt"></i>
-                    <h2>æ–‡ç« æœªæ‰¾åˆ°</h2>
-                    <p>æŠ±æ­‰ï¼Œæ‚¨è®¿é—®çš„æ–‡ç« ä¸å­˜åœ¨æˆ–å·²è¢«åˆ é™¤</p>
+                    <h2>ÎÄÕÂÎ´ÕÒµ½</h2>
+                    <p>±§Ç¸£¬Äú·ÃÎÊµÄÎÄÕÂ²»´æÔÚ»òÒÑ±»É¾³ı</p>
                     <a href="news.html" class="btn">
                         <i class="fas fa-arrow-left"></i>
-                        è¿”å›èµ„è®¯åˆ—è¡¨
+                        ·µ»Ø×ÊÑ¶ÁĞ±í
                     </a>
                 </div>
             `;
         }
         
-        // å¢åŠ é˜…è¯»æ•°
+        // Ôö¼ÓÔÄ¶ÁÊı
         function incrementViews(articleId) {
             const articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
-            // æ”¯æŒå­—ç¬¦ä¸²å’Œæ•°å­—IDæ¯”è¾ƒ
+            // Ö§³Ö×Ö·û´®ºÍÊı×ÖID±È½Ï
             const articleIndex = articles.findIndex(a => String(a.id) === String(articleId));
             
             if (articleIndex !== -1) {
@@ -756,45 +756,45 @@
             }
         }
         
-        // åˆå§‹åŒ–
+        // ³õÊ¼»¯
         document.addEventListener('DOMContentLoaded', function() {
             const urlParams = new URLSearchParams(window.location.search);
             const articleId = urlParams.get('id');
             
-            console.log('[News Detail] URLå‚æ•°ID:', articleId);
+            console.log('[News Detail] URL²ÎÊıID:', articleId);
             
             if (!articleId) {
-                console.error('[News Detail] æœªæä¾›æ–‡ç« ID');
+                console.error('[News Detail] Î´Ìá¹©ÎÄÕÂID');
                 renderNotFound();
                 return;
             }
             
-            // åŠ è½½æ–‡ç« 
+            // ¼ÓÔØÎÄÕÂ
             const articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
-            console.log('[News Detail] æœ¬åœ°å­˜å‚¨æ–‡ç« æ•°é‡:', articles.length);
-            console.log('[News Detail] æ‰€æœ‰æ–‡ç« ID:', articles.map(a => a.id));
+            console.log('[News Detail] ±¾µØ´æ´¢ÎÄÕÂÊıÁ¿:', articles.length);
+            console.log('[News Detail] ËùÓĞÎÄÕÂID:', articles.map(a => a.id));
             
             const article = loadArticleFromStorage(articleId);
-            console.log('[News Detail] æ‰¾åˆ°çš„æ–‡ç« :', article);
+            console.log('[News Detail] ÕÒµ½µÄÎÄÕÂ:', article);
             
             if (!article) {
-                console.error('[News Detail] æœªæ‰¾åˆ°IDä¸º', articleId, 'çš„æ–‡ç« ');
+                console.error('[News Detail] Î´ÕÒµ½IDÎª', articleId, 'µÄÎÄÕÂ');
                 renderNotFound();
                 return;
             }
             
-            // æ›´æ–°é¡µé¢æ ‡é¢˜
-            document.title = `${article.title || 'æ–‡ç« è¯¦æƒ…'} - Yooèµ„é‡‘ç½‘`;
+            // ¸üĞÂÒ³Ãæ±êÌâ
+            document.title = `${article.title || 'ÎÄÕÂÏêÇé'} - Yoo×Ê½ğÍø`;
             
-            // æ¸²æŸ“æ–‡ç« 
+            // äÖÈ¾ÎÄÕÂ
             renderArticleHeader(article);
             renderArticleContent(article);
             
-            // åŠ è½½ç›¸å…³æ–‡ç« 
+            // ¼ÓÔØÏà¹ØÎÄÕÂ
             const allArticles = getAllPublishedArticles();
             renderRelatedArticles(articleId, allArticles);
             
-            // å¢åŠ é˜…è¯»æ•°
+            // Ôö¼ÓÔÄ¶ÁÊı
             incrementViews(articleId);
         });
     </script>
