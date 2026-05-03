@@ -1,13 +1,22 @@
 <?php
 /**
- * 数据库配置文件
+ * 数据库配置文件 - 自动适配本地和服务器环境
  */
 
-// 数据库配置
-define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'hongdu');
-define('DB_USER', 'hongdu');
-define('DB_PASS', 'fdsajkl');
+// 数据库配置 - 根据环境自动切换
+if(in_array($_SERVER['SERVER_ADDR'] ?? '', ['127.0.0.1', '::1']) || ($_SERVER['HTTP_HOST'] ?? '') == 'localhost') {
+    // 本地环境 (XAMPP)
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'hongdu');
+    define('DB_USER', 'root');
+    define('DB_PASS', '');
+} else {
+    // 服务器环境 (阿里云宝塔)
+    define('DB_HOST', '127.0.0.1');
+    define('DB_NAME', 'hongdu');
+    define('DB_USER', 'root');
+    define('DB_PASS', '');
+}
 define('DB_CHARSET', 'utf8mb4');
 
 // 创建数据库连接

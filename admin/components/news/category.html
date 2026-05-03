@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>分类管理 - CMS管理后台</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -185,65 +188,89 @@
         let categories = [];
         let currentCategoryId = null;
 
+        // 本地缓存版本号 - 修改此值将强制清除所有旧缓存
+        const CACHE_VERSION = '2';
+
         // 初始化
         document.addEventListener('DOMContentLoaded', function() {
             if (localStorage.getItem('cms_logged_in') !== 'true') {
                 window.location.href = '../login.html';
                 return;
             }
+            // 检查缓存版本，如果版本不一致则清除旧缓存
+            if (localStorage.getItem('cms_cache_version') !== CACHE_VERSION) {
+                console.log('缓存版本更新，清除旧分类缓存');
+                localStorage.removeItem('cms_categories');
+                localStorage.setItem('cms_cache_version', CACHE_VERSION);
+            }
             loadCategories();
         });
 
         // 加载分类列表
         async function loadCategories() {
-            // 首先尝试从本地存储加载
-            const cachedCategories = localStorage.getItem('cms_categories');
-            if (cachedCategories) {
-                try {
-                    categories = JSON.parse(cachedCategories);
-                    renderCategories();
-                    console.log('从本地存储加载分类成功');
-                } catch (e) {
-                    console.error('解析本地分类失败:', e);
-                }
-            }
-            
-            // 然后尝试从API加载并更新
+            // 首先清除旧的或重复的本地缓存，确保始终从API获取最新数据
             try {
                 const controller = new AbortController();
                 const timeoutId = setTimeout(() => controller.abort(), 3000);
                 
-                const response = await fetch('../api/news/categories.php', {
-                    signal: controller.signal
+                                const response = await fetch('../../api/news/categories.php', {
+                    signal: controller.signal,
+                    cache: 'no-cache'
                 });
                 
                 clearTimeout(timeoutId);
                 const result = await response.json();
                 
-                if (result.success) {
-                    categories = result.data;
+                if (result.success && Array.isArray(result.data) && result.data.length > 0) {
+                    // 关键修复：将API返回的字符串ID转换为数字，确保JS的===严格比较能匹配
+                    categories = result.data.map(cat => ({
+                        ...cat,
+                        id: parseInt(cat.id, 10),
+                        sort_order: parseInt(cat.sort_order, 10)
+                    }));
                     renderCategories();
                     // 缓存到本地存储
                     localStorage.setItem('cms_categories', JSON.stringify(categories));
                     console.log('从API加载分类成功并已缓存');
+                    return;
                 }
             } catch (error) {
-                console.error('API加载分类失败:', error);
-                
-                // 如果本地存储也没有数据，使用默认分类
-                if (!cachedCategories) {
-                    categories = [
-                        { id: 1, name: '行业资讯', sort_order: 0 },
-                        { id: 2, name: '公司动态', sort_order: 1 },
-                        { id: 3, name: '金融知识', sort_order: 2 },
-                        { id: 4, name: '政策法规', sort_order: 3 }
-                    ];
+                console.error('API加载分类失败，尝试使用本地缓存:', error);
+            }
+            
+            // API不可用时，尝试从本地存储加载
+            const cachedCategories = localStorage.getItem('cms_categories');
+            if (cachedCategories) {
+                try {
+                    const cached = JSON.parse(cachedCategories);
+                    // 过滤掉重复的分类（只保留每个名称的第一个）
+                    const seen = new Set();
+                    categories = cached.filter(cat => {
+                        if (seen.has(cat.name)) return false;
+                        seen.add(cat.name);
+                        return true;
+                    });
+                    // 重新赋予连续排序值
+                    categories.forEach((cat, idx) => { cat.sort_order = idx; });
                     renderCategories();
-                    // 缓存默认分类
                     localStorage.setItem('cms_categories', JSON.stringify(categories));
-                    console.log('使用默认分类并已缓存');
+                    console.log('从本地存储加载分类成功（已去重）');
+                    return;
+                } catch (e) {
+                    console.error('解析本地分类失败:', e);
                 }
             }
+            
+            // 都没有数据，使用默认分类
+            categories = [
+                { id: 1, name: '行业资讯', sort_order: 0 },
+                { id: 2, name: '公司动态', sort_order: 1 },
+                { id: 3, name: '金融知识', sort_order: 2 },
+                { id: 4, name: '政策法规', sort_order: 3 }
+            ];
+            renderCategories();
+            localStorage.setItem('cms_categories', JSON.stringify(categories));
+            console.log('使用默认分类并已缓存');
         }
 
         // 渲染分类列表
@@ -324,7 +351,7 @@
 
         // 编辑分类
         function editCategory(id) {
-            const category = categories.find(c => c.id === id);
+            const category = categories.find(c => Number(c.id) === Number(id));
             if (!category) return;
             
             currentCategoryId = id;
@@ -362,7 +389,7 @@
                 const controller = new AbortController();
                 const timeoutId = setTimeout(() => controller.abort(), 3000);
                 
-                const response = await fetch('../api/news/categories.php', {
+                const response = await fetch('../../api/news/categories.php', {
                     method: currentCategoryId ? 'PUT' : 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data),
@@ -385,7 +412,7 @@
                 // 使用本地存储作为后备
                 if (currentCategoryId) {
                     // 更新现有分类
-                    const index = categories.findIndex(c => c.id === currentCategoryId);
+                    const index = categories.findIndex(c => Number(c.id) === Number(currentCategoryId));
                     if (index !== -1) {
                         categories[index] = { ...categories[index], ...data };
                     }
@@ -424,7 +451,7 @@
                 const controller = new AbortController();
                 const timeoutId = setTimeout(() => controller.abort(), 3000);
                 
-                const response = await fetch('../api/news/categories.php', {
+                const response = await fetch('../../api/news/categories.php', {
                     method: 'DELETE',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ id: currentCategoryId }),
@@ -444,7 +471,7 @@
                 console.error('API删除失败，使用本地存储:', error);
                 
                 // 使用本地存储作为后备
-                categories = categories.filter(c => c.id !== currentCategoryId);
+                categories = categories.filter(c => Number(c.id) !== Number(currentCategoryId));
                 localStorage.setItem('cms_categories', JSON.stringify(categories));
                 
                 showToast('分类删除成功（本地模式）', 'success');
@@ -456,7 +483,7 @@
 
         // 移动分类排序
         async function moveCategory(id, direction) {
-            const index = categories.findIndex(c => c.id === id);
+            const index = categories.findIndex(c => Number(c.id) === Number(id));
             if (index === -1) return;
             
             const newIndex = index + direction;
@@ -468,6 +495,10 @@
             categories[newIndex] = temp;
             
             // 重新分配排序值（按数组顺序）
+            const batchData = categories.map((cat, idx) => ({
+                id: cat.id,
+                sort_order: idx
+            }));
             categories.forEach((cat, idx) => {
                 cat.sort_order = idx;
             });
@@ -478,24 +509,30 @@
             // 重新渲染
             renderCategories();
             
-            showToast('排序已更新', 'success');
-            
             // 尝试同步到服务器
             try {
                 const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 3000);
+                const timeoutId = setTimeout(() => controller.abort(), 5000);
                 
                 // 批量更新所有分类的排序
-                await fetch('../api/news/categories.php', {
+                const response = await fetch('../../api/news/categories.php', {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ categories: categories }),
+                    body: JSON.stringify({ categories: batchData }),
                     signal: controller.signal
                 });
                 
                 clearTimeout(timeoutId);
+                
+                const result = await response.json();
+                if (result.success) {
+                    showToast('排序已更新', 'success');
+                } else {
+                    showToast('排序已本地保存，但同步服务器失败', 'error');
+                }
             } catch (error) {
                 console.log('服务器同步失败，已保存到本地');
+                showToast('排序已本地保存', 'success');
             }
         }
 

@@ -3,15 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Yao×Ê½ğÍø³É¹¦°¸ÀıÏêÇé - ²é¿´ÏêÏ¸µÄ×Ê½ğ·şÎñ°¸Àı£¬ÁË½âÎÒÃÇÈçºÎ°ïÖúÆóÒµ½â¾ö×Ê½ğĞèÇó¡£">
-    <meta name="keywords" content="°¸ÀıÏêÇé,×Ê½ğ·şÎñ,¹ıÇÅ×Ê½ğ,°ÚÕË,ÁÁ×Ê,ÈÚ×Ê°¸Àı">
-    <title>°¸ÀıÏêÇé - Yao×Ê½ğÍø</title>
+    <meta name="description" content="Yaoèµ„é‡‘ç½‘æˆåŠŸæ¡ˆä¾‹è¯¦æƒ… - æŸ¥çœ‹è¯¦ç»†çš„èµ„é‡‘æœåŠ¡æ¡ˆä¾‹ï¼Œäº†è§£æˆ‘ä»¬å¦‚ä½•å¸®åŠ©ä¼ä¸šè§£å†³èµ„é‡‘éœ€æ±‚ã€‚">
+    <meta name="keywords" content="æ¡ˆä¾‹è¯¦æƒ…,èµ„é‡‘æœåŠ¡,è¿‡æ¡¥èµ„é‡‘,æ‘†è´¦,äº®èµ„,èèµ„æ¡ˆä¾‹">
+    <title>æ¡ˆä¾‹è¯¦æƒ… - Yaoèµ„é‡‘ç½‘</title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/case-detail.css">
     <style>
-        /* ±à¼­°´Å¥ÑùÊ½ */
+
+        /* é¡µé¢å¸ƒå±€ - é¡µè„šå›ºå®šåˆ°åº•éƒ¨ */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .main-content {
+            flex: 1 0 auto;
+        }
+        .footer {
+            flex-shrink: 0;
+        }
+
+        /* ç¼–è¾‘æŒ‰é’®æ ·å¼ */
         .case-edit-btn {
             position: absolute;
             top: 20px;
@@ -49,7 +67,7 @@
             }
         }
     </style>
-    <!-- Logo¶¯Ì¬¼ÓÔØ -->
+    <!-- LogoåŠ¨æ€åŠ è½½ -->
     <script>
     (function(){
         var xhr=new XMLHttpRequest();
@@ -134,28 +152,28 @@
 })();
 </script>
 </head>
-<body>
-    <a href="#main-content" class="skip-link">Ìø×ªµ½Ö÷ÒªÄÚÈİ</a>
+<body style="display:flex;flex-direction:column;min-height:100vh">
+    <a href="#main-content" class="skip-link">è·³è½¬åˆ°ä¸»è¦å†…å®¹</a>
 
-    <!-- µ¼º½À¸ -->
-    <nav class="navbar" id="navbar" role="navigation" aria-label="Ö÷µ¼º½">
+    <!-- å¯¼èˆªæ  -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="ä¸»å¯¼èˆª">
         <div class="navbar-container">
-<a href="index.html" class="logo" aria-label="Yao×Ê½ğÍøÊ×Ò³"><img src="images/logo.png?v=20260502040820" alt="Yao×Ê½ğÍø" style="height:48px;width:auto;"></a>
+<a href="index.html" class="logo" aria-label="Yaoèµ„é‡‘ç½‘é¦–é¡µ"><img src="images/logo.png?v=20260502040820" alt="Yaoèµ„é‡‘ç½‘" style="height:48px;width:auto;"></a>
             <ul class="nav-menu" role="menubar">
-                <li role="none"><a href="index.html" class="nav-link" role="menuitem">Ê×Ò³</a></li>
-                <li role="none"><a href="services.html" class="nav-link" role="menuitem">ÒµÎñ·¶Î§</a></li>
-                <li role="none"><a href="cases.html" class="nav-link active" role="menuitem">³É¹¦°¸Àı</a></li>
-                <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">·şÎñÓÅÊÆ</a></li>
-                <li role="none"><a href="news.html" class="nav-link" role="menuitem">ĞĞÒµ×ÊÑ¶</a></li>
-                <li role="none"><a href="faq.html" class="nav-link" role="menuitem">³£¼ûÎÊÌâ</a></li>
-                <li role="none"><a href="contact.html" class="nav-link" role="menuitem">ÁªÏµÎÒÃÇ</a></li>
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem">é¦–é¡µ</a></li>
+                <li role="none"><a href="services.html" class="nav-link" role="menuitem">ä¸šåŠ¡èŒƒå›´</a></li>
+                <li role="none"><a href="cases.html" class="nav-link active" role="menuitem">æˆåŠŸæ¡ˆä¾‹</a></li>
+                <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">æœåŠ¡ä¼˜åŠ¿</a></li>
+                <li role="none"><a href="news.html" class="nav-link" role="menuitem">è¡Œä¸šèµ„è®¯</a></li>
+                <li role="none"><a href="faq.html" class="nav-link" role="menuitem">å¸¸è§é—®é¢˜</a></li>
+                <li role="none"><a href="contact.html" class="nav-link" role="menuitem">è”ç³»æˆ‘ä»¬</a></li>
             </ul>
 
-            <button class="search-toggle" id="searchToggle" aria-label="´ò¿ªËÑË÷" aria-expanded="false">
+            <button class="search-toggle" id="searchToggle" aria-label="æ‰“å¼€æœç´¢" aria-expanded="false">
                 <i class="fas fa-search" aria-hidden="true"></i>
             </button>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="´ò¿ª²Ëµ¥" aria-expanded="false">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="æ‰“å¼€èœå•" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -163,70 +181,70 @@
         </div>
     </nav>
 
-    <main id="main-content">
-        <!-- ·µ»Ø°´Å¥ÇøÓò -->
+    <main id="main-content" class="main-content">
+        <!-- è¿”å›æŒ‰é’®åŒºåŸŸ -->
         <div class="case-back-section">
             <button class="case-back-btn" onclick="window.location.href='cases.html'">
                 <i class="fas fa-arrow-left"></i>
-                ·µ»Ø°¸ÀıÁĞ±í
+                è¿”å›æ¡ˆä¾‹åˆ—è¡¨
             </button>
         </div>
 
-        <!-- ÏêÇéÒ³ÄÚÈİ -->
+        <!-- è¯¦æƒ…é¡µå†…å®¹ -->
         <section class="case-detail-content">
             <div class="case-detail-container">
                 <div class="case-detail-grid">
-                    <!-- Ö÷ÄÚÈİÇø -->
+                    <!-- ä¸»å†…å®¹åŒº -->
                     <div class="case-detail-main">
-                        <!-- Í¼Æ¬/ÊÓÆµÕ¹Ê¾ -->
+                        <!-- å›¾ç‰‡/è§†é¢‘å±•ç¤º -->
                         <div class="case-media-gallery" id="caseMedia">
-                            <!-- ¶¯Ì¬Ìî³ä -->
+                            <!-- åŠ¨æ€å¡«å…… -->
                         </div>
 
-                        <!-- °¸Àı±êÌâºÍÃèÊö -->
+                        <!-- æ¡ˆä¾‹æ ‡é¢˜å’Œæè¿° -->
                         <div class="case-description-section">
                             <h1 class="case-detail-title-content" id="caseTitleContent"></h1>
                             <h2 class="case-section-title">
                                 <i class="fas fa-file-alt"></i>
-                                °¸ÀıÏêÇé
+                                æ¡ˆä¾‹è¯¦æƒ…
                             </h2>
                             <div class="case-description-text" id="caseDescription">
-                                <!-- ¶¯Ì¬Ìî³ä -->
+                                <!-- åŠ¨æ€å¡«å…… -->
                             </div>
                         </div>
 
-                        <!-- ×Ê·½ÄÜÅäºÏÄÄĞ© -->
+                        <!-- èµ„æ–¹èƒ½é…åˆå“ªäº› -->
                         <div class="case-highlights">
                             <h3 class="case-highlights-title">
                                 <i class="fas fa-handshake"></i>
-                                ×Ê·½ÄÜÅäºÏÄÄĞ©
+                                èµ„æ–¹èƒ½é…åˆå“ªäº›
                             </h3>
                             <div class="case-highlights-list" id="caseHighlights">
-                                <!-- ¶¯Ì¬Ìî³ä -->
+                                <!-- åŠ¨æ€å¡«å…… -->
                             </div>
                         </div>
 
-                        <!-- ²Ù×÷Á÷³Ì -->
+                        <!-- æ“ä½œæµç¨‹ -->
                         <div class="case-highlights">
                             <h3 class="case-highlights-title">
                                 <i class="fas fa-tasks"></i>
-                                ²Ù×÷Á÷³Ì
+                                æ“ä½œæµç¨‹
                             </h3>
                             <div class="case-highlights-list" id="caseProcess">
-                                <!-- ¶¯Ì¬Ìî³ä -->
+                                <!-- åŠ¨æ€å¡«å…… -->
                             </div>
                         </div>
                     </div>
 
-                    <!-- ²à±ßÀ¸ -->
+                    <!-- ä¾§è¾¹æ  -->
                     <aside class="case-detail-sidebar">
-                        <!-- ÁªÏµ¿¨Æ¬ -->
+                        <!-- è”ç³»å¡ç‰‡ -->
                         <div class="case-contact-card">
                             <div class="case-contact-avatar">
                                 <i class="fas fa-user-tie"></i>
                             </div>
-                            <h3 class="case-contact-name">Íõ×Ü</h3>
-                            <p class="case-contact-title">×Ê½ğÒµÎñ×Ü¾­Àí</p>
+                            <h3 class="case-contact-name">ç‹æ€»</h3>
+                            <p class="case-contact-title">èµ„é‡‘ä¸šåŠ¡æ€»ç»ç†</p>
                             <div class="case-contact-phone">
                                 <i class="fas fa-phone"></i>
                                 135-5288-3008
@@ -234,40 +252,40 @@
     
                         </div>
 
-                        <!-- Ïà¹Ø°¸Àı -->
+                        <!-- ç›¸å…³æ¡ˆä¾‹ -->
                         <div class="case-related-card">
-                            <h3 class="case-related-title">Ïà¹Ø°¸Àı</h3>
+                            <h3 class="case-related-title">ç›¸å…³æ¡ˆä¾‹</h3>
                             <div class="case-related-list" id="relatedCases">
-                                <!-- ¶¯Ì¬Ìî³ä -->
+                                <!-- åŠ¨æ€å¡«å…… -->
                             </div>
                         </div>
 
-                        <!-- ·şÎñ±£ÕÏ -->
+                        <!-- æœåŠ¡ä¿éšœ -->
                         <div class="case-service-guarantee">
                             <h3 class="case-service-guarantee-title">
                                 <i class="fas fa-shield-alt"></i>
-                                ·şÎñ±£ÕÏ
+                                æœåŠ¡ä¿éšœ
                             </h3>
                             <div class="case-guarantee-list">
                                 <div class="case-guarantee-item">
                                     <i class="fas fa-check-circle"></i>
-                                    <span>×Ê½ğÊµÁ¦ĞÛºñ£¬°ÙÒÚ¼¶¹ÜÀí¹æÄ£</span>
+                                    <span>èµ„é‡‘å®åŠ›é›„åšï¼Œç™¾äº¿çº§ç®¡ç†è§„æ¨¡</span>
                                 </div>
                                 <div class="case-guarantee-item">
                                     <i class="fas fa-check-circle"></i>
-                                    <span>¿ìËÙÏìÓ¦£¬3¸ö¹¤×÷ÈÕÄÚ·Å¿î</span>
+                                    <span>å¿«é€Ÿå“åº”ï¼Œ3ä¸ªå·¥ä½œæ—¥å†…æ”¾æ¬¾</span>
                                 </div>
                                 <div class="case-guarantee-item">
                                     <i class="fas fa-check-circle"></i>
-                                    <span>×¨ÒµÍÅ¶Ó£¬20ÄêĞĞÒµ¾­Ñé</span>
+                                    <span>ä¸“ä¸šå›¢é˜Ÿï¼Œ20å¹´è¡Œä¸šç»éªŒ</span>
                                 </div>
                                 <div class="case-guarantee-item">
                                     <i class="fas fa-check-circle"></i>
-                                    <span>ÑÏ¸ñ±£ÃÜ£¬±£»¤¿Í»§ÒşË½</span>
+                                    <span>ä¸¥æ ¼ä¿å¯†ï¼Œä¿æŠ¤å®¢æˆ·éšç§</span>
                                 </div>
                                 <div class="case-guarantee-item">
                                     <i class="fas fa-check-circle"></i>
-                                    <span>ºÏ¹æ²Ù×÷£¬·çÏÕ¿É¿Ø</span>
+                                    <span>åˆè§„æ“ä½œï¼Œé£é™©å¯æ§</span>
                                 </div>
                             </div>
                         </div>
@@ -276,71 +294,71 @@
             </div>
         </section>
 
-        <!-- ¸ü¶à°¸Àı°å¿éÒÑÒÆ³ı -->
+        <!-- æ›´å¤šæ¡ˆä¾‹æ¿å—å·²ç§»é™¤ -->
     </main>
 
-    <!-- ÓÒ²à±ß¸¡¶¯µç»°°´Å¥ -->
-    <div class="chat-widget" id="chatWidget" aria-label="ÁªÏµµç»°">
-        <button class="chat-widget-btn" id="chatWidgetBtn" aria-label="²¦´òµç»°" aria-expanded="false">
+    <!-- å³ä¾§è¾¹æµ®åŠ¨ç”µè¯æŒ‰é’® -->
+    <div class="chat-widget" id="chatWidget" aria-label="è”ç³»ç”µè¯">
+        <button class="chat-widget-btn" id="chatWidgetBtn" aria-label="æ‹¨æ‰“ç”µè¯" aria-expanded="false">
             <i class="fas fa-phone-alt" aria-hidden="true"></i>
         </button>
     </div>
 
-    <!-- Ò³½Å -->
-    <footer class="footer">
+    <!-- é¡µè„š -->
+<footer class="footer">
         <div class="footer-container">
             <div class="footer-main">
                 <div class="footer-brand">
-                    <div class="footer-logo"><img src="images/logo.png?v=20260502041100" alt="Yao×Ê½ğÍø" style="height:48px;width:auto;"></div>
+                    <div class="footer-logo"><img src="images/logo.png?v=20260502041100" alt="Yaoèµ„é‡‘ç½‘" style="height:48px;width:auto;"></div>
 
-                    <p class="footer-desc">×¨Òµ×Ê½ğÒµÎñ·şÎñÉÌ£¬Ìá¹©ÉÏÊĞ¹«Ë¾¹ıÇÅ¡¢ÆóÒµ°ÚÕË¡¢ÒøĞĞ´æ¿î¡¢Ó¦ÊÕÕË¿îÈÚ×ÊµÈÈ«·½Î»×Ê½ğ·şÎñ</p>
+                    <p class="footer-desc">ä¸“ä¸šèµ„é‡‘ä¸šåŠ¡æœåŠ¡å•†ï¼Œæä¾›ä¸Šå¸‚å…¬å¸è¿‡æ¡¥ã€ä¼ä¸šæ‘†è´¦ã€é“¶è¡Œå­˜æ¬¾ã€åº”æ”¶è´¦æ¬¾èèµ„ç­‰å…¨æ–¹ä½èµ„é‡‘æœåŠ¡</p>
                 </div>
                 <div class="footer-nav">
-                    <h4 class="footer-nav-title">¿ìËÙÁ´½Ó</h4>
+                    <h4 class="footer-nav-title">å¿«é€Ÿé“¾æ¥</h4>
                     <ul class="footer-nav-list">
-                        <li><a href="index.html">Ê×Ò³</a></li>
-                        <li><a href="services.html">ÒµÎñ·¶Î§</a></li>
-                        <li><a href="cases.html">³É¹¦°¸Àı</a></li>
-                        <li><a href="advantages.html">·şÎñÓÅÊÆ</a></li>
+                        <li><a href="index.html">é¦–é¡µ</a></li>
+                        <li><a href="services.html">ä¸šåŠ¡èŒƒå›´</a></li>
+                        <li><a href="cases.html">æˆåŠŸæ¡ˆä¾‹</a></li>
+                        <li><a href="advantages.html">æœåŠ¡ä¼˜åŠ¿</a></li>
                     </ul>
                 </div>
                 <div class="footer-nav">
-                    <h4 class="footer-nav-title">¸ü¶àÄÚÈİ</h4>
+                    <h4 class="footer-nav-title">æ›´å¤šå†…å®¹</h4>
                     <ul class="footer-nav-list">
-                        <li><a href="news.html">ĞĞÒµ×ÊÑ¶</a></li>
-                        <li><a href="faq.html">³£¼ûÎÊÌâ</a></li>
-                        <li><a href="contact.html">ÁªÏµÎÒÃÇ</a></li>
+                        <li><a href="news.html">è¡Œä¸šèµ„è®¯</a></li>
+                        <li><a href="faq.html">å¸¸è§é—®é¢˜</a></li>
+                        <li><a href="contact.html">è”ç³»æˆ‘ä»¬</a></li>
                     </ul>
                 </div>
                 <div class="footer-nav">
-                    <h4 class="footer-nav-title">ÁªÏµ·½Ê½</h4>
+                    <h4 class="footer-nav-title">è”ç³»æ–¹å¼</h4>
                     <ul class="footer-nav-list">
                         <li><i class="fas fa-phone"></i> 13552883008</li>
-                        <li><i class="fas fa-user"></i> Íõ×Ü</li>
+                        <li><i class="fas fa-user"></i> ç‹æ€»</li>
                         <li><i class="fas fa-envelope"></i> wanglizhongguo@126.com</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2024 Yao×Ê½ğÍø °æÈ¨ËùÓĞ</p>
-                <p class="footer-disclaimer">Í¶×ÊÓĞ·çÏÕ£¬ÈëÊĞĞè½÷É÷¡£±¾ÍøÕ¾ÄÚÈİ½ö¹©²Î¿¼£¬²»¹¹³ÉÍ¶×Ê½¨Òé¡£</p>
+                <p class="footer-copyright">&copy; 2024 Yaoèµ„é‡‘ç½‘ ç‰ˆæƒæ‰€æœ‰</p>
+                <p class="footer-disclaimer">æŠ•èµ„æœ‰é£é™©ï¼Œå…¥å¸‚éœ€è°¨æ…ã€‚æœ¬ç½‘ç«™å†…å®¹ä»…ä¾›å‚è€ƒï¼Œä¸æ„æˆæŠ•èµ„å»ºè®®ã€‚</p>
             </div>
         </div>
     </footer>
 
-    <!-- Í¼Æ¬²é¿´Æ÷ -->
+    <!-- å›¾ç‰‡æŸ¥çœ‹å™¨ -->
     <div class="image-viewer" id="imageViewer">
         <div class="viewer-overlay" onclick="closeImageViewer()"></div>
-        <button class="viewer-close" onclick="closeImageViewer()" aria-label="¹Ø±Õ">
+        <button class="viewer-close" onclick="closeImageViewer()" aria-label="å…³é—­">
             <i class="fas fa-times"></i>
         </button>
-        <button class="viewer-nav prev" id="viewerPrev" onclick="prevImage()" aria-label="ÉÏÒ»ÕÅ">
+        <button class="viewer-nav prev" id="viewerPrev" onclick="prevImage()" aria-label="ä¸Šä¸€å¼ ">
             <i class="fas fa-chevron-left"></i>
         </button>
         <div class="viewer-container">
             <img src="" alt="" class="viewer-image" id="viewerImage">
         </div>
-        <button class="viewer-nav next" id="viewerNext" onclick="nextImage()" aria-label="ÏÂÒ»ÕÅ">
+        <button class="viewer-nav next" id="viewerNext" onclick="nextImage()" aria-label="ä¸‹ä¸€å¼ ">
             <i class="fas fa-chevron-right"></i>
         </button>
         <div class="viewer-counter" id="viewerCounter">1 / 1</div>
@@ -348,25 +366,25 @@
 
     <script src="js/main.js"></script>
     <script>
-        // °¸ÀıÊı¾İ - ½«´ÓCMSÊı¾İÔ´¶¯Ì¬¼ÓÔØ
+        // æ¡ˆä¾‹æ•°æ® - å°†ä»CMSæ•°æ®æºåŠ¨æ€åŠ è½½
         let casesData = [];
-        // È«¾Ö»ù´¡Â·¾¶£¨Èç /hongdu/£©
+        // å…¨å±€åŸºç¡€è·¯å¾„ï¼ˆå¦‚ /hongdu/ï¼‰
         const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
 
-        // »ñÈ¡ÀàĞÍÑùÊ½ÀàÃû
+        // è·å–ç±»å‹æ ·å¼ç±»å
         function getTypeClass(type) {
             const typeMap = {
-                '¹ıÇÅ': 'bridge',
-                '°ÚÕË': 'display',
-                'ÁÁ×Ê': 'proof',
-                '³åÁ¿': 'deposit',
-                '¶¨Ôö': 'placement',
-                'Ó¦ÊÕÕË¿î': 'receivable'
+                'è¿‡æ¡¥': 'bridge',
+                'æ‘†è´¦': 'display',
+                'äº®èµ„': 'proof',
+                'å†²é‡': 'deposit',
+                'å®šå¢': 'placement',
+                'åº”æ”¶è´¦æ¬¾': 'receivable'
             };
             return typeMap[type] || 'bridge';
         }
 
-        // äÖÈ¾°¸ÀıÏêÇé
+        // æ¸²æŸ“æ¡ˆä¾‹è¯¦æƒ…
         function renderCaseDetail(caseId) {
             const caseItem = casesData.find(c => c.id === parseInt(caseId));
             
@@ -375,17 +393,17 @@
                 return;
             }
 
-            // ¸üĞÂÒ³Ãæ±êÌâ
-            document.title = `${caseItem.title} - °¸ÀıÏêÇé - Yao×Ê½ğÍø`;
+            // æ›´æ–°é¡µé¢æ ‡é¢˜
+            document.title = `${caseItem.title} - æ¡ˆä¾‹è¯¦æƒ… - Yaoèµ„é‡‘ç½‘`;
 
             const typeClass = getTypeClass(caseItem.type);
 
-            // Í·²¿ÇøÓòÒÑÒÆ³ı
+            // å¤´éƒ¨åŒºåŸŸå·²ç§»é™¤
 
-            // ±£´æµ±Ç°°¸ÀıÍ¼Æ¬ÁĞ±í
+            // ä¿å­˜å½“å‰æ¡ˆä¾‹å›¾ç‰‡åˆ—è¡¨
             currentCaseImages = caseItem.images || [caseItem.image];
 
-            // äÖÈ¾Ã½ÌåÇøÓò
+            // æ¸²æŸ“åª’ä½“åŒºåŸŸ
             let mediaHtml = `
                 <div class="case-media-main" id="mainMedia" onclick="openImageViewer(currentImageIndex)">
                     ${caseItem.hasVideo ? `
@@ -411,13 +429,13 @@
 
             document.getElementById('caseMedia').innerHTML = mediaHtml;
 
-            // äÖÈ¾±êÌâµ½ÄÚÈİÇøÓò
+            // æ¸²æŸ“æ ‡é¢˜åˆ°å†…å®¹åŒºåŸŸ
             document.getElementById('caseTitleContent').innerHTML = caseItem.title;
 
-            // äÖÈ¾ÃèÊö
+            // æ¸²æŸ“æè¿°
             document.getElementById('caseDescription').innerHTML = caseItem.detail;
 
-            // äÖÈ¾ÁÁµã£¨×Ê·½ÄÜÅäºÏÄÄĞ©£©
+            // æ¸²æŸ“äº®ç‚¹ï¼ˆèµ„æ–¹èƒ½é…åˆå“ªäº›ï¼‰
             document.getElementById('caseHighlights').innerHTML = caseItem.highlights.map(h => `
                 <div class="case-highlight-item">
                     <i class="fas fa-check-circle"></i>
@@ -425,8 +443,8 @@
                 </div>
             `).join('');
 
-            // äÖÈ¾²Ù×÷Á÷³Ì
-            const processSteps = caseItem.process || ['³õ²½¹µÍ¨ĞèÇó', 'Ìá¹©Ïà¹Ø×ÊÁÏ', '×Ê·½ÉóºËÆÀ¹À', 'Ç©¶©ºÏ×÷Ğ­Òé', '×Ê½ğµ½Î»²Ù×÷', 'ÒµÎñÍê³É½áËã'];
+            // æ¸²æŸ“æ“ä½œæµç¨‹
+            const processSteps = caseItem.process || ['åˆæ­¥æ²Ÿé€šéœ€æ±‚', 'æä¾›ç›¸å…³èµ„æ–™', 'èµ„æ–¹å®¡æ ¸è¯„ä¼°', 'ç­¾è®¢åˆä½œåè®®', 'èµ„é‡‘åˆ°ä½æ“ä½œ', 'ä¸šåŠ¡å®Œæˆç»“ç®—'];
             document.getElementById('caseProcess').innerHTML = processSteps.map((step, index) => `
                 <div class="case-highlight-item">
                     <i class="fas fa-check-circle"></i>
@@ -434,11 +452,11 @@
                 </div>
             `).join('');
 
-            // äÖÈ¾Ïà¹Ø°¸Àı£¨Í¬ÀàĞÍÓÅÏÈ£¬²»×ã5¸öÊ±²¹³äÆäËûÀàĞÍ£©
+            // æ¸²æŸ“ç›¸å…³æ¡ˆä¾‹ï¼ˆåŒç±»å‹ä¼˜å…ˆï¼Œä¸è¶³5ä¸ªæ—¶è¡¥å……å…¶ä»–ç±»å‹ï¼‰
             let relatedCases = casesData
                 .filter(c => c.type === caseItem.type && c.id !== caseItem.id);
             
-            // Èç¹ûÍ¬ÀàĞÍ²»×ã5¸ö£¬²¹³äÆäËûÀàĞÍ
+            // å¦‚æœåŒç±»å‹ä¸è¶³5ä¸ªï¼Œè¡¥å……å…¶ä»–ç±»å‹
             if (relatedCases.length < 5) {
                 const otherCases = casesData
                     .filter(c => c.type !== caseItem.type && c.id !== caseItem.id)
@@ -449,7 +467,7 @@
             relatedCases = relatedCases.slice(0, 5);
             
             document.getElementById('relatedCases').innerHTML = relatedCases.map(c => {
-                // ÓÅÏÈÊ¹ÓÃ coverImage ×Ö¶Î£¬Æä´ÎÊ¹ÓÃ images Êı×éµÄµÚÒ»ÕÅ£¬×îºóÊ¹ÓÃ image ×Ö¶Î
+                // ä¼˜å…ˆä½¿ç”¨ coverImage å­—æ®µï¼Œå…¶æ¬¡ä½¿ç”¨ images æ•°ç»„çš„ç¬¬ä¸€å¼ ï¼Œæœ€åä½¿ç”¨ image å­—æ®µ
                 const relatedImage = c.coverImage || (c.images && c.images.length > 0 ? c.images[0] : c.image) || 'images/cases/default.jpg';
                 return `
                 <a href="case-detail.html?id=${c.id}" class="case-related-item">
@@ -461,37 +479,37 @@
                         <span class="case-related-item-type">${c.type} ? ${c.amount}</span>
                     </div>
                 </a>
-            `}).join('') || '<p style="color: #9ca3af; text-align: center; padding: 20px;">ÔİÎŞÏà¹Ø°¸Àı</p>';
+            `}).join('') || '<p style="color: #9ca3af; text-align: center; padding: 20px;">æš‚æ— ç›¸å…³æ¡ˆä¾‹</p>';
 
-            // ¸ü¶à°¸Àı°å¿éÒÑÒÆ³ı
+            // æ›´å¤šæ¡ˆä¾‹æ¿å—å·²ç§»é™¤
         }
 
-        // ÇĞ»»Í¼Æ¬
+        // åˆ‡æ¢å›¾ç‰‡
         function changeImage(src, thumb) {
             document.getElementById('mainImage').src = src;
             document.querySelectorAll('.case-media-thumb').forEach(t => t.classList.remove('active'));
             thumb.classList.add('active');
-            // ¸üĞÂµ±Ç°Í¼Æ¬Ë÷Òı
+            // æ›´æ–°å½“å‰å›¾ç‰‡ç´¢å¼•
             const thumbs = document.querySelectorAll('.case-media-thumb');
             currentImageIndex = Array.from(thumbs).indexOf(thumb);
         }
 
-        // ²¥·ÅÊÓÆµ
+        // æ’­æ”¾è§†é¢‘
         function playVideo(videoSrc) {
             const mainMedia = document.getElementById('mainMedia');
             mainMedia.innerHTML = `
                 <video controls autoplay style="width: 100%; height: 100%; object-fit: contain; background: #000;">
                     <source src="${videoSrc}" type="video/mp4">
-                    ÄúµÄä¯ÀÀÆ÷²»Ö§³ÖÊÓÆµ²¥·Å¡£
+                    æ‚¨çš„æµè§ˆå™¨ä¸æ”¯æŒè§†é¢‘æ’­æ”¾ã€‚
                 </video>
             `;
         }
 
-        // Í¼Æ¬²é¿´Æ÷Ïà¹Ø±äÁ¿
+        // å›¾ç‰‡æŸ¥çœ‹å™¨ç›¸å…³å˜é‡
         let currentCaseImages = [];
         let currentImageIndex = 0;
 
-        // ´ò¿ªÍ¼Æ¬²é¿´Æ÷
+        // æ‰“å¼€å›¾ç‰‡æŸ¥çœ‹å™¨
         function openImageViewer(index) {
             if (currentCaseImages.length === 0) return;
             
@@ -507,14 +525,14 @@
             updateViewerCounter();
         }
 
-        // ¹Ø±ÕÍ¼Æ¬²é¿´Æ÷
+        // å…³é—­å›¾ç‰‡æŸ¥çœ‹å™¨
         function closeImageViewer() {
             const viewer = document.getElementById('imageViewer');
             viewer.classList.remove('active');
             document.body.style.overflow = '';
         }
 
-        // ÉÏÒ»ÕÅÍ¼Æ¬
+        // ä¸Šä¸€å¼ å›¾ç‰‡
         function prevImage() {
             if (currentImageIndex > 0) {
                 currentImageIndex--;
@@ -524,7 +542,7 @@
             }
         }
 
-        // ÏÂÒ»ÕÅÍ¼Æ¬
+        // ä¸‹ä¸€å¼ å›¾ç‰‡
         function nextImage() {
             if (currentImageIndex < currentCaseImages.length - 1) {
                 currentImageIndex++;
@@ -534,7 +552,7 @@
             }
         }
 
-        // ¸üĞÂµ¼º½°´Å¥×´Ì¬
+        // æ›´æ–°å¯¼èˆªæŒ‰é’®çŠ¶æ€
         function updateViewerNav() {
             const prevBtn = document.getElementById('viewerPrev');
             const nextBtn = document.getElementById('viewerNext');
@@ -546,13 +564,13 @@
             nextBtn.classList.toggle('disabled', currentImageIndex === currentCaseImages.length - 1);
         }
 
-        // ¸üĞÂ¼ÆÊıÆ÷
+        // æ›´æ–°è®¡æ•°å™¨
         function updateViewerCounter() {
             document.getElementById('viewerCounter').textContent = 
                 `${currentImageIndex + 1} / ${currentCaseImages.length}`;
         }
 
-        // ¼üÅÌµ¼º½
+        // é”®ç›˜å¯¼èˆª
         document.addEventListener('keydown', function(e) {
             const viewer = document.getElementById('imageViewer');
             if (!viewer.classList.contains('active')) return;
@@ -566,13 +584,13 @@
             }
         });
 
-        // µ±Ç°°¸ÀıID
+        // å½“å‰æ¡ˆä¾‹ID
         let currentCaseId = null;
         
-        // ¸¨Öúº¯Êı£º»ñÈ¡Í¼Æ¬URL£¨¼æÈİĞÂ¾É¸ñÊ½£©
+        // è¾…åŠ©å‡½æ•°ï¼šè·å–å›¾ç‰‡URLï¼ˆå…¼å®¹æ–°æ—§æ ¼å¼ï¼‰
         function getImageUrl(img) {
             if (typeof img === 'string') {
-                // Ïà¶ÔÂ·¾¶£¨Èç uploads/xxx.jpg£©£¬ÓÃ basePath Æ´½Ó
+                // ç›¸å¯¹è·¯å¾„ï¼ˆå¦‚ uploads/xxx.jpgï¼‰ï¼Œç”¨ basePath æ‹¼æ¥
                 if (img && !img.startsWith('http') && !img.startsWith('/') && !img.startsWith('data:')) {
                     return basePath + img;
                 }
@@ -588,10 +606,10 @@
             return '';
         }
         
-        // ¸¨Öúº¯Êı£º»ñÈ¡ÊÓÆµURL£¨¼æÈİĞÂ¾É¸ñÊ½£©
+        // è¾…åŠ©å‡½æ•°ï¼šè·å–è§†é¢‘URLï¼ˆå…¼å®¹æ–°æ—§æ ¼å¼ï¼‰
         function getVideoUrl(video) {
             if (typeof video === 'string') {
-                return video; // ¾É¸ñÊ½
+                return video; // æ—§æ ¼å¼
             }
             if (typeof video === 'object' && video !== null) {
                 return video.url || '';
@@ -599,18 +617,18 @@
             return '';
         }
         
-        // ´ÓlocalStorage¼ÓÔØËùÓĞ°¸Àı£¨ÓÃÓÚÏà¹Ø°¸ÀıÏÔÊ¾£©
+        // ä»localStorageåŠ è½½æ‰€æœ‰æ¡ˆä¾‹ï¼ˆç”¨äºç›¸å…³æ¡ˆä¾‹æ˜¾ç¤ºï¼‰
         function loadAllCasesFromLocal() {
             try {
                 const cases = JSON.parse(localStorage.getItem('cms_cases') || '[]');
                 return cases.filter(c => c.status === 'published');
             } catch (e) {
-                console.error('´ÓlocalStorage¼ÓÔØÊ§°Ü:', e);
+                console.error('ä»localStorageåŠ è½½å¤±è´¥:', e);
                 return [];
             }
         }
         
-        // ´Ó·şÎñÆ÷¼ÓÔØËùÓĞ°¸Àı
+        // ä»æœåŠ¡å™¨åŠ è½½æ‰€æœ‰æ¡ˆä¾‹
         async function loadAllCasesFromServer() {
             try {
                 const response = await fetch(basePath + 'api/cases.php');
@@ -619,12 +637,12 @@
                     return result.cases.filter(c => c.status === 'published');
                 }
             } catch (error) {
-                console.log('·şÎñÆ÷¼ÓÔØÊ§°Ü:', error);
+                console.log('æœåŠ¡å™¨åŠ è½½å¤±è´¥:', error);
             }
             return [];
         }
         
-        // ¼ÓÔØËùÓĞ°¸ÀıÊı¾İ
+        // åŠ è½½æ‰€æœ‰æ¡ˆä¾‹æ•°æ®
         async function loadAllCases() {
             let cases = await loadAllCasesFromServer();
             if (cases.length === 0) {
@@ -633,19 +651,19 @@
             casesData = cases;
         }
         
-        // ´ÓlocalStorage¼ÓÔØµ¥¸ö°¸Àı
+        // ä»localStorageåŠ è½½å•ä¸ªæ¡ˆä¾‹
         function loadCaseFromLocal(caseId) {
             try {
                 const cases = JSON.parse(localStorage.getItem('cms_cases') || '[]');
                 const foundCase = cases.find(c => String(c.id) === String(caseId));
                 return foundCase || null;
             } catch (e) {
-                console.error('´ÓlocalStorage¼ÓÔØÊ§°Ü:', e);
+                console.error('ä»localStorageåŠ è½½å¤±è´¥:', e);
                 return null;
             }
         }
         
-        // ³õÊ¼»¯
+        // åˆå§‹åŒ–
         document.addEventListener('DOMContentLoaded', async function() {
             const urlParams = new URLSearchParams(window.location.search);
             const caseId = urlParams.get('id');
@@ -653,22 +671,22 @@
             
             if (caseId) {
                 currentCaseId = caseId;
-                // ÏÈ¼ÓÔØËùÓĞ°¸ÀıÊı¾İ£¨ÓÃÓÚÏà¹Ø°¸Àı£©
+                // å…ˆåŠ è½½æ‰€æœ‰æ¡ˆä¾‹æ•°æ®ï¼ˆç”¨äºç›¸å…³æ¡ˆä¾‹ï¼‰
                 await loadAllCases();
-                // ÔÙ¼ÓÔØ¾ßÌå°¸ÀıÏêÇé
+                // å†åŠ è½½å…·ä½“æ¡ˆä¾‹è¯¦æƒ…
                 loadCaseDetail(caseId, isPreview);
             } else {
                 window.location.href = 'cases.html';
             }
         });
 
-        // ¼ÓÔØ°¸ÀıÏêÇé£¨ÓÅÏÈ´ÓCMS¼ÓÔØ£¬Ê§°ÜÔòÊ¹ÓÃ±¾µØÊı¾İ£©
+        // åŠ è½½æ¡ˆä¾‹è¯¦æƒ…ï¼ˆä¼˜å…ˆä»CMSåŠ è½½ï¼Œå¤±è´¥åˆ™ä½¿ç”¨æœ¬åœ°æ•°æ®ï¼‰
         async function loadCaseDetail(caseId, isPreview) {
             let serverData = null;
             let serverError = null;
             
             try {
-                // ³¢ÊÔ´ÓCMS API¼ÓÔØ£¨Ìí¼ÓÊ±¼ä´Á·ÀÖ¹»º´æ£©
+                // å°è¯•ä»CMS APIåŠ è½½ï¼ˆæ·»åŠ æ—¶é—´æˆ³é˜²æ­¢ç¼“å­˜ï¼‰
                 const timestamp = new Date().getTime();
                 const response = await fetch(basePath + `api/case-detail.php?id=${caseId}&_t=${timestamp}`, {
                     cache: 'no-store'
@@ -676,40 +694,40 @@
                 const result = await response.json();
                 
                 if (result.success && result.exists) {
-                    // Ê¹ÓÃCMSÊı¾İäÖÈ¾
+                    // ä½¿ç”¨CMSæ•°æ®æ¸²æŸ“
                     serverData = result.case;
                     renderCaseFromCMS(serverData);
                     
-                    // ¸üĞÂlocalStorageÖĞµÄÊı¾İÎª×îĞÂ·şÎñÆ÷Êı¾İ
+                    // æ›´æ–°localStorageä¸­çš„æ•°æ®ä¸ºæœ€æ–°æœåŠ¡å™¨æ•°æ®
                     updateLocalCase(serverData);
                     return;
                 } else {
-                    serverError = result.message || '°¸Àı²»´æÔÚ»òÒÑÏÂ¼Ü';
+                    serverError = result.message || 'æ¡ˆä¾‹ä¸å­˜åœ¨æˆ–å·²ä¸‹æ¶';
                 }
             } catch (error) {
-                console.log('CMS API¼ÓÔØÊ§°Ü:', error);
-                serverError = error.message || 'ÍøÂçÇëÇóÊ§°Ü';
+                console.log('CMS APIåŠ è½½å¤±è´¥:', error);
+                serverError = error.message || 'ç½‘ç»œè¯·æ±‚å¤±è´¥';
             }
             
-            // ·şÎñÆ÷¼ÓÔØÊ§°Ü£¬³¢ÊÔ´ÓlocalStorage¼ÓÔØ£¨½ö×÷Îªºó±¸£©
+            // æœåŠ¡å™¨åŠ è½½å¤±è´¥ï¼Œå°è¯•ä»localStorageåŠ è½½ï¼ˆä»…ä½œä¸ºåå¤‡ï¼‰
             const localCase = loadCaseFromLocal(caseId);
             if (localCase) {
-                console.log('·şÎñÆ÷¼ÓÔØÊ§°Ü£¬Ê¹ÓÃ±¾µØ»º´æÊı¾İ:', serverError);
+                console.log('æœåŠ¡å™¨åŠ è½½å¤±è´¥ï¼Œä½¿ç”¨æœ¬åœ°ç¼“å­˜æ•°æ®:', serverError);
                 renderCaseFromCMS(localCase);
                 return;
             }
             
             if (isPreview) {
-                // Ô¤ÀÀÄ£Ê½µ«Êı¾İ²»´æÔÚ
-                alert('°¸ÀıÊı¾İ²»´æÔÚ£¬ÇëÏÈ±£´æ');
+                // é¢„è§ˆæ¨¡å¼ä½†æ•°æ®ä¸å­˜åœ¨
+                alert('æ¡ˆä¾‹æ•°æ®ä¸å­˜åœ¨ï¼Œè¯·å…ˆä¿å­˜');
                 window.location.href = 'cases.html';
             } else {
-                // Ê¹ÓÃÓ²±àÂëµÄ±¾µØÊı¾İ
+                // ä½¿ç”¨ç¡¬ç¼–ç çš„æœ¬åœ°æ•°æ®
                 renderCaseDetail(caseId);
             }
         }
         
-        // ¸üĞÂlocalStorageÖĞµÄ°¸ÀıÊı¾İ
+        // æ›´æ–°localStorageä¸­çš„æ¡ˆä¾‹æ•°æ®
         function updateLocalCase(caseData) {
             try {
                 const cases = JSON.parse(localStorage.getItem('cms_cases') || '[]');
@@ -721,20 +739,20 @@
                 }
                 localStorage.setItem('cms_cases', JSON.stringify(cases));
             } catch (e) {
-                console.error('¸üĞÂ±¾µØ»º´æÊ§°Ü:', e);
+                console.error('æ›´æ–°æœ¬åœ°ç¼“å­˜å¤±è´¥:', e);
             }
         }
         
-        // ´ÓCMSÊı¾İäÖÈ¾°¸Àı
+        // ä»CMSæ•°æ®æ¸²æŸ“æ¡ˆä¾‹
         function renderCaseFromCMS(caseData) {
-            // ¸üĞÂÒ³Ãæ±êÌâ
-            document.title = `${caseData.title} - °¸ÀıÏêÇé - Yao×Ê½ğÍø`;
+            // æ›´æ–°é¡µé¢æ ‡é¢˜
+            document.title = `${caseData.title} - æ¡ˆä¾‹è¯¦æƒ… - Yaoèµ„é‡‘ç½‘`;
             
             const typeClass = getTypeClass(caseData.type);
             
-            // Í·²¿ÇøÓòÒÑÒÆ³ı
+            // å¤´éƒ¨åŒºåŸŸå·²ç§»é™¤
 
-            // ±£´æµ±Ç°°¸ÀıÍ¼Æ¬ÁĞ±í£¨´¦ÀíĞÂ¾É¸ñÊ½£©
+            // ä¿å­˜å½“å‰æ¡ˆä¾‹å›¾ç‰‡åˆ—è¡¨ï¼ˆå¤„ç†æ–°æ—§æ ¼å¼ï¼‰
             let images = [];
             if (caseData.images && caseData.images.length > 0) {
                 images = caseData.images.map(img => getImageUrl(img)).filter(url => url);
@@ -743,11 +761,11 @@
             }
             currentCaseImages = images;
             
-            // ´¦ÀíÊÓÆµ£¨¼æÈİĞÂ¾É¸ñÊ½£©
+            // å¤„ç†è§†é¢‘ï¼ˆå…¼å®¹æ–°æ—§æ ¼å¼ï¼‰
             const videoUrl = caseData.video ? getVideoUrl(caseData.video) : '';
             const hasVideo = !!videoUrl;
             
-            // äÖÈ¾Ã½ÌåÇøÓò
+            // æ¸²æŸ“åª’ä½“åŒºåŸŸ
             let mediaHtml = `
                 <div class="case-media-main" id="mainMedia" onclick="openImageViewer(currentImageIndex)">
                     ${hasVideo ? `
@@ -773,31 +791,31 @@
             
             document.getElementById('caseMedia').innerHTML = mediaHtml;
             
-            // äÖÈ¾±êÌâµ½ÄÚÈİÇøÓò
+            // æ¸²æŸ“æ ‡é¢˜åˆ°å†…å®¹åŒºåŸŸ
             document.getElementById('caseTitleContent').innerHTML = caseData.title;
             
-            // äÖÈ¾ÃèÊö
+            // æ¸²æŸ“æè¿°
             document.getElementById('caseDescription').innerHTML = caseData.detail;
             
-            // äÖÈ¾ÁÁµã£¨×Ê·½ÄÜÅäºÏÄÄĞ©£©
+            // æ¸²æŸ“äº®ç‚¹ï¼ˆèµ„æ–¹èƒ½é…åˆå“ªäº›ï¼‰
             const highlights = caseData.highlights || [];
             document.getElementById('caseHighlights').innerHTML = highlights.map(h => `
                 <div class="case-highlight-item">
                     <i class="fas fa-check-circle"></i>
                     <span>${h}</span>
                 </div>
-            `).join('') || '<p style="color: #9ca3af;">ÔİÎŞ×Ê·½ÅäºÏĞÅÏ¢</p>';
+            `).join('') || '<p style="color: #9ca3af;">æš‚æ— èµ„æ–¹é…åˆä¿¡æ¯</p>';
 
-            // äÖÈ¾²Ù×÷Á÷³Ì
-            const processSteps = caseData.process || ['³õ²½¹µÍ¨ĞèÇó', 'Ìá¹©Ïà¹Ø×ÊÁÏ', '×Ê·½ÉóºËÆÀ¹À', 'Ç©¶©ºÏ×÷Ğ­Òé', '×Ê½ğµ½Î»²Ù×÷', 'ÒµÎñÍê³É½áËã'];
+            // æ¸²æŸ“æ“ä½œæµç¨‹
+            const processSteps = caseData.process || ['åˆæ­¥æ²Ÿé€šéœ€æ±‚', 'æä¾›ç›¸å…³èµ„æ–™', 'èµ„æ–¹å®¡æ ¸è¯„ä¼°', 'ç­¾è®¢åˆä½œåè®®', 'èµ„é‡‘åˆ°ä½æ“ä½œ', 'ä¸šåŠ¡å®Œæˆç»“ç®—'];
             document.getElementById('caseProcess').innerHTML = processSteps.map((step, index) => `
                 <div class="case-highlight-item">
                     <i class="fas fa-check-circle"></i>
                     <span>${index + 1}. ${step}</span>
                 </div>
-            `).join('') || '<p style="color: #9ca3af;">ÔİÎŞ²Ù×÷Á÷³Ì</p>';
+            `).join('') || '<p style="color: #9ca3af;">æš‚æ— æ“ä½œæµç¨‹</p>';
             
-            // ÅĞ¶ÏÍ¼Æ¬±ÈÀı²¢ÉèÖÃÈİÆ÷ÀàÃû£¨ÓÃÓÚÏà¹Ø°¸ÀıËõÂÔÍ¼£©
+            // åˆ¤æ–­å›¾ç‰‡æ¯”ä¾‹å¹¶è®¾ç½®å®¹å™¨ç±»åï¼ˆç”¨äºç›¸å…³æ¡ˆä¾‹ç¼©ç•¥å›¾ï¼‰
         function detectRelatedImageRatio(imgElement, container) {
             if (!imgElement || !container) return;
             
@@ -807,8 +825,8 @@
                 
                 if (width && height) {
                     const ratio = width / height;
-                    // ºáÍ¼£º¿í¸ß±È >= 1.2£¬Ê¹ÓÃ 4:3
-                    // ÊúÍ¼£º¿í¸ß±È < 1.2£¬Ê¹ÓÃ 3:4
+                    // æ¨ªå›¾ï¼šå®½é«˜æ¯” >= 1.2ï¼Œä½¿ç”¨ 4:3
+                    // ç«–å›¾ï¼šå®½é«˜æ¯” < 1.2ï¼Œä½¿ç”¨ 3:4
                     if (ratio >= 1.2) {
                         container.classList.remove('ratio-portrait');
                         container.classList.add('ratio-landscape');
@@ -830,11 +848,11 @@
             }
         }
 
-        // äÖÈ¾Ïà¹Ø°¸Àı£¨Í¬ÀàĞÍÓÅÏÈ£¬²»×ã5¸öÊ±²¹³äÆäËûÀàĞÍ£©
+        // æ¸²æŸ“ç›¸å…³æ¡ˆä¾‹ï¼ˆåŒç±»å‹ä¼˜å…ˆï¼Œä¸è¶³5ä¸ªæ—¶è¡¥å……å…¶ä»–ç±»å‹ï¼‰
             let relatedCases = casesData
                 .filter(c => c.type === caseData.type && c.id !== caseData.id);
             
-            // Èç¹ûÍ¬ÀàĞÍ²»×ã5¸ö£¬²¹³äÆäËûÀàĞÍ
+            // å¦‚æœåŒç±»å‹ä¸è¶³5ä¸ªï¼Œè¡¥å……å…¶ä»–ç±»å‹
             if (relatedCases.length < 5) {
                 const otherCases = casesData
                     .filter(c => c.type !== caseData.type && c.id !== caseData.id)
@@ -845,7 +863,7 @@
             relatedCases = relatedCases.slice(0, 5);
             
             document.getElementById('relatedCases').innerHTML = relatedCases.map(c => {
-                // ÓÅÏÈÊ¹ÓÃ coverImage ×Ö¶Î£¬Æä´ÎÊ¹ÓÃ images Êı×éµÄµÚÒ»ÕÅ£¨´¦ÀíĞÂ¾É¸ñÊ½£©£¬×îºóÊ¹ÓÃ image ×Ö¶Î
+                // ä¼˜å…ˆä½¿ç”¨ coverImage å­—æ®µï¼Œå…¶æ¬¡ä½¿ç”¨ images æ•°ç»„çš„ç¬¬ä¸€å¼ ï¼ˆå¤„ç†æ–°æ—§æ ¼å¼ï¼‰ï¼Œæœ€åä½¿ç”¨ image å­—æ®µ
                 let relatedImage = c.coverImage;
                 if (relatedImage && !relatedImage.startsWith('http') && !relatedImage.startsWith('/') && !relatedImage.startsWith('data:')) {
                     relatedImage = basePath + relatedImage;
@@ -872,49 +890,49 @@
                         <span class="case-related-item-type">${c.type} ? ${c.amount}</span>
                     </div>
                 </a>
-            `}).join('') || '<p style="color: #9ca3af; text-align: center; padding: 20px;">ÔİÎŞÏà¹Ø°¸Àı</p>';
+            `}).join('') || '<p style="color: #9ca3af; text-align: center; padding: 20px;">æš‚æ— ç›¸å…³æ¡ˆä¾‹</p>';
             
-            // ¸ü¶à°¸Àı°å¿éÒÑÒÆ³ı
+            // æ›´å¤šæ¡ˆä¾‹æ¿å—å·²ç§»é™¤
         }
     </script>
     
         <!-- CMS Editor -->
     <script>
-        // ¼ì²éÊÇ·ñĞèÒª¼ÓÔØ±à¼­Æ÷
+        // æ£€æŸ¥æ˜¯å¦éœ€è¦åŠ è½½ç¼–è¾‘å™¨
         (function() {
-            console.log('[CMS] ³õÊ¼»¯¼ì²é...');
+            console.log('[CMS] åˆå§‹åŒ–æ£€æŸ¥...');
             
             const urlParams = new URLSearchParams(window.location.search);
             const isEditMode = urlParams.get('edit') === 'true';
             const isLoggedIn = localStorage.getItem('cms_logged_in') === 'true';
             
-            console.log('[CMS] ±à¼­Ä£Ê½:', isEditMode);
-            console.log('[CMS] µÇÂ¼×´Ì¬:', isLoggedIn);
+            console.log('[CMS] ç¼–è¾‘æ¨¡å¼:', isEditMode);
+            console.log('[CMS] ç™»å½•çŠ¶æ€:', isLoggedIn);
             
             if (isEditMode && isLoggedIn) {
-                console.log('[CMS] ¿ªÊ¼¼ÓÔØ±à¼­Æ÷...');
+                console.log('[CMS] å¼€å§‹åŠ è½½ç¼–è¾‘å™¨...');
                 
-                // ¼ÓÔØ±à¼­Æ÷ÑùÊ½
+                // åŠ è½½ç¼–è¾‘å™¨æ ·å¼
                 const editorCss = document.createElement('link');
                 editorCss.rel = 'stylesheet';
                 editorCss.href = 'admin/editor.css';
                 editorCss.onerror = function() {
-                    console.error('[CMS] ±à¼­Æ÷ÑùÊ½¼ÓÔØÊ§°Ü');
+                    console.error('[CMS] ç¼–è¾‘å™¨æ ·å¼åŠ è½½å¤±è´¥');
                 };
                 document.head.appendChild(editorCss);
                 
-                // ¼ÓÔØ±à¼­Æ÷½Å±¾
+                // åŠ è½½ç¼–è¾‘å™¨è„šæœ¬
                 const editorScript = document.createElement('script');
                 editorScript.src = 'admin/editor.js';
                 editorScript.onload = function() {
-                    console.log('[CMS] ±à¼­Æ÷½Å±¾¼ÓÔØ³É¹¦');
+                    console.log('[CMS] ç¼–è¾‘å™¨è„šæœ¬åŠ è½½æˆåŠŸ');
                 };
                 editorScript.onerror = function() {
-                    console.error('[CMS] ±à¼­Æ÷½Å±¾¼ÓÔØÊ§°Ü');
+                    console.error('[CMS] ç¼–è¾‘å™¨è„šæœ¬åŠ è½½å¤±è´¥');
                 };
                 document.body.appendChild(editorScript);
             } else if (isEditMode && !isLoggedIn) {
-                console.log('[CMS] Î´µÇÂ¼£¬ÖØ¶¨Ïòµ½µÇÂ¼Ò³');
+                console.log('[CMS] æœªç™»å½•ï¼Œé‡å®šå‘åˆ°ç™»å½•é¡µ');
                 window.location.href = 'admin/login.html?redirect=' + encodeURIComponent(window.location.href);
             }
         })();

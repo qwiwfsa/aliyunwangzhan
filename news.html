@@ -306,11 +306,17 @@
             const allLink = categoriesContainer.querySelector('[data-cat-id="0"]');
             categoriesContainer.innerHTML = '';
             if (allLink) {
-                allLink.addEventListener('click', function(e) {
+                allLink.addEventListener('click', async function(e) {
                     e.preventDefault();
                     currentCategoryId = 0;
                     updateActiveCategory();
-                    loadNewsFromStorage();
+                    // 优先从服务器加载
+                    const serverArticles = await loadNewsFromServer();
+                    if (serverArticles && serverArticles.length > 0) {
+                        renderArticles(serverArticles);
+                    } else {
+                        loadNewsFromStorage();
+                    }
                 });
                 categoriesContainer.appendChild(allLink);
             }
@@ -323,11 +329,17 @@
                     catLink.className = 'news-category';
                     catLink.textContent = cat.name;
                     catLink.dataset.catId = cat.id;
-                    catLink.addEventListener('click', function(e) {
+                    catLink.addEventListener('click', async function(e) {
                         e.preventDefault();
                         currentCategoryId = cat.id;
                         updateActiveCategory();
-                        loadNewsFromStorage();
+                        // 优先从服务器加载
+                        const serverArticles = await loadNewsFromServer();
+                        if (serverArticles && serverArticles.length > 0) {
+                            renderArticles(serverArticles);
+                        } else {
+                            loadNewsFromStorage();
+                        }
                     });
                     categoriesContainer.appendChild(catLink);
                 });
@@ -340,11 +352,17 @@
                     catLink.className = 'news-category';
                     catLink.textContent = name;
                     catLink.dataset.catId = index + 1;
-                    catLink.addEventListener('click', function(e) {
+                    catLink.addEventListener('click', async function(e) {
                         e.preventDefault();
                         currentCategoryId = index + 1;
                         updateActiveCategory();
-                        loadNewsFromStorage();
+                        // 优先从服务器加载
+                        const serverArticles = await loadNewsFromServer();
+                        if (serverArticles && serverArticles.length > 0) {
+                            renderArticles(serverArticles);
+                        } else {
+                            loadNewsFromStorage();
+                        }
                     });
                     categoriesContainer.appendChild(catLink);
                 });
@@ -363,10 +381,48 @@
             });
         }
         
+        // 从服务器API加载文章
+        async function loadNewsFromServer() {
+            console.log('[News] 开始从服务器加载文章...');
+
+            try {
+                const apiUrl = currentCategoryId
+                    ? `api/news-list.php?category_id=${currentCategoryId}&t=${Date.now()}`
+                    : `api/news-list.php?t=${Date.now()}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'GET',
+                    cache: 'no-store',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Cache-Control': 'no-cache'
+                    }
+                });
+
+                if (!response.ok) {
+                    console.error('[News] API响应错误:', response.status);
+                    return null;
+                }
+
+                const result = await response.json();
+                console.log('[News] API返回:', result);
+
+                if (result.success && result.articles) {
+                    console.log('[News] 从服务器加载了', result.articles.length, '篇文章');
+                    return result.articles;
+                }
+
+                return null;
+            } catch (error) {
+                console.error('[News] 从服务器加载失败:', error);
+                return null;
+            }
+        }
+
         // 从localStorage加载已发布的文章
         function loadNewsFromStorage() {
             console.log('[News] 开始加载资讯文章...');
-            
+
             // 获取localStorage中的文章
             const articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
             console.log('[News] 本地存储文章数量:', articles.length);
@@ -374,7 +430,7 @@
             // 过滤已发布的文章
             let publishedArticles = articles.filter(a => a.status === 'published');
             console.log('[News] 已发布文章数量:', publishedArticles.length);
-            
+
             // 如果有选中的分类，进一步筛选
             if (currentCategoryId) {
                 publishedArticles = publishedArticles.filter(a => {
@@ -383,40 +439,16 @@
                 });
                 console.log('[News] 分类筛选后文章数量:', publishedArticles.length);
             }
-            
-            if (publishedArticles.length === 0) {
-                console.log('[News] 没有已发布的文章，显示默认内容');
-                const newsContainer = document.querySelector('.news-list-container');
-                if (newsContainer) {
-                    newsContainer.innerHTML = '<div class="news-empty"><p>该分类下暂无文章</p></div>';
-                }
-                return;
-            }
-            
+
             // 按日期排序（最新的在前）
             publishedArticles.sort((a, b) => {
-                const dateA = new Date(a.publishDate || a.created_at || 0);
-                const dateB = new Date(b.publishDate || b.created_at || 0);
+                const dateA = new Date(a.publishDate || a.publish_date || a.created_at || 0);
+                const dateB = new Date(b.publishDate || b.publish_date || b.created_at || 0);
                 return dateB - dateA;
             });
-            
-            // 生成文章HTML
-            const newsContainer = document.querySelector('.news-list-container');
-            if (!newsContainer) {
-                console.error('[News] 找不到文章列表容器');
-                return;
-            }
-            
-            // 清空现有内容
-            newsContainer.innerHTML = '';
-            
-            // 添加每篇文章
-            publishedArticles.forEach(article => {
-                const articleHtml = createNewsCard(article);
-                newsContainer.insertAdjacentHTML('beforeend', articleHtml);
-            });
-            
-            console.log('[News] 文章加载完成，共', publishedArticles.length, '篇');
+
+            // 使用统一的渲染函数
+            renderArticles(publishedArticles);
         }
         
         // 验证图片数据是否有效
@@ -453,10 +485,12 @@
         function createNewsCard(article) {
             const title = article.title || '无标题';
             const summary = article.summary || article.content?.replace(/<[^>]*>/g, '').substring(0, 100) + '...' || '';
-            const date = article.publishDate || article.created_at || new Date().toISOString();
+            const date = article.publishDate || article.publish_date || article.created_at || new Date().toISOString();
             const formattedDate = new Date(date).toLocaleDateString('zh-CN');
             const coverImage = getValidCoverImage(article);
             const articleId = article.id;
+
+            console.log('[News] 渲染文章卡片:', { title, articleId, date, hasCover: !!coverImage });
             
             // 根据是否有封面图生成不同的HTML
             const imageHtml = coverImage 
@@ -478,10 +512,55 @@
             `;
         }
         
+        // 渲染文章列表
+        function renderArticles(articles) {
+            console.log('[News] 开始渲染文章，共', articles.length, '篇');
+
+            const newsContainer = document.querySelector('.news-list-container');
+            if (!newsContainer) {
+                console.error('[News] 找不到文章列表容器');
+                return;
+            }
+
+            if (articles.length === 0) {
+                newsContainer.innerHTML = '<div class="news-empty"><p>该分类下暂无文章</p></div>';
+                return;
+            }
+
+            // 清空现有内容
+            newsContainer.innerHTML = '';
+
+            // 添加每篇文章
+            articles.forEach(article => {
+                const articleHtml = createNewsCard(article);
+                newsContainer.insertAdjacentHTML('beforeend', articleHtml);
+            });
+
+            console.log('[News] 文章渲染完成');
+        }
+
         // 页面加载完成后执行
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', async function() {
             loadCategories();
-            loadNewsFromStorage();
+
+            // 优先从服务器加载，失败时回退到localStorage
+            console.log('[News] 尝试从服务器加载文章...');
+            const serverArticles = await loadNewsFromServer();
+
+            if (serverArticles && serverArticles.length > 0) {
+                renderArticles(serverArticles);
+            } else {
+                console.log('[News] 服务器加载失败，回退到localStorage');
+                loadNewsFromStorage();
+            }
+
+            if (serverArticles && serverArticles.length > 0) {
+                console.log('[News] 使用服务器数据');
+                renderArticles(serverArticles);
+            } else {
+                console.log('[News] 服务器加载失败，回退到localStorage');
+                loadNewsFromStorage();
+            }
         });
     </script>
     

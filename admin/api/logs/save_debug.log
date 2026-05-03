@@ -1,0 +1,24 @@
+[2026-05-03 21:11:08] === 文章保存API被调用 ===
+[2026-05-03 21:11:08] 请求方法: POST
+[2026-05-03 21:11:08] 请求URI: /hongdu/admin/api/news/save.php
+[2026-05-03 21:11:08] 原始请求数据长度: 172
+[2026-05-03 21:11:08] 原始请求数据: {"title":"Test Article from API","summary":"This is a test","content":"<p>Test content</p>","category_id":1,"cover_image":"","status":"published","is_top":0,"sort_order":0}
+[2026-05-03 21:11:08] 解析后的数据: {"title":"Test Article from API","summary":"This is a test","content":"<p>Test content<\/p>","category_id":1,"cover_image":"","status":"published","is_top":0,"sort_order":0}
+[2026-05-03 21:11:08] 数据库连接成功
+[2026-05-03 21:11:08] 文章保存成功, ID: 7
+[2026-05-03 21:44:03] === 文章保存API被调用 ===
+[2026-05-03 21:44:03] 请求方法: POST
+[2026-05-03 21:44:03] 请求URI: /hongdu/admin/api/news/save.php
+[2026-05-03 21:44:03] 原始请求数据长度: 204
+[2026-05-03 21:44:03] 原始请求数据: {"id":"article_1777494449509","title":"莽","summary":"","content":"","category_id":0,"cover_image":"","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
+[2026-05-03 21:44:03] 解析后的数据: {"id":"article_1777494449509","title":"莽","summary":"","content":"","category_id":0,"cover_image":"","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
+[2026-05-03 21:44:03] 数据库连接成功
+[2026-05-03 21:44:03] 文章保存成功, ID: 15
+[2026-05-03 21:44:38] === 文章保存API被调用 ===
+[2026-05-03 21:44:38] 请求方法: POST
+[2026-05-03 21:44:38] 请求URI: /hongdu/admin/api/news/save.php
+[2026-05-03 21:44:38] 原始请求数据长度: 242
+[2026-05-03 21:44:38] 原始请求数据: {"id":"article_1777494449509","title":"2测试","summary":"","content":"","category_id":0,"cover_image":"uploads/20260503_69f7a5a10f0f9.png","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
+[2026-05-03 21:44:38] 解析后的数据: {"id":"article_1777494449509","title":"2测试","summary":"","content":"","category_id":0,"cover_image":"uploads\/20260503_69f7a5a10f0f9.png","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
+[2026-05-03 21:44:38] 数据库连接成功
+[2026-05-03 21:44:38] 文章保存成功, ID: 16

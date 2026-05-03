@@ -98,10 +98,28 @@ switch ($method) {
         break;
         
     case 'PUT':
-        // 更新分类
+        // 更新分类（支持单个或批量排序更新）
         $rawData = file_get_contents('php://input');
         $data = json_decode($rawData, true);
         
+        // 批量排序更新：接收 { categories: [{id, sort_order}, ...] }
+        if (isset($data['categories']) && is_array($data['categories'])) {
+            $stmt = $conn->prepare("UPDATE cms_categories SET sort_order = ? WHERE id = ?");
+            $updated = 0;
+            foreach ($data['categories'] as $cat) {
+                if (isset($cat['id']) && isset($cat['sort_order'])) {
+                    $stmt->bind_param("ii", $cat['sort_order'], $cat['id']);
+                    if ($stmt->execute()) {
+                        $updated++;
+                    }
+                }
+            }
+            $stmt->close();
+            echo json_encode(['success' => true, 'message' => "分类排序已更新（{$updated}条）"]);
+            break;
+        }
+        
+        // 单个分类更新
         $id = isset($data['id']) ? intval($data['id']) : 0;
         if ($id <= 0 || empty($data['name'])) {
             http_response_code(400);

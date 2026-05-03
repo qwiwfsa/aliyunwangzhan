@@ -416,7 +416,9 @@
                 return;
             }
             
-            grid.innerHTML = pageCases.map(caseItem => {
+            grid.innerHTML = pageCases.map((caseItem, index) => {
+                console.log('[Cases] 渲染案例', index + 1, ':', caseItem.title, 'ID:', caseItem.id, '类型:', caseItem.type);
+
                 const typeClass = getTypeClass(caseItem.type);
                 // 优先使用 coverImage 字段，其次使用 images 数组的第一张，最后使用 image 字段或默认图片
                 let imagePath = resolveImgUrl(caseItem.coverImage);
@@ -452,14 +454,18 @@
                     </article>
                 `;
             }).join('');
+
+            console.log('[Cases] 案例渲染完成');
         }
 
         // 筛选案例
         function filterCases() {
+            console.log('[Cases] 开始筛选案例, 筛选条件:', currentFilters);
             currentPage = 1;
             filteredCases = casesData.filter(caseItem => {
                 return currentFilters.type === 'all' || caseItem.type === currentFilters.type;
             });
+            console.log('[Cases] 筛选完成, 结果数量:', filteredCases.length);
             renderCasesPage();
             renderPagination();
         }
@@ -679,11 +685,14 @@
             
             // 如果都没有数据，显示空状态
             if (finalCases.length === 0) {
-                console.log('暂无案例数据');
+                console.warn('[Cases] 暂无案例数据');
+            } else {
+                console.log('[Cases] 最终案例数据:', finalCases.length, '个');
             }
-            
+
             casesData = finalCases;
             filteredCases = [...casesData];
+            console.log('[Cases] 准备渲染案例...');
             renderCasesPage();
             renderPagination();
         }

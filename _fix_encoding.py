@@ -1,47 +1,23 @@
-import os
+# Convert news-detail.html from GB2312 to UTF-8
+import codecs
 
-files = ['index.html', 'services.html', 'cases.html', 'case-detail.html', 'case-edit.html',
-         'contact.html', 'news.html', 'news-detail.html', 'faq.html', 'faq_new.html',
-         'advantages.html', 'applications.html', 'compliance.html', 'privacy.html',
-         'sitemap.html', 'readme.html', 'test-api.html', 'test-news-load.html']
+input_path = 'D:\\yingyong\\xampp\\htdocs\\hongdu\\news-detail.html'
 
-print("=== DECODING CURRENT FILES AS GBK AND CHECKING RESULT ===")
-for f in files:
-    if not os.path.exists(f):
-        print(f'{f}: NOT FOUND')
-        continue
-    with open(f, 'rb') as fp:
-        raw = fp.read()
+with open(input_path, 'rb') as f:
+    data = f.read()
+
+# Decode as GB2312, re-encode as UTF-8
+text = data.decode('gb2312')
+utf8_data = text.encode('utf-8')
+
+with open(input_path, 'wb') as f:
+    f.write(utf8_data)
+
+print(f"Converted {len(data)} bytes from GB2312 to UTF-8 ({len(utf8_data)} bytes)")
+print("Verification:")
+with open(input_path, 'rb') as f:
+    verified = f.read()
     
-    # Try GBK first
-    try:
-        gbk_text = raw.decode('gbk')
-        # Verify Chinese characters make sense
-        chinese_chars = [c for c in gbk_text if ord(c) > 0x4e00]
-        print(f'{f}: GBK decode OK, chinese_chars={len(chinese_chars)}')
-        if chinese_chars:
-            sample = ''.join(chinese_chars[:30])
-            print(f'  Sample Chinese: {sample}')
-        # Check for meta charset
-        import re
-        m = re.search(r'charset=["\']?(\S+?)["\'>\s]', gbk_text[:2000], re.I)
-        if m:
-            print(f'  Meta charset: {m.group(1)}')
-        # Check for SEO script
-        if 'seo' in gbk_text.lower():
-            idx = gbk_text.lower().rfind('<script')
-            if idx > gbk_text.lower().rfind('</head>') - 2000:
-                print('  SEO script found near </head>')
-    except Exception as e:
-        print(f'{f}: GBK decode FAILED - {e}')
-        # Try other decodings
-        try:
-            utf8_text = raw.decode('utf-8')
-            chinese_chars = [c for c in utf8_text if ord(c) > 0x4e00]
-            print(f'  UTF-8 decode OK, chinese_chars={len(chinese_chars)}')
-            if chinese_chars:
-                sample = ''.join(chinese_chars[:30])
-                print(f'  Sample Chinese: {sample}')
-        except:
-            print(f'  UTF-8 also FAILED')
-    print()
+print(f"File size: {len(verified)} bytes")
+print(f"First 300 chars:")
+print(verified[:300].decode('utf-8'))

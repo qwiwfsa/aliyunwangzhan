@@ -1,0 +1,1879 @@
+﻿﻿﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编辑案例 - 宏都资本CMS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: #f3f4f6;
+            min-height: 100vh;
+        }
+
+        /* 布局 */
+        .cms-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* 侧边栏 */
+        .cms-sidebar {
+            width: 260px;
+            background: #1e293b;
+            color: white;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .cms-sidebar-header {
+            padding: 24px;
+            border-bottom: 1px solid #334155;
+        }
+
+        .cms-sidebar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cms-sidebar-brand i {
+            font-size: 28px;
+            color: #3b82f6;
+        }
+
+        .cms-sidebar-brand span {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .cms-sidebar-nav {
+            padding: 16px 0;
+        }
+
+        .cms-nav-section {
+            margin-bottom: 8px;
+        }
+
+        .cms-nav-title {
+            padding: 12px 24px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #94a3b8;
+        }
+
+        .cms-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 24px;
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .cms-nav-item:hover {
+            background: #334155;
+            color: white;
+        }
+
+        .cms-nav-item.active {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .cms-nav-item i {
+            width: 20px;
+            text-align: center;
+        }
+
+        /* 主内容区 */
+        .cms-main {
+            flex: 1;
+            margin-left: 260px;
+            min-height: 100vh;
+        }
+
+        /* 顶部*/
+        .cms-header {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .cms-header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .cms-header-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .cms-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .cms-breadcrumb a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        .cms-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .cms-header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cms-header-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: #f3f4f6;
+            border: none;
+            border-radius: 8px;
+            color: #374151;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .cms-header-btn:hover {
+            background: #e5e7eb;
+        }
+
+        .cms-header-btn-primary {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+        }
+
+        .cms-header-btn-primary:hover {
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+        }
+
+        .cms-header-btn-success {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+        }
+
+        .cms-header-btn-success:hover {
+            background: linear-gradient(135deg, #047857, #059669);
+        }
+
+        .cms-header-btn-danger {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+        }
+
+        .cms-header-btn-danger:hover {
+            background: linear-gradient(135deg, #b91c1c, #dc2626);
+        }
+
+        /* 内容区域 */
+        .cms-content {
+            padding: 24px;
+        }
+
+        /* 表单样式 */
+        .case-form {
+            display: grid;
+            gap: 24px;
+        }
+
+        .form-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .form-section-header {
+            padding: 16px 24px;
+            background: #f9fafb;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-section-header i {
+            color: #3b82f6;
+        }
+
+        .form-section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .form-section-body {
+            padding: 24px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .form-label .required {
+            color: #ef4444;
+            margin-left: 4px;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            padding: 10px 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #1f2937;
+            background: white;
+            transition: all 0.2s;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-textarea.small {
+            min-height: 80px;
+        }
+
+        /* 媒体上传 */
+        .media-upload {
+            border: 2px dashed #d1d5db;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .media-upload:hover {
+            border-color: #3b82f6;
+            background: #eff6ff;
+        }
+
+        .media-upload.dragover {
+            border-color: #3b82f6;
+            background: #eff6ff;
+        }
+
+        .media-upload-icon {
+            font-size: 32px;
+            color: #9ca3af;
+            margin-bottom: 8px;
+        }
+
+        .media-upload-text {
+            font-size: 16px;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+
+        .media-upload-hint {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .media-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .media-preview-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            background: #f3f4f6;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .media-preview-item:hover {
+            border-color: #3b82f6;
+        }
+
+        .media-preview-item img,
+        .media-preview-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .media-preview-item.video {
+            aspect-ratio: 16/9;
+        }
+
+        .media-preview-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            opacity: 0;
+            transition: opacity 0.2s;
+            flex-wrap: wrap;
+            padding: 8px;
+        }
+
+        .media-preview-item:hover .media-preview-overlay {
+            opacity: 1;
+        }
+
+        .media-preview-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: white;
+            color: #374151;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        .media-preview-btn:hover {
+            background: #3b82f6;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .media-preview-btn.delete:hover {
+            background: #ef4444;
+        }
+
+        .media-preview-btn.replace:hover {
+            background: #10b981;
+        }
+
+        .media-preview-btn.move:hover {
+            background: #f59e0b;
+        }
+
+        .media-main-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: #3b82f6;
+            color: white;
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+            z-index: 2;
+        }
+
+        /* 添加图片按钮 */
+        .add-image-btn {
+            border: 2px dashed #d1d5db;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            aspect-ratio: 1;
+            background: #f9fafb;
+            min-height: 100px;
+            max-width: 120px;
+            margin: 16px auto 0;
+        }
+
+        .add-image-btn:hover {
+            border-color: #3b82f6;
+            background: #eff6ff;
+        }
+
+        .add-image-btn i {
+            font-size: 24px;
+            color: #9ca3af;
+            margin-bottom: 4px;
+        }
+
+        .add-image-btn span {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .add-image-btn:hover i,
+        .add-image-btn:hover span {
+            color: #3b82f6;
+        }
+
+        /* 服务亮点 */
+        .highlights-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .highlight-input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .highlight-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .highlight-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: none;
+            background: #f3f4f6;
+            color: #6b7280;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .highlight-btn:hover {
+            background: #ef4444;
+            color: white;
+        }
+
+        .highlight-btn.add {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .highlight-btn.add:hover {
+            background: #2563eb;
+        }
+
+        .add-highlight-row {
+            display: flex;
+            justify-content: center;
+            padding: 16px;
+            border: 2px dashed #d1d5db;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .add-highlight-row:hover {
+            border-color: #3b82f6;
+            background: #eff6ff;
+        }
+
+        /* 状态选择 */
+        .status-options {
+            display: flex;
+            gap: 12px;
+        }
+
+        .status-option {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .status-option:hover {
+            border-color: #d1d5db;
+        }
+
+        .status-option.active {
+            border-color: #3b82f6;
+            background: #eff6ff;
+        }
+
+        .status-option i {
+            font-size: 20px;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .status-option.published i { color: #10b981; }
+        .status-option.draft i { color: #f59e0b; }
+
+        .status-option span {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* 富文本编辑器 */
+        .rich-editor {
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .rich-editor-toolbar {
+            padding: 8px 12px;
+            background: #f9fafb;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .rich-editor-btn {
+            padding: 6px 10px;
+            border: none;
+            background: transparent;
+            color: #4b5563;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .rich-editor-btn:hover {
+            background: #e5e7eb;
+        }
+
+        .rich-editor-content {
+            min-height: 200px;
+            padding: 16px;
+            font-size: 14px;
+            line-height: 1.6;
+            outline: none;
+        }
+
+        .rich-editor-content p {
+            margin-bottom: 12px;
+        }
+
+        /* 加载状态 */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .loading-spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid #e5e7eb;
+            border-top-color: #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            margin-top: 16px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* 提示消息 */
+        .toast {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            padding: 16px 24px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1001;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast.success {
+            border-left: 4px solid #10b981;
+        }
+
+        .toast.error {
+            border-left: 4px solid #ef4444;
+        }
+
+        .toast.warning {
+            border-left: 4px solid #f59e0b;
+        }
+
+        .toast-icon {
+            font-size: 20px;
+        }
+
+        .toast.success .toast-icon { color: #10b981; }
+        .toast.error .toast-icon { color: #ef4444; }
+        .toast.warning .toast-icon { color: #f59e0b; }
+
+        .toast-message {
+            font-size: 14px;
+            color: #374151;
+        }
+
+        /* 响应*/
+        @media (max-width: 1024px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cms-sidebar {
+                transform: translateX(-100%);
+            }
+
+            .cms-main {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cms-layout">
+        <!-- 侧边-->
+        <aside class="cms-sidebar">
+            <div class="cms-sidebar-header">
+                <div class="cms-sidebar-brand">
+                    <i class="fas fa-cog"></i>
+                    <span>CMS管理后台</span>
+                </div>
+            </div>
+            
+            <nav class="cms-sidebar-nav">
+                <div class="cms-nav-section">
+                    <div class="cms-nav-title">主要</div>
+                    <a href="dashboard.html" class="cms-nav-item">
+                        <i class="fas fa-home"></i>
+                        <span>仪表/span>
+                    </a>
+                </div>
+                
+                <div class="cms-nav-section">
+                    <div class="cms-nav-title">内容</div>
+                    <a href="case-management.html" class="cms-nav-item active">
+                        <i class="fas fa-trophy"></i>
+                        <span>成功案例</span>
+                    </a>
+                    
+                </div>
+            </nav>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="cms-main">
+            <!-- 顶部栏 -->
+            <header class="cms-header">
+                <div class="cms-header-left">
+                    <div class="cms-breadcrumb">
+                        <a href="dashboard.html">首页</a>
+                        <i class="fas fa-chevron-right" style="font-size: 12px;"></i>
+                        <a href="case-management.html">案例管理</a>
+                        <i class="fas fa-chevron-right" style="font-size: 12px;"></i>
+                        <span id="pageTitle">编辑案例</span>
+                    </div>
+                </div>
+                <div class="cms-header-right">
+                    <button class="cms-header-btn" onclick="previewCase()">
+                        <i class="fas fa-eye"></i>
+                        <span>预览</span>
+                    </button>
+                    <button class="cms-header-btn cms-header-btn-danger" onclick="deleteCase()">
+                        <i class="fas fa-trash"></i>
+                        <span>删除</span>
+                    </button>
+                    <button class="cms-header-btn cms-header-btn-success" onclick="saveCase()">
+                        <i class="fas fa-save"></i>
+                        <span>保存</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- 内容区域 -->
+            <div class="cms-content">
+                <form class="case-form" id="caseForm">
+                    <!-- 基本信息 -->
+                    <div class="form-section">
+                        <div class="form-section-header">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="form-section-title">基本信息</span>
+                        </div>
+                        <div class="form-section-body">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="form-label">案例标题 <span class="required">*</span></label>
+                                    <input type="text" class="form-input" id="caseTitle" placeholder="请输入案例标题">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">业务类型</label>
+                                    <select class="form-select" id="caseType">
+                                        <option value="过桥">过桥</option>
+                                        <option value="摆账">摆账</option>
+                                        <option value="亮资">亮资</option>
+                                        <option value="冲量">冲量</option>
+                                        <option value="定增">定增</option>
+                                        <option value="应收账款">应收账款</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">所在城市</label>
+                                    <input type="text" class="form-input" id="caseCity" placeholder="如：北京、上海">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">资金规模</label>
+                                    <input type="text" class="form-input" id="caseAmount" placeholder="如：2亿、5000万">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">服务周期</label>
+                                    <input type="text" class="form-input" id="casePeriod" placeholder="如：7天、30天">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">服务年份</label>
+                                    <input type="text" class="form-input" id="caseYear" placeholder="如：2024">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label class="form-label">案例摘要</label>
+                                    <textarea class="form-textarea small" id="caseSummary" placeholder="简要描述案例内容"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 图片管理 -->
+                    <div class="form-section">
+                        <div class="form-section-header">
+                            <i class="fas fa-images"></i>
+                            <span class="form-section-title">案例图片</span>
+                        </div>
+                        <div class="form-section-body">
+                            <div style="margin-bottom: 12px; padding: 10px 14px; background: #f0f9ff; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                                <p style="font-size: 13px; color: #374151; margin: 0;">
+                                    <i class="fas fa-info-circle" style="color: #3b82f6; margin-right: 6px;"></i>
+                                    最多上传5张图片，单张不超过500KB，建议尺寸800px宽度
+                                </p>
+                            </div>
+                            <div class="media-preview" id="imagePreview">
+                                <!-- 图片预览将在这里显示 -->
+                            </div>
+                            <div class="add-image-btn" onclick="addImage()" style="margin-top: 16px;" id="addImageBtn">
+                                <i class="fas fa-plus"></i>
+                                <span>添加图片</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 视频管理 -->
+                    <div class="form-section">
+                        <div class="form-section-header">
+                            <i class="fas fa-video"></i>
+                            <span class="form-section-title">案例视频</span>
+                        </div>
+                        <div class="form-section-body">
+                            <div class="form-group" style="margin-bottom: 16px;">
+                                <label class="form-label">
+                                    <input type="checkbox" id="hasVideo" style="margin-right: 8px;">
+                                    包含视频
+                                </label>
+                            </div>
+                            <div id="videoUploadSection" style="display: none;">
+                                <div class="media-upload" id="videoUpload" onclick="document.getElementById('videoInput').click()">
+                                    <div class="media-upload-icon">
+                                        <i class="fas fa-film"></i>
+                                    </div>
+                                    <div class="media-upload-text">点击或拖拽上传视频</div>
+                                    <div class="media-upload-hint">支持 MP4、WebM、OGG 格式，最多10MB</div>
+                                    <input type="file" id="videoInput" accept="video/*" style="display: none;" onchange="handleVideoUpload(event)">
+                                </div>
+                                <div class="media-preview" id="videoPreview">
+                                    <!-- 视频预览将在这里显示 -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 案例详情 -->
+                    <div class="form-section">
+                        <div class="form-section-header">
+                            <i class="fas fa-file-alt"></i>
+                            <span class="form-section-title">案例详情</span>
+                        </div>
+                        <div class="form-section-body">
+                            <div class="rich-editor">
+                                <div class="rich-editor-toolbar">
+                                    <button type="button" class="rich-editor-btn" onclick="execCommand('bold')" title="加粗">
+                                        <i class="fas fa-bold"></i>
+                                    </button>
+                                    <button type="button" class="rich-editor-btn" onclick="execCommand('italic')" title="斜体">
+                                        <i class="fas fa-italic"></i>
+                                    </button>
+                                    <button type="button" class="rich-editor-btn" onclick="execCommand('underline')" title="下划>
+                                        <i class="fas fa-underline"></i>
+                                    </button>
+                                    <span style="width: 1px; height: 20px; background: #e5e7eb; margin: 0 4px;"></span>
+                                    <button type="button" class="rich-editor-btn" onclick="execCommand('justifyLeft')" title="左对>
+                                        <i class="fas fa-align-left"></i>
+                                    </button>
+                                    <button type="button" class="rich-editor-btn" onclick="execCommand('justifyCenter')" title="居中">
+                                        <i class="fas fa-align-center"></i>
+                                    </button>
+                                    <button type="button" class="rich-editor-btn" onclick="execCommand('justifyRight')" title="右对齐">
+                                        <i class="fas fa-align-right"></i>
+                                    </button>
+                                    <span style="width: 1px; height: 20px; background: #e5e7eb; margin: 0 4px;"></span>
+                                    <button type="button" class="rich-editor-btn" onclick="execCommand('insertUnorderedList')" title="无序列表">
+                                        <i class="fas fa-list-ul"></i>
+                                    </button>
+                                    <button type="button" class="rich-editor-btn" onclick="execCommand('insertOrderedList')" title="有序列表">
+                                        <i class="fas fa-list-ol"></i>
+                                    </button>
+                                    <span style="width: 1px; height: 20px; background: #e5e7eb; margin: 0 4px;"></span>
+                                    <button type="button" class="rich-editor-btn" onclick="execCommand('removeFormat')" title="清除格式">
+                                        <i class="fas fa-eraser"></i>
+                                    </button>
+                                </div>
+                                <div class="rich-editor-content" id="caseDetail" contenteditable="true">
+                                    <p>在此输入案例详情...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 服务亮点 -->
+                    <div class="form-section">
+                        <div class="form-section-header">
+                            <i class="fas fa-lightbulb"></i>
+                            <span class="form-section-title">服务亮点</span>
+                        </div>
+                        <div class="form-section-body">
+                            <div class="highlights-list" id="highlightsList">
+                                <!-- 亮点列表将在这里显示 -->
+                            </div>
+                            <div class="add-highlight-row" onclick="addHighlight()">
+                                <i class="fas fa-plus" style="margin-right: 8px; color: #3b82f6;"></i>
+                                <span>添加亮点</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 发布状态 -->
+                    <div class="form-section">
+                        <div class="form-section-header">
+                            <i class="fas fa-toggle-on"></i>
+                            <span class="form-section-title">发布状态</span>
+                        </div>
+                        <div class="form-section-body">
+                            <div class="status-options">
+                                <div class="status-option published" onclick="setStatus('published')">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>发布</span>
+                                </div>
+                                <div class="status-option draft active" onclick="setStatus('draft')">
+                                    <i class="fas fa-edit"></i>
+                                    <span>草稿</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- 加载遮罩 -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">正在保存...</div>
+    </div>
+
+    <!-- 提示消息 -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle toast-icon"></i>
+        <span class="toast-message">操作成功</span>
+    </div>
+
+    <script>
+        // 当前案例数据
+        let currentCase = {
+            id: '',
+            title: '',
+            type: '过桥',
+            city: '北京',
+            summary: '',
+            amount: '',
+            period: '',
+            year: new Date().getFullYear().toString(),
+            image: '',
+            images: [],
+            hasVideo: false,
+            video: '',
+            detail: '',
+            highlights: [],
+            status: 'draft'
+        };
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取URL参数
+            const urlParams = new URLSearchParams(window.location.search);
+            const caseId = urlParams.get('id');
+            
+            if (caseId) {
+                currentCase.id = caseId;
+                loadCase(caseId);
+                document.getElementById('pageTitle').textContent = '编辑案例';
+            } else {
+                // 新建案例
+                currentCase.id = 'case_' + Date.now();
+                document.getElementById('pageTitle').textContent = '新建案例';
+                addHighlight(); // 添加一个默认亮点
+            }
+
+            // 绑定视频复选框
+            document.getElementById('hasVideo').addEventListener('change', function() {
+                document.getElementById('videoUploadSection').style.display = this.checked ? 'block' : 'none';
+                currentCase.hasVideo = this.checked;
+            });
+
+            // 拖拽上传
+            setupDragUpload();
+        });
+
+        // 从localStorage加载案例
+        function loadCaseFromLocal(caseId) {
+            try {
+                const cases = JSON.parse(localStorage.getItem('cms_cases') || '[]');
+                const foundCase = cases.find(c => String(c.id) === String(caseId));
+                if (foundCase) {
+                    return foundCase;
+                }
+            } catch (e) {
+                console.error('从localStorage加载失败:', e);
+            }
+            return null;
+        }
+
+        // 加载案例数据
+        async function loadCase(caseId) {
+            showLoading('正在加载案例...');
+            
+            try {
+                // 尝试从服务器加载
+                const response = await fetch(`api/case/load.php?id=${caseId}`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    currentCase = result.case;
+                    fillForm();
+                } else {
+                    // 服务器加载失败，尝试从localStorage加载
+                    const localCase = loadCaseFromLocal(caseId);
+                    if (localCase) {
+                        currentCase = localCase;
+                        fillForm();
+                        showToast('已从本地存储加载案例');
+                    } else {
+                        showToast('加载案例失败 + result.message', 'error');
+                    }
+                }
+            } catch (error) {
+                console.log('服务器加载失败，尝试本地存储:', error);
+                // 尝试从localStorage加载
+                const localCase = loadCaseFromLocal(caseId);
+                if (localCase) {
+                    currentCase = localCase;
+                    fillForm();
+                    showToast('已从本地存储加载案例');
+                } else {
+                    showToast('加载案例失败', 'error');
+                }
+            } finally {
+                hideLoading();
+            }
+        }
+
+        // 填充表单
+        function fillForm() {
+            document.getElementById('caseTitle').value = currentCase.title || '';
+            document.getElementById('caseType').value = currentCase.type || '过桥';
+            document.getElementById('caseCity').value = currentCase.city || '';
+            document.getElementById('caseAmount').value = currentCase.amount || '';
+            document.getElementById('casePeriod').value = currentCase.period || '';
+            document.getElementById('caseYear').value = currentCase.year || '';
+            document.getElementById('caseSummary').value = currentCase.summary || '';
+            document.getElementById('caseDetail').innerHTML = currentCase.detail || '<p>在此输入案例详情...</p>';
+            
+            // 视频
+            document.getElementById('hasVideo').checked = currentCase.hasVideo;
+            document.getElementById('videoUploadSection').style.display = currentCase.hasVideo ? 'block' : 'none';
+            
+            if (currentCase.video) {
+                renderVideoPreview(currentCase.video);
+            }
+            
+            // 图片
+            if (currentCase.images && currentCase.images.length > 0) {
+                renderImagePreviews();
+            }
+            
+            // 亮点
+            renderHighlights();
+            
+            // 状态
+            setStatus(currentCase.status || 'draft');
+        }
+
+        // 渲染图片预览
+        function renderImagePreviews() {
+            const container = document.getElementById('imagePreview');
+            if (!currentCase.images || currentCase.images.length === 0) {
+                container.innerHTML = '<div style="color: #9ca3af; text-align: center; padding: 40px;">暂无图片，点击下方按钮添加</div>';
+                updateAddImageButton();
+                return;
+            }
+            container.innerHTML = currentCase.images.map((url, index) => `
+                <div class="media-preview-item">
+                    ${index === 0 ? '<span class="media-main-badge">主图</span>' : ''}
+                    <img src="${url}" alt="案例图片">
+                    <div class="media-preview-overlay">
+                        ${index > 0 ? `<button class="media-preview-btn move" onclick="setMainImage(${index})" title="设为主图"><i class="fas fa-star"></i></button>` : ''}
+                        <button class="media-preview-btn replace" onclick="replaceImage(${index})" title="替换图片"><i class="fas fa-exchange-alt"></i></button>
+                        <button class="media-preview-btn delete" onclick="deleteImage(${index})" title="删除"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+            `).join('');
+            updateAddImageButton();
+        }
+
+        // 更新添加图片按钮状态
+        function updateAddImageButton() {
+            const btn = document.getElementById('addImageBtn');
+            const count = currentCase.images ? currentCase.images.length : 0;
+            if (count >= 3) {
+                btn.style.display = 'none';
+            } else {
+                btn.style.display = 'flex';
+            }
+        }
+
+        // 添加图片
+        function addImage() {
+            // 检查图片数量限制（最多3张）
+            if (currentCase.images && currentCase.images.length >= 3) {
+                showToast('最多只能上传3张图片', 'error');
+                return;
+            }
+
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = async (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                // 检查文件大小（限制500KB原始文件）
+                        if (file.size > 500 * 1024) {
+                    showToast('图片大小超过500KB限制，请选择较小的图片', 'error');
+                    return;
+                }
+
+                showLoading('正在处理图片...');
+
+                try {
+                    // 先压缩图片（最大宽度800px，质量80%）
+                    const compressedBase64 = await compressImage(file, 800, 0.8);
+                    
+                    // 检查压缩后的大小（Base64大约比原文件大33%）
+                    const base64Size = Math.round(compressedBase64.length * 0.75);
+                    if (base64Size > 500 * 1024) {
+                        showToast('图片压缩后仍超过500KB，请选择更小的图片', 'error');
+                        hideLoading();
+                        return;
+                    }
+
+                    // 尝试上传到服务器
+                    try {
+                        const formData = new FormData();
+                        formData.append('image', file);
+                        formData.append('type', 'image');
+
+                        const response = await fetch('/api/upload', {
+                            method: 'POST',
+                            body: formData
+                        });
+                        const result = await response.json();
+
+                        if (result.success) {
+                            currentCase.images.push(result.data.url);
+                            if (!currentCase.image) {
+                                currentCase.image = result.data.url;
+                            }
+                            showToast('图片添加成功');
+                            renderImagePreviews();
+                            hideLoading();
+                            return;
+                        }
+                    } catch (serverError) {
+                        console.log('服务器上传失败，使用压缩后的Base64存储:', serverError);
+                    }
+
+                    // 后备方案：使用压缩后的Base64存储
+                    currentCase.images.push(compressedBase64);
+                    if (!currentCase.image) {
+                        currentCase.image = compressedBase64;
+                    }
+                    showToast('图片已压缩并保存到本地');
+                    
+                } catch (error) {
+                    console.error('图片处理失败:', error);
+                    showToast('图片处理失败', 'error');
+                } finally {
+                    renderImagePreviews();
+                    hideLoading();
+                }
+            };
+            input.click();
+        }
+
+        // 替换图片
+        function replaceImage(index) {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = async (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                // 检查文件大小（限制500KB原始文件）
+                        if (file.size > 500 * 1024) {
+                    showToast('图片大小超过500KB限制，请选择较小的图片', 'error');
+                    return;
+                }
+
+                showLoading('正在处理图片...');
+
+                try {
+                    // 先压缩图片（最大宽度800px，质量80%                    const compressedBase64 = await compressImage(file, 600, 0.6);
+                    
+                    // 检查压缩后的大小
+                            const base64Size = Math.round(compressedBase64.length * 0.75);
+                    if (base64Size > 500 * 1024) {
+                        showToast('图片压缩后仍超过500KB，请选择更小的图片', 'error');
+                        hideLoading();
+                        return;
+                    }
+
+                    // 尝试上传到服务器
+                    try {
+                        const formData = new FormData();
+                        formData.append('image', file);
+                        formData.append('type', 'image');
+
+                        const response = await fetch('/api/upload', {
+                            method: 'POST',
+                            body: formData
+                        });
+                        const result = await response.json();
+
+                        if (result.success) {
+                            currentCase.images[index] = result.data.url;
+                            // 如果替换的是主图，更新主                            if (index === 0) {
+                                currentCase.image = result.data.url;
+                            }
+                            showToast('图片替换成功');
+                            renderImagePreviews();
+                            hideLoading();
+                            return;
+                        }
+                    } catch (serverError) {
+                        console.log('服务器上传失败，使用压缩后的Base64存储:', serverError);
+                    }
+
+                    // 后备方案：使用压缩后的Base64存储
+                    currentCase.images[index] = compressedBase64;
+                    if (index === 0) {
+                        currentCase.image = compressedBase64;
+                    }
+                    showToast('图片已压缩并保存到本地');
+                    
+                } catch (error) {
+                    console.error('图片处理失败:', error);
+                    showToast('图片处理失败', 'error');
+                } finally {
+                    renderImagePreviews();
+                    hideLoading();
+                }
+            };
+            input.click();
+        }
+
+        // 渲染视频预览
+        function renderVideoPreview(url) {
+            const container = document.getElementById('videoPreview');
+            container.innerHTML = `
+                <div class="media-preview-item video">
+                    <video src="${url}" controls></video>
+                    <div class="media-preview-overlay">
+                        <button class="media-preview-btn" onclick="deleteVideo()" title="删除"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // 渲染亮点
+        function renderHighlights() {
+            const container = document.getElementById('highlightsList');
+            const highlights = currentCase.highlights || [];
+            
+            if (highlights.length === 0) {
+                container.innerHTML = '';
+                return;
+            }
+            
+            container.innerHTML = highlights.map((highlight, index) => `
+                <div class="highlight-item">
+                    <input type="text" class="highlight-input" value="${highlight}" placeholder="输入服务亮点" onchange="updateHighlight(${index}, this.value)">
+                    <button type="button" class="highlight-btn" onclick="removeHighlight(${index})">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // 添加亮点
+        function addHighlight() {
+            if (!currentCase.highlights) {
+                currentCase.highlights = [];
+            }
+            currentCase.highlights.push('');
+            renderHighlights();
+        }
+
+        // 更新亮点
+        function updateHighlight(index, value) {
+            currentCase.highlights[index] = value;
+        }
+
+        // 删除亮点
+        function removeHighlight(index) {
+            currentCase.highlights.splice(index, 1);
+            renderHighlights();
+        }
+
+        // 设置主图
+        function setMainImage(index) {
+            const temp = currentCase.images[0];
+            currentCase.images[0] = currentCase.images[index];
+            currentCase.images[index] = temp;
+            currentCase.image = currentCase.images[0];
+            renderImagePreviews();
+        }
+
+        // 删除图片
+        function deleteImage(index) {
+            if (confirm('确定要删除这张图片吗？')) {
+                currentCase.images.splice(index, 1);
+                if (currentCase.images.length > 0) {
+                    currentCase.image = currentCase.images[0];
+                } else {
+                    currentCase.image = '';
+                }
+                renderImagePreviews();
+                showToast('图片已删除');
+            }
+        }
+
+        // 删除视频
+        function deleteVideo() {
+            if (confirm('确定要删除视频吗？')) {
+                currentCase.video = '';
+                currentCase.hasVideo = false;
+                document.getElementById('hasVideo').checked = false;
+                document.getElementById('videoUploadSection').style.display = 'none';
+                document.getElementById('videoPreview').innerHTML = '';
+                showToast('视频已删除');
+            }
+        }
+
+        // 压缩图片
+        function compressImage(file, maxWidth = 800, quality = 0.7) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = new Image();
+                    img.onload = function() {
+                        const canvas = document.createElement('canvas');
+                        let width = img.width;
+                        let height = img.height;
+                        
+                        if (width > maxWidth) {
+                            height = (maxWidth / width) * height;
+                            width = maxWidth;
+                        }
+                        
+                        canvas.width = width;
+                        canvas.height = height;
+                        
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, width, height);
+                        
+                        const compressed = canvas.toDataURL('image/jpeg', quality);
+                        resolve(compressed);
+                    };
+                    img.onerror = reject;
+                    img.src = e.target.result;
+                };
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // 将文件转为Base64
+        function fileToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = (e) => resolve(e.target.result);
+                reader.onerror = (e) => reject(e);
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // 处理视频上传
+        async function handleVideoUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            // 检查文件大小（限制10MB）
+            if (file.size > 10 * 1024 * 1024) {
+                showToast('视频大小超过10MB限制，请选择较小的视频', 'error');
+                event.target.value = '';
+                return;
+            }
+
+            showLoading('正在上传视频...');
+
+            try {
+                // 尝试上传到服务器
+                const formData = new FormData();
+                formData.append('video', file);
+                formData.append('type', 'video');
+
+                const response = await fetch('/api/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    currentCase.video = result.data.url;
+                    renderVideoPreview(result.data.url);
+                    showToast('视频上传成功');
+                } else {
+                    throw new Error(result.message);
+                }
+            } catch (error) {
+                console.log('服务器上传失败，使用本地Base64存储:', error);
+                // 后备方案：转为Base64存储
+                try {
+                    const base64Url = await fileToBase64(file);
+                    currentCase.video = base64Url;
+                    renderVideoPreview(base64Url);
+                    showToast('视频已转为本地存储（注意：Base64视频较大，可能影响性能）');
+                } catch (base64Error) {
+                    showToast('视频处理失败', 'error');
+                    console.error(base64Error);
+                }
+            } finally {
+                hideLoading();
+                event.target.value = '';
+            }
+        }
+
+        // 设置拖拽上传
+        function setupDragUpload() {
+            const imagePreview = document.getElementById('imagePreview');
+            const videoUpload = document.getElementById('videoUpload');
+
+            // 为图片预览区域设置拖            if (imagePreview) {
+                ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                    imagePreview.addEventListener(eventName, preventDefaults, false);
+                });
+
+                function preventDefaults(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+
+                ['dragenter', 'dragover'].forEach(eventName => {
+                    imagePreview.addEventListener(eventName, () => imagePreview.style.background = '#eff6ff', false);
+                });
+
+                ['dragleave', 'drop'].forEach(eventName => {
+                    imagePreview.addEventListener(eventName, () => imagePreview.style.background = '', false);
+                });
+
+                imagePreview.addEventListener('drop', async (e) => {
+                    const dt = e.dataTransfer;
+                    const files = Array.from(dt.files).filter(f => f.type.startsWith('image/'));
+                    
+                    if (files.length === 0) return;
+
+                    // 检查总数量限制
+                    const currentCount = currentCase.images ? currentCase.images.length : 0;
+                    const remainingSlots = 3 - currentCount;
+                    if (remainingSlots <= 0) {
+                        showToast('最多只能上传3张图片', 'error');
+                        hideLoading();
+                        return;
+                    }
+
+                    showLoading('正在处理图片...');
+                    let successCount = 0;
+                    let failCount = 0;
+
+                    // 只处理剩余槽位数量的图片
+                    const filesToProcess = files.slice(0, remainingSlots);
+                    if (files.length > remainingSlots) {
+                        showToast(`只能再添加${remainingSlots}张图片，已跳过多余的${files.length - remainingSlots}张`, 'warning');
+                    }
+
+                    for (const file of filesToProcess) {
+                        // 检查文件大小（限制500KB原始文件）
+                        if (file.size > 500 * 1024) {
+                            showToast('图片大小超过500KB限制：' + file.name, 'error');
+                            failCount++;
+                            continue;
+                        }
+
+                        try {
+                            // 先压缩图片（最大宽度800px，质量80%）
+                            const compressedBase64 = await compressImage(file, 800, 0.8);
+                            
+                            // 检查压缩后的大小
+                            const base64Size = Math.round(compressedBase64.length * 0.75);
+                            if (base64Size > 500 * 1024) {
+                                showToast('图片压缩后仍超过500KB：' + file.name, 'error');
+                                failCount++;
+                                continue;
+                            }
+
+                            // 尝试上传到服务器
+                            let uploaded = false;
+                            try {
+                                const formData = new FormData();
+                                formData.append('image', file);
+                                formData.append('type', 'image');
+
+                                const response = await fetch('/api/upload', {
+                                    method: 'POST',
+                                    body: formData
+                                });
+                                const result = await response.json();
+
+                                if (result.success) {
+                                    currentCase.images.push(result.data.url);
+                                    if (!currentCase.image) {
+                                        currentCase.image = result.data.url;
+                                    }
+                                    uploaded = true;
+                                    successCount++;
+                                }
+                            } catch (serverError) {
+                                console.log('服务器上传失败', serverError);
+                            }
+
+                            // 如果服务器上传失败，使用压缩后的Base64存储
+                            if (!uploaded) {
+                                currentCase.images.push(compressedBase64);
+                                if (!currentCase.image) {
+                                    currentCase.image = compressedBase64;
+                                }
+                                successCount++;
+                            }
+                        } catch (error) {
+                            console.error('图片处理失败:', error);
+                            showToast('图片处理失败 + file.name', 'error');
+                            failCount++;
+                        }
+                    }
+
+                    renderImagePreviews();
+                    hideLoading();
+                    if (successCount > 0) {
+                        showToast(`成功处理 ${successCount} 张图片{failCount > 0 ? `${failCount} 张失败` : ''}`);
+                    } else if (failCount > 0) {
+                        showToast('图片处理失败', 'error');
+                    }
+                }, false);
+            }
+
+            // 视频上传拖拽
+            if (videoUpload) {
+                ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                    videoUpload.addEventListener(eventName, preventDefaults, false);
+                });
+
+                function preventDefaults(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+
+                ['dragenter', 'dragover'].forEach(eventName => {
+                    videoUpload.addEventListener(eventName, () => videoUpload.classList.add('dragover'), false);
+                });
+
+                ['dragleave', 'drop'].forEach(eventName => {
+                    videoUpload.addEventListener(eventName, () => videoUpload.classList.remove('dragover'), false);
+                });
+
+                videoUpload.addEventListener('drop', (e) => {
+                    const dt = e.dataTransfer;
+                    const files = dt.files;
+                    document.getElementById('videoInput').files = files;
+                    handleVideoUpload({ target: { files } });
+                }, false);
+            }
+        }
+
+        // 富文本命        function execCommand(command) {
+            document.execCommand(command, false, null);
+            document.getElementById('caseDetail').focus();
+        }
+
+        // 设置状态        function setStatus(status) {
+            currentCase.status = status;
+            document.querySelectorAll('.status-option').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelector(`.status-option.${status}`).classList.add('active');
+        }
+
+        // 获取localStorage已使用容量（MB        function getLocalStorageSize() {
+            let total = 0;
+            for (let key in localStorage) {
+                if (localStorage.hasOwnProperty(key)) {
+                    total += localStorage[key].length;
+                }
+            }
+            return (total / 1024 / 1024).toFixed(2);
+        }
+
+        // 保存案例到localStorage
+        function saveCaseToLocal() {
+            try {
+                // 先检查数据大                const caseDataStr = JSON.stringify(currentCase);
+                const caseSizeMB = (caseDataStr.length / 1024 / 1024).toFixed(2);
+                
+                // 如果单个案例超过4MB，提示错误                if (caseDataStr.length > 4 * 1024 * 1024) {
+                    showToast(`案例数据太大(${caseSizeMB}MB)，请减少图片数量或压缩图片`, 'error');
+                    return false;
+                }
+                
+                let cases = JSON.parse(localStorage.getItem('cms_cases') || '[]');
+                const index = cases.findIndex(c => String(c.id) === String(currentCase.id));
+                
+                if (index >= 0) {
+                    cases[index] = currentCase;
+                } else {
+                    cases.push(currentCase);
+                }
+                
+                const casesStr = JSON.stringify(cases);
+                
+                // 检查总数据大小是否超时MB
+                if (casesStr.length > 5 * 1024 * 1024) {
+                    showToast('存储空间不足，请删除一些旧案例后再保存', 'error');
+                    return false;
+                }
+                
+                localStorage.setItem('cms_cases', casesStr);
+                return true;
+            } catch (e) {
+                console.error('保存到localStorage失败:', e);
+                if (e.name === 'QuotaExceededError') {
+                    showToast('存储空间已满，请删除一些案例后重试', 'error');
+                } else {
+                    showToast('保存失败 + e.message', 'error');
+                }
+                return false;
+            }
+        }
+
+        // 保存案例
+        async function saveCase() {
+            console.log('开始保存案例..');
+            
+            // 收集表单数据
+            currentCase.title = document.getElementById('caseTitle').value.trim();
+            currentCase.type = document.getElementById('caseType').value;
+            currentCase.city = document.getElementById('caseCity').value.trim();
+            currentCase.amount = document.getElementById('caseAmount').value.trim();
+            currentCase.period = document.getElementById('casePeriod').value.trim();
+            currentCase.year = document.getElementById('caseYear').value.trim();
+            currentCase.summary = document.getElementById('caseSummary').value.trim();
+            currentCase.detail = document.getElementById('caseDetail').innerHTML;
+            currentCase.hasVideo = document.getElementById('hasVideo').checked;
+            
+            // 确保ID存在（新建案例时）
+            if (!currentCase.id) {
+                currentCase.id = 'case_' + Date.now();
+                console.log('生成新案例ID:', currentCase.id);
+            }
+            
+            // 更新时间
+            currentCase.updatedAt = new Date().toISOString();
+            if (!currentCase.createdAt) {
+                currentCase.createdAt = currentCase.updatedAt;
+            }
+
+            // 验证
+            if (!currentCase.title) {
+                showToast('请输入案例标题', 'error');
+                document.getElementById('caseTitle').focus();
+                return;
+            }
+            
+            // 检查localStorage容量
+            const currentSize = getLocalStorageSize();
+            console.log('当前localStorage使用:', currentSize + 'MB');
+
+            showLoading('正在保存...');
+            
+            // 设置保存超时
+            const saveTimeout = setTimeout(() => {
+                console.log('保存超时，强制切换到本地存储');
+                hideLoading();
+                // 强制本地保存
+                if (saveCaseToLocal()) {
+                    showToast('案例已保存到本地存储（服务器响应超时）');
+                    if (!window.location.search.includes('id=')) {
+                        history.replaceState(null, null, `?id=${currentCase.id}`);
+                    }
+                } else {
+                    showToast('保存失败，请检查存储空间', 'error');
+                }
+            }, 8000);
+
+            try {
+                // 尝试保存到服务器
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 5000);
+                
+                const response = await fetch('api/case/save.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(currentCase),
+                    signal: controller.signal
+                });
+                
+                clearTimeout(timeoutId);
+                clearTimeout(saveTimeout);
+                
+                if (!response.ok) {
+                    throw new Error('服务器响应错误 ' + response.status);
+                }
+                
+                const result = await response.json();
+
+                if (result.success) {
+                    // 同时保存到localStorage作为备份
+                    saveCaseToLocal();
+                    showToast('案例保存成功');
+                    // 更新URL
+                    if (!window.location.search.includes('id=')) {
+                        history.replaceState(null, null, `?id=${currentCase.id}`);
+                    }
+                } else {
+                    throw new Error(result.message || '保存失败');
+                }
+            } catch (error) {
+                console.log('服务器保存失败，尝试保存到本地', error);
+                clearTimeout(saveTimeout);
+                // 后备方案：保存到localStorage
+                if (saveCaseToLocal()) {
+                    showToast('案例已保存到本地存储（服务器不可用）');
+                    // 更新URL
+                    if (!window.location.search.includes('id=')) {
+                        history.replaceState(null, null, `?id=${currentCase.id}`);
+                    }
+                } else {
+                    showToast('保存失败，请检查存储空间', 'error');
+                }
+            } finally {
+                hideLoading();
+            }
+        }
+
+        // 预览案例
+        function previewCase() {
+            const previewUrl = `../case-detail.html?id=${currentCase.id}&preview=true`;
+            window.open(previewUrl, '_blank');
+        }
+
+        // 删除案例
+        async function deleteCase() {
+            if (!confirm('确定要删除这个案例吗？此操作不可恢复。')) {
+                return;
+            }
+
+            showLoading('正在删除...');
+
+            try {
+                const response = await fetch('api/case/delete.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ id: currentCase.id })
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    showToast('案例删除成功');
+                    setTimeout(() => {
+                        window.location.href = 'case-management.html';
+                    }, 1000);
+                } else {
+                    showToast('删除失败：' + result.message, 'error');
+                }
+            } catch (error) {
+                showToast('删除失败', 'error');
+                console.error(error);
+            } finally {
+                hideLoading();
+            }
+        }
+
+        // 显示加载
+        function showLoading(text) {
+            document.getElementById('loadingOverlay').style.display = 'flex';
+            document.querySelector('.loading-text').textContent = text;
+        }
+
+        // 隐藏加载
+        function hideLoading() {
+            document.getElementById('loadingOverlay').style.display = 'none';
+        }
+
+        // 显示提示
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.className = `toast ${type}`;
+            
+            // 根据类型选择图标
+            let iconClass = 'fa-check-circle';
+            if (type === 'error') iconClass = 'fa-times-circle';
+            else if (type === 'warning') iconClass = 'fa-exclamation-circle';
+            
+            toast.querySelector('.toast-icon').className = `fas ${iconClass} toast-icon`;
+            toast.querySelector('.toast-message').textContent = message;
+            toast.classList.add('show');
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
+                    <a href="footer-manager.html" class="cms-nav-item" data-section="footer">
+                        <i class="fas fa-list-alt"></i>
+                        <span>页脚管理</span>
+                    </a>
