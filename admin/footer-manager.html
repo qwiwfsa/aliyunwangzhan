@@ -190,6 +190,7 @@
         ];
 
         let footerData = {}; // { groupKey: [items] }
+        let pendingDeletes = []; // [{group_key, item_key}] 待删除列表
 
         // ========== 数据加载 ==========
         async function loadFooterData() {
@@ -260,8 +261,8 @@
                         <div class="field-label">${fd.label}</div>
                         <div class="link-item-row">
                             ${fd.type === 'textarea'
-                                ? `<textarea class="field-textarea" onchange="updateField('${group.key}','${fd.key}',this.value)">${escapeHtml(val)}</textarea>`
-                                : `<input type="text" class="field-input" value="${escapeHtml(val)}" onchange="updateField('${group.key}','${fd.key}',this.value)">`
+                                ? `<textarea class="field-textarea" oninput="updateField('${group.key}','${fd.key}',this.value)">${escapeHtml(val)}</textarea>`
+                                : `<input type="text" class="field-input" value="${escapeHtml(val)}" oninput="updateField('${group.key}','${fd.key}',this.value)">`
                             }
                             ${fd.key === 'phone' || fd.key === 'email' || fd.key === 'contact_person' ? '' : ''}
                         </div>
@@ -272,14 +273,15 @@
 
         function renderLinkFields(group, items) {
             return items.map(item => {
-                const val = item.item_value || '';
+                // 显示名称为空时回退到item_label（数据库显示名保存在item_label中）
+                const val = item.item_value || item.item_label || '';
                 const url = item.item_url || '';
                 return `
                     <div class="field-item" data-id="${item.id}" data-group="${group.key}" data-key="${item.item_key}">
                         <div class="field-label">${escapeHtml(item.item_label)}</div>
                         <div class="link-item-row">
-                            <input type="text" class="field-input" placeholder="显示名称" value="${escapeHtml(val)}" onchange="updateLinkField('${group.key}','${item.item_key}','value',this.value)">
-                            <input type="text" class="field-url" placeholder="链接URL" value="${escapeHtml(url)}" onchange="updateLinkField('${group.key}','${item.item_key}','url',this.value)">
+                            <input type="text" class="field-input" placeholder="显示名称" value="${escapeHtml(val)}" oninput="updateLinkField('${group.key}','${item.item_key}','value',this.value)">
+                            <input type="text" class="field-url" placeholder="链接URL" value="${escapeHtml(url)}" oninput="updateLinkField('${group.key}','${item.item_key}','url',this.value)">
                         </div>
                         <div class="field-actions">
                             <button class="field-btn field-btn-delete" onclick="deleteLinkItem('${group.key}','${item.item_key}')" title="删除">
@@ -319,6 +321,13 @@
             pendingChanges[groupKey][itemKey][f] = value;
             pendingChanges[groupKey][itemKey].item_key = itemKey;
             pendingChanges[groupKey][itemKey].group_key = groupKey;
+            // 同步保存 item_value 和 item_label 的一致性：当编辑任意链接字段时，也确保 item_value 被记录
+            if (field === 'url' && !pendingChanges[groupKey][itemKey].item_value && footerData[groupKey]) {
+                const item = footerData[groupKey].find(i => i.item_key === itemKey);
+                if (item && item.item_value) {
+                    pendingChanges[groupKey][itemKey].item_value = item.item_value;
+                }
+            }
         }
 
         function addLinkItem(groupKey) {
@@ -356,18 +365,6 @@
         }
 
         async function deleteLinkItem(groupKey, itemKey) {
-            // 新添加的（临时ID）直接本地删除
-            if (itemKey.startsWith(groupKey + '_new_')) {
-                const idx = (footerData[groupKey] || []).findIndex(i => i.item_key === itemKey);
-                if (idx !== -1) footerData[groupKey].splice(idx, 1);
-                if (pendingChanges[groupKey] && pendingChanges[groupKey][itemKey]) {
-                    delete pendingChanges[groupKey][itemKey];
-                }
-                renderGroups();
-                showToast('已删除', 'success');
-                return;
-            }
-
             if (!confirm('确定要删除该链接吗？')) return;
 
             showLoading(true);
@@ -382,6 +379,10 @@
                     // 从本地删除
                     const idx = (footerData[groupKey] || []).findIndex(i => i.item_key === itemKey);
                     if (idx !== -1) footerData[groupKey].splice(idx, 1);
+                    // 清除待保存变更
+                    if (pendingChanges[groupKey] && pendingChanges[groupKey][itemKey]) {
+                        delete pendingChanges[groupKey][itemKey];
+                    }
                     renderGroups();
                     showToast('删除成功', 'success');
                 } else {
@@ -403,10 +404,13 @@
                 Object.keys(pendingChanges).forEach(gk => {
                     Object.keys(pendingChanges[gk]).forEach(ik => {
                         const ch = pendingChanges[gk][ik];
-                        // 从 footerData 补充 item_label（防止更新后丢标签）
-                        if (!ch.item_label && footerData[gk]) {
+                        // 从 footerData 补充缺少的字段（防止更新后丢数据）
+                        if (footerData[gk]) {
                             const orig = footerData[gk].find(i => i.item_key === ik);
-                            if (orig) ch.item_label = orig.item_label;
+                            if (orig) {
+                                if (!ch.item_label) ch.item_label = orig.item_label;
+                                if (!ch.item_value) ch.item_value = orig.item_value || '';
+                            }
                         }
                         changedItems.push(ch);
                     });
