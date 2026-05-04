@@ -319,19 +319,6 @@
 
     </main>
 
-    <!-- 右侧浮动电话按钮 -->
-    <div class="phone-float" id="phoneFloat" aria-label="电话咨询">
-        <div class="phone-float-ripple"></div>
-        <div class="phone-float-ripple"></div>
-        <div class="phone-float-ripple"></div>
-        <button class="phone-float-btn" id="phoneFloatBtn" aria-label="拨打电话" title="点击拨打电话">
-            <i class="fas fa-phone-alt" aria-hidden="true"></i>
-        </button>
-        <div class="phone-float-display" id="phoneFloatDisplay">
-            <span class="phone-float-number">13552883008</span>
-        </div>
-    </div>
-
     <!-- 页脚 -->
     <footer class="footer">
         <div class="footer-container">
@@ -432,43 +419,7 @@
             });
         })();
     </script>
-    
-    <!-- 浮动电话按钮脚本 -->
-    <script>
-        (function() {
-            const phoneFloatBtn = document.getElementById('phoneFloatBtn');
-            const phoneFloatDisplay = document.getElementById('phoneFloatDisplay');
-            let isDisplayVisible = false;
-            
-            if (phoneFloatBtn && phoneFloatDisplay) {
-                // 点击按钮切换显示/隐藏
-                phoneFloatBtn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    isDisplayVisible = !isDisplayVisible;
-                    phoneFloatDisplay.classList.toggle('active', isDisplayVisible);
-                });
-                
-                // 点击页面其他地方隐藏
-                document.addEventListener('click', function() {
-                    if (isDisplayVisible) {
-                        isDisplayVisible = false;
-                        phoneFloatDisplay.classList.remove('active');
-                    }
-                });
-                
-                // 阻止电话显示区域点击事件冒泡
-                phoneFloatDisplay.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                });
-                
-                // 点击电话号码不跳转（仅显示）
-                phoneFloatDisplay.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                });
-            }
-        })();
-    </script>
-    
+
         <!-- CMS Editor -->
     <script>
         // 检查是否需要加载编辑器

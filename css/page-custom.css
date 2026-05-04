@@ -1428,17 +1428,20 @@
 }
 
 .faq-custom-category-title {
-    display: flex;
+    display: flex !important;
     align-items: center;
     gap: 12px;
     font-size: 20px;
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 24px;
+    flex-direction: row !important;
 }
 
 .faq-custom-category-title i {
     color: var(--color-accent);
+    order: -1 !important;
+    margin-right: 12px;
 }
 
 .faq-custom-list {
@@ -2159,20 +2162,32 @@
     .page-header-title {
         font-size: 28px;
     }
-    
+
     .cases-stats-custom {
         grid-template-columns: 1fr;
     }
-    
+
     .partners-custom-grid {
         grid-template-columns: 1fr 1fr;
     }
-    
+
     .why-choose-experience {
         padding: 16px 24px;
     }
-    
+
     .experience-number {
         font-size: 28px;
     }
+}
+
+/* 强制FAQ分类标题图标在左边 */
+.faq-custom-category-title {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+}
+
+.faq-custom-category-title i.fas {
+    order: -1 !important;
+    flex-shrink: 0 !important;
 }

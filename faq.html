@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/page-custom.css">
+    <link rel="stylesheet" href="css/page-custom.css?v=20260504">
     <!-- Logo动态加载 -->
     <script>
     (function(){
@@ -508,155 +508,153 @@
 
     <!-- 动态加载FAQ数据 -->
     <script>
-        // 从localStorage加载后台保存的FAQ数据
-        (function() {
-            // 加载分类
-            let categoryLabels = {};
-            const savedCategories = localStorage.getItem('cms_faq_categories');
-            if (savedCategories) {
-                categoryLabels = JSON.parse(savedCategories);
-            } else {
-                // 默认分类
-                categoryLabels = {
+        // 从数据库API加载FAQ数据
+        (async function() {
+            try {
+                // 从API获取FAQ数据
+                const response = await fetch('admin/api/faq-data.php?t=' + Date.now());
+                const result = await response.json();
+
+                if (result.code !== 0 || !result.data) {
+                    console.error('加载FAQ数据失败:', result);
+                    return;
+                }
+
+                const faqs = result.data;
+                console.log('加载FAQ数据:', faqs);
+
+                // 分类标签映射
+                let categoryLabels = {
                     'liangzi': '亮资业务',
-                    'bridge': '过桥资金',
+                    'guoqiao': '过桥资金',
                     'baizhang': '摆账业务',
-                    'receivable': '应收账款',
+                    'receivable': '应收账款融资',
                     'deposit': '银行存款',
                     'general': '一般问题'
                 };
-            }
-            
-            // 分类图标映射
-            const categoryIcons = {
-                'liangzi': 'fa-lightbulb',
-                'bridge': 'fa-exchange-alt',
-                'baizhang': 'fa-university',
-                'receivable': 'fa-file-invoice-dollar',
-                'deposit': 'fa-landmark',
-                'general': 'fa-info-circle'
-            };
-            
-            // 动态生成分类按钮
-            const categoryButtonsContainer = document.getElementById('faqCategoryButtons');
-            if (categoryButtonsContainer) {
-                let buttonsHtml = `
-                    <div class="faq-category-item active" data-category="all">
-                        <i class="fas fa-th-large"></i>
-                        <span>全部问题</span>
-                    </div>
-                `;
-                
-                Object.keys(categoryLabels).forEach(cat => {
-                    const catName = categoryLabels[cat];
-                    const catIcon = categoryIcons[cat] || 'fa-circle';
-                    buttonsHtml += `
-                        <div class="faq-category-item" data-category="${cat}">
-                            <i class="fas ${catIcon}"></i>
-                            <span>${catName}</span>
+
+                // 分类图标映射
+                const categoryIcons = {
+                    'liangzi': 'fa-lightbulb',
+                    'guoqiao': 'fa-exchange-alt',
+                    'baizhang': 'fa-university',
+                    'receivable': 'fa-file-invoice-dollar',
+                    'deposit': 'fa-piggy-bank',
+                    'general': 'fa-question-circle'
+                };
+
+                // 动态生成分类按钮
+                const categoryButtonsContainer = document.getElementById('faqCategoryButtons');
+                if (categoryButtonsContainer) {
+                    let buttonsHtml = `
+                        <div class="faq-category-item active" data-category="all">
+                            <i class="fas fa-th-large"></i>
+                            <span>全部问题</span>
                         </div>
                     `;
-                });
-                
-                categoryButtonsContainer.innerHTML = buttonsHtml;
-                
-                // 重新绑定分类点击事件
-                bindCategoryEvents();
-            }
-            
-            // 绑定分类点击事件
-            function bindCategoryEvents() {
-                document.querySelectorAll('.faq-category-item').forEach(item => {
-                    item.addEventListener('click', function() {
-                        document.querySelectorAll('.faq-category-item').forEach(i => i.classList.remove('active'));
-                        this.classList.add('active');
-                        
-                        const category = this.dataset.category;
-                        filterFAQByCategory(category);
+
+                    Object.keys(categoryLabels).forEach(cat => {
+                        const catName = categoryLabels[cat];
+                        const catIcon = categoryIcons[cat] || 'fa-circle';
+                        buttonsHtml += `
+                            <div class="faq-category-item" data-category="${cat}">
+                                <i class="fas ${catIcon}"></i>
+                                <span>${catName}</span>
+                            </div>
+                        `;
                     });
-                });
-            }
-            
-            // 按分类筛选FAQ
-            function filterFAQByCategory(category) {
-                const categories = document.querySelectorAll('.faq-custom-category');
-                categories.forEach(cat => {
-                    if (category === 'all' || cat.dataset.category === category) {
-                        cat.style.display = 'block';
-                    } else {
-                        cat.style.display = 'none';
-                    }
-                });
-            }
-            
-            const savedFAQ = localStorage.getItem('cms_faqs');
-            if (savedFAQ) {
-                try {
-                    const faqs = JSON.parse(savedFAQ);
-                    console.log('加载后台FAQ数据:', faqs);
-                    console.log('加载分类:', categoryLabels);
-                    
-                    // 按分类分组
-                    const groupedFAQs = {};
-                    faqs.forEach(faq => {
-                        const cat = faq.category || 'general';
-                        if (!groupedFAQs[cat]) {
-                            groupedFAQs[cat] = [];
-                        }
-                        groupedFAQs[cat].push(faq);
-                    });
-                    
-                    // 使用后台分类顺序，包括空分类
-                    const container = document.querySelector('.faq-custom-container');
-                    if (container) {
-                        let html = '';
-                        let hasContent = false;
-                        
-                        // 遍历所有分类（包括没有FAQ的分类）
-                        Object.keys(categoryLabels).forEach(cat => {
-                            const catName = categoryLabels[cat];
-                            const catIcon = categoryIcons[cat] || 'fa-question';
-                            const catFAQs = groupedFAQs[cat] || [];
-                            
-                            html += `
-                                <div class="faq-custom-category" data-category="${cat}">
-                                    <h3 class="faq-custom-category-title">
-                                        <i class="fas ${catIcon}"></i>
-                                        ${catName}
-                                    </h3>
-                                    <div class="faq-custom-list">
-                            `;
-                            
-                            if (catFAQs.length > 0) {
-                                hasContent = true;
-                                catFAQs.forEach((faq) => {
-                                    html += `
-                                        <details class="faq-custom-item">
-                                            <summary class="faq-custom-question">
-                                                <span>${faq.question}</span>
-                                                <i class="fas fa-chevron-down"></i>
-                                            </summary>
-                                            <div class="faq-custom-answer">
-                                                ${faq.answer}
-                                            </div>
-                                        </details>
-                                    `;
-                                });
-                            } else {
-                                html += '<p style="padding: 20px; color: #9ca3af; text-align: center;">该分类下暂无问题</p>';
-                            }
-                            
-                            html += '</div></div>';
-                        });
-                        
-                        // 如果后台有数据，替换显示
-                        if (hasContent || Object.keys(categoryLabels).length > 0) {
-                            container.innerHTML = html;
-                        }
-                    }
-                } catch (e) {
-                    console.log('FAQ数据解析失败:', e);
+
+                    categoryButtonsContainer.innerHTML = buttonsHtml;
+
+                    // 重新绑定分类点击事件
+                    bindCategoryEvents();
                 }
+
+                // 绑定分类点击事件
+                function bindCategoryEvents() {
+                    document.querySelectorAll('.faq-category-item').forEach(item => {
+                        item.addEventListener('click', function() {
+                            document.querySelectorAll('.faq-category-item').forEach(i => i.classList.remove('active'));
+                            this.classList.add('active');
+
+                            const category = this.dataset.category;
+                            filterFAQByCategory(category);
+                        });
+                    });
+                }
+
+                // 按分类筛选FAQ
+                function filterFAQByCategory(category) {
+                    const categories = document.querySelectorAll('.faq-custom-category');
+                    categories.forEach(cat => {
+                        if (category === 'all' || cat.dataset.category === category) {
+                            cat.style.display = 'block';
+                        } else {
+                            cat.style.display = 'none';
+                        }
+                    });
+                }
+
+                // 按分类分组
+                const groupedFAQs = {};
+                faqs.forEach(faq => {
+                    const cat = faq.category || 'general';
+                    if (!groupedFAQs[cat]) {
+                        groupedFAQs[cat] = [];
+                    }
+                    groupedFAQs[cat].push(faq);
+                });
+
+                // 使用后台分类顺序，包括空分类
+                const container = document.querySelector('.faq-custom-container');
+                if (container) {
+                    let html = '';
+                    let hasContent = false;
+
+                    // 遍历所有分类（包括没有FAQ的分类）
+                    Object.keys(categoryLabels).forEach(cat => {
+                        const catName = categoryLabels[cat];
+                        const catIcon = categoryIcons[cat] || 'fa-question';
+                        const catFAQs = groupedFAQs[cat] || [];
+
+                        html += `
+                            <div class="faq-custom-category" data-category="${cat}">
+                                <h3 class="faq-custom-category-title">
+                                    <i class="fas ${catIcon}"></i>
+                                    ${catName}
+                                </h3>
+                                <div class="faq-custom-list">
+                        `;
+
+                        if (catFAQs.length > 0) {
+                            hasContent = true;
+                            catFAQs.forEach((faq) => {
+                                html += `
+                                    <details class="faq-custom-item">
+                                        <summary class="faq-custom-question">
+                                            <span>${faq.question}</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </summary>
+                                        <div class="faq-custom-answer">
+                                            ${faq.answer}
+                                        </div>
+                                    </details>
+                                `;
+                            });
+                        } else {
+                            html += '<p style="padding: 20px; color: #9ca3af; text-align: center;">该分类下暂无问题</p>';
+                        }
+
+                        html += '</div></div>';
+                    });
+
+                    // 如果后台有数据，替换显示
+                    if (hasContent || Object.keys(categoryLabels).length > 0) {
+                        container.innerHTML = html;
+                    }
+                }
+            } catch (error) {
+                console.error('加载FAQ数据失败:', error);
             }
         })();
     </script>

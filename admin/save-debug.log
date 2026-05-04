@@ -1,0 +1,579 @@
+
+=== 2026-05-04 10:16:00 ===
+原始JSON:
+{"page":"index","heroTitle":"专业资金解决方案\n助力企业稳健发展测试","heroSubtitle":"提供上市公司短拆、企业摆账、银行存款、应收账款融资等全方位资金服务，以专业实力和丰富经验，为您的企业发展保驾护航。测试","stat1Number":"10+","stat1Label":"年行业经验","stat2Number":"500+","stat2Label":"服务企业","stat3Number":"100亿+","stat3Label":"亿资金规模","stat4Number":"99%","stat4Label":"%客户满意度","servicesTitle":"核心业务领域","servicesSubtitle":"涵盖上市公司、企业摆账、银行存款、应收账款融资等全方位资金服务","service1Title":"上市公司类","service1Content":"<ul><li>短拆、股票解质押过桥</li><li class=\"\">募集账户归还过桥、产业基金备案过桥</li><li class=\"\">股票质押、定增、协议转让、代持</li><li class=\"\">财务报表优化、降负债</li></ul>","service2Title":"企业/个人摆账","service2Content":"<ul><li class=\"\">长短期定存摆账、云信票据实摆</li><li class=\"\">过账实趴、抵押类资金过桥</li><li class=\"\">实缴验资、资金证明、银行保函</li><li class=\"\">贸易增量、显账亮资</li></ul>","service3Title":"银行存款类","service3Content":"<ul><li class=\"\">时点冲量、日均业务</li><li class=\"\">月末冲量</li><li>一年期定期存款</li><li>三年期定期存款</li></ul>","service4Title":"应收账款融资","service4Content":"<ul><li>置换云信票据</li><li class=\"\">可拆分流转支付</li><li class=\"\">融资贴现、准入宽松</li><li class=\"\">不看征信、包容执行诉讼主体</li></ul>","advantagesTitle":"服务优势","advantagesSubtitle":"专业、高效、安全","faqTitle":"常见问题","faqSubtitle":"解答您关于资金业务的常见疑问"}
+
+解析后数据:
+Array
+(
+    [page] => index
+    [heroTitle] => 专业资金解决方案
+助力企业稳健发展测试
+    [heroSubtitle] => 提供上市公司短拆、企业摆账、银行存款、应收账款融资等全方位资金服务，以专业实力和丰富经验，为您的企业发展保驾护航。测试
+    [stat1Number] => 10+
+    [stat1Label] => 年行业经验
+    [stat2Number] => 500+
+    [stat2Label] => 服务企业
+    [stat3Number] => 100亿+
+    [stat3Label] => 亿资金规模
+    [stat4Number] => 99%
+    [stat4Label] => %客户满意度
+    [servicesTitle] => 核心业务领域
+    [servicesSubtitle] => 涵盖上市公司、企业摆账、银行存款、应收账款融资等全方位资金服务
+    [service1Title] => 上市公司类
+    [service1Content] => <ul><li>短拆、股票解质押过桥</li><li class="">募集账户归还过桥、产业基金备案过桥</li><li class="">股票质押、定增、协议转让、代持</li><li class="">财务报表优化、降负债</li></ul>
+    [service2Title] => 企业/个人摆账
+    [service2Content] => <ul><li class="">长短期定存摆账、云信票据实摆</li><li class="">过账实趴、抵押类资金过桥</li><li class="">实缴验资、资金证明、银行保函</li><li class="">贸易增量、显账亮资</li></ul>
+    [service3Title] => 银行存款类
+    [service3Content] => <ul><li class="">时点冲量、日均业务</li><li class="">月末冲量</li><li>一年期定期存款</li><li>三年期定期存款</li></ul>
+    [service4Title] => 应收账款融资
+    [service4Content] => <ul><li>置换云信票据</li><li class="">可拆分流转支付</li><li class="">融资贴现、准入宽松</li><li class="">不看征信、包容执行诉讼主体</li></ul>
+    [advantagesTitle] => 服务优势
+    [advantagesSubtitle] => 专业、高效、安全
+    [faqTitle] => 常见问题
+    [faqSubtitle] => 解答您关于资金业务的常见疑问
+)
+
+现有数据:
+Array
+(
+    [page] => index
+    [heroTitle] => 专业资金解决方案
+助力企业稳健发展测试
+    [heroSubtitle] => 提供上市公司短拆、企业摆账、银行存款、应收账款融资等全方位资金服务，以专业实力和丰富经验，为您的企业发展保驾护航。测试
+    [stat1Number] => 10+
+    [stat1Label] => 年行业经验
+    [stat2Number] => 500+
+    [stat2Label] => 服务企业
+    [stat3Number] => 100亿+
+    [stat3Label] => 亿资金规模
+    [stat4Number] => 99%
+    [stat4Label] => %客户满意度
+    [servicesTitle] => 核心业务领域
+    [servicesSubtitle] => 涵盖上市公司、企业摆账、银行存款、应收账款融资等全方位资金服务
+    [service1Title] => 上市公司类
+    [service1Content] => <ul><li>短拆、股票解质押过桥</li><li>募集账户归还过桥、产业基金备案过桥</li><li class="">股票质押、定增、协议转让、代持</li><li class="">财务报表优化、降负债</li></ul>
+    [service2Title] => 企业/个人摆账
+    [service2Content] => <ul><li class="">长短期定存摆账、云信票据实摆</li><li class="">过账实趴、抵押类资金过桥</li><li class="">实缴验资、资金证明、银行保函</li><li class="">贸易增量、显账亮资</li></ul>
+    [service3Title] => 银行存款类
+    [service3Content] => <ul><li class="">时点冲量、日均业务</li><li class="">月末冲量</li><li>一年期定期存款</li><li>三年期定期存款</li></ul>
+    [service4Title] => 应收账款融资
+    [service4Content] => <ul><li>置换云信票据</li><li class="">可拆分流转支付</li><li class="">融资贴现、准入宽松</li><li class="">不看征信、包容执行诉讼主体</li></ul>
+    [advantagesTitle] => 服务优势
+    [advantagesSubtitle] => 专业、高效、安全
+    [faqTitle] => 常见问题
+    [faqSubtitle] => 解答您关于资金业务的常见疑问
+)
+
+合并后数据:
+Array
+(
+    [page] => index
+    [heroTitle] => 专业资金解决方案
+助力企业稳健发展测试
+    [heroSubtitle] => 提供上市公司短拆、企业摆账、银行存款、应收账款融资等全方位资金服务，以专业实力和丰富经验，为您的企业发展保驾护航。测试
+    [stat1Number] => 10+
+    [stat1Label] => 年行业经验
+    [stat2Number] => 500+
+    [stat2Label] => 服务企业
+    [stat3Number] => 100亿+
+    [stat3Label] => 亿资金规模
+    [stat4Number] => 99%
+    [stat4Label] => %客户满意度
+    [servicesTitle] => 核心业务领域
+    [servicesSubtitle] => 涵盖上市公司、企业摆账、银行存款、应收账款融资等全方位资金服务
+    [service1Title] => 上市公司类
+    [service1Content] => <ul><li>短拆、股票解质押过桥</li><li class="">募集账户归还过桥、产业基金备案过桥</li><li class="">股票质押、定增、协议转让、代持</li><li class="">财务报表优化、降负债</li></ul>
+    [service2Title] => 企业/个人摆账
+    [service2Content] => <ul><li class="">长短期定存摆账、云信票据实摆</li><li class="">过账实趴、抵押类资金过桥</li><li class="">实缴验资、资金证明、银行保函</li><li class="">贸易增量、显账亮资</li></ul>
+    [service3Title] => 银行存款类
+    [service3Content] => <ul><li class="">时点冲量、日均业务</li><li class="">月末冲量</li><li>一年期定期存款</li><li>三年期定期存款</li></ul>
+    [service4Title] => 应收账款融资
+    [service4Content] => <ul><li>置换云信票据</li><li class="">可拆分流转支付</li><li class="">融资贴现、准入宽松</li><li class="">不看征信、包容执行诉讼主体</li></ul>
+    [advantagesTitle] => 服务优势
+    [advantagesSubtitle] => 专业、高效、安全
+    [faqTitle] => 常见问题
+    [faqSubtitle] => 解答您关于资金业务的常见疑问
+)
+
+
+=== 2026-05-04 10:25:44 ===
+原始JSON:
+{"page":"index","heroTitle":"专业资金解决方案\n助力企业稳健发展测试","heroSubtitle":"提供上市公司短拆、企业摆账、银行存款、应收账款融资等全方位资金服务，以专业实力和丰富经验，为您的企业发展保驾护航。","stat1Number":"10+","stat1Label":"年行业经验","stat2Number":"500+","stat2Label":"服务企业","stat3Number":"100亿+","stat3Label":"亿资金规模","stat4Number":"99%","stat4Label":"%客户满意度","servicesTitle":"核心业务领域","servicesSubtitle":"涵盖上市公司、企业摆账、银行存款、应收账款融资等全方位资金服务","service1Title":"上市公司类","service1Content":"<ul><li>短拆、股票解质押过桥</li><li class=\"\">募集账户归还过桥、产业基金备案过桥</li><li class=\"\">股票质押、定增、协议转让、代持</li><li class=\"\">财务报表优化、降负债</li></ul>","service2Title":"企业/个人摆账","service2Content":"<ul><li class=\"\">长短期定存摆账、云信票据实摆</li><li class=\"\">过账实趴、抵押类资金过桥</li><li class=\"\">实缴验资、资金证明、银行保函</li><li class=\"\">贸易增量、显账亮资</li></ul>","service3Title":"银行存款类","service3Content":"<ul><li class=\"\">时点冲量、日均业务</li><li class=\"\">月末冲量</li><li>一年期定期存款</li><li>三年期定期存款</li></ul>","service4Title":"应收账款融资","service4Content":"<ul><li>置换云信票据</li><li class=\"\">可拆分流转支付</li><li class=\"\">融资贴现、准入宽松</li><li class=\"\">不看征信、包容执行诉讼主体</li></ul>","advantagesTitle":"服务优势","advantagesSubtitle":"专业、高效、安全","faqTitle":"常见问题","faqSubtitle":"解答您关于资金业务的常见疑问"}
+
+解析后数据:
+Array
+(
+    [page] => index
+    [heroTitle] => 专业资金解决方案
+助力企业稳健发展测试
+    [heroSubtitle] => 提供上市公司短拆、企业摆账、银行存款、应收账款融资等全方位资金服务，以专业实力和丰富经验，为您的企业发展保驾护航。
+    [stat1Number] => 10+
+    [stat1Label] => 年行业经验
+    [stat2Number] => 500+
+    [stat2Label] => 服务企业
+    [stat3Number] => 100亿+
+    [stat3Label] => 亿资金规模
+    [stat4Number] => 99%
+    [stat4Label] => %客户满意度
+    [servicesTitle] => 核心业务领域
+    [servicesSubtitle] => 涵盖上市公司、企业摆账、银行存款、应收账款融资等全方位资金服务
+    [service1Title] => 上市公司类
+    [service1Content] => <ul><li>短拆、股票解质押过桥</li><li class="">募集账户归还过桥、产业基金备案过桥</li><li class="">股票质押、定增、协议转让、代持</li><li class="">财务报表优化、降负债</li></ul>
+    [service2Title] => 企业/个人摆账
+    [service2Content] => <ul><li class="">长短期定存摆账、云信票据实摆</li><li class="">过账实趴、抵押类资金过桥</li><li class="">实缴验资、资金证明、银行保函</li><li class="">贸易增量、显账亮资</li></ul>
+    [service3Title] => 银行存款类
+    [service3Content] => <ul><li class="">时点冲量、日均业务</li><li class="">月末冲量</li><li>一年期定期存款</li><li>三年期定期存款</li></ul>
+    [service4Title] => 应收账款融资
+    [service4Content] => <ul><li>置换云信票据</li><li class="">可拆分流转支付</li><li class="">融资贴现、准入宽松</li><li class="">不看征信、包容执行诉讼主体</li></ul>
+    [advantagesTitle] => 服务优势
+    [advantagesSubtitle] => 专业、高效、安全
+    [faqTitle] => 常见问题
+    [faqSubtitle] => 解答您关于资金业务的常见疑问
+)
+
+现有数据:
+Array
+(
+    [page] => index
+    [heroTitle] => 专业资金解决方案
+助力企业稳健发展测试
+    [heroSubtitle] => 提供上市公司短拆、企业摆账、银行存款、应收账款融资等全方位资金服务，以专业实力和丰富经验，为您的企业发展保驾护航。测试
+    [stat1Number] => 10+
+    [stat1Label] => 年行业经验
+    [stat2Number] => 500+
+    [stat2Label] => 服务企业
+    [stat3Number] => 100亿+
+    [stat3Label] => 亿资金规模
+    [stat4Number] => 99%
+    [stat4Label] => %客户满意度
+    [servicesTitle] => 核心业务领域
+    [servicesSubtitle] => 涵盖上市公司、企业摆账、银行存款、应收账款融资等全方位资金服务
+    [service1Title] => 上市公司类
+    [service1Content] => <ul><li>短拆、股票解质押过桥</li><li class="">募集账户归还过桥、产业基金备案过桥</li><li class="">股票质押、定增、协议转让、代持</li><li class="">财务报表优化、降负债</li></ul>
+    [service2Title] => 企业/个人摆账
+    [service2Content] => <ul><li class="">长短期定存摆账、云信票据实摆</li><li class="">过账实趴、抵押类资金过桥</li><li class="">实缴验资、资金证明、银行保函</li><li class="">贸易增量、显账亮资</li></ul>
+    [service3Title] => 银行存款类
+    [service3Content] => <ul><li class="">时点冲量、日均业务</li><li class="">月末冲量</li><li>一年期定期存款</li><li>三年期定期存款</li></ul>
+    [service4Title] => 应收账款融资
+    [service4Content] => <ul><li>置换云信票据</li><li class="">可拆分流转支付</li><li class="">融资贴现、准入宽松</li><li class="">不看征信、包容执行诉讼主体</li></ul>
+    [advantagesTitle] => 服务优势
+    [advantagesSubtitle] => 专业、高效、安全
+    [faqTitle] => 常见问题
+    [faqSubtitle] => 解答您关于资金业务的常见疑问
+)
+
+合并后数据:
+Array
+(
+    [page] => index
+    [heroTitle] => 专业资金解决方案
+助力企业稳健发展测试
+    [heroSubtitle] => 提供上市公司短拆、企业摆账、银行存款、应收账款融资等全方位资金服务，以专业实力和丰富经验，为您的企业发展保驾护航。
+    [stat1Number] => 10+
+    [stat1Label] => 年行业经验
+    [stat2Number] => 500+
+    [stat2Label] => 服务企业
+    [stat3Number] => 100亿+
+    [stat3Label] => 亿资金规模
+    [stat4Number] => 99%
+    [stat4Label] => %客户满意度
+    [servicesTitle] => 核心业务领域
+    [servicesSubtitle] => 涵盖上市公司、企业摆账、银行存款、应收账款融资等全方位资金服务
+    [service1Title] => 上市公司类
+    [service1Content] => <ul><li>短拆、股票解质押过桥</li><li class="">募集账户归还过桥、产业基金备案过桥</li><li class="">股票质押、定增、协议转让、代持</li><li class="">财务报表优化、降负债</li></ul>
+    [service2Title] => 企业/个人摆账
+    [service2Content] => <ul><li class="">长短期定存摆账、云信票据实摆</li><li class="">过账实趴、抵押类资金过桥</li><li class="">实缴验资、资金证明、银行保函</li><li class="">贸易增量、显账亮资</li></ul>
+    [service3Title] => 银行存款类
+    [service3Content] => <ul><li class="">时点冲量、日均业务</li><li class="">月末冲量</li><li>一年期定期存款</li><li>三年期定期存款</li></ul>
+    [service4Title] => 应收账款融资
+    [service4Content] => <ul><li>置换云信票据</li><li class="">可拆分流转支付</li><li class="">融资贴现、准入宽松</li><li class="">不看征信、包容执行诉讼主体</li></ul>
+    [advantagesTitle] => 服务优势
+    [advantagesSubtitle] => 专业、高效、安全
+    [faqTitle] => 常见问题
+    [faqSubtitle] => 解答您关于资金业务的常见疑问
+)
+
+
+=== 2026-05-04 11:21:08 ===
+原始JSON:
+{"page":"faq","title":"常见问题","subtitle":"解答您关于资金业务的常见疑问","sections":[{"id":"faq-search","content":"\n                    <div class=\"faq-search-box\">\n                        <i class=\"fas fa-search\"></i>\n                        <input type=\"text\" class=\"faq-search-input\" placeholder=\"搜索问题关键词...\">\n                        <button class=\"faq-search-btn\">搜索</button>\n                    </div>\n                "},{"id":"faq-categories","content":"\n                    <div class=\"faq-categories\" id=\"faqCategoryButtons\">\n                    <div class=\"faq-category-item active\" data-category=\"all\">\n                        <i class=\"fas fa-th-large\"></i>\n                        <span>全部问题</span>\n                    </div>\n                \n                        <div class=\"faq-category-item\" data-category=\"baizhang\">\n                            <i class=\"fas fa-university\"></i>\n                            <span>摆账业务</span>\n                        </div>\n                    \n                        <div class=\"faq-category-item\" data-category=\"general\">\n                            <i class=\"fas fa-info-circle\"></i>\n                            <span>一般问题</span>\n                        </div>\n                    \n                        <div class=\"faq-category-item\" data-category=\"receivable\">\n                            <i class=\"fas fa-file-invoice-dollar\"></i>\n                            <span>云信融资出表</span>\n                        </div>\n                    \n                        <div class=\"faq-category-item\" data-category=\"bridge\">\n                            <i class=\"fas fa-exchange-alt\"></i>\n                            <span class=\"\">过桥资金</span>\n                        </div>\n                    \n                        <div class=\"faq-category-item\" data-category=\"liangzi\">\n                            <i class=\"fas fa-lightbulb\"></i>\n                            <span>亮资业务</span>\n                        </div>\n                    \n                        <div class=\"faq-category-item\" data-category=\"deposit\">\n                            <i class=\"fas fa-landmark\"></i>\n                            <span>银行存款</span>\n                        </div>\n                    </div>\n                "},{"id":"faq-list","content":"\n                    <div class=\"faq-custom-container\">\n                                <div class=\"faq-custom-category\" data-category=\"baizhang\">\n                                    <h3 class=\"faq-custom-category-title\">\n                                        <i class=\"fas fa-university\"></i>\n                                        摆账业务\n                                    </h3>\n                                    <div class=\"faq-custom-list\">\n                            \n                                        <details class=\"faq-custom-item\">\n                                            <summary class=\"faq-custom-question\">\n                                                <span class=\"\">摆账和亮资有什么区别？</span>\n                                                <i class=\"fas fa-chevron-down\"></i>\n                                            </summary>\n                                            <div class=\"faq-custom-answer\">\n                                                <p>摆账和亮资虽然都涉及资金展示，但在操作方式和应用场景上有所不同：</p>\n<table class=\"faq-custom-table\">\n<tbody>\n<tr>\n<th>对比项</th>\n<th>摆账</th>\n<th>亮资</th>\n</tr>\n<tr>\n<td>主要用途</td>\n<td>财务报表优化、审计、年检</td>\n<td>向第三方展示资金实力</td>\n</tr>\n<tr>\n<td>展示对象</td>\n<td>审计机构、监管部门</td>\n<td>合作方、招标方等</td>\n</tr>\n<tr>\n<td>时间要求</td>\n<td>通常需要保持一定时期</td>\n<td>时点或短期展示</td>\n</tr>\n<tr>\n<td>操作方式</td>\n<td>资金存入账户并保持</td>\n<td>资金展示后可能转出</td>\n</tr>\n</tbody>\n</table>\n                                            </div>\n                                        </details>\n                                    \n                                        <details class=\"faq-custom-item\">\n                                            <summary class=\"faq-custom-question\">\n                                                <span>摆账业务安全吗？</span>\n                                                <i class=\"fas fa-chevron-down\"></i>\n                                            </summary>\n                                            <div class=\"faq-custom-answer\">\n                                                根据客户需求和用途，摆账业务主要分为以下类型：\n\n时点摆账：在特定时间点（如月末、季末、年末）保持资金在账\n日均摆账：在一段时间内保持日均存款余额达标\n定期摆账：以定期存款形式摆账，期限灵活\n实缴验资：用于企业注册资本实缴验资\n资金证明：用于开具资金证明、银行保函等\n                                            </div>\n                                        </details>\n                                    </div></div>\n                                <div class=\"faq-custom-category\" data-category=\"general\">\n                                    <h3 class=\"faq-custom-category-title\">\n                                        <i class=\"fas fa-info-circle\"></i>\n                                        一般问题\n                                    </h3>\n                                    <div class=\"faq-custom-list cms-editable-selected\">\n                            \n                                        <details class=\"faq-custom-item\">\n                                            <summary class=\"faq-custom-question\">\n                                                <span>什么是过桥资金？</span>\n                                                <i class=\"fas fa-chevron-down\"></i>\n                                            </summary>\n                                            <div class=\"faq-custom-answer\">\n                                                过桥资金是一种短期融资方式，主要用于企业在银行贷款到期续贷期间的临时资金周转。我们可以提供1-6个月的短期资金支持，帮助企业顺利完成银行续贷流程。\n                                            </div>\n                                        </details>\n                                    \n                                        <details class=\"faq-custom-item\">\n                                            <summary class=\"faq-custom-question\">\n                                                <span>云信票据融资有什么优势？</span>\n                                                <i class=\"fas fa-chevron-down\"></i>\n                                            </summary>\n                                            <div class=\"faq-custom-answer\">\n                                                云信票据融资相比传统融资方式具有以下优势：\n\n准入宽松：对融资企业资质要求相对宽松\n不看征信：不查询企业征信记录\n包容执行：可接受有执行诉讼记录的企业\n灵活流转：云信票据可拆分、可流转、可支付\n融资便捷：审批流程简单，放款速度快\n成本可控：融资成本透明，综合成本较低\n                                            </div>\n                                        </details>\n                                    \n                                        <details class=\"faq-custom-item\">\n                                            <summary class=\"faq-custom-question\">\n                                                <span>服务流程是怎样的？</span>\n                                                <i class=\"fas fa-chevron-down\"></i>\n                                            </summary>\n                                            <div class=\"faq-custom-answer\">\n                                                我们的服务流程如下：\n\n需求沟通：了解客户资金需求，评估业务可行性\n资料审核：风控审核，确立操作性\n账户新开：账户激活后，签署协议控材料\n进款和出款：出款后归还材料，协议撕毁结束\n                                            </div>\n                                        </details>\n                                    \n                                        <details class=\"faq-custom-item\">\n                                            <summary class=\"faq-custom-question\">\n                                                <span class=\"\"></span>\n                                                <i class=\"fas fa-chevron-down\"></i>\n                                            </summary>\n                                            <div class=\"faq-custom-answer\">\n                                                测试\n                                            </div>\n                                        </details>\n                                    </div></div>\n                                <div class=\"faq-custom-category\" data-category=\"receivable\">\n                                    <h3 class=\"faq-custom-category-title\">\n                                        <i class=\"fas fa-file-invoice-dollar\"></i>\n                                        云信融资出表\n                                    </h3>\n                                    <div class=\"faq-custom-list\">\n                            \n                                        <details class=\"faq-custom-item\">\n                                            <summary class=\"faq-custom-question\">\n                                                <span class=\"\">什么样的应收账款可以融资？</span>\n                                                <i class=\"fas fa-chevron-down\"></i>\n                                            </summary>\n                                            <div class=\"faq-custom-answer\">\n                                                一般来说，以下类型的应收账款更容易获得融资：\n\n与核心企业（国企、央企、上市公司等）产生的应收账款\n账期在6个月以内的应收账款\n贸易背景真实、合同发票齐全的应收账款\n付款方信用良好的应收账款\n我们接受云信、商票等多种形式的应收账款融资申请，具体可融资额度需要根据应收账款的具体情况评估。\n                                            </div>\n                                        </details>\n                                    \n                                        <details class=\"faq-custom-item\">\n                                            <summary class=\"faq-custom-question\">\n                                                <span class=\"\">应收账款融资额度如何确定？</span>\n                                                <i class=\"fas fa-chevron-down\"></i>\n                                            </summary>\n                                            <div class=\"faq-custom-answer\">\n                                                融资额度主要根据以下因素综合评估：\n\n应收账款金额：融资金额通常不超过应收账款面额\n付款方信用等级：国企、央企、上市公司等信用等级高，融资比例高\n账期长短：账期越短，融资比例越高\n历史交易记录：长期合作客户可享受更高融资比例\n一般可融资金额为应收账款面额的70%-95%，具体比例根据实际情况确定。\n                                            </div>\n                                        </details>\n                                    </div></div>\n                                <div class=\"faq-custom-category\" data-category=\"bridge\">\n                                    <h3 class=\"faq-custom-category-title\">\n                                        <i class=\"fas fa-exchange-alt\"></i>\n                                        过桥资金\n                                    </h3>\n                                    <div class=\"faq-custom-list\">\n                            \n                                        <details class=\"faq-custom-item\">\n                                            <summary class=\"faq-custom-question\">\n                                                <span>过桥资金适用于哪些场景？</span>\n                                                <i class=\"fas fa-chevron-down\"></i>\n                                            </summary>\n                                            <div class=\"faq-custom-answer\">\n                                                过桥资金主要适用于以下场景：\n银行贷款续贷：原贷款到期，新贷款尚未放款期间的临时周转\n股票解质押：上市公司股东解除股票质押时的临时资金需求\n募集账户归还：上市公司募集资金归还时的临时周转\n企业并购：并购交易中的临时资金安排\n项目保证金：招投标、履约保证金等临时资金需求\n资金周转：企业短期资金周转困难时的临时支持\n                                            </div>\n                                        </details>\n                                    \n                                        <details class=\"faq-custom-item\">\n                                            <summary class=\"faq-custom-question\">\n                                                <span class=\"\">申请过桥资金需要什么条件？</span>\n                                                <i class=\"fas fa-chevron-down\"></i>\n                                            </summary>\n                                            <div class=\"faq-custom-answer\">\n                                                申请过桥资金通常需要提供以下资料：\n\n企业营业执照、组织机构代码证\n法定代表人身份证明\n财务报表（近三个月）\n资金用途说明\n还款来源证明（如银行批贷函、应收账款证明等）\n抵押担保资料（如有）\n具体资料清单根据业务类型有所不同，我们的客户经理会根据您的具体情况提供详细的资料清单。\n                                            </div>\n                                        </details>\n                                    \n                                        <details class=\"faq-custom-item\">\n                                            <summary class=\"faq-custom-question\">\n                                                <span class=\"\">过桥资金多久可以放款？</span>\n                                                <i class=\"fas fa-chevron-down\"></i>\n                                            </summary>\n                                            <div class=\"faq-custom-answer\">\n                                                资料齐全且审核通过后，最快可在当日放款。一般情况下，从申请到放款需要1-3个工作日。  放款速度主要取决于：  资料准备的完整程度 审核流程的复杂程度 资金调度的安排 对于紧急需求，我们提供加急服务，可在最短时间内完成放款。\n                                            </div>\n                                        </details>\n                                    </div></div>\n                                <div class=\"faq-custom-category\" data-category=\"liangzi\">\n                                    <h3 class=\"faq-custom-category-title\">\n                                        <i class=\"fas fa-lightbulb\"></i>\n                                        亮资业务\n                                    </h3>\n                                    <div class=\"faq-custom-list\">\n                            \n                                        <details class=\"faq-custom-item\">\n                                            <summary class=\"faq-custom-question\">\n                                                <span>什么是亮资业务？</span>\n                                                <i class=\"fas fa-chevron-down\"></i>\n                                            </summary>\n                                            <div class=\"faq-custom-answer\">\n                                                亮资业务是指企业在参与招投标、项目洽谈、商务合作等场景时，需要向对方展示资金实力的服务。我们提供大额资金在客户账户中展示，证明企业具备相应的资金履约能力。\n\n亮资业务通常分为时点亮资和时期亮资两种形式：\n\n时点亮资：在特定时间点展示资金，通常用于投标现场、商务谈判等场景\n时期亮资：在一段时间内保持资金在账，通常用于项目履约保证金、合同履约等\n                                            </div>\n                                        </details>\n                                    \n                                        <details class=\"faq-custom-item\">\n                                            <summary class=\"faq-custom-question\">\n                                                <span>亮资业务需要多长时间？</span>\n                                                <i class=\"fas fa-chevron-down\"></i>\n                                            </summary>\n                                            <div class=\"faq-custom-answer\">\n                                                根据客户需求，亮资业务可分为时点亮资和时期亮资：\n\n时点亮资：通常在1-3个工作日内完成，资金在约定时间点展示\n时期亮资：根据约定期限，从几天到数月不等，资金在约定期限内保持在账\n具体时长需要根据客户的具体需求和业务场景来确定。\n                                            </div>\n                                        </details>\n                                    \n                                        <details class=\"faq-custom-item\">\n                                            <summary class=\"faq-custom-question\">\n                                                <span>亮资业务收费如何计算？</span>\n                                                <i class=\"fas fa-chevron-down\"></i>\n                                            </summary>\n                                            <div class=\"faq-custom-answer\">\n                                                亮资业务收费主要根据以下因素综合确定：\n\n资金规模：展示的资金金额大小\n亮资时长：展示资金的时间长度\n操作复杂程度：是否需要跨行、异地等操作\n时效要求：是否需要加急处理\n具体费用需要根据实际情况评估，欢迎来电咨询获取详细报价。\n                                            </div>\n                                        </details>\n                                    </div></div>\n                                <div class=\"faq-custom-category\" data-category=\"deposit\">\n                                    <h3 class=\"faq-custom-category-title\">\n                                        <i class=\"fas fa-landmark\"></i>\n                                        银行存款\n                                    </h3>\n                                    <div class=\"faq-custom-list\">\n                            \n                                        <details class=\"faq-custom-item\">\n                                            <summary class=\"faq-custom-question\">\n                                                <span class=\"\">银行存款业务有什么优势？</span>\n                                                <i class=\"fas fa-chevron-down\"></i>\n                                            </summary>\n                                            <div class=\"faq-custom-answer\">\n                                                我们与多家银行建立了长期合作关系，可以为客户争取更优惠的存款利率，同时提供专业的资金管理建议。\n                                            </div>\n                                        </details>\n                                    </div></div></div>\n                "},{"id":"faq-more","content":"\n                    <div class=\"faq-more-box\">\n                        <div class=\"faq-more-icon\">\n                            <i class=\"fas fa-headset\"></i>\n                        </div>\n                        <div class=\"faq-more-content\">\n                            <h3>还有其他问题？</h3>\n                            <p>欢迎随时联系我们的专业顾问，我们将竭诚为您解答</p>\n                        </div>\n                        <div class=\"contact-button-wrapper\">\n                            <button class=\"btn btn-primary\" id=\"faqConsultBtn\">\n                                <i class=\"fas fa-phone-alt\"></i>\n                                联系我们\n                            </button>\n                            <span id=\"faqPhoneDisplay\" style=\"display:none;font-size:18px;font-weight:700;color:#1e3a8a;letter-spacing:2px;white-space:nowrap;\">13552883008</span>\n                        </div>\n                    </div>\n                "}]}
+
+解析后数据:
+Array
+(
+    [page] => faq
+    [title] => 常见问题
+    [subtitle] => 解答您关于资金业务的常见疑问
+    [sections] => Array
+        (
+            [0] => Array
+                (
+                    [id] => faq-search
+                    [content] => 
+                    <div class="faq-search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" class="faq-search-input" placeholder="搜索问题关键词...">
+                        <button class="faq-search-btn">搜索</button>
+                    </div>
+                
+                )
+
+            [1] => Array
+                (
+                    [id] => faq-categories
+                    [content] => 
+                    <div class="faq-categories" id="faqCategoryButtons">
+                    <div class="faq-category-item active" data-category="all">
+                        <i class="fas fa-th-large"></i>
+                        <span>全部问题</span>
+                    </div>
+                
+                        <div class="faq-category-item" data-category="baizhang">
+                            <i class="fas fa-university"></i>
+                            <span>摆账业务</span>
+                        </div>
+                    
+                        <div class="faq-category-item" data-category="general">
+                            <i class="fas fa-info-circle"></i>
+                            <span>一般问题</span>
+                        </div>
+                    
+                        <div class="faq-category-item" data-category="receivable">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span>云信融资出表</span>
+                        </div>
+                    
+                        <div class="faq-category-item" data-category="bridge">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="">过桥资金</span>
+                        </div>
+                    
+                        <div class="faq-category-item" data-category="liangzi">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>亮资业务</span>
+                        </div>
+                    
+                        <div class="faq-category-item" data-category="deposit">
+                            <i class="fas fa-landmark"></i>
+                            <span>银行存款</span>
+                        </div>
+                    </div>
+                
+                )
+
+            [2] => Array
+                (
+                    [id] => faq-list
+                    [content] => 
+                    <div class="faq-custom-container">
+                                <div class="faq-custom-category" data-category="baizhang">
+                                    <h3 class="faq-custom-category-title">
+                                        <i class="fas fa-university"></i>
+                                        摆账业务
+                                    </h3>
+                                    <div class="faq-custom-list">
+                            
+                                        <details class="faq-custom-item">
+                                            <summary class="faq-custom-question">
+                                                <span class="">摆账和亮资有什么区别？</span>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </summary>
+                                            <div class="faq-custom-answer">
+                                                <p>摆账和亮资虽然都涉及资金展示，但在操作方式和应用场景上有所不同：</p>
+<table class="faq-custom-table">
+<tbody>
+<tr>
+<th>对比项</th>
+<th>摆账</th>
+<th>亮资</th>
+</tr>
+<tr>
+<td>主要用途</td>
+<td>财务报表优化、审计、年检</td>
+<td>向第三方展示资金实力</td>
+</tr>
+<tr>
+<td>展示对象</td>
+<td>审计机构、监管部门</td>
+<td>合作方、招标方等</td>
+</tr>
+<tr>
+<td>时间要求</td>
+<td>通常需要保持一定时期</td>
+<td>时点或短期展示</td>
+</tr>
+<tr>
+<td>操作方式</td>
+<td>资金存入账户并保持</td>
+<td>资金展示后可能转出</td>
+</tr>
+</tbody>
+</table>
+                                            </div>
+                                        </details>
+                                    
+                                        <details class="faq-custom-item">
+                                            <summary class="faq-custom-question">
+                                                <span>摆账业务安全吗？</span>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </summary>
+                                            <div class="faq-custom-answer">
+                                                根据客户需求和用途，摆账业务主要分为以下类型：
+
+时点摆账：在特定时间点（如月末、季末、年末）保持资金在账
+日均摆账：在一段时间内保持日均存款余额达标
+定期摆账：以定期存款形式摆账，期限灵活
+实缴验资：用于企业注册资本实缴验资
+资金证明：用于开具资金证明、银行保函等
+                                            </div>
+                                        </details>
+                                    </div></div>
+                                <div class="faq-custom-category" data-category="general">
+                                    <h3 class="faq-custom-category-title">
+                                        <i class="fas fa-info-circle"></i>
+                                        一般问题
+                                    </h3>
+                                    <div class="faq-custom-list cms-editable-selected">
+                            
+                                        <details class="faq-custom-item">
+                                            <summary class="faq-custom-question">
+                                                <span>什么是过桥资金？</span>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </summary>
+                                            <div class="faq-custom-answer">
+                                                过桥资金是一种短期融资方式，主要用于企业在银行贷款到期续贷期间的临时资金周转。我们可以提供1-6个月的短期资金支持，帮助企业顺利完成银行续贷流程。
+                                            </div>
+                                        </details>
+                                    
+                                        <details class="faq-custom-item">
+                                            <summary class="faq-custom-question">
+                                                <span>云信票据融资有什么优势？</span>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </summary>
+                                            <div class="faq-custom-answer">
+                                                云信票据融资相比传统融资方式具有以下优势：
+
+准入宽松：对融资企业资质要求相对宽松
+不看征信：不查询企业征信记录
+包容执行：可接受有执行诉讼记录的企业
+灵活流转：云信票据可拆分、可流转、可支付
+融资便捷：审批流程简单，放款速度快
+成本可控：融资成本透明，综合成本较低
+                                            </div>
+                                        </details>
+                                    
+                                        <details class="faq-custom-item">
+                                            <summary class="faq-custom-question">
+                                                <span>服务流程是怎样的？</span>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </summary>
+                                            <div class="faq-custom-answer">
+                                                我们的服务流程如下：
+
+需求沟通：了解客户资金需求，评估业务可行性
+资料审核：风控审核，确立操作性
+账户新开：账户激活后，签署协议控材料
+进款和出款：出款后归还材料，协议撕毁结束
+                                            </div>
+                                        </details>
+                                    
+                                        <details class="faq-custom-item">
+                                            <summary class="faq-custom-question">
+                                                <span class=""></span>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </summary>
+                                            <div class="faq-custom-answer">
+                                                测试
+                                            </div>
+                                        </details>
+                                    </div></div>
+                                <div class="faq-custom-category" data-category="receivable">
+                                    <h3 class="faq-custom-category-title">
+                                        <i class="fas fa-file-invoice-dollar"></i>
+                                        云信融资出表
+                                    </h3>
+                                    <div class="faq-custom-list">
+                            
+                                        <details class="faq-custom-item">
+                                            <summary class="faq-custom-question">
+                                                <span class="">什么样的应收账款可以融资？</span>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </summary>
+                                            <div class="faq-custom-answer">
+                                                一般来说，以下类型的应收账款更容易获得融资：
+
+与核心企业（国企、央企、上市公司等）产生的应收账款
+账期在6个月以内的应收账款
+贸易背景真实、合同发票齐全的应收账款
+付款方信用良好的应收账款
+我们接受云信、商票等多种形式的应收账款融资申请，具体可融资额度需要根据应收账款的具体情况评估。
+                                            </div>
+                                        </details>
+                                    
+                                        <details class="faq-custom-item">
+                                            <summary class="faq-custom-question">
+                                                <span class="">应收账款融资额度如何确定？</span>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </summary>
+                                            <div class="faq-custom-answer">
+                                                融资额度主要根据以下因素综合评估：
+
+应收账款金额：融资金额通常不超过应收账款面额
+付款方信用等级：国企、央企、上市公司等信用等级高，融资比例高
+账期长短：账期越短，融资比例越高
+历史交易记录：长期合作客户可享受更高融资比例
+一般可融资金额为应收账款面额的70%-95%，具体比例根据实际情况确定。
+                                            </div>
+                                        </details>
+                                    </div></div>
+                                <div class="faq-custom-category" data-category="bridge">
+                                    <h3 class="faq-custom-category-title">
+                                        <i class="fas fa-exchange-alt"></i>
+                                        过桥资金
+                                    </h3>
+                                    <div class="faq-custom-list">
+                            
+                                        <details class="faq-custom-item">
+                                            <summary class="faq-custom-question">
+                                                <span>过桥资金适用于哪些场景？</span>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </summary>
+                                            <div class="faq-custom-answer">
+                                                过桥资金主要适用于以下场景：
+银行贷款续贷：原贷款到期，新贷款尚未放款期间的临时周转
+股票解质押：上市公司股东解除股票质押时的临时资金需求
+募集账户归还：上市公司募集资金归还时的临时周转
+企业并购：并购交易中的临时资金安排
+项目保证金：招投标、履约保证金等临时资金需求
+资金周转：企业短期资金周转困难时的临时支持
+                                            </div>
+                                        </details>
+                                    
+                                        <details class="faq-custom-item">
+                                            <summary class="faq-custom-question">
+                                                <span class="">申请过桥资金需要什么条件？</span>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </summary>
+                                            <div class="faq-custom-answer">
+                                                申请过桥资金通常需要提供以下资料：
+
+企业营业执照、组织机构代码证
+法定代表人身份证明
+财务报表（近三个月）
+资金用途说明
+还款来源证明（如银行批贷函、应收账款证明等）
+抵押担保资料（如有）
+具体资料清单根据业务类型有所不同，我们的客户经理会根据您的具体情况提供详细的资料清单。
+                                            </div>
+                                        </details>
+                                    
+                                        <details class="faq-custom-item">
+                                            <summary class="faq-custom-question">
+                                                <span class="">过桥资金多久可以放款？</span>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </summary>
+                                            <div class="faq-custom-answer">
+                                                资料齐全且审核通过后，最快可在当日放款。一般情况下，从申请到放款需要1-3个工作日。  放款速度主要取决于：  资料准备的完整程度 审核流程的复杂程度 资金调度的安排 对于紧急需求，我们提供加急服务，可在最短时间内完成放款。
+                                            </div>
+                                        </details>
+                                    </div></div>
+                                <div class="faq-custom-category" data-category="liangzi">
+                                    <h3 class="faq-custom-category-title">
+                                        <i class="fas fa-lightbulb"></i>
+                                        亮资业务
+                                    </h3>
+                                    <div class="faq-custom-list">
+                            
+                                        <details class="faq-custom-item">
+                                            <summary class="faq-custom-question">
+                                                <span>什么是亮资业务？</span>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </summary>
+                                            <div class="faq-custom-answer">
+                                                亮资业务是指企业在参与招投标、项目洽谈、商务合作等场景时，需要向对方展示资金实力的服务。我们提供大额资金在客户账户中展示，证明企业具备相应的资金履约能力。
+
+亮资业务通常分为时点亮资和时期亮资两种形式：
+
+时点亮资：在特定时间点展示资金，通常用于投标现场、商务谈判等场景
+时期亮资：在一段时间内保持资金在账，通常用于项目履约保证金、合同履约等
+                                            </div>
+                                        </details>
+                                    
+                                        <details class="faq-custom-item">
+                                            <summary class="faq-custom-question">
+                                                <span>亮资业务需要多长时间？</span>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </summary>
+                                            <div class="faq-custom-answer">
+                                                根据客户需求，亮资业务可分为时点亮资和时期亮资：
+
+时点亮资：通常在1-3个工作日内完成，资金在约定时间点展示
+时期亮资：根据约定期限，从几天到数月不等，资金在约定期限内保持在账
+具体时长需要根据客户的具体需求和业务场景来确定。
+                                            </div>
+                                        </details>
+                                    
+                                        <details class="faq-custom-item">
+                                            <summary class="faq-custom-question">
+                                                <span>亮资业务收费如何计算？</span>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </summary>
+                                            <div class="faq-custom-answer">
+                                                亮资业务收费主要根据以下因素综合确定：
+
+资金规模：展示的资金金额大小
+亮资时长：展示资金的时间长度
+操作复杂程度：是否需要跨行、异地等操作
+时效要求：是否需要加急处理
+具体费用需要根据实际情况评估，欢迎来电咨询获取详细报价。
+                                            </div>
+                                        </details>
+                                    </div></div>
+                                <div class="faq-custom-category" data-category="deposit">
+                                    <h3 class="faq-custom-category-title">
+                                        <i class="fas fa-landmark"></i>
+                                        银行存款
+                                    </h3>
+                                    <div class="faq-custom-list">
+                            
+                                        <details class="faq-custom-item">
+                                            <summary class="faq-custom-question">
+                                                <span class="">银行存款业务有什么优势？</span>
+                                                <i class="fas fa-chevron-down"></i>
+                                            </summary>
+                                            <div class="faq-custom-answer">
+                                                我们与多家银行建立了长期合作关系，可以为客户争取更优惠的存款利率，同时提供专业的资金管理建议。
+                                            </div>
+                                        </details>
+                                    </div></div></div>
+                
+                )
+
+            [3] => Array
+                (
+                    [id] => faq-more
+                    [content] => 
+                    <div class="faq-more-box">
+                        <div class="faq-more-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="faq-more-content">
+                            <h3>还有其他问题？</h3>
+                            <p>欢迎随时联系我们的专业顾问，我们将竭诚为您解答</p>
+                        </div>
+                        <div class="contact-button-wrapper">
+                            <button class="btn btn-primary" id="faqConsultBtn">
+                                <i class="fas fa-phone-alt"></i>
+                                联系我们
+                            </button>
+                            <span id="faqPhoneDisplay" style="display:none;font-size:18px;font-weight:700;color:#1e3a8a;letter-spacing:2px;white-space:nowrap;">13552883008</span>
+                        </div>
+                    </div>
+                
+                )
+
+        )
+
+)
+

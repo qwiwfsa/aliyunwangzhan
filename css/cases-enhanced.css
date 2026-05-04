@@ -79,7 +79,7 @@
     max-width: none;
     margin: 0 auto;
     line-height: 1.7;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 /* 筛选区域 */

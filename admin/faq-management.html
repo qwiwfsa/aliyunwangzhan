@@ -6,7 +6,7 @@
     <title>FAQ管理 - 宏都资本CMS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- TinyMCE 富文本编辑器 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.8.2/tinymce.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tinymce@6/tinymce.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -693,8 +693,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label">回答 <span class="required">*</span></label>
-                    <textarea class="form-textarea" id="faqAnswer" rows="6" placeholder="请输入回答内容" style="display:none;"></textarea>
-                    <div id="faqAnswerEditor"></div>
+                    <textarea class="form-textarea" id="faqAnswer" rows="6" placeholder="请输入回答内容"></textarea>
                     <p class="form-hint">支持富文本编辑（粗体、表格、颜色等）</p>
                 </div>
             </div>
@@ -838,11 +837,10 @@
         }
 
         // 初始化
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', async function() {
             loadCategories();
-            loadFAQs();
+            await loadFAQs();
             renderCategoryFilter();
-            renderFAQList();
         });
         
         // 渲染分类筛选下拉框
@@ -859,19 +857,27 @@
         }
 
         // 加载FAQ数据
-        function loadFAQs() {
-            const saved = localStorage.getItem('cms_faqs');
-            if (saved) {
-                faqs = JSON.parse(saved);
-            } else {
-                faqs = [...defaultFAQs];
-                saveFAQs();
+        async function loadFAQs() {
+            try {
+                const response = await fetch('../admin/api/faq-data.php?t=' + Date.now());
+                const result = await response.json();
+
+                if (result.code === 0 && result.data) {
+                    faqs = result.data;
+                } else {
+                    faqs = [];
+                }
+                renderFAQList();
+            } catch (error) {
+                console.error('加载FAQ失败:', error);
+                showToast('加载FAQ数据失败', 'error');
+                faqs = [];
             }
         }
 
-        // 保存FAQ数据
+        // 保存FAQ数据（已废弃，改用API）
         function saveFAQs() {
-            localStorage.setItem('cms_faqs', JSON.stringify(faqs));
+            // 不再使用localStorage，数据通过API保存到数据库
         }
 
         // 渲染FAQ列表
@@ -990,18 +996,49 @@
                     return;
                 }
                 tinymce.init({
-                    selector: '#faqAnswerEditor',
-                    plugins: 'lists link table paste',
-                    toolbar: 'fontselect fontsizeselect | undo redo | bold italic underline strikethrough | forecolor backcolor | alignleft aligncenter alignright | bullist numlist | table | removeformat',
-                    font_formats: '微软雅黑=Microsoft YaHei;宋体=SimSun;黑体=SimHei;Arial=arial;Arial Black=arial black;Impact=impact;Times New Roman=times new roman;Courier New=courier new;Verdana=verdana;Tahoma=tahoma;Georgia=georgia',
-                    fontsize_formats: '8pt 10pt 12pt 14pt 16pt 18pt 20pt 24pt 28pt 32pt 36pt 48pt 72pt',
-                    menubar: false,
-                    height: 300,
+                    selector: '#faqAnswer',
+                    language: 'zh_CN',
+                    language_url: 'https://cdn.jsdelivr.net/npm/tinymce-lang/langs6/zh_CN.js',
+                    plugins: 'lists link table paste code image media charmap emoticons hr anchor searchreplace wordcount visualblocks visualchars fullscreen insertdatetime advlist autolink codesample',
+                    toolbar: 'undo redo | blocks fontsize | bold italic underline strikethrough | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media table codesample | charmap emoticons hr | code fullscreen | removeformat',
+                    menubar: 'edit view insert format tools table',
+                    height: 400,
                     branding: false,
                     promotion: false,
+                    font_size_formats: '12px 14px 16px 18px 20px 24px 28px 32px 36px',
+                    block_formats: '段落=p; 标题1=h1; 标题2=h2; 标题3=h3; 标题4=h4; 标题5=h5; 标题6=h6; 预格式化=pre',
+                    style_formats: [
+                        { title: '标题', items: [
+                            { title: '标题 1', format: 'h1' },
+                            { title: '标题 2', format: 'h2' },
+                            { title: '标题 3', format: 'h3' },
+                            { title: '标题 4', format: 'h4' }
+                        ]},
+                        { title: '内联', items: [
+                            { title: '粗体', format: 'bold' },
+                            { title: '斜体', format: 'italic' },
+                            { title: '下划线', format: 'underline' },
+                            { title: '删除线', format: 'strikethrough' },
+                            { title: '上标', format: 'superscript' },
+                            { title: '下标', format: 'subscript' },
+                            { title: '代码', format: 'code' }
+                        ]},
+                        { title: '块', items: [
+                            { title: '段落', format: 'p' },
+                            { title: '引用', format: 'blockquote' },
+                            { title: '代码块', format: 'pre' }
+                        ]}
+                    ],
+                    content_style: 'body { font-family: Microsoft YaHei, Arial, sans-serif; font-size: 14px; line-height: 1.6; } table { border-collapse: collapse; width: 100%; } table td, table th { border: 1px solid #ddd; padding: 8px; }',
+                    image_advtab: true,
+                    image_caption: true,
+                    paste_data_images: true,
+                    automatic_uploads: true,
+                    file_picker_types: 'image',
                     setup: function(editor) {
                         faqEditor = editor;
                         editor.on('init', function() {
+                            console.log('TinyMCE编辑器初始化成功');
                             if (content !== undefined) {
                                 editor.setContent(content || '');
                             }
@@ -1011,11 +1048,11 @@
                 });
             });
         }
-        
+
         // 销毁TinyMCE编辑器
         function destroyEditor() {
             if (faqEditor) {
-                tinymce.remove('#faqAnswerEditor');
+                tinymce.remove('#faqAnswer');
                 faqEditor = null;
             }
         }
@@ -1043,9 +1080,9 @@
 
         // 编辑FAQ
         function editFAQ(id) {
-            const faq = faqs.find(f => f.id === id);
+            const faq = faqs.find(f => f.id == id); // 使用 == 而不是 === 以支持字符串和数字比较
             if (!faq) return;
-            
+
             document.getElementById('faqId').value = faq.id;
             document.getElementById('faqQuestion').value = faq.question;
             document.getElementById('faqAnswer').value = faq.answer;
@@ -1068,43 +1105,48 @@
         }
 
         // 保存FAQ
-        function saveFAQ() {
+        async function saveFAQ() {
             const id = document.getElementById('faqId').value;
             const question = document.getElementById('faqQuestion').value.trim();
             const answer = getEditorContent().trim();
             const category = document.getElementById('faqCategory').value;
-            
+
             if (!question) {
                 showToast('请输入问题', 'error');
                 return;
             }
-            
+
             if (!answer) {
                 showToast('请输入回答', 'error');
                 return;
             }
-            
-            if (id) {
-                // 更新现有FAQ
-                const index = faqs.findIndex(f => f.id === id);
-                if (index !== -1) {
-                    faqs[index] = { ...faqs[index], question, answer, category };
+
+            try {
+                const formData = new FormData();
+                formData.append('action', 'save');
+                formData.append('id', id || '0');
+                formData.append('question', question);
+                formData.append('answer', answer);
+                formData.append('category', category);
+
+                const response = await fetch('../admin/api/faq-save.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.code === 0) {
+                    showToast(id ? 'FAQ更新成功' : 'FAQ添加成功', 'success');
+                    closeModal();
+                    await loadFAQs(); // 重新加载数据
+                } else {
+                    showToast(result.msg || '保存失败', 'error');
                 }
-            } else {
-                // 添加新FAQ
-                const newFAQ = {
-                    id: 'faq_' + Date.now(),
-                    question,
-                    answer,
-                    category
-                };
-                faqs.push(newFAQ);
+            } catch (error) {
+                console.error('保存FAQ失败:', error);
+                showToast('保存失败，请重试', 'error');
             }
-            
-            saveFAQs();
-            renderFAQList();
-            closeModal();
-            showToast(id ? 'FAQ更新成功' : 'FAQ添加成功', 'success');
         }
 
         // 删除FAQ
@@ -1120,14 +1162,32 @@
         }
 
         // 确认删除
-        function confirmDelete() {
+        async function confirmDelete() {
             if (!deleteId) return;
-            
-            faqs = faqs.filter(f => f.id !== deleteId);
-            saveFAQs();
-            renderFAQList();
-            closeDeleteModal();
-            showToast('FAQ已删除', 'success');
+
+            try {
+                const formData = new FormData();
+                formData.append('action', 'delete');
+                formData.append('id', deleteId);
+
+                const response = await fetch('../admin/api/faq-save.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.code === 0) {
+                    showToast('FAQ已删除', 'success');
+                    closeDeleteModal();
+                    await loadFAQs(); // 重新加载数据
+                } else {
+                    showToast(result.msg || '删除失败', 'error');
+                }
+            } catch (error) {
+                console.error('删除FAQ失败:', error);
+                showToast('删除失败，请重试', 'error');
+            }
         }
 
         // HTML转义

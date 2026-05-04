@@ -30,6 +30,13 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $json = file_get_contents('php://input');
 $data = json_decode($json, true);
 
+// 记录接收到的原始数据到文件
+$logFile = __DIR__ . '/../save-debug.log';
+$logContent = "\n=== " . date('Y-m-d H:i:s') . " ===\n";
+$logContent .= "原始JSON:\n" . $json . "\n\n";
+$logContent .= "解析后数据:\n" . print_r($data, true) . "\n";
+file_put_contents($logFile, $logContent, FILE_APPEND);
+
 if (!$data) {
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => '无效的JSON数据']);
@@ -54,14 +61,30 @@ $conn = getDbConnection();
 // 初始化数据库（确保表存在）
 initDatabase($conn);
 
-// 准备内容JSON
-$contentJson = json_encode($data, JSON_UNESCAPED_UNICODE);
-
 // 检查页面是否已存在
-$checkStmt = $conn->prepare("SELECT id FROM cms_pages WHERE page_id = ?");
+$checkStmt = $conn->prepare("SELECT content FROM cms_pages WHERE page_id = ?");
 $checkStmt->bind_param("s", $pageId);
 $checkStmt->execute();
 $checkResult = $checkStmt->get_result();
+
+// 如果页面已存在，合并新旧数据
+if ($checkResult->num_rows > 0) {
+    $row = $checkResult->fetch_assoc();
+    $existingData = json_decode($row['content'], true);
+
+    $logContent = "现有数据:\n" . print_r($existingData, true) . "\n";
+    file_put_contents($logFile, $logContent, FILE_APPEND);
+
+    // 合并数据：新数据覆盖旧数据，但保留旧数据中新数据没有的字段
+    if (is_array($existingData)) {
+        $data = array_merge($existingData, $data);
+        $logContent = "合并后数据:\n" . print_r($data, true) . "\n";
+        file_put_contents($logFile, $logContent, FILE_APPEND);
+    }
+}
+
+// 准备内容JSON
+$contentJson = json_encode($data, JSON_UNESCAPED_UNICODE);
 
 if ($checkResult->num_rows > 0) {
     // 更新现有页面

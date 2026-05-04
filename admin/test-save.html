@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>测试保存功能</title>
+</head>
+<body>
+    <h1>测试数据库保存</h1>
+    <button onclick="testSave()">测试保存stat1Number为"10亿+"</button>
+    <button onclick="testLoad()">测试加载数据</button>
+    <pre id="result"></pre>
+
+    <script>
+        function testSave() {
+            const data = {
+                page: 'index',
+                stat1Number: '10亿+',
+                stat1Label: '年行业经验'
+            };
+
+            console.log('发送数据:', data);
+
+            fetch('api/save.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(res => res.json())
+            .then(result => {
+                console.log('保存响应:', result);
+                document.getElementById('result').textContent = JSON.stringify(result, null, 2);
+            })
+            .catch(err => {
+                console.error('错误:', err);
+                document.getElementById('result').textContent = '错误: ' + err.message;
+            });
+        }
+
+        function testLoad() {
+            fetch('api/load.php?page=index&t=' + Date.now())
+            .then(res => res.json())
+            .then(result => {
+                console.log('加载响应:', result);
+                document.getElementById('result').textContent = JSON.stringify(result, null, 2);
+            })
+            .catch(err => {
+                console.error('错误:', err);
+                document.getElementById('result').textContent = '错误: ' + err.message;
+            });
+        }
+    </script>
+</body>
+</html>

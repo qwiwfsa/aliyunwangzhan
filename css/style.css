@@ -711,6 +711,14 @@ input, textarea, select {
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.service-title i {
+    color: var(--color-accent);
+    font-size: 24px;
 }
 
 .service-list {
@@ -2911,40 +2919,66 @@ input, textarea, select {
     .section-title {
         font-size: 32px;
     }
-    
+
     .hero-title {
         font-size: 44px;
     }
-    
+
     .services-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .advantages-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .service-details {
         grid-template-columns: 1fr;
     }
-    
 
-    
+
+
     .testimonials-grid,
     .news-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .faq-container {
         grid-template-columns: 1fr;
     }
-    
+
     .contact-grid {
         gap: 48px;
     }
-    
+
     .footer-main {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Tablet navigation menu font size */
+    .nav-menu a {
+        font-size: 10px;
+        white-space: nowrap;
+        padding: 8px 2px;
+    }
+
+    .nav-menu {
+        gap: 8px;
+        flex-wrap: nowrap;
+    }
+
+    .header-container {
+        padding: 0 8px;
+    }
+
+    .logo img {
+        height: 36px;
+    }
+
+    .search-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
     }
 }
 

@@ -16,23 +16,25 @@
     // 加载CMS数据
     async function loadCMSData() {
         const pageId = getPageId();
-        
+
         try {
-            // 优先从localStorage加载（编辑后的数据）
-            const localData = localStorage.getItem(`cms_data_${pageId}`);
-            if (localData) {
-                const data = JSON.parse(localData);
-                applyData(data);
-                console.log('[CMS] 已从本地存储加载数据');
-                return;
+            // 从数据库API加载最新数据
+            const response = await fetch(`admin/api/load.php?page=${pageId}&t=${Date.now()}`);
+            if (response.ok) {
+                const result = await response.json();
+                if (result.success && result.data) {
+                    applyData(result.data);
+                    console.log('[CMS] 已从数据库加载数据');
+                    return;
+                }
             }
 
-            // 从JSON文件加载
-            const response = await fetch(`admin/data/${pageId}.json`);
-            if (response.ok) {
-                const data = await response.json();
+            // 如果API加载失败，尝试从JSON文件加载
+            const jsonResponse = await fetch(`admin/data/${pageId}.json`);
+            if (jsonResponse.ok) {
+                const data = await jsonResponse.json();
                 applyData(data);
-                console.log('[CMS] 已从服务器加载数据');
+                console.log('[CMS] 已从JSON文件加载数据');
             }
         } catch (error) {
             console.log('[CMS] 加载数据失败:', error);
