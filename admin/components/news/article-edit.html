@@ -265,14 +265,41 @@
                 branding: false,
                 promotion: false,
                 language: 'zh_CN',
+                language_url: 'langs/zh_CN.js',
                 
                 // 字体大小选项
                 fontsize_formats: '12px 14px 16px 18px 20px 24px 28px 32px 36px 48px',
                 
                 // 字体选项
                 font_family_formats: '宋体=simsun;微软雅黑=microsoft yahei;黑体=simhei;楷体=kaiti;Arial=arial;',
-                // 中文语言包
-                language_url: 'https://cdn.jsdelivr.net/npm/tinymce@6.8.2/langs/zh_CN.js',
+                
+                // 编辑区样式 - 行间距、字间距、段落间距、边距
+                content_style: `
+                    body { 
+                        font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+                        font-size: 16px;
+                        line-height: 1.8 !important;
+                        letter-spacing: 1px;
+                        padding: 24px !important;
+                        margin: 0;
+                    }
+                    p { 
+                        margin: 0 0 18px 0 !important;
+                        line-height: 1.8 !important;
+                    }
+                    h1, h2, h3, h4, h5, h6 {
+                        margin: 28px 0 14px 0 !important;
+                        line-height: 1.5 !important;
+                    }
+                    ul, ol {
+                        margin: 0 0 18px 0 !important;
+                        padding-left: 28px !important;
+                    }
+                    li {
+                        line-height: 1.8 !important;
+                        margin-bottom: 6px !important;
+                    }
+                `,
                 
                 images_upload_handler: async function(blobInfo) {
                     const file = blobInfo.blob();
@@ -540,7 +567,8 @@
                             const basePath = window.location.pathname.substring(0, window.location.pathname.indexOf('/', 1) + 1);
                             previewUrl = basePath.replace(/\/$/, '') + previewUrl;
                         } else if (!previewUrl.startsWith('http') && !previewUrl.startsWith('data:')) {
-                            previewUrl = '/' + previewUrl;
+                            const basePath = window.location.pathname.substring(0, window.location.pathname.indexOf('/', 1) + 1);
+                            previewUrl = basePath.replace(/\/$/, '') + '/' + previewUrl;
                         }
                         
                         // 隐藏占位符，显示图片
