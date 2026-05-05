@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/page-custom.css">
+    <link rel="stylesheet" href="../css/page-custom.css?v=20260504">
     <!-- Logo动态加载 -->
     <script>
     (function(){
@@ -511,11 +511,12 @@
         // 从数据库API加载FAQ数据
         (async function() {
             try {
-                const response = await fetch('../admin/api/faq-data.php?t=' + Date.now());
+                // 从API获取FAQ数据
+                const response = await fetch('admin/api/faq-data.php?t=' + Date.now());
                 const result = await response.json();
 
                 if (result.code !== 0 || !result.data) {
-                    console.error('FAQ数据加载失败:', result.msg);
+                    console.error('加载FAQ数据失败:', result);
                     return;
                 }
 
@@ -523,11 +524,11 @@
                 console.log('加载FAQ数据:', faqs);
 
                 // 分类标签映射
-                const categoryLabels = {
+                let categoryLabels = {
                     'liangzi': '亮资业务',
-                    'bridge': '过桥资金',
+                    'guoqiao': '过桥资金',
                     'baizhang': '摆账业务',
-                    'receivable': '应收账款',
+                    'receivable': '应收账款融资',
                     'deposit': '银行存款',
                     'general': '一般问题'
                 };
@@ -535,11 +536,11 @@
                 // 分类图标映射
                 const categoryIcons = {
                     'liangzi': 'fa-lightbulb',
-                    'bridge': 'fa-exchange-alt',
+                    'guoqiao': 'fa-exchange-alt',
                     'baizhang': 'fa-university',
                     'receivable': 'fa-file-invoice-dollar',
-                    'deposit': 'fa-landmark',
-                    'general': 'fa-info-circle'
+                    'deposit': 'fa-piggy-bank',
+                    'general': 'fa-question-circle'
                 };
 
                 // 动态生成分类按钮
@@ -604,13 +605,13 @@
                     groupedFAQs[cat].push(faq);
                 });
 
-                // 渲染FAQ列表
+                // 使用后台分类顺序，包括空分类
                 const container = document.querySelector('.faq-custom-container');
                 if (container) {
                     let html = '';
                     let hasContent = false;
 
-                    // 遍历所有分类
+                    // 遍历所有分类（包括没有FAQ的分类）
                     Object.keys(categoryLabels).forEach(cat => {
                         const catName = categoryLabels[cat];
                         const catIcon = categoryIcons[cat] || 'fa-question';
@@ -647,13 +648,13 @@
                         html += '</div></div>';
                     });
 
-                    // 如果有数据，替换显示
+                    // 如果后台有数据，替换显示
                     if (hasContent || Object.keys(categoryLabels).length > 0) {
                         container.innerHTML = html;
                     }
                 }
             } catch (error) {
-                console.error('FAQ数据加载失败:', error);
+                console.error('加载FAQ数据失败:', error);
             }
         })();
     </script>

@@ -613,136 +613,118 @@
 
     <script src="js/main.js"></script>
     <script>
-        // 从localStorage加载文章
-        function loadArticleFromStorage(articleId) {
-            const articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
-            // 支持字符串和数字ID比较，确保类型一致
-            return articles.find(a => String(a.id) === String(articleId));
-        }
+        // 从API加载文章
+        let currentArticleId = null;
         
-        // 获取所有已发布文章
-        function getAllPublishedArticles() {
-            const articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
-            return articles.filter(a => a.status === 'published').sort((a, b) => {
-                const dateA = new Date(a.publishDate || a.created_at || 0);
-                const dateB = new Date(b.publishDate || b.created_at || 0);
-                return dateB - dateA;
-            });
+        // 获取有效的封面图片
+        function getValidCoverImage(article) {
+            if (article.cover_image) {
+                return article.cover_image;
+            }
+            return null;
         }
-        
+
+        // 验证图片URL是否有效
+        function isValidImage(imageData) {
+            if (!imageData) return false;
+            if (typeof imageData !== 'string') return false;
+            if (imageData.startsWith('data:image')) {
+                return imageData.length > 100;
+            }
+            if (imageData.startsWith('http://') || imageData.startsWith('https://') || imageData.startsWith('/')) {
+                return imageData.length > 10;
+            }
+            return true;
+        }
+
         // 渲染文章头部
         function renderArticleHeader(article) {
-            const category = article.category || '行业资讯';
-            const title = article.title || '无标题';
-            const date = article.publishDate || article.created_at || new Date().toISOString();
+            const date = article.created_at || new Date().toISOString();
             const formattedDate = new Date(date).toLocaleDateString('zh-CN');
-            const author = article.author || 'Yao资金网';
+            const author = 'Yao资金网';
             
             document.getElementById('articleHeader').innerHTML = `
                 <a href="news.html" class="article-back-btn-top">
                     <i class="fas fa-arrow-left"></i>
                     返回资讯列表
                 </a>
-                <h1 class="article-detail-title">${title}</h1>
+                <h1 class="article-detail-title">${article.title}</h1>
                 <div class="article-detail-meta">
                     <span><i class="far fa-calendar"></i> ${formattedDate}</span>
                     <span><i class="far fa-user"></i> ${author}</span>
-                    <span><i class="far fa-eye"></i> ${article.views || 0} 阅读</span>
+                    <span><i class="far fa-eye"></i> ${article.view_count || 0} 阅读</span>
                 </div>
             `;
-        }
-        
-        // 验证图片数据是否有效
-        function isValidImage(imageData) {
-            if (!imageData) return false;
-            if (typeof imageData !== 'string') return false;
-            // 检查是否是有效的Base64图片
-            if (imageData.startsWith('data:image')) {
-                // 检查Base64数据是否完整（至少要有头部和一部分数据）
-                return imageData.length > 100;
-            }
-            // 检查是否是有效的URL
-            if (imageData.startsWith('http://') || imageData.startsWith('https://') || imageData.startsWith('/')) {
-                return imageData.length > 10;
-            }
-            // 检查是否是相对路径
-            if (imageData.startsWith('images/')) {
-                return true;
-            }
-            return false;
-        }
-
-        // 获取有效的封面图片
-        function getValidCoverImage(article) {
-            // 如果有封面图，使用封面图
-            if (article.cover_image && isValidImage(article.cover_image)) {
-                return article.cover_image;
-            }
-            // 如果没有封面图，返回 null（不显示封面图）
-            return null;
         }
 
         // 渲染文章内容
         function renderArticleContent(article) {
             const content = article.content || '<p>暂无内容</p>';
-            const tags = article.tags || [];
             
-            let tagsHtml = '';
-            if (tags.length > 0) {
-                tagsHtml = `
-                    <div class="article-tags">
-                        ${tags.map(tag => `<span class="article-tag">${tag}</span>`).join('')}
-                    </div>
-                `;
-            }
-            
-            // 文章详情页不显示封面图（老板要求）
             document.getElementById('articleContent').innerHTML = `
                 <div class="article-detail-main">
                     <div class="article-body">
                         ${content}
                     </div>
-                    ${tagsHtml}
                 </div>
             `;
         }
         
         // 渲染相关文章
-        function renderRelatedArticles(currentArticleId, allArticles) {
-            // 排除当前文章，取前4篇
-            const relatedArticles = allArticles
-                .filter(a => a.id !== currentArticleId)
-                .slice(0, 4);
-            
-            if (relatedArticles.length === 0) {
-                document.getElementById('relatedArticles').innerHTML = `
-                    <div style="grid-column: 1 / -1; text-align: center; color: #9ca3af; padding: 40px;">
-                        暂无相关资讯
-                    </div>
-                `;
+        function renderRelatedArticles(currentArticleId) {
+            // 从API获取相关文章（同分类的文章）
+            fetch('api/news-detail.php?id=' + currentArticleId + '&related=1')
+                .then(function(response) { return response.json(); })
+                .then(function(result) {
+                    if (result.success) {
+                        var article = result.data;
+                        // 获取同分类的其他已发表文章
+                        fetch('api/news.php?category_id=' + (article.category_id || 0))
+                            .then(function(resp) { return resp.json(); })
+                            .then(function(listResult) {
+                                if (listResult.success && listResult.data && listResult.data.news) {
+                                    var allArticles = listResult.data.news.filter(function(a) {
+                                        return String(a.id) !== String(currentArticleId);
+                                    }).slice(0, 4);
+                                    renderRelatedArticlesHtml(allArticles);
+                                } else {
+                                    document.getElementById('relatedArticles').innerHTML = '<div style="grid-column: 1 / -1; text-align: center; color: #9ca3af; padding: 40px;">暂无相关资讯</div>';
+                                }
+                            })
+                            .catch(function() {
+                                document.getElementById('relatedArticles').innerHTML = '<div style="grid-column: 1 / -1; text-align: center; color: #9ca3af; padding: 40px;">暂无相关资讯</div>';
+                            });
+                    }
+                })
+                .catch(function() {
+                    document.getElementById('relatedArticles').innerHTML = '<div style="grid-column: 1 / -1; text-align: center; color: #9ca3af; padding: 40px;">暂无相关资讯</div>';
+                });
+        }
+        
+        // 渲染相关文章HTML
+        function renderRelatedArticlesHtml(articles) {
+            if (articles.length === 0) {
+                document.getElementById('relatedArticles').innerHTML = '<div style="grid-column: 1 / -1; text-align: center; color: #9ca3af; padding: 40px;">暂无相关资讯</div>';
                 return;
             }
             
-            document.getElementById('relatedArticles').innerHTML = relatedArticles.map(article => {
-                const title = article.title || '无标题';
-                const date = article.publishDate || article.created_at || new Date().toISOString();
-                const formattedDate = new Date(date).toLocaleDateString('zh-CN');
-                const coverImage = getValidCoverImage(article);
+            document.getElementById('relatedArticles').innerHTML = articles.map(function(article) {
+                var title = article.title || '无标题';
+                var date = article.created_at || new Date().toISOString();
+                var formattedDate = new Date(date).toLocaleDateString('zh-CN');
+                var coverImage = getValidCoverImage(article);
                 
-                // 根据是否有封面图生成不同的HTML
-                const thumbHtml = coverImage 
-                    ? `<div class="related-article-thumb"><img src="${coverImage}" alt="${title}" loading="lazy"></div>`
-                    : `<div class="related-article-thumb placeholder"><div class="placeholder-bg"></div></div>`;
+                var thumbHtml = coverImage 
+                    ? '<div class="related-article-thumb"><img src="' + coverImage + '" alt="' + title + '" loading="lazy"></div>'
+                    : '<div class="related-article-thumb placeholder"><div class="placeholder-bg"></div></div>';
                 
-                return `
-                    <a href="news-detail.html?id=${article.id}" class="related-article-card">
-                        ${thumbHtml}
-                        <div class="related-article-content">
-                            <h3 class="related-article-title">${title}</h3>
-                            <span class="related-article-date">${formattedDate}</span>
-                        </div>
-                    </a>
-                `;
+                return '<a href="news-detail.html?id=' + article.id + '" class="related-article-card">' +
+                    thumbHtml +
+                    '<div class="related-article-content">' +
+                        '<h3 class="related-article-title">' + title + '</h3>' +
+                        '<span class="related-article-date">' + formattedDate + '</span>' +
+                    '</div>' +
+                '</a>';
             }).join('');
         }
         
@@ -762,22 +744,10 @@
             `;
         }
         
-        // 增加阅读数
-        function incrementViews(articleId) {
-            const articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
-            // 支持字符串和数字ID比较
-            const articleIndex = articles.findIndex(a => String(a.id) === String(articleId));
-            
-            if (articleIndex !== -1) {
-                articles[articleIndex].views = (articles[articleIndex].views || 0) + 1;
-                localStorage.setItem('cms_articles', JSON.stringify(articles));
-            }
-        }
-        
         // 初始化
         document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const articleId = urlParams.get('id');
+            var urlParams = new URLSearchParams(window.location.search);
+            var articleId = urlParams.get('id');
             
             console.log('[News Detail] URL参数ID:', articleId);
             
@@ -787,33 +757,36 @@
                 return;
             }
             
-            // 加载文章
-            const articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
-            console.log('[News Detail] 本地存储文章数量:', articles.length);
-            console.log('[News Detail] 所有文章ID:', articles.map(a => a.id));
+            currentArticleId = articleId;
             
-            const article = loadArticleFromStorage(articleId);
-            console.log('[News Detail] 找到的文章:', article);
-            
-            if (!article) {
-                console.error('[News Detail] 未找到ID为', articleId, '的文章');
-                renderNotFound();
-                return;
-            }
-            
-            // 更新页面标题
-            document.title = `${article.title || '文章详情'} - Yao资金网`;
-            
-            // 渲染文章
-            renderArticleHeader(article);
-            renderArticleContent(article);
-            
-            // 加载相关文章
-            const allArticles = getAllPublishedArticles();
-            renderRelatedArticles(articleId, allArticles);
-            
-            // 增加阅读数
-            incrementViews(articleId);
+            // 从API加载文章详情
+            fetch('api/news-detail.php?id=' + articleId)
+                .then(function(response) { return response.json(); })
+                .then(function(result) {
+                    console.log('[News Detail] API返回:', result);
+                    
+                    if (!result.success || !result.data) {
+                        console.error('[News Detail] API返回失败:', result);
+                        renderNotFound();
+                        return;
+                    }
+                    
+                    var article = result.data;
+                    
+                    // 更新页面标题
+                    document.title = (article.title || '文章详情') + ' - Yao资金网';
+                    
+                    // 渲染文章
+                    renderArticleHeader(article);
+                    renderArticleContent(article);
+                    
+                    // 加载相关文章
+                    renderRelatedArticles(articleId);
+                })
+                .catch(function(error) {
+                    console.error('[News Detail] API请求失败:', error);
+                    renderNotFound();
+                });
         });
     </script>
     <script src="admin/assets/cms.js"></script>

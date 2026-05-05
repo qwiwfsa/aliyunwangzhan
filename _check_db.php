@@ -1,9 +1,19 @@
 <?php
-$conn = new mysqli('localhost', 'root', '', 'hongdu');
-if ($conn->connect_error) { die('Connection failed: ' . $conn->connect_error); }
-$result = $conn->query('SELECT id, title, status, cover_image, created_at FROM cms_articles ORDER BY id');
-echo 'Total rows: ' . $result->num_rows . "\n";
-while($row = $result->fetch_assoc()) {
-    echo "  ID=" . $row['id'] . " | " . mb_substr($row['title'],0,30) . " | status=" . $row['status'] . " | cover=" . ($row['cover_image'] ?: 'NULL') . " | created=" . $row['created_at'] . "\n";
+try {
+    $db = new PDO('mysql:host=localhost;dbname=hongdu;charset=utf8mb4', 'root', '');
+    $tables = $db->query('SHOW TABLES')->fetchAll(PDO::FETCH_COLUMN);
+    echo "Tables:\n" . implode("\n", $tables) . "\n\n";
+    
+    foreach (['cases', 'cms_articles', 'faq'] as $t) {
+        if (in_array($t, $tables)) {
+            $cols = $db->query("DESCRIBE $t")->fetchAll(PDO::FETCH_ASSOC);
+            echo "--- $t ---\n";
+            foreach ($cols as $c) echo $c['Field'] . " " . $c['Type'] . " " . $c['Null'] . " " . ($c['Key'] ?? '') . "\n";
+            echo "\n";
+        } else {
+            echo "Table $t does not exist\n\n";
+        }
+    }
+} catch(Exception $e) {
+    echo 'DB Error: ' . $e->getMessage();
 }
-$conn->close();

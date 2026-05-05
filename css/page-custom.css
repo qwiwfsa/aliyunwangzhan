@@ -4,6 +4,27 @@
    ======================================== */
 
 /* ========================================
+   通用布局修复 - 确保页脚在底部
+   ======================================== */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+/* ========================================
    业务范围页面 - Banner图片区域
    ======================================== */
 
@@ -692,6 +713,10 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
     margin-bottom: 60px;
+}
+
+.advantages-custom-grid > * {
+    min-width: 0;
 }
 
 .advantage-custom-card {
@@ -1428,20 +1453,17 @@
 }
 
 .faq-custom-category-title {
-    display: flex !important;
+    display: flex;
     align-items: center;
     gap: 12px;
     font-size: 20px;
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 24px;
-    flex-direction: row !important;
 }
 
 .faq-custom-category-title i {
     color: var(--color-accent);
-    order: -1 !important;
-    margin-right: 12px;
 }
 
 .faq-custom-list {
@@ -2101,6 +2123,31 @@
     
     .advantages-custom-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .advantage-custom-card {
+        padding: 24px 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .advantage-custom-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+    }
+    
+    .advantage-custom-title {
+        font-size: 17px;
+    }
+    
+    .advantage-custom-desc {
+        font-size: 13px;
+    }
+    
+    .advantage-custom-list li {
+        font-size: 12px;
     }
     
     .partners-custom-grid {
@@ -2162,32 +2209,31 @@
     .page-header-title {
         font-size: 28px;
     }
-
+    
     .cases-stats-custom {
         grid-template-columns: 1fr;
     }
-
+    
     .partners-custom-grid {
         grid-template-columns: 1fr 1fr;
     }
-
+    
     .why-choose-experience {
         padding: 16px 24px;
     }
-
+    
     .experience-number {
         font-size: 28px;
     }
-}
-
-/* 强制FAQ分类标题图标在左边 */
-.faq-custom-category-title {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-}
-
-.faq-custom-category-title i.fas {
-    order: -1 !important;
-    flex-shrink: 0 !important;
+    
+    .advantage-custom-card {
+        padding: 20px 16px;
+    }
+    
+    .advantage-custom-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 22px;
+        margin-bottom: 14px;
+    }
 }

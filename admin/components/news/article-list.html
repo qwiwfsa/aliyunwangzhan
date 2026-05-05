@@ -229,6 +229,16 @@
         let isRendering = false; // 渲染锁，防止重复渲染
         let eventsBound = false; // 事件绑定标记，防止重复绑定
         
+        // 分类缓存版本号 - 与category.html保持一致
+        const CATEGORY_CACHE_VERSION = '4';
+        
+        // 清除过期分类缓存
+        (function clearStaleCache() {
+            // 每次加载页面都清除分类缓存，强制从API获取最新数据
+            localStorage.removeItem('cms_categories');
+            localStorage.setItem('cms_category_cache_version', CATEGORY_CACHE_VERSION);
+        })();
+        
         // 防抖函数
         function debounce(func, wait) {
             let timeout;
@@ -300,153 +310,66 @@
             }
         }
 
-        // 加载分类
+        // 渲染分类下拉菜单
+        function renderCategorySelect(categories) {
+            const select = document.getElementById('categoryFilter');
+            if (!select) return;
+            
+            // 清空现有选项（保留第一个"全部分类"）
+            while (select.options.length > 1) {
+                select.remove(1);
+            }
+            
+            if (!categories || categories.length === 0) {
+                console.log('没有分类数据');
+                return;
+            }
+            
+            categories.forEach(cat => {
+                const option = document.createElement('option');
+                option.value = cat.id;
+                option.textContent = cat.name;
+                select.appendChild(option);
+            });
+            console.log('分类下拉菜单已渲染，共' + categories.length + '个分类');
+        }
+
+        // 加载分类 - 统一使用API数据源
         async function loadCategories() {
             const select = document.getElementById('categoryFilter');
             if (!select) return;
             
-            // 首先尝试从本地存储加载
-            const cachedCategories = localStorage.getItem('cms_categories');
-            if (cachedCategories) {
-                try {
-                    categories = JSON.parse(cachedCategories);
-                    // 清空现有选项（保留第一个"全部分类"）
-                    while (select.options.length > 1) {
-                        select.remove(1);
-                    }
-                    categories.forEach(cat => {
-                        const option = document.createElement('option');
-                        option.value = cat.id;
-                        option.textContent = cat.name;
-                        select.appendChild(option);
-                    });
-                    console.log('从本地存储加载分类成功');
-                } catch (e) {
-                    console.error('解析本地分类失败:', e);
-                }
-            }
-            
-            // 然后尝试从API加载并更新
+            // 先尝试从API加载（唯一数据源）
             try {
                 const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 3000);
+                const timeoutId = setTimeout(() => controller.abort(), 5000);
                 
-                const response = await fetch('../api/news/categories.php', {
-                    signal: controller.signal
+                const response = await fetch('../../api/news/categories.php?_t=' + Date.now(), {
+                    signal: controller.signal,
+                    cache: 'no-store'
                 });
                 
                 clearTimeout(timeoutId);
                 const result = await response.json();
                 
-                if (result.success && result.data && result.data.length > 0) {
-                    // 清空现有选项（保留第一个"全部分类"）
-                    while (select.options.length > 1) {
-                        select.remove(1);
-                    }
-                    
+                if (result.success && result.data) {
                     categories = result.data;
-                    categories.forEach(cat => {
-                        const option = document.createElement('option');
-                        option.value = cat.id;
-                        option.textContent = cat.name;
-                        select.appendChild(option);
-                    });
-                    
-                    // 缓存到本地存储
-                    localStorage.setItem('cms_categories', JSON.stringify(result.data));
-                    console.log('从API加载分类成功并已缓存');
+                    renderCategorySelect(categories);
+                    console.log('从API加载分类成功，共' + categories.length + '个分类');
+                    return;
                 }
             } catch (error) {
-                console.log('API加载分类失败，使用本地后备:', error);
-                
-                // 如果本地存储也没有，使用默认分类
-                if (!cachedCategories) {
-                    categories = [
-                        { id: 1, name: '行业资讯' },
-                        { id: 2, name: '公司动态' },
-                        { id: 3, name: '金融知识' },
-                        { id: 4, name: '政策法规' }
-                    ];
-                    
-                    // 清空现有选项（保留第一个"全部分类"）
-                    while (select.options.length > 1) {
-                        select.remove(1);
-                    }
-                    
-                    categories.forEach(cat => {
-                        const option = document.createElement('option');
-                        option.value = cat.id;
-                        option.textContent = cat.name;
-                        select.appendChild(option);
-                    });
-                    
-                    // 缓存默认分类
-                    localStorage.setItem('cms_categories', JSON.stringify(categories));
-                    console.log('使用默认分类并已缓存');
-                }
+                console.log('API加载分类失败:', error);
             }
+            
+            // API失败时，使用空分类（绝不使用缓存或创建默认分类）
+            categories = [];
+            renderCategorySelect(categories);
+            console.log('API加载分类失败，使用空分类');
         }
 
-        // 从本地存储加载文章列表
-        function loadArticlesLocal(category, status, keyword) {
-            console.log('从本地存储加载文章列表 - 分类筛选:', category, '当前分类总数:', categories.length);
-            let articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
-            console.log('本地文章总数:', articles.length);
-            
-            // 过滤分类
-            if (category && category !== '0') {
-                console.log('应用分类筛选，category_id 类型检查:', typeof articles[0]?.category_id);
-                articles = articles.filter(a => {
-                    const match = String(a.category_id) === String(category);
-                    if (!match) {
-                        console.log('文章分类不匹配:', a.category_id, '!==', category);
-                    }
-                    return match;
-                });
-                console.log('分类筛选后文章数:', articles.length);
-            }
-            
-            // 过滤状态
-            if (status && status !== 'all') {
-                articles = articles.filter(a => a.status === status);
-            }
-            
-            // 搜索关键词
-            if (keyword) {
-                const lowerKeyword = keyword.toLowerCase();
-                articles = articles.filter(a => 
-                    a.title.toLowerCase().includes(lowerKeyword) ||
-                    (a.summary && a.summary.toLowerCase().includes(lowerKeyword))
-                );
-            }
-            
-            // 按时间倒序
-            articles.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
-            
-            // 分页
-            const limit = 16;
-            const total = articles.length;
-            const totalPages = Math.ceil(total / limit) || 1;
-            const start = (currentPage - 1) * limit;
-            const pageData = articles.slice(start, start + limit);
-            
-            // 添加分类名称和浏览数
-            const enrichedData = pageData.map(article => ({
-                ...article,
-                category_name: categories.find(c => String(c.id) === String(article.category_id))?.name || '未分类',
-                view_count: article.view_count || 0
-            }));
-            
-            return {
-                success: true,
-                data: enrichedData,
-                pagination: {
-                    page: currentPage,
-                    totalPages: totalPages,
-                    total: total
-                }
-            };
-        }
+        // 注意：不再使用本地存储加载文章列表
+        // 所有文章数据统一从数据库读取
 
         // 加载文章列表（使用防抖）
         const debouncedLoadArticles = debounce(async function() {
@@ -472,7 +395,7 @@
                 const controller = new AbortController();
                 const timeoutId = setTimeout(() => controller.abort(), 5000);
                 
-                const response = await fetch(`../api/news/list.php?page=${currentPage}&limit=16&category=${category}&status=${status}&keyword=${encodeURIComponent(keyword)}`, {
+                const response = await fetch(`../../api/news/list.php?page=${currentPage}&limit=16&category=${category}&status=${status}&keyword=${encodeURIComponent(keyword)}`, {
                     signal: controller.signal
                 });
                 
@@ -483,24 +406,17 @@
                     renderArticles(result.data);
                     renderPagination(result.pagination);
                 } else {
-                    // API返回失败，切换到本地存储
-                    console.log('API返回失败，切换到本地存储模式...');
-                    const localResult = loadArticlesLocal(category, status, keyword);
-                    if (localResult.success) {
-                        renderArticles(localResult.data);
-                        renderPagination(localResult.pagination);
-                    }
+                    console.error('API返回失败:', result);
+                    showToast(result.message || '加载文章列表失败', 'error');
                 }
             } catch (error) {
                 console.error('API加载文章失败:', error);
-                console.log('切换到本地存储模式...');
                 
-                // 使用本地存储
-                const localResult = loadArticlesLocal(category, status, keyword);
-                if (localResult.success) {
-                    renderArticles(localResult.data);
-                    renderPagination(localResult.pagination);
+                let errorMsg = '加载失败: ' + (error.message || '网络错误');
+                if (error.name === 'AbortError') {
+                    errorMsg = '加载超时，请检查服务器是否正常运行';
                 }
+                showToast(errorMsg, 'error');
             } finally {
                 isLoading = false; // 释放加载锁
             }
@@ -535,10 +451,17 @@
                 return;
             }
 
+            // 处理封面路径：绝对路径（/开头）补网站子目录
+            const basePath = window.location.pathname.substring(0, window.location.pathname.indexOf('/', 1) + 1);
+            const getCoverSrc = (cover) => {
+                if (!cover) return '';
+                if (cover.startsWith('/')) return basePath.replace(/\/$/, '') + cover;
+                return cover;
+            };
             container.innerHTML = `<div class="article-grid">
                 ${articles.map(article => `
                     <div class="article-card">
-                        <img src="${article.cover_image || '../../images/news-default.jpg'}" alt="${article.title}" class="article-image" onerror="this.src='../../images/news-default.jpg'">
+                        <img src="${getCoverSrc(article.cover_image) || 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22100%22%3E%3Crect fill=%22%23f3f4f6%22 width=%22200%22 height=%22100%22/%3E%3Ctext fill=%22%239ca3af%22 font-size=%2212%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3E%E6%9A%82%E6%97%A0%E5%B0%81%E9%9D%A2%3C/text%3E%3C/svg%3E'}" alt="${article.title}" class="article-image" onerror="this.style.display='none'">
                         <div class="article-content">
                             <h3 class="article-title">${article.title}</h3>
                             <p class="article-summary">${article.summary || '暂无摘要'}</p>
@@ -640,7 +563,7 @@
                 const controller = new AbortController();
                 const timeoutId = setTimeout(() => controller.abort(), 5000);
                 
-                const response = await fetch('../api/news/delete.php', {
+                const response = await fetch('../../api/news/delete.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ id: currentArticleId }),
@@ -662,38 +585,12 @@
                 }
             } catch (error) {
                 console.error('API删除失败:', error);
-                console.log('尝试本地删除...');
-            }
-            
-            // 本地删除模式（当API失败或不可用时）
-            try {
-                // 从localStorage获取文章列表
-                let articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
-                console.log('删除前文章数量:', articles.length);
                 
-                // 过滤掉要删除的文章（使用字符串比较确保类型匹配）
-                const originalLength = articles.length;
-                articles = articles.filter(a => String(a.id) !== String(currentArticleId));
-                
-                console.log('删除后文章数量:', articles.length);
-                
-                // 检查是否真的删除了
-                if (articles.length === originalLength) {
-                    console.error('未找到匹配的文章ID:', currentArticleId);
-                    showToast('未找到要删除的文章', 'error');
-                    closeDeleteModal();
-                    return;
+                let errorMsg = '删除失败: ' + (error.message || '网络错误');
+                if (error.name === 'AbortError') {
+                    errorMsg = '删除超时，请检查服务器是否正常运行';
                 }
-                
-                // 保存回localStorage
-                localStorage.setItem('cms_articles', JSON.stringify(articles));
-                
-                showToast('删除成功', 'success');
-                closeDeleteModal();
-                loadArticles();
-            } catch (localError) {
-                console.error('本地删除失败:', localError);
-                showToast('删除失败: ' + localError.message, 'error');
+                showToast(errorMsg, 'error');
                 closeDeleteModal();
             }
         }

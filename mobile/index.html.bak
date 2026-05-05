@@ -1,0 +1,1134 @@
+﻿<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="鎻愪緵浼佷笟鎽嗚处銆佽繃妗ョ煭鎷嗐€侀摱琛屽啿閲忋€佸疄缂撮獙璧勩€佸伐绋嬩寒璧勭瓑涓€绔欏紡璧勯噾涓氬姟鏈嶅姟锛岄珮鏁堝悎瑙勶紝涓撲笟瀵规帴銆?>
+
+    <meta name="keywords" content="浼佷笟鎽嗚处锛岃繃妗ョ煭鎷嗭紝閾惰鍐查噺锛屽疄缂撮獙璧勶紝宸ョ▼浜祫">
+    <meta name="author" content="Yao璧勯噾?>
+
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Yao璧勯噾?- 涓撲笟璧勯噾涓氬姟鏈嶅姟銆?>
+
+    <meta property="og:title" content="Yao璧勯噾?- 涓撲笟璧勯噾涓氬姟鏈嶅姟銆?>
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <link rel="canonical" href="https://www.hengxinziben.com/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <title>Yao 璧勯噾缃?| 浼佷笟鎽嗚处 - 杩囨ˉ鐭媶涓€绔欏紡璧勯噾涓氬姟鏈嶅姟</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="all" onload="this.media='all'">
+    <noscript>&amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;</noscript>
+    <link rel="stylesheet" href="../css/style.css?v=20250504">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FinancialService",
+        "name": "Yao璧勯噾?,
+        "description": "涓撲笟璧勯噾涓氬姟鏈嶅姟鍟嗭紝鎻愪緵涓婂競鍏徃杩囨ˉ銆佷紒涓氭憜璐︺€侀摱琛屽瓨娆俱€佸簲鏀惰处娆捐瀺璧勭瓑鏈嶅姟",
+        "url": "https://www.hengxinziben.com",
+        "telephone": "+86-13552883008",
+        "email": "wanglizhongguo@126.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "鍖椾含甯傗€??,
+
+            "addressRegion": "鏈濋槼鍖衡€??,
+
+            "streetAddress": "閲戣瀺琛?鍙?
+
+        },
+        "foundingDate": "2014",
+        "areaServed": "CN"
+    }
+    </script>
+    <!-- Logo鍔ㄦ€佸姞?-->
+    <script>
+    (function(){
+        var xhr=new XMLHttpRequest();
+        xhr.open('GET','../admin/api/fetch-logo.php?t='+Date.now(),true);
+        xhr.onload=function(){
+            if(xhr.status>=200&&xhr.status<400){
+                try{
+                    var resp=JSON.parse(xhr.responseText);
+                    if(resp.code===0&&resp.data){
+                        function fixSubDir(p){return p&&p.indexOf('http')!==0&&p.indexOf('/')!==0?'../'+p:p;}
+                        if(resp.data.header_logo){
+                            var hl=document.querySelector('.logo img');
+                            if(hl)hl.src=fixSubDir(resp.data.header_logo);
+                        }
+                        if(resp.data.footer_logo){
+                            var fl=document.querySelector('.footer-logo img');
+                            if(fl)fl.src=fixSubDir(resp.data.footer_logo);
+                        }
+                        if(resp.data.favicon){
+                            var lk=document.querySelector('link[rel="icon"]')||document.querySelector('link[rel="shortcut icon"]');
+                            if(!lk){lk=document.createElement('link');lk.rel='icon';document.head.appendChild(lk);}
+                            lk.href=fixSubDir(resp.data.favicon);
+                        }
+                    }
+                }catch(e){}
+            }
+        };
+        xhr.send();
+    })();
+    </script>
+<script>
+(function() {
+    var pageName = window.location.pathname.split('/').pop() || 'index.html';
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '../admin/api/fetch-seo.php?page=' + pageName + '&t=' + Date.now(), true);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            try {
+                var data = JSON.parse(xhr.responseText);
+                if (data && data.code === 0 && data.data) {
+                    var seo = data.data;
+                    if (seo.page_title) document.title = seo.page_title;
+                    if (seo.meta_keywords) {
+                        var kw = document.querySelector('meta[name="keywords"]');
+                        if (kw) kw.content = seo.meta_keywords;
+                    }
+                    if (seo.meta_description) {
+                        var desc = document.querySelector('meta[name="description"]');
+                        if (desc) desc.content = seo.meta_description;
+                    }
+                }
+            } catch(e) {}
+        }
+    };
+    xhr.send();
+})();
+</script>
+<script>
+(function() {
+    var pageName = window.location.pathname.split('/').pop() || 'index.html';
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '../admin/api/fetch-seo.php?page=' + pageName + '&t=' + Date.now(), true);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            try {
+                var data = JSON.parse(xhr.responseText);
+                if (data && data.code === 0 && data.data) {
+                    var seo = data.data;
+                    if (seo.page_title) document.title = seo.page_title;
+                    if (seo.meta_keywords) {
+                        var kw = document.querySelector('meta[name="keywords"]');
+                        if (kw) kw.content = seo.meta_keywords;
+                    }
+                    if (seo.meta_description) {
+                        var desc = document.querySelector('meta[name="description"]');
+                        if (desc) desc.content = seo.meta_description;
+                    }
+                }
+            } catch(e) {}
+        }
+    };
+    xhr.send();
+})();
+</script>
+<link rel="icon" href=".././uploads/logo/logo_20260504_045101_69f80995372b0.png"></head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">璺宠浆鍒颁富瑕佸唴瀹?/a>
+
+
+    <!-- 瀵艰埅?-->
+    <nav class="navbar scrolled" id="navbar" role="navigation" aria-label="涓诲鑸?>
+
+        <div class="navbar-container">
+<a href="index.html" class="logo" aria-label="Yao璧勯噾缃戦椤?><img src="../uploads/logo/logo_20260501_234314_69f51e721c7d0.png" alt="Yao璧勯噾? style="height:48px;width:auto;" class=""></a>
+
+            <ul class="nav-menu" role="menubar" id="dynamicNavMenu"><li role="none"><a href="index.html" class="nav-link active" role="menuitem">棣栭〉</a></li><li role="none"><a href="services.html" class="nav-link" role="menuitem">涓氬姟鑼冨洿</a></li><li role="none"><a href="cases.html" class="nav-link" role="menuitem">鎴愬姛妗堜緥</a></li><li role="none"><a href="advantages.html" class="nav-link" role="menuitem">鏈嶅姟浼樺娍</a></li><li role="none"><a href="news.html" class="nav-link" role="menuitem">琛屼笟璧勮</a></li><li role="none"><a href="faq.html" class="nav-link" role="menuitem">甯歌闂</a></li><li role="none"><a href="contact.html" class="nav-link" role="menuitem">鑱旂郴鎴戜滑</a></li></ul>
+            
+            <script>
+                // 鍔ㄦ€佸姞杞藉鑸彍?                (function() {
+                    const defaultNavItems = [
+                        { id: '1', name: '棣栭〉', url: 'index.html', icon: 'fas fa-home' },
+                        { id: '2', name: '涓氬姟鑼冨洿', url: 'services.html', icon: 'fas fa-briefcase' },
+                        { id: '3', name: '鎴愬姛妗堜緥', url: 'cases.html', icon: 'fas fa-trophy' },
+                        { id: '4', name: '鏈嶅姟浼樺娍', url: 'advantages.html', icon: 'fas fa-star' },
+                        { id: '5', name: '琛屼笟璧勮', url: 'news.html', icon: 'fas fa-newspaper' },
+                        { id: '6', name: '甯歌闂', url: 'faq.html', icon: 'fas fa-question-circle' },
+                        { id: '7', name: '鑱旂郴鎴戜滑', url: 'contact.html', icon: 'fas fa-phone' }
+                    ];
+                    
+                    // ?localStorage 璇诲彇鑿滃崟
+                    let navItems = defaultNavItems;
+                    try {
+                        const stored = localStorage.getItem('cms_nav_items');
+                        if (stored) {
+                            const parsed = JSON.parse(stored);
+                            if (Array.isArray(parsed) && parsed.length > 0) {
+                                navItems = parsed;
+                            }
+                        }
+                    } catch (e) {
+                        console.log('璇诲彇鑿滃崟澶辫触锛屼娇鐢ㄩ粯璁よ彍鍗?);
+
+                    }
+                    
+                    // 娓叉煋鑿滃崟
+                    const menuContainer = document.getElementById('dynamicNavMenu');
+                    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                    
+                    menuContainer.innerHTML = navItems.map(item => {
+                        const isActive = item.url === currentPage || (currentPage === '' && item.url === 'index.html');
+                        return `<li role="none"><a href="${item.url}" class="nav-link${isActive ? ' active' : ''}" role="menuitem">${item.name}</a></li>`;
+                    }).join('');
+                })();
+            </script>
+
+            <!-- 鎼滅储鎸夐挳 -->
+            <button class="search-toggle" id="searchToggle" aria-label="鎵撳紑鎼滅储" aria-expanded="false">
+                <i class="fas fa-search" aria-hidden="true"></i>
+            </button>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="鎵撳紑鑿滃崟" aria-expanded="false" aria-controls="navMenu">
+                <span class=""></span>
+                <span class=""></span>
+                <span class=""></span>
+            </button>
+        </div>
+
+        <!-- 鎼滅储?-->
+        <div class="search-overlay" id="searchOverlay" role="search" aria-hidden="true">
+            <div class="search-container">
+                <form class="search-form" id="searchForm" action="#" method="get">
+                    <input type="search" class="search-input" id="searchInput" placeholder="鎼滅储涓氬姟銆佹渚嬨€佽祫璁?." aria-label="鎼滅储鍐呭">
+
+                    <button type="submit" class="search-submit" aria-label="鎼滅储">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                </form>
+                <div class="search-suggestions" id="searchSuggestions" aria-live="polite"></div>
+                <button class="search-close" id="searchClose" aria-label="鍏抽棴鎼滅储">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+    <!-- Hero鍖哄煙 -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-container">
+            <div class="hero-badge">
+                <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                <span class="">涓撲笟璧勯噾鏈嶅姟 路 鍊煎緱淇¤禆</span>
+            </div>
+            
+            <h1 class="hero-title" id="hero-title">涓撲笟璧勯噾瑙ｅ喅鏂规
+鍔╁姏浼佷笟绋冲仴鍙戝睍娴嬭瘯</h1>
+            
+            <p class="hero-subtitle">鎻愪緵涓婂競鍏徃鐭媶銆佷紒涓氭憜璐︺€侀摱琛屽瓨娆俱€佸簲鏀惰处娆捐瀺璧勭瓑鍏ㄦ柟浣嶈祫閲戞湇鍔★紝浠ヤ笓涓氬疄鍔涘拰涓板瘜缁忛獙锛屼负鎮ㄧ殑浼佷笟鍙戝睍淇濋┚鎶よ埅銆傛祴璇曘€?/p>
+
+            
+            <div class="hero-buttons">
+                <div class="booking-wrapper" style="display:flex;align-items:center;gap:12px;">
+                    <button class="btn btn-primary" id="consultNowBtn" onclick="togglePhoneDisplay()" href="contact.html">绔嬪嵆鍜ㄨ</button>
+                    <span id="phoneDisplay" style="display:none;font-size:18px;font-weight:700;color:#1e3a8a;letter-spacing:2px;white-space:nowrap;background:#fff;border-radius:8px;padding:8px 16px;box-shadow:0 2px 8px rgba(0,0,0,0.12);">13552883008</span>
+                </div>
+                <!-- 棰勭害鍜ㄨ鎸夐挳宸茬Щ?2026-04-30 -->
+                <!-- <div class="booking-wrapper">
+                    <button class="btn btn-outline" id="bookingBtn" onclick="toggleBookingCard(this)">棰勭害鍜ㄨ</button>
+                    <div class="contact-card contact-card-left" id="bookingCard" style="display:none;">
+                        <div class="contact-card-content">
+                            <div class="contact-card-phone">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>13552883008</span>
+                            </div>
+                        </div>
+                    </div>
+                -->
+            </div>
+            
+            <div class="stats" role="region" aria-label="鍏徃鏁版嵁缁熻">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="10">10+</div>
+                    <div class="stat-label">骞磋涓氱粡楠?/div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="500">500+</div>
+                    <div class="stat-label">鏈嶅姟浼佷笟</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="100">100浜??</div>
+                    <div class="stat-label">绱绠＄悊瑙勬ā</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="99">99%</div>
+                    <div class="stat-label">瀹㈡埛婊℃剰搴?/div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 鏍稿績涓氬姟棰嗗煙 -->
+    <section class="services" id="services" aria-labelledby="services-title">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">OUR SERVICES</div>
+                <h2 class="section-title" id="services-title">鏍稿績涓氬姟棰嗗煙</h2>
+                <p class="section-subtitle">娑电洊涓婂競鍏徃銆佷紒涓氭憜璐︺€侀摱琛屽瓨娆俱€佸簲鏀惰处娆捐瀺璧勭瓑鍏ㄦ柟浣嶈祫閲戞湇鍔°€?/p>
+
+            </div>
+            
+            <div class="services-grid">
+                <article class="service-card" data-service="listed" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3 class="service-title">涓婂競鍏徃杩囨ˉ?/h3>
+
+                    <ul class="service-list"><ul><li>鐭媶銆佽偂绁ㄨВ璐ㄦ娂杩囨ˉ</li><li>鍕熼泦璐︽埛褰掕繕杩囨ˉ銆佷骇涓氬熀閲戝妗堣繃妗?/li><li>鑲＄エ璐ㄦ娂銆佸畾澧炪€佸崗璁浆璁┿€佷唬鎸?/li><li>璐㈠姟鎶ヨ〃浼樺寲銆侀檷璐熷€?/li></ul></ul>
+
+                </article>
+                
+                <article class="service-card" data-service="鎽嗚处" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3 class="service-title">浼佷笟/涓汉鎽嗚处</h3>
+                    <ul class="service-list"><ul><li>鐭媶銆佽偂绁ㄨВ璐ㄦ娂杩囨ˉ</li><li>鍕熼泦璐︽埛褰掕繕杩囨ˉ銆佷骇涓氬熀閲戝妗堣繃妗?/li><li>鑲＄エ璐ㄦ娂銆佸畾澧炪€佸崗璁浆璁┿€佷唬鎸?/li><li>璐㈠姟鎶ヨ〃浼樺寲銆侀檷璐熷€?/li></ul></ul>
+
+                </article>
+                
+                <article class="service-card" data-service="deposit" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3 class="service-title">涓婂競鍏徃杩囨ˉ?/h3>
+
+                    <ul class="service-list"><ul><li>鐭媶銆佽偂绁ㄨВ璐ㄦ娂杩囨ˉ</li><li>鍕熼泦璐︽埛褰掕繕杩囨ˉ銆佷骇涓氬熀閲戝妗堣繃妗?/li><li>鑲＄エ璐ㄦ娂銆佸畾澧炪€佸崗璁浆璁┿€佷唬鎸?/li><li>璐㈠姟鎶ヨ〃浼樺寲銆侀檷璐熷€?/li></ul></ul>
+
+                </article>
+                
+                <article class="service-card" data-service="receivable" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3 class="service-title">搴旀敹璐︽铻嶈祫</h3>
+                    <ul class="service-list"><ul><li>鐭媶銆佽偂绁ㄨВ璐ㄦ娂杩囨ˉ</li><li>鍕熼泦璐︽埛褰掕繕杩囨ˉ銆佷骇涓氬熀閲戝妗堣繃妗?/li><li>鑲＄エ璐ㄦ娂銆佸畾澧炪€佸崗璁浆璁┿€佷唬鎸?/li><li>璐㈠姟鎶ヨ〃浼樺寲銆侀檷璐熷€?/li></ul></ul>
+
+                </article>
+            </div>
+
+            <!-- 涓氬姟璇︽儏鎵╁睍 -->
+            <div class="service-details" id="serviceDetails">
+                <div class="detail-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h4 class="detail-title"><i class="fas fa-star" aria-hidden="true"></i> 鏍稿績浼樺娍</h4>
+                    <ul class="detail-list">
+                        <li>璧勯噾瀹炲姏闆勫帤锛屽崟绗斿彲鎻愪緵鏁颁嚎鑷虫暟鍗佷嚎璧勯噾鏀寔</li>
+                        <li>鎿嶄綔鐏垫椿锛屽彲鏍规嵁瀹㈡埛闇€姹傚畾鍒朵釜鎬у寲鏂规</li>
+                        <li class="">瀹℃壒蹇€燂紝璧勬枡榻愬叏鍚庢渶蹇綋鏃ユ斁?/li>
+                        <li>鍚堣瀹夊叏锛屼弗鏍奸伒寰噾铻嶇洃绠¤姹?/li>
+
+                    </ul>
+                </div>
+                <div class="detail-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h4 class="detail-title"><i class="fas fa-calculator" aria-hidden="true"></i> 鏀惰垂璇存槑</h4>
+                    <ul class="detail-list">
+                        <li class="">鎸夊疄闄呬娇鐢ㄥぉ鏁拌璐癸紝閫忔槑鏃犻殣钘忚垂鐢?/li>
+
+                        <li>鏍规嵁璧勯噾瑙勬ā銆佹湡闄愩€侀闄╃瓑绾х患鍚堝畾浠?/li>
+
+                        <li class="">闀挎湡鍚堜綔瀹㈡埛浜彈浼樻儬璐圭巼</li>
+                        <li>鍏蜂綋璐圭敤浠ュ弻鏂圭缃插崗璁负鍑?/li>
+
+                    </ul>
+                </div>
+                <div class="detail-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h4 class="detail-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> 椋庨櫓鎻愮ず</h4>
+                    <ul class="detail-list">
+                        <li class="">璧勯噾涓氬姟瀛樺湪甯傚満椋庨櫓锛岃鏍规嵁鑷韩鎯呭喌璋ㄦ厧鍐崇瓥</li>
+                        <li class="">璇风‘淇濇彁渚涚湡瀹炪€佸畬鏁寸殑璧勬枡淇℃伅</li>
+                        <li class="">涓ユ牸閬靛畧鍚堝悓绾﹀畾锛屾寜鏃跺綊杩樿祫閲?/li>
+
+                        <li class="">鎶曡祫鏈夐闄╋紝鍏ュ競闇€璋ㄦ厧</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 鎴愬姛妗堜緥灞曠ず -->
+    <section class="cases-showcase" id="casesShowcase" aria-labelledby="cases-showcase-title">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">SUCCESS CASES</div>
+                <h2 class="section-title" id="cases-showcase-title">鎴愬姛妗堜緥</h2>
+                <p class="section-subtitle">娑电洊涓婂競鍏徃銆佷紒涓氭憜璐︺€侀摱琛屽瓨娆俱€佸簲鏀惰处娆捐瀺璧勭瓑鍏ㄦ柟浣嶈祫閲戞湇鍔°€?/p>
+
+            </div>
+            
+            <div class="cases-showcase-grid" id="casesShowcaseGrid">
+                    <article class="case-card-enhanced" data-id="case_1777296851044">
+                        <div class="case-card-image" onclick="openLightbox('/hongdu/uploads/20260428_69efe569f351a.jpg')">
+                            <img src="/hongdu/uploads/20260428_69efe569f351a.jpg" alt="鏌愭埧鍦颁骇浼佷笟" onerror="this.src='../images/case-default.svg'" class="">
+                        </div>
+                        <div class="case-card-content">
+                            <h3 class="case-card-title">鏌愭埧鍦颁骇浼佷笟</h3>
+                            <p class="case-card-summary">涓轰紒涓氭彁渚涘ぇ棰濇憜璐︿寒璧勬湇鍔★紝鍔╁姏鎴愬姛涓爣澶у瀷宸ョ▼椤圭洰銆?/p>
+
+                            <div class="case-card-meta">
+                                <div class="case-card-amount">
+                                    <span class="case-card-amount-label">鍑鸿祫閲戦</span>
+                                    <span class="case-card-amount-value">11浜垮厓</span>
+                                </div>
+                                <button class="btn-view-detail" style="pointer-events: none; opacity: 0.6; cursor: default;">鏌ョ湅璇︽儏</button>
+                            </div>
+                        </div>
+                    </article>
+                
+                    <article class="case-card-enhanced" data-id="case_1777298570787">
+                        <div class="case-card-image" onclick="openLightbox('/hongdu/uploads/20260427_69efb18e8687a.jpg')">
+                            <img src="/hongdu/uploads/20260427_69efb18e8687a.jpg" alt="鐜伴噾浜祫" onerror="this.src='../images/case-default.svg'" class="">
+                        </div>
+                        <div class="case-card-content">
+                            <h3 class="case-card-title">鐜伴噾浜祫</h3>
+                            <p class="case-card-summary">涓轰紒涓氭彁渚涘ぇ棰濇憜璐︿寒璧勬湇鍔★紝鍔╁姏鎴愬姛涓爣澶у瀷宸ョ▼椤圭洰銆?/p>
+
+                            <div class="case-card-meta">
+                                <div class="case-card-amount">
+                                    <span class="case-card-amount-label">鍑鸿祫閲戦</span>
+                                    <span class="case-card-amount-value">3.5浜垮厓</span>
+                                </div>
+                                <button class="btn-view-detail" style="pointer-events: none; opacity: 0.6; cursor: default;">鏌ョ湅璇︽儏</button>
+                            </div>
+                        </div>
+                    </article>
+                
+                    <article class="case-card-enhanced" data-id="case_1777296618774">
+                        <div class="case-card-image" onclick="openLightbox('/hongdu/uploads/20260428_69efe591a8ada.jpg')">
+                            <img src="/hongdu/uploads/20260428_69efe591a8ada.jpg" alt="鏌愬ぇ鍨嬮泦鍥㈠叕? onerror="this.src='../images/case-default.svg'" class="">
+                        </div>
+                        <div class="case-card-content">
+                            <h3 class="case-card-title">鏌愭埧鍦颁骇浼佷笟</h3>
+
+                            <p class="case-card-summary">涓轰紒涓氭彁渚涘ぇ棰濇憜璐︿寒璧勬湇鍔★紝鍔╁姏鎴愬姛涓爣澶у瀷宸ョ▼椤圭洰銆?/p>
+
+                            <div class="case-card-meta">
+                                <div class="case-card-amount">
+                                    <span class="case-card-amount-label">鍑鸿祫閲戦</span>
+                                    <span class="case-card-amount-value">8.2浜垮厓</span>
+                                </div>
+                                <button class="btn-view-detail" style="pointer-events: none; opacity: 0.6; cursor: default;">鏌ョ湅璇︽儏</button>
+                            </div>
+                        </div>
+                    </article>
+                
+                    <article class="case-card-enhanced" data-id="case_1777298492653">
+                        <div class="case-card-image" onclick="openLightbox('/hongdu/uploads/20260428_69efe75776f9a.jpg')">
+                            <img src="/hongdu/uploads/20260428_69efe75776f9a.jpg" alt="鏌愪笂甯傚埗閫犱紒? onerror="this.src='../images/case-default.svg'" class="">
+                        </div>
+                        <div class="case-card-content">
+                            <h3 class="case-card-title">鏌愭埧鍦颁骇浼佷笟</h3>
+
+                            <p class="case-card-summary">涓轰紒涓氭彁渚涘ぇ棰濇憜璐︿寒璧勬湇鍔★紝鍔╁姏鎴愬姛涓爣澶у瀷宸ョ▼椤圭洰銆?/p>
+
+                            <div class="case-card-meta">
+                                <div class="case-card-amount">
+                                    <span class="case-card-amount-label">鍑鸿祫閲戦</span>
+                                    <span class="case-card-amount-value">5.8浜垮厓</span>
+                                </div>
+                                <button class="btn-view-detail" style="pointer-events: none; opacity: 0.6; cursor: default;">鏌ョ湅璇︽儏</button>
+                            </div>
+                        </div>
+                    </article>
+                
+                    <article class="case-card-enhanced" data-id="case_test_001">
+                        <div class="case-card-image" onclick="openLightbox('/hongdu/uploads/20260427_69efbc447d775.jpg')">
+                            <img src="/hongdu/uploads/20260427_69efbc447d775.jpg" alt="鏌愪笂甯傚叕鍙歌繃妗ヨ瀺? onerror="this.src='../images/case-default.svg'" class="">
+                        </div>
+                        <div class="case-card-content">
+                            <h3 class="case-card-title">鏌愭埧鍦颁骇浼佷笟</h3>
+
+                            <p class="case-card-summary">涓轰紒涓氭彁渚涘ぇ棰濇憜璐︿寒璧勬湇鍔★紝鍔╁姏鎴愬姛涓爣澶у瀷宸ョ▼椤圭洰銆?/p>
+
+                            <div class="case-card-meta">
+                                <div class="case-card-amount">
+                                    <span class="case-card-amount-label">鍑鸿祫閲戦</span>
+                                    <span class="case-card-amount-value">6.8浜垮厓</span>
+                                </div>
+                                <button class="btn-view-detail" style="pointer-events: none; opacity: 0.6; cursor: default;">鏌ョ湅璇︽儏</button>
+                            </div>
+                        </div>
+                    </article>
+                
+                    <article class="case-card-enhanced" data-id="case_1777327823526">
+                        <div class="case-card-image" onclick="openLightbox('/hongdu/uploads/20260428_69efe5a609ecf.jpg')">
+                            <img src="/hongdu/uploads/20260428_69efe5a609ecf.jpg" alt="鏌愰厭搴楄€佹澘" onerror="this.src='../images/case-default.svg'" class="">
+                        </div>
+                        <div class="case-card-content">
+                            <h3 class="case-card-title">鏌愰厭搴楄€佹澘</h3>
+                            <p class="case-card-summary">涓轰紒涓氭彁渚涘ぇ棰濇憜璐︿寒璧勬湇鍔★紝鍔╁姏鎴愬姛涓爣澶у瀷宸ョ▼椤圭洰銆?/p>
+
+                            <div class="case-card-meta">
+                                <div class="case-card-amount">
+                                    <span class="case-card-amount-label">鍑鸿祫閲戦</span>
+                                    <span class="case-card-amount-value">2.1浜垮厓</span>
+                                </div>
+                                <button class="btn-view-detail" style="pointer-events: none; opacity: 0.6; cursor: default;">鏌ョ湅璇︽儏</button>
+                            </div>
+                        </div>
+                    </article>
+                
+                    <article class="case-card-enhanced" data-id="case_1777297531614">
+                        <div class="case-card-image" onclick="openLightbox('/hongdu/uploads/20260428_69efe5568ea59.jpg')">
+                            <img src="/hongdu/uploads/20260428_69efe5568ea59.jpg" alt="鏌愯繛閿侀浂鍞紒? onerror="this.src='../images/case-default.svg'" class="">
+                        </div>
+                        <div class="case-card-content">
+                            <h3 class="case-card-title">鏌愭埧鍦颁骇浼佷笟</h3>
+
+                            <p class="case-card-summary">涓轰紒涓氭彁渚涘ぇ棰濇憜璐︿寒璧勬湇鍔★紝鍔╁姏鎴愬姛涓爣澶у瀷宸ョ▼椤圭洰銆?/p>
+
+                            <div class="case-card-meta">
+                                <div class="case-card-amount">
+                                    <span class="case-card-amount-label">鍑鸿祫閲戦</span>
+                                    <span class="case-card-amount-value">1.5浜垮厓</span>
+                                </div>
+                                <button class="btn-view-detail" style="pointer-events: none; opacity: 0.6; cursor: default;">鏌ョ湅璇︽儏</button>
+                            </div>
+                        </div>
+                    </article>
+                
+                    <article class="case-card-enhanced" data-id="case_1777296718376">
+                        <div class="case-card-image" onclick="openLightbox('/hongdu/uploads/20260428_69efe5303e212.jpg')">
+                            <img src="/hongdu/uploads/20260428_69efe5303e212.jpg" alt="鏌愮墿娴佺鎶€浼佷笟" onerror="this.src='../images/case-default.svg'" class="">
+                        </div>
+                        <div class="case-card-content">
+                            <h3 class="case-card-title">鏌愮墿娴佺鎶€浼佷笟</h3>
+                            <p class="case-card-summary">涓轰紒涓氭彁渚涘ぇ棰濇憜璐︿寒璧勬湇鍔★紝鍔╁姏鎴愬姛涓爣澶у瀷宸ョ▼椤圭洰銆?/p>
+
+                            <div class="case-card-meta">
+                                <div class="case-card-amount">
+                                    <span class="case-card-amount-label">鍑鸿祫閲戦</span>
+                                    <span class="case-card-amount-value">5000涓囧厓</span>
+                                </div>
+                                <button class="btn-view-detail" style="pointer-events: none; opacity: 0.6; cursor: default;">鏌ョ湅璇︽儏</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            
+            <div class="cases-showcase-pagination" id="casesShowcasePagination" style="display: flex;">
+            <button class="search-toggle" id="searchToggle" aria-label="鎵撳紑鎼滅储" aria-expanded="false">
+
+                    <span class="pagination-arrow">&lt;</span>
+                </button>
+                    <span class="pagination-arrow">&lt;</span>
+
+            <button class="search-toggle" id="searchToggle" aria-label="鎵撳紑鎼滅储" aria-expanded="false">
+
+                    <span class="pagination-arrow">&gt;</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 鏈嶅姟浼樺娍 -->
+    <section class="advantages" id="advantages" aria-labelledby="advantages-title">
+        <div class="section-container">
+            <div class="advantages-header">
+                <h2 class="advantages-title" id="advantages-title">鏈嶅姟浼樺娍</h2>
+                <p class="advantages-subtitle">涓撲笟銆侀珮鏁堛€佸畨鍏?/p>
+
+            </div>
+            
+            <div class="advantages-content">
+                <div class="advantages-visual">
+                    <div class="advantages-image-wrapper">
+                        <div class="advantages-icon-main">
+                            <i class="fas fa-thumbs-up" aria-hidden="true"></i>
+                        </div>
+                        <div class="advantages-stats">
+                            <div class="advantages-stat">
+                                <span class="advantages-stat-number">500+</span>
+                                <span class="advantages-stat-label">鏈嶅姟浼佷笟</span>
+                            </div>
+                            <div class="advantages-stat">
+                                <span class="advantages-stat-number">99%</span>
+                                <span class="advantages-stat-number">500+</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="advantages-features">
+                    <div class="advantages-feature">
+                        <div class="advantages-check">
+                            <i class="fas fa-check" aria-hidden="true"></i>
+                        </div>
+                        <div class="advantages-feature-content">
+                            <h3 class="advantages-feature-title">涓板瘜鐨勮涓氱粡楠?/h3>
+
+                <p class="advantages-subtitle">涓撲笟銆侀珮鏁堛€佸畨鍏?/p>
+
+                        </div>
+                    </div>
+                    
+                    <div class="advantages-feature">
+                        <div class="advantages-check">
+                            <i class="fas fa-check" aria-hidden="true"></i>
+                        </div>
+                        <div class="advantages-feature-content">
+                            <h3 class="advantages-feature-title">涓板瘜鐨勮涓氱粡楠?/h3>
+
+                <p class="advantages-subtitle">涓撲笟銆侀珮鏁堛€佸畨鍏?/p>
+
+                        </div>
+                    </div>
+                    
+                    <div class="advantages-feature">
+                        <div class="advantages-check">
+                            <i class="fas fa-check" aria-hidden="true"></i>
+                        </div>
+                        <div class="advantages-feature-content">
+                            <h3 class="advantages-feature-title">涓板瘜鐨勮涓氱粡楠?/h3>
+
+                <p class="advantages-subtitle">涓撲笟銆侀珮鏁堛€佸畨鍏?/p>
+
+                        </div>
+                    </div>
+                    
+                    <div class="advantages-feature">
+                        <div class="advantages-check">
+                            <i class="fas fa-check" aria-hidden="true"></i>
+                        </div>
+                        <div class="advantages-feature-content">
+                            <h3 class="advantages-feature-title">涓板瘜鐨勮涓氱粡楠?/h3>
+
+                <p class="advantages-subtitle">涓撲笟銆侀珮鏁堛€佸畨鍏?/p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 鍚堜綔閾惰 -->
+    <section class="bank-logos-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">鍚堜綔閾惰</h2>
+                <p class="section-subtitle">娑电洊涓婂競鍏徃銆佷紒涓氭憜璐︺€侀摱琛屽瓨娆俱€佸簲鏀惰处娆捐瀺璧勭瓑鍏ㄦ柟浣嶈祫閲戞湇鍔°€?/p>
+
+            </div>
+            <div class="bank-logos-wrapper">
+                <img src="../images/鍚堜綔閾惰logo.jpg" alt="鍚堜綔閾惰" class="bank-logos-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ甯歌闂 -->
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">FAQ</div>
+                <h2 class="section-title" id="faq-title">甯歌闂</h2>
+                <p class="section-subtitle">瑙ｇ瓟鎮ㄥ叧浜庤祫閲戜笟鍔＄殑甯歌鐤戦棶</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-category" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3 class="faq-category-title"><i class="fas fa-lightbulb" aria-hidden="true"></i> 浜祫涓氬姟</h3>
+                    <div class="faq-list">
+                        <details class="faq-item">
+                            <summary class="faq-question">浠€涔堟槸浜祫涓氬姟锛?/summary>
+
+                            <div class="faq-answer">
+                                <p>浜祫涓氬姟鏄寚浼佷笟鍦ㄥ弬涓庢嫑鎶曟爣銆侀」鐩唇璋堛€佸晢鍔″悎浣滅瓑鍦烘櫙鏃讹紝闇€瑕佸悜瀵规柟灞曠ず璧勯噾瀹炲姏鐨勬湇鍔°€傛垜浠彁渚涘ぇ棰濊祫閲戝湪瀹㈡埛璐︽埛涓睍绀猴紝璇佹槑浼佷笟鍏峰鐩稿簲鐨勮祫閲戝饱绾﹁兘鍔涖€?/p>
+
+                            </div>
+                        </details>
+                        <details class="faq-item">
+                            <summary class="faq-question">浜祫涓氬姟闇€瑕佸闀挎椂闂达紵</summary>
+                            <div class="faq-answer">
+                                <p>鏍规嵁瀹㈡埛闇€姹傦紝浜祫涓氬姟鍙垎涓烘椂鐐逛寒璧勫拰鏃舵湡浜祫銆傛椂鐐逛寒璧勯€氬父鍦?-3涓伐浣滄棩鍐呭畬鎴愶紱?-3涓伐浣滄棩鍐呭畬鎴愶紱鏃舵湡浜祫鏍规嵁绾﹀畾鏈熼檺锛屼粠鍑犲ぉ鍒版暟鏈堜笉绛夈€?/p>
+
+                            </div>
+                        </details>
+                        <details class="faq-item">
+                            <summary class="faq-question">浠€涔堟槸浜祫涓氬姟锛?/summary>
+
+                            <div class="faq-answer">
+                                <p>浜祫涓氬姟鏀惰垂涓昏鏍规嵁璧勯噾瑙勬ā銆佷寒璧勬椂闀裤€佹搷浣滃鏉傜▼搴︾瓑鍥犵礌缁煎悎纭畾銆傚叿浣撹垂鐢ㄩ渶瑕佹牴鎹疄闄呮儏鍐佃瘎浼帮紝娆㈣繋鏉ョ數鍜ㄨ鑾峰彇璇︾粏鎶ヤ环銆?/p>
+
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                
+                <div class="faq-category" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3 class="faq-category-title"><i class="fas fa-exchange-alt" aria-hidden="true"></i> 杩囨ˉ璧勯噾</h3>
+                    <div class="faq-list">
+                        <details class="faq-item">
+                            <summary class="faq-question">杩囨ˉ璧勯噾閫傜敤浜庡摢浜涘満鏅紵</summary>
+                            <div class="faq-answer">
+                                <p>杩囨ˉ璧勯噾涓昏閫傜敤浜庯細閾惰璐锋缁捶銆佽偂绁ㄨВ璐ㄦ娂銆佸嫙闆嗚处鎴峰綊杩樸€佷紒涓氬苟璐€侀」鐩繚璇侀噾銆佽祫閲戝懆杞瓑鐭湡璧勯噾闇€姹傚満鏅€?/p>
+
+                            </div>
+                        </details>
+                        <details class="faq-item">
+                            <summary class="faq-question">鐢宠杩囨ˉ璧勯噾闇€瑕佷粈涔堟潯浠讹紵</summary>
+                            <div class="faq-answer">
+                                <p>鐢宠杩囨ˉ璧勯噾閫氬父闇€瑕佹彁渚涳細浼佷笟钀ヤ笟鎵х収銆佽储鍔℃姤琛ㄣ€佽祫閲戠敤閫旇鏄庛€佽繕娆炬潵婧愯瘉鏄庛€佹姷鎶兼媴淇濊祫鏂欑瓑銆傚叿浣撹祫鏂欐竻鍗曟牴鎹笟鍔＄被鍨嬫湁鎵€涓嶅悓銆?/p>
+
+                            </div>
+                        </details>
+                        <details class="faq-item">
+                            <summary class="faq-question">浠€涔堟槸浜祫涓氬姟锛?/summary>
+
+                            <div class="faq-answer">
+                                <p>璧勬枡榻愬叏涓斿鏍搁€氳繃鍚庯紝鏈€蹇彲鍦ㄥ綋鏃ユ斁娆俱€備竴鑸儏鍐典笅锛屼粠鐢宠鍒版斁娆鹃渶瑕?-3涓伐浣滄棩銆?-3涓伐浣滄棩銆?/p>
+
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                
+                <div class="faq-category" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3 class="faq-category-title"><i class="fas fa-university" aria-hidden="true"></i> 鎽嗚处涓氬姟</h3>
+                    <div class="faq-list">                        
+           <details class="faq-item">
+                            <summary class="faq-question">鎽嗚处鍜屼寒璧勬湁浠€涔堝尯鍒紵</summary>
+                            <div class="faq-answer">
+                                <p>鎽嗚处閫氬父鎸囧皢璧勯噾瀛樺叆瀹㈡埛璐︽埛骞朵繚鎸佷竴瀹氭椂鏈燂紝鐢ㄤ簬璐㈠姟鎶ヨ〃浼樺寲銆佸璁°€佸勾妫€绛夛紱浜祫鍒欎晶閲嶄簬鍚戠涓夋柟灞曠ず璧勯噾瀹炲姏銆備袱鑰呭湪鎿嶄綔鏂瑰紡鍜屽簲鐢ㄥ満鏅笂鏈夋墍涓嶅悓銆?/p>
+
+                            </div>
+                        </details><details class="faq-item">
+                            <summary class="faq-question">鎽嗚处涓氬姟瀹夊叏鍚楋紵</summary>
+                            <div class="faq-answer">
+                                <p>鎴戜滑涓ユ牸鎸夌収娉曞緥娉曡鍜岀洃绠¤姹傚紑灞曚笟鍔★紝鎵€鏈夋搷浣滃潎鏈夋瑙勫悎鍚屼繚闅滐紝璧勯噾瀹夊叏鏈変繚闅溿€傚悓鏃讹紝瀹㈡埛淇℃伅涓ユ牸淇濆瘑銆?/p>
+
+                            </div>
+                        </details></div>
+                </div>
+                
+                <div class="faq-category" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <h3 class="faq-category-title"><i class="fas fa-file-invoice-dollar" aria-hidden="true"></i> 搴旀敹璐︽铻嶈祫</h3>
+                    <div class="faq-list">
+                        <details class="faq-item">
+                            <summary class="faq-question">浠€涔堟牱鐨勫簲鏀惰处娆惧彲浠ヨ瀺璧勶紵</summary>
+                            <div class="faq-answer">
+                                <p>涓€鑸潵璇达紝涓庢牳蹇冧紒涓氾紙鍥戒紒銆佸ぎ浼併€佷笂甯傚叕鍙哥瓑锛変骇鐢熺殑搴旀敹璐︽鏇村鏄撹幏寰楄瀺璧勩€傛垜浠帴鍙椾簯淇°€佸晢绁ㄧ瓑澶氱褰㈠紡鐨勫簲鏀惰处娆捐瀺璧勭敵璇枫€?/p>
+
+                            </div>
+                        </details>
+                        <details class="faq-item">
+                            <summary class="faq-question">浠€涔堟槸浜祫涓氬姟锛?/summary>
+
+                            <div class="faq-answer">
+                                <p>铻嶈祫棰濆害涓昏鏍规嵁搴旀敹璐︽閲戦銆佷粯娆炬柟淇＄敤绛夌骇銆佽处鏈熺瓑鍥犵礌缁煎悎璇勪及銆備竴鑸彲铻嶈祫閲戦涓哄簲鏀惰处娆鹃潰棰濈殑70%-95%銆?/p>
+
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- 鍙充晶杈规诞鍔ㄧ數璇濇寜?-->
+    
+
+    <!-- 椤佃剼 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p class="footer-copyright">漏 2024 Yao璧勯噾?鐗堟潈鎵€鏈夈€?/p>
+                <p class="footer-disclaimer">鎶曡祫鏈夐闄╋紝鐞嗚储闇€璋ㄦ厧銆傛湰缃戠珯鍐呭浠呬緵鍙傝€冿紝涓嶆瀯鎴愭姇璧勫缓璁€?/p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    
+    <!-- CMS Data Integration -->
+    <script src="../admin/assets/cms.js"></script>
+    
+    <!-- 鎴愬姛妗堜緥灞曠ず鑴氭湰 -->
+    <script>
+        // 鎴愬姛妗堜緥灞曠ず妯″潡
+        (function() {
+            let casesData = [];
+            let currentPage = 1;
+            const itemsPerPage = 8;
+            
+            // 浠庡悗绔疉PI鑾峰彇妗堜緥鏁版嵁
+            async function fetchCases() {
+                try {
+                    console.log('[棣栭〉妗堜緥] 寮€濮嬭幏鍙栨渚嬫暟鎹?..');
+
+                    // 浣跨敤姝ｇ‘鐨凙PI璺緞锛屾坊鍔犳椂闂存埑闃叉缂撳瓨
+                    const response = await fetch('../api/cases.php?t=' + Date.now(), {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Cache-Control': 'no-cache'
+                        }
+                    });
+                    
+                    // 妫€鏌ュ搷搴旂被?                    const contentType = response.headers.get('content-type');
+                    if (!contentType || !contentType.includes('application/json')) {
+                        const text = await response.text();
+                        console.error('[棣栭〉妗堜緥] API杩斿洖闈濲SON鏍煎紡:', text.substring(0, 200));
+                        showEmptyState();
+                        return;
+                    }
+                    
+                    const result = await response.json();
+                    console.log('[棣栭〉妗堜緥] API杩斿洖:', result);
+                    
+                    if (result.success && result.cases && result.cases.length > 0) {
+                        // API杩斿洖鐨勬槸 cases 瀛楁锛屼笉鏄痙ata 瀛楁
+
+                        // 鎸塈D鍘婚噸锛岄槻姝㈤噸澶嶆樉?                        const seenIds = new Set();
+                        const uniqueCases = result.cases.filter(c => {
+                            if (seenIds.has(c.id)) {
+                                console.log('[棣栭〉妗堜緥] 鍘婚噸璺宠繃閲嶅妗堜緥:', c.id, c.title);
+                                return false;
+                            }
+                            seenIds.add(c.id);
+                            return true;
+                        });
+                        
+                        casesData = uniqueCases.map(c => ({
+                            id: c.id,
+                            title: c.title,
+                            summary: c.summary || '鏆傛棤绠€浠?,
+
+                            amount: c.amount || '淇濆瘑',
+                            cover_image: c.coverImage ? '/hongdu/' + c.coverImage : (c.image ? '/hongdu/' + c.image : '../images/case-default.svg')
+                        }));
+                    console.log('[棣栭〉妗堜緥] 寮€濮嬭幏鍙栨渚嬫暟鎹?..');
+
+                        renderCases();
+                        updatePagination();
+                    } else {
+                        console.log('[棣栭〉妗堜緥] 鏃犳渚嬫暟鎹垨API杩斿洖澶辫触');
+                        showEmptyState();
+                    }
+                } catch (error) {
+                    console.error('[棣栭〉妗堜緥] 鑾峰彇妗堜緥鏁版嵁澶辫触:', error);
+                    showEmptyState();
+                }
+            }
+            
+            // 娓叉煋妗堜緥鍗＄墖
+            function renderCases() {
+                const grid = document.getElementById('casesShowcaseGrid');
+                if (!grid) return;
+                
+                const startIndex = (currentPage - 1) * itemsPerPage;
+                const endIndex = startIndex + itemsPerPage;
+                const pageData = casesData.slice(startIndex, endIndex);
+                
+                if (pageData.length === 0) {
+                    showEmptyState();
+                    return;
+                }
+                
+                grid.innerHTML = pageData.map(item => `
+                    <article class="case-card-enhanced" data-id="${item.id}">
+                        <div class="case-card-image" onclick="openLightbox('${item.cover_image}')">
+                            <img src="${item.cover_image}"
+                                 alt="${item.title}"
+                                 onerror="this.src='../images/case-default.svg'">
+                        </div>
+                        <div class="case-card-content">
+                            <h3 class="case-card-title">${item.title}</h3>
+                            <p class="case-card-summary">${item.summary}</p>
+                            <div class="case-card-meta">
+                                <div class="case-card-amount">
+                                    <span class="case-card-amount-label">鍑鸿祫閲戦</span>
+                                    <span class="case-card-amount-value">${item.amount}</span>
+                                </div>
+                                <button class="btn-view-detail" style="pointer-events: none; opacity: 0.6; cursor: default;">鏌ョ湅璇︽儏</button>
+                            </div>
+                        </div>
+                    </article>
+                `).join('');
+            }
+            
+            // 鏄剧ず绌虹姸?            function showEmptyState() {
+                const grid = document.getElementById('casesShowcaseGrid');
+                if (grid) {
+                    grid.innerHTML = `
+                        <div class="cases-showcase-empty">
+                            <i class="fas fa-folder-open"></i>
+                            <p class="cases-showcase-empty-text">鏆傛棤鎴愬姛妗堜緥锛屾暚璇锋湡寰?/p>
+
+                        </div>
+                    `;
+                }
+            }
+            
+            // 鏇存柊鍒嗛〉?            function updatePagination() {
+                const totalPages = Math.ceil(casesData.length / itemsPerPage);
+                const prevBtn = document.getElementById('prevPageBtn');
+                const nextBtn = document.getElementById('nextPageBtn');
+                const pageInfo = document.getElementById('paginationInfo');
+                
+                if (prevBtn) prevBtn.disabled = currentPage <= 1;
+                if (nextBtn) nextBtn.disabled = currentPage >= totalPages || totalPages === 0;
+                if (pageInfo) pageInfo.textContent = `绗?{currentPage} 椤?/ 鍏?{totalPages || 1} 椤礰;
+
+                
+                // 濡傛灉鎬婚〉鏁颁负1锛岄殣钘忓垎?                const paginationContainer = document.getElementById('casesShowcasePagination');
+                if (paginationContainer) {
+                    paginationContainer.style.display = totalPages <= 1 ? 'none' : 'flex';
+                }
+            }
+            
+            // 鍒囨崲椤甸潰
+            window.changePage = function(direction) {
+                const totalPages = Math.ceil(casesData.length / itemsPerPage);
+                const newPage = currentPage + direction;
+                
+                if (newPage >= 1 && newPage <= totalPages) {
+                    currentPage = newPage;
+                    renderCases();
+                    updatePagination();
+                    // 婊氬姩鍒版渚嬪尯鍩熼《?                    document.getElementById('casesShowcase').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            };
+            
+            // 鎵撳紑鍥剧墖棰勮
+            window.openLightbox = function(imageSrc) {
+                const lightbox = document.getElementById('imageLightbox');
+                const lightboxImage = document.getElementById('lightboxImage');
+                lightboxImage.src = imageSrc;
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // 绂佹鑳屾櫙婊氬姩
+            };
+            
+            // 鍏抽棴鍥剧墖棰勮
+            window.closeLightbox = function() {
+                const lightbox = document.getElementById('imageLightbox');
+                lightbox.style.display = 'none';
+                document.body.style.overflow = ''; // 鎭㈠鑳屾櫙婊氬姩
+            };
+            
+            // 鐐瑰嚮鑳屾櫙鍏抽棴
+            document.addEventListener('click', function(e) {
+                const lightbox = document.getElementById('imageLightbox');
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+            
+            // ESC閿叧闂?           document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                }
+            });
+            
+            // 椤甸潰鍔犺浇瀹屾垚鍚庡垵濮嬪寲
+            document.addEventListener('DOMContentLoaded', fetchCases);
+        })();
+    </script>
+    
+    <!-- 鍥剧墖棰勮寮圭獥 (Lightbox) -->
+    <div id="imageLightbox" class="lightbox-overlay" style="display: none;">
+        <div class="lightbox-container">
+            <button class="lightbox-close" onclick="closeLightbox()" aria-label="鍏抽棴棰勮">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="lightboxImage" src="" alt="澶у浘棰勮">
+        </div>
+    </div>
+
+    <!-- Lightbox 鏍峰紡 -->
+    <style>
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .lightbox-container {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .lightbox-container img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+        
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        
+        /* 鐐瑰嚮鍥剧墖鐨勬寚閽堟牱?*/
+        .case-card-image {
+            cursor: pointer;
+        }
+        
+        .case-card-image img {
+            transition: transform 0.3s ease;
+        }
+        
+        .case-card-image:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+
+    <!-- 璁块棶缁熻浠ｇ爜 -->
+    <script>
+        // 缃戠珯璁块棶缁熻
+        (function() {
+            // 闃叉閲嶅璁板綍?            if (window.statsTracked) return;
+            window.statsTracked = true;
+            
+            // 鑾峰彇褰撳墠椤甸潰URL
+            const pageUrl = window.location.href;
+            
+            // 鑾峰彇鏉ユ簮椤甸潰
+            const referer = document.referrer || '';
+            
+            // 鍙戦€佽闂粺璁¤?            function sendStats() {
+                const statsData = {
+                    action: 'record',
+                    page_url: pageUrl,
+                    referer: referer
+                };
+                
+                // 浣跨敤fetch鍙戦€丳OST璇锋眰
+                fetch('admin/api/stats.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams(statsData).toString()
+                }).then(response => response.json())
+                  .then(data => {
+                      console.log('[Stats] 璁胯闂粺璁″凡璁板綍?', data);
+
+                  }).catch(error => {
+                      console.log('[Stats] 缁熻璁板綍澶辫触:', error);
+                  });
+            }
+            
+            // 椤甸潰鍔犺浇瀹屾垚鍚庡彂閫佺粺璁?           if (document.readyState === 'complete') {
+                sendStats();
+            } else {
+                window.addEventListener('load', sendStats);
+            }
+        })();
+    </script>
+
+    <!-- CMS Editor -->
+    <script>
+        // 妫€鏌ユ槸鍚﹂渶瑕佸姞杞界紪杈戝櫒
+        (function() {
+            console.log('[CMS] 鍒濆鍖栨鏌?..');
+
+            
+            const urlParams = new URLSearchParams(window.location.search);
+            const isEditMode = urlParams.get('edit') === 'true';
+            const isLoggedIn = localStorage.getItem('cms_logged_in') === 'true';
+            
+            console.log('[CMS] 缂栬緫妯″紡:', isEditMode);
+            console.log('[CMS] 鍒濆鍖栨鏌?..');
+
+            console.log('[CMS] localStorage cms_logged_in:', localStorage.getItem('cms_logged_in'));
+            
+            if (isEditMode && isLoggedIn) {
+                console.log('[CMS] 寮€濮嬪姞杞界紪杈戝櫒...');
+                
+                // 鍔犺浇缂栬緫鍣ㄦ牱?                const editorCss = document.createElement('link');
+                editorCss.rel = 'stylesheet';
+                editorCss.href = 'admin/editor.css';
+                editorCss.onerror = function() {
+                        console.error('[棣栭〉妗堜緥] API杩斿洖闈濲SON鏍煎紡:', text.substring(0, 200));
+
+                    alert('CMS缂栬緫鍣ㄦ牱寮忓姞杞藉け璐ワ紝璇锋鏌ユ枃浠惰矾寰?);
+
+                };
+                document.head.appendChild(editorCss);
+                console.log('[CMS] 鏍峰紡琛ㄥ凡鍔犺浇');
+                
+                // 鍔犺浇缂栬緫鍣ㄨ剼?                const editorScript = document.createElement('script');
+                editorScript.src = 'admin/editor.js';
+                editorScript.onload = function() {
+            console.log('[CMS] 鍒濆鍖栨鏌?..');
+
+                };
+                editorScript.onerror = function() {
+                        console.error('[棣栭〉妗堜緥] API杩斿洖闈濲SON鏍煎紡:', text.substring(0, 200));
+
+                    alert('CMS缂栬緫鍣ㄨ剼鏈姞杞藉け璐ワ紝璇锋鏌ユ枃浠惰矾寰?);
+
+                };
+                document.body.appendChild(editorScript);
+            } else if (isEditMode && !isLoggedIn) {
+            console.log('[CMS] 鍒濆鍖栨鏌?..');
+
+                // 鏈櫥褰曪紝閲嶅畾鍚戝埌鐧诲綍?                window.location.href = 'admin/login.html?redirect=' + encodeURIComponent(window.location.href);
+            } else {
+                console.log('[CMS] 涓嶅湪缂栬緫妯″紡鎴栨湭鐧诲綍');
+            }
+        })();
+    </script>
+    <script>
+        // 鍒囨崲鐢佃瘽鍙风爜鏄剧ず锛氶殣钘忔寜閽紝鍘熷湴鏄剧ず鍙风爜
+        function togglePhoneDisplay() {
+            const btn = document.getElementById('consultNowBtn');
+            const phone = document.getElementById('phoneDisplay');
+            if (btn && phone) {
+                btn.style.display = 'none';
+                phone.style.display = 'inline-flex';
+            }
+        }
+
+        // 鐐瑰嚮椤甸潰绌虹櫧澶勶細鎭㈠鎸夐挳锛岄殣钘忓彿鐮?
+        document.addEventListener('click', function(e) {
+            const btn = document.getElementById('consultNowBtn');
+            const phone = document.getElementById('phoneDisplay');
+            if (btn && phone && phone.style.display !== 'none') {
+                // 鐐瑰嚮鐨勪笉鏄寜閽強鍏跺瓙鍏冪礌锛屼篃涓嶆槸鍙风爜鍙婂叾瀛愬厓绱犳椂闅愯棌鍙风爜
+                if (e.target !== btn && !btn.contains(e.target) &&
+                    e.target !== phone && !phone.contains(e.target)) {
+                    phone.style.display = 'none';
+                    btn.style.display = 'inline-flex';
+                }
+            }
+        });
+    </script>
+
+
+
+
+</body></html>

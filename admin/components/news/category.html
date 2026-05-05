@@ -189,7 +189,7 @@
         let currentCategoryId = null;
 
         // 本地缓存版本号 - 修改此值将强制清除所有旧缓存
-        const CACHE_VERSION = '2';
+        const CACHE_VERSION = '4';
 
         // 初始化
         document.addEventListener('DOMContentLoaded', function() {
@@ -197,12 +197,9 @@
                 window.location.href = '../login.html';
                 return;
             }
-            // 检查缓存版本，如果版本不一致则清除旧缓存
-            if (localStorage.getItem('cms_cache_version') !== CACHE_VERSION) {
-                console.log('缓存版本更新，清除旧分类缓存');
-                localStorage.removeItem('cms_categories');
-                localStorage.setItem('cms_cache_version', CACHE_VERSION);
-            }
+            // 每次打开页面都清除分类缓存，强制从API加载最新数据
+            localStorage.removeItem('cms_categories');
+            localStorage.setItem('cms_category_cache_version', CACHE_VERSION);
             loadCategories();
         });
 
@@ -210,11 +207,14 @@
         async function loadCategories() {
             try {
                 const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 3000);
+                // 增加超时时间避免网络波动导致误判
+                const timeoutId = setTimeout(() => controller.abort(), 5000);
 
-                const response = await fetch('../../api/news/categories.php', {
+                // 强制禁用缓存
+                const response = await fetch('../../api/news/categories.php?_t=' + Date.now(), {
                     signal: controller.signal,
-                    cache: 'no-cache'
+                    cache: 'no-store',
+                    headers: { 'Cache-Control': 'no-cache' }
                 });
 
                 clearTimeout(timeoutId);
@@ -237,24 +237,55 @@
                     });
 
                     renderCategories();
-                    // 缓存到本地存储
-                    localStorage.setItem('cms_categories', JSON.stringify(categories));
                     console.log('从API加载分类成功，共', categories.length, '个分类');
                     return;
+                } else {
+                    // API返回失败但无异常，使用空分类（不创建默认分类）
+                    console.warn('API返回分类数据无效:', result);
                 }
             } catch (error) {
                 console.error('API加载分类失败:', error);
             }
 
-            // API失败时，清空localStorage并使用默认分类
-            localStorage.removeItem('cms_categories');
-            categories = [
-                { id: 1, name: '行业资讯', sort_order: 0 },
-                { id: 2, name: '公司动态', sort_order: 1 }
-            ];
+            // API失败时尝试备用路径
+            try {
+                const controller2 = new AbortController();
+                const timeoutId2 = setTimeout(() => controller2.abort(), 5000);
+                
+                // 备用路径：直接从admin/api/news/加载
+                const response2 = await fetch('../api/news/categories.php?_t=' + Date.now(), {
+                    signal: controller2.signal,
+                    cache: 'no-store'
+                });
+                
+                clearTimeout(timeoutId2);
+                const result2 = await response2.json();
+                
+                if (result2.success && Array.isArray(result2.data) && result2.data.length > 0) {
+                    categories = result2.data.map(cat => ({
+                        ...cat,
+                        id: parseInt(cat.id, 10),
+                        sort_order: parseInt(cat.sort_order, 10)
+                    }));
+                    const seenIds = new Set();
+                    categories = categories.filter(cat => {
+                        if (seenIds.has(cat.id)) return false;
+                        seenIds.add(cat.id);
+                        return true;
+                    });
+                    renderCategories();
+                    console.log('从备用路径加载分类成功，共', categories.length, '个分类');
+                    return;
+                }
+            } catch (error2) {
+                console.error('备用路径加载也失败:', error2);
+            }
+
+            // 【关键修复】API失败时空分类显示，绝不自动创建默认分类
+            // 默认分类不应由前端自动创建，应由管理员手动添加
+            categories = [];
             renderCategories();
-            localStorage.setItem('cms_categories', JSON.stringify(categories));
-            console.log('使用默认分类');
+            console.log('API加载分类失败，显示空列表');
         }
 
         // 渲染分类列表

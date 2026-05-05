@@ -1,4 +1,4 @@
-﻿/* ========================================
+/* ========================================
    鎭掍俊璧勬湰瀹樼綉 - 鏍峰紡琛?
    璁捐鐞嗗康锛氫笓涓氶噾铻嶃€佹瀬绠€楂樼銆佸搷搴斿紡
    鐗堟湰锛歷2.0 鍏ㄩ潰浼樺寲鐗?
@@ -565,7 +565,7 @@ input, textarea, select {
 /* Stats */
 .stats {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     max-width: 900px;
     width: 100%;

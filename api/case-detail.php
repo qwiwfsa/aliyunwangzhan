@@ -1,14 +1,12 @@
 <?php
 /**
- * 前端案例详情API
- * 供前端页面读取单个案例详情
+ * 桌面端 - 案例详情API
+ * 从MySQL读取单个案例
  */
 
-// 开启错误报告（开发环境）
 error_reporting(E_ALL);
 ini_set('display_errors', 0);
 
-// 设置响应头
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, OPTIONS');
@@ -17,79 +15,82 @@ header('Cache-Control: no-cache, no-store, must-revalidate');
 header('Pragma: no-cache');
 header('Expires: 0');
 
-// 错误处理
-function handleError($errno, $errstr, $errfile, $errline) {
-    error_log("[case-detail.php] Error [$errno]: $errstr in $errfile on line $errline");
-    http_response_code(500);
-    echo json_encode(['success' => false, 'message' => '服务器内部错误']);
-    exit;
-}
-set_error_handler('handleError');
+require_once __DIR__ . '/config.php';
 
-try {
-
-// 处理预检请求
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit;
 }
 
-// 只允许GET请求
 if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     http_response_code(405);
     echo json_encode(['success' => false, 'message' => '方法不允许']);
     exit;
 }
 
-// 获取案例ID
-$caseId = isset($_GET['id']) ? $_GET['id'] : '';
+$caseId = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
-if (empty($caseId)) {
+if (!$caseId) {
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => '缺少案例ID']);
     exit;
 }
 
-// 清理案例ID，防止目录遍历
-$caseId = preg_replace('/[^a-zA-Z0-9_-]/', '', $caseId);
-
-// 数据目录 - 根目录下的data文件夹
-$dataDir = __DIR__ . '/../data/cases/';
-$dataFile = $dataDir . $caseId . '.json';
-
-// 检查文件是否存在
-if (!file_exists($dataFile)) {
-    http_response_code(404);
-    echo json_encode(['success' => false, 'message' => '案例不存在']);
-    exit;
-}
-
-// 读取案例数据
-$json = file_get_contents($dataFile);
-$caseData = json_decode($json, true);
-
-if (!$caseData) {
-    http_response_code(500);
-    echo json_encode(['success' => false, 'message' => '案例数据解析失败']);
-    exit;
-}
-
-// 检查案例是否已发布
-if (!isset($caseData['status']) || $caseData['status'] !== 'published') {
-    http_response_code(403);
-    echo json_encode(['success' => false, 'message' => '案例未发布']);
-    exit;
-}
-
-echo json_encode([
-    'success' => true,
-    'exists' => true,
-    'case' => $caseData
-]);
-
+try {
+    $db = getDB();
+    
+    // 检查cases表是否存在
+    $tableCheck = $db->query("SHOW TABLES LIKE 'cases'");
+    if ($tableCheck->num_rows === 0) {
+        echo json_encode([
+            'success' => false,
+            'exists' => false,
+            'message' => 'cases表不存在'
+        ], JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+    
+    $stmt = $db->prepare("SELECT id, title, company, amount, period, category, description, image, content, status, sort_order, created_at, updated_at FROM cases WHERE id = ? AND status = 1 LIMIT 1");
+    $stmt->bind_param('i', $caseId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    
+    if (!$row) {
+        http_response_code(404);
+        echo json_encode(['success' => false, 'exists' => false, 'message' => '案例不存在']);
+        exit;
+    }
+    
+    $contentData = json_decode($row['content'], true) ?: [];
+    
+    $caseData = [
+        'id' => (string)$row['id'],
+        'title' => $row['title'],
+        'type' => $row['category'],
+        'city' => $row['company'],
+        'amount' => $row['amount'],
+        'period' => $row['period'],
+        'summary' => $row['description'],
+        'image' => $row['image'],
+        'coverImage' => $contentData['coverImage'] ?? $row['image'],
+        'images' => $contentData['images'] ?? [],
+        'detail' => $contentData['detail'] ?? $row['description'],
+        'highlights' => $contentData['highlights'] ?? [],
+        'process' => $contentData['process'] ?? [],
+        'hasVideo' => $contentData['hasVideo'] ?? false,
+        'video' => $contentData['video'] ?? '',
+        'status' => 'published',
+        'lastModified' => $row['updated_at']
+    ];
+    
+    echo json_encode([
+        'success' => true,
+        'exists' => true,
+        'case' => $caseData
+    ], JSON_UNESCAPED_UNICODE);
+    
 } catch (Exception $e) {
-    error_log('[case-detail.php] Exception: ' . $e->getMessage());
     http_response_code(500);
     echo json_encode(['success' => false, 'message' => '服务器错误: ' . $e->getMessage()]);
-    exit;
 }

@@ -91,12 +91,5 @@ function initDatabase($conn) {
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;";
     $conn->query($sql);
     
-    // 插入默认分类
-    $defaultCategories = ['行业资讯', '公司动态', '金融知识', '政策法规'];
-    $catStmt = $conn->prepare("INSERT IGNORE INTO cms_categories (name, sort_order) VALUES (?, ?)");
-    foreach ($defaultCategories as $index => $cat) {
-        $catStmt->bind_param("si", $cat, $index);
-        $catStmt->execute();
-    }
-    $catStmt->close();
+    // 注意：不再自动插入默认分类，分类完全由用户管理
 }

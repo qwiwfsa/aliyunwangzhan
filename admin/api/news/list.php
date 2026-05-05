@@ -9,7 +9,9 @@ require_once __DIR__ . '/../config.php';
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, OPTIONS');
-header('Cache-Control: public, max-age=60'); // 添加缓存头
+header('Cache-Control: no-cache, no-store, must-revalidate');
+header('Pragma: no-cache');
+header('Expires: 0');
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
@@ -43,7 +45,7 @@ try {
 }
 
 // 构建查询
-$where = ["1=1"];
+$where = ["status != 'deleted'"]; // 默认排除已删除的文章
 $params = [];
 $types = "";
 
@@ -66,6 +68,11 @@ if ($status === 'published') {
     $where[] = "status = 'published'";
 } elseif ($status === 'draft') {
     $where[] = "status = 'draft'";
+} elseif ($status === 'deleted') {
+    // 明确请求已删除文章时才显示
+    $where = ["status = 'deleted'"];
+    $params = [];
+    $types = "";
 }
 
 $whereClause = implode(" AND ", $where);
@@ -118,6 +125,8 @@ while ($row = $result->fetch_assoc()) {
     if ($row['summary'] && strlen($row['summary']) > 200) {
         $row['summary'] = mb_substr($row['summary'], 0, 200) . '...';
     }
+    // 修复封面图片路径
+    $row['cover_image'] = fixImagePath($row['cover_image']);
     $articles[] = $row;
 }
 
@@ -137,10 +146,17 @@ echo json_encode([
 
 /**
  * 修复图片路径
+ * 封面图存储在 uploads/ 目录下
+ * 从 admin/api/news/ 访问 uploads 需要 ../../../uploads/
  */
 function fixImagePath($path) {
     if (empty($path)) return '';
     if (strpos($path, 'http') === 0) return $path;
-    if (strpos($path, '/') === 0) return $path;
-    return '../../images/' . $path;
+    if (strpos($path, '/') === 0) return $path; // 已经是绝对路径
+    // 数据库可能存的是 uploads/xxx.jpg，直接加/变成绝对路径
+    if (strpos($path, 'uploads/') === 0) {
+        return '/' . $path;
+    }
+    // 纯文件名，补上 uploads/ 目录
+    return '/uploads/' . ltrim($path, '/');
 }

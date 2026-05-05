@@ -114,6 +114,11 @@ echo json_encode([
 function fixImagePath($path) {
     if (empty($path)) return '';
     if (strpos($path, 'http') === 0) return $path;
-    if (strpos($path, '/') === 0) return $path;
-    return '../../images/' . $path;
+    if (strpos($path, '/') === 0) return $path; // 已经是绝对路径
+    // 数据库可能存的是 uploads/xxx.jpg，直接加/变成绝对路径
+    if (strpos($path, 'uploads/') === 0) {
+        return '/' . $path;
+    }
+    // 纯文件名，补上 uploads/ 目录
+    return '/uploads/' . ltrim($path, '/');
 }

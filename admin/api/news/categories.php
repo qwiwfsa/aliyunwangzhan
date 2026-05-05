@@ -31,7 +31,10 @@ header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
-header('Cache-Control: public, max-age=300'); // 分类缓存5分钟
+header('Cache-Control: no-cache, no-store, must-revalidate');
+header('Pragma: no-cache');
+header('Expires: 0');
+// 分类缓存：禁止浏览器缓存，确保删除后即时生效
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
@@ -155,19 +158,46 @@ switch ($method) {
             break;
         }
         
-        // 检查分类下是否有文章
-        $checkStmt = $conn->prepare("SELECT COUNT(*) as count FROM cms_articles WHERE category_id = ? AND status != 'deleted'");
-        $checkStmt->bind_param("i", $id);
-        $checkStmt->execute();
-        $count = $checkStmt->get_result()->fetch_assoc()['count'];
-        $checkStmt->close();
+        // 先检查分类是否存在
+        $checkExists = $conn->prepare("SELECT id FROM cms_categories WHERE id = ?");
+        $checkExists->bind_param("i", $id);
+        $checkExists->execute();
+        $exists = $checkExists->get_result()->fetch_assoc();
+        $checkExists->close();
         
-        if ($count > 0) {
-            http_response_code(400);
-            echo json_encode(['success' => false, 'message' => '该分类下还有文章，无法删除']);
+        if (!$exists) {
+            http_response_code(404);
+            echo json_encode(['success' => false, 'message' => '分类不存在']);
             break;
         }
         
+        // 检查分类下是否有文章（含所有状态）
+        $checkStmt = $conn->prepare("SELECT COUNT(*) as count, 
+            SUM(CASE WHEN status != 'deleted' THEN 1 ELSE 0 END) as active_count 
+            FROM cms_articles WHERE category_id = ?");
+        $checkStmt->bind_param("i", $id);
+        $checkStmt->execute();
+        $checkResult = $checkStmt->get_result()->fetch_assoc();
+        $totalCount = $checkResult['count'];
+        $activeCount = $checkResult['active_count'];
+        $checkStmt->close();
+        
+        // 如果有非删除状态的文章，提示用户
+        if ($activeCount > 0) {
+            http_response_code(400);
+            echo json_encode(['success' => false, 'message' => "该分类下还有 {$activeCount} 篇文章，无法删除。请先将文章移动到其他分类。"]);
+            break;
+        }
+        
+        // 如果有已删除的文章，先将其 category_id 置为 0
+        if ($totalCount > 0) {
+            $resetStmt = $conn->prepare("UPDATE cms_articles SET category_id = 0 WHERE category_id = ?");
+            $resetStmt->bind_param("i", $id);
+            $resetStmt->execute();
+            $resetStmt->close();
+        }
+        
+        // 执行删除
         $stmt = $conn->prepare("DELETE FROM cms_categories WHERE id = ?");
         $stmt->bind_param("i", $id);
         

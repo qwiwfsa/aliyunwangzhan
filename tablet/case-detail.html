@@ -369,7 +369,7 @@
         // 案例数据 - 将从CMS数据源动态加载
         let casesData = [];
         // 全局基础路径（如 /hongdu/）
-        const basePath = '../';
+        const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
 
         // 获取类型样式类名
         function getTypeClass(type) {

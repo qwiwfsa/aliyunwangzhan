@@ -32,8 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// 配置
-$uploadDir = __DIR__ . '/../../cms/uploads/';
+// 配置 - 统一使用 uploads/ 目录
+$uploadDir = __DIR__ . '/../../uploads/';
 $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
 $maxFileSize = 5 * 1024 * 1024; // 5MB
 
@@ -95,10 +95,11 @@ $targetPath = $uploadDir . $filename;
 
 // 移动上传的文件
 if (move_uploaded_file($file['tmp_name'], $targetPath)) {
-    // 生成URL
+    // 生成URL - 统一使用 uploads/ 目录
     $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
     $host = $_SERVER['HTTP_HOST'];
-    $url = $protocol . '://' . $host . '/cms/uploads/' . $filename;
+    $baseDir = dirname(dirname(dirname($_SERVER['SCRIPT_NAME'])));
+    $url = $baseDir . '/uploads/' . $filename;
     
     echo json_encode([
         'success' => true,

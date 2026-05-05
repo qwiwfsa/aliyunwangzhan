@@ -12,24 +12,25 @@
     <script>
     (function(){
         var xhr=new XMLHttpRequest();
-        xhr.open('GET','admin/api/fetch-logo.php?t='+Date.now(),true);
+        xhr.open('GET','../admin/api/fetch-logo.php?t='+Date.now(),true);
         xhr.onload=function(){
             if(xhr.status>=200&&xhr.status<400){
                 try{
                     var resp=JSON.parse(xhr.responseText);
                     if(resp.code===0&&resp.data){
+                        function fixSubDir(p){return p&&p.indexOf('http')!==0&&p.indexOf('/')!==0?'../'+p:p;}
                         if(resp.data.header_logo){
                             var hl=document.querySelector('.logo img');
-                            if(hl)hl.src=resp.data.header_logo;
+                            if(hl)hl.src=fixSubDir(resp.data.header_logo);
                         }
                         if(resp.data.footer_logo){
                             var fl=document.querySelector('.footer-logo img');
-                            if(fl)fl.src=resp.data.footer_logo;
+                            if(fl)fl.src=fixSubDir(resp.data.footer_logo);
                         }
                         if(resp.data.favicon){
                             var lk=document.querySelector('link[rel="icon"]')||document.querySelector('link[rel="shortcut icon"]');
                             if(!lk){lk=document.createElement('link');lk.rel='icon';document.head.appendChild(lk);}
-                            lk.href=resp.data.favicon;
+                            lk.href=fixSubDir(resp.data.favicon);
                         }
                     }
                 }catch(e){}
@@ -42,7 +43,7 @@
 (function() {
     var pageName = window.location.pathname.split('/').pop() || 'index.html';
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'admin/api/fetch-seo.php?page=' + pageName + '&t=' + Date.now(), true);
+    xhr.open('GET', '../admin/api/fetch-seo.php?page=' + pageName + '&t=' + Date.now(), true);
     xhr.onload = function() {
         if (xhr.status === 200) {
             try {
@@ -69,7 +70,7 @@
 (function() {
     var pageName = window.location.pathname.split('/').pop() || 'index.html';
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'admin/api/fetch-seo.php?page=' + pageName + '&t=' + Date.now(), true);
+    xhr.open('GET', '../admin/api/fetch-seo.php?page=' + pageName + '&t=' + Date.now(), true);
     xhr.onload = function() {
         if (xhr.status === 200) {
             try {
@@ -92,7 +93,7 @@
     xhr.send();
 })();
 </script>
-<link rel="icon" href="./uploads/logo/logo_20260504_045101_69f80995372b0.png"></head>
+<link rel="icon" href="../uploads/logo/logo_20260504_045101_69f80995372b0.png"></head>
 <body>
     <a href="#main-content" class="skip-link">跳转到主要内容</a>
 
@@ -371,15 +372,6 @@
             </div>
         </section>
     </main>
-
-    <!-- 右侧边浮动电话按钮 -->
-    <div class="chat-widget" id="chatWidget" aria-label="联系电话">
-        <button class="chat-widget-btn" id="chatWidgetBtn" aria-label="拨打电话" aria-expanded="false">
-            <i class="fas fa-phone-alt" aria-hidden="true"></i>
-        </button>
-    <div class="chat-widget-phone-display">
-                <span class="chat-widget-phone-text">13552883008</span>
-            </div></div>
 
     <!-- 页脚 -->
     <footer class="footer">

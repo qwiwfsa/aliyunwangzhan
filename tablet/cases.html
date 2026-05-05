@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="zh-CN"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -8,11 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/cases-enhanced.css">
-    <!-- Logo动态加载 -->
+    <!-- Logo动态加载（使用绝对路径确保跨目录可用） -->
     <script>
     (function(){
+        var siteRoot = (window.location.pathname.indexOf('/hongdu/') >= 0)
+            ? '/hongdu/'
+            : window.location.pathname.substring(0, window.location.pathname.indexOf('/', 1) + 1);
         var xhr=new XMLHttpRequest();
-        xhr.open('GET','admin/api/fetch-logo.php?t='+Date.now(),true);
+        xhr.open('GET',siteRoot+'admin/api/fetch-logo.php?t='+Date.now(),true);
         xhr.onload=function(){
             if(xhr.status>=200&&xhr.status<400){
                 try{
@@ -40,36 +44,12 @@
     </script>
 <script>
 (function() {
+    var siteRoot = (window.location.pathname.indexOf('/hongdu/') >= 0)
+        ? '/hongdu/'
+        : window.location.pathname.substring(0, window.location.pathname.indexOf('/', 1) + 1);
     var pageName = window.location.pathname.split('/').pop() || 'index.html';
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'admin/api/fetch-seo.php?page=' + pageName + '&t=' + Date.now(), true);
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            try {
-                var data = JSON.parse(xhr.responseText);
-                if (data && data.code === 0 && data.data) {
-                    var seo = data.data;
-                    if (seo.page_title) document.title = seo.page_title;
-                    if (seo.meta_keywords) {
-                        var kw = document.querySelector('meta[name="keywords"]');
-                        if (kw) kw.content = seo.meta_keywords;
-                    }
-                    if (seo.meta_description) {
-                        var desc = document.querySelector('meta[name="description"]');
-                        if (desc) desc.content = seo.meta_description;
-                    }
-                }
-            } catch(e) {}
-        }
-    };
-    xhr.send();
-})();
-</script>
-<script>
-(function() {
-    var pageName = window.location.pathname.split('/').pop() || 'index.html';
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'admin/api/fetch-seo.php?page=' + pageName + '&t=' + Date.now(), true);
+    xhr.open('GET', siteRoot + 'admin/api/fetch-seo.php?page=' + pageName + '&t=' + Date.now(), true);
     xhr.onload = function() {
         if (xhr.status === 200) {
             try {
@@ -99,7 +79,7 @@
     <!-- 导航栏 -->
     <nav class="navbar" id="navbar" role="navigation" aria-label="主导航">
         <div class="navbar-container">
-<a href="index.html" class="logo" aria-label="Yao资金网首页"><img src="../uploads/logo/logo_20260501_234314_69f51e721c7d0.png" alt="Yao资金网" style="height:48px;width:auto;" class=""></a>
+<a href="index.html" class="logo" aria-label="Yao资金网首页"><img src="./uploads/logo/logo_20260501_234314_69f51e721c7d0.png" alt="Yao资金网" style="height:48px;width:auto;" class=""></a>
             <ul class="nav-menu" role="menubar">
                 <li role="none"><a href="index.html" class="nav-link" role="menuitem">首页</a></li>
                 <li role="none"><a href="services.html" class="nav-link" role="menuitem">业务范围</a></li>
@@ -372,21 +352,14 @@
         </section>
     </main>
 
-    <!-- 右侧边浮动电话按钮 -->
-    <div class="chat-widget" id="chatWidget" aria-label="联系电话">
-        <button class="chat-widget-btn" id="chatWidgetBtn" aria-label="拨打电话" aria-expanded="false">
-            <i class="fas fa-phone-alt" aria-hidden="true"></i>
-        </button>
-    <div class="chat-widget-phone-display">
-                <span class="chat-widget-phone-text">13552883008</span>
-            </div></div>
+
 
     <!-- 页脚 -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-main">
                 <div class="footer-brand">
-                    <div class="footer-logo"><img src="../uploads/logo/logo_20260502_190529_69f62ed969290.png" alt="Yao资金网" style="height:48px;width:auto;"></div>
+                    <div class="footer-logo"><img src="./uploads/logo/logo_20260502_190529_69f62ed969290.png" alt="Yao资金网" style="height:48px;width:auto;"></div>
 
                     <p class="footer-desc">专业资金业务服务商，提供上市公司过桥、企业摆账、银行存款、应收账款融资等全方位资金服务</p>
                 </div>
@@ -406,7 +379,7 @@
             </div>
         </div>
     </footer>
-    <script src="admin/assets/cms.js"></script>
+    <script src="../admin/assets/cms.js"></script>
 
     <script src="../js/main.js"></script>
     <script>
@@ -540,6 +513,12 @@
             function resolveImgUrl(path) {
                 if (!path) return '';
                 if (path.startsWith('http')) return path;
+                // 如果路径以 uploads/ 开头，统一指向根目录的 uploads 文件夹
+                if (path.startsWith('uploads/')) {
+                    // 获取站点根路径（如 /hongdu/）
+                    var siteBase = window.location.pathname.substring(0, window.location.pathname.indexOf('/', 1) + 1);
+                    return siteBase + path;
+                }
                 // 存储的路径是相对路径如 uploads/xxx.jpg，需要用 basePath 拼，不能用 /
                 return path.startsWith('/') ? path : basePath + path;
             }
@@ -620,17 +599,34 @@
         }
 
         // 从服务器API加载案例数据
+        // 获取可靠的API基础路径（处理URL末尾有斜杠的情况）
+        function getApiBasePath() {
+            var path = window.location.pathname;
+            // 如果是文件路径（包含扩展名），取目录部分
+            if (path.indexOf('.') > path.lastIndexOf('/')) {
+                return path.substring(0, path.lastIndexOf('/') + 1);
+            }
+            // 如果路径以/结尾，说明是目录，直接拼接
+            if (path.charAt(path.length - 1) === '/') {
+                return path;
+            }
+            // 否则路径末尾加/
+            return path + '/';
+        }
+
         async function loadCasesFromServer() {
             try {
-                const basePath = '../';
+                // 获取当前路径，确保API路径正确
+                var basePath = getApiBasePath();
+                // 添加时间戳和随机数防止缓存
                 const timestamp = Date.now();
                 const random = Math.random().toString(36).substring(7);
-                const apiUrl = basePath + 'admin/api/cases.php?t=' + timestamp + '&r=' + random;
+                const apiUrl = basePath + 'api/cases.php?t=' + timestamp + '&r=' + random;
                 console.log('[Cases] 正在从API加载:', apiUrl);
-
+                
                 const response = await fetch(apiUrl, {
                     method: 'GET',
-                    cache: 'no-store',
+                    cache: 'no-store', // 强制不使用缓存
                     headers: {
                         'Accept': 'application/json',
                         'Cache-Control': 'no-cache, no-store, must-revalidate',
@@ -638,33 +634,38 @@
                         'Expires': '0'
                     }
                 });
-
+                
+                // 检查响应是否为JSON
                 const contentType = response.headers.get('content-type');
                 if (!contentType || !contentType.includes('application/json')) {
                     const text = await response.text();
                     console.error('[Cases] API返回非JSON格式:', text.substring(0, 200));
                     return [];
                 }
-
+                
                 const result = await response.json();
                 console.log('[Cases] API返回:', result);
-
-                if (result.success && result.cases) {
-                    const publishedCases = result.cases
-                        .filter(c => c.status === 'published')
+                
+                // 兼容两种API返回格式: result.data.cases 或 result.cases
+                const casesSource = result.data ? (result.data.cases || result.data) : (result.cases || []);
+                if (Array.isArray(casesSource)) {
+                    console.log('[Cases] 解析API返回, 案例数量:', casesSource.length);
+                    // 只返回已发布的案例，并转换数据格式
+                    const publishedCases = casesSource
+                        .filter(c => c.status === 'published' || c.status === 1)
                         .map(c => ({
                             id: c.id,
                             title: c.title,
-                            type: c.type,
+                            type: c.category || c.type || '',
                             city: c.city || '未知',
-                            summary: c.summary || '',
+                            summary: c.description || c.summary || '',
                             amount: c.amount || '-',
                             period: c.period || '-',
                             detail: c.detail || '',
                             year: c.year || '',
                             image: c.image,
-                            coverImage: c.coverImage,
-                            images: c.images || [],
+                            coverImage: c.coverImage || c.image || '',
+                            images: c.images || (c.image ? [c.image] : []),
                             hasVideo: c.hasVideo || false,
                             video: c.video || null
                         }));
@@ -683,11 +684,11 @@
         // 从服务器加载业务类型
         async function loadCaseTypesFromServer() {
             try {
-                const basePath = '../';
+                var basePath = getApiBasePath();
                 const timestamp = Date.now();
-                const apiUrl = basePath + 'admin/api/case/types.php?t=' + timestamp;
+                const apiUrl = basePath + 'api/case/types.php?t=' + timestamp;
                 console.log('[Cases] 正在加载业务类型:', apiUrl);
-
+                
                 const response = await fetch(apiUrl, {
                     method: 'GET',
                     cache: 'no-store',
@@ -696,21 +697,22 @@
                         'Cache-Control': 'no-cache, no-store, must-revalidate'
                     }
                 });
-
+                
                 if (!response.ok) {
                     throw new Error('HTTP ' + response.status);
                 }
-
+                
+                // 检查响应类型
                 const contentType = response.headers.get('content-type');
                 if (!contentType || !contentType.includes('application/json')) {
                     const text = await response.text();
                     console.error('[Cases] 业务类型API返回非JSON格式:', text.substring(0, 200));
                     return [];
                 }
-
+                
                 const result = await response.json();
                 console.log('[Cases] 业务类型API返回:', result);
-
+                
                 if (result.success && result.data && Array.isArray(result.data)) {
                     console.log('[Cases] 成功加载业务类型:', result.data.length, '个');
                     return result.data;

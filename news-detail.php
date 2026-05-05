@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -557,108 +557,99 @@
 
     <script src="js/main.js"></script>
     <script>
-        // 从localStorage加载文章
-        function loadArticleFromStorage(articleId) {
-            const articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
-            // 支持字符串和数字ID比较，确保类型一致
-            return articles.find(a => String(a.id) === String(articleId));
-        }
-        
-        // 获取所有已发布文章
-        function getAllPublishedArticles() {
-            const articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
-            return articles.filter(a => a.status === 'published').sort((a, b) => {
-                const dateA = new Date(a.publishDate || a.created_at || 0);
-                const dateB = new Date(b.publishDate || b.created_at || 0);
-                return dateB - dateA;
-            });
-        }
-        
-        // 渲染文章头部
-        function renderArticleHeader(article) {
-            const category = article.category || '行业资讯';
-            const title = article.title || '无标题';
-            const date = article.publishDate || article.created_at || new Date().toISOString();
-            const formattedDate = new Date(date).toLocaleDateString('zh-CN');
-            const author = article.author || 'Yao资金网';
-            
-            document.getElementById('articleHeader').innerHTML = `
-                <a href="news.html" class="article-back-btn-top">
-                    <i class="fas fa-arrow-left"></i>
-                    返回资讯列表
-                </a>
-                <h1 class="article-detail-title">${title}</h1>
-                <div class="article-detail-meta">
-                    <span><i class="far fa-calendar"></i> ${formattedDate}</span>
-                    <span><i class="far fa-user"></i> ${author}</span>
-                    <span><i class="far fa-eye"></i> ${article.views || 0} 阅读</span>
-                </div>
-            `;
-        }
-        
         // 验证图片数据是否有效
         function isValidImage(imageData) {
             if (!imageData) return false;
             if (typeof imageData !== 'string') return false;
-            // 检查是否是有效的Base64图片
             if (imageData.startsWith('data:image')) {
-                // 检查Base64数据是否完整（至少要有头部和一部分数据）
                 return imageData.length > 100;
             }
-            // 检查是否是有效的URL
             if (imageData.startsWith('http://') || imageData.startsWith('https://') || imageData.startsWith('/')) {
                 return imageData.length > 10;
             }
-            // 检查是否是相对路径
-            if (imageData.startsWith('images/')) {
+            if (imageData.startsWith('uploads/') || imageData.startsWith('images/')) {
                 return true;
             }
             return false;
         }
 
-        // 获取有效的封面图片
-        function getValidCoverImage(article) {
-            // 如果有封面图，使用封面图
-            if (article.cover_image && isValidImage(article.cover_image)) {
-                return article.cover_image;
+        // 从后端API加载文章
+        async function loadArticleFromAPI(articleId) {
+            try {
+                const response = await fetch('api/news-detail.php?id=' + articleId + '&t=' + Date.now(), {
+                    method: 'GET',
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (!response.ok) return null;
+                const result = await response.json();
+                // admin的detail.php返回 {success, data}，api/news-detail.php直接返回文章对象
+                return result.data || result;
+            } catch (e) {
+                console.error('[News Detail] API请求失败:', e);
+                return null;
             }
-            // 如果没有封面图，返回 null（不显示封面图）
-            return null;
         }
 
-        // 渲染文章内容
-        function renderArticleContent(article) {
-            const content = article.content || '<p>暂无内容</p>';
-            const tags = article.tags || [];
-            
-            let tagsHtml = '';
-            if (tags.length > 0) {
-                tagsHtml = `
-                    <div class="article-tags">
-                        ${tags.map(tag => `<span class="article-tag">${tag}</span>`).join('')}
-                    </div>
-                `;
+        // 从后端加载相关文章
+        async function loadRelatedArticles(currentId) {
+            try {
+                const response = await fetch('api/news.php?limit=5&t=' + Date.now(), {
+                    method: 'GET',
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (!response.ok) return [];
+                const result = await response.json();
+                const articles = result.data ? result.data.news : result.news;
+                if (!articles) return [];
+                return articles.filter(a => String(a.id) !== String(currentId)).slice(0, 5);
+            } catch (e) {
+                console.error('[News Detail] 加载相关文章失败:', e);
+                return [];
             }
-            
-            // 文章详情页不显示封面图（老板要求）
+        }
+
+        // 渲染文章
+        function renderArticle(article) {
+            // 更新标题
+            document.title = (article.title || '文章详情') + ' - Yao资金网';
+
+            // 头部
+            const date = article.created_at || article.date || new Date().toISOString();
+            const formattedDate = new Date(date).toLocaleDateString('zh-CN');
+            document.getElementById('articleHeader').innerHTML = `
+                <a href="news.html" class="article-back-btn-top">
+                    <i class="fas fa-arrow-left"></i>
+                    返回资讯列表
+                </a>
+                <h1 class="article-detail-title">${article.title || '无标题'}</h1>
+                <div class="article-detail-meta">
+                    <span><i class="far fa-calendar"></i> ${formattedDate}</span>
+                    <span><i class="far fa-user"></i> ${article.author || 'Yao资金网'}</span>
+                    <span><i class="far fa-eye"></i> ${article.view_count || article.views || 0} 阅读</span>
+                </div>
+            `;
+
+            // 内容 - 修复图片URL（兼容各种存储格式）
+            let content = article.content || '<p>暂无内容</p>';
+            const basePath = window.location.pathname.substring(0, window.location.pathname.indexOf('/', 1) + 1);
+            const prefix = basePath.replace(/\/$/, '') + '/';
+            // 1) 替换 http://localhost/uploads/ -> /hongdu/uploads/
+            content = content.replace(/https?:\/\/[^\/]+\/uploads\//g, prefix + 'uploads/');
+            // 2) 替换 ../../../uploads/ -> /hongdu/uploads/
+            content = content.replace(/src="(?:\.\.\/)+(uploads\/)/g, 'src="' + prefix.replace(/\/$/, '') + '/$1');
+            // 3) 替换 /uploads/ -> /hongdu/uploads/（确保不重复加）
+            content = content.replace(new RegExp('src="' + prefix.replace(/\//g, '\/') + 'uploads\/', 'g'), 'src="' + prefix.replace(/\/$/, '') + '/uploads/');
+            content = content.replace(/src="\/uploads\//g, 'src="' + prefix.replace(/\/$/, '') + '/uploads/');
             document.getElementById('articleContent').innerHTML = `
                 <div class="article-detail-main">
-                    <div class="article-body">
-                        ${content}
-                    </div>
-                    ${tagsHtml}
+                    <div class="article-body">${content}</div>
                 </div>
             `;
         }
-        
+
         // 渲染相关文章
-        function renderRelatedArticles(currentArticleId, allArticles) {
-            // 排除当前文章，取前4篇
-            const relatedArticles = allArticles
-                .filter(a => a.id !== currentArticleId)
-                .slice(0, 4);
-            
-            if (relatedArticles.length === 0) {
+        function renderRelated(articles) {
+            if (articles.length === 0) {
                 document.getElementById('relatedArticles').innerHTML = `
                     <div style="grid-column: 1 / -1; text-align: center; color: #9ca3af; padding: 40px;">
                         暂无相关资讯
@@ -666,31 +657,32 @@
                 `;
                 return;
             }
-            
-            document.getElementById('relatedArticles').innerHTML = relatedArticles.map(article => {
-                const title = article.title || '无标题';
-                const date = article.publishDate || article.created_at || new Date().toISOString();
-                const formattedDate = new Date(date).toLocaleDateString('zh-CN');
-                const coverImage = getValidCoverImage(article);
-                
-                // 根据是否有封面图生成不同的HTML
-                const thumbHtml = coverImage 
-                    ? `<div class="related-article-thumb"><img src="${coverImage}" alt="${title}" loading="lazy"></div>`
+
+            const basePath = window.location.pathname.substring(0, window.location.pathname.indexOf('/', 1) + 1);
+            const fixCoverPath = (path) => {
+                if (!path) return '';
+                if (path.startsWith('/')) return basePath.replace(/\/$/, '') + path;
+                return path;
+            };
+            document.getElementById('relatedArticles').innerHTML = articles.map(a => {
+                const title = a.title || '无标题';
+                const d = new Date(a.created_at || a.date || Date.now()).toLocaleDateString('zh-CN');
+                const img = a.cover_image && isValidImage(a.cover_image)
+                    ? `<div class="related-article-thumb"><img src="${fixCoverPath(a.cover_image)}" alt="${title}" loading="lazy"></div>`
                     : `<div class="related-article-thumb placeholder"><div class="placeholder-bg"></div></div>`;
-                
                 return `
-                    <a href="news-detail.html?id=${article.id}" class="related-article-card">
-                        ${thumbHtml}
+                    <a href="news-detail.php?id=${a.id}" class="related-article-card">
+                        ${img}
                         <div class="related-article-content">
                             <h3 class="related-article-title">${title}</h3>
-                            <span class="related-article-date">${formattedDate}</span>
+                            <span class="related-article-date">${d}</span>
                         </div>
                     </a>
                 `;
             }).join('');
         }
-        
-        // 渲染未找到文章
+
+        // 渲染未找到
         function renderNotFound() {
             document.getElementById('articleHeader').innerHTML = '';
             document.getElementById('articleContent').innerHTML = `
@@ -705,59 +697,29 @@
                 </div>
             `;
         }
-        
-        // 增加阅读数
-        function incrementViews(articleId) {
-            const articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
-            // 支持字符串和数字ID比较
-            const articleIndex = articles.findIndex(a => String(a.id) === String(articleId));
-            
-            if (articleIndex !== -1) {
-                articles[articleIndex].views = (articles[articleIndex].views || 0) + 1;
-                localStorage.setItem('cms_articles', JSON.stringify(articles));
-            }
-        }
-        
+
         // 初始化
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', async function() {
             const urlParams = new URLSearchParams(window.location.search);
             const articleId = urlParams.get('id');
-            
-            console.log('[News Detail] URL参数ID:', articleId);
-            
+
             if (!articleId) {
-                console.error('[News Detail] 未提供文章ID');
                 renderNotFound();
                 return;
             }
-            
-            // 加载文章
-            const articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
-            console.log('[News Detail] 本地存储文章数量:', articles.length);
-            console.log('[News Detail] 所有文章ID:', articles.map(a => a.id));
-            
-            const article = loadArticleFromStorage(articleId);
-            console.log('[News Detail] 找到的文章:', article);
-            
-            if (!article) {
-                console.error('[News Detail] 未找到ID为', articleId, '的文章');
+
+            // 从API加载文章
+            const article = await loadArticleFromAPI(articleId);
+            if (!article || article.code === 1) {
                 renderNotFound();
                 return;
             }
-            
-            // 更新页面标题
-            document.title = `${article.title || '文章详情'} - Yao资金网`;
-            
-            // 渲染文章
-            renderArticleHeader(article);
-            renderArticleContent(article);
-            
+
+            renderArticle(article);
+
             // 加载相关文章
-            const allArticles = getAllPublishedArticles();
-            renderRelatedArticles(articleId, allArticles);
-            
-            // 增加阅读数
-            incrementViews(articleId);
+            const related = await loadRelatedArticles(articleId);
+            renderRelated(related);
         });
     </script>
 </body>

@@ -1,4 +1,4 @@
-﻿﻿<?php
+<?php
 \ = new mysqli('localhost','root','','hongdu');
 if(\->connect_error) die('连接失败');
 

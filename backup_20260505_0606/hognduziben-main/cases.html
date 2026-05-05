@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="宏都资本成功案例 - 多年来已成功服务数百家企业，累计管理资金规模超百亿。查看我们的过桥资金、摆账亮资、应收账款融资等成功案例。">
+    <meta name="keywords" content="成功案例,资金服务案例,过桥资金案例,摆账案例,亮资案例,融资案例,宏都资本">
+    <title>成功案例 - 宏都资本 | 专业资金业务服务商</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cases-enhanced.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">跳转到主要内容</a>
+
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="主导航">
+        <div class="navbar-container">
+            <a href="index.html" class="logo" aria-label="宏都资本首页">
+                <div class="logo-icon">
+                    <i class="fas fa-building" aria-hidden="true"></i>
+                </div>
+                <span>宏都资本</span>
+            </a>
+            
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem">首页</a></li>
+                <li role="none"><a href="services.html" class="nav-link" role="menuitem">业务范围</a></li>
+                <li role="none"><a href="cases.html" class="nav-link active" role="menuitem">成功案例</a></li>
+                <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">服务优势</a></li>
+                <li role="none"><a href="news.html" class="nav-link" role="menuitem">行业资讯</a></li>
+                <li role="none"><a href="faq.html" class="nav-link" role="menuitem">常见问题</a></li>
+                <li role="none"><a href="contact.html" class="nav-link" role="menuitem">联系我们</a></li>
+            </ul>
+
+            <button class="search-toggle" id="searchToggle" aria-label="打开搜索" aria-expanded="false">
+                <i class="fas fa-search" aria-hidden="true"></i>
+            </button>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="打开菜单" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- 页面标题区 -->
+        <section class="page-header">
+            <div class="page-header-container">
+                <div class="page-header-badge">
+                    <i class="fas fa-trophy"></i>
+                    <span>SUCCESS CASES</span>
+                </div>
+                <h1 class="page-header-title">成功案例</h1>
+                <p class="page-header-subtitle">多年来，我们已成功服务数百家企业，累计管理资金规模超百亿。每一个案例都是我们专业能力的见证。</p>
+            </div>
+        </section>
+
+        <!-- 案例展示 -->
+        <section class="page-content">
+            <div class="section-container">
+                
+                <!-- 筛选区域 -->
+                <div class="cases-filter-section">
+                    <!-- 业务类型筛选 -->
+                    <div class="filter-group">
+                        <span class="filter-label">业务类型</span>
+                        <div class="filter-buttons" id="typeFilter">
+                            <button class="filter-btn active" data-filter="all" data-type="type">全部</button>
+                            <button class="filter-btn" data-filter="过桥" data-type="type">过桥资金</button>
+                            <button class="filter-btn" data-filter="摆账" data-type="type">企业摆账</button>
+                            <button class="filter-btn" data-filter="亮资" data-type="type">亮资验资</button>
+                            <button class="filter-btn" data-filter="冲量" data-type="type">存款冲量</button>
+                            <button class="filter-btn" data-filter="定增" data-type="type">定增过桥</button>
+                            <button class="filter-btn" data-filter="应收账款" data-type="type">应收账款</button>
+                        </div>
+                    </div>
+                    
+
+                </div>
+
+                <!-- 案例卡片网格 -->
+                <div class="cases-grid-enhanced" id="casesGrid">
+                    <!-- 案例卡片将通过JS动态生成 -->
+                </div>
+
+                <!-- 加载更多 -->
+                <div class="cases-load-more">
+                    <button class="btn-load-more" id="loadMoreBtn">
+                        <span>加载更多案例</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+
+                <!-- 案例统计 -->
+                <div class="cases-stats-section">
+                    <div class="cases-stats-grid">
+                        <div class="cases-stat-box">
+                            <div class="cases-stat-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="cases-stat-number">500+</div>
+                            <div class="cases-stat-label">服务企业</div>
+                        </div>
+                        <div class="cases-stat-box">
+                            <div class="cases-stat-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <div class="cases-stat-number">100亿+</div>
+                            <div class="cases-stat-label">累计管理规模</div>
+                        </div>
+                        <div class="cases-stat-box">
+                            <div class="cases-stat-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="cases-stat-number">99%</div>
+                            <div class="cases-stat-label">业务成功率</div>
+                        </div>
+                        <div class="cases-stat-box">
+                            <div class="cases-stat-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="cases-stat-number">98%</div>
+                            <div class="cases-stat-label">客户满意度</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA区域 -->
+        <section class="cta-section-cases" aria-labelledby="cta-title">
+            <div class="cta-container">
+                <h2 class="cta-title" id="cta-title">成为我们的下一个成功案例</h2>
+                <p class="cta-subtitle">无论您面临何种资金需求，我们都能为您提供专业解决方案</p>
+                <div class="cta-wrapper cta-center">
+                    <button type="button" class="btn btn-white" style="cursor: default;" onclick="return false;">
+                        <i class="fas fa-phone-alt"></i>
+                        立即咨询
+                    </button>
+                    <span class="cta-contact-info-light">135-5288-3008</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 右侧边浮动客服按钮 -->
+    <div class="chat-widget" id="chatWidget" aria-label="在线客服">
+        <button class="chat-widget-btn" id="chatWidgetBtn" aria-label="联系客服" aria-expanded="false">
+            <i class="fas fa-comments" aria-hidden="true"></i>
+            <span class="chat-badge" aria-label="有新消息">1</span>
+        </button>
+        <div class="chat-widget-popup" id="chatWidgetPopup" role="dialog" aria-label="客服对话框" aria-hidden="true">
+            <div class="chat-widget-header">
+                <span class="chat-widget-title">在线咨询</span>
+                <button class="chat-widget-close" id="chatWidgetClose" aria-label="关闭">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="chat-widget-body">
+                <div class="chat-widget-qr">
+                    <img src="images/wechat-qr.png" alt="微信二维码" loading="lazy">
+                </div>
+                <p class="chat-widget-text">王立力</p>
+                <p class="chat-widget-subtext">扫码添加微信咨询</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <span>宏都资本</span>
+                    </a>
+                    <p class="footer-desc">专业资金业务服务商，提供上市公司过桥、企业摆账、银行存款、应收账款融资等全方位资金服务</p>
+                </div>
+                <div class="footer-nav">
+                    <h4 class="footer-nav-title">快速链接</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="services.html">业务范围</a></li>
+                        <li><a href="cases.html">成功案例</a></li>
+                        <li><a href="advantages.html">服务优势</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h4 class="footer-nav-title">更多内容</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="news.html">行业资讯</a></li>
+                        <li><a href="faq.html">常见问题</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h4 class="footer-nav-title">联系方式</h4>
+                    <ul class="footer-nav-list">
+                        <li><i class="fas fa-phone"></i> 13552883008</li>
+                        <li><i class="fas fa-user"></i> 王立力</li>
+                        <li><i class="fas fa-envelope"></i> wanglizhongguo@126.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2024 宏都资本 版权所有</p>
+                <p class="footer-disclaimer">投资有风险，入市需谨慎。本网站内容仅供参考，不构成投资建议。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // 案例数据 - 关联真实素材图片
+        const casesData = [
+            {
+                id: 1,
+                title: "某上市公司2亿过桥资金",
+                type: "过桥",
+                city: "北京",
+                summary: "为某A股上市公司提供2亿元过桥资金，用于募集账户归还，确保企业合规运营。",
+                amount: "2亿",
+                period: "7天",
+                detail: "该上市公司因募集账户资金需按期归还，面临短期资金缺口。我们迅速响应，在3个工作日内完成尽调并放款2亿元，帮助企业顺利完成资金归还，维护了企业信用评级和股价稳定。",
+                year: "2024",
+                image: "images/业务案例/mmexport1773302292786.jpg",
+                hasVideo: false
+            },
+            {
+                id: 2,
+                title: "某上市制造企业股票解质押",
+                type: "过桥",
+                city: "上海",
+                summary: "为上市公司股东提供5.8亿元股票解质押过桥资金，成功化解质押风险。",
+                amount: "5.8亿",
+                period: "15天",
+                detail: "某上市制造企业大股东因股价波动面临质押爆仓风险。我们提供5.8亿元过桥资金，协助完成股票解质押，避免了强制平仓风险，保障了企业控制权的稳定。",
+                year: "2024",
+                image: "images/业务案例/mmexport1773302319105.jpg",
+                hasVideo: true,
+                video: "images/业务案例/mmexport1773302309276.mp4"
+            },
+            {
+                id: 3,
+                title: "某大型集团募集账户归还",
+                type: "过桥",
+                city: "深圳",
+                summary: "协助企业完成8亿元募集账户资金归还，确保合规运营，维护企业信用评级。",
+                amount: "8亿",
+                period: "7天",
+                detail: "某大型集团公司需在规定时间内归还募集账户资金。我们快速响应，在一周内完成全部资金安排，确保企业合规运营，维护了良好的银企关系。",
+                year: "2024",
+                image: "images/业务案例/mmexport1773729850497.jpg",
+                hasVideo: false
+            },
+            {
+                id: 4,
+                title: "某房地产企业工程亮资",
+                type: "亮资",
+                city: "广州",
+                summary: "为企业提供3.2亿元摆账亮资服务，助力成功中标大型工程项目。",
+                amount: "3.2亿",
+                period: "30天",
+                detail: "某房地产企业在参与大型工程项目投标时，需要提供资金实力证明。我们提供3.2亿元亮资服务，专业的资金展示方案帮助企业在竞标中脱颖而出，成功中标。",
+                year: "2024",
+                image: "images/业务案例/mmexport1773838483773.jpg",
+                hasVideo: false
+            },
+            {
+                id: 5,
+                title: "某连锁零售企业应收账款融资",
+                type: "应收账款",
+                city: "杭州",
+                summary: "通过应收账款融资，帮助企业盘活1.5亿元资金，支持业务快速扩张。",
+                amount: "1.5亿",
+                period: "长期合作",
+                detail: "某连锁零售企业因业务扩张面临资金周转压力。我们通过应收账款融资方案，帮助企业盘活1.5亿元资金，有效解决了企业季节性资金需求，支持其门店扩张计划。",
+                year: "2023",
+                image: "images/业务案例/mmexport1773897011418.jpg",
+                hasVideo: true,
+                video: "images/业务案例/mmexport1773958730757.mp4"
+            },
+            {
+                id: 6,
+                title: "某物流科技企业云信票据融资",
+                type: "应收账款",
+                city: "成都",
+                summary: "置换云信票据，提供5000万元灵活融资方案，解决企业短期资金周转需求。",
+                amount: "5000万",
+                period: "1年",
+                detail: "某物流科技企业持有大量云信票据，但急需现金周转。我们提供创新的票据融资方案，帮助企业置换云信票据获得5000万元资金，大幅降低融资成本。",
+                year: "2023",
+                image: "images/业务案例/mmexport1773986164723.jpg",
+                hasVideo: true,
+                video: "images/业务案例/mmexport1773966987867.mp4"
+            },
+            {
+                id: 7,
+                title: "某高新技术企业银行存款冲量",
+                type: "冲量",
+                city: "北京",
+                summary: "提供月末、季末2亿元银行存款冲量服务，帮助企业优化财务报表。",
+                amount: "2亿",
+                period: "季度",
+                detail: "某高新技术企业需要在季末时点满足银行存款指标。我们提供2亿元存款冲量服务，定期合作，确保企业存款指标达标，优化财务报表。",
+                year: "2023",
+                image: "images/业务案例/mmexport1775114637044.jpg",
+                hasVideo: true,
+                video: "images/业务案例/mmexport1775112927068.mp4"
+            },
+            {
+                id: 8,
+                title: "某建筑企业工程亮资",
+                type: "亮资",
+                city: "上海",
+                summary: "为建筑企业提供1.8亿元工程投标亮资服务，成功中标多个大型工程项目。",
+                amount: "1.8亿",
+                period: "45天",
+                detail: "某建筑企业参与多个大型工程项目投标，需要提供资金实力证明。我们提供1.8亿元亮资服务，专业的资金安排确保投标过程顺利进行，企业成功中标多个项目。",
+                year: "2023",
+                image: "images/业务案例/mmexport1775192203365_edit_679230358475000.jpg",
+                hasVideo: false
+            },
+            {
+                id: 9,
+                title: "某医药上市公司定增过桥",
+                type: "定增",
+                city: "深圳",
+                summary: "为医药上市公司定增项目提供12亿元过桥资金支持，确保定增计划顺利实施。",
+                amount: "12亿",
+                period: "30天",
+                detail: "某医药上市公司启动定增项目，需要过桥资金支持。我们提供12亿元定增过桥资金，专业的资本运作方案助力企业顺利完成定增，为企业快速发展提供资金保障。",
+                year: "2023",
+                image: "images/业务案例/mmexport1775196945790.jpg",
+                hasVideo: false
+            },
+            {
+                id: 10,
+                title: "某金融机构日均存款业务",
+                type: "冲量",
+                city: "北京",
+                summary: "为金融机构提供5亿元长期日均存款支持，帮助优化存贷比指标。",
+                amount: "5亿",
+                period: "一年期",
+                detail: "某金融机构需要优化存贷比指标，满足监管要求。我们提供5亿元一年期日均存款支持，稳定的资金安排确保业务合规运营。",
+                year: "2022",
+                image: "images/业务案例/1701838459825.jpg",
+                hasVideo: false
+            },
+            {
+                id: 11,
+                title: "某地产集团摆账验资",
+                type: "摆账",
+                city: "广州",
+                summary: "为地产集团提供6亿元摆账验资服务，满足工商注册和资质升级需求。",
+                amount: "6亿",
+                period: "60天",
+                detail: "某地产集团进行工商注册资本实缴验证和资质升级，需要大额资金证明。我们提供6亿元摆账验资服务，满足企业合规需求，助力企业资质升级。",
+                year: "2024",
+                image: "images/业务案例/mmexport1758187271966.jpg",
+                hasVideo: false
+            },
+            {
+                id: 12,
+                title: "某能源上市公司过桥融资",
+                type: "过桥",
+                city: "杭州",
+                summary: "为能源上市公司提供4.5亿元过桥融资，用于短期债务周转。",
+                amount: "4.5亿",
+                period: "21天",
+                detail: "某能源上市公司面临短期债务到期，需要过桥资金衔接。我们提供4.5亿元过桥融资，帮助企业顺利度过资金周转期，维护良好的信用记录。",
+                year: "2024",
+                image: "images/业务案例/mmexport1759986121000.jpg",
+                hasVideo: false
+            }
+        ];
+
+        // 当前筛选状态
+        let currentFilters = {
+            type: 'all'
+        };
+
+        // 获取类型标签样式类名
+        function getTypeClass(type) {
+            const typeMap = {
+                '过桥': 'bridge',
+                '摆账': 'display',
+                '亮资': 'proof',
+                '冲量': 'deposit',
+                '定增': 'placement',
+                '应收账款': 'receivable'
+            };
+            return typeMap[type] || 'bridge';
+        }
+
+        // 获取业务类型图标
+        function getTypeIcon(type) {
+            const iconMap = {
+                '过桥': 'fa-exchange-alt',
+                '摆账': 'fa-hand-holding-usd',
+                '亮资': 'fa-eye',
+                '冲量': 'fa-chart-line',
+                '定增': 'fa-plus-circle',
+                '应收账款': 'fa-file-invoice-dollar'
+            };
+            return iconMap[type] || 'fa-briefcase';
+        }
+
+        // 渲染案例卡片
+        function renderCases(cases) {
+            const grid = document.getElementById('casesGrid');
+            
+            if (cases.length === 0) {
+                grid.innerHTML = `
+                    <div class="cases-empty">
+                        <i class="fas fa-folder-open"></i>
+                        <p class="cases-empty-text">暂无符合条件的案例</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            grid.innerHTML = cases.map(caseItem => {
+                const typeClass = getTypeClass(caseItem.type);
+                // 使用真实图片，如果没有则使用默认图片
+                const imagePath = caseItem.image || `images/业务案例/mmexport1773302286026.jpg`;
+                return `
+                    <article class="case-card-enhanced" data-id="${caseItem.id}" onclick="window.location.href='case-detail.html?id=${caseItem.id}'">
+                        <div class="case-card-image">
+                            <img src="${imagePath}" alt="${caseItem.title}" loading="lazy">
+                            <span class="case-type-tag ${typeClass}">${caseItem.type}</span>
+                        </div>
+                        <div class="case-card-content">
+                            <h3 class="case-card-title">${caseItem.title}</h3>
+                            <p class="case-card-summary">${caseItem.summary}</p>
+                            <div class="case-card-meta">
+                                <div class="case-card-amount">
+                                    <span class="case-card-amount-label">资金规模</span>
+                                    <span class="case-card-amount-value">${caseItem.amount}</span>
+                                </div>
+                                <span class="case-card-btn">
+                                    查看详情 <i class="fas fa-arrow-right"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        // 筛选案例
+        function filterCases() {
+            const filtered = casesData.filter(caseItem => {
+                const typeMatch = currentFilters.type === 'all' || caseItem.type === currentFilters.type;
+                return typeMatch;
+            });
+            renderCases(filtered);
+        }
+
+        // 设置筛选事件
+        function setupFilters() {
+            const typeButtons = document.querySelectorAll('#typeFilter .filter-btn');
+
+            typeButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    typeButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFilters.type = this.dataset.filter;
+                    filterCases();
+                });
+            });
+        }
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCases(casesData);
+            setupFilters();
+        });
+    </script>
+    
+    <!-- CMS Editor -->
+    <script>
+        // 检查是否需要加载编辑器
+        (function() {
+            console.log('[CMS] 初始化检查...');
+            
+            const urlParams = new URLSearchParams(window.location.search);
+            const isEditMode = urlParams.get('edit') === 'true';
+            const isLoggedIn = localStorage.getItem('cms_logged_in') === 'true';
+            
+            console.log('[CMS] 编辑模式:', isEditMode);
+            console.log('[CMS] 登录状态:', isLoggedIn);
+            
+            if (isEditMode && isLoggedIn) {
+                console.log('[CMS] 开始加载编辑器...');
+                
+                // 加载编辑器样式
+                const editorCss = document.createElement('link');
+                editorCss.rel = 'stylesheet';
+                editorCss.href = 'admin/editor.css';
+                editorCss.onerror = function() {
+                    console.error('[CMS] 编辑器样式加载失败');
+                };
+                document.head.appendChild(editorCss);
+                
+                // 加载编辑器脚本
+                const editorScript = document.createElement('script');
+                editorScript.src = 'admin/editor.js';
+                editorScript.onload = function() {
+                    console.log('[CMS] 编辑器脚本加载成功');
+                };
+                editorScript.onerror = function() {
+                    console.error('[CMS] 编辑器脚本加载失败');
+                };
+                document.body.appendChild(editorScript);
+            } else if (isEditMode && !isLoggedIn) {
+                console.log('[CMS] 未登录，重定向到登录页');
+                window.location.href = 'admin/login.html?redirect=' + encodeURIComponent(window.location.href);
+            }
+        })();
+    </script>
+</body>
+</html>

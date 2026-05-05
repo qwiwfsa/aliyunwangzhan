@@ -69,6 +69,14 @@ $summary = isset($data['summary']) ? trim($data['summary']) : '';
 $content = isset($data['content']) ? $data['content'] : '';
 $categoryId = isset($data['category_id']) ? intval($data['category_id']) : 0;
 $coverImage = isset($data['cover_image']) ? $data['cover_image'] : '';
+
+// 归一化封面图片路径：废弃旧 news/ 路径，统一为 uploads/ 开头
+if (!empty($coverImage)) {
+    $coverImage = ltrim($coverImage, '/');
+    if (strpos($coverImage, 'news/') === 0) {
+        $coverImage = 'uploads/' . substr($coverImage, 5);
+    }
+}
 $status = isset($data['status']) && in_array($data['status'], ['published', 'draft']) ? $data['status'] : 'draft';
 $isTop = isset($data['is_top']) ? intval($data['is_top']) : 0;
 $sortOrder = isset($data['sort_order']) ? intval($data['sort_order']) : 0;

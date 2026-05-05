@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
     <script>
     (function(){
         var xhr=new XMLHttpRequest();
-        xhr.open('GET','admin/api/fetch-logo.php?t='+Date.now(),true);
+        xhr.open('GET','../admin/api/fetch-logo.php?t='+Date.now(),true);
         xhr.onload=function(){
             if(xhr.status>=200&&xhr.status<400){
                 try{
@@ -44,7 +44,7 @@
 (function() {
     var pageName = window.location.pathname.split('/').pop() || 'index.html';
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'admin/api/fetch-seo.php?page=' + pageName + '&t=' + Date.now(), true);
+    xhr.open('GET', '../admin/api/fetch-seo.php?page=' + pageName + '&t=' + Date.now(), true);
     xhr.onload = function() {
         if (xhr.status === 200) {
             try {
@@ -71,7 +71,7 @@
 (function() {
     var pageName = window.location.pathname.split('/').pop() || 'index.html';
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'admin/api/fetch-seo.php?page=' + pageName + '&t=' + Date.now(), true);
+    xhr.open('GET', '../admin/api/fetch-seo.php?page=' + pageName + '&t=' + Date.now(), true);
     xhr.onload = function() {
         if (xhr.status === 200) {
             try {
@@ -405,14 +405,14 @@
                 
                 const editorCss = document.createElement('link');
                 editorCss.rel = 'stylesheet';
-                editorCss.href = 'admin/editor.css';
+                editorCss.href = '../admin/editor.css';
                 editorCss.onerror = function() {
                     console.error('[CMS] 编辑器样式加载失败');
                 };
                 document.head.appendChild(editorCss);
                 
                 const editorScript = document.createElement('script');
-                editorScript.src = 'admin/editor.js';
+                editorScript.src = '../admin/editor.js';
                 editorScript.onload = function() {
                     console.log('[CMS] 编辑器脚本加载成功');
                 };
@@ -422,7 +422,7 @@
                 document.body.appendChild(editorScript);
             } else if (isEditMode && !isLoggedIn) {
                 console.log('[CMS] 未登录，重定向到登录页');
-                window.location.href = 'admin/login.html?redirect=' + encodeURIComponent(window.location.href);
+                window.location.href = '../admin/login.html?redirect=' + encodeURIComponent(window.location.href);
             }
         })();
     </script>
