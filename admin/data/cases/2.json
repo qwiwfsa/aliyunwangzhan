@@ -1,0 +1,22 @@
+{
+    "id": "2",
+    "title": "募集账户归还过桥",
+    "type": "企业过桥",
+    "city": "某大型集团公司",
+    "amount": "8亿元",
+    "period": "7天",
+    "summary": "为上市公司提供募集资金账户归还过桥服务",
+    "detail": "为上市公司提供募集资金账户归还过桥服务",
+    "image": "uploads\/20260505_69f9c9606a777.jpg",
+    "coverImage": "uploads\/20260505_69f9c9606a777.jpg",
+    "images": [
+        "uploads\/20260505_69f9c9606a777.jpg"
+    ],
+    "highlights": [],
+    "process": [],
+    "hasVideo": false,
+    "video": "",
+    "status": "published",
+    "createdAt": "2026-05-05 12:41:38",
+    "lastModified": "2026-05-05 12:41:38"
+}

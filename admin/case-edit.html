@@ -564,8 +564,30 @@
             // 2. 如果服务器加载失败，从localStorage加载
             if (!caseData) {
                 const cases = JSON.parse(localStorage.getItem('cms_cases') || '[]');
-                caseData = cases.find(c => c.id === caseId);
+                caseData = cases.find(c => c.id === caseId || c.id === parseInt(caseId));
                 console.log('从本地加载案例:', caseData);
+            }
+            
+            // 3. 如果还没有数据，尝试用数字ID再查一次（兼容case_xxx前缀）
+            if (!caseData && caseId.indexOf('_') > 0) {
+                const numericId = parseInt(caseId.replace(/^case_/, ''));
+                if (numericId > 0) {
+                    try {
+                        const response = await fetchWithTimeout(`api/case/get.php?id=${numericId}`, {
+                            method: 'GET',
+                            credentials: 'include'
+                        }, 5000);
+                        if (response.ok) {
+                            const result = await response.json();
+                            if (result.success && result.case) {
+                                caseData = result.case;
+                                console.log('通过数字ID加载成功:', caseData);
+                            }
+                        }
+                    } catch (e) {
+                        console.log('数字ID加载失败:', e);
+                    }
+                }
             }
             
             // 3. 填充表单
@@ -977,6 +999,11 @@
                     
                     if (result.success) {
                         serverSaved = true;
+                        // 用服务器返回的真实ID更新currentCase
+                        if (result.case && result.case.id) {
+                            currentCase.id = String(result.case.id);
+                            caseToSave.id = currentCase.id;
+                        }
                     } else {
                         serverError = result.message || '服务器返回失败';
                     }
@@ -1008,7 +1035,9 @@
                     showSaveMessage('⚠ 案例已保存到本地，服务器同步失败', 'error');
                 }
 
-                if (!window.location.search.includes('id=')) {
+                // 更新URL中的ID（新建时或ID有变更时）
+                const currentUrlId = new URLSearchParams(window.location.search).get('id');
+                if (currentUrlId !== currentCase.id) {
                     history.replaceState(null, null, `?id=${currentCase.id}`);
                 }
             } catch (error) {

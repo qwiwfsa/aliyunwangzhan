@@ -134,5 +134,50 @@
         ],
         "status": "published",
         "lastModified": "2026-04-28 00:45:25"
+    },
+    {
+        "id": "2",
+        "title": "募集账户归还过桥",
+        "type": "企业过桥",
+        "city": "某大型集团公司",
+        "amount": "8亿元",
+        "image": "uploads\/20260505_69f9c9606a777.jpg",
+        "coverImage": "uploads\/20260505_69f9c9606a777.jpg",
+        "images": [
+            "uploads\/20260505_69f9c9606a777.jpg"
+        ],
+        "status": "published",
+        "summary": "为上市公司提供募集资金账户归还过桥服务",
+        "lastModified": "2026-05-05 12:41:38"
+    },
+    {
+        "id": "3",
+        "title": "企业摆账服务",
+        "type": "企业摆账",
+        "city": "某民营企业",
+        "amount": "5000万",
+        "image": "uploads\/20260505_69f9c970c5c47.jpg",
+        "coverImage": "uploads\/20260505_69f9c970c5c47.jpg",
+        "images": [
+            "uploads\/20260505_69f9c970c5c47.jpg"
+        ],
+        "status": "published",
+        "summary": "提供企业资金证明摆账服务",
+        "lastModified": "2026-05-05 12:41:55"
+    },
+    {
+        "id": "11",
+        "title": "某大型集团公司",
+        "type": "企业摆账",
+        "city": "北京",
+        "amount": "5000万",
+        "image": "uploads\/20260505_69f9c988bf18b.jpg",
+        "coverImage": "uploads\/20260505_69f9c988bf18b.jpg",
+        "images": [
+            "uploads\/20260505_69f9c988bf18b.jpg"
+        ],
+        "status": "published",
+        "summary": "协助企业完成募集账户资金归还，确保合规运营，维护企业信用评级。",
+        "lastModified": "2026-05-05 12:42:21"
     }
 ]

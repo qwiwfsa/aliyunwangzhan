@@ -87,6 +87,28 @@ error_log("[delete.php] Admin index file: " . $adminIndexFile);
 error_log("[delete.php] Frontend data dir: " . $frontendDataDir);
 error_log("[delete.php] Frontend index file: " . $frontendIndexFile);
 
+// ========== 删除MySQL记录 ==========
+try {
+    require_once __DIR__ . '/../../../config/db.php';
+    $conn = getDB();
+    $numericId = intval(preg_replace('/[^0-9]/', '', $caseId));
+    if ($numericId > 0) {
+        $delStmt = $conn->prepare("DELETE FROM cases WHERE id = ?");
+        $delStmt->bind_param("i", $numericId);
+        $delStmt->execute();
+        $delCount = $delStmt->affected_rows;
+        $delStmt->close();
+        if ($delCount > 0) {
+            $details[] = 'MySQL记录已删除';
+            error_log("[delete.php] Deleted MySQL record id=$numericId");
+        }
+    }
+    $conn->close();
+} catch (Exception $e) {
+    $errors[] = 'MySQL删除失败: ' . $e->getMessage();
+    error_log('[delete.php] MySQL delete error: ' . $e->getMessage());
+}
+
 $deleted = false;
 $errors = [];
 $details = [];

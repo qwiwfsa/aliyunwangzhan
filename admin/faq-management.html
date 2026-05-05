@@ -814,31 +814,76 @@
             'general': '一般问题'
         };
         
-        // 加载分类
-        function loadCategories() {
-            const saved = localStorage.getItem('cms_faq_categories');
-            // 检查是否需要更新默认分类（版本控制）
-            const categoryVersion = localStorage.getItem('cms_faq_categories_version');
-            const currentVersion = '2.0'; // 业务分类版本
+        // 加载分类（优先从服务器，fallback到本地）
+        async function loadCategories() {
+            let loadedFromServer = false;
+            try {
+                const response = await fetch('../admin/api/faq-data.php?t=' + Date.now());
+                const result = await response.json();
+                // 优先使用 categories_order 数组（保持服务端排序顺序）
+                if (result.categories_order && result.categories_order.length > 0) {
+                    // 按服务器返回的排序顺序重建对象
+                    const orderedLabels = {};
+                    result.categories_order.forEach(cat => {
+                        orderedLabels[cat.key] = cat.label || result.categories[cat.key] || cat.key;
+                    });
+                    categoryLabels = orderedLabels;
+                    localStorage.setItem('cms_faq_categories', JSON.stringify(categoryLabels));
+                    loadedFromServer = true;
+                } else if (result.categories && Object.keys(result.categories).length > 0) {
+                    categoryLabels = result.categories;
+                    localStorage.setItem('cms_faq_categories', JSON.stringify(categoryLabels));
+                    loadedFromServer = true;
+                }
+            } catch (e) {
+                console.log('从服务器加载分类失败，尝试本地缓存');
+            }
             
-            if (saved && categoryVersion === currentVersion) {
-                categoryLabels = JSON.parse(saved);
-            } else {
-                // 使用新的默认分类，清除旧数据
-                categoryLabels = {...defaultCategories};
-                saveCategories();
-                localStorage.setItem('cms_faq_categories_version', currentVersion);
+            if (!loadedFromServer) {
+                const saved = localStorage.getItem('cms_faq_categories');
+                const categoryVersion = localStorage.getItem('cms_faq_categories_version');
+                const currentVersion = '3.1';
+                
+                if (saved && categoryVersion === currentVersion) {
+                    categoryLabels = JSON.parse(saved);
+                } else {
+                    categoryLabels = {...defaultCategories};
+                    localStorage.setItem('cms_faq_categories', JSON.stringify(categoryLabels));
+                    localStorage.setItem('cms_faq_categories_version', currentVersion);
+                }
             }
         }
         
-        // 保存分类
-        function saveCategories() {
+        // 保存分类（同时保存到服务器和本地）
+        async function saveCategories() {
             localStorage.setItem('cms_faq_categories', JSON.stringify(categoryLabels));
+            
+            // 同步到服务器
+            try {
+                const catArray = Object.keys(categoryLabels).map(key => ({
+                    key: key,
+                    label: categoryLabels[key]
+                }));
+                
+                const formData = new URLSearchParams();
+                formData.append('action', 'save_categories');
+                formData.append('categories', JSON.stringify(catArray));
+                
+                await fetch('../admin/api/faq-save.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: formData.toString()
+                });
+            } catch (e) {
+                console.log('分类保存到服务器失败，已保存到本地');
+            }
         }
 
         // 初始化
         document.addEventListener('DOMContentLoaded', async function() {
-            loadCategories();
+            await loadCategories();
             await loadFAQs();
             renderCategoryFilter();
         });
@@ -1245,8 +1290,8 @@
             `).join('');
         }
         
-        // 移动分类排序
-        function moveCategory(key, direction) {
+        // 移动分类排序（异步，等待服务器同步后刷新）
+        async function moveCategory(key, direction) {
             const keys = Object.keys(categoryLabels);
             const index = keys.indexOf(key);
             
@@ -1267,7 +1312,8 @@
             });
             categoryLabels = newCategoryLabels;
             
-            saveCategories();
+            // 等待服务器同步完成
+            await saveCategories();
             renderCategoryList();
             renderCategoryFilter();
             showToast('排序已更新', 'success');
@@ -1284,7 +1330,7 @@
         }
         
         // 保存分类编辑
-        function saveCategoryEdit(key) {
+        async function saveCategoryEdit(key) {
             const row = document.querySelector(`[data-cat-key="${key}"]`);
             const newName = row.querySelector('.cat-name-edit').value.trim();
             
@@ -1294,7 +1340,7 @@
             }
             
             categoryLabels[key] = newName;
-            saveCategories();
+            await saveCategories();
             renderCategoryList();
             renderCategoryFilter();
             updateCategorySelects();
@@ -1302,7 +1348,7 @@
         }
         
         // 添加分类
-        function addCategory() {
+        async function addCategory() {
             const nameInput = document.getElementById('newCategoryName');
             const name = nameInput.value.trim();
             
@@ -1323,7 +1369,7 @@
             }
             
             categoryLabels[key] = name;
-            saveCategories();
+            await saveCategories();
             renderCategoryList();
             renderCategoryFilter();
             updateCategorySelects();
@@ -1365,13 +1411,13 @@
         }
         
         // 删除分类
-        function deleteCategory(key) {
+        async function deleteCategory(key) {
             if (!confirm(`确定要删除分类"${categoryLabels[key]}"吗？该分类下的FAQ将变为未分类。`)) {
                 return;
             }
             
             delete categoryLabels[key];
-            saveCategories();
+            await saveCategories();
             renderCategoryList();
             renderCategoryFilter();
             updateCategorySelects();

@@ -1,0 +1,22 @@
+{
+    "id": "11",
+    "title": "某大型集团公司",
+    "type": "企业摆账",
+    "city": "北京",
+    "amount": "5000万",
+    "period": "",
+    "summary": "协助企业完成募集账户资金归还，确保合规运营，维护企业信用评级。",
+    "detail": "协助企业完成募集账户资金归还，确保合规运营，维护企业信用评级。",
+    "image": "uploads\/20260505_69f9c988bf18b.jpg",
+    "coverImage": "uploads\/20260505_69f9c988bf18b.jpg",
+    "images": [
+        "uploads\/20260505_69f9c988bf18b.jpg"
+    ],
+    "highlights": [],
+    "process": [],
+    "hasVideo": false,
+    "video": "",
+    "status": "published",
+    "createdAt": "2026-05-05 12:42:21",
+    "lastModified": "2026-05-05 12:42:21"
+}

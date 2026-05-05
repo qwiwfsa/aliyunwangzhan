@@ -74,6 +74,90 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
+    // --- 保存分类 ---
+    if ($action === 'save_categories') {
+        $categoriesJson = isset($_POST['categories']) ? $_POST['categories'] : '';
+        if (!$categoriesJson) {
+            echo json_encode(['code' => 1, 'msg' => '缺少分类数据']);
+            exit;
+        }
+        $categoryData = json_decode($categoriesJson, true);
+        if (!$categoryData || !is_array($categoryData)) {
+            echo json_encode(['code' => 1, 'msg' => '分类数据格式错误']);
+            exit;
+        }
+        
+        // 清空旧数据
+        $conn->query("DELETE FROM faq_categories");
+        
+        // 插入新数据
+        $stmt = $conn->prepare("INSERT INTO faq_categories (cat_key, cat_label, sort_order) VALUES (?, ?, ?)");
+        $sortOrder = 0;
+        foreach ($categoryData as $item) {
+            $key = $item['key'];
+            $label = $item['label'];
+            $stmt->bind_param("ssi", $key, $label, $sortOrder);
+            $stmt->execute();
+            $sortOrder++;
+        }
+        $stmt->close();
+        
+        echo json_encode(['code' => 0, 'msg' => '分类保存成功']);
+        exit;
+    }
+
+    // --- 新增分类 ---
+    if ($action === 'add_category') {
+        $key = isset($_POST['key']) ? trim($_POST['key']) : '';
+        $label = isset($_POST['label']) ? trim($_POST['label']) : '';
+        
+        if (!$key || !$label) {
+            echo json_encode(['code' => 1, 'msg' => '分类键名和标签不能为空']);
+            exit;
+        }
+        
+        // 检查键名是否已存在
+        $stmt = $conn->prepare("SELECT COUNT(*) as cnt FROM faq_categories WHERE cat_key=?");
+        $stmt->bind_param("s", $key);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        $stmt->close();
+        
+        if ($row['cnt'] > 0) {
+            echo json_encode(['code' => 1, 'msg' => '分类键名已存在']);
+            exit;
+        }
+        
+        // 获取最大排序值
+        $result = $conn->query("SELECT MAX(sort_order) as max_order FROM faq_categories");
+        $row = $result->fetch_assoc();
+        $maxOrder = intval($row['max_order']) + 1;
+        
+        $stmt = $conn->prepare("INSERT INTO faq_categories (cat_key, cat_label, sort_order) VALUES (?, ?, ?)");
+        $stmt->bind_param("ssi", $key, $label, $maxOrder);
+        $stmt->execute();
+        $stmt->close();
+        
+        echo json_encode(['code' => 0, 'msg' => '分类添加成功']);
+        exit;
+    }
+
+    // --- 删除分类 ---
+    if ($action === 'delete_category') {
+        $key = isset($_POST['key']) ? trim($_POST['key']) : '';
+        if (!$key) {
+            echo json_encode(['code' => 1, 'msg' => '缺少分类键名']);
+            exit;
+        }
+        $stmt = $conn->prepare("DELETE FROM faq_categories WHERE cat_key=?");
+        $stmt->bind_param("s", $key);
+        $stmt->execute();
+        $stmt->close();
+        echo json_encode(['code' => 0, 'msg' => '分类删除成功']);
+        exit;
+    }
+
     echo json_encode(['code' => 1, 'msg' => '未知操作']);
     exit;
 }

@@ -7,10 +7,11 @@
 require_once __DIR__ . '/../../config/db.php';
 
 /**
- * 初始化 faq 表
+ * 初始化 faq 表及faq_categories表
  */
-function initFaqTable($conn) {
-    $sql = "CREATE TABLE IF NOT EXISTS faq (
+function initTables($conn) {
+    // 创建faq表
+    $conn->query("CREATE TABLE IF NOT EXISTS faq (
         id INT AUTO_INCREMENT PRIMARY KEY,
         category VARCHAR(50) NOT NULL COMMENT 'FAQ分类',
         question TEXT NOT NULL COMMENT '问题',
@@ -21,16 +22,23 @@ function initFaqTable($conn) {
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
         INDEX idx_category (category),
         INDEX idx_active (is_active)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='FAQ常见问题表';";
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='FAQ常见问题表';");
 
-    $conn->query($sql);
+    // 创建faq_categories表
+    $conn->query("CREATE TABLE IF NOT EXISTS faq_categories (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        cat_key VARCHAR(50) NOT NULL UNIQUE COMMENT '分类键名',
+        cat_label VARCHAR(100) NOT NULL COMMENT '分类显示名',
+        sort_order INT DEFAULT 0 COMMENT '排序',
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='FAQ分类配置表';");
 
-    // 检查是否已有数据
+    // 检查faq表是否已有数据
     $check = $conn->query("SELECT COUNT(*) as cnt FROM faq");
     $row = $check->fetch_assoc();
     if ($row['cnt'] > 0) return;
 
-    // 预设默认数据
+    // 预设默认FAQ数据
     $defaults = [
         ['liangzi', '什么是亮资服务？', '<p>亮资服务是指企业在投标、合作洽谈等场景中，需要向对方展示自身资金实力时，由专业机构提供的资金证明服务。</p>', 1],
         ['liangzi', '亮资需要多长时间？', '<p>一般情况下，亮资服务可在1-3个工作日内完成，具体时间根据金额大小和银行要求而定。</p>', 2],
@@ -52,19 +60,30 @@ function initFaqTable($conn) {
     $stmt->close();
 }
 
+/**
+ * 插入默认分类到faq_categories表
+ */
+function initDefaultCategories($conn, $defaultCategories) {
+    $cStmt = $conn->prepare("INSERT IGNORE INTO faq_categories (cat_key, cat_label, sort_order) VALUES (?, ?, ?)");
+    foreach ($defaultCategories as $cat) {
+        $cStmt->bind_param("ssi", $cat['key'], $cat['label'], $cat['sort_order']);
+        $cStmt->execute();
+    }
+    $cStmt->close();
+}
+
 // ========================================
 // 主逻辑
 // ========================================
 
 $conn = getDB();
-initFaqTable($conn);
+initTables($conn);
 
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
-// 处理预检请求
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit;
@@ -88,7 +107,43 @@ while ($row = $result->fetch_assoc()) {
 }
 $stmt->close();
 
+// ========== 获取分类配置 ==========
+$stmt = $conn->query("SELECT cat_key, cat_label, sort_order FROM faq_categories ORDER BY sort_order ASC");
+$categories = [];
+$categoriesOrder = [];
+if ($stmt) {
+    while ($row = $stmt->fetch_assoc()) {
+        $categories[$row['cat_key']] = $row['cat_label'];
+        $categoriesOrder[] = ['key' => $row['cat_key'], 'label' => $row['cat_label'], 'sort_order' => intval($row['sort_order'])];
+    }
+    $stmt->close();
+}
+
+if (empty($categories)) {
+    // 默认分类
+    $categories = [
+        'liangzi' => '亮资业务',
+        'bridge' => '过桥资金',
+        'baizhang' => '摆账业务',
+        'receivable' => '应收账款',
+        'deposit' => '银行存款',
+        'general' => '一般问题'
+    ];
+    $categoriesOrder = [
+        ['key' => 'liangzi', 'label' => '亮资业务', 'sort_order' => 0],
+        ['key' => 'guoqiao', 'label' => '过桥资金', 'sort_order' => 1],
+        ['key' => 'baizhang', 'label' => '摆账业务', 'sort_order' => 2],
+        ['key' => 'receivable', 'label' => '应收账款', 'sort_order' => 3],
+        ['key' => 'deposit', 'label' => '银行存款', 'sort_order' => 4],
+        ['key' => 'general', 'label' => '一般问题', 'sort_order' => 5]
+    ];
+    // 写入默认到数据库
+    initDefaultCategories($conn, $categoriesOrder);
+}
+
 echo json_encode([
     'code' => 0,
-    'data' => $data
+    'data' => $data,
+    'categories' => $categories,
+    'categories_order' => $categoriesOrder
 ], JSON_UNESCAPED_UNICODE);

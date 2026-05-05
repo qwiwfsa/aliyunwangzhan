@@ -540,3 +540,11 @@
 [2026-05-05 11:53:52] 解析后的数据: {"id":24,"title":"测试十二","summary":"...","content":"<p><img src=\"\/hongdu\/uploads\/20260505_69f9b8291624d.JPG\" alt=\"\" width=\"772\" height=\"354\"><\/p>\n<p>&nbsp;<\/p>\n<p>&nbsp;<\/p>\n<p>测试<\/p>\n<p>&nbsp;<\/p>\n<p>&nbsp;<\/p>\n<p>&nbsp;<\/p>\n<p>&nbsp;<\/p>\n<p>&nbsp;<\/p>\n<p><img src=\"..\/..\/..\/..\/uploads\/20260505_69f9b6830e60f.jpg\" alt=\"\"><img src=\"..\/..\/..\/..\/uploads\/20260505_69f9b694949f4.jpg\" alt=\"\"><\/p>","category_id":0,"cover_image":"uploads\/20260505_69f9be2d02eff.JPG","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
 [2026-05-05 11:53:52] 数据库连接成功
 [2026-05-05 11:53:52] 文章保存成功, ID: 24
+[2026-05-05 12:06:21] === 文章保存API被调用 ===
+[2026-05-05 12:06:21] 请求方法: POST
+[2026-05-05 12:06:21] 请求URI: /hongdu/admin/api/news/save.php
+[2026-05-05 12:06:21] 原始请求数据长度: 238
+[2026-05-05 12:06:21] 原始请求数据: {"id":0,"title":"测试失误","summary":"","content":"<p>测试</p>","category_id":0,"cover_image":"uploads/20260505_69f9c116dcf06.JPG","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
+[2026-05-05 12:06:21] 解析后的数据: {"id":0,"title":"测试失误","summary":"","content":"<p>测试<\/p>","category_id":0,"cover_image":"uploads\/20260505_69f9c116dcf06.JPG","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
+[2026-05-05 12:06:21] 数据库连接成功
+[2026-05-05 12:06:21] 文章保存成功, ID: 26

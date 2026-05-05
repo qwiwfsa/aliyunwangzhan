@@ -5,7 +5,7 @@
  */
 
 error_reporting(E_ALL);
-ini_set('display_errors', 0);
+ini_set('display_errors', 1);
 
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
@@ -44,10 +44,24 @@ try {
         ];
     }
     
+    // 获取分类顺序
+    $categoriesOrder = [];
+    $catStmt = $db->prepare("SELECT cat_key, cat_label, sort_order FROM faq_categories ORDER BY sort_order ASC");
+    $catStmt->execute();
+    $catRows = $catStmt->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($catRows as $cat) {
+        $categoriesOrder[] = [
+            'key' => $cat['cat_key'],
+            'label' => $cat['cat_label'],
+            'sort_order' => (int)$cat['sort_order']
+        ];
+    }
+    
     echo json_encode([
         'success' => true,
         'faq' => $faqList,
-        'total' => count($faqList)
+        'total' => count($faqList),
+        'categories_order' => $categoriesOrder
     ], JSON_UNESCAPED_UNICODE);
     
 } catch (Exception $e) {
