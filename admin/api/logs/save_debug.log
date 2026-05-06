@@ -604,3 +604,11 @@
 [2026-05-06 06:44:06] 解析后的数据: {"id":30,"title":"测试a","summary":"","content":"","category_id":0,"cover_image":"uploads\/20260506_69fac714dcee7.png","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
 [2026-05-06 06:44:06] 数据库连接成功
 [2026-05-06 06:44:06] 文章保存成功, ID: 30
+[2026-05-06 07:25:18] === 文章保存API被调用 ===
+[2026-05-06 07:25:18] 请求方法: POST
+[2026-05-06 07:25:18] 请求URI: /hongdu/admin/api/news/save.php
+[2026-05-06 07:25:18] 原始请求数据长度: 219
+[2026-05-06 07:25:18] 原始请求数据: {"id":0,"title":"测试","summary":"","content":"","category_id":0,"cover_image":"uploads/20260506_69fad0bc08191.jpg","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
+[2026-05-06 07:25:18] 解析后的数据: {"id":0,"title":"测试","summary":"","content":"","category_id":0,"cover_image":"uploads\/20260506_69fad0bc08191.jpg","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
+[2026-05-06 07:25:18] 数据库连接成功
+[2026-05-06 07:25:18] 文章保存成功, ID: 31

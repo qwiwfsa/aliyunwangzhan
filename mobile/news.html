@@ -369,6 +369,7 @@
         document.addEventListener('DOMContentLoaded', async function() {
             const apiData = await loadAllFromServer(1);
             loadCategories(apiData);
+            renderArticles(allArticlesCache);
         });
     
     <!-- CMS Editor -->

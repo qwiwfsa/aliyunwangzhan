@@ -47,16 +47,7 @@ if ($result) {
 
 $news = [];
 foreach ($rows as $row) {
-    $coverImage = $row['cover_image'];
-    if ($coverImage) {
-        if (strpos($coverImage, 'http') === 0) {
-        } elseif (strpos($coverImage, '/') === 0) {
-        } elseif (strpos($coverImage, 'uploads/') === 0) {
-            $coverImage = '/' . $coverImage;
-        } else {
-            $coverImage = '/uploads/' . ltrim($coverImage, '/');
-        }
-    }
+    $coverImage = ($row['cover_image'] && strpos($row['cover_image'], '://') === false) ? '/hongdu/' . ltrim($row['cover_image'], '/') : $row['cover_image'];
 
     $news[] = [
         'id' => (int)$row['id'],

@@ -43,6 +43,8 @@
         .nav-btn-edit:hover { background: #dbeafe; }
         .nav-btn-delete { background: #fef2f2; color: #ef4444; }
         .nav-btn-delete:hover { background: #fee2e2; }
+        .nav-btn-sort-up, .nav-btn-sort-down { background: #f0fdf4; color: #22c55e; padding: 6px 10px; }
+        .nav-btn-sort-up:hover, .nav-btn-sort-down:hover { background: #dcfce7; }
         .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 200; }
         .modal-overlay.show { display: flex; }
         .modal { background: white; border-radius: 12px; width: 90%; max-width: 500px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
@@ -270,11 +272,17 @@
                         <div class="nav-url">${item.url}</div>
                     </div>
                     <div class="nav-actions">
-                        <button class="nav-btn nav-btn-edit" onclick="editPage('${item.url}')">
-                            <i class="fas fa-edit"></i> 编辑页面
+                        <button class="nav-btn nav-btn-sort-up" onclick="moveNav('${item.id}', -1)" ${index === 0 ? 'disabled style="opacity:0.4"' : ''}>
+                            <i class="fas fa-chevron-up"></i>
+                        </button>
+                        <button class="nav-btn nav-btn-sort-down" onclick="moveNav('${item.id}', 1)" ${index === navItems.length - 1 ? 'disabled style="opacity:0.4"' : ''}>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <button class="nav-btn nav-btn-edit" onclick="editNav('${item.id}')">
+                            <i class="fas fa-edit"></i>
                         </button>
                         <button class="nav-btn nav-btn-delete" onclick="deleteNav('${item.id}')">
-                            <i class="fas fa-trash"></i> 删除
+                            <i class="fas fa-trash"></i>
                         </button>
                     </div>
                 </div>
@@ -289,6 +297,49 @@
             document.getElementById('navUrl').value = '';
             document.getElementById('navIcon').value = '';
             document.getElementById('modal').classList.add('show');
+        }
+
+        // 上下排序
+        function moveNav(id, direction) {
+            const idx = navItems.findIndex(n => n.id === id);
+            if (idx < 0) return;
+            const newIdx = idx + direction;
+            if (newIdx < 0 || newIdx >= navItems.length) return;
+
+            // 交换位置
+            const temp = navItems[idx];
+            navItems[idx] = navItems[newIdx];
+            navItems[newIdx] = temp;
+
+            // 重新渲染
+            renderNavItems();
+
+            // 批量保存新顺序
+            const ordered = navItems.map((item, i) => ({
+                id: item.id,
+                name: item.name,
+                url: item.url,
+                icon: item.icon || ''
+            }));
+
+            fetch('/hongdu/admin/api/nav-save.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    action: 'save_all',
+                    type: 'nav',
+                    items: ordered
+                })
+            })
+            .then(res => res.json())
+            .then(result => {
+                if (result.code === 0) {
+                    showToast('排序已更新');
+                }
+            })
+            .catch(err => {
+                showToast('排序保存失败', 'error');
+            });
         }
 
         // 编辑菜单

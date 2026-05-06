@@ -102,15 +102,8 @@
     <nav class="navbar" id="navbar" role="navigation" aria-label="主导航">
         <div class="navbar-container">
 <a href="index.html" class="logo" aria-label="Yao资金网首页"><img src="images/logo.png?v=20260502040820" alt="Yao资金网" style="height:48px;width:auto;"></a>
-            <ul class="nav-menu" role="menubar">
-                <li role="none"><a href="index.html" class="nav-link" role="menuitem">首页</a></li>
-                <li role="none"><a href="services.html" class="nav-link" role="menuitem">业务范围</a></li>
-                <li role="none"><a href="cases.html" class="nav-link" role="menuitem">成功案例</a></li>
-                <li role="none"><a href="advantages.html" class="nav-link active" role="menuitem">服务优势</a></li>
-                <li role="none"><a href="news.html" class="nav-link" role="menuitem">行业资讯</a></li>
-                <li role="none"><a href="faq.html" class="nav-link" role="menuitem">常见问题</a></li>
-                <li role="none"><a href="contact.html" class="nav-link" role="menuitem">联系我们</a></li>
-            </ul>
+            <ul class="nav-menu" id="dynamicNavMenu" role="menubar">
+                </ul>
 
             <button class="search-toggle" id="searchToggle" aria-label="打开搜索" aria-expanded="false">
                 <i class="fas fa-search" aria-hidden="true"></i>
@@ -406,6 +399,58 @@
             }
         })();
     </script>
-</body>
+<script>
+                // 动态加载导航菜单 — 优先从数据库，回退localStorage
+                (function() {
+                    var defaultNavItems = [
+                        { id: '1', name: '首页', url: 'index.html', icon: 'fas fa-home' },
+                        { id: '2', name: '业务范围', url: 'services.html', icon: 'fas fa-briefcase' },
+                        { id: '3', name: '成功案例', url: 'cases.html', icon: 'fas fa-trophy' },
+                        { id: '4', name: '服务优势', url: 'advantages.html', icon: 'fas fa-star' },
+                        { id: '5', name: '行业资讯', url: 'news.html', icon: 'fas fa-newspaper' },
+                        { id: '6', name: '常见问题', url: 'faq.html', icon: 'fas fa-question-circle' },
+                        { id: '7', name: '联系我们', url: 'contact.html', icon: 'fas fa-phone' }
+                    ];
+
+                    function renderNav(items) {
+                        var container = document.getElementById('dynamicNavMenu');
+                        if (!container) return;
+                        var current = window.location.pathname.split('/').pop() || 'index.html';
+                        var html = '';
+                        for (var i = 0; i < items.length; i++) {
+                            var item = items[i];
+                            var active = item.url === current || (current === '' && item.url === 'index.html');
+                            html += '<li role="none"><a href="' + item.url + '" class="nav-link' + (active ? ' active' : '') + '" role="menuitem">' + item.name + '</a></li>';
+                        }
+                        container.innerHTML = html;
+                        try { localStorage.setItem('cms_nav_items', JSON.stringify(items)); } catch(e) {}
+                    }
+
+                    function fallback() {
+                        try {
+                            var stored = localStorage.getItem('cms_nav_items');
+                            if (stored) {
+                                var parsed = JSON.parse(stored);
+                                if (Array.isArray(parsed) && parsed.length > 0) { renderNav(parsed); return; }
+                            }
+                        } catch(e) {}
+                        renderNav(defaultNavItems);
+                    }
+
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', 'admin/api/nav-save.php?type=nav&t=' + Date.now(), true);
+                    xhr.onload = function() {
+                        if (xhr.status >= 200 && xhr.status < 400) {
+                            try {
+                                var resp = JSON.parse(xhr.responseText);
+                                if (resp.code === 0 && resp.data && resp.data.length > 0) { renderNav(resp.data); return; }
+                            } catch(e) {}
+                        }
+                        fallback();
+                    };
+                    xhr.onerror = function() { fallback(); };
+                    xhr.send();
+                })();
+</script></body>
 </html>
 

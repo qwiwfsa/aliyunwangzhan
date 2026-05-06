@@ -14,7 +14,7 @@
     <title>Yao 资金网 | 企业摆账 - 过桥短拆一站式资金业务服务</title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="all" onload="this.media='all'">
-    <noscript>&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;</noscript>
+    <noscript>&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;</noscript>
     <link rel="stylesheet" href="css/style.css?v=20250504">
     
     <!-- Structured Data -->
@@ -129,8 +129,8 @@
     <!-- 导航栏 -->
     <nav class="navbar" id="navbar" role="navigation" aria-label="主导航">
         <div class="navbar-container">
-<a href="index.html" class="logo" aria-label="Yao资金网首页"><img src="./uploads/logo/logo_20260505_122045_69f9c47d515d1.png" alt="Yao资金网" style="height:48px;width:auto;" class=""></a>
-            <ul class="nav-menu" role="menubar" id="dynamicNavMenu"><li role="none"><a href="index.html" class="nav-link active" role="menuitem">首页</a></li><li role="none"><a href="services.html" class="nav-link" role="menuitem">业务范围</a></li><li role="none"><a href="cases.html" class="nav-link" role="menuitem">成功案例</a></li><li role="none"><a href="advantages.html" class="nav-link" role="menuitem">服务优势</a></li><li role="none"><a href="news.php" class="nav-link" role="menuitem">行业资讯</a></li><li role="none"><a href="faq.html" class="nav-link" role="menuitem">常见问题</a></li><li role="none"><a href="contact.html" class="nav-link" role="menuitem">联系我们</a></li></ul>
+<a href="index.html" class="logo" aria-label="Yao资金网首页"><img src="./uploads/logo/logo_20260501_234314_69f51e721c7d0.png" alt="Yao资金网" style="height:48px;width:auto;" class=""></a>
+            <ul class="nav-menu" role="menubar" id="dynamicNavMenu"><li role="none"><a href="index.html" class="nav-link active" role="menuitem">首页</a></li><li role="none"><a href="services.html" class="nav-link" role="menuitem">业务范围</a></li><li role="none"><a href="cases.html" class="nav-link" role="menuitem">成功案例</a></li><li role="none"><a href="advantages.html" class="nav-link" role="menuitem">服务优势</a></li><li role="none"><a href="news.html" class="nav-link" role="menuitem">行业资讯</a></li><li role="none"><a href="faq.html" class="nav-link" role="menuitem">常见问题</a></li><li role="none"><a href="contact.html" class="nav-link" role="menuitem">联系我们</a></li></ul>
             
             <script>
                 // 动态加载导航菜单 — 优先从数据库，回退localStorage，兜底默认数据
@@ -193,7 +193,7 @@
                         renderNav(defaultNavItems);
                     }
                 })();
-</script>
+</script></script>
 
             <!-- 搜索按钮 -->
             <button class="search-toggle" id="searchToggle" aria-label="打开搜索" aria-expanded="false">
@@ -234,7 +234,7 @@
             </div>
             
             <h1 class="hero-title" id="hero-title">专业资金解决方案
-助力企业稳健发展</h1>
+助力企业稳健发展测试</h1>
             
             <p class="hero-subtitle">提供上市公司短拆、企业摆账、银行存款、应收账款融资等全方位资金服务，以专业实力和丰富经验，为您的企业发展保驾护航。</p>
             
@@ -352,138 +352,138 @@
             </div>
             
             <div class="cases-showcase-grid" id="casesShowcaseGrid">
-                    <article class="case-card-enhanced" data-id="18">
-                        <div class="case-card-image" onclick="openLightbox('uploads/20260428_69efe5a609ecf.jpg')">
-                            <img src="uploads/20260428_69efe5a609ecf.jpg" alt="某酒店老板" onerror="this.src='images/case-default.jpg'">
+                    <article class="case-card-enhanced" data-id="case_1777296851044">
+                        <div class="case-card-image" onclick="openLightbox('uploads/20260428_69efe569f351a.jpg')">
+                            <img src="uploads/20260428_69efe569f351a.jpg" alt="某房地产企业" onerror="this.src='images/case-default.jpg'">
                         </div>
                         <div class="case-card-content">
-                            <h3 class="case-card-title" onclick="window.location.href='case-detail.html?id=18'" style="cursor: pointer;">某酒店老板</h3>
-                            <p class="case-card-summary" onclick="window.location.href='case-detail.html?id=18'" style="cursor: pointer;">这位老板在领导面前展示了现金资金实力，完成了大量批油项目赚的盆满钵满。</p>
+                            <h3 class="case-card-title" onclick="window.location.href='case-detail.html?id=case_1777296851044'" style="cursor: pointer;">某房地产企业</h3>
+                            <p class="case-card-summary" onclick="window.location.href='case-detail.html?id=case_1777296851044'" style="cursor: pointer;">为企业提供大额摆账亮资服务，助力成功中标大型工程项目。</p>
                             <div class="case-card-meta">
-                                <div class="case-card-amount" onclick="window.location.href='case-detail.html?id=18'" style="cursor: pointer;">
+                                <div class="case-card-amount" onclick="window.location.href='case-detail.html?id=case_1777296851044'" style="cursor: pointer;">
                                     <span class="case-card-amount-label">出资金额</span>
-                                    <span class="case-card-amount-value">1亿</span>
+                                    <span class="case-card-amount-value">11亿元</span>
                                 </div>
-                                <button class="btn-view-detail" onclick="window.location.href='case-detail.html?id=18'">查看详情</button>
+                                <button class="btn-view-detail" onclick="window.location.href='case-detail.html?id=case_1777296851044'">查看详情</button>
                             </div>
                         </div>
                     </article>
                 
-                    <article class="case-card-enhanced" data-id="17">
-                        <div class="case-card-image" onclick="openLightbox('uploads/20260427_69efbc447d775.jpg')">
-                            <img src="uploads/20260427_69efbc447d775.jpg" alt="某上市公司过桥融资" onerror="this.src='images/case-default.jpg'">
-                        </div>
-                        <div class="case-card-content">
-                            <h3 class="case-card-title" onclick="window.location.href='case-detail.html?id=17'" style="cursor: pointer;">某上市公司过桥融资</h3>
-                            <p class="case-card-summary" onclick="window.location.href='case-detail.html?id=17'" style="cursor: pointer;">为某上市公司提供过桥融资服务，帮助其顺利完成资金周转。</p>
-                            <div class="case-card-meta">
-                                <div class="case-card-amount" onclick="window.location.href='case-detail.html?id=17'" style="cursor: pointer;">
-                                    <span class="case-card-amount-label">出资金额</span>
-                                    <span class="case-card-amount-value">5亿</span>
-                                </div>
-                                <button class="btn-view-detail" onclick="window.location.href='case-detail.html?id=17'">查看详情</button>
-                            </div>
-                        </div>
-                    </article>
-                
-                    <article class="case-card-enhanced" data-id="16">
-                        <div class="case-card-image" onclick="openLightbox('uploads/20260427_69efbc9dcf100.jpg')">
-                            <img src="uploads/20260427_69efbc9dcf100.jpg" alt="某高新技术企业" onerror="this.src='images/case-default.jpg'">
-                        </div>
-                        <div class="case-card-content">
-                            <h3 class="case-card-title" onclick="window.location.href='case-detail.html?id=16'" style="cursor: pointer;">某高新技术企业</h3>
-                            <p class="case-card-summary" onclick="window.location.href='case-detail.html?id=16'" style="cursor: pointer;">提供月末、季末银行存款冲量服务，帮助企业优化财务报表。</p>
-                            <div class="case-card-meta">
-                                <div class="case-card-amount" onclick="window.location.href='case-detail.html?id=16'" style="cursor: pointer;">
-                                    <span class="case-card-amount-label">出资金额</span>
-                                    <span class="case-card-amount-value">2亿元</span>
-                                </div>
-                                <button class="btn-view-detail" onclick="window.location.href='case-detail.html?id=16'">查看详情</button>
-                            </div>
-                        </div>
-                    </article>
-                
-                    <article class="case-card-enhanced" data-id="15">
+                    <article class="case-card-enhanced" data-id="case_1777298570787">
                         <div class="case-card-image" onclick="openLightbox('uploads/20260427_69efb18e8687a.jpg')">
                             <img src="uploads/20260427_69efb18e8687a.jpg" alt="现金亮资" onerror="this.src='images/case-default.jpg'">
                         </div>
                         <div class="case-card-content">
-                            <h3 class="case-card-title" onclick="window.location.href='case-detail.html?id=15'" style="cursor: pointer;">现金亮资</h3>
-                            <p class="case-card-summary" onclick="window.location.href='case-detail.html?id=15'" style="cursor: pointer;">今日我们出资现金来辅助企业拿工程拿项目，解决没有足够的现金流来证明资金实力问题。</p>
+                            <h3 class="case-card-title" onclick="window.location.href='case-detail.html?id=case_1777298570787'" style="cursor: pointer;">现金亮资</h3>
+                            <p class="case-card-summary" onclick="window.location.href='case-detail.html?id=case_1777298570787'" style="cursor: pointer;">今日我们出资现金来辅助企业拿工程拿项目，解决没有足够的现金流来证明资金实力问题。</p>
                             <div class="case-card-meta">
-                                <div class="case-card-amount" onclick="window.location.href='case-detail.html?id=15'" style="cursor: pointer;">
+                                <div class="case-card-amount" onclick="window.location.href='case-detail.html?id=case_1777298570787'" style="cursor: pointer;">
                                     <span class="case-card-amount-label">出资金额</span>
                                     <span class="case-card-amount-value">三千万</span>
                                 </div>
-                                <button class="btn-view-detail" onclick="window.location.href='case-detail.html?id=15'">查看详情</button>
+                                <button class="btn-view-detail" onclick="window.location.href='case-detail.html?id=case_1777298570787'">查看详情</button>
                             </div>
                         </div>
                     </article>
                 
-                    <article class="case-card-enhanced" data-id="14">
+                    <article class="case-card-enhanced" data-id="case_1777296618774">
+                        <div class="case-card-image" onclick="openLightbox('uploads/20260428_69efe591a8ada.jpg')">
+                            <img src="uploads/20260428_69efe591a8ada.jpg" alt="某大型集团公司" onerror="this.src='images/case-default.jpg'">
+                        </div>
+                        <div class="case-card-content">
+                            <h3 class="case-card-title" onclick="window.location.href='case-detail.html?id=case_1777296618774'" style="cursor: pointer;">某大型集团公司</h3>
+                            <p class="case-card-summary" onclick="window.location.href='case-detail.html?id=case_1777296618774'" style="cursor: pointer;">协助企业完成募集账户资金归还，确保合规运营，维护企业信用评级。</p>
+                            <div class="case-card-meta">
+                                <div class="case-card-amount" onclick="window.location.href='case-detail.html?id=case_1777296618774'" style="cursor: pointer;">
+                                    <span class="case-card-amount-label">出资金额</span>
+                                    <span class="case-card-amount-value">5000万</span>
+                                </div>
+                                <button class="btn-view-detail" onclick="window.location.href='case-detail.html?id=case_1777296618774'">查看详情</button>
+                            </div>
+                        </div>
+                    </article>
+                
+                    <article class="case-card-enhanced" data-id="case_1777298492653">
                         <div class="case-card-image" onclick="openLightbox('uploads/20260428_69efe75776f9a.jpg')">
                             <img src="uploads/20260428_69efe75776f9a.jpg" alt="某上市制造企业" onerror="this.src='images/case-default.jpg'">
                         </div>
                         <div class="case-card-content">
-                            <h3 class="case-card-title" onclick="window.location.href='case-detail.html?id=14'" style="cursor: pointer;">某上市制造企业</h3>
-                            <p class="case-card-summary" onclick="window.location.href='case-detail.html?id=14'" style="cursor: pointer;">为上市公司股东提供股票解质押过桥资金，成功化解质押风险，保障企业正常运营。</p>
+                            <h3 class="case-card-title" onclick="window.location.href='case-detail.html?id=case_1777298492653'" style="cursor: pointer;">某上市制造企业</h3>
+                            <p class="case-card-summary" onclick="window.location.href='case-detail.html?id=case_1777298492653'" style="cursor: pointer;">为上市公司股东提供股票解质押过桥资金，成功化解质押风险，保障企业正常运营。</p>
                             <div class="case-card-meta">
-                                <div class="case-card-amount" onclick="window.location.href='case-detail.html?id=14'" style="cursor: pointer;">
+                                <div class="case-card-amount" onclick="window.location.href='case-detail.html?id=case_1777298492653'" style="cursor: pointer;">
                                     <span class="case-card-amount-label">出资金额</span>
                                     <span class="case-card-amount-value">5.8亿元</span>
                                 </div>
-                                <button class="btn-view-detail" onclick="window.location.href='case-detail.html?id=14'">查看详情</button>
+                                <button class="btn-view-detail" onclick="window.location.href='case-detail.html?id=case_1777298492653'">查看详情</button>
                             </div>
                         </div>
                     </article>
                 
-                    <article class="case-card-enhanced" data-id="13">
+                    <article class="case-card-enhanced" data-id="case_test_001">
+                        <div class="case-card-image" onclick="openLightbox('uploads/20260427_69efbc447d775.jpg')">
+                            <img src="uploads/20260427_69efbc447d775.jpg" alt="某上市公司过桥融资" onerror="this.src='images/case-default.jpg'">
+                        </div>
+                        <div class="case-card-content">
+                            <h3 class="case-card-title" onclick="window.location.href='case-detail.html?id=case_test_001'" style="cursor: pointer;">某上市公司过桥融资</h3>
+                            <p class="case-card-summary" onclick="window.location.href='case-detail.html?id=case_test_001'" style="cursor: pointer;">为某上市公司提供过桥融资服务，帮助其顺利完成资金周转。</p>
+                            <div class="case-card-meta">
+                                <div class="case-card-amount" onclick="window.location.href='case-detail.html?id=case_test_001'" style="cursor: pointer;">
+                                    <span class="case-card-amount-label">出资金额</span>
+                                    <span class="case-card-amount-value">5亿</span>
+                                </div>
+                                <button class="btn-view-detail" onclick="window.location.href='case-detail.html?id=case_test_001'">查看详情</button>
+                            </div>
+                        </div>
+                    </article>
+                
+                    <article class="case-card-enhanced" data-id="case_1777327823526">
+                        <div class="case-card-image" onclick="openLightbox('uploads/20260428_69efe5a609ecf.jpg')">
+                            <img src="uploads/20260428_69efe5a609ecf.jpg" alt="某酒店老板" onerror="this.src='images/case-default.jpg'">
+                        </div>
+                        <div class="case-card-content">
+                            <h3 class="case-card-title" onclick="window.location.href='case-detail.html?id=case_1777327823526'" style="cursor: pointer;">某酒店老板</h3>
+                            <p class="case-card-summary" onclick="window.location.href='case-detail.html?id=case_1777327823526'" style="cursor: pointer;">这位老板在领导面前展示了现金资金实力，完成了大量批油项目赚的盆满钵满。</p>
+                            <div class="case-card-meta">
+                                <div class="case-card-amount" onclick="window.location.href='case-detail.html?id=case_1777327823526'" style="cursor: pointer;">
+                                    <span class="case-card-amount-label">出资金额</span>
+                                    <span class="case-card-amount-value">1亿</span>
+                                </div>
+                                <button class="btn-view-detail" onclick="window.location.href='case-detail.html?id=case_1777327823526'">查看详情</button>
+                            </div>
+                        </div>
+                    </article>
+                
+                    <article class="case-card-enhanced" data-id="case_1777297531614">
                         <div class="case-card-image" onclick="openLightbox('uploads/20260428_69efe5568ea59.jpg')">
                             <img src="uploads/20260428_69efe5568ea59.jpg" alt="某连锁零售企业" onerror="this.src='images/case-default.jpg'">
                         </div>
                         <div class="case-card-content">
-                            <h3 class="case-card-title" onclick="window.location.href='case-detail.html?id=13'" style="cursor: pointer;">某连锁零售企业</h3>
-                            <p class="case-card-summary" onclick="window.location.href='case-detail.html?id=13'" style="cursor: pointer;">一、官方标准定义 云信 = 中企云链平台发行的电子债权凭证 全称：数字化应收账款债权凭证 由央企、国企、大型核心企业签发 基于真实贸易背景、线上应付账款确权 具备可拆分、可流转、可融资、可贴现、到期刚性兑付四大属性</p>
+                            <h3 class="case-card-title" onclick="window.location.href='case-detail.html?id=case_1777297531614'" style="cursor: pointer;">某连锁零售企业</h3>
+                            <p class="case-card-summary" onclick="window.location.href='case-detail.html?id=case_1777297531614'" style="cursor: pointer;">一、官方标准定义 云信 = 中企云链平台发行的电子债权凭证 全称：数字化应收账款债权凭证 由央企、国企、大型核心企业签发 基于真实贸易背景、线上应付账款确权 具备可拆分、可流转、可融资、可贴现、到期刚性兑付四大属性</p>
                             <div class="case-card-meta">
-                                <div class="case-card-amount" onclick="window.location.href='case-detail.html?id=13'" style="cursor: pointer;">
+                                <div class="case-card-amount" onclick="window.location.href='case-detail.html?id=case_1777297531614'" style="cursor: pointer;">
                                     <span class="case-card-amount-label">出资金额</span>
                                     <span class="case-card-amount-value">1.5亿元</span>
                                 </div>
-                                <button class="btn-view-detail" onclick="window.location.href='case-detail.html?id=13'">查看详情</button>
+                                <button class="btn-view-detail" onclick="window.location.href='case-detail.html?id=case_1777297531614'">查看详情</button>
                             </div>
                         </div>
                     </article>
                 
-                    <article class="case-card-enhanced" data-id="12">
+                    <article class="case-card-enhanced" data-id="case_1777296718376">
                         <div class="case-card-image" onclick="openLightbox('uploads/20260428_69efe5303e212.jpg')">
                             <img src="uploads/20260428_69efe5303e212.jpg" alt="某物流科技企业" onerror="this.src='images/case-default.jpg'">
                         </div>
                         <div class="case-card-content">
-                            <h3 class="case-card-title" onclick="window.location.href='case-detail.html?id=12'" style="cursor: pointer;">某物流科技企业</h3>
-                            <p class="case-card-summary" onclick="window.location.href='case-detail.html?id=12'" style="cursor: pointer;">置换云信票据，提供灵活融资方案，解决企业短期资金周转需求。</p>
+                            <h3 class="case-card-title" onclick="window.location.href='case-detail.html?id=case_1777296718376'" style="cursor: pointer;">某物流科技企业</h3>
+                            <p class="case-card-summary" onclick="window.location.href='case-detail.html?id=case_1777296718376'" style="cursor: pointer;">置换云信票据，提供灵活融资方案，解决企业短期资金周转需求。</p>
                             <div class="case-card-meta">
-                                <div class="case-card-amount" onclick="window.location.href='case-detail.html?id=12'" style="cursor: pointer;">
+                                <div class="case-card-amount" onclick="window.location.href='case-detail.html?id=case_1777296718376'" style="cursor: pointer;">
                                     <span class="case-card-amount-label">出资金额</span>
                                     <span class="case-card-amount-value">5000万元</span>
                                 </div>
-                                <button class="btn-view-detail" onclick="window.location.href='case-detail.html?id=12'">查看详情</button>
-                            </div>
-                        </div>
-                    </article>
-                
-                    <article class="case-card-enhanced" data-id="11">
-                        <div class="case-card-image" onclick="openLightbox('uploads/20260505_69f9c988bf18b.jpg')">
-                            <img src="uploads/20260505_69f9c988bf18b.jpg" alt="某大型集团公司" onerror="this.src='images/case-default.jpg'">
-                        </div>
-                        <div class="case-card-content">
-                            <h3 class="case-card-title" onclick="window.location.href='case-detail.html?id=11'" style="cursor: pointer;">某大型集团公司</h3>
-                            <p class="case-card-summary" onclick="window.location.href='case-detail.html?id=11'" style="cursor: pointer;">协助企业完成募集账户资金归还，确保合规运营，维护企业信用评级。</p>
-                            <div class="case-card-meta">
-                                <div class="case-card-amount" onclick="window.location.href='case-detail.html?id=11'" style="cursor: pointer;">
-                                    <span class="case-card-amount-label">出资金额</span>
-                                    <span class="case-card-amount-value">5000万</span>
-                                </div>
-                                <button class="btn-view-detail" onclick="window.location.href='case-detail.html?id=11'">查看详情</button>
+                                <button class="btn-view-detail" onclick="window.location.href='case-detail.html?id=case_1777296718376'">查看详情</button>
                             </div>
                         </div>
                     </article>
@@ -684,12 +684,6 @@
                                     <i class="fas fa-question-circle" aria-hidden="true"></i> 一般问题
                                 </h3>
                                 <div class="faq-list">
-                                <details class="faq-item">
-                                    <summary class="faq-question">测试</summary>
-                                    <div class="faq-answer">
-                                        2
-                                    </div>
-                                </details>
                                 <details class="faq-item">
                                     <summary class="faq-question">如何联系你们？</summary>
                                     <div class="faq-answer">

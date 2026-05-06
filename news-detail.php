@@ -658,11 +658,9 @@
                 return;
             }
 
-            const basePath = window.location.pathname.substring(0, window.location.pathname.indexOf('/', 1) + 1);
             const fixCoverPath = (path) => {
-                if (!path) return '';
-                if (path.startsWith('/')) return basePath.replace(/\/$/, '') + path;
-                return path;
+                // API已返回完整路径（如 /hongdu/uploads/xxx.jpg），直接使用
+                return path || '';
             };
             document.getElementById('relatedArticles').innerHTML = articles.map(a => {
                 const title = a.title || '无标题';

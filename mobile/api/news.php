@@ -52,7 +52,7 @@ foreach ($rows as $row) {
         'title' => $row['title'],
         'summary' => $row['summary'],
         'content' => $row['content'],
-        'cover_image' => $row['cover_image'],
+        'cover_image' => ($row['cover_image'] && strpos($row['cover_image'], '://') === false) ? '/hongdu/' . ltrim($row['cover_image'], '/') : $row['cover_image'],
         'category_id' => (int)$row['category_id'],
         'date' => date('Y-m-d', strtotime($row['created_at'])),
         'created_at' => $row['created_at'],
