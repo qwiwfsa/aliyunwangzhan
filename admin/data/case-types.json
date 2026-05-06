@@ -33,12 +33,5 @@
         "description": "应收账款融资服务",
         "color": "#06b6d4",
         "sort_order": 5
-    },
-    {
-        "id": 7,
-        "name": "测试",
-        "description": "",
-        "color": "#3b82f6",
-        "sort_order": 6
     }
 ]

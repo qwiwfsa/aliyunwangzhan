@@ -510,7 +510,7 @@
                 <li role="none"><a href="services.html" class="nav-link" role="menuitem">业务范围</a></li>
                 <li role="none"><a href="cases.html" class="nav-link" role="menuitem">成功案例</a></li>
                 <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">服务优势</a></li>
-                <li role="none"><a href="news.html" class="nav-link active" role="menuitem">行业资讯</a></li>
+                <li role="none"><a href="news.php" class="nav-link active" role="menuitem">行业资讯</a></li>
                 <li role="none"><a href="faq.html" class="nav-link" role="menuitem">常见问题</a></li>
                 <li role="none"><a href="contact.html" class="nav-link" role="menuitem">联系我们</a></li>
             </ul>
@@ -551,7 +551,7 @@
             <div class="related-articles-container">
                 <div class="related-articles-header">
                     <h2 class="related-articles-title">相关资讯</h2>
-                    <a href="news.html" class="related-articles-more">
+                    <a href="news.php" class="related-articles-more">
                         查看全部 <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -590,7 +590,7 @@
                 <div class="footer-nav">
                     <h4 class="footer-nav-title">更多内容</h4>
                     <ul class="footer-nav-list">
-                        <li><a href="news.html">行业资讯</a></li>
+                        <li><a href="news.php">行业资讯</a></li>
                         <li><a href="faq.html">常见问题</a></li>
                         <li><a href="contact.html">联系我们</a></li>
                     </ul>
@@ -644,7 +644,7 @@
             const author = 'Yao资金网';
             
             document.getElementById('articleHeader').innerHTML = `
-                <a href="news.html" class="article-back-btn-top">
+                <a href="news.php" class="article-back-btn-top">
                     <i class="fas fa-arrow-left"></i>
                     返回资讯列表
                 </a>
@@ -672,28 +672,18 @@
         
         // 渲染相关文章
         function renderRelatedArticles(currentArticleId) {
-            // 从API获取相关文章（同分类的文章）
-            fetch('api/news-detail.php?id=' + currentArticleId + '&related=1')
+            // 直接获取所有文章（不限分类），取前4篇推荐
+            fetch('api/news.php?limit=10&t=' + Date.now())
                 .then(function(response) { return response.json(); })
                 .then(function(result) {
-                    if (result.success) {
-                        var article = result.data;
-                        // 获取同分类的其他已发表文章
-                        fetch('api/news.php?category_id=' + (article.category_id || 0))
-                            .then(function(resp) { return resp.json(); })
-                            .then(function(listResult) {
-                                if (listResult.success && listResult.data && listResult.data.news) {
-                                    var allArticles = listResult.data.news.filter(function(a) {
-                                        return String(a.id) !== String(currentArticleId);
-                                    }).slice(0, 4);
-                                    renderRelatedArticlesHtml(allArticles);
-                                } else {
-                                    document.getElementById('relatedArticles').innerHTML = '<div style="grid-column: 1 / -1; text-align: center; color: #9ca3af; padding: 40px;">暂无相关资讯</div>';
-                                }
-                            })
-                            .catch(function() {
-                                document.getElementById('relatedArticles').innerHTML = '<div style="grid-column: 1 / -1; text-align: center; color: #9ca3af; padding: 40px;">暂无相关资讯</div>';
-                            });
+                    var articles = result.data ? result.data.news : (result.news || []);
+                    if (articles.length > 0) {
+                        var filtered = articles.filter(function(a) {
+                            return String(a.id) !== String(currentArticleId);
+                        }).slice(0, 4);
+                        renderRelatedArticlesHtml(filtered);
+                    } else {
+                        document.getElementById('relatedArticles').innerHTML = '<div style="grid-column: 1 / -1; text-align: center; color: #9ca3af; padding: 40px;">暂无相关资讯</div>';
                     }
                 })
                 .catch(function() {
@@ -736,7 +726,7 @@
                     <i class="far fa-file-alt"></i>
                     <h2>文章未找到</h2>
                     <p>抱歉，您访问的文章不存在或已被删除</p>
-                    <a href="news.html" class="btn">
+                    <a href="news.php" class="btn">
                         <i class="fas fa-arrow-left"></i>
                         返回资讯列表
                     </a>

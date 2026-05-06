@@ -164,7 +164,7 @@
                 <li role="none"><a href="services.html" class="nav-link" role="menuitem">业务范围</a></li>
                 <li role="none"><a href="cases.html" class="nav-link active" role="menuitem">成功案例</a></li>
                 <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">服务优势</a></li>
-                <li role="none"><a href="news.html" class="nav-link" role="menuitem">行业资讯</a></li>
+                <li role="none"><a href="news.php" class="nav-link" role="menuitem">行业资讯</a></li>
                 <li role="none"><a href="faq.html" class="nav-link" role="menuitem">常见问题</a></li>
                 <li role="none"><a href="contact.html" class="nav-link" role="menuitem">联系我们</a></li>
             </ul>
@@ -325,7 +325,7 @@
                 <div class="footer-nav">
                     <h4 class="footer-nav-title">更多内容</h4>
                     <ul class="footer-nav-list">
-                        <li><a href="news.html">行业资讯</a></li>
+                        <li><a href="news.php">行业资讯</a></li>
                         <li><a href="faq.html">常见问题</a></li>
                         <li><a href="contact.html">联系我们</a></li>
                     </ul>
@@ -369,7 +369,7 @@
         // 案例数据 - 将从CMS数据源动态加载
         let casesData = [];
         // 全局基础路径（如 /hongdu/）
-        const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+        const basePath = location.pathname.startsWith('/hongdu') ? '/hongdu/' : '/';
 
         // 获取类型样式类名
         function getTypeClass(type) {
@@ -401,7 +401,7 @@
             // 头部区域已移除
 
             // 保存当前案例图片列表
-            currentCaseImages = caseItem.images || [caseItem.image];
+            currentCaseImages = (caseItem.images || [caseItem.image]).filter(Boolean).map(function(im){return getImageUrl(im)||im;});
 
             // 渲染媒体区域
             let mediaHtml = `
@@ -411,7 +411,7 @@
                             <i class="fas fa-play"></i>
                         </div>
                     ` : ''}
-                    <img src="${caseItem.images[0]}" alt="${caseItem.title}" id="mainImage">
+                    <img src="${getImageUrl(caseItem.images[0]) || basePath + 'images/cases/default.jpg'}" alt="${caseItem.title}" id="mainImage">
                 </div>
             `;
 
@@ -419,8 +419,8 @@
                 mediaHtml += `
                     <div class="case-media-thumbs">
                         ${caseItem.images.map((img, idx) => `
-                            <div class="case-media-thumb ${idx === 0 ? 'active' : ''}" onclick="changeImage('${img}', this)">
-                                <img src="${img}" alt="${caseItem.title} - ${idx + 1}">
+                            <div class="case-media-thumb ${idx === 0 ? 'active' : ''}" onclick="changeImage('${getImageUrl(img) || img}', this)">
+                                <img src="${getImageUrl(img) || basePath + 'images/cases/default.jpg'}" alt="${caseItem.title} - ${idx + 1}">
                             </div>
                         `).join('')}
                     </div>
@@ -468,7 +468,7 @@
             
             document.getElementById('relatedCases').innerHTML = relatedCases.map(c => {
                 // 优先使用 coverImage 字段，其次使用 images 数组的第一张，最后使用 image 字段
-                const relatedImage = c.coverImage || (c.images && c.images.length > 0 ? c.images[0] : c.image) || 'images/cases/default.jpg';
+                const relatedImage = getImageUrl(c.coverImage || (c.images && c.images.length > 0 ? c.images[0] : c.image)) || 'images/cases/default.jpg';
                 return `
                 <a href="case-detail.html?id=${c.id}" class="case-related-item">
                     <div class="case-related-thumb">
@@ -633,8 +633,10 @@
             try {
                 const response = await fetch(basePath + 'api/cases.php');
                 const result = await response.json();
-                if (result.success && result.cases) {
-                    return result.cases.filter(c => c.status === 'published');
+                // 平��端API返回 { success, data: { cases } }
+                var casesList = result.cases || (result.data && result.data.cases) || [];
+                if (casesList.length > 0) {
+                    return casesList.filter(function(c) { return c.status === 'published'; });
                 }
             } catch (error) {
                 console.log('服务器加载失败:', error);
@@ -688,17 +690,23 @@
             try {
                 // 尝试从CMS API加载（添加时间戳防止缓存）
                 const timestamp = new Date().getTime();
-                const response = await fetch(basePath + `api/case-detail.php?id=${caseId}&_t=${timestamp}`, {
+                const response = await fetch(basePath + `tablet/api/case-detail.php?id=${caseId}&_t=${timestamp}`, {
                     cache: 'no-store'
                 });
                 const result = await response.json();
                 
-                if (result.success && result.exists) {
+                if (result.success && result.data && result.data.case) {
                     // 使用CMS数据渲染
-                    serverData = result.case;
+                    serverData = result.data.case;
                     renderCaseFromCMS(serverData);
                     
                     // 更新localStorage中的数据为最新服务器数据
+                    updateLocalCase(serverData);
+                    return;
+                } else if (result.success && result.case) {
+                    // 兼容旧格式：result.case 直接包含数据
+                    serverData = result.case;
+                    renderCaseFromCMS(serverData);
                     updateLocalCase(serverData);
                     return;
                 } else {
@@ -781,7 +789,7 @@
                 mediaHtml += `
                     <div class="case-media-thumbs">
                         ${images.map((img, idx) => `
-                            <div class="case-media-thumb ${idx === 0 ? 'active' : ''}" onclick="changeImage('${img}', this)">
+                            <div class="case-media-thumb ${idx === 0 ? 'active' : ''}" onclick="changeImage('${getImageUrl(img) || img}', this)">
                                 <img src="${img}" alt="${caseData.title} - ${idx + 1}">
                             </div>
                         `).join('')}

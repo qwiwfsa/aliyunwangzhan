@@ -19,7 +19,8 @@
 
         try {
             // 从数据库API加载最新数据
-            const response = await fetch(`admin/api/load.php?page=${pageId}&t=${Date.now()}`);
+            const CMS_BASE = '/hongdu/admin/';
+            const response = await fetch(CMS_BASE + `api/load.php?page=${pageId}&t=${Date.now()}`);
             if (response.ok) {
                 const result = await response.json();
                 if (result.success && result.data) {
@@ -30,7 +31,7 @@
             }
 
             // 如果API加载失败，尝试从JSON文件加载
-            const jsonResponse = await fetch(`admin/data/${pageId}.json`);
+            const jsonResponse = await fetch(CMS_BASE + `data/${pageId}.json`);
             if (jsonResponse.ok) {
                 const data = await jsonResponse.json();
                 applyData(data);
@@ -128,7 +129,7 @@
     // 加载页脚数据
     async function loadFooter() {
         try {
-            const resp = await fetch('admin/api/footer-data.php');
+            const resp = await fetch('/hongdu/admin/api/footer-data.php');
             const result = await resp.json();
             if (result.code !== 0 || !result.grouped) return;
             const g = result.grouped;

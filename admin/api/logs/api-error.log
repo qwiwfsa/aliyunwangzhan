@@ -155,3 +155,4 @@
 [2026-05-06 06:15:12] PUT data | Data: "{\"id\":\"1\",\"name\":\"过桥短拆\",\"description\":\"\",\"color\":\"#3b82f6\"}" | Request: PUT /hongdu/admin/api/case/types.php
 [2026-05-06 06:18:37] POST data | Data: "{\"name\":\"测试\",\"description\":\"\",\"color\":\"#3b82f6\"}" | Request: POST /hongdu/admin/api/case/types.php
 [2026-05-06 06:21:46] PUT data | Data: "{\"id\": 1, \"sort_order\": 2}" | Request: PUT /hongdu/admin/api/case/types.php
+[2026-05-06 13:21:50] DELETE id | Data: 7 | Request: DELETE /hongdu/admin/api/case/types.php?id=7

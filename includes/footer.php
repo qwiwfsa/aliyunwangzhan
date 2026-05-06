@@ -74,7 +74,7 @@ function fva($data, $group) {
                         <li><a href="<?php echo htmlspecialchars($link['item_url'] ?: '#'); ?>"><?php echo htmlspecialchars($link['item_value'] ?: $link['item_label']); ?></a></li>
                         <?php endforeach; ?>
                         <?php else: ?>
-                        <li><a href="news.html">行业资讯</a></li>
+                        <li><a href="news.php">行业资讯</a></li>
                         <li><a href="faq.html">常见问题</a></li>
                         <li><a href="contact.html">联系我们</a></li>
                         <?php endif; ?>

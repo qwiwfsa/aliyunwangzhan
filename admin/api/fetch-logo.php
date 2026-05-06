@@ -43,17 +43,24 @@ if (json_last_error() !== JSON_ERROR_NONE || !is_array($settings)) {
     $settings = $defaults;
 }
 
-// 统一处理路径：去掉 ../ 前缀，确保前台页面能正确解析路径
+// 统一处理路径：改为绝对路径以 /hongdu/ 开头，确保前台所有页面（含子目录）都能正确显示
+$baseUrl = '/hongdu/';
 $pathFields = ['header_logo', 'footer_logo', 'favicon', 'admin_logo'];
 foreach ($pathFields as $field) {
     if (!empty($settings[$field])) {
         $path = $settings[$field];
         // 替换反斜杠为正斜杠
         $path = str_replace('\\', '/', $path);
-        // 去掉 ../ 前缀
-        if (strpos($path, '../') === 0) {
-            $path = '.' . substr($path, 2);
+        // 去掉 ../ 或 ./ 前缀
+        while (strpos($path, '../') === 0 || strpos($path, './') === 0) {
+            if (strpos($path, '../') === 0) {
+                $path = substr($path, 3);
+            } else {
+                $path = substr($path, 2);
+            }
         }
+        // 加上绝对路径前缀
+        $path = $baseUrl . ltrim($path, '/');
         $settings[$field] = $path;
     }
 }

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -94,6 +94,69 @@
     xhr.send();
 })();
 </script>
+
+    <style>
+        /* 新闻分页样式 - 统一风格 */
+        .news-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            margin-top: 30px;
+            padding: 14px 0;
+        }
+        .news-pagination .pagination-current {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;
+    height: 38px;
+    margin: 0 4px;
+    font-size: 14px;
+    font-weight: 500;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.pagination-btn {
+            min-width: 38px;
+            height: 38px;
+            padding: 0 10px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #9ca3af;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        .news-pagination .pagination-btn:hover {
+            border-color: #1e3a8a;
+            color: #1e3a8a;
+        }
+        .news-pagination .pagination-btn.active {
+            background: #1e3a8a;
+            color: #fff;
+            border-color: #1e3a8a;
+        }
+        .news-pagination .pagination-btn.disabled {
+            color: #e5e7eb;
+            border-color: #f0f0f0;
+            background: #f9fafb;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        .news-pagination .pagination-btn i {
+            font-size: 13px;
+        }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">跳转到主要内容</a>
@@ -107,7 +170,7 @@
                 <li role="none"><a href="services.html" class="nav-link" role="menuitem">业务范围</a></li>
                 <li role="none"><a href="cases.html" class="nav-link" role="menuitem">成功案例</a></li>
                 <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">服务优势</a></li>
-                <li role="none"><a href="news.html" class="nav-link active" role="menuitem">行业资讯</a></li>
+                <li role="none"><a href="news.php" class="nav-link active" role="menuitem">行业资讯</a></li>
                 <li role="none"><a href="faq.html" class="nav-link" role="menuitem">常见问题</a></li>
                 <li role="none"><a href="contact.html" class="nav-link" role="menuitem">联系我们</a></li>
             </ul>
@@ -159,74 +222,9 @@
                 <!-- 资讯列表 - 卡片式设计 -->
                 <div class="editable-section" data-section="news-list">
                     <div class="news-list-container">
-                        <!-- 资讯文章 1 -->
-                        <article class="news-card">
-                            <div class="news-thumb">
-                                <img src="images/news/news-1.jpg" alt="亮资业务">
-                            </div>
-                            <div class="news-content">
-                                <h3><a href="news-detail-1.html">亮资业务助力企业展示资金实力</a></h3>
-                                <p class="news-excerpt">亮资业务是企业在投标、验资、审计等场景下展示资金实力的重要方式。本文详细介绍亮资业务的应用场景与操作要点...</p>
-                                <div class="news-footer">
-                                    <a href="news-detail-1.html" class="news-more">查看更多 →</a>
-                                    <time class="news-date">2024-04-05</time>
-                                </div>
-                            </div>
-                        </article>
-
-                        <!-- 资讯文章 2 -->
-                        <article class="news-card">
-                            <div class="news-thumb">
-                                <img src="images/news/news-2.jpg" alt="过桥资金">
-                            </div>
-                            <div class="news-content">
-                                <h3><a href="news-detail-2.html">过桥资金：企业短期融资的最佳选择</a></h3>
-                                <p class="news-excerpt">过桥资金是解决企业短期资金周转问题的有效工具。本文分析过桥资金的特点、适用场景及申请流程...</p>
-                                <div class="news-footer">
-                                    <a href="news-detail-2.html" class="news-more">查看更多 →</a>
-                                    <time class="news-date">2024-03-28</time>
-                                </div>
-                            </div>
-                        </article>
-
-                        <!-- 资讯文章 3 -->
-                        <article class="news-card">
-                            <div class="news-thumb">
-                                <img src="images/news/news-3.jpg" alt="应收账款融资">
-                            </div>
-                            <div class="news-content">
-                                <h3><a href="news-detail-3.html">应收账款融资：盘活企业存量资产</a></h3>
-                                <p class="news-excerpt">应收账款融资帮助企业将闲置的应收账款转化为流动资金。本文探讨应收账款融资的操作模式与风险控制...</p>
-                                <div class="news-footer">
-                                    <a href="news-detail-3.html" class="news-more">查看更多 →</a>
-                                    <time class="news-date">2024-03-20</time>
-                                </div>
-                            </div>
-                        </article>
-
-                        <!-- 资讯文章 4 -->
-                        <article class="news-card">
-                            <div class="news-thumb">
-                                <img src="images/news/news-4.jpg" alt="银行存款业务">
-                            </div>
-                            <div class="news-content">
-                                <h3><a href="news-detail-4.html">银行存款业务：优化企业资金配置</a></h3>
-                                <p class="news-excerpt">银行存款业务是企业资金管理的基础。本文介绍如何通过合理的存款安排优化企业资金配置，提升资金使用效率...</p>
-                                <div class="news-footer">
-                                    <a href="news-detail-4.html" class="news-more">查看更多 →</a>
-                                    <time class="news-date">2024-03-15</time>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-
-                <!-- 分页 -->
-                <div class="editable-section" data-section="news-pagination">
-                    <div class="news-pagination">
-                        <a href="#" class="pagination-btn disabled"><i class="fas fa-chevron-left"></i></a>
-                        <a href="#" class="pagination-btn active">1</a>
-                        <a href="#" class="pagination-btn disabled"><i class="fas fa-chevron-right"></i></a>
+                        <!-- 文章由JS动态加载 -->
+                    </div><div class="news-pagination">
+                        <a href="#" class="pagination-btn disabled"><i class="fas fa-chevron-left"></i></a><a href="#" class="pagination-btn disabled"><i class="fas fa-chevron-right"></i></a>
                     </div>
                 </div>
 
@@ -248,42 +246,54 @@
 
     <script src="js/main.js"></script>
     
-
     <!-- 动态加载资讯文章 -->
     <script>
         // 当前选中的分类
         let currentCategoryId = 0;
-        let allArticlesCache = [];
-
-        // 从服务器API加载文章和分类
-        async function loadAllFromServer() {
+        
+        // 从服务器API加载分类和文章数据（与手机端一致，从数据库读取）
+        async function loadNewsFromServer() {
+            console.log('[News] 开始从服务器加载文章...');
             try {
-                const response = await fetch('api/news.php?t=' + Date.now(), {
+                const apiUrl = currentCategoryId
+                    ? 'mobile/api/news.php?category_id=' + currentCategoryId + '&limit=100&t=' + Date.now()
+                    : 'mobile/api/news.php?limit=100&t=' + Date.now();
+                const response = await fetch(apiUrl, {
                     method: 'GET',
                     cache: 'no-store',
                     headers: { 'Accept': 'application/json', 'Cache-Control': 'no-cache' }
                 });
-                if (!response.ok) return null;
+                if (!response.ok) { return null; }
                 const result = await response.json();
                 if (result.success && result.data && result.data.news) {
-                    allArticlesCache = result.data.news;
-                    console.log('[News] 从数据库加载了', allArticlesCache.length, '篇文章');
+                    console.log('[News] 从服务器加载了', result.data.news.length, '篇文章');
+                    // 同时更新localStorage中的分类
                     if (result.data.categories && Array.isArray(result.data.categories)) {
-                                            }
-                    return result.data;
+                        localStorage.setItem('cms_categories', JSON.stringify(result.data.categories));
+                    }
+                    return result.data.news;
                 }
                 return null;
             } catch (error) {
-                console.error('[News] API加载失败:', error);
+                console.error('[News] 从服务器加载失败:', error);
                 return null;
             }
         }
 
-        // 加载分类
-        function loadCategories(apiData) {
+        // 从localStorage加载分类
+        function loadCategories() {
+            console.log('[News] 开始加载分类...');
+            
+            const categories = JSON.parse(localStorage.getItem('cms_categories') || '[]');
+            console.log('[News] 本地存储分类数量:', categories.length);
+            
             const categoriesContainer = document.getElementById('newsCategories');
-            if (!categoriesContainer) return;
-
+            if (!categoriesContainer) {
+                console.error('[News] 找不到分类容器');
+                return;
+            }
+            
+            // 保留"全部资讯"，移除其他分类
             const allLink = categoriesContainer.querySelector('[data-cat-id="0"]');
             categoriesContainer.innerHTML = '';
             if (allLink) {
@@ -291,14 +301,12 @@
                     e.preventDefault();
                     currentCategoryId = 0;
                     updateActiveCategory();
-                    renderArticles(allArticlesCache);
+                    loadNewsByCategory();
                 });
                 categoriesContainer.appendChild(allLink);
             }
-
-            const categories = (apiData && apiData.categories) 
-                ? apiData.categories 
-                : []
+            
+            // 添加CMS分类
             if (categories.length > 0) {
                 categories.forEach(cat => {
                     const catLink = document.createElement('a');
@@ -310,15 +318,12 @@
                         e.preventDefault();
                         currentCategoryId = cat.id;
                         updateActiveCategory();
-                        const filtered = allArticlesCache.filter(a => {
-                            const cid = a.categoryId || a.category_id;
-                            return cid == cat.id;
-                        });
-                        renderArticles(filtered);
+                        loadNewsByCategory();
                     });
                     categoriesContainer.appendChild(catLink);
                 });
             } else {
+                // 使用默认分类
                 const defaultCategories = ['行业动态', '政策解读', '业务知识', '公司新闻'];
                 defaultCategories.forEach((name, index) => {
                     const catLink = document.createElement('a');
@@ -330,17 +335,16 @@
                         e.preventDefault();
                         currentCategoryId = index + 1;
                         updateActiveCategory();
-                        const filtered = allArticlesCache.filter(a => {
-                            const cid = a.categoryId || a.category_id;
-                            return cid == index + 1;
-                        });
-                        renderArticles(filtered);
+                        loadNewsByCategory();
                     });
                     categoriesContainer.appendChild(catLink);
                 });
             }
+            
+            console.log('[News] 分类加载完成');
         }
-
+        
+        // 更新活跃分类样式
         function updateActiveCategory() {
             document.querySelectorAll('.news-category').forEach(cat => {
                 cat.classList.remove('active');
@@ -349,41 +353,125 @@
                 }
             });
         }
-
+        
+        // 从服务器API或localStorage加载已发布的文章（优先从数据库）
+        // 渲染文章列表到页面（分页版，每页10篇）
         function renderArticles(articles) {
-            const newsContainer = document.querySelector('.news-list-container');
-            if (!newsContainer) return;
-
-            if (!articles || articles.length === 0) {
-                newsContainer.innerHTML = '<div class="news-empty"><p>该分类下暂无文章</p></div>';
+            console.log('[News] 开始渲染文章...');
+            
+            // 按日期排序（最新的在前）
+            articles.sort((a, b) => {
+                const dateA = new Date(a.publishDate || a.created_at || 0);
+                const dateB = new Date(b.publishDate || b.created_at || 0);
+                return dateB - dateA;
+            });
+            
+            if (articles.length === 0) {
+                const newsContainer = document.querySelector('.news-list-container');
+                if (newsContainer) {
+                    newsContainer.innerHTML = '<div class="news-empty"><p>该分类下暂无文章</p></div>';
+                }
                 return;
             }
-
-            const sorted = [...articles].sort((a, b) => {
-                const da = new Date(a.publishDate || a.created_at || 0);
-                const db = new Date(b.publishDate || b.created_at || 0);
-                return db - da;
-            });
-
+            
+            const pageSize = 10;
+            const totalPages = Math.ceil(articles.length / pageSize);
+            if (currentPage > totalPages) currentPage = totalPages;
+            if (currentPage < 1) currentPage = 1;
+            
+            const startIdx = (currentPage - 1) * pageSize;
+            const endIdx = Math.min(startIdx + pageSize, articles.length);
+            const pageArticles = articles.slice(startIdx, endIdx);
+            
+            const newsContainer = document.querySelector('.news-list-container');
+            if (!newsContainer) {
+                console.error('[News] 找不到文章列表容器');
+                return;
+            }
+            
             newsContainer.innerHTML = '';
-            sorted.forEach(article => {
+            pageArticles.forEach(article => {
                 newsContainer.insertAdjacentHTML('beforeend', createNewsCard(article));
             });
-            console.log('[News] 渲染完成，共', sorted.length, '篇');
+            
+            // 渲染分页器
+            renderPagination(currentPage, totalPages, articles);
+            
+            console.log('[News] 文章加载完成，共', articles.length, '篇，当前页', currentPage);
         }
+        
+        // 渲染分页按钮
+        function renderPagination(page, totalPages, allArticles) {
+            const paginationContainer = document.querySelector('.news-pagination');
+            if (!paginationContainer) return;
+            
+            if (totalPages <= 1) {
+                paginationContainer.innerHTML = '';
+                return;
+            }
+            
+            let html = '';
+            
+            // 上一页
+            if (page > 1) {
+                html += '<a href="javascript:void(0)" class="pagination-btn" onclick="goToPage(' + (page - 1) + ')"><i class="fas fa-chevron-left"></i></a>';
+            } else {
+                html += '<a href="javascript:void(0)" class="pagination-btn disabled"><i class="fas fa-chevron-left"></i></a>';
+            }
 
+            // 当前页
+            html += '<span class="pagination-current">' + page + '</span>';
+            // 下一页
+            if (page < totalPages) {
+                html += '<a href="javascript:void(0)" class="pagination-btn" onclick="goToPage(' + (page + 1) + ')"><i class="fas fa-chevron-right"></i></a>';
+            } else {
+                html += '<a href="javascript:void(0)" class="pagination-btn disabled"><i class="fas fa-chevron-right"></i></a>';
+            }
+            
+            paginationContainer.innerHTML = html;
+        }
+        
+        // 跳转到指定页
+        function goToPage(page) {
+            currentPage = page;
+            if (allNewsArticles && allNewsArticles.length > 0) {
+                renderArticles(allNewsArticles);
+            } else {
+                console.warn('[News] 没有文章数据，无法翻页');
+            }
+        }
+        
+        // 验证图片数据是否有效
         function isValidImage(imageData) {
-            if (!imageData || typeof imageData !== 'string') return false;
-            if (imageData.startsWith('data:image')) return imageData.length > 100;
-            if (imageData.startsWith('http://') || imageData.startsWith('https://') || imageData.startsWith('/')) return imageData.length > 10;
-            if (imageData.startsWith('images/')) return true;
+            if (!imageData) return false;
+            if (typeof imageData !== 'string') return false;
+            // 检查是否是有效的Base64图片
+            if (imageData.startsWith('data:image')) {
+                // 检查Base64数据是否完整（至少要有头部和一部分数据）
+                return imageData.length > 100;
+            }
+            // 检查是否是有效的URL
+            if (imageData.startsWith('http://') || imageData.startsWith('https://') || imageData.startsWith('/')) {
+                return imageData.length > 10;
+            }
+            // 检查是否是相对路径
+            if (imageData.startsWith('images/')) {
+                return true;
+            }
             return false;
         }
 
+        // 获取有效的封面图片
         function getValidCoverImage(article) {
-            return (article.cover_image && isValidImage(article.cover_image)) ? article.cover_image : null;
+            // 如果有封面图，使用封面图
+            if (article.cover_image && isValidImage(article.cover_image)) {
+                return article.cover_image;
+            }
+            // 如果没有封面图，返回 null（显示空白占位图）
+            return null;
         }
 
+        // 创建文章卡片HTML
         function createNewsCard(article) {
             const title = article.title || '无标题';
             const summary = article.summary || article.content?.replace(/<[^>]*>/g, '').substring(0, 100) + '...' || '';
@@ -392,28 +480,54 @@
             const coverImage = getValidCoverImage(article);
             const articleId = article.id;
             
+            // 左图右文布局
             const imageHtml = coverImage 
-                ? '<div class="news-thumb"><img src="' + coverImage + '" alt="' + title + '" loading="lazy"></div>'
-                : '<div class="news-thumb placeholder"><div class="placeholder-bg"></div></div>';
+                ? `<div style="flex:0 0 280px;width:280px;min-height:180px;overflow:hidden;border-radius:8px"><img src="${coverImage}" alt="${title}" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>`
+                : `<div style="flex:0 0 280px;width:280px;min-height:180px;background:#f3f4f6;border-radius:8px"></div>`;
             
-            return '<article class="news-card">'
-                + imageHtml
-                + '<div class="news-content">'
-                + '<h3><a href="news-detail.html?id=' + articleId + '">' + title + '</a></h3>'
-                + '<p class="news-excerpt">' + summary + '</p>'
-                + '<div class="news-footer">'
-                + '<a href="news-detail.html?id=' + articleId + '" class="news-more">查看更多 &rarr;</a>'
-                + '<time class="news-date">' + formattedDate + '</time>'
-                + '</div></div></article>';
+            return `
+                <article style="display:flex;gap:24px;align-items:stretch;padding:24px;background:#f8fafc;border-radius:12px;margin-bottom:16px">
+                    ${imageHtml}
+                    <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+                        <h3 style="margin:0 0 12px 0;font-size:18px;line-height:1.4"><a href="news-detail.php?id=${articleId}" style="color:#1e3a8a;text-decoration:none">${title}</a></h3>
+                        <p style="margin:0 0 16px 0;font-size:14px;color:#6b7280;line-height:1.6">${summary}</p>
+                        <div style="display:flex;align-items:center;gap:16px">
+                            <a href="news-detail.php?id=${articleId}" style="font-size:14px;color:#3b82f6;text-decoration:none">查看更多 →</a>
+                            <time style="font-size:13px;color:#9ca3af;margin-left:auto">${formattedDate}</time>
+                        </div>
+                    </div>
+                </article>
+            `;
         }
-
-        // 页面加载：先调API，再渲染
+        
+        // 当前页码 + 全局文章数据（供分页使用）
+        let currentPage = 1;
+        let allNewsArticles = [];
+        
+        // 页面加载完成后执行
         document.addEventListener('DOMContentLoaded', async function() {
-            const apiData = await loadAllFromServer();
-            loadCategories(apiData);
-            renderArticles(allArticlesCache);
+
+            // 直接从API加载全部文章
+            loadNewsFromServer().then(articles => {
+                if (articles && articles.length > 0) {
+                    renderArticles(articles);
+                    allNewsArticles = articles;
+                }
+            });
+
+            loadCategories();
+
         });
-    </script>
+
+        // 分类点击直接重新加载
+        function loadNewsByCategory() {
+            loadNewsFromServer().then(articles => {
+                if (articles && articles.length > 0) {
+                    renderArticles(articles);
+                    allNewsArticles = articles;
+                }
+            });
+        }</script>
     
     <!-- CMS Editor -->
     <script>

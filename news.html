@@ -1,9 +1,11 @@
-<html lang="zh-CN"><head>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="提供资金行业最新政策、市场动态解读，包含过桥短拆、工程亮资、实缴验资、企业摆账行业新规资讯。">
-    <meta name="keywords" content="资金行业新闻，企业融资资讯，银行冲量政策，工程亮资新规，实缴验资政策">
-    <title>资金行业资讯 | 企业摆账 - 过桥短拆行业动态</title>
+    <meta name="description" content="Yao资金网行业资讯 - 亮资知识、摆账流程、资金行业政策、企业融资常识。了解最新行业动态与业务资讯">
+    <meta name="keywords" content="亮资知识,摆账流程,资金行业政策,企业融资常识,过桥资金,摆账业务,银行存款,应收账款融资">
+    <title>行业资讯 - Yao资金网</title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -92,16 +94,86 @@
     xhr.send();
 })();
 </script>
-<link rel="icon" href="./uploads/logo/logo_20260504_045101_69f80995372b0.png"></head>
+
+    <style>
+        /* 新闻分页样式 - 统一风格 */
+        .news-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            margin-top: 30px;
+            padding: 14px 0;
+        }
+        .news-pagination .pagination-current {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;
+    height: 38px;
+    margin: 0 4px;
+    font-size: 14px;
+    font-weight: 500;
+    background: #1e3a8a;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.pagination-btn {
+            min-width: 38px;
+            height: 38px;
+            padding: 0 10px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #9ca3af;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        .news-pagination .pagination-btn:hover {
+            border-color: #1e3a8a;
+            color: #1e3a8a;
+        }
+        .news-pagination .pagination-btn.active {
+            background: #1e3a8a;
+            color: #fff;
+            border-color: #1e3a8a;
+        }
+        .news-pagination .pagination-btn.disabled {
+            color: #e5e7eb;
+            border-color: #f0f0f0;
+            background: #f9fafb;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        .news-pagination .pagination-btn i {
+            font-size: 13px;
+        }
+    </style>
+</head>
 <body>
     <a href="#main-content" class="skip-link">跳转到主要内容</a>
 
     <!-- 导航栏 -->
-    <nav class="navbar scrolled" id="navbar" role="navigation" aria-label="主导航">
+    <nav class="navbar" id="navbar" role="navigation" aria-label="主导航">
         <div class="navbar-container">
-<a href="index.html" class="logo" aria-label="Yao资金网首页"><img src="./uploads/logo/logo_20260501_234314_69f51e721c7d0.png" alt="Yao资金网" style="height:48px;width:auto;"></a>
-            <ul class="nav-menu" id="dynamicNavMenu" role="menubar">
-                </ul>
+<a href="index.html" class="logo" aria-label="Yao资金网首页"><img src="images/logo.png?v=20260502040820" alt="Yao资金网" style="height:48px;width:auto;"></a>
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem">首页</a></li>
+                <li role="none"><a href="services.html" class="nav-link" role="menuitem">业务范围</a></li>
+                <li role="none"><a href="cases.html" class="nav-link" role="menuitem">成功案例</a></li>
+                <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">服务优势</a></li>
+                <li role="none"><a href="news.php" class="nav-link active" role="menuitem">行业资讯</a></li>
+                <li role="none"><a href="faq.html" class="nav-link" role="menuitem">常见问题</a></li>
+                <li role="none"><a href="contact.html" class="nav-link" role="menuitem">联系我们</a></li>
+            </ul>
 
             <button class="search-toggle" id="searchToggle" aria-label="打开搜索" aria-expanded="false">
                 <i class="fas fa-search" aria-hidden="true"></i>
@@ -121,7 +193,7 @@
             <div class="page-header-container">
                 <div class="page-header-badge">
                     <i class="fas fa-newspaper"></i>
-                    <span>NEWS &amp; INSIGHTS</span>
+                    <span>NEWS & INSIGHTS</span>
                 </div>
                 <h1 class="page-header-title">行业资讯</h1>
                 <p class="page-header-subtitle">了解最新行业动态与业务资讯</p>
@@ -134,7 +206,10 @@
                 
                 <!-- 资讯分类 -->
                 <div class="editable-section" data-section="news-categories">
-                    <div class="news-categories" id="newsCategories"><a href="#" class="news-category active" data-cat-id="0">全部资讯</a></div>
+                    <div class="news-categories" id="newsCategories">
+                        <a href="#" class="news-category active" data-cat-id="0">全部资讯</a>
+                        <!-- 分类将通过JS动态加载 -->
+                    </div>
                 </div>
 
                 <!-- 精选资讯（大图展示） -->
@@ -147,15 +222,9 @@
                 <!-- 资讯列表 - 卡片式设计 -->
                 <div class="editable-section" data-section="news-list">
                     <div class="news-list-container">
-            </div>
-                </div>
-
-                <!-- 分页 -->
-                <div class="editable-section" data-section="news-pagination">
-                    <div class="news-pagination">
-                        <a href="#" class="pagination-btn disabled"><i class="fas fa-chevron-left"></i></a>
-                        <a href="#" class="pagination-btn active">1</a>
-                        <a href="#" class="pagination-btn disabled"><i class="fas fa-chevron-right"></i></a>
+                        <!-- 文章由JS动态加载 -->
+                    </div><div class="news-pagination">
+                        <a href="#" class="pagination-btn disabled"><i class="fas fa-chevron-left"></i></a><a href="#" class="pagination-btn disabled"><i class="fas fa-chevron-right"></i></a>
                     </div>
                 </div>
 
@@ -169,36 +238,11 @@
         <button class="chat-widget-btn" id="chatWidgetBtn" aria-label="拨打电话" aria-expanded="false">
             <i class="fas fa-phone-alt" aria-hidden="true"></i>
         </button>
-    <div class="chat-widget-phone-display">
-                <span class="chat-widget-phone-text">13552883008</span>
-            </div></div>
+    </div>
 
     <!-- 页脚 -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-main">
-                <div class="footer-brand">
-                    <div class="footer-logo"><img src="./uploads/logo/logo_20260502_190529_69f62ed969290.png" alt="Yao资金网" style="height:48px;width:auto;"></div>
+<?php include 'includes/footer.php'; ?>
 
-                    <p class="footer-desc">专业资金业务服务商，提供上市公司过桥、企业摆账、银行存款、应收账款融资等全方位资金服务</p>
-                </div>
-                <div class="footer-nav" data-footer-group="quick_links">                   <h4 class="footer-nav-title">快速链接</h4>
-                    <ul class="footer-nav-list"><li><a href="#">首页</a></li><li><a href="http://localhost/hongdu/services.html">业务范围</a></li><li><a href="http://localhost/hongdu/cases.html">成功案例</a></li><li><a href="http://localhost/hongdu/advantages.html">服务优势</a></li></ul>
-                </div>
-                <div class="footer-nav" data-footer-group="service_links">                   <h4 class="footer-nav-title">更多内容</h4>
-                    <ul class="footer-nav-list"><li><a href="http://localhost/hongdu/news.html">行业资讯</a></li><li><a href="http://localhost/hongdu/faq.html">常见问题</a></li><li><a href="http://localhost/hongdu/contact.html">联系我们</a></li></ul>
-                </div>
-                <div class="footer-nav" data-footer-group="contact">                   <h4 class="footer-nav-title">联系方式</h4>
-                    <ul class="footer-nav-list"><li><i class="fas fa-user"></i> 王总</li><li><i class="fas fa-phone"></i> 13552883008 </li><li><i class="fas fa-envelope"></i> wanglizhongguo@126.com</li></ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="footer-copyright">© 2024 Yao资金网 版权所有</p>
-                <p class="footer-disclaimer">投资有风险，理财需谨慎。本网站内容仅供参考，不构成投资建议。</p>
-            </div>
-        </div>
-    </footer>
-    <script src="admin/assets/cms.js"></script>
 
     <script src="js/main.js"></script>
     
@@ -206,12 +250,42 @@
     <script>
         // 当前选中的分类
         let currentCategoryId = 0;
-        let currentPage = 1;
-        const pageSize = 10;
         
-        // 从服务器API加载分类
-        async function loadCategories() {
+        // 从服务器API加载分类和文章数据（与手机端一致，从数据库读取）
+        async function loadNewsFromServer() {
+            console.log('[News] 开始从服务器加载文章...');
+            try {
+                const apiUrl = currentCategoryId
+                    ? 'mobile/api/news.php?category_id=' + currentCategoryId + '&limit=100&t=' + Date.now()
+                    : 'mobile/api/news.php?limit=100&t=' + Date.now();
+                const response = await fetch(apiUrl, {
+                    method: 'GET',
+                    cache: 'no-store',
+                    headers: { 'Accept': 'application/json', 'Cache-Control': 'no-cache' }
+                });
+                if (!response.ok) { return null; }
+                const result = await response.json();
+                if (result.success && result.data && result.data.news) {
+                    console.log('[News] 从服务器加载了', result.data.news.length, '篇文章');
+                    // 同时更新localStorage中的分类
+                    if (result.data.categories && Array.isArray(result.data.categories)) {
+                        localStorage.setItem('cms_categories', JSON.stringify(result.data.categories));
+                    }
+                    return result.data.news;
+                }
+                return null;
+            } catch (error) {
+                console.error('[News] 从服务器加载失败:', error);
+                return null;
+            }
+        }
+
+        // 从localStorage加载分类
+        function loadCategories() {
             console.log('[News] 开始加载分类...');
+            
+            const categories = JSON.parse(localStorage.getItem('cms_categories') || '[]');
+            console.log('[News] 本地存储分类数量:', categories.length);
             
             const categoriesContainer = document.getElementById('newsCategories');
             if (!categoriesContainer) {
@@ -223,36 +297,16 @@
             const allLink = categoriesContainer.querySelector('[data-cat-id="0"]');
             categoriesContainer.innerHTML = '';
             if (allLink) {
-                allLink.addEventListener('click', async function(e) {
+                allLink.addEventListener('click', function(e) {
                     e.preventDefault();
                     currentCategoryId = 0;
                     updateActiveCategory();
-                    const serverArticles = await loadNewsFromServer();
-                    if (serverArticles && serverArticles.length > 0) {
-                        renderArticles(serverArticles);
-                    } else {
-                        console.log("[News] API请求完成，无文章数据");
-                    }
+                    loadNewsByCategory();
                 });
                 categoriesContainer.appendChild(allLink);
             }
             
-            // 从服务器获取分类
-            let categories = [];
-            try {
-                const resp = await fetch('api/categories.php?type=news&t=' + Date.now(), {
-                    cache: 'no-store'
-                });
-                if (resp.ok) {
-                    const result = await resp.json();
-                    if (result.success && result.categories) {
-                        categories = result.categories;
-                    }
-                }
-            } catch(e) {
-                console.warn('[News] 分类API加载失败:', e);
-            }
-            
+            // 添加CMS分类
             if (categories.length > 0) {
                 categories.forEach(cat => {
                     const catLink = document.createElement('a');
@@ -260,21 +314,31 @@
                     catLink.className = 'news-category';
                     catLink.textContent = cat.name;
                     catLink.dataset.catId = cat.id;
-                    catLink.addEventListener('click', async function(e) {
+                    catLink.addEventListener('click', function(e) {
                         e.preventDefault();
                         currentCategoryId = cat.id;
                         updateActiveCategory();
-                        const serverArticles = await loadNewsFromServer();
-                        if (serverArticles && serverArticles.length > 0) {
-                            renderArticles(serverArticles);
-                        } else {
-                            console.log("[News] API请求完成，无文章数据");
-                        }
+                        loadNewsByCategory();
                     });
                     categoriesContainer.appendChild(catLink);
                 });
             } else {
-                console.warn('[News] 没有从API加载到分类');
+                // 使用默认分类
+                const defaultCategories = ['行业动态', '政策解读', '业务知识', '公司新闻'];
+                defaultCategories.forEach((name, index) => {
+                    const catLink = document.createElement('a');
+                    catLink.href = '#';
+                    catLink.className = 'news-category';
+                    catLink.textContent = name;
+                    catLink.dataset.catId = index + 1;
+                    catLink.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        currentCategoryId = index + 1;
+                        updateActiveCategory();
+                        loadNewsByCategory();
+                    });
+                    categoriesContainer.appendChild(catLink);
+                });
             }
             
             console.log('[News] 分类加载完成');
@@ -290,53 +354,94 @@
             });
         }
         
-        // 从服务器API加载文章
-        async function loadNewsFromServer() {
-            console.log('[News] 开始从服务器加载文章...');
-
-            try {
-                const apiUrl = currentCategoryId
-                    ? `api/news.php?category_id=${currentCategoryId}&page=${currentPage}&limit=${pageSize}&t=${Date.now()}`
-                    : `api/news.php?page=${currentPage}&limit=${pageSize}&t=${Date.now()}`;
-
-                const response = await fetch(apiUrl, {
-                    method: 'GET',
-                    cache: 'no-store',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Cache-Control': 'no-cache'
-                    }
-                });
-
-                if (!response.ok) {
-                    console.error('[News] API响应错误:', response.status);
-                    return null;
+        // 从服务器API或localStorage加载已发布的文章（优先从数据库）
+        // 渲染文章列表到页面（分页版，每页10篇）
+        function renderArticles(articles) {
+            console.log('[News] 开始渲染文章...');
+            
+            // 按日期排序（最新的在前）
+            articles.sort((a, b) => {
+                const dateA = new Date(a.publishDate || a.created_at || 0);
+                const dateB = new Date(b.publishDate || b.created_at || 0);
+                return dateB - dateA;
+            });
+            
+            if (articles.length === 0) {
+                const newsContainer = document.querySelector('.news-list-container');
+                if (newsContainer) {
+                    newsContainer.innerHTML = '<div class="news-empty"><p>该分类下暂无文章</p></div>';
                 }
+                return;
+            }
+            
+            const pageSize = 10;
+            const totalPages = Math.ceil(articles.length / pageSize);
+            if (currentPage > totalPages) currentPage = totalPages;
+            if (currentPage < 1) currentPage = 1;
+            
+            const startIdx = (currentPage - 1) * pageSize;
+            const endIdx = Math.min(startIdx + pageSize, articles.length);
+            const pageArticles = articles.slice(startIdx, endIdx);
+            
+            const newsContainer = document.querySelector('.news-list-container');
+            if (!newsContainer) {
+                console.error('[News] 找不到文章列表容器');
+                return;
+            }
+            
+            newsContainer.innerHTML = '';
+            pageArticles.forEach(article => {
+                newsContainer.insertAdjacentHTML('beforeend', createNewsCard(article));
+            });
+            
+            // 渲染分页器
+            renderPagination(currentPage, totalPages, articles);
+            
+            console.log('[News] 文章加载完成，共', articles.length, '篇，当前页', currentPage);
+        }
+        
+        // 渲染分页按钮
+        function renderPagination(page, totalPages, allArticles) {
+            const paginationContainer = document.querySelector('.news-pagination');
+            if (!paginationContainer) return;
+            
+            if (totalPages <= 1) {
+                paginationContainer.innerHTML = '';
+                return;
+            }
+            
+            let html = '';
+            
+            // 上一页
+            if (page > 1) {
+                html += '<a href="javascript:void(0)" class="pagination-btn" onclick="goToPage(' + (page - 1) + ')"><i class="fas fa-chevron-left"></i></a>';
+            } else {
+                html += '<a href="javascript:void(0)" class="pagination-btn disabled"><i class="fas fa-chevron-left"></i></a>';
+            }
 
-                const result = await response.json();
-                console.log('[News] API返回:', result);
-
-                if (result.success) {
-                    // 兼容两种响应格式：result.data.news 或 result.news
-                    const articles = result.data ? result.data.news : result.news;
-                    const total = result.data ? result.data.total : result.total;
-                    const totalPages = result.data ? result.data.totalPages : result.totalPages;
-                    if (articles) {
-                        console.log('[News] 从服务器加载了', articles.length, '篇文章，共', totalPages, '页');
-                        renderPagination(totalPages, currentPage);
-                        return articles;
-                    }
-                }
-
-                return null;
-            } catch (error) {
-                console.error('[News] 从服务器加载失败:', error);
-                return null;
+            // 当前页
+            html += '<span class="pagination-current">' + page + '</span>';
+            // 下一页
+            if (page < totalPages) {
+                html += '<a href="javascript:void(0)" class="pagination-btn" onclick="goToPage(' + (page + 1) + ')"><i class="fas fa-chevron-right"></i></a>';
+            } else {
+                html += '<a href="javascript:void(0)" class="pagination-btn disabled"><i class="fas fa-chevron-right"></i></a>';
+            }
+            
+            paginationContainer.innerHTML = html;
+        }
+        
+        // 跳转到指定页
+        function goToPage(page) {
+            currentPage = page;
+            if (allNewsArticles && allNewsArticles.length > 0) {
+                renderArticles(allNewsArticles);
+            } else {
+                console.warn('[News] 没有文章数据，无法翻页');
             }
         }
-
-        // localStorage备用逻辑已清除，只从API读取
-        console.log("[News] localStorage已禁用，只从API读取");
+        
+        // 验证图片数据是否有效
         function isValidImage(imageData) {
             if (!imageData) return false;
             if (typeof imageData !== 'string') return false;
@@ -349,8 +454,8 @@
             if (imageData.startsWith('http://') || imageData.startsWith('https://') || imageData.startsWith('/')) {
                 return imageData.length > 10;
             }
-            // 检查是否是相对路径（uploads/ 或 images/）
-            if (imageData.startsWith('uploads/') || imageData.startsWith('images/')) {
+            // 检查是否是相对路径
+            if (imageData.startsWith('images/')) {
                 return true;
             }
             return false;
@@ -366,41 +471,28 @@
             return null;
         }
 
-        // 获取网站根目录路径
-        function getBasePath() {
-            const path = window.location.pathname;
-            const match = path.match(/^\/[^\/]+/);
-            return match ? match[0] : '';
-        }
-
         // 创建文章卡片HTML
         function createNewsCard(article) {
             const title = article.title || '无标题';
             const summary = article.summary || article.content?.replace(/<[^>]*>/g, '').substring(0, 100) + '...' || '';
-            const date = article.publishDate || article.publish_date || article.created_at || new Date().toISOString();
+            const date = article.publishDate || article.created_at || new Date().toISOString();
             const formattedDate = new Date(date).toLocaleDateString('zh-CN');
             const coverImage = getValidCoverImage(article);
             const articleId = article.id;
-            const basePath = getBasePath();
-
-            console.log('[News] 渲染文章卡片:', { title, articleId, date, hasCover: !!coverImage });
-            
-            // 封面图片路径由API直接提供，已包含完整路径（如 /hongdu/uploads/xxx.jpg）
-            const imgSrc = coverImage || '';
             
             // 根据是否有封面图生成不同的HTML
-            const imageHtml = imgSrc 
-                ? `<div class="news-thumb"><img src="${imgSrc}" alt="${title}" loading="lazy"></div>`
+            const imageHtml = coverImage 
+                ? `<div class="news-thumb"><img src="${coverImage}" alt="${title}" loading="lazy"></div>`
                 : `<div class="news-thumb placeholder"><div class="placeholder-bg"></div></div>`;
             
             return `
                 <article class="news-card">
                     ${imageHtml}
                     <div class="news-content">
-                        <h3><a href="news-detail.php?id=${articleId}">${title}</a></h3>
+                        <h3><a href="news-detail.html?id=${articleId}">${title}</a></h3>
                         <p class="news-excerpt">${summary}</p>
                         <div class="news-footer">
-                            <a href="news-detail.php?id=${articleId}" class="news-more">查看更多 →</a>
+                            <a href="news-detail.html?id=${articleId}" class="news-more">查看更多 →</a>
                             <time class="news-date">${formattedDate}</time>
                         </div>
                     </div>
@@ -408,85 +500,34 @@
             `;
         }
         
-        // 渲染文章列表
-        function renderArticles(articles) {
-            console.log('[News] 开始渲染文章，共', articles.length, '篇');
-
-            const newsContainer = document.querySelector('.news-list-container');
-            if (!newsContainer) {
-                console.error('[News] 找不到文章列表容器');
-                return;
-            }
-
-            if (articles.length === 0) {
-                newsContainer.innerHTML = '<div class="news-empty"><p>该分类下暂无文章</p></div>';
-                return;
-            }
-
-            // 清空现有内容
-            newsContainer.innerHTML = '';
-
-            // 添加每篇文章
-            articles.forEach(article => {
-                const articleHtml = createNewsCard(article);
-                newsContainer.insertAdjacentHTML('beforeend', articleHtml);
-            });
-
-            console.log('[News] 文章渲染完成');
-        }
-
-        // 渲染分页
-        function renderPagination(totalPages, currentPage) {
-            const paginationContainer = document.querySelector('.news-pagination');
-            if (!paginationContainer || totalPages <= 1) {
-                if (paginationContainer) paginationContainer.innerHTML = '';
-                return;
-            }
-
-            let html = '';
-            // 上一页按钮
-            html += `<a href="#" class="pagination-btn ${currentPage === 1 ? 'disabled' : ''}" onclick="goToPage(${currentPage - 1}); return false;"><i class="fas fa-chevron-left"></i></a>`;
-            
-            // 页码按钮
-            for (let i = 1; i <= totalPages; i++) {
-                if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
-                    html += `<a href="#" class="pagination-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i}); return false;">${i}</a>`;
-                } else if (i === currentPage - 3 || i === currentPage + 3) {
-                    html += `<span class="pagination-btn disabled">...</span>`;
-                }
-            }
-            
-            // 下一页按钮
-            html += `<a href="#" class="pagination-btn ${currentPage === totalPages ? 'disabled' : ''}" onclick="goToPage(${currentPage + 1}); return false;"><i class="fas fa-chevron-right"></i></a>`;
-            
-            paginationContainer.innerHTML = html;
-        }
-
-        // 跳转到指定页
-        async function goToPage(page) {
-            currentPage = page;
-            const serverArticles = await loadNewsFromServer();
-            if (serverArticles && serverArticles.length > 0) {
-                renderArticles(serverArticles);
-            }
-        }
-
+        // 当前页码 + 全局文章数据（供分页使用）
+        let currentPage = 1;
+        let allNewsArticles = [];
+        
         // 页面加载完成后执行
         document.addEventListener('DOMContentLoaded', async function() {
+
+            // 直接从API加载全部文章
+            loadNewsFromServer().then(articles => {
+                if (articles && articles.length > 0) {
+                    renderArticles(articles);
+                    allNewsArticles = articles;
+                }
+            });
+
             loadCategories();
 
-                        // 从API加载文章数据（仅API，无localStorage回退）
-            console.log('[News] 尝试从API加载文章...');
-            const serverArticles = await loadNewsFromServer();
-
-            if (serverArticles && serverArticles.length > 0) {
-                console.log('[News] API加载成功，共', serverArticles.length, '篇文章');
-                renderArticles(serverArticles);
-            } else {
-                console.log('[News] API加载失败或无数据');
-            }
         });
-    </script>
+
+        // 分类点击直接重新加载
+        function loadNewsByCategory() {
+            loadNewsFromServer().then(articles => {
+                if (articles && articles.length > 0) {
+                    renderArticles(articles);
+                    allNewsArticles = articles;
+                }
+            });
+        }</script>
     
     <!-- CMS Editor -->
     <script>
@@ -529,59 +570,6 @@
             }
         })();
     </script>
+</body>
+</html>
 
-
-
-<script>
-                // 动态加载导航菜单 — 优先从数据库，回退localStorage
-                (function() {
-                    var defaultNavItems = [
-                        { id: '1', name: '首页', url: 'index.html', icon: 'fas fa-home' },
-                        { id: '2', name: '业务范围', url: 'services.html', icon: 'fas fa-briefcase' },
-                        { id: '3', name: '成功案例', url: 'cases.html', icon: 'fas fa-trophy' },
-                        { id: '4', name: '服务优势', url: 'advantages.html', icon: 'fas fa-star' },
-                        { id: '5', name: '行业资讯', url: 'news.html', icon: 'fas fa-newspaper' },
-                        { id: '6', name: '常见问题', url: 'faq.html', icon: 'fas fa-question-circle' },
-                        { id: '7', name: '联系我们', url: 'contact.html', icon: 'fas fa-phone' }
-                    ];
-
-                    function renderNav(items) {
-                        var container = document.getElementById('dynamicNavMenu');
-                        if (!container) return;
-                        var current = window.location.pathname.split('/').pop() || 'index.html';
-                        var html = '';
-                        for (var i = 0; i < items.length; i++) {
-                            var item = items[i];
-                            var active = item.url === current || (current === '' && item.url === 'index.html');
-                            html += '<li role="none"><a href="' + item.url + '" class="nav-link' + (active ? ' active' : '') + '" role="menuitem">' + item.name + '</a></li>';
-                        }
-                        container.innerHTML = html;
-                        try { localStorage.setItem('cms_nav_items', JSON.stringify(items)); } catch(e) {}
-                    }
-
-                    function fallback() {
-                        try {
-                            var stored = localStorage.getItem('cms_nav_items');
-                            if (stored) {
-                                var parsed = JSON.parse(stored);
-                                if (Array.isArray(parsed) && parsed.length > 0) { renderNav(parsed); return; }
-                            }
-                        } catch(e) {}
-                        renderNav(defaultNavItems);
-                    }
-
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('GET', 'admin/api/nav-save.php?type=nav&t=' + Date.now(), true);
-                    xhr.onload = function() {
-                        if (xhr.status >= 200 && xhr.status < 400) {
-                            try {
-                                var resp = JSON.parse(xhr.responseText);
-                                if (resp.code === 0 && resp.data && resp.data.length > 0) { renderNav(resp.data); return; }
-                            } catch(e) {}
-                        }
-                        fallback();
-                    };
-                    xhr.onerror = function() { fallback(); };
-                    xhr.send();
-                })();
-</script></body></html>

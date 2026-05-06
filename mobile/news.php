@@ -1,4 +1,4 @@
-﻿<?php header('Cache-Control: no-cache, no-store, must-revalidate'); header('Pragma: no-cache'); header('Expires: 0'); ?>
+<?php header('Cache-Control: no-cache, no-store, must-revalidate'); header('Pragma: no-cache'); header('Expires: 0'); ?>
 <!DOCTYPE html>
 <html lang="zh-CN"><head>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -951,19 +951,7 @@
 
 
 
-                        <a href="#" class="pagination-btn disabled"><i class="fas fa-chevron-left"></i></a>
-
-
-
-
-
-                        <a href="#" class="pagination-btn active">1</a>
-
-
-
-
-
-                        <a href="#" class="pagination-btn disabled"><i class="fas fa-chevron-right"></i></a>
+                        <a href="#" class="pagination-btn disabled"><i class="fas fa-chevron-left"></i></a><a href="#" class="pagination-btn disabled"><i class="fas fa-chevron-right"></i></a>
 
 
 
@@ -1086,45 +1074,70 @@
     <script src="../js/main.js"></script>
 <script>
 (async function(){
-    try {
-        var el = document.querySelector('.news-list-container');
-        if (!el) { console.error('no container'); return; }
-        el.innerHTML = '<div style="text-align:center;padding:40px;color:#666;font-size:16px">正在加载...</div>';
-        var r = await fetch('/hongdu/mobile/api/news.php?page=1&limit=20&t=' + Date.now(), {method:'GET',cache:'no-store'});
-        if (!r.ok) { el.innerHTML = '<div style="text-align:center;padding:40px;color:red">HTTP '+r.status+'</div>'; return; }
-        var txt = await r.text();
-        var d = JSON.parse(txt);
-        if (!d.success || !d.data || !d.data.news || d.data.news.length===0) {
-            el.innerHTML = '<div style="text-align:center;padding:40px;color:#999">暂无文章</div>'; return;
+    var STATE = {all:[], page:1, per:10, loading:false};
+    var el = document.querySelector('.news-list-container');
+    if(!el) return;
+
+    async function loadNews(){
+        STATE.loading = true;
+        el.innerHTML = '<div style="text-align:center;padding:40px;color:#666;font-size:16px">加载中...</div>';
+        try {
+            var r = await fetch('/hongdu/mobile/api/news.php?page=1&limit=100&t='+Date.now(), {method:'GET',cache:'no-store'});
+            if(!r.ok) throw new Error('HTTP '+r.status);
+            var d = JSON.parse(await r.text());
+            if(!d.success || !d.data || !d.data.news || d.data.news.length===0) {
+                el.innerHTML = '<div style="text-align:center;padding:40px;color:#999">暂无内容</div>'; return;
+            }
+            STATE.all = d.data.news;
+            renderPage();
+        } catch(e) {
+            el.innerHTML = '<div style="text-align:center;padding:40px;color:red;font-size:18px">加载失败: '+e.message+'</div>';
         }
+        STATE.loading = false;
+    }
+
+    function renderPage(){
+        var total = STATE.all.length, pages = Math.ceil(total/STATE.per)||1;
+        var pg = STATE.page; if(pg<1) pg=1; if(pg>pages) pg=pages; STATE.page=pg;
+        var start = (pg-1)*STATE.per, end = Math.min(start+STATE.per, total);
+        var items = STATE.all.slice(start,end);
         var html = '';
-        for(var i=0;i<d.data.news.length;i++){
-            var a = d.data.news[i];
+        for(var i=0;i<items.length;i++){
+            var a = items[i];
             var t = a.title||'', s = a.summary||'', dt = (a.date||a.created_at||'').substring(0,10);
             var img = a.cover_image||'';
-            html += '<div style="background:#fff;border-radius:12px;overflow:hidden;margin:15px 0;box-shadow:0 2px 12px rgba(0,0,0,0.08)">';
-            if(img) html += '<div style="width:100%;height:200px;overflow:hidden"><img src="'+img+'" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display=\'none\'"></div>';
-            html += '<div style="padding:18px">';
-            html += '<h3 style="margin:0 0 10px 0;font-size:17px;line-height:1.4">'+t+'</h3>';
-            if(s) html += '<p style="margin:0 0 8px 0;font-size:14px;color:#666;line-height:1.6">'+s+'</p>';
+            var imgHtml = '';
+            if(img) imgHtml = '<div style="width:100%;height:180px;overflow:hidden"><img src="'+img+'" style="width:100%;height:100%;object-fit:cover" onerror="this.remove()"></div>';
+            html += '<div style="background:#fff;border-radius:10px;overflow:hidden;margin:10px 0;box-shadow:0 1px 8px rgba(0,0,0,0.06)">';
+            if(imgHtml) html += imgHtml;
+            html += '<div style="padding:14px">';
+            html += '<h3 style="margin:0 0 8px 0;font-size:16px;line-height:1.4"><a href="news-detail.html?id='+a.id+'" style="color:#1e3a8a;text-decoration:none">'+t+'</a></h3>';
+            if(s) html += '<p style="margin:0 0 6px 0;font-size:13px;color:#666;line-height:1.5">'+s+'</p>';
             if(dt) html += '<span style="font-size:12px;color:#999">'+dt+'</span>';
             html += '</div></div>';
         }
-        el.innerHTML = html;
-        var dbg = document.createElement("div");
-        dbg.style.cssText = "background:yellow;padding:10px;margin:10px;border:2px solid red;font-size:16px;";
-        dbg.innerHTML = "apiData=OK | 加载了 "+d.data.news.length+" 篇文章";
-        var sc = document.querySelector(".section-container");
-        if(sc) sc.prepend(dbg);
-    } catch(e) {
-        var el = document.querySelector('.news-list-container');
-        if(el) el.innerHTML = '<div style="text-align:center;padding:40px;color:red;font-size:18px">加载出错: '+e.message+'</div>';
-        var dbg=document.createElement("div");
-        dbg.style.cssText="background:#000;color:red;padding:20px;margin:20px;font-size:16px;border:3px solid #f00";
-        dbg.innerHTML="<b>ERROR:</b><br>"+e.message+"<br><small>"+(e.stack||'')+"</small>";
-        var sc=document.querySelector(".section-container");
-        if(sc) sc.prepend(dbg);
+        if(items.length===0) html = '<div style="text-align:center;padding:40px;color:#999">暂无内容</div>';
+
+        // Pagination
+        var pag = '<div style="display:flex;justify-content:center;align-items:center;gap:6px;margin:20px 0">';
+        pag += '<button onclick="changePage(-1)" style="width:38px;height:38px;border:1px solid #e5e7eb;border-radius:6px;background:#fff;cursor:pointer;font-size:13px;color:#9ca3af"'+(pg<=1?' disabled style="width:38px;height:38px;border:1px solid #f0f0f0;border-radius:6px;background:#f9fafb;font-size:13px;color:#e5e7eb"':'')+'>&lt;</button>';
+        pag += '<button onclick="changePage(1)" style="width:38px;height:38px;border:1px solid #e5e7eb;border-radius:6px;background:#fff;cursor:pointer;font-size:13px;color:#9ca3af"'+(pg>=pages?' disabled style="width:38px;height:38px;border:1px solid #f0f0f0;border-radius:6px;background:#f9fafb;font-size:13px;color:#e5e7eb"':'')+'>&gt;</button>';
+        pag += '</div>';
+
+        el.innerHTML = html + pag;
     }
-})();
-</script>
+
+    window.changePage = function(dir){
+        STATE.page += dir;
+        renderPage();
+        window.scrollTo({top:el.offsetTop-60,behavior:'smooth'});
+    };
+    window.changePage2 = function(p){
+        STATE.page = p;
+        renderPage();
+        window.scrollTo({top:el.offsetTop-60,behavior:'smooth'});
+    };
+
+    loadNews();
+})();</script>
 </body></html>

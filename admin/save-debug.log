@@ -1146,3 +1146,24 @@ Array
     [faqSubtitle] => 解答您关于资金业务的常见疑问
 )
 
+
+=== 2026-05-06 11:47:35 ===
+原始JSON:
+{"page":"3","pageName":"3","title":"测试","subtitle":"","data":{"pageTitle":"测试","pageSubtitle":""},"published":false}
+
+解析后数据:
+Array
+(
+    [page] => 3
+    [pageName] => 3
+    [title] => 测试
+    [subtitle] => 
+    [data] => Array
+        (
+            [pageTitle] => 测试
+            [pageSubtitle] => 
+        )
+
+    [published] => 
+)
+

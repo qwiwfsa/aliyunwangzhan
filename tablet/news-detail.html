@@ -510,7 +510,7 @@
                 <li role="none"><a href="services.html" class="nav-link" role="menuitem">业务范围</a></li>
                 <li role="none"><a href="cases.html" class="nav-link" role="menuitem">成功案例</a></li>
                 <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">服务优势</a></li>
-                <li role="none"><a href="news.html" class="nav-link active" role="menuitem">行业资讯</a></li>
+                <li role="none"><a href="news.php" class="nav-link active" role="menuitem">行业资讯</a></li>
                 <li role="none"><a href="faq.html" class="nav-link" role="menuitem">常见问题</a></li>
                 <li role="none"><a href="contact.html" class="nav-link" role="menuitem">联系我们</a></li>
             </ul>
@@ -551,7 +551,7 @@
             <div class="related-articles-container">
                 <div class="related-articles-header">
                     <h2 class="related-articles-title">相关资讯</h2>
-                    <a href="news.html" class="related-articles-more">
+                    <a href="news.php" class="related-articles-more">
                         查看全部 <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -590,7 +590,7 @@
                 <div class="footer-nav">
                     <h4 class="footer-nav-title">更多内容</h4>
                     <ul class="footer-nav-list">
-                        <li><a href="news.html">行业资讯</a></li>
+                        <li><a href="news.php">行业资讯</a></li>
                         <li><a href="faq.html">常见问题</a></li>
                         <li><a href="contact.html">联系我们</a></li>
                     </ul>
@@ -639,7 +639,7 @@
             const author = article.author || 'Yao资金网';
             
             document.getElementById('articleHeader').innerHTML = `
-                <a href="news.html" class="article-back-btn-top">
+                <a href="news.php" class="article-back-btn-top">
                     <i class="fas fa-arrow-left"></i>
                     返回资讯列表
                 </a>
@@ -754,7 +754,7 @@
                     <i class="far fa-file-alt"></i>
                     <h2>文章未找到</h2>
                     <p>抱歉，您访问的文章不存在或已被删除</p>
-                    <a href="news.html" class="btn">
+                    <a href="news.php" class="btn">
                         <i class="fas fa-arrow-left"></i>
                         返回资讯列表
                     </a>
@@ -778,44 +778,40 @@
         document.addEventListener('DOMContentLoaded', function() {
             const urlParams = new URLSearchParams(window.location.search);
             const articleId = urlParams.get('id');
-            
-            console.log('[News Detail] URL参数ID:', articleId);
-            
+
             if (!articleId) {
-                console.error('[News Detail] 未提供文章ID');
                 renderNotFound();
                 return;
             }
-            
-            // 加载文章
-            const articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
-            console.log('[News Detail] 本地存储文章数量:', articles.length);
-            console.log('[News Detail] 所有文章ID:', articles.map(a => a.id));
-            
-            const article = loadArticleFromStorage(articleId);
-            console.log('[News Detail] 找到的文章:', article);
-            
-            if (!article) {
-                console.error('[News Detail] 未找到ID为', articleId, '的文章');
-                renderNotFound();
-                return;
-            }
-            
-            // 更新页面标题
-            document.title = `${article.title || '文章详情'} - Yao资金网`;
-            
-            // 渲染文章
-            renderArticleHeader(article);
-            renderArticleContent(article);
-            
-            // 加载相关文章
-            const allArticles = getAllPublishedArticles();
-            renderRelatedArticles(articleId, allArticles);
-            
-            // 增加阅读数
-            incrementViews(articleId);
-        });
-    </script>
+
+            // 从API加载文章数据（替代废弃的localStorage缓存）
+            fetch('../tablet/api/news.php?t=' + Date.now(), {method:'GET',cache:'no-store'})
+                .then(function(r){ return r.json(); })
+                .then(function(result){
+                    if(!result.success || !result.data || !result.data.news){
+                        renderNotFound(); return;
+                    }
+                    var articles = result.data.news;
+                    var article = null;
+                    for(var i=0;i<articles.length;i++){
+                        if(String(articles[i].id) === String(articleId)){
+                            article = articles[i]; break;
+                        }
+                    }
+                    if(!article){
+                        renderNotFound(); return;
+                    }
+                    document.title = (article.title||'') + ' - Yao资金网';
+                    renderArticleHeader(article);
+                    renderArticleContent(article);
+                    renderRelatedArticles(articleId, articles);
+                    incrementViews(articleId);
+                })
+                ['catch'](function(e){
+                    console.error('API load failed:', e);
+                    renderNotFound();
+                });
+        });</script>
     <script src="../admin/assets/cms.js"></script>
 </body>
 </html>

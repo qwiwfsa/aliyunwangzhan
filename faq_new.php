@@ -77,7 +77,7 @@
                 <li role="none"><a href="services.html" class="nav-link" role="menuitem">业务范围</a></li>
                 <li role="none"><a href="cases.html" class="nav-link" role="menuitem">成功案例</a></li>
                 <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">服务优势</a></li>
-                <li role="none"><a href="news.html" class="nav-link" role="menuitem">行业资讯</a></li>
+                <li role="none"><a href="news.php" class="nav-link" role="menuitem">行业资讯</a></li>
                 <li role="none"><a href="faq.html" class="nav-link active" role="menuitem">常见问题</a></li>
                 <li role="none"><a href="contact.html" class="nav-link" role="menuitem">联系我们</a></li>
             </ul>

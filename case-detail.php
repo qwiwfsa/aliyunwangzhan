@@ -146,7 +146,7 @@
                 <li role="none"><a href="services.html" class="nav-link" role="menuitem">涓氬姟鑼冨洿</a></li>
                 <li role="none"><a href="cases.html" class="nav-link active" role="menuitem">鎴愬姛妗堜緥</a></li>
                 <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">鏈嶅姟浼樺娍</a></li>
-                <li role="none"><a href="news.html" class="nav-link" role="menuitem">琛屼笟璧勮</a></li>
+                <li role="none"><a href="news.php" class="nav-link" role="menuitem">琛屼笟璧勮</a></li>
                 <li role="none"><a href="faq.html" class="nav-link" role="menuitem">甯歌闂</a></li>
                 <li role="none"><a href="contact.html" class="nav-link" role="menuitem">鑱旂郴鎴戜滑</a></li>
             </ul>

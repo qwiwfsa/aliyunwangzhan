@@ -565,7 +565,7 @@ input, textarea, select {
 /* Stats */
 .stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
     max-width: 900px;
     width: 100%;

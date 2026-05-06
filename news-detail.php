@@ -492,7 +492,7 @@
                 <li role="none"><a href="services.html" class="nav-link" role="menuitem">业务范围</a></li>
                 <li role="none"><a href="cases.html" class="nav-link" role="menuitem">成功案例</a></li>
                 <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">服务优势</a></li>
-                <li role="none"><a href="news.html" class="nav-link active" role="menuitem">行业资讯</a></li>
+                <li role="none"><a href="news.php" class="nav-link active" role="menuitem">行业资讯</a></li>
                 <li role="none"><a href="faq.html" class="nav-link" role="menuitem">常见问题</a></li>
                 <li role="none"><a href="contact.html" class="nav-link" role="menuitem">联系我们</a></li>
             </ul>
@@ -533,7 +533,7 @@
             <div class="related-articles-container">
                 <div class="related-articles-header">
                     <h2 class="related-articles-title">相关资讯</h2>
-                    <a href="news.html" class="related-articles-more">
+                    <a href="news.php" class="related-articles-more">
                         查看全部 <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -593,7 +593,7 @@
         // 从后端加载相关文章
         async function loadRelatedArticles(currentId) {
             try {
-                const response = await fetch('api/news.php?limit=5&t=' + Date.now(), {
+                const response = await fetch('api/news.php?limit=10&t=' + Date.now(), {
                     method: 'GET',
                     headers: { 'Accept': 'application/json' }
                 });
@@ -601,7 +601,7 @@
                 const result = await response.json();
                 const articles = result.data ? result.data.news : result.news;
                 if (!articles) return [];
-                return articles.filter(a => String(a.id) !== String(currentId)).slice(0, 5);
+                return articles.filter(a => String(a.id) !== String(currentId)).slice(0, 4);
             } catch (e) {
                 console.error('[News Detail] 加载相关文章失败:', e);
                 return [];
@@ -617,7 +617,7 @@
             const date = article.created_at || article.date || new Date().toISOString();
             const formattedDate = new Date(date).toLocaleDateString('zh-CN');
             document.getElementById('articleHeader').innerHTML = `
-                <a href="news.html" class="article-back-btn-top">
+                <a href="news.php" class="article-back-btn-top">
                     <i class="fas fa-arrow-left"></i>
                     返回资讯列表
                 </a>
@@ -688,7 +688,7 @@
                     <i class="far fa-file-alt"></i>
                     <h2>文章未找到</h2>
                     <p>抱歉，您访问的文章不存在或已被删除</p>
-                    <a href="news.html" class="btn">
+                    <a href="news.php" class="btn">
                         <i class="fas fa-arrow-left"></i>
                         返回资讯列表
                     </a>
