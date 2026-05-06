@@ -1236,14 +1236,34 @@
             ];
         }
 
-        // 获取当前页面列表（优先从API获取，回退到默认值）
-                // 获取当前页面列表
+        // 获取当前页面列表（从localStorage读取，首次自动初始化默认值）
         function getPages() {
-            // 页面列表由API管理
-            return getDefaultPages();
+            const stored = localStorage.getItem('cms_page_list');
+            if (stored) {
+                try {
+                    const parsed = JSON.parse(stored);
+                    if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+                } catch(e) {}
+            }
+            // 首次初始化，写入默认列表
+            const defaults = getDefaultPages();
+            localStorage.setItem('cms_page_list', JSON.stringify(defaults));
+            return defaults;
         }
-        
-                // 初始化
+
+        // 保存页面列表
+        function savePages(pagesList) {
+            localStorage.setItem('cms_page_list', JSON.stringify(pagesList));
+        }
+
+        // 从列表中永久删除页面
+        function deletePageFromList(pageId) {
+            const currentPages = getPages();
+            const filtered = currentPages.filter(p => p.id !== pageId);
+            savePages(filtered);
+        }
+
+        // 初始化
         document.addEventListener('DOMContentLoaded', async function() {
             if (!await checkAuth()) return;
 
@@ -1402,11 +1422,15 @@
                 }
             } catch (error) {
                 console.log('API加载失败，使用本地存储:', error);
-                // 设置默认值
-                document.getElementById('editedContent').textContent = '0';
-                document.getElementById('lastUpdate').textContent = '无';
-                document.getElementById('publishedContent').textContent = '0';
-                            } else {
+                // 回退到localStorage
+                const pagesIndex = JSON.parse(localStorage.getItem('cms_pages_index') || '[]');
+                document.getElementById('editedContent').textContent = pagesIndex.length;
+
+                const lastUpdate = localStorage.getItem('cms_last_update');
+                if (lastUpdate) {
+                    const date = new Date(lastUpdate);
+                    document.getElementById('lastUpdate').textContent = date.toLocaleDateString('zh-CN');
+                } else {
                     document.getElementById('lastUpdate').textContent = '从未';
                 }
 
@@ -1432,17 +1456,10 @@
                 }
             } catch (error) {
                 // 回退到localStorage
-                // 从API获取
-                try {
-                    const resp = await fetch('api/list-pages.php');
-                    const result = await resp.json();
-                    if (result.success && result.data && result.data.pages) {
-                        pagesIndex = result.data.pages.map(p => p.pageId);
-                    }
-                } catch(e) { pagesIndex = []; }
+                pagesIndex = JSON.parse(localStorage.getItem('cms_pages_index') || '[]');
             }
             
-            // 从API动态加载页面列表
+            // 从localStorage动态加载页面列表
             const pages = getPages();
             
             container.innerHTML = pages.map(page => {
@@ -1493,7 +1510,7 @@
                 }
             } catch (error) {
                 // 回退到localStorage
-                activities = []; // 活动记录通过API管理
+                activities = JSON.parse(localStorage.getItem('cms_activities') || '[]');
             }
             
             const container = document.getElementById('activityList');
@@ -1528,38 +1545,33 @@
             }).join('');
         }
 
-        // 导出所有数据（通过API导出）
-        async function exportAllData() {
-            try {
-                const resp = await fetch('api/list-pages.php');
-                const result = await resp.json();
-                const data = {
-                    exportTime: new Date().toISOString(),
-                    pages: {}
-                };
-                
-                if (result.success && result.data && result.data.pages) {
-                    result.data.pages.forEach(p => {
-                        if (p.data) {
-                            data.pages[p.pageName + '.html'] = p.data;
-                        }
-                    });
+        // 导出所有数据
+        function exportAllData() {
+            const data = {
+                exportTime: new Date().toISOString(),
+                pages: {}
+            };
+
+            const pagesIndex = JSON.parse(localStorage.getItem('cms_pages_index') || '[]');
+            pagesIndex.forEach(page => {
+                const key = `cms_content_${page.replace('.html', '')}`;
+                const content = localStorage.getItem(key);
+                if (content) {
+                    data.pages[page] = JSON.parse(content);
                 }
+            });
 
-                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `cms-backup-${new Date().toISOString().split('T')[0]}.json`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `cms-backup-${new Date().toISOString().split('T')[0]}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
 
-                showToast('数据已导出', 'success');
-            } catch(e) {
-                showToast('导出失败', 'error');
-            }
+            alert('数据已导出！');
         }
 
         // 显示所有页面
@@ -1624,27 +1636,22 @@
             // 无论API成功与否，都从列表中永久移除
             deletePageFromList(pageId);
 
-            // 数据库中数据由API删除
-            // localStorage操作已移除
+            // 删除localStorage中的页面数据
+            localStorage.removeItem(`cms_data_${pageId}`);
             
             // 从已编辑页面索引中移除
-            // 页面索引由list-pages.php管理
+            const pagesIndex = JSON.parse(localStorage.getItem('cms_pages_index') || '[]');
+            const updatedIndex = pagesIndex.filter(file => file !== `${pageId}.html` && file !== pageId);
+            localStorage.setItem('cms_pages_index', JSON.stringify(updatedIndex));
             
-            // 添加活动记录（通过API记录）
-            fetch('api/nav-save.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    action: 'save_activity',
-                    type: 'activity',
-                    activity: {
-                        type: 'delete',
-                        description: `删除了页面: ${pageName}`,
-                        time: new Date().toISOString()
-                    }
-                })
-            }).catch(err => console.error('记录活动失败:', err));
-            // 活动记录通过API管理
+            // 添加活动记录
+            const activities = JSON.parse(localStorage.getItem('cms_activities') || '[]');
+            activities.unshift({
+                type: 'delete',
+                description: `删除了页面: ${pageName}`,
+                time: new Date().toISOString(),
+            });
+            localStorage.setItem('cms_activities', JSON.stringify(activities.slice(0, 20)));
             
             showToast('页面已删除', 'success');
             

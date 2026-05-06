@@ -823,30 +823,14 @@
             initPreview();
         });
 
-        // 加载数据（从API加载，不再使用localStorage）
+        // 加载数据
         function loadData() {
-            // 尝试从API获取页面数据
-            fetch('api/list-pages.php')
-                .then(r => r.json())
-                .then(result => {
-                    if (result.success && result.data && result.data.pages) {
-                        const pageInfo = result.data.pages.find(p => p.pageId === pageId);
-                        if (pageInfo) {
-                            if (pageInfo.data) {
-                                currentData = { ...defaultData[pageId], ...pageInfo.data };
-                            } else {
-                                currentData = { ...defaultData[pageId] };
-                            }
-                        } else {
-                            currentData = { ...defaultData[pageId] };
-                        }
-                    } else {
-                        currentData = { ...defaultData[pageId] };
-                    }
-                })
-                .catch(() => {
-                    currentData = { ...defaultData[pageId] };
-                });
+            const saved = localStorage.getItem(`cms_data_${pageId}`);
+            if (saved) {
+                currentData = JSON.parse(saved);
+            } else {
+                currentData = { ...defaultData[pageId] };
+            }
         }
 
         // 渲染表单
@@ -1015,33 +999,10 @@
             data.lastModified = new Date().toISOString();
             data.published = false;
 
-            const config = pageConfigs[pageId];
-            const payload = {
-                page: pageId,
-                pageName: pageId,
-                title: config ? config.name : pageId,
-                subtitle: '',
-                data: data,
-                published: false
-            };
-            fetch('api/save.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            })
-            .then(r => r.json())
-            .then(result => {
-                if (result.success) {
-                    currentData = data;
-                    markSaved();
-                    showToast('保存成功', 'success');
-                } else {
-                    showToast('保存失败: ' + (result.message || '未知错误'), 'error');
-                }
-            })
-            .catch(err => {
-                showToast('保存失败，无法连接服务器', 'error');
-            });
+            localStorage.setItem(`cms_data_${pageId}`, JSON.stringify(data));
+            currentData = data;
+            markSaved();
+            showToast('保存成功', 'success');
         }
 
         // 发布页面
@@ -1050,38 +1011,15 @@
                 return;
             }
 
+            saveData();
+            
+            // 模拟发布过程
             const data = collectData();
             data.published = true;
             data.publishedAt = new Date().toISOString();
+            localStorage.setItem(`cms_data_${pageId}`, JSON.stringify(data));
 
-            const config = pageConfigs[pageId];
-            const payload = {
-                page: pageId,
-                pageName: pageId,
-                title: config ? config.name : pageId,
-                subtitle: '',
-                data: data,
-                published: true
-            };
-            fetch('api/publish.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            })
-            .then(r => r.json())
-            .then(result => {
-                if (result.success) {
-                    currentData = data;
-                    markSaved();
-                    showToast('页面发布成功！', 'success');
-                    refreshPreview();
-                } else {
-                    showToast('发布失败: ' + (result.message || '未知错误'), 'error');
-                }
-            })
-            .catch(err => {
-                showToast('发布失败，无法连接服务器', 'error');
-            });
+            showToast('页面发布成功！', 'success');
             
             // 刷新预览
             refreshPreview();

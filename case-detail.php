@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Yao资金网成功案例详情 - 查看详细的资金服务案例，了解我们如何帮助企业解决资金需求。">
-    <meta name="keywords" content="案例详情,资金服务,过桥资金,摆账,亮资,融资案例">
-    <title>案例详情 - Yao资金网</title>
+    <meta name="description" content="Yao璧勯噾缃戞垚鍔熸渚嬭鎯?- 鏌ョ湅璇︾粏鐨勮祫閲戞湇鍔℃渚嬶紝浜嗚В鎴戜滑濡備綍甯姪浼佷笟瑙ｅ喅璧勯噾闇€姹傘€?>
+    <meta name="keywords" content="妗堜緥璇︽儏,璧勯噾鏈嶅姟,杩囨ˉ璧勯噾,鎽嗚处,浜祫,铻嶈祫妗堜緥">
+    <title>妗堜緥璇︽儏 - Yao璧勯噾缃?/title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/case-detail.css">
     <style>
-        /* 编辑按钮样式 */
+        /* 缂栬緫鎸夐挳鏍峰紡 */
         .case-edit-btn {
             position: absolute;
             top: 20px;
@@ -49,7 +49,7 @@
             }
         }
     </style>
-    <!-- Logo动态加载 -->
+    <!-- Logo鍔ㄦ€佸姞杞?-->
     <script>
     (function(){
         var xhr=new XMLHttpRequest();
@@ -135,27 +135,27 @@
 </script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">跳转到主要内容</a>
+    <a href="#main-content" class="skip-link">璺宠浆鍒颁富瑕佸唴瀹?/a>
 
-    <!-- 导航栏 -->
-    <nav class="navbar" id="navbar" role="navigation" aria-label="主导航">
+    <!-- 瀵艰埅鏍?-->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="涓诲鑸?>
         <div class="navbar-container">
-<a href="index.html" class="logo" aria-label="Yao资金网首页"><img src="images/logo.png?v=20260502040820" alt="Yao资金网" style="height:48px;width:auto;"></a>
+<a href="index.html" class="logo" aria-label="Yao璧勯噾缃戦椤?><img src="images/logo.png?v=20260502040820" alt="Yao璧勯噾缃? style="height:48px;width:auto;"></a>
             <ul class="nav-menu" role="menubar">
-                <li role="none"><a href="index.html" class="nav-link" role="menuitem">首页</a></li>
-                <li role="none"><a href="services.html" class="nav-link" role="menuitem">业务范围</a></li>
-                <li role="none"><a href="cases.html" class="nav-link active" role="menuitem">成功案例</a></li>
-                <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">服务优势</a></li>
-                <li role="none"><a href="news.html" class="nav-link" role="menuitem">行业资讯</a></li>
-                <li role="none"><a href="faq.html" class="nav-link" role="menuitem">常见问题</a></li>
-                <li role="none"><a href="contact.html" class="nav-link" role="menuitem">联系我们</a></li>
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem">棣栭〉</a></li>
+                <li role="none"><a href="services.html" class="nav-link" role="menuitem">涓氬姟鑼冨洿</a></li>
+                <li role="none"><a href="cases.html" class="nav-link active" role="menuitem">鎴愬姛妗堜緥</a></li>
+                <li role="none"><a href="advantages.html" class="nav-link" role="menuitem">鏈嶅姟浼樺娍</a></li>
+                <li role="none"><a href="news.html" class="nav-link" role="menuitem">琛屼笟璧勮</a></li>
+                <li role="none"><a href="faq.html" class="nav-link" role="menuitem">甯歌闂</a></li>
+                <li role="none"><a href="contact.html" class="nav-link" role="menuitem">鑱旂郴鎴戜滑</a></li>
             </ul>
 
-            <button class="search-toggle" id="searchToggle" aria-label="打开搜索" aria-expanded="false">
+            <button class="search-toggle" id="searchToggle" aria-label="鎵撳紑鎼滅储" aria-expanded="false">
                 <i class="fas fa-search" aria-hidden="true"></i>
             </button>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="打开菜单" aria-expanded="false">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="鎵撳紑鑿滃崟" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -164,69 +164,69 @@
     </nav>
 
     <main id="main-content">
-        <!-- 返回按钮区域 -->
+        <!-- 杩斿洖鎸夐挳鍖哄煙 -->
         <div class="case-back-section">
             <button class="case-back-btn" onclick="window.location.href='cases.html'">
                 <i class="fas fa-arrow-left"></i>
-                返回案例列表
+                杩斿洖妗堜緥鍒楄〃
             </button>
         </div>
 
-        <!-- 详情页内容 -->
+        <!-- 璇︽儏椤靛唴瀹?-->
         <section class="case-detail-content">
             <div class="case-detail-container">
                 <div class="case-detail-grid">
-                    <!-- 主内容区 -->
+                    <!-- 涓诲唴瀹瑰尯 -->
                     <div class="case-detail-main">
-                        <!-- 图片/视频展示 -->
+                        <!-- 鍥剧墖/瑙嗛灞曠ず -->
                         <div class="case-media-gallery" id="caseMedia">
-                            <!-- 动态填充 -->
+                            <!-- 鍔ㄦ€佸～鍏?-->
                         </div>
 
-                        <!-- 案例标题和描述 -->
+                        <!-- 妗堜緥鏍囬鍜屾弿杩?-->
                         <div class="case-description-section">
                             <h1 class="case-detail-title-content" id="caseTitleContent"></h1>
                             <h2 class="case-section-title">
                                 <i class="fas fa-file-alt"></i>
-                                案例详情
+                                妗堜緥璇︽儏
                             </h2>
                             <div class="case-description-text" id="caseDescription">
-                                <!-- 动态填充 -->
+                                <!-- 鍔ㄦ€佸～鍏?-->
                             </div>
                         </div>
 
-                        <!-- 资方能配合哪些 -->
+                        <!-- 璧勬柟鑳介厤鍚堝摢浜?-->
                         <div class="case-highlights">
                             <h3 class="case-highlights-title">
                                 <i class="fas fa-handshake"></i>
-                                资方能配合哪些
+                                璧勬柟鑳介厤鍚堝摢浜?
                             </h3>
                             <div class="case-highlights-list" id="caseHighlights">
-                                <!-- 动态填充 -->
+                                <!-- 鍔ㄦ€佸～鍏?-->
                             </div>
                         </div>
 
-                        <!-- 操作流程 -->
+                        <!-- 鎿嶄綔娴佺▼ -->
                         <div class="case-highlights">
                             <h3 class="case-highlights-title">
                                 <i class="fas fa-tasks"></i>
-                                操作流程
+                                鎿嶄綔娴佺▼
                             </h3>
                             <div class="case-highlights-list" id="caseProcess">
-                                <!-- 动态填充 -->
+                                <!-- 鍔ㄦ€佸～鍏?-->
                             </div>
                         </div>
                     </div>
 
-                    <!-- 侧边栏 -->
+                    <!-- 渚ц竟鏍?-->
                     <aside class="case-detail-sidebar">
-                        <!-- 联系卡片 -->
+                        <!-- 鑱旂郴鍗＄墖 -->
                         <div class="case-contact-card">
                             <div class="case-contact-avatar">
                                 <i class="fas fa-user-tie"></i>
                             </div>
-                            <h3 class="case-contact-name">王总</h3>
-                            <p class="case-contact-title">资金业务总经理</p>
+                            <h3 class="case-contact-name">鐜嬫€?/h3>
+                            <p class="case-contact-title">璧勯噾涓氬姟鎬荤粡鐞?/p>
                             <div class="case-contact-phone">
                                 <i class="fas fa-phone"></i>
                                 135-5288-3008
@@ -234,40 +234,40 @@
     
                         </div>
 
-                        <!-- 相关案例 -->
+                        <!-- 鐩稿叧妗堜緥 -->
                         <div class="case-related-card">
-                            <h3 class="case-related-title">相关案例</h3>
+                            <h3 class="case-related-title">鐩稿叧妗堜緥</h3>
                             <div class="case-related-list" id="relatedCases">
-                                <!-- 动态填充 -->
+                                <!-- 鍔ㄦ€佸～鍏?-->
                             </div>
                         </div>
 
-                        <!-- 服务保障 -->
+                        <!-- 鏈嶅姟淇濋殰 -->
                         <div class="case-service-guarantee">
                             <h3 class="case-service-guarantee-title">
                                 <i class="fas fa-shield-alt"></i>
-                                服务保障
+                                鏈嶅姟淇濋殰
                             </h3>
                             <div class="case-guarantee-list">
                                 <div class="case-guarantee-item">
                                     <i class="fas fa-check-circle"></i>
-                                    <span>资金实力雄厚，百亿级管理规模</span>
+                                    <span>璧勯噾瀹炲姏闆勫帤锛岀櫨浜跨骇绠＄悊瑙勬ā</span>
                                 </div>
                                 <div class="case-guarantee-item">
                                     <i class="fas fa-check-circle"></i>
-                                    <span>快速响应，3个工作日内放款</span>
+                                    <span>蹇€熷搷搴旓紝3涓伐浣滄棩鍐呮斁娆?/span>
                                 </div>
                                 <div class="case-guarantee-item">
                                     <i class="fas fa-check-circle"></i>
-                                    <span>专业团队，20年行业经验</span>
+                                    <span>涓撲笟鍥㈤槦锛?0骞磋涓氱粡楠?/span>
                                 </div>
                                 <div class="case-guarantee-item">
                                     <i class="fas fa-check-circle"></i>
-                                    <span>严格保密，保护客户隐私</span>
+                                    <span>涓ユ牸淇濆瘑锛屼繚鎶ゅ鎴烽殣绉?/span>
                                 </div>
                                 <div class="case-guarantee-item">
                                     <i class="fas fa-check-circle"></i>
-                                    <span>合规操作，风险可控</span>
+                                    <span>鍚堣鎿嶄綔锛岄闄╁彲鎺?/span>
                                 </div>
                             </div>
                         </div>
@@ -276,33 +276,33 @@
             </div>
         </section>
 
-        <!-- 更多案例板块已移除 -->
+        <!-- 鏇村妗堜緥鏉垮潡宸茬Щ闄?-->
     </main>
 
-    <!-- 右侧边浮动电话按钮 -->
-    <div class="chat-widget" id="chatWidget" aria-label="联系电话">
-        <button class="chat-widget-btn" id="chatWidgetBtn" aria-label="拨打电话" aria-expanded="false">
+    <!-- 鍙充晶杈规诞鍔ㄧ數璇濇寜閽?-->
+    <div class="chat-widget" id="chatWidget" aria-label="鑱旂郴鐢佃瘽">
+        <button class="chat-widget-btn" id="chatWidgetBtn" aria-label="鎷ㄦ墦鐢佃瘽" aria-expanded="false">
             <i class="fas fa-phone-alt" aria-hidden="true"></i>
         </button>
     </div>
 
-    <!-- 页脚 -->
+    <!-- 椤佃剼 -->
 <?php include 'includes/footer.php'; ?>
 
 
-    <!-- 图片查看器 -->
+    <!-- 鍥剧墖鏌ョ湅鍣?-->
     <div class="image-viewer" id="imageViewer">
         <div class="viewer-overlay" onclick="closeImageViewer()"></div>
-        <button class="viewer-close" onclick="closeImageViewer()" aria-label="关闭">
+        <button class="viewer-close" onclick="closeImageViewer()" aria-label="鍏抽棴">
             <i class="fas fa-times"></i>
         </button>
-        <button class="viewer-nav prev" id="viewerPrev" onclick="prevImage()" aria-label="上一张">
+        <button class="viewer-nav prev" id="viewerPrev" onclick="prevImage()" aria-label="涓婁竴寮?>
             <i class="fas fa-chevron-left"></i>
         </button>
         <div class="viewer-container">
             <img src="" alt="" class="viewer-image" id="viewerImage">
         </div>
-        <button class="viewer-nav next" id="viewerNext" onclick="nextImage()" aria-label="下一张">
+        <button class="viewer-nav next" id="viewerNext" onclick="nextImage()" aria-label="涓嬩竴寮?>
             <i class="fas fa-chevron-right"></i>
         </button>
         <div class="viewer-counter" id="viewerCounter">1 / 1</div>
@@ -310,25 +310,25 @@
 
     <script src="js/main.js"></script>
     <script>
-        // 案例数据 - 将从CMS数据源动态加载
+        // 妗堜緥鏁版嵁 - 灏嗕粠CMS鏁版嵁婧愬姩鎬佸姞杞?
         let casesData = [];
-        // 全局基础路径（如 /hongdu/）
+        // 鍏ㄥ眬鍩虹璺緞锛堝 /hongdu/锛?
         const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
 
-        // 获取类型样式类名
+        // 鑾峰彇绫诲瀷鏍峰紡绫诲悕
         function getTypeClass(type) {
             const typeMap = {
-                '过桥': 'bridge',
-                '摆账': 'display',
-                '亮资': 'proof',
-                '冲量': 'deposit',
-                '定增': 'placement',
-                '应收账款': 'receivable'
+                '杩囨ˉ': 'bridge',
+                '鎽嗚处': 'display',
+                '浜祫': 'proof',
+                '鍐查噺': 'deposit',
+                '瀹氬': 'placement',
+                '搴旀敹璐︽': 'receivable'
             };
             return typeMap[type] || 'bridge';
         }
 
-        // 渲染案例详情
+        // 娓叉煋妗堜緥璇︽儏
         function renderCaseDetail(caseId) {
             const caseItem = casesData.find(c => c.id === parseInt(caseId));
             
@@ -337,17 +337,17 @@
                 return;
             }
 
-            // 更新页面标题
-            document.title = `${caseItem.title} - 案例详情 - Yao资金网`;
+            // 鏇存柊椤甸潰鏍囬
+            document.title = `${caseItem.title} - 妗堜緥璇︽儏 - Yao璧勯噾缃慲;
 
             const typeClass = getTypeClass(caseItem.type);
 
-            // 头部区域已移除
+            // 澶撮儴鍖哄煙宸茬Щ闄?
 
-            // 保存当前案例图片列表
+            // 淇濆瓨褰撳墠妗堜緥鍥剧墖鍒楄〃
             currentCaseImages = caseItem.images || [caseItem.image];
 
-            // 渲染媒体区域
+            // 娓叉煋濯掍綋鍖哄煙
             let mediaHtml = `
                 <div class="case-media-main" id="mainMedia" onclick="openImageViewer(currentImageIndex)">
                     ${caseItem.hasVideo ? `
@@ -373,13 +373,13 @@
 
             document.getElementById('caseMedia').innerHTML = mediaHtml;
 
-            // 渲染标题到内容区域
+            // 娓叉煋鏍囬鍒板唴瀹瑰尯鍩?
             document.getElementById('caseTitleContent').innerHTML = caseItem.title;
 
-            // 渲染描述
+            // 娓叉煋鎻忚堪
             document.getElementById('caseDescription').innerHTML = caseItem.detail;
 
-            // 渲染亮点（资方能配合哪些）
+            // 娓叉煋浜偣锛堣祫鏂硅兘閰嶅悎鍝簺锛?
             document.getElementById('caseHighlights').innerHTML = caseItem.highlights.map(h => `
                 <div class="case-highlight-item">
                     <i class="fas fa-check-circle"></i>
@@ -387,8 +387,8 @@
                 </div>
             `).join('');
 
-            // 渲染操作流程
-            const processSteps = caseItem.process || ['初步沟通需求', '提供相关资料', '资方审核评估', '签订合作协议', '资金到位操作', '业务完成结算'];
+            // 娓叉煋鎿嶄綔娴佺▼
+            const processSteps = caseItem.process || ['鍒濇娌熼€氶渶姹?, '鎻愪緵鐩稿叧璧勬枡', '璧勬柟瀹℃牳璇勪及', '绛捐鍚堜綔鍗忚', '璧勯噾鍒颁綅鎿嶄綔', '涓氬姟瀹屾垚缁撶畻'];
             document.getElementById('caseProcess').innerHTML = processSteps.map((step, index) => `
                 <div class="case-highlight-item">
                     <i class="fas fa-check-circle"></i>
@@ -396,11 +396,11 @@
                 </div>
             `).join('');
 
-            // 渲染相关案例（同类型优先，不足5个时补充其他类型）
+            // 娓叉煋鐩稿叧妗堜緥锛堝悓绫诲瀷浼樺厛锛屼笉瓒?涓椂琛ュ厖鍏朵粬绫诲瀷锛?
             let relatedCases = casesData
                 .filter(c => c.type === caseItem.type && c.id !== caseItem.id);
             
-            // 如果同类型不足5个，补充其他类型
+            // 濡傛灉鍚岀被鍨嬩笉瓒?涓紝琛ュ厖鍏朵粬绫诲瀷
             if (relatedCases.length < 5) {
                 const otherCases = casesData
                     .filter(c => c.type !== caseItem.type && c.id !== caseItem.id)
@@ -411,7 +411,7 @@
             relatedCases = relatedCases.slice(0, 5);
             
             document.getElementById('relatedCases').innerHTML = relatedCases.map(c => {
-                // 优先使用 coverImage 字段，其次使用 images 数组的第一张，最后使用 image 字段
+                // 浼樺厛浣跨敤 coverImage 瀛楁锛屽叾娆′娇鐢?images 鏁扮粍鐨勭涓€寮狅紝鏈€鍚庝娇鐢?image 瀛楁
                 const relatedImage = c.coverImage || (c.images && c.images.length > 0 ? c.images[0] : c.image) || 'images/cases/default.jpg';
                 return `
                 <a href="case-detail.html?id=${c.id}" class="case-related-item">
@@ -423,37 +423,37 @@
                         <span class="case-related-item-type">${c.type} ? ${c.amount}</span>
                     </div>
                 </a>
-            `}).join('') || '<p style="color: #9ca3af; text-align: center; padding: 20px;">暂无相关案例</p>';
+            `}).join('') || '<p style="color: #9ca3af; text-align: center; padding: 20px;">鏆傛棤鐩稿叧妗堜緥</p>';
 
-            // 更多案例板块已移除
+            // 鏇村妗堜緥鏉垮潡宸茬Щ闄?
         }
 
-        // 切换图片
+        // 鍒囨崲鍥剧墖
         function changeImage(src, thumb) {
             document.getElementById('mainImage').src = src;
             document.querySelectorAll('.case-media-thumb').forEach(t => t.classList.remove('active'));
             thumb.classList.add('active');
-            // 更新当前图片索引
+            // 鏇存柊褰撳墠鍥剧墖绱㈠紩
             const thumbs = document.querySelectorAll('.case-media-thumb');
             currentImageIndex = Array.from(thumbs).indexOf(thumb);
         }
 
-        // 播放视频
+        // 鎾斁瑙嗛
         function playVideo(videoSrc) {
             const mainMedia = document.getElementById('mainMedia');
             mainMedia.innerHTML = `
                 <video controls autoplay style="width: 100%; height: 100%; object-fit: contain; background: #000;">
                     <source src="${videoSrc}" type="video/mp4">
-                    您的浏览器不支持视频播放。
+                    鎮ㄧ殑娴忚鍣ㄤ笉鏀寔瑙嗛鎾斁銆?
                 </video>
             `;
         }
 
-        // 图片查看器相关变量
+        // 鍥剧墖鏌ョ湅鍣ㄧ浉鍏冲彉閲?
         let currentCaseImages = [];
         let currentImageIndex = 0;
 
-        // 打开图片查看器
+        // 鎵撳紑鍥剧墖鏌ョ湅鍣?
         function openImageViewer(index) {
             if (currentCaseImages.length === 0) return;
             
@@ -469,14 +469,14 @@
             updateViewerCounter();
         }
 
-        // 关闭图片查看器
+        // 鍏抽棴鍥剧墖鏌ョ湅鍣?
         function closeImageViewer() {
             const viewer = document.getElementById('imageViewer');
             viewer.classList.remove('active');
             document.body.style.overflow = '';
         }
 
-        // 上一张图片
+        // 涓婁竴寮犲浘鐗?
         function prevImage() {
             if (currentImageIndex > 0) {
                 currentImageIndex--;
@@ -486,7 +486,7 @@
             }
         }
 
-        // 下一张图片
+        // 涓嬩竴寮犲浘鐗?
         function nextImage() {
             if (currentImageIndex < currentCaseImages.length - 1) {
                 currentImageIndex++;
@@ -496,7 +496,7 @@
             }
         }
 
-        // 更新导航按钮状态
+        // 鏇存柊瀵艰埅鎸夐挳鐘舵€?
         function updateViewerNav() {
             const prevBtn = document.getElementById('viewerPrev');
             const nextBtn = document.getElementById('viewerNext');
@@ -508,13 +508,13 @@
             nextBtn.classList.toggle('disabled', currentImageIndex === currentCaseImages.length - 1);
         }
 
-        // 更新计数器
+        // 鏇存柊璁℃暟鍣?
         function updateViewerCounter() {
             document.getElementById('viewerCounter').textContent = 
                 `${currentImageIndex + 1} / ${currentCaseImages.length}`;
         }
 
-        // 键盘导航
+        // 閿洏瀵艰埅
         document.addEventListener('keydown', function(e) {
             const viewer = document.getElementById('imageViewer');
             if (!viewer.classList.contains('active')) return;
@@ -528,13 +528,13 @@
             }
         });
 
-        // 当前案例ID
+        // 褰撳墠妗堜緥ID
         let currentCaseId = null;
         
-        // 辅助函数：获取图片URL（兼容新旧格式）
+        // 杈呭姪鍑芥暟锛氳幏鍙栧浘鐗嘦RL锛堝吋瀹规柊鏃ф牸寮忥級
         function getImageUrl(img) {
             if (typeof img === 'string') {
-                // 相对路径（如 uploads/xxx.jpg），用 basePath 拼接
+                // 鐩稿璺緞锛堝 uploads/xxx.jpg锛夛紝鐢?basePath 鎷兼帴
                 if (img && !img.startsWith('http') && !img.startsWith('/') && !img.startsWith('data:')) {
                     return basePath + img;
                 }
@@ -550,10 +550,10 @@
             return '';
         }
         
-        // 辅助函数：获取视频URL（兼容新旧格式）
+        // 杈呭姪鍑芥暟锛氳幏鍙栬棰慤RL锛堝吋瀹规柊鏃ф牸寮忥級
         function getVideoUrl(video) {
             if (typeof video === 'string') {
-                return video; // 旧格式
+                return video; // 鏃ф牸寮?
             }
             if (typeof video === 'object' && video !== null) {
                 return video.url || '';
@@ -561,18 +561,18 @@
             return '';
         }
         
-        // 从localStorage加载所有案例（用于相关案例显示）
+        // 浠巐ocalStorage鍔犺浇鎵€鏈夋渚嬶紙鐢ㄤ簬鐩稿叧妗堜緥鏄剧ず锛?
         function loadAllCasesFromLocal() {
             try {
-                const cases = JSON.parse(localStorage.getItem('cms_cases') || '[]');
+                const cases = [];
                 return cases.filter(c => c.status === 'published');
             } catch (e) {
-                console.error('从localStorage加载失败:', e);
+                console.error('浠巐ocalStorage鍔犺浇澶辫触:', e);
                 return [];
             }
         }
         
-        // 从服务器加载所有案例
+        // 浠庢湇鍔″櫒鍔犺浇鎵€鏈夋渚?
         async function loadAllCasesFromServer() {
             try {
                 const response = await fetch(basePath + 'api/cases.php');
@@ -581,12 +581,12 @@
                     return result.cases.filter(c => c.status === 'published');
                 }
             } catch (error) {
-                console.log('服务器加载失败:', error);
+                console.log('鏈嶅姟鍣ㄥ姞杞藉け璐?', error);
             }
             return [];
         }
         
-        // 加载所有案例数据
+        // 鍔犺浇鎵€鏈夋渚嬫暟鎹?
         async function loadAllCases() {
             let cases = await loadAllCasesFromServer();
             if (cases.length === 0) {
@@ -595,19 +595,14 @@
             casesData = cases;
         }
         
-        // 从localStorage加载单个案例
-        function loadCaseFromLocal(caseId) {
-            try {
-                const cases = JSON.parse(localStorage.getItem('cms_cases') || '[]');
-                const foundCase = cases.find(c => String(c.id) === String(caseId));
-                return foundCase || null;
-            } catch (e) {
-                console.error('从localStorage加载失败:', e);
+        // 浠巐ocalStorage鍔犺浇鍗曚釜妗堜緥
+        function loadCaseFromLocal(caseId) { return null; } catch (e) {
+                console.error('浠巐ocalStorage鍔犺浇澶辫触:', e);
                 return null;
             }
         }
         
-        // 初始化
+        // 鍒濆鍖?
         document.addEventListener('DOMContentLoaded', async function() {
             const urlParams = new URLSearchParams(window.location.search);
             const caseId = urlParams.get('id');
@@ -615,22 +610,22 @@
             
             if (caseId) {
                 currentCaseId = caseId;
-                // 先加载所有案例数据（用于相关案例）
+                // 鍏堝姞杞芥墍鏈夋渚嬫暟鎹紙鐢ㄤ簬鐩稿叧妗堜緥锛?
                 await loadAllCases();
-                // 再加载具体案例详情
+                // 鍐嶅姞杞藉叿浣撴渚嬭鎯?
                 loadCaseDetail(caseId, isPreview);
             } else {
                 window.location.href = 'cases.html';
             }
         });
 
-        // 加载案例详情（优先从CMS加载，失败则使用本地数据）
+        // 鍔犺浇妗堜緥璇︽儏锛堜紭鍏堜粠CMS鍔犺浇锛屽け璐ュ垯浣跨敤鏈湴鏁版嵁锛?
         async function loadCaseDetail(caseId, isPreview) {
             let serverData = null;
             let serverError = null;
             
             try {
-                // 尝试从CMS API加载（添加时间戳防止缓存）
+                // 灏濊瘯浠嶤MS API鍔犺浇锛堟坊鍔犳椂闂存埑闃叉缂撳瓨锛?
                 const timestamp = new Date().getTime();
                 const response = await fetch(basePath + `api/case-detail.php?id=${caseId}&_t=${timestamp}`, {
                     cache: 'no-store'
@@ -638,65 +633,65 @@
                 const result = await response.json();
                 
                 if (result.success && result.exists) {
-                    // 使用CMS数据渲染
+                    // 浣跨敤CMS鏁版嵁娓叉煋
                     serverData = result.case;
                     renderCaseFromCMS(serverData);
                     
-                    // 更新localStorage中的数据为最新服务器数据
+                    // 鏇存柊localStorage涓殑鏁版嵁涓烘渶鏂版湇鍔″櫒鏁版嵁
                     updateLocalCase(serverData);
                     return;
                 } else {
-                    serverError = result.message || '案例不存在或已下架';
+                    serverError = result.message || '妗堜緥涓嶅瓨鍦ㄦ垨宸蹭笅鏋?;
                 }
             } catch (error) {
-                console.log('CMS API加载失败:', error);
-                serverError = error.message || '网络请求失败';
+                console.log('CMS API鍔犺浇澶辫触:', error);
+                serverError = error.message || '缃戠粶璇锋眰澶辫触';
             }
             
-            // 服务器加载失败，尝试从localStorage加载（仅作为后备）
+            // 鏈嶅姟鍣ㄥ姞杞藉け璐ワ紝灏濊瘯浠巐ocalStorage鍔犺浇锛堜粎浣滀负鍚庡锛?
             const localCase = loadCaseFromLocal(caseId);
             if (localCase) {
-                console.log('服务器加载失败，使用本地缓存数据:', serverError);
+                console.log('鏈嶅姟鍣ㄥ姞杞藉け璐ワ紝浣跨敤鏈湴缂撳瓨鏁版嵁:', serverError);
                 renderCaseFromCMS(localCase);
                 return;
             }
             
             if (isPreview) {
-                // 预览模式但数据不存在
-                alert('案例数据不存在，请先保存');
+                // 棰勮妯″紡浣嗘暟鎹笉瀛樺湪
+                alert('妗堜緥鏁版嵁涓嶅瓨鍦紝璇峰厛淇濆瓨');
                 window.location.href = 'cases.html';
             } else {
-                // 使用硬编码的本地数据
+                // 浣跨敤纭紪鐮佺殑鏈湴鏁版嵁
                 renderCaseDetail(caseId);
             }
         }
         
-        // 更新localStorage中的案例数据
+        // 鏇存柊localStorage涓殑妗堜緥鏁版嵁
         function updateLocalCase(caseData) {
             try {
-                const cases = JSON.parse(localStorage.getItem('cms_cases') || '[]');
+                const cases = [];
                 const index = cases.findIndex(c => String(c.id) === String(caseData.id));
                 if (index >= 0) {
                     cases[index] = caseData;
                 } else {
                     cases.push(caseData);
                 }
-                localStorage.setItem('cms_cases', JSON.stringify(cases));
+                // localStorage disabled
             } catch (e) {
-                console.error('更新本地缓存失败:', e);
+                console.error('鏇存柊鏈湴缂撳瓨澶辫触:', e);
             }
         }
         
-        // 从CMS数据渲染案例
+        // 浠嶤MS鏁版嵁娓叉煋妗堜緥
         function renderCaseFromCMS(caseData) {
-            // 更新页面标题
-            document.title = `${caseData.title} - 案例详情 - Yao资金网`;
+            // 鏇存柊椤甸潰鏍囬
+            document.title = `${caseData.title} - 妗堜緥璇︽儏 - Yao璧勯噾缃慲;
             
             const typeClass = getTypeClass(caseData.type);
             
-            // 头部区域已移除
+            // 澶撮儴鍖哄煙宸茬Щ闄?
 
-            // 保存当前案例图片列表（处理新旧格式）
+            // 淇濆瓨褰撳墠妗堜緥鍥剧墖鍒楄〃锛堝鐞嗘柊鏃ф牸寮忥級
             let images = [];
             if (caseData.images && caseData.images.length > 0) {
                 images = caseData.images.map(img => getImageUrl(img)).filter(url => url);
@@ -705,11 +700,11 @@
             }
             currentCaseImages = images;
             
-            // 处理视频（兼容新旧格式）
+            // 澶勭悊瑙嗛锛堝吋瀹规柊鏃ф牸寮忥級
             const videoUrl = caseData.video ? getVideoUrl(caseData.video) : '';
             const hasVideo = !!videoUrl;
             
-            // 渲染媒体区域
+            // 娓叉煋濯掍綋鍖哄煙
             let mediaHtml = `
                 <div class="case-media-main" id="mainMedia" onclick="openImageViewer(currentImageIndex)">
                     ${hasVideo ? `
@@ -735,31 +730,31 @@
             
             document.getElementById('caseMedia').innerHTML = mediaHtml;
             
-            // 渲染标题到内容区域
+            // 娓叉煋鏍囬鍒板唴瀹瑰尯鍩?
             document.getElementById('caseTitleContent').innerHTML = caseData.title;
             
-            // 渲染描述
+            // 娓叉煋鎻忚堪
             document.getElementById('caseDescription').innerHTML = caseData.detail;
             
-            // 渲染亮点（资方能配合哪些）
+            // 娓叉煋浜偣锛堣祫鏂硅兘閰嶅悎鍝簺锛?
             const highlights = caseData.highlights || [];
             document.getElementById('caseHighlights').innerHTML = highlights.map(h => `
                 <div class="case-highlight-item">
                     <i class="fas fa-check-circle"></i>
                     <span>${h}</span>
                 </div>
-            `).join('') || '<p style="color: #9ca3af;">暂无资方配合信息</p>';
+            `).join('') || '<p style="color: #9ca3af;">鏆傛棤璧勬柟閰嶅悎淇℃伅</p>';
 
-            // 渲染操作流程
-            const processSteps = caseData.process || ['初步沟通需求', '提供相关资料', '资方审核评估', '签订合作协议', '资金到位操作', '业务完成结算'];
+            // 娓叉煋鎿嶄綔娴佺▼
+            const processSteps = caseData.process || ['鍒濇娌熼€氶渶姹?, '鎻愪緵鐩稿叧璧勬枡', '璧勬柟瀹℃牳璇勪及', '绛捐鍚堜綔鍗忚', '璧勯噾鍒颁綅鎿嶄綔', '涓氬姟瀹屾垚缁撶畻'];
             document.getElementById('caseProcess').innerHTML = processSteps.map((step, index) => `
                 <div class="case-highlight-item">
                     <i class="fas fa-check-circle"></i>
                     <span>${index + 1}. ${step}</span>
                 </div>
-            `).join('') || '<p style="color: #9ca3af;">暂无操作流程</p>';
+            `).join('') || '<p style="color: #9ca3af;">鏆傛棤鎿嶄綔娴佺▼</p>';
             
-            // 判断图片比例并设置容器类名（用于相关案例缩略图）
+            // 鍒ゆ柇鍥剧墖姣斾緥骞惰缃鍣ㄧ被鍚嶏紙鐢ㄤ簬鐩稿叧妗堜緥缂╃暐鍥撅級
         function detectRelatedImageRatio(imgElement, container) {
             if (!imgElement || !container) return;
             
@@ -769,8 +764,8 @@
                 
                 if (width && height) {
                     const ratio = width / height;
-                    // 横图：宽高比 >= 1.2，使用 4:3
-                    // 竖图：宽高比 < 1.2，使用 3:4
+                    // 妯浘锛氬楂樻瘮 >= 1.2锛屼娇鐢?4:3
+                    // 绔栧浘锛氬楂樻瘮 < 1.2锛屼娇鐢?3:4
                     if (ratio >= 1.2) {
                         container.classList.remove('ratio-portrait');
                         container.classList.add('ratio-landscape');
@@ -792,11 +787,11 @@
             }
         }
 
-        // 渲染相关案例（同类型优先，不足5个时补充其他类型）
+        // 娓叉煋鐩稿叧妗堜緥锛堝悓绫诲瀷浼樺厛锛屼笉瓒?涓椂琛ュ厖鍏朵粬绫诲瀷锛?
             let relatedCases = casesData
                 .filter(c => c.type === caseData.type && c.id !== caseData.id);
             
-            // 如果同类型不足5个，补充其他类型
+            // 濡傛灉鍚岀被鍨嬩笉瓒?涓紝琛ュ厖鍏朵粬绫诲瀷
             if (relatedCases.length < 5) {
                 const otherCases = casesData
                     .filter(c => c.type !== caseData.type && c.id !== caseData.id)
@@ -807,7 +802,7 @@
             relatedCases = relatedCases.slice(0, 5);
             
             document.getElementById('relatedCases').innerHTML = relatedCases.map(c => {
-                // 优先使用 coverImage 字段，其次使用 images 数组的第一张（处理新旧格式），最后使用 image 字段
+                // 浼樺厛浣跨敤 coverImage 瀛楁锛屽叾娆′娇鐢?images 鏁扮粍鐨勭涓€寮狅紙澶勭悊鏂版棫鏍煎紡锛夛紝鏈€鍚庝娇鐢?image 瀛楁
                 let relatedImage = c.coverImage;
                 if (relatedImage && !relatedImage.startsWith('http') && !relatedImage.startsWith('/') && !relatedImage.startsWith('data:')) {
                     relatedImage = basePath + relatedImage;
@@ -834,49 +829,49 @@
                         <span class="case-related-item-type">${c.type} ? ${c.amount}</span>
                     </div>
                 </a>
-            `}).join('') || '<p style="color: #9ca3af; text-align: center; padding: 20px;">暂无相关案例</p>';
+            `}).join('') || '<p style="color: #9ca3af; text-align: center; padding: 20px;">鏆傛棤鐩稿叧妗堜緥</p>';
             
-            // 更多案例板块已移除
+            // 鏇村妗堜緥鏉垮潡宸茬Щ闄?
         }
     </script>
     
         <!-- CMS Editor -->
     <script>
-        // 检查是否需要加载编辑器
+        // 妫€鏌ユ槸鍚﹂渶瑕佸姞杞界紪杈戝櫒
         (function() {
-            console.log('[CMS] 初始化检查...');
+            console.log('[CMS] 鍒濆鍖栨鏌?..');
             
             const urlParams = new URLSearchParams(window.location.search);
             const isEditMode = urlParams.get('edit') === 'true';
             const isLoggedIn = localStorage.getItem('cms_logged_in') === 'true';
             
-            console.log('[CMS] 编辑模式:', isEditMode);
-            console.log('[CMS] 登录状态:', isLoggedIn);
+            console.log('[CMS] 缂栬緫妯″紡:', isEditMode);
+            console.log('[CMS] 鐧诲綍鐘舵€?', isLoggedIn);
             
             if (isEditMode && isLoggedIn) {
-                console.log('[CMS] 开始加载编辑器...');
+                console.log('[CMS] 寮€濮嬪姞杞界紪杈戝櫒...');
                 
-                // 加载编辑器样式
+                // 鍔犺浇缂栬緫鍣ㄦ牱寮?
                 const editorCss = document.createElement('link');
                 editorCss.rel = 'stylesheet';
                 editorCss.href = 'admin/editor.css';
                 editorCss.onerror = function() {
-                    console.error('[CMS] 编辑器样式加载失败');
+                    console.error('[CMS] 缂栬緫鍣ㄦ牱寮忓姞杞藉け璐?);
                 };
                 document.head.appendChild(editorCss);
                 
-                // 加载编辑器脚本
+                // 鍔犺浇缂栬緫鍣ㄨ剼鏈?
                 const editorScript = document.createElement('script');
                 editorScript.src = 'admin/editor.js';
                 editorScript.onload = function() {
-                    console.log('[CMS] 编辑器脚本加载成功');
+                    console.log('[CMS] 缂栬緫鍣ㄨ剼鏈姞杞芥垚鍔?);
                 };
                 editorScript.onerror = function() {
-                    console.error('[CMS] 编辑器脚本加载失败');
+                    console.error('[CMS] 缂栬緫鍣ㄨ剼鏈姞杞藉け璐?);
                 };
                 document.body.appendChild(editorScript);
             } else if (isEditMode && !isLoggedIn) {
-                console.log('[CMS] 未登录，重定向到登录页');
+                console.log('[CMS] 鏈櫥褰曪紝閲嶅畾鍚戝埌鐧诲綍椤?);
                 window.location.href = 'admin/login.html?redirect=' + encodeURIComponent(window.location.href);
             }
         })();

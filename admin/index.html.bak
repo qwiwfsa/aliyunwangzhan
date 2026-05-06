@@ -988,7 +988,6 @@
         ];
 
         let customPages = [];
-        let pagesIndex = [];
 
         // 初始化
         document.addEventListener('DOMContentLoaded', function() {
@@ -1015,57 +1014,40 @@
             document.getElementById('logoutBtn').addEventListener('click', logout);
         });
 
-        // 加载自定义页面（从API加载）
+        // 加载自定义页面
         function loadCustomPages() {
-            // 从API获取页面列表
-            fetch('api/list-pages.php')
-                .then(r => r.json())
-                .then(result => {
-                    if (result.success && result.data && result.data.pages) {
-                        customPages = result.data.pages.map(p => ({
-                            id: p.pageId,
-                            name: p.title || p.pageName,
-                            file: p.pageName + '.html',
-                            icon: 'fa-file',
-                            desc: p.subtitle || '',
-                            protected: false
-                        }));
-                    }
-                })
-                .catch(err => console.error('加载页面列表失败:', err));
+            const saved = localStorage.getItem('cms_custom_pages');
+            if (saved) {
+                customPages = JSON.parse(saved);
+            }
         }
 
-        // 保存自定义页面（通过API保存）
+        // 保存自定义页面
         function saveCustomPages() {
-            // 自定义页面信息通过 create-page.php 和 delete-page.php 管理
+            localStorage.setItem('cms_custom_pages', JSON.stringify(customPages));
         }
 
-        // 加载统计数据（从API获取，不再使用localStorage）
+        // 加载统计数据
         function loadStats() {
             const allPages = [...defaultPages, ...customPages];
             document.getElementById('totalPages').textContent = allPages.length;
 
-            // 从API获取页面信息进行统计
-            fetch('api/list-pages.php')
-                .then(r => r.json())
-                .then(result => {
-                    if (result.success && result.data && result.data.pages) {
-                        document.getElementById('editedContent').textContent = result.data.total || result.data.pages.length;
-                        if (result.data.pages.length > 0) {
-                            const sorted = [...result.data.pages].sort((a, b) => new Date(b.lastModified) - new Date(a.lastModified));
-                            if (sorted[0].lastModified) {
-                                const date = new Date(sorted[0].lastModified);
-                                document.getElementById('lastUpdate').textContent = date.toLocaleDateString('zh-CN');
-                            }
-                        }
-                    }
-                })
-                .catch(err => {
-                    document.getElementById('editedContent').textContent = '--';
-                });
+            // 统计已编辑的页面
+            const pagesIndex = JSON.parse(localStorage.getItem('cms_pages_index') || '[]');
+            document.getElementById('editedContent').textContent = pagesIndex.length;
 
-            // 媒体文件数（暂设为0，等待图片库API）
-            document.getElementById('mediaCount').textContent = '0';
+            // 媒体文件数
+            const images = JSON.parse(localStorage.getItem('cms_image_library') || '[]');
+            document.getElementById('mediaCount').textContent = images.length;
+
+            // 最后更新时间
+            const lastUpdate = localStorage.getItem('cms_last_update');
+            if (lastUpdate) {
+                const date = new Date(lastUpdate);
+                document.getElementById('lastUpdate').textContent = date.toLocaleDateString('zh-CN');
+            } else {
+                document.getElementById('lastUpdate').textContent = '从未';
+            }
 
             // 最后操作用户
             const lastUser = localStorage.getItem('cms_username') || '-';
@@ -1075,6 +1057,7 @@
         // 渲染页面列表
         function renderPageList() {
             const container = document.getElementById('pageList');
+            const pagesIndex = JSON.parse(localStorage.getItem('cms_pages_index') || '[]');
             const allPages = [...defaultPages, ...customPages];
             
             container.innerHTML = allPages.map(page => {
@@ -1180,19 +1163,14 @@
             customPages.push(newPage);
             saveCustomPages();
 
-            // 通过API初始化页面数据
-            fetch('api/save.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    page: pageId,
-                    pageName: pageId,
-                    title: pageName,
-                    subtitle: pageDesc || '',
-                    data: { pageTitle: pageTitle || pageName, pageSubtitle: pageDesc || '' },
-                    published: false
-                })
-            }).catch(err => console.error('初始化页面数据失败:', err));
+            // 初始化页面数据
+            const pageData = {
+                pageTitle: pageTitle || pageName,
+                pageSubtitle: pageDesc || '',
+                lastModified: new Date().toISOString(),
+                createdAt: new Date().toISOString()
+            };
+            localStorage.setItem(`cms_data_${pageId}`, JSON.stringify(pageData));
 
             // 记录活动
             addActivity('add', `创建了新页面: ${pageName}`);
@@ -1253,7 +1231,8 @@
                 saveCustomPages();
             }
 
-            // 数据库中数据已由delete-page.php删除
+            // 删除本地存储的相关数据
+            localStorage.removeItem(`cms_data_${pageId}`);
 
             // 记录活动
             addActivity('delete', `删除了页面: ${page.name}`);
@@ -1265,19 +1244,16 @@
             showToast('页面已删除', 'success');
         }
 
-        // 添加活动记录（日志记录）
+        // 添加活动记录
         function addActivity(type, description) {
-            const user = localStorage.getItem('cms_username') || 'Admin';
-            // 活动记录通过nav-save.php的活动日志API保存
-            fetch('api/nav-save.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    action: 'save_activity',
-                    type: 'activity',
-                    activity: { type: type, description: description, time: new Date().toISOString(), user: user }
-                })
-            }).catch(err => console.error('记录活动失败:', err));
+            const activities = JSON.parse(localStorage.getItem('cms_activities') || '[]');
+            activities.unshift({
+                type: type,
+                description: description,
+                time: new Date().toISOString(),
+                user: localStorage.getItem('cms_username') || 'Admin'
+            });
+            localStorage.setItem('cms_activities', JSON.stringify(activities.slice(0, 20)));
         }
 
         // 显示提示

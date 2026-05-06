@@ -264,7 +264,11 @@
                                 <div class="form-group">
                                     <label class="form-label">业务类型</label>
                                     <select class="form-select" id="caseType">
-                                        <option value="">加载中...</option>
+                                        <option value="企业过桥">企业过桥</option>
+                                        <option value="企业摆账">企业摆账</option>
+                                        <option value="工程亮资">工程亮资</option>
+                                        <option value="银行冲量存款">银行冲量存款</option>
+                                        <option value="云信融资出表">云信融资出表</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -511,9 +515,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', async function() {
-            // 先加载业务类型列表
-            await loadCaseTypesFromServer();
-            
             const urlParams = new URLSearchParams(window.location.search);
             const caseId = urlParams.get('id');
             
@@ -538,31 +539,6 @@
             bindFormChangeEvents();
         });
 
-        // 从服务器加载业务类型列表
-        async function loadCaseTypesFromServer() {
-            try {
-                const response = await fetch('api/case/types.php?t=' + Date.now(), {
-                    method: 'GET',
-                    credentials: 'include'
-                });
-                const result = await response.json();
-                if (result.success && result.data && Array.isArray(result.data)) {
-                    const select = document.getElementById('caseType');
-                    if (!select) return;
-                    select.innerHTML = '<option value="">请选择业务类型</option>';
-                    result.data.forEach(function(type) {
-                        const opt = document.createElement('option');
-                        opt.value = type.name || type.id;
-                        opt.textContent = type.name || '未命名';
-                        select.appendChild(opt);
-                    });
-                    console.log('业务类型列表加载成功:', result.data.length, '个');
-                }
-            } catch (e) {
-                console.log('加载业务类型列表失败:', e);
-            }
-        }
-
         async function loadCase(caseId) {
             showLoading();
             let caseData = null;
@@ -585,9 +561,11 @@
                 console.log('从服务器加载失败:', error);
             }
             
-            // 2. 如果服务器加载失败，继续走JSON fallback（在API get.php中实现）
+            // 2. 如果服务器加载失败，从localStorage加载
             if (!caseData) {
-                console.log('服务器加载失败，继续尝试...');
+                const cases = JSON.parse(localStorage.getItem('cms_cases') || '[]');
+                caseData = cases.find(c => c.id === caseId || c.id === parseInt(caseId));
+                console.log('从本地加载案例:', caseData);
             }
             
             // 3. 如果还没有数据，尝试用数字ID再查一次（兼容case_xxx前缀）
@@ -633,8 +611,15 @@
                 // 渲染操作流程
                 renderProcess();
                 
-
-                // 同步到localStorage（已移除）
+                // 同步到localStorage
+                const cases = JSON.parse(localStorage.getItem('cms_cases') || '[]');
+                const index = cases.findIndex(c => c.id === currentCase.id);
+                if (index >= 0) {
+                    cases[index] = { ...currentCase };
+                } else {
+                    cases.push({ ...currentCase });
+                }
+                localStorage.setItem('cms_cases', JSON.stringify(cases));
             } else {
                 showToast('案例不存在', 'error');
                 setTimeout(() => window.location.href = 'case-management.html', 1500);
@@ -971,7 +956,7 @@
                 }
 
                 // 保存到服务器API（主要数据源）
-                const caseToSave = JSON.parse(JSON.stringify(currentCase));
+                const caseToSave = JSON.parse(JSON.stringify(currentCase));保存到服务器API（主要数据源）
                 let serverSaved = false;
                 let serverError = null;
                 let responseText = '';
@@ -1057,9 +1042,16 @@
         }
         
         // 清除案例缓存（localStorage和sessionStorage）
-                function clearCaseCache(caseId) {
-            // 清除缓存（已移除localStorage操作，保留函数以防调用报错）
-            console.log('清除案例缓存:', caseId);
+        function clearCaseCache(caseId) {
+            try {
+                // 从localStorage中移除该案例
+                const cases = JSON.parse(localStorage.getItem('cms_cases') || '[]');
+                const filteredCases = cases.filter(c => String(c.id) !== String(caseId));
+                localStorage.setItem('cms_cases', JSON.stringify(filteredCases));
+                console.log('已清除案例缓存:', caseId);
+            } catch (e) {
+                console.error('清除案例缓存失败:', e);
+            }
         }
 
         function previewCase() {
@@ -1102,10 +1094,12 @@
                     serverError = error.message || '网络请求失败';
                 }
                 
-                // 2. 从localStorage删除（已移除）
+                // 2. 从localStorage删除
+                const cases = JSON.parse(localStorage.getItem('cms_cases') || '[]');
                 const index = cases.findIndex(c => c.id === currentCase.id);
                 if (index >= 0) {
                     cases.splice(index, 1);
+                    localStorage.setItem('cms_cases', JSON.stringify(cases));
                     localDeleted = true;
                 }
                 

@@ -701,40 +701,49 @@
             if (faqId) {
                 document.getElementById('faqId').value = faqId;
                 document.getElementById('pageTitle').textContent = '编辑FAQ';
-                await loadFAQ(faqId);
+                loadFAQ(faqId);
             } else {
                 document.getElementById('pageTitle').textContent = '新建FAQ';
             }
         });
 
         // 加载FAQ数据
-                // 加载FAQ数据（从服务器API）
-        async function loadFAQ(id) {
-            try {
-                const response = await fetch('../admin/api/faq-data.php?id=' + id + '&t=' + Date.now());
-                if (response.ok) {
-                    const result = await response.json();
-                    if (result.code === 0 && result.data) {
-                        let faq = null;
-                        if (Array.isArray(result.data)) {
-                            faq = result.data.find(f => String(f.id) === String(id));
-                        } else if (result.data.id) {
-                            faq = result.data;
-                        }
-                        if (faq) {
-                            document.getElementById('faqQuestion').value = faq.question || '';
-                            setAnswerContent(faq.answer || '');
-                            document.getE        // 保存FAQ（保存到服务器API）
-        async function saveFAQ() {
+        function loadFAQ(id) {
+            const faqs = JSON.parse(localStorage.getItem('cms_faqs') || '[]');
+            const faq = faqs.find(f => f.id === id);
+            
+            if (faq) {
+                document.getElementById('faqQuestion').value = faq.question;
+                setAnswerContent(faq.answer);
+                document.getElementById('faqCategory').value = faq.category || 'general';
+                
+                // 保存原始数据用于重置
+                originalFAQ = {
+                    question: faq.question,
+                    answer: faq.answer,
+                    category: faq.category || 'general'
+                };
+            } else {
+                showToast('FAQ不存在', 'error');
+                setTimeout(() => {
+                    window.location.href = 'faq-management.html';
+                }, 1500);
+            }
+        }
+
+        // 保存FAQ
+        function saveFAQ() {
             const id = document.getElementById('faqId').value;
             const question = document.getElementById('faqQuestion').value.trim();
             const answer = getAnswerContent().trim();
             const category = document.getElementById('faqCategory').value;
+            
             if (!question) {
                 showToast('请输入问题', 'error');
                 document.getElementById('faqQuestion').focus();
                 return;
             }
+            
             if (!answer || answer === '<p></p>' || answer === '<p><br></p>') {
                 showToast('请输入回答', 'error');
                 if (faqEditor && faqEditor.focus) {
@@ -742,38 +751,36 @@
                 }
                 return;
             }
-            // 保存到服务器API
-            const formData = new FormData();
-            formData.append('action', 'save');
-            if (id) formData.append('id', id);
-            formData.append('question', question);
-            formData.append('answer', answer);
-            formData.append('category', category);
-            try {
-                const response = await fetch('../admin/api/faq-save.php', {
-                    method: 'POST',
-                    body: formData
-                });
-                if (response.ok) {
-                    const result = await response.json();
-                    if (result.code === 0) {
-                        showToast(id ? 'FAQ更新成功' : 'FAQ添加成功', 'success');
-                        setTimeout(() => {
-                            window.location.href = 'faq-management.html';
-                        }, 1000);
-                    } else {
-                        showToast('保存失败: ' + (result.msg || '未知错误'), 'error');
-                    }
-                } else {
-                    showToast('保存失败: 服务器错误', 'error');
+            
+            let faqs = JSON.parse(localStorage.getItem('cms_faqs') || '[]');
+            
+            if (id) {
+                // 更新现有FAQ
+                const index = faqs.findIndex(f => f.id === id);
+                if (index !== -1) {
+                    faqs[index] = { ...faqs[index], question, answer, category };
                 }
-            } catch (e) {
-                console.error('保存FAQ失败:', e);
-                showToast('保存失败: ' + e.message, 'error');
+            } else {
+                // 添加新FAQ
+                const newFAQ = {
+                    id: 'faq_' + Date.now(),
+                    question,
+                    answer,
+                    category
+                };
+                faqs.push(newFAQ);
             }
+            
+            localStorage.setItem('cms_faqs', JSON.stringify(faqs));
+            showToast(id ? 'FAQ更新成功' : 'FAQ添加成功', 'success');
+            
+            setTimeout(() => {
+                window.location.href = 'faq-management.html';
+            }, 1000);
         }
 
-        // 初始化function goBack() {
+        // 返回列表
+        function goBack() {
             window.location.href = 'faq-management.html';
         }
 

@@ -1,4 +1,4 @@
-﻿<html lang="zh-CN"><head>
+<html lang="zh-CN"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description" content="提供资金行业最新政策、市场动态解读，包含过桥短拆、工程亮资、实缴验资、企业摆账行业新规资讯。">
@@ -250,34 +250,9 @@
 
     </main>
 
-    <!-- 右侧边浮动电话按钮 -->
-    <div class="chat-widget" id="chatWidget" aria-label="联系电话">
-        <button class="chat-widget-btn" id="chatWidgetBtn" aria-label="拨打电话" aria-expanded="false">
-            <i class="fas fa-phone-alt" aria-hidden="true"></i>
-        </button>
-    <div class="chat-widget-phone-display">
-                <span class="chat-widget-phone-text">13552883008</span>
-            </div></div>
-
     <!-- 页脚 -->
     <footer class="footer">
         <div class="footer-container">
-            <div class="footer-main">
-                <div class="footer-brand">
-                    <div class="footer-logo"><img src="../uploads/logo/logo_20260502_190529_69f62ed969290.png" alt="Yao资金网" style="height:48px;width:auto;"></div>
-
-                    <p class="footer-desc">专业资金业务服务商，提供上市公司过桥、企业摆账、银行存款、应收账款融资等全方位资金服务</p>
-                </div>
-                <div class="footer-nav" data-footer-group="quick_links">                   <h4 class="footer-nav-title">快速链接</h4>
-                    <ul class="footer-nav-list"><li><a href="#">首页</a></li><li><a href="http://localhost/hongdu/services.html">业务范围</a></li><li><a href="http://localhost/hongdu/cases.html">成功案例</a></li><li><a href="http://localhost/hongdu/advantages.html">服务优势</a></li></ul>
-                </div>
-                <div class="footer-nav" data-footer-group="service_links">                   <h4 class="footer-nav-title">更多内容</h4>
-                    <ul class="footer-nav-list"><li><a href="http://localhost/hongdu/news.html">行业资讯</a></li><li><a href="http://localhost/hongdu/faq.html">常见问题</a></li><li><a href="http://localhost/hongdu/contact.html">联系我们</a></li></ul>
-                </div>
-                <div class="footer-nav" data-footer-group="contact">                   <h4 class="footer-nav-title">联系方式</h4>
-                    <ul class="footer-nav-list"><li><i class="fas fa-user"></i> 王总</li><li><i class="fas fa-phone"></i> 13552883008 </li><li><i class="fas fa-envelope"></i> wanglizhongguo@126.com</li></ul>
-                </div>
-            </div>
             <div class="footer-bottom">
                 <p class="footer-copyright">© 2024 Yao资金网 版权所有</p>
                 <p class="footer-disclaimer">投资有风险，理财需谨慎。本网站内容仅供参考，不构成投资建议。</p>
@@ -292,53 +267,40 @@
     <script>
         // 当前选中的分类
         let currentCategoryId = 0;
-        let allArticlesCache = [];
-
-        // 从服务器API加载文章和分类（固定从数据库读取）
-        async function loadAllFromServer() {
-            try {
-                const apiUrl = '../mobile/api/news.php?t=' + Date.now();
-                const response = await fetch(apiUrl, {
-                    method: 'GET',
-                    cache: 'no-store',
-                    headers: { 'Accept': 'application/json', 'Cache-Control': 'no-cache' }
-                });
-                if (!response.ok) return null;
-                const result = await response.json();
-                if (result.success && result.data && result.data.news) {
-                    allArticlesCache = result.data.news;
-                    console.log('[News] 从数据库加载了', allArticlesCache.length, '篇文章');
-                    if (result.data.categories && Array.isArray(result.data.categories)) {
-                                            }
-                    return result.data;
-                }
-                return null;
-            } catch (error) {
-                console.error('[News] API加载失败:', error);
-                return null;
-            }
-        }
-
-        // 加载分类（优先从API返回的数据中获取）
-        function loadCategories(apiData) {
+        
+        // 从localStorage加载分类
+        function loadCategories() {
+            console.log('[News] 开始加载分类...');
+            
+            const categories = JSON.parse(localStorage.getItem('cms_categories') || '[]');
+            console.log('[News] 本地存储分类数量:', categories.length);
+            
             const categoriesContainer = document.getElementById('newsCategories');
-            if (!categoriesContainer) return;
-
+            if (!categoriesContainer) {
+                console.error('[News] 找不到分类容器');
+                return;
+            }
+            
+            // 保留"全部资讯"，移除其他分类
             const allLink = categoriesContainer.querySelector('[data-cat-id="0"]');
             categoriesContainer.innerHTML = '';
             if (allLink) {
-                allLink.addEventListener('click', function(e) {
+                allLink.addEventListener('click', async function(e) {
                     e.preventDefault();
                     currentCategoryId = 0;
                     updateActiveCategory();
-                    renderArticles(allArticlesCache);
+                    // 优先从服务器加载
+                    const serverArticles = await loadNewsFromServer();
+                    if (serverArticles && serverArticles.length > 0) {
+                        renderArticles(serverArticles);
+                    } else {
+                        loadNewsFromStorage();
+                    }
                 });
                 categoriesContainer.appendChild(allLink);
             }
-
-            const categories = (apiData && apiData.categories)
-                ? apiData.categories
-                : 
+            
+            // 添加CMS分类
             if (categories.length > 0) {
                 categories.forEach(cat => {
                     const catLink = document.createElement('a');
@@ -346,19 +308,22 @@
                     catLink.className = 'news-category';
                     catLink.textContent = cat.name;
                     catLink.dataset.catId = cat.id;
-                    catLink.addEventListener('click', function(e) {
+                    catLink.addEventListener('click', async function(e) {
                         e.preventDefault();
                         currentCategoryId = cat.id;
                         updateActiveCategory();
-                        const filtered = allArticlesCache.filter(a => {
-                            const cid = a.categoryId || a.category_id;
-                            return cid == cat.id;
-                        });
-                        renderArticles(filtered);
+                        // 优先从服务器加载
+                        const serverArticles = await loadNewsFromServer();
+                        if (serverArticles && serverArticles.length > 0) {
+                            renderArticles(serverArticles);
+                        } else {
+                            loadNewsFromStorage();
+                        }
                     });
                     categoriesContainer.appendChild(catLink);
                 });
             } else {
+                // 使用默认分类
                 const defaultCategories = ['行业动态', '政策解读', '业务知识', '公司新闻'];
                 defaultCategories.forEach((name, index) => {
                     const catLink = document.createElement('a');
@@ -366,21 +331,26 @@
                     catLink.className = 'news-category';
                     catLink.textContent = name;
                     catLink.dataset.catId = index + 1;
-                    catLink.addEventListener('click', function(e) {
+                    catLink.addEventListener('click', async function(e) {
                         e.preventDefault();
                         currentCategoryId = index + 1;
                         updateActiveCategory();
-                        const filtered = allArticlesCache.filter(a => {
-                            const cid = a.categoryId || a.category_id;
-                            return cid == index + 1;
-                        });
-                        renderArticles(filtered);
+                        // 优先从服务器加载
+                        const serverArticles = await loadNewsFromServer();
+                        if (serverArticles && serverArticles.length > 0) {
+                            renderArticles(serverArticles);
+                        } else {
+                            loadNewsFromStorage();
+                        }
                     });
                     categoriesContainer.appendChild(catLink);
                 });
             }
+            
+            console.log('[News] 分类加载完成');
         }
-
+        
+        // 更新活跃分类样式
         function updateActiveCategory() {
             document.querySelectorAll('.news-category').forEach(cat => {
                 cat.classList.remove('active');
@@ -389,70 +359,189 @@
                 }
             });
         }
+        
+        // 从服务器API加载文章
+        async function loadNewsFromServer() {
+            console.log('[News] 开始从服务器加载文章...');
 
+            try {
+                const apiUrl = currentCategoryId
+                    ? `api/news.php?category_id=${currentCategoryId}&t=${Date.now()}`
+                    : `api/news.php?t=${Date.now()}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'GET',
+                    cache: 'no-store',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Cache-Control': 'no-cache'
+                    }
+                });
+
+                if (!response.ok) {
+                    console.error('[News] API响应错误:', response.status);
+                    return null;
+                }
+
+                const result = await response.json();
+                console.log('[News] API返回:', result);
+
+                if (result.success && result.data && result.data.news) {
+                    console.log('[News] 从服务器加载了', result.data.news.length, '篇文章');
+                    return result.data.news;
+                }
+
+                return null;
+            } catch (error) {
+                console.error('[News] 从服务器加载失败:', error);
+                return null;
+            }
+        }
+
+        // 从localStorage加载已发布的文章
+        function loadNewsFromStorage() {
+            console.log('[News] 开始加载资讯文章...');
+
+            // 获取localStorage中的文章
+            const articles = JSON.parse(localStorage.getItem('cms_articles') || '[]');
+            console.log('[News] 本地存储文章数量:', articles.length);
+            
+            // 过滤已发布的文章
+            let publishedArticles = articles.filter(a => a.status === 'published');
+            console.log('[News] 已发布文章数量:', publishedArticles.length);
+
+            // 如果有选中的分类，进一步筛选
+            if (currentCategoryId) {
+                publishedArticles = publishedArticles.filter(a => {
+                    const articleCatId = a.categoryId || a.category_id;
+                    return articleCatId == currentCategoryId;
+                });
+                console.log('[News] 分类筛选后文章数量:', publishedArticles.length);
+            }
+
+            // 按日期排序（最新的在前）
+            publishedArticles.sort((a, b) => {
+                const dateA = new Date(a.publishDate || a.publish_date || a.created_at || 0);
+                const dateB = new Date(b.publishDate || b.publish_date || b.created_at || 0);
+                return dateB - dateA;
+            });
+
+            // 使用统一的渲染函数
+            renderArticles(publishedArticles);
+        }
+        
+        // 验证图片数据是否有效
+        function isValidImage(imageData) {
+            if (!imageData) return false;
+            if (typeof imageData !== 'string') return false;
+            // 检查是否是有效的Base64图片
+            if (imageData.startsWith('data:image')) {
+                // 检查Base64数据是否完整（至少要有头部和一部分数据）
+                return imageData.length > 100;
+            }
+            // 检查是否是有效的URL
+            if (imageData.startsWith('http://') || imageData.startsWith('https://') || imageData.startsWith('/')) {
+                return imageData.length > 10;
+            }
+            // 检查是否是相对路径
+            if (imageData.startsWith('images/')) {
+                return true;
+            }
+            return false;
+        }
+
+        // 获取有效的封面图片
+        function getValidCoverImage(article) {
+            // 如果有封面图，使用封面图
+            if (article.cover_image && isValidImage(article.cover_image)) {
+                return article.cover_image;
+            }
+            // 如果没有封面图，返回 null（显示空白占位图）
+            return null;
+        }
+
+        // 创建文章卡片HTML
+        function createNewsCard(article) {
+            const title = article.title || '无标题';
+            const summary = article.summary || article.content?.replace(/<[^>]*>/g, '').substring(0, 100) + '...' || '';
+            const date = article.publishDate || article.publish_date || article.created_at || new Date().toISOString();
+            const formattedDate = new Date(date).toLocaleDateString('zh-CN');
+            const coverImage = getValidCoverImage(article);
+            const articleId = article.id;
+
+            console.log('[News] 渲染文章卡片:', { title, articleId, date, hasCover: !!coverImage });
+            
+            // 根据是否有封面图生成不同的HTML
+            const imageHtml = coverImage 
+                ? `<div class="news-thumb"><img src="${coverImage}" alt="${title}" loading="lazy"></div>`
+                : `<div class="news-thumb placeholder"><div class="placeholder-bg"></div></div>`;
+            
+            return `
+                <article class="news-card">
+                    ${imageHtml}
+                    <div class="news-content">
+                        <h3><a href="news-detail.html?id=${articleId}">${title}</a></h3>
+                        <p class="news-excerpt">${summary}</p>
+                        <div class="news-footer">
+                            <a href="news-detail.html?id=${articleId}" class="news-more">查看更多 →</a>
+                            <time class="news-date">${formattedDate}</time>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }
+        
+        // 渲染文章列表
         function renderArticles(articles) {
-            const newsContainer = document.querySelector('.news-list-container');
-            if (!newsContainer) return;
+            console.log('[News] 开始渲染文章，共', articles.length, '篇');
 
-            if (!articles || articles.length === 0) {
+            const newsContainer = document.querySelector('.news-list-container');
+            if (!newsContainer) {
+                console.error('[News] 找不到文章列表容器');
+                return;
+            }
+
+            if (articles.length === 0) {
                 newsContainer.innerHTML = '<div class="news-empty"><p>该分类下暂无文章</p></div>';
                 return;
             }
 
-            const sorted = [...articles].sort((a, b) => {
-                const da = new Date(a.publishDate || a.created_at || 0);
-                const db = new Date(b.publishDate || b.created_at || 0);
-                return db - da;
-            });
-
+            // 清空现有内容
             newsContainer.innerHTML = '';
-            sorted.forEach(article => {
-                newsContainer.insertAdjacentHTML('beforeend', createNewsCard(article));
+
+            // 添加每篇文章
+            articles.forEach(article => {
+                const articleHtml = createNewsCard(article);
+                newsContainer.insertAdjacentHTML('beforeend', articleHtml);
             });
-            console.log('[News] 渲染完成，共', sorted.length, '篇');
+
+            console.log('[News] 文章渲染完成');
         }
 
-        function isValidImage(imageData) {
-            if (!imageData || typeof imageData !== 'string') return false;
-            if (imageData.startsWith('data:image')) return imageData.length > 100;
-            if (imageData.startsWith('http://') || imageData.startsWith('https://') || imageData.startsWith('/')) return imageData.length > 10;
-            if (imageData.startsWith('images/')) return true;
-            return false;
-        }
-
-        function getValidCoverImage(article) {
-            return (article.cover_image && isValidImage(article.cover_image)) ? article.cover_image : null;
-        }
-
-        function createNewsCard(article) {
-            const title = article.title || '无标题';
-            const summary = article.summary || article.content?.replace(/<[^>]*>/g, '').substring(0, 100) + '...' || '';
-            const date = article.publishDate || article.created_at || new Date().toISOString();
-            const formattedDate = new Date(date).toLocaleDateString('zh-CN');
-            const coverImage = getValidCoverImage(article);
-            const articleId = article.id;
-            
-            const imageHtml = coverImage 
-                ? '<div class="news-thumb"><img src="' + coverImage + '" alt="' + title + '" loading="lazy"></div>'
-                : '<div class="news-thumb placeholder"><div class="placeholder-bg"></div></div>';
-            
-            return '<article class="news-card">'
-                + imageHtml
-                + '<div class="news-content">'
-                + '<h3><a href="news-detail.html?id=' + articleId + '">' + title + '</a></h3>'
-                + '<p class="news-excerpt">' + summary + '</p>'
-                + '<div class="news-footer">'
-                + '<a href="news-detail.html?id=' + articleId + '" class="news-more">查看更多 &rarr;</a>'
-                + '<time class="news-date">' + formattedDate + '</time>'
-                + '</div></div></article>';
-        }
-
-        // 页面加载：先调API，再渲染
+        // 页面加载完成后执行
         document.addEventListener('DOMContentLoaded', async function() {
-            const apiData = await loadAllFromServer();
-            loadCategories(apiData);
-            renderArticles(allArticlesCache);
+            loadCategories();
+
+            // 优先从服务器加载，失败时回退到localStorage
+            console.log('[News] 尝试从服务器加载文章...');
+            const serverArticles = await loadNewsFromServer();
+
+            if (serverArticles && serverArticles.length > 0) {
+                renderArticles(serverArticles);
+            } else {
+                console.log('[News] 服务器加载失败，回退到localStorage');
+                loadNewsFromStorage();
+            }
+
+            if (serverArticles && serverArticles.length > 0) {
+                console.log('[News] 使用服务器数据');
+                renderArticles(serverArticles);
+            } else {
+                console.log('[News] 服务器加载失败，回退到localStorage');
+                loadNewsFromStorage();
+            }
         });
+    </script>
     
     <!-- CMS Editor -->
     <script>

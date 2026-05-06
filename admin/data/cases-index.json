@@ -179,5 +179,36 @@
         "status": "published",
         "summary": "协助企业完成募集账户资金归还，确保合规运营，维护企业信用评级。",
         "lastModified": "2026-05-05 12:42:21"
+    },
+    {
+        "id": "15",
+        "title": "现金亮资",
+        "type": "企业摆账",
+        "city": "北京",
+        "amount": "三千万",
+        "image": "uploads\/20260427_69efb18e8687a.jpg",
+        "coverImage": "uploads\/20260427_69efb18e8687a.jpg",
+        "images": [
+            "uploads\/20260427_69efb18e8687a.jpg",
+            "uploads\/20260427_69efb19af3aa8.jpg"
+        ],
+        "status": "published",
+        "summary": "今日我们出资现金来辅助企业拿工程拿项目，解决没有足够的现金流来证明资金实力问题。",
+        "lastModified": "2026-05-06 01:29:56"
+    },
+    {
+        "id": "16",
+        "title": "某高新技术企业",
+        "type": "企业过桥",
+        "city": "测试七",
+        "amount": "2亿元",
+        "image": "uploads\/20260427_69efbc9dcf100.jpg",
+        "coverImage": "uploads\/20260427_69efbc9dcf100.jpg",
+        "images": [
+            "uploads\/20260427_69efbc9dcf100.jpg"
+        ],
+        "status": "published",
+        "summary": "提供月末、季末银行存款冲量服务，帮助企业优化财务报表。",
+        "lastModified": "2026-05-06 01:36:29"
     }
 ]

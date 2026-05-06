@@ -1237,13 +1237,33 @@
         }
 
         // 获取当前页面列表（优先从API获取，回退到默认值）
-                // 获取当前页面列表
         function getPages() {
+            const stored = localStorage.getItem('cms_page_list');
+            if (stored) {
+                try {
+                    const parsed = JSON.parse(stored);
+                    if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+                } catch(e) {}
+            }
+            // 首次初始化，写入默认列表
+            const defaults = getDefaultPages();
             // 页面列表由API管理
-            return getDefaultPages();
+            return defaults;
         }
-        
-                // 初始化
+
+        // 保存页面列表
+        function savePages(pagesList) {
+            // 页面列表由API管理
+        }
+
+        // 从列表中永久删除页面
+        function deletePageFromList(pageId) {
+            const currentPages = getPages();
+            const filtered = currentPages.filter(p => p.id !== pageId);
+            savePages(filtered);
+        }
+
+        // 初始化
         document.addEventListener('DOMContentLoaded', async function() {
             if (!await checkAuth()) return;
 
@@ -1402,11 +1422,15 @@
                 }
             } catch (error) {
                 console.log('API加载失败，使用本地存储:', error);
-                // 设置默认值
-                document.getElementById('editedContent').textContent = '0';
-                document.getElementById('lastUpdate').textContent = '无';
-                document.getElementById('publishedContent').textContent = '0';
-                            } else {
+                // 回退到localStorage
+                const pagesIndex = JSON.parse(localStorage.getItem('cms_pages_index') || '[]');
+                document.getElementById('editedContent').textContent = pagesIndex.length;
+
+                const lastUpdate = localStorage.getItem('cms_last_update');
+                if (lastUpdate) {
+                    const date = new Date(lastUpdate);
+                    document.getElementById('lastUpdate').textContent = date.toLocaleDateString('zh-CN');
+                } else {
                     document.getElementById('lastUpdate').textContent = '从未';
                 }
 

@@ -230,21 +230,9 @@
 
         // 加载菜单
         function loadNavItems() {
-            fetch('/hongdu/admin/api/nav-save.php?type=nav')
-                .then(res => res.json())
-                .then(result => {
-                    if (result.code === 0 && result.data) {
-                        navItems = result.data;
-                    } else {
-                        navItems = [];
-                    }
-                    renderNavItems();
-                })
-                .catch(err => {
-                    console.error('加载导航失败:', err);
-                    navItems = [];
-                    renderNavItems();
-                });
+            const stored = localStorage.getItem('cms_nav_items');
+            navItems = stored ? JSON.parse(stored) : [...defaultNavItems];
+            renderNavItems();
         }
 
         // 渲染菜单
@@ -308,68 +296,70 @@
         function saveNav() {
             const name = document.getElementById('navName').value.trim();
             const url = document.getElementById('navUrl').value.trim();
-            const iconElement = document.getElementById('navIcon');
-            const icon = iconElement ? iconElement.value.trim() : '';
+            const icon = document.getElementById('navIcon').value.trim();
 
             if (!name || !url) {
                 showToast('请填写菜单名称和链接地址', 'error');
                 return;
             }
 
-            const payload = {
-                action: 'save',
-                type: 'nav',
-                item_id: editingId || '',
-                name: name,
-                url: url,
-                icon: icon
-            };
-
-            fetch('/hongdu/admin/api/nav-save.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            })
-            .then(res => res.json())
-            .then(result => {
-                if (result.code === 0) {
-                    closeModal();
-                    loadNavItems();
-                    showToast('保存成功');
-                } else {
-                    showToast(result.msg || '保存失败', 'error');
+            if (editingId) {
+                // 编辑
+                const index = navItems.findIndex(n => n.id === editingId);
+                if (index !== -1) {
+                    navItems[index] = { id: editingId, name, url, icon };
                 }
-            })
-            .catch(err => {
-                showToast('保存失败: ' + err.message, 'error');
-            });
+            } else {
+                // 新增
+                const newId = Date.now().toString();
+                navItems.push({ id: newId, name, url, icon });
+            }
+
+            localStorage.setItem('cms_nav_items', JSON.stringify(navItems));
+            closeModal();
+            renderNavItems();
+            showToast('保存成功');
         }
 
         // 删除菜单
-        function deleteNav(id) {
+        async function deleteNav(id) {
             if (!window.confirm('确定要删除这个菜单项吗?')) return;
 
-            fetch('/hongdu/admin/api/nav-save.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    action: 'delete',
-                    type: 'nav',
-                    item_id: id
-                })
-            })
-            .then(res => res.json())
-            .then(result => {
-                if (result.code === 0) {
-                    loadNavItems();
-                    showToast('导航已删除');
+            const item = navItems.find(n => n.id === id);
+            if (!item) return;
+
+            // 获取页面ID（从URL中提取，去掉.html后缀）
+            const pageId = item.url.replace('.html', '');
+
+            try {
+                // 调用后端API删除页面
+                const response = await fetch('api/delete-page.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: 'pageId=' + encodeURIComponent(pageId)
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    // 从本地列表中移除
+                    navItems = navItems.filter(n => n.id !== id);
+                    localStorage.setItem('cms_nav_items', JSON.stringify(navItems));
+                    renderNavItems();
+                    showToast('删除成功');
                 } else {
-                    showToast(result.msg || '删除失败', 'error');
+                    showToast('删除失败: ' + result.message, 'error');
                 }
-            })
-            .catch(err => {
-                showToast('删除失败: ' + err.message, 'error');
-            });
+            } catch (error) {
+                console.error('删除请求失败:', error);
+                // 即使API调用失败，也从本地列表中移除
+                navItems = navItems.filter(n => n.id !== id);
+                localStorage.setItem('cms_nav_items', JSON.stringify(navItems));
+                renderNavItems();
+                showToast('已从本地列表删除');
+            }
         }
 
         // 显示提示消息
@@ -454,21 +444,9 @@
 
         // 加载组件
         function loadComponents() {
-            fetch('/hongdu/admin/api/nav-save.php?type=component')
-                .then(res => res.json())
-                .then(result => {
-                    if (result.code === 0 && result.data) {
-                        components = result.data;
-                    } else {
-                        components = [];
-                    }
-                    renderComponents();
-                })
-                .catch(err => {
-                    console.error('加载组件失败:', err);
-                    components = [];
-                    renderComponents();
-                });
+            const stored = localStorage.getItem('cms_components');
+            components = stored ? JSON.parse(stored) : [...defaultComponents];
+            renderComponents();
         }
 
         // 渲染组件列表
@@ -529,70 +507,39 @@
         // 保存组件
         function saveComponent() {
             const name = document.getElementById('componentName').value.trim();
-            const itemType = document.getElementById('componentType').value;
+            const type = document.getElementById('componentType').value;
             const icon = document.getElementById('componentIcon').value.trim() || 'fas fa-cube';
-            const compHtml = document.getElementById('componentHtml').value.trim();
+            const html = document.getElementById('componentHtml').value.trim();
 
-            if (!name || !compHtml) {
+            if (!name || !html) {
                 showToast('请填写组件名称和HTML代码', 'error');
                 return;
             }
 
-            const payload = {
-                action: 'save',
-                type: 'component',
-                item_id: editingComponentId || '',
-                name: name,
-                item_type: itemType,
-                icon: icon,
-                html: compHtml
-            };
-
-            fetch('/hongdu/admin/api/nav-save.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            })
-            .then(res => res.json())
-            .then(result => {
-                if (result.code === 0) {
-                    closeComponentModal();
-                    loadComponents();
-                    showToast('组件保存成功');
-                } else {
-                    showToast(result.msg || '保存失败', 'error');
+            if (editingComponentId) {
+                const index = components.findIndex(c => c.id === editingComponentId);
+                if (index !== -1) {
+                    components[index] = { id: editingComponentId, name, type, icon, html };
                 }
-            })
-            .catch(err => {
-                showToast('保存失败: ' + err.message, 'error');
-            });
+            } else {
+                const newId = Date.now().toString();
+                components.push({ id: newId, name, type, icon, html });
+            }
+
+            localStorage.setItem('cms_components', JSON.stringify(components));
+            closeComponentModal();
+            renderComponents();
+            showToast('组件保存成功');
         }
 
         // 删除组件
         function deleteComponent(id) {
             if (!confirm('确定要删除这个组件吗？')) return;
 
-            fetch('/hongdu/admin/api/nav-save.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    action: 'delete',
-                    type: 'component',
-                    item_id: id
-                })
-            })
-            .then(res => res.json())
-            .then(result => {
-                if (result.code === 0) {
-                    loadComponents();
-                    showToast('组件已删除');
-                } else {
-                    showToast(result.msg || '删除失败', 'error');
-                }
-            })
-            .catch(err => {
-                showToast('删除失败: ' + err.message, 'error');
-            });
+            components = components.filter(c => c.id !== id);
+            localStorage.setItem('cms_components', JSON.stringify(components));
+            renderComponents();
+            showToast('组件删除成功');
         }
 
         // 关闭组件模态框

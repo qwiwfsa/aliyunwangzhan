@@ -545,134 +545,14 @@
 
         .modal-container {
             background: white;
-            border-radius: 10px;
+            border-radius: 12px;
             width: 90%;
-            max-width: 400px;
-            max-height: 70vh;
+            max-width: 600px;
+            max-height: 80vh;
             display: flex;
             flex-direction: column;
             transform: scale(0.9);
             transition: transform 0.3s ease;
-        }
-
-        #typeManagerModal .modal-container {
-            max-width: 550px;
-            max-height: 80vh;
-        }
-
-        .type-item-inline {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 16px;
-            border-bottom: 1px solid #e5e7eb;
-            transition: background 0.15s;
-        }
-
-        .type-item-inline:hover {
-            background: #f9fafb;
-        }
-
-        .type-sort-btns {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-            flex-shrink: 0;
-        }
-
-        .type-sort-btns button {
-            width: 22px;
-            height: 18px;
-            border: 1px solid #e5e7eb;
-            background: white;
-            border-radius: 3px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            color: #6b7280;
-            padding: 0;
-            transition: all 0.15s;
-        }
-
-        .type-sort-btns button:hover:not(:disabled) {
-            background: #eff6ff;
-            border-color: #3b82f6;
-            color: #3b82f6;
-        }
-
-        .type-sort-btns button:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-        }
-
-        .type-color-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-
-        .type-item-info {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            min-width: 0;
-        }
-
-        .type-item-name {
-            font-weight: 500;
-            color: #1f2937;
-            font-size: 14px;
-            white-space: nowrap;
-        }
-
-        .type-item-desc {
-            color: #94a3b8;
-            font-size: 13px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        .type-actions-icon {
-            display: flex;
-            gap: 4px;
-            flex-shrink: 0;
-        }
-
-        .type-icon-btn {
-            width: 32px;
-            height: 32px;
-            border: none;
-            background: transparent;
-            border-radius: 6px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 15px;
-            transition: all 0.15s;
-        }
-
-        .type-icon-btn.edit {
-            color: #6b7280;
-        }
-
-        .type-icon-btn.edit:hover {
-            background: #eff6ff;
-            color: #3b82f6;
-        }
-
-        .type-icon-btn.delete {
-            color: #9ca3af;
-        }
-
-        .type-icon-btn.delete:hover {
-            background: #fef2f2;
-            color: #ef4444;
         }
 
         .modal-overlay.show .modal-container {
@@ -680,7 +560,7 @@
         }
 
         .modal-header {
-            padding: 12px 16px;
+            padding: 20px 24px;
             border-bottom: 1px solid #e5e7eb;
             display: flex;
             align-items: center;
@@ -688,7 +568,7 @@
         }
 
         .modal-title {
-            font-size: 15px;
+            font-size: 18px;
             font-weight: 600;
             color: #1f2937;
         }
@@ -713,17 +593,17 @@
         }
 
         .modal-body {
-            padding: 12px 16px;
+            padding: 20px 24px;
             overflow-y: auto;
             flex: 1;
         }
 
         .modal-footer {
-            padding: 10px 16px;
+            padding: 16px 24px;
             border-top: 1px solid #e5e7eb;
             display: flex;
             justify-content: flex-end;
-            gap: 8px;
+            gap: 12px;
         }
 
         .btn {
@@ -774,10 +654,10 @@
         .type-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 8px 12px;
+            gap: 12px;
+            padding: 12px 16px;
             background: #f9fafb;
-            border-radius: 6px;
+            border-radius: 8px;
             border: 1px solid #e5e7eb;
             cursor: move;
             transition: all 0.2s;
@@ -963,7 +843,7 @@
                     <span>CMS管理后台</span>
                 </div>
             </div>
-
+            
             <nav class="cms-sidebar-nav">
                 <div class="cms-nav-section">
                     <div class="cms-nav-title">主要</div>
@@ -999,7 +879,7 @@
                         <i class="fas fa-list-alt"></i>
                         <span>页脚管理</span>
                     </a>
-
+                    
                 </div>
             </nav>
         </aside>
@@ -1012,7 +892,7 @@
                     <h1 class="cms-header-title">案例管理</h1>
                 </div>
                 <div class="cms-header-right">
-                    <button class="cms-header-btn" onclick="syncIndex()" title="同步索引,清理无效条目">
+                    <button class="cms-header-btn" onclick="syncIndex()" title="同步索引，清理无效条目">
                         <i class="fas fa-sync-alt"></i>
                         <span>同步索引</span>
                     </button>
@@ -1068,7 +948,7 @@
                 <!-- 筛选栏 -->
                 <div class="filter-bar">
                     <div class="filter-group">
-                        <span class="filter-label">业务类型:</span>
+                        <span class="filter-label">业务类型：</span>
                         <select class="filter-select" id="filterType" onchange="filterCases()">
                             <option value="">全部</option>
                         </select>
@@ -1078,7 +958,7 @@
                         </button>
                     </div>
                     <div class="filter-group">
-                        <span class="filter-label">状态:</span>
+                        <span class="filter-label">状态：</span>
                         <select class="filter-select" id="filterStatus" onchange="filterCases()">
                             <option value="">全部</option>
                             <option value="published">已发布</option>
@@ -1128,7 +1008,7 @@
     </div>
 
     <!-- 业务类型管理弹窗 -->
-    <div class="modal-overlay" id="typeManagerModal" onclick="if(event.target===this)closeTypeManager()">
+    <div class="modal-overlay" id="typeManagerModal">
         <div class="modal-container">
             <div class="modal-header">
                 <h3 class="modal-title">
@@ -1157,7 +1037,7 @@
     </div>
 
     <!-- 业务类型表单弹窗 -->
-    <div class="modal-overlay" id="typeFormModal" onclick="if(event.target===this)closeTypeForm()">
+    <div class="modal-overlay" id="typeFormModal">
         <div class="modal-container" style="max-width: 450px;">
             <div class="modal-header">
                 <h3 class="modal-title" id="typeFormTitle">
@@ -1176,7 +1056,7 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label">描述</label>
-                        <textarea class="form-textarea" id="typeDescription" placeholder="请输入业务类型描述(可选)"></textarea>
+                        <textarea class="form-textarea" id="typeDescription" placeholder="请输入业务类型描述（可选）"></textarea>
                     </div>
                     <div class="form-group">
                         <label class="form-label">标识颜色</label>
@@ -1231,12 +1111,15 @@
             }
         }
 
+        // 从localStorage加载案例列表（后备方案）
+             }
+
         // 加载案例列表
         async function loadCases() {
             showLoading();
-
-            // 清除localStorage中的旧案例数据,强制从服务器重新加载
-
+            
+            // 清除localStorage中的旧案例数据，强制从服务器重新加载
+            
             console.log('开始加载案例列表...');
 
             try {
@@ -1244,14 +1127,31 @@
                 const apiCases = await loadCasesFromAPI();
                 console.log('API返回案例数:', apiCases ? apiCases.length : 0);
                 let mergedCases = [];
-
+                
                 if (apiCases !== null && apiCases.length > 0) {
                     mergedCases = [...apiCases];
                     console.log('使用API数据:', mergedCases.map(c => c.title));
                 }
-
-
-                // 去重处理 - 确保每个ID只出现一次(以先出现的为准)
+                
+                // 合并本地存储的案例（以API数据为主，本地作为补充）
+                const localCases = loadCasesFromLocal();
+                console.log('本地存储案例数:', localCases.length);
+                if (localCases.length > 0) {
+                    const existingIds = new Set(mergedCases.map(c => String(c.id)));
+                    // 添加本地独有的案例
+                    localCases.forEach(localCase => {
+                        if (!existingIds.has(String(localCase.id))) {
+                            console.log('添加本地独有案例:', localCase.title, 'ID:', localCase.id);
+                            mergedCases.push(localCase);
+                        } else {
+                            console.log('跳过重复ID案例:', localCase.title, 'ID:', localCase.id);
+                        }
+                    });
+                }
+                console.log('合并后案例数:', mergedCases.length);
+                console.log('合并后案例标题列表:', mergedCases.map(c => c.title));
+                
+                // 去重处理 - 确保每个ID只出现一次（以先出现的为准）
                 const seenIds = new Set();
                 allCases = mergedCases.filter(c => {
                     // 确保ID存在且有效
@@ -1265,40 +1165,57 @@
                         return false;
                     }
                     if (seenIds.has(id)) {
-                        console.warn('发现重复ID的案例,已过滤:', c.title, 'ID:', id);
+                        console.warn('发现重复ID的案例，已过滤:', c.title, 'ID:', id);
                         return false;
                     }
                     seenIds.add(id);
                     return true;
                 });
-
+                
                 console.log('去重后案例数:', allCases.length);
                 console.log('去重后案例标题列表:', allCases.map(c => c.title));
-
-
-                // 重置筛选条件,显示所有案例
+                
+                
+                // 重置筛选条件，显示所有案例
                 document.getElementById('filterType').value = '';
                 document.getElementById('filterStatus').value = '';
                 document.getElementById('filterSearch').value = '';
-
+                
                 filteredCases = [...allCases];
                 console.log('最终渲染案例数:', filteredCases.length);
                 console.log('案例标题列表:', filteredCases.map(c => c.title));
                 updateStats();
                 renderCases();
-
+                
                 if (allCases.length === 0) {
                     showToast('暂无案例数据', 'error');
                 }
             } catch (error) {
                 console.log('加载失败:', error);
-
-                // 纯API模式,无本地回退
-                allCases = [];
-                filteredCases = [];
+                // 后备方案：从localStorage加载
+                allCases = loadCasesFromLocal();
+                // 去重处理
+                const seenIds = new Set();
+                allCases = allCases.filter(c => {
+                    // 确保ID存在且有效
+                    if (!c.id && c.id !== 0) {
+                        return false;
+                    }
+                    const id = String(c.id).trim();
+                    if (!id || seenIds.has(id)) {
+                        return false;
+                    }
+                    seenIds.add(id);
+                    return true;
+                });
+                filteredCases = [...allCases];
                 updateStats();
                 renderCases();
-                showToast('加载案例失败: ' + (error.message || '未知错误'), 'error');
+                if (allCases.length > 0) {
+                    showToast('已从本地存储加载案例');
+                } else {
+                    showToast('暂无案例数据', 'error');
+                }
             } finally {
                 hideLoading();
             }
@@ -1342,22 +1259,11 @@
         }
 
         // 渲染案例列表
-
-        // 打开类型管理器
-        function openTypeManager() {
-            document.getElementById('typeManagerModal').classList.add('show');
-            loadCaseTypes(true);
-        }
-
-        function closeTypeManager() {
-            document.getElementById('typeManagerModal').classList.remove('show');
-        }
-
         function renderCases() {
             const container = document.getElementById('casesGrid');
             const emptyState = document.getElementById('emptyState');
-
-            console.log('渲染案例列表,总数:', filteredCases.length);
+            
+            console.log('渲染案例列表，总数:', filteredCases.length);
             console.log('案例数据:', filteredCases.map(c => c.title));
 
             if (filteredCases.length === 0) {
@@ -1370,7 +1276,7 @@
             emptyState.style.display = 'none';
 
             container.innerHTML = filteredCases.map(caseItem => {
-                // 优先使用 coverImage 字段,其次使用 images 数组的第一张,最后使用 image 字段
+                // 优先使用 coverImage 字段，其次使用 images 数组的第一张，最后使用 image 字段
                 const coverImage = caseItem.coverImage || (caseItem.images && caseItem.images.length > 0 ? caseItem.images[0] : caseItem.image);
                 const hasImage = coverImage && coverImage.trim() !== '';
                 // 修复状态显示逻辑 - 处理 null/undefined 的情况
@@ -1381,14 +1287,14 @@
                 // 处理图片路径 - 支持多种路径格式
                 let imageUrl = coverImage;
                 if (imageUrl && !imageUrl.startsWith('http') && !imageUrl.startsWith('data:') && !imageUrl.startsWith('/')) {
-                    // 相对路径,添加前缀
+                    // 相对路径，添加前缀
                     imageUrl = '../' + imageUrl;
                 }
 
                 return `
                     <div class="case-card">
                         <div class="case-card-image ${hasImage ? '' : 'empty'}">
-                            ${hasImage
+                            ${hasImage 
                                 ? `<img src="${imageUrl}" alt="${caseItem.title}" onerror="this.parentElement.classList.add('empty'); this.parentElement.innerHTML='<i class=\\'fas fa-image\\'></i>';">`
                                 : '<i class="fas fa-image"></i>'
                             }
@@ -1403,7 +1309,7 @@
                                 <span><i class="fas fa-map-marker-alt"></i> ${caseItem.city || '未知'}</span>
                                 <span><i class="fas fa-calendar"></i> ${caseItem.year || '-'}</span>
                             </div>
-                            <div class="case-card-amount">出资金额:${caseItem.amount || '-'}</div>
+                            <div class="case-card-amount">出资金额：${caseItem.amount || '-'}</div>
                             <div class="case-card-actions">
                                 <a href="case-edit.html?id=${caseItem.id}" class="case-card-btn edit">
                                     <i class="fas fa-edit"></i> 编辑
@@ -1433,17 +1339,17 @@
                     },
                     body: JSON.stringify({ id: caseId })
                 });
-
+                
                 console.log('删除响应状态:', response.status);
-
+                
                 if (!response.ok) {
                     console.error('删除响应错误:', response.status, response.statusText);
                     return false;
                 }
-
+                
                 const result = await response.json();
                 console.log('删除响应结果:', result);
-
+                
                 if (result.success) {
                     return true;
                 } else {
@@ -1456,9 +1362,12 @@
             }
         }
 
+        // 从localStorage删除案例
+             }
+
         // 删除案例
         async function deleteCase(caseId) {
-            if (!confirm('确定要删除这个案例吗?此操作不可恢复。')) {
+            if (!confirm('确定要删除这个案例吗？此操作不可恢复。')) {
                 return;
             }
 
@@ -1468,7 +1377,7 @@
             let localDeleted = false;
             let errorMessage = '';
 
-            // 先从本地列表中移除(立即反馈)
+            // 先从本地列表中移除（立即反馈）
             allCases = allCases.filter(c => String(c.id) !== String(caseId));
             filteredCases = filteredCases.filter(c => String(c.id) !== String(caseId));
             renderCases();
@@ -1482,19 +1391,29 @@
                 errorMessage = '服务器连接失败';
             }
 
+            // 同时从localStorage删除
+            try {
+                localDeleted = deleteCaseFromLocal(caseId);
+            } catch (e) {
+                console.error('本地删除异常:', e);
+            }
+
             if (apiDeleted || localDeleted) {
                 showToast('案例删除成功');
+                
+                // 清理localStorage中可能存在的缓存
 
-                // 清理localStorage中可能存在的缓存(已移除)
-
+                    console.error('清理缓存失败:', e);
+                }
+                
                 // 强制刷新页面以确保数据同步
-                console.log('[Delete] 删除成功,准备刷新页面');
+                console.log('[Delete] 删除成功，准备刷新页面');
                 setTimeout(() => {
                     window.location.reload(true); // true表示强制从服务器重新加载
                 }, 800);
             } else {
-                showToast(errorMessage || '删除失败,请检查网络连接后重试', 'error');
-                // 如果删除失败,重新加载列表
+                showToast(errorMessage || '删除失败，请检查网络连接后重试', 'error');
+                // 如果删除失败，重新加载列表
                 await loadCases();
             }
 
@@ -1510,37 +1429,6 @@
         // 隐藏加载
         function hideLoading() {
             document.getElementById('loadingOverlay').style.display = 'none';
-        }
-
-        function hideLoading() {
-            document.getElementById('loadingOverlay').style.display = 'none';
-        }
-
-        // 显示提示消息
-        function showToast(message, type = 'success') {
-            const existingToast = document.querySelector('.cms-toast');
-            if (existingToast) existingToast.remove();
-
-            const toast = document.createElement('div');
-            toast.className = 'cms-toast';
-            toast.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 16px 24px; border-radius: 8px; color: white; font-size: 14px; z-index: 10000; animation: slideIn 0.3s ease; max-width: 400px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);';
-
-            if (type === 'error') {
-                toast.style.background = '#ef4444';
-            } else if (type === 'warning') {
-                toast.style.background = '#f59e0b';
-            } else {
-                toast.style.background = '#10b981';
-            }
-
-            toast.textContent = message;
-            document.body.appendChild(toast);
-
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transition = 'opacity 0.3s ease';
-                setTimeout(() => toast.remove(), 300);
-            }, 3000);
         }
 
         // 生成唯一ID
@@ -1563,7 +1451,7 @@
                 ...originalCase,
                 id: generateId(),
                 title: originalCase.title + '-复制',
-                status: 'published',
+                status: 'draft',
                 createTime: new Date().toISOString(),
                 updateTime: new Date().toISOString()
             };
@@ -1584,26 +1472,48 @@
                     saved = true;
                 }
             } catch (e) {
-                console.log('API保存失败:', e);
+                console.log('API保存失败，使用本地存储:', e);
             }
 
-            if (saved) {
-                hideLoading();
-                showToast('案例复制成功');
-                await loadCases();
-            } else {
-                hideLoading();
-                showToast('复制失败,请检查网络连接', 'error');
+            // 如果API保存失败，保存到localStorage
+            if (!saved) {
+                ,
+                    body: JSON.stringify({ types: caseTypes })
+                });
+                
+                // 检查响应状态
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error('HTTP错误:', response.status, errorText);
+                    throw new Error('HTTP ' + response.status + ': ' + errorText);
+                }
+                
+                const result = await response.json();
+                console.log('排序保存结果:', result);
+                
+                if (result.success) {
+                    showToast('排序已保存');
+                    // 清除缓存
+                    typesCache = null;
+                    typesCacheTime = 0;
+                    // 触发前端页面刷新
+                                    } else {
+                    showToast(result.message || '排序保存失败', 'error');
+                }
+            } catch (e) {
+                console.error('保存排序失败:', e);
+                showToast('排序保存失败，请检查网络连接', 'error');
             }
         }
 
+        // 打开业务类型表单弹窗
         function openTypeForm(typeId = null) {
             const form = document.getElementById('typeForm');
             const title = document.getElementById('typeFormTitle');
-
+            
             form.reset();
             document.getElementById('typeId').value = '';
-
+            
             if (typeId) {
                 const type = caseTypes.find(t => t.id === typeId);
                 if (type) {
@@ -1617,7 +1527,7 @@
                 title.innerHTML = '<i class="fas fa-tag"></i> 新增业务类型';
                 document.getElementById('typeColor').value = '#3b82f6';
             }
-
+            
             document.getElementById('typeFormModal').classList.add('show');
         }
 
@@ -1632,27 +1542,27 @@
             const name = document.getElementById('typeName').value.trim();
             const description = document.getElementById('typeDescription').value.trim();
             const color = document.getElementById('typeColor').value;
-
+            
             if (!name) {
                 showToast('请输入类型名称', 'warning');
                 return;
             }
-
+            
             const data = {
                 name: name,
                 description: description,
                 color: color
             };
-
+            
             if (id) {
                 data.id = parseInt(id);
             }
-
+            
             try {
                 showLoading('正在保存...');
-
+                
                 console.log('保存业务类型:', id ? 'PUT更新' : 'POST创建', data);
-
+                
                 const response = await fetch(PHP_API_BASE + 'types.php', {
                     method: id ? 'PUT' : 'POST',
                     credentials: 'include',
@@ -1661,32 +1571,32 @@
                     },
                     body: JSON.stringify(data)
                 });
-
+                
                 // 检查响应状态
                 if (!response.ok) {
                     const errorText = await response.text();
                     console.error('HTTP错误:', response.status, errorText);
                     throw new Error('HTTP ' + response.status + ': ' + errorText);
                 }
-
+                
                 const result = await response.json();
                 console.log('保存结果:', result);
-
+                
                 if (result.success) {
                     showToast(id ? '业务类型更新成功' : '业务类型创建成功');
                     closeTypeForm();
                     // 清除缓存强制刷新
                     typesCache = null;
                     typesCacheTime = 0;
-                    await loadCaseTypes(true, true); // 保留筛选值,强制刷新
+                    await loadCaseTypes(true, true); // 保留筛选值，强制刷新
                     renderTypeList();
-                    // 触发前端页面刷新(通过localStorage事件)
+                    // 触发前端页面刷新（通过localStorage事件）
                                     } else {
                     showToast(result.message || '保存失败', 'error');
                 }
             } catch (e) {
                 console.error('保存业务类型失败:', e);
-                showToast('保存失败,请检查网络连接', 'error');
+                showToast('保存失败，请检查网络连接', 'error');
             } finally {
                 hideLoading();
             }
@@ -1701,15 +1611,15 @@
         async function deleteType(typeId) {
             const type = caseTypes.find(t => t.id === typeId);
             if (!type) return;
-
-            if (!confirm(`确定要删除业务类型「${type.name}」吗?\n\n注意:如果该类型下还有案例,将无法删除。`)) {
+            
+            if (!confirm(`确定要删除业务类型「${type.name}」吗？\n\n注意：如果该类型下还有案例，将无法删除。`)) {
                 return;
             }
-
+            
             try {
                 showLoading('正在删除...');
-
-                // 使用POST方法模拟DELETE(兼容性更好)
+                
+                // 使用POST方法模拟DELETE（兼容性更好）
                 const response = await fetch(PHP_API_BASE + 'types.php?id=' + typeId, {
                     method: 'DELETE',
                     credentials: 'include',
@@ -1718,311 +1628,77 @@
                     },
                     body: JSON.stringify({ id: typeId })
                 });
-
+                
                 // 检查响应状态
                 if (!response.ok) {
                     const errorText = await response.text();
                     console.error('HTTP错误:', response.status, errorText);
                     throw new Error('HTTP ' + response.status + ': ' + errorText);
                 }
-
+                
                 const result = await response.json();
-
+                
                 if (result.success) {
                     showToast('业务类型删除成功');
                     // 清除缓存强制刷新
                     typesCache = null;
                     typesCacheTime = 0;
-                    await loadCaseTypes(true, true); // 保留筛选值,强制刷新
+                    await loadCaseTypes(true, true); // 保留筛选值，强制刷新
                     renderTypeList();
-                    // 触发前端页面刷新(通过localStorage事件)
+                    // 触发前端页面刷新（通过localStorage事件）
                                     } else {
                     showToast(result.message || '删除失败', 'error');
                 }
             } catch (e) {
                 console.error('删除业务类型失败:', e);
-                showToast('删除失败,请检查网络连接', 'error');
-            } finally {
-                hideLoading();
-            }
-        }
-
-        // 类型数据
-        let caseTypes = [];
-
-        // 类型缓存
-        let typesCache = null;
-        let typesCacheTime = 0;
-
-        // 加载业务类型列表
-        async function loadCaseTypes(keepFilter = false, forceRefresh = false) {
-            try {
-                // 检查缓存(5分钟内有效)
-                const now = Date.now();
-                if (!forceRefresh && typesCache && (now - typesCacheTime) < 300000) {
-                    caseTypes = typesCache;
-                    renderTypeList();
-                    return;
-                }
-
-                const response = await fetch(PHP_API_BASE + 'types.php', {
-                    method: 'GET',
-                    credentials: 'include'
-                });
-
-                if (!response.ok) {
-                    throw new Error('HTTP ' + response.status);
-                }
-
-                const result = await response.json();
-
-                if (result.success && result.data) {
-                    caseTypes = result.data;
-                    typesCache = result.data;
-                    typesCacheTime = Date.now();
-                    renderTypeList();
-                    renderFilterTypes();
-                } else {
-                    console.warn('API返回格式异常:', result);
-                    if (!caseTypes) caseTypes = [];
-                    renderTypeList();
-                    renderFilterTypes();
-                }
-            } catch (e) {
-                console.error('加载业务类型失败:', e);
-                if (!caseTypes) caseTypes = [];
-                renderTypeList();
-                renderFilterTypes();
-            }
-        }
-
-        // 渲染业务类型列表
-        function renderTypeList() {
-            const typeList = document.getElementById('typeList');
-            if (!typeList) return;
-
-            const types = caseTypes || [];
-
-            if (types.length === 0) {
-                typeList.innerHTML = '<div style="padding: 40px 20px; text-align: center; color: #94a3b8;"><i class="fas fa-tags" style="font-size: 40px; display: block; margin-bottom: 10px;"></i>暂无业务类型</div>';
-                return;
-            }
-
-            typeList.innerHTML = types.map((type, index) => `
-                <div class="type-item-inline">
-                    <div class="type-sort-btns">
-                        <button onclick="moveType(${type.id}, -1)" ${index === 0 ? 'disabled' : ''} title="上移">
-                            <i class="fas fa-chevron-up"></i>
-                        </button>
-                        <button onclick="moveType(${type.id}, 1)" ${index === types.length - 1 ? 'disabled' : ''} title="下移">
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                    <span class="type-color-dot" style="background:${type.color || '#3b82f6'}"></span>
-                    <div class="type-item-info">
-                        <span class="type-item-name">${type.name}</span>
-                        ${type.description ? `<span class="type-item-desc">${type.description}</span>` : ''}
-                    </div>
-                    <div class="type-actions-icon">
-                        <button class="type-icon-btn edit" onclick="editType(${type.id})" title="编辑">
-                            <i class="fas fa-edit"></i>
-                        </button>
-                        <button class="type-icon-btn delete" onclick="deleteType(${type.id})" title="删除">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // 渲染筛选下拉框
-        function renderFilterTypes() {
-            const select = document.getElementById('filterType');
-            if (!select) return;
-            const currentVal = select.value;
-            select.innerHTML = '<option value="">全部</option>';
-            (caseTypes || []).forEach(type => {
-                const opt = document.createElement('option');
-                opt.value = type.id;
-                opt.textContent = type.name;
-                select.appendChild(opt);
-            });
-            select.value = currentVal;
-        }
-
-        // ========== 业务类型 CRUD 函数 ==========
-
-        // 打开新增类型表单
-        function openTypeForm() {
-            document.getElementById('typeId').value = '';
-            document.getElementById('typeName').value = '';
-            document.getElementById('typeDescription').value = '';
-            document.getElementById('typeColor').value = '#3b82f6';
-            document.getElementById('typeFormTitle').textContent = '新增业务类型';
-            document.getElementById('typeFormModal').classList.add('show');
-            setTimeout(() => document.getElementById('typeName').focus(), 100);
-        }
-
-        function closeTypeForm() {
-            document.getElementById('typeFormModal').classList.remove('show');
-        }
-
-        // 编辑类型
-        async function editType(typeId) {
-            const type = (caseTypes || []).find(t => String(t.id) === String(typeId));
-            if (!type) {
-                showToast('未找到该业务类型', 'error');
-                return;
-            }
-            document.getElementById('typeId').value = type.id;
-            document.getElementById('typeName').value = type.name || '';
-            document.getElementById('typeDescription').value = type.description || '';
-            document.getElementById('typeColor').value = type.color || '#3b82f6';
-            document.getElementById('typeFormTitle').textContent = '编辑业务类型';
-            document.getElementById('typeFormModal').classList.add('show');
-            setTimeout(() => document.getElementById('typeName').focus(), 100);
-        }
-
-        // 保存类型
-        async function saveType() {
-            const name = document.getElementById('typeName').value.trim();
-            if (!name) {
-                showToast('请输入类型名称', 'warning');
-                return;
-            }
-            showLoading();
-            try {
-                const typeId = document.getElementById('typeId').value;
-                const method = typeId ? 'PUT' : 'POST';
-                const body = typeId
-                    ? { id: typeId, name: name, description: document.getElementById('typeDescription').value.trim(), color: document.getElementById('typeColor').value }
-                    : { name: name, description: document.getElementById('typeDescription').value.trim(), color: document.getElementById('typeColor').value };
-
-                const res = await fetch(PHP_API_BASE + 'types.php', {
-                    method: method,
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(body)
-                });
-                const result = await res.json();
-                if (result.success) {
-                    showToast(typeId ? '业务类型更新成功' : '业务类型创建成功');
-                    closeTypeForm();
-                    await loadCaseTypes(true, true);
-                } else {
-                    showToast(result.message || '保存失败', 'error');
-                }
-            } catch (e) {
-                console.error('保存类型失败:', e);
-                showToast('保存失败，请检查网络连接', 'error');
-            } finally {
-                hideLoading();
-            }
-        }
-
-        // 删除类型
-        async function deleteType(typeId) {
-            if (!confirm('确定要删除这个业务类型吗？此操作不可撤销。')) return;
-            showLoading();
-            try {
-                const res = await fetch(PHP_API_BASE + 'types.php?id=' + typeId, { method: 'DELETE' });
-                const result = await res.json();
-                if (result.success) {
-                    showToast('业务类型删除成功');
-                    await loadCaseTypes(true, true);
-                } else {
-                    showToast(result.message || '删除失败', 'error');
-                }
-            } catch (e) {
-                console.error('删除失败:', e);
                 showToast('删除失败，请检查网络连接', 'error');
             } finally {
                 hideLoading();
             }
         }
 
-        // 排序: 上移/下移
-        async function moveType(id, direction) {
-            const types = caseTypes || [];
-            const index = types.findIndex(t => String(t.id) === String(id));
-            if (index < 0) return;
-            const targetIndex = index + direction;
-            if (targetIndex < 0 || targetIndex >= types.length) return;
-
-            // 交换 sort_order
-            const temp = types[index].sort_order;
-            types[index].sort_order = types[targetIndex].sort_order;
-            types[targetIndex].sort_order = temp;
-
-            // 交换数组位置
-            [types[index], types[targetIndex]] = [types[targetIndex], types[index]];
-            caseTypes = types;
-
-            // 本地重绘
-            renderTypeList();
-            renderFilterTypes();
-
-            // 保存到API - 发送完整排序
-            try {
-                const orderMap = types.map((t, i) => ({ id: t.id, sort_order: i + 1 }));
-                for (const item of orderMap) {
-                    await fetch(PHP_API_BASE + 'types.php', {
-                        method: 'PUT',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ id: item.id, sort_order: item.sort_order })
-                    });
-                }
-                // 清除缓存，下次加载从服务器获取最新数据
-                typesCache = null;
-                typesCacheTime = 0;
-                showToast('排序已更新');
-            } catch (e) {
-                console.error('保存排序失败:', e);
-                showToast('排序保存失败', 'error');
-            }
-        }
-
-        // 页面初始化标志,防止重复加载
+        // 页面初始化标志，防止重复加载
         let isPageInitialized = false;
-
+        
         // 初始化时加载业务类型和案例列表
         document.addEventListener('DOMContentLoaded', function() {
             if (isPageInitialized) {
-                console.log('页面已初始化,跳过重复加载');
+                console.log('页面已初始化，跳过重复加载');
                 return;
             }
             isPageInitialized = true;
-
-            // 初始加载业务类型,不保留筛选值(避免与loadCases中的重置冲突)
+            
+            // 初始加载业务类型，不保留筛选值（避免与loadCases中的重置冲突）
             loadCaseTypes(false).then(() => {
                 console.log('业务类型加载完成');
             });
-
-            // 每次页面加载都强制刷新案例列表(避免从编辑页面返回时显示旧数据)
+            
+            // 每次页面加载都强制刷新案例列表（避免从编辑页面返回时显示旧数据）
             console.log('DOMContentLoaded: 开始加载案例列表...');
             loadCases();
-
-            // 监听案例更新事件(从编辑页面返回时自动刷新)
+            
+            // 监听案例更新事件（从编辑页面返回时自动刷新）
             window.addEventListener('storage', function(e) {
                 if (e.key === 'cms_cases_updated') {
-                    console.log('检测到案例更新,自动刷新列表...');
+                    console.log('检测到案例更新，自动刷新列表...');
                     loadCases();
-                    showToast('案例已更新,列表已刷新');
+                    showToast('案例已更新，列表已刷新');
                 }
             });
-
-            // 页面获得焦点时也刷新(从编辑页面返回时)
+            
+            // 页面获得焦点时也刷新（从编辑页面返回时）
             document.addEventListener('visibilitychange', function() {
                 if (document.visibilityState === 'visible') {
-                    console.log('页面重新可见,强制刷新数据...');
+                    console.log('页面重新可见，强制刷新数据...');
                     loadCases();
                 }
             });
-
-            // 监听pageshow事件,处理浏览器返回按钮的情况(包括bfcache)
+            
+            // 监听pageshow事件，处理浏览器返回按钮的情况（包括bfcache）
             window.addEventListener('pageshow', function(e) {
-                // 只有从bfcache恢复时才刷新,避免初始加载时重复刷新
+                // 只有从bfcache恢复时才刷新，避免初始加载时重复刷新
                 if (e.persisted) {
-                    console.log('页面从bfcache恢复,强制刷新数据...');
+                    console.log('页面从bfcache恢复，强制刷新数据...');
                     loadCases();
                 }
             });
@@ -2030,7 +1706,7 @@
 
         // 同步索引 - 清理无效条目
         async function syncIndex() {
-            if (!confirm('确定要同步索引吗?这将清理索引中不存在对应文件的案例记录。')) {
+            if (!confirm('确定要同步索引吗？这将清理索引中不存在对应文件的案例记录。')) {
                 return;
             }
 
@@ -2051,7 +1727,7 @@
                 if (result.success) {
                     showToast(result.message);
                     if (result.removedCount > 0) {
-                        // 如果有清理条目,刷新列表
+                        // 如果有清理条目，刷新列表
                         await loadCases();
                     }
                 } else {
@@ -2059,7 +1735,7 @@
                 }
             } catch (e) {
                 console.error('同步索引失败:', e);
-                showToast('同步失败,请检查网络连接', 'error');
+                showToast('同步失败，请检查网络连接', 'error');
             } finally {
                 hideLoading();
             }
