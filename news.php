@@ -418,7 +418,6 @@
             } else {
                 html += '<a href="javascript:void(0)" class="pagination-btn disabled"><i class="fas fa-chevron-left"></i></a>';
             }
-
             // 当前页
             html += '<span class="pagination-current">' + page + '</span>';
             // 下一页
@@ -480,20 +479,20 @@
             const coverImage = getValidCoverImage(article);
             const articleId = article.id;
             
-            // 左图右文布局
+            // 左图右文布局 - 4:3横图比例
             const imageHtml = coverImage 
-                ? `<div style="flex:0 0 280px;width:280px;min-height:180px;overflow:hidden;border-radius:8px"><img src="${coverImage}" alt="${title}" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>`
-                : `<div style="flex:0 0 280px;width:280px;min-height:180px;background:#f3f4f6;border-radius:8px"></div>`;
+                ? `<div style="flex:0 0 180px;width:180px;height:135px;overflow:hidden;border-radius:6px"><img src="${coverImage}" alt="${title}" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy"></div>`
+                : `<div style="flex:0 0 180px;width:180px;height:135px;background:#f3f4f6;border-radius:6px"></div>`;
             
             return `
-                <article style="display:flex;gap:24px;align-items:stretch;padding:24px;background:#f8fafc;border-radius:12px;margin-bottom:16px">
+                <article style="display:flex;gap:24px;align-items:stretch;padding:20px 0;border-bottom:1px solid #f0f0f0;margin-bottom:0">
                     ${imageHtml}
-                    <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
-                        <h3 style="margin:0 0 12px 0;font-size:18px;line-height:1.4"><a href="news-detail.php?id=${articleId}" style="color:#1e3a8a;text-decoration:none">${title}</a></h3>
-                        <p style="margin:0 0 16px 0;font-size:14px;color:#6b7280;line-height:1.6">${summary}</p>
-                        <div style="display:flex;align-items:center;gap:16px">
-                            <a href="news-detail.php?id=${articleId}" style="font-size:14px;color:#3b82f6;text-decoration:none">查看更多 →</a>
-                            <time style="font-size:13px;color:#9ca3af;margin-left:auto">${formattedDate}</time>
+                    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding-right:20px">
+                        <h3 style="margin:0 0 10px 0;font-size:20px;font-weight:600;line-height:1.5"><a href="news-detail.php?id=${articleId}" style="color:#1e293b;text-decoration:none;letter-spacing:1px">${title}</a></h3>
+                        <p style="margin:0 0 14px 0;font-size:15px;color:#8e959f;line-height:1.7;letter-spacing:1px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${summary}</p>
+                        <div style="display:flex;align-items:center">
+                            <a href="news-detail.php?id=${articleId}" style="font-size:14px;color:#1e3a8a;text-decoration:none">查看更多 →</a>
+                            <time style="font-size:14px;color:#b0b4ba;margin-left:auto;padding-right:20px">${formattedDate}</time>
                         </div>
                     </div>
                 </article>

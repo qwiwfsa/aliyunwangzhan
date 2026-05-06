@@ -12,14 +12,12 @@ requireMethod('GET');
 try {
     $db = getDB();
     
-    $stmt = $db->prepare("SELECT id, category, question, answer, sort_order, is_active FROM faq WHERE (is_active IS NULL OR is_active = 1) ORDER BY sort_order ASC, id ASC");
-    $stmt->execute();
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $result = $db->query("SELECT id, category, question, answer, sort_order, is_active FROM faq WHERE (is_active IS NULL OR is_active = 1) ORDER BY sort_order ASC, id ASC");
     
     $faqList = [];
     $categoryMap = [];
     
-    foreach ($rows as $row) {
+    while ($row = $result->fetch_assoc()) {
         $cat = $row['category'] ?: '其他';
         $item = [
             'id' => (int)$row['id'],
@@ -40,6 +38,8 @@ try {
         'total' => count($faqList),
         'categories' => $categoryMap
     ]);
+
+
     
 } catch (Exception $e) {
     jsonError('数据库查询失败: ' . $e->getMessage());
