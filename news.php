@@ -258,7 +258,7 @@
         // 从服务器API加载文章和分类
         async function loadAllFromServer() {
             try {
-                const response = await fetch('mobile/api/news.php?t=' + Date.now(), {
+                const response = await fetch('api/news.php?t=' + Date.now(), {
                     method: 'GET',
                     cache: 'no-store',
                     headers: { 'Accept': 'application/json', 'Cache-Control': 'no-cache' }
@@ -298,7 +298,7 @@
 
             const categories = (apiData && apiData.categories) 
                 ? apiData.categories 
-                : 
+                : []
             if (categories.length > 0) {
                 categories.forEach(cat => {
                     const catLink = document.createElement('a');

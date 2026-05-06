@@ -564,3 +564,43 @@
 [2026-05-06 01:19:18] 解析后的数据: {"id":0,"title":"测试","summary":"","content":"","category_id":0,"cover_image":"uploads\/20260506_69fa7af42ee08.jpg","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
 [2026-05-06 01:19:18] 数据库连接成功
 [2026-05-06 01:19:18] 文章保存成功, ID: 27
+[2026-05-06 06:42:39] === 文章保存API被调用 ===
+[2026-05-06 06:42:39] 请求方法: POST
+[2026-05-06 06:42:39] 请求URI: /hongdu/admin/api/news/save.php
+[2026-05-06 06:42:39] 原始请求数据长度: 247
+[2026-05-06 06:42:39] 原始请求数据: {"id":22,"title":"测试一as","summary":"就是...","content":"<p>就是</p>","category_id":0,"cover_image":"uploads/20260505_69f9b2e2032bc.jpg","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
+[2026-05-06 06:42:39] 解析后的数据: {"id":22,"title":"测试一as","summary":"就是...","content":"<p>就是<\/p>","category_id":0,"cover_image":"uploads\/20260505_69f9b2e2032bc.jpg","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
+[2026-05-06 06:42:39] 数据库连接成功
+[2026-05-06 06:42:39] 文章保存成功, ID: 22
+[2026-05-06 06:43:00] === 文章保存API被调用 ===
+[2026-05-06 06:43:00] 请求方法: POST
+[2026-05-06 06:43:00] 请求URI: /hongdu/admin/api/news/save.php
+[2026-05-06 06:43:00] 原始请求数据长度: 219
+[2026-05-06 06:43:00] 原始请求数据: {"id":0,"title":"测试","summary":"","content":"","category_id":0,"cover_image":"uploads/20260506_69fac6d25369c.JPG","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
+[2026-05-06 06:43:00] 解析后的数据: {"id":0,"title":"测试","summary":"","content":"","category_id":0,"cover_image":"uploads\/20260506_69fac6d25369c.JPG","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
+[2026-05-06 06:43:00] 数据库连接成功
+[2026-05-06 06:43:00] 文章保存成功, ID: 28
+[2026-05-06 06:43:35] === 文章保存API被调用 ===
+[2026-05-06 06:43:35] 请求方法: POST
+[2026-05-06 06:43:35] 请求URI: /hongdu/admin/api/news/save.php
+[2026-05-06 06:43:35] 原始请求数据长度: 219
+[2026-05-06 06:43:35] 原始请求数据: {"id":0,"title":"测试","summary":"","content":"","category_id":0,"cover_image":"uploads/20260506_69fac6f51806b.jpg","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
+[2026-05-06 06:43:35] 解析后的数据: {"id":0,"title":"测试","summary":"","content":"","category_id":0,"cover_image":"uploads\/20260506_69fac6f51806b.jpg","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
+[2026-05-06 06:43:35] 数据库连接成功
+[2026-05-06 06:43:35] 文章保存成功, ID: 29
+[2026-05-06 06:43:45] === 文章保存API被调用 ===
+[2026-05-06 06:43:45] 请求方法: POST
+[2026-05-06 06:43:45] 请求URI: /hongdu/admin/api/news/save.php
+[2026-05-06 06:43:45] 原始请求数据长度: 220
+[2026-05-06 06:43:45] 原始请求数据: {"id":0,"title":"测试a","summary":"","content":"","category_id":0,"cover_image":"uploads/20260506_69fac6fd65385.jpg","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
+[2026-05-06 06:43:45] 解析后的数据: {"id":0,"title":"测试a","summary":"","content":"","category_id":0,"cover_image":"uploads\/20260506_69fac6fd65385.jpg","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
+[2026-05-06 06:43:45] 数据库连接成功
+[2026-05-06 06:43:45] 文章保存成功, ID: 30
+[2026-05-06 06:44:06] === 文章保存API被调用 ===
+[2026-05-06 06:44:06] 请求方法: POST
+[2026-05-06 06:44:06] 请求URI: /hongdu/admin/api/news/save.php
+[2026-05-06 06:44:06] 原始请求数据长度: 221
+[2026-05-06 06:44:06] 原始请求数据: {"id":30,"title":"测试a","summary":"","content":"","category_id":0,"cover_image":"uploads/20260506_69fac714dcee7.png","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
+[2026-05-06 06:44:06] 解析后的数据: {"id":30,"title":"测试a","summary":"","content":"","category_id":0,"cover_image":"uploads\/20260506_69fac714dcee7.png","status":"published","is_top":0,"sort_order":0,"seo_title":"","seo_keywords":"","seo_description":""}
+[2026-05-06 06:44:06] 数据库连接成功
+[2026-05-06 06:44:06] 文章保存成功, ID: 30

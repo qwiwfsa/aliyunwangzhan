@@ -1,54 +1,80 @@
 <?php
 /**
  * 平板端 - 行业资讯API
- * 从MySQL的cms_articles表读取，废弃JSON数据源
+ * 从MySQL的cms_articles表读取已发布文章
  */
 
-require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/../../mobile/api/config.php';
 setApiHeaders();
 handlePreflight();
 requireMethod('GET');
 
-try {
-    $db = getDB();
-    
-    $categoryId = isset($_GET['category_id']) ? intval($_GET['category_id']) : 0;
-    
-    if ($categoryId > 0) {
-        $stmt = $db->prepare("SELECT id, title, summary, content, cover_image, category_id, status, created_at, updated_at FROM cms_articles WHERE status = 'published' AND category_id = :cat ORDER BY updated_at DESC, created_at DESC");
-        $stmt->bindParam(':cat', $categoryId, PDO::PARAM_INT);
-    } else {
-        $stmt = $db->prepare("SELECT id, title, summary, content, cover_image, category_id, status, created_at, updated_at FROM cms_articles WHERE status = 'published' ORDER BY updated_at DESC, created_at DESC");
-    }
-    
-    $stmt->execute();
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
-    $newsList = [];
-    foreach ($rows as $row) {
-        $newsList[] = [
-            'id' => (int)$row['id'],
-            'title' => $row['title'],
-            'summary' => $row['summary'],
-            'content' => $row['content'],
-            'cover_image' => $row['cover_image'],
-            'category_id' => (int)$row['category_id'],
-            'date' => date('Y-m-d', strtotime($row['created_at'])),
-            'created_at' => $row['created_at'],
-            'updated_at' => $row['updated_at'],
-            'status' => 'published'
-        ];
-    }
-    
-    $catStmt = $db->query("SELECT id, name FROM cms_categories ORDER BY sort_order ASC, id ASC");
-    $categories = $catStmt->fetchAll(PDO::FETCH_ASSOC);
-    
-    jsonSuccess([
-        'news' => $newsList,
-        'total' => count($newsList),
-        'categories' => $categories
-    ]);
-    
-} catch (Exception $e) {
-    jsonError('数据库查询失败: ' . $e->getMessage());
+$categoryId = isset($_GET['category_id']) ? intval($_GET['category_id']) : 0;
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+$limit = isset($_GET['limit']) ? intval($_GET['limit']) : 10;
+if ($page < 1) $page = 1;
+if ($limit < 1 || $limit > 50) $limit = 10;
+$offset = ($page - 1) * $limit;
+
+$db = getDB();
+
+// 获取总数
+$countSql = "SELECT COUNT(*) as total FROM cms_articles WHERE status = 'published'";
+if ($categoryId > 0) {
+    $countSql .= " AND category_id = " . intval($categoryId);
 }
+$countResult = $db->query($countSql);
+$total = 0;
+if ($countResult) {
+    $row = $countResult->fetch_assoc();
+    $total = (int)$row['total'];
+}
+
+// 查询文章
+$sql = "SELECT id, title, summary, content, cover_image, category_id, status, created_at, updated_at FROM cms_articles WHERE status = 'published'";
+if ($categoryId > 0) {
+    $sql .= " AND category_id = " . intval($categoryId);
+}
+$sql .= " ORDER BY updated_at DESC, created_at DESC LIMIT " . intval($limit) . " OFFSET " . intval($offset);
+
+$result = $db->query($sql);
+$rows = [];
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $rows[] = $row;
+    }
+}
+
+$news = [];
+foreach ($rows as $row) {
+    $news[] = [
+        'id' => (int)$row['id'],
+        'title' => $row['title'],
+        'summary' => $row['summary'],
+        'content' => $row['content'],
+        'cover_image' => $row['cover_image'],
+        'category_id' => (int)$row['category_id'],
+        'date' => date('Y-m-d', strtotime($row['created_at'])),
+        'created_at' => $row['created_at'],
+        'updated_at' => $row['updated_at'],
+        'status' => 'published'
+    ];
+}
+
+// 获取分类列表
+$catResult = $db->query("SELECT id, name FROM cms_categories ORDER BY sort_order ASC, id ASC");
+$categories = [];
+if ($catResult) {
+    while ($cat = $catResult->fetch_assoc()) {
+        $categories[] = $cat;
+    }
+}
+
+jsonSuccess([
+    'news' => $news,
+    'total' => $total,
+    'page' => $page,
+    'limit' => $limit,
+    'totalPages' => ceil($total / $limit),
+    'categories' => $categories
+]);

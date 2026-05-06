@@ -259,18 +259,22 @@ try {
                 break;
             }
             
-            if (!isset($data['name']) || trim($data['name']) === '') {
-                http_response_code(400);
-                echo json_encode(['success' => false, 'message' => '业务类型名称不能为空']);
-                break;
-            }
-            
             $types = loadTypes($jsonFile, $defaultTypes);
             
             $id = intval($data['id']);
-            $name = trim($data['name']);
+            $name = isset($data['name']) ? trim($data['name']) : '';
             $description = isset($data['description']) ? trim($data['description']) : '';
             $color = isset($data['color']) ? trim($data['color']) : '#3b82f6';
+            $sort_order = isset($data['sort_order']) ? intval($data['sort_order']) : null;
+            
+            // 只传了sort_order时（排序操作），不校验name
+            if (!(isset($data['sort_order']) && count($data) <= 2)) {
+                if (!isset($data['name']) || trim($data['name']) === '') {
+                    http_response_code(400);
+                    echo json_encode(['success' => false, 'message' => '业务类型名称不能为空']);
+                    break;
+                }
+            }
             
             // 查找要更新的类型
             $found = false;
@@ -285,11 +289,17 @@ try {
             }
             
             // 更新类型
+            $pureSort = isset($data['sort_order']) && count($data) <= 2;
             foreach ($types as &$type) {
                 if ($type['id'] === $id) {
-                    $type['name'] = $name;
-                    $type['description'] = $description;
-                    $type['color'] = $color;
+                    if (!$pureSort) {
+                        $type['name'] = $name;
+                        $type['description'] = $description;
+                        $type['color'] = $color;
+                    }
+                    if ($sort_order !== null) {
+                        $type['sort_order'] = $sort_order;
+                    }
                     $found = true;
                     break;
                 }

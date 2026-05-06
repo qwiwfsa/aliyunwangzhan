@@ -135,3 +135,23 @@
 [2026-05-06 02:32:44] DELETE id | Data: 8 | Request: DELETE /hongdu/admin/api/case/types.php?id=8
 [2026-05-06 02:32:55] DELETE id | Data: 7 | Request: DELETE /hongdu/admin/api/case/types.php?id=7
 [2026-05-06 02:38:21] PUT data | Data: "{\"id\":1,\"sort_order\":2}" | Request: PUT /hongdu/admin/api/case/types.php
+[2026-05-06 06:01:24] PUT data | Data: "{\"id\":1,\"sort_order\":1}" | Request: PUT /hongdu/admin/api/case/types.php
+[2026-05-06 06:01:24] PUT data | Data: "{\"id\":2,\"sort_order\":2}" | Request: PUT /hongdu/admin/api/case/types.php
+[2026-05-06 06:01:24] PUT data | Data: "{\"id\":3,\"sort_order\":3}" | Request: PUT /hongdu/admin/api/case/types.php
+[2026-05-06 06:01:24] PUT data | Data: "{\"id\":4,\"sort_order\":4}" | Request: PUT /hongdu/admin/api/case/types.php
+[2026-05-06 06:01:24] PUT data | Data: "{\"id\":6,\"sort_order\":5}" | Request: PUT /hongdu/admin/api/case/types.php
+[2026-05-06 06:01:58] POST data | Data: "{\"name\":\"测试\",\"description\":\"\",\"color\":\"#3b82f6\"}" | Request: POST /hongdu/admin/api/case/types.php
+[2026-05-06 06:02:04] DELETE id | Data: 7 | Request: DELETE /hongdu/admin/api/case/types.php?id=7
+[2026-05-06 06:07:52] PUT data | Data: "{\"id\": 1, \"sort_order\": 10}" | Request: PUT /hongdu/admin/api/case/types.php
+[2026-05-06 06:08:59] PUT data | Data: "{\"id\": 1, \"sort_order\": 10}" | Request: PUT /hongdu/admin/api/case/types.php
+[2026-05-06 06:09:56] PUT data | Data: "{\"id\": 1, \"sort_order\": 10}" | Request: PUT /hongdu/admin/api/case/types.php
+[2026-05-06 06:09:56] PUT data | Data: "{\"id\": 1, \"sort_order\": 2, \"name\": \"\\u4f01\\u4e1a\\u8fc7\\u6865\", \"description\": \"\", \"color\": \"#3b82f6\"}" | Request: PUT /hongdu/admin/api/case/types.php
+[2026-05-06 06:09:56] PUT data | Data: "{\"id\": 1, \"name\": \"\\u4f01\\u4e1a\\u8fc7\\u6865\\u6d4b\\u8bd5\"}" | Request: PUT /hongdu/admin/api/case/types.php
+[2026-05-06 06:09:56] PUT data | Data: "{\"id\": 1, \"name\": \"\\u4f01\\u4e1a\\u8fc7\\u6865\", \"description\": \"\", \"color\": \"#3b82f6\", \"sort_order\": 2}" | Request: PUT /hongdu/admin/api/case/types.php
+[2026-05-06 06:10:10] PUT data | Data: "{\"id\": 1, \"name\": \"\\u4f01\\u4e1a\\u8fc7\\u6865\", \"description\": \"\", \"color\": \"#3b82f6\", \"sort_order\": 2}" | Request: PUT /hongdu/admin/api/case/types.php
+[2026-05-06 06:10:10] PUT data | Data: "{\"id\": 1, \"sort_order\": 10}" | Request: PUT /hongdu/admin/api/case/types.php
+[2026-05-06 06:10:10] PUT data | Data: "{\"id\": 1, \"name\": \"\\u4f01\\u4e1a\\u8fc7\\u6865\", \"description\": \"\", \"color\": \"#3b82f6\", \"sort_order\": 2}" | Request: PUT /hongdu/admin/api/case/types.php
+[2026-05-06 06:10:38] PUT data | Data: "{\"id\": 1, \"sort_order\": 2}" | Request: PUT /hongdu/admin/api/case/types.php
+[2026-05-06 06:15:12] PUT data | Data: "{\"id\":\"1\",\"name\":\"过桥短拆\",\"description\":\"\",\"color\":\"#3b82f6\"}" | Request: PUT /hongdu/admin/api/case/types.php
+[2026-05-06 06:18:37] POST data | Data: "{\"name\":\"测试\",\"description\":\"\",\"color\":\"#3b82f6\"}" | Request: POST /hongdu/admin/api/case/types.php
+[2026-05-06 06:21:46] PUT data | Data: "{\"id\": 1, \"sort_order\": 2}" | Request: PUT /hongdu/admin/api/case/types.php

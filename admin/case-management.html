@@ -1961,19 +1961,41 @@
             renderTypeList();
             renderFilterTypes();
 
-            // 保存到API - 发送完整排序
+            // 保存到API - 一次批量POST所有排序数据
             try {
-                const orderMap = types.map((t, i) => ({ id: t.id, sort_order: i + 1 }));
-                for (const item of orderMap) {
-                    await fetch(PHP_API_BASE + 'types.php', {
-                        method: 'PUT',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ id: item.id, sort_order: item.sort_order })
-                    });
+                const orderMap = types.map(t => ({ id: t.id, sort_order: t.sort_order }));
+                const response = await fetch(PHP_API_BASE + 'types-batch.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ orders: orderMap })
+                });
+                if (response.ok) {
+                    const result = await response.json();
+                    if (!result.success) {
+                        console.warn('排序保存警告:', result.message);
+                        // 回退到逐个更新
+                        for (const item of orderMap) {
+                            await fetch(PHP_API_BASE + 'types.php', {
+                                method: 'PUT',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ id: item.id, sort_order: item.sort_order })
+                            });
+                        }
+                    }
+                } else {
+                    // API不存在，回退到逐个更新
+                    for (const item of orderMap) {
+                        await fetch(PHP_API_BASE + 'types.php', {
+                            method: 'PUT',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ id: item.id, sort_order: item.sort_order })
+                        });
+                    }
                 }
-                // 清除缓存，下次加载从服务器获取最新数据
+                // 清除缓存，强制从服务器重新加载最新数据
                 typesCache = null;
                 typesCacheTime = 0;
+                await loadCaseTypes(false, true);
                 showToast('排序已更新');
             } catch (e) {
                 console.error('保存排序失败:', e);
