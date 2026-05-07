@@ -39,12 +39,11 @@ if ($cmsContent) {
 // 尝试从数据库读取settings
 $db = getDB();
 if ($db) {
-    $stmt = $db->query("SHOW TABLES LIKE 'settings'");
-    if ($stmt && $stmt->rowCount() > 0) {
-        $settingsStmt = $db->query("SELECT * FROM settings WHERE `key` IN ('contact_phone', 'contact_name', 'contact_email', 'site_name', 'site_logo')");
-        if ($settingsStmt) {
-            $dbSettings = $settingsStmt->fetchAll();
-            foreach ($dbSettings as $s) {
+    $tableCheck = $db->query("SHOW TABLES LIKE 'settings'");
+    if ($tableCheck && $tableCheck->num_rows > 0) {
+        $settingsResult = $db->query("SELECT `key`, `value` FROM settings WHERE `key` IN ('contact_phone', 'contact_name', 'contact_email', 'site_name', 'site_logo')");
+        if ($settingsResult) {
+            while ($s = $settingsResult->fetch_assoc()) {
                 $data['db_settings'][$s['key']] = $s['value'];
             }
         }

@@ -1107,12 +1107,12 @@
             var t = a.title||'', s = a.summary||'', dt = (a.date||a.created_at||'').substring(0,10);
             var img = a.cover_image||'';
             var imgHtml = '';
-            if(img) imgHtml = '<div style="width:100%;height:180px;overflow:hidden"><img src="'+img+'" style="width:100%;height:100%;object-fit:cover" onerror="this.remove()"></div>';
-            html += '<div style="background:#fff;border-radius:10px;overflow:hidden;margin:10px 0;box-shadow:0 1px 8px rgba(0,0,0,0.06)">';
+            if(img) imgHtml = '<div style="flex:0 0 120px;width:120px;height:90px;overflow:hidden;flex-shrink:0;border-radius:8px;margin-top:10px"><img src="'+img+'" style="width:100%;height:100%;object-fit:cover;border-radius:8px" onerror="this.remove()"></div>';
+            html += '<div style="background:#fff;border-radius:10px;margin:10px 0;box-shadow:0 1px 8px rgba(0,0,0,0.06);display:flex;align-items:flex-start;overflow:hidden">';
             if(imgHtml) html += imgHtml;
-            html += '<div style="padding:14px">';
+            html += '<div style="flex:1;padding:14px 14px 14px 10px;overflow:hidden">';
             html += '<h3 style="margin:0 0 8px 0;font-size:16px;line-height:1.4"><a href="news-detail.html?id='+a.id+'" style="color:#1e3a8a;text-decoration:none">'+t+'</a></h3>';
-            if(s) html += '<p style="margin:0 0 6px 0;font-size:13px;color:#666;line-height:1.5">'+s+'</p>';
+            if(s) html += '<p style="margin:0 0 6px 0;font-size:13px;color:#666;line-height:1.5;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">'+s+'</p>';
             if(dt) html += '<span style="font-size:12px;color:#999">'+dt+'</span>';
             html += '</div></div>';
         }

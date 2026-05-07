@@ -866,7 +866,7 @@
             html += imgCss;
             html += '<div style="flex:1;padding:14px 14px 14px 0">';
             html += '<h3 style="margin:0 0 8px 0;font-size:16px;line-height:1.4"><a href="news-detail.html?id='+a.id+'" style="color:#1e3a8a;text-decoration:none">'+t+'</a></h3>';
-            if(s) html += '<p style="margin:0 0 6px 0;font-size:13px;color:#666;line-height:1.5">'+s+'</p>';
+            if(s) html += '<p style="margin:0 0 6px 0;font-size:13px;color:#666;line-height:1.5;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">'+s+'</p>';
             if(dt) html += '<span style="font-size:12px;color:#999">'+dt+'</span>';
             html += '</div></div>';
         }

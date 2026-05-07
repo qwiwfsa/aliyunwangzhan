@@ -3,13 +3,11 @@
 error_reporting(0);
 ini_set('display_errors', 0);
 
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'hongdu');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_CHARSET', 'utf8mb4');
 define('SITE_ROOT', realpath(__DIR__ . '/../../'));
 define('DATA_DIR', SITE_ROOT . '/data');
+
+// 使用统一的数据库配置（mysqli），会自动根据环境选择本地或服务器凭据
+require_once __DIR__ . '/../../config/db.php';
 
 function setApiHeaders() {
     // 清理所有之前可能的输出
@@ -38,21 +36,6 @@ function requireMethod($method) {
     }
 }
 
-function getDB() {
-    static $pdo = null;
-    if ($pdo === null) {
-        try {
-            $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
-            $pdo = new PDO($dsn, DB_USER, DB_PASS);
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
-            $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            return null;
-        }
-    }
-    return $pdo;
-}
-
 function readDataFile($relativePath) {
     $filePath = DATA_DIR . '/' . ltrim($relativePath, '/');
     if (file_exists($filePath)) {
@@ -79,19 +62,14 @@ function readDataDir($subDir) {
     return $items;
 }
 
-// 修复：getPageBySlug只返回具体页面的数据，不返回整个page-index.json
+// getPageBySlug只返回具体页面的数据，不返回整个page-index.json
 function getPageBySlug($slug) {
     $db = getDB();
     if ($db) {
-        try {
-            $stmt = $db->prepare("SELECT * FROM pages WHERE slug = ? AND status = 1 LIMIT 1");
-            $stmt->execute([$slug]);
-            $page = $stmt->fetch();
-            if ($page) {
-                return $page;
-            }
-        } catch (PDOException $e) {
-            // 降级
+        $safeSlug = $db->real_escape_string($slug);
+        $result = $db->query("SELECT * FROM pages WHERE slug = '$safeSlug' AND status = 1 LIMIT 1");
+        if ($result && $result->num_rows > 0) {
+            return $result->fetch_assoc();
         }
     }
     return null;
@@ -116,4 +94,3 @@ function jsonError($message, $code = 500) {
     ], JSON_UNESCAPED_UNICODE);
     exit;
 }
-

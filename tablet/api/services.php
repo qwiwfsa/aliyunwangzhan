@@ -40,11 +40,14 @@ if ($cmsContent && isset($cmsContent['pages']['index']['sections']['services']['
 // 尝试从数据库读取categories
 $db = getDB();
 if ($db) {
-    $stmt = $db->query("SHOW TABLES LIKE 'categories'");
-    if ($stmt && $stmt->rowCount() > 0) {
-        $catStmt = $db->query("SELECT * FROM categories WHERE type = 'service' OR type = 'business' ORDER BY sort_order, id");
-        if ($catStmt) {
-            $cats = $catStmt->fetchAll();
+    $tableCheck = $db->query("SHOW TABLES LIKE 'categories'");
+    if ($tableCheck && $tableCheck->num_rows > 0) {
+        $catResult = $db->query("SELECT * FROM categories WHERE type = 'service' OR type = 'business' ORDER BY sort_order, id");
+        if ($catResult) {
+            $cats = [];
+            while ($cat = $catResult->fetch_assoc()) {
+                $cats[] = $cat;
+            }
             if (!empty($cats)) {
                 $data['categories'] = $cats;
             }

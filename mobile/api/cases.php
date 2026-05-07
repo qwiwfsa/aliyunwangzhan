@@ -13,9 +13,13 @@ try {
     $db = getDB();
     
     // 查询已发布的案例
-    $stmt = $db->prepare("SELECT id, title, company, amount, period, category, description, image, content, status, sort_order, created_at, updated_at FROM cases WHERE status = 1 ORDER BY sort_order ASC, id DESC");
-    $stmt->execute();
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $result = $db->query("SELECT id, title, company, amount, period, category, description, image, content, status, sort_order, created_at, updated_at FROM cases WHERE status = 1 ORDER BY sort_order ASC, id DESC");
+    $rows = [];
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+    }
     
     $cases = [];
     foreach ($rows as $row) {

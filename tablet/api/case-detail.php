@@ -30,9 +30,9 @@ try {
     }
 
     if ($dbId > 0) {
-        $stmt = $db->prepare("SELECT id, title, company, amount, period, category, description, image, content, status, sort_order, created_at, updated_at FROM cases WHERE id = ? AND status = 1 LIMIT 1");
-        $stmt->execute([$dbId]);
-        $row = $stmt->fetch();
+        $safeId = intval($dbId);
+        $result = $db->query("SELECT id, title, company, amount, period, category, description, image, content, status, sort_order, created_at, updated_at FROM cases WHERE id = $safeId AND status = 1 LIMIT 1");
+        $row = $result ? $result->fetch_assoc() : null;
 
         if ($row) {
             sendCaseFromDbRow($row);

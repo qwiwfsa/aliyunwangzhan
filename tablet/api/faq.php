@@ -12,9 +12,13 @@ requireMethod('GET');
 try {
     $db = getDB();
     
-    $stmt = $db->prepare("SELECT id, category, question, answer, sort_order, is_active FROM faq WHERE (is_active IS NULL OR is_active = 1) ORDER BY sort_order ASC, id ASC");
-    $stmt->execute();
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $result = $db->query("SELECT id, category, question, answer, sort_order, is_active FROM faq WHERE (is_active IS NULL OR is_active = 1) ORDER BY sort_order ASC, id ASC");
+    $rows = [];
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+    }
     
     $faqList = [];
     $categoryMap = [];
