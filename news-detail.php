@@ -110,6 +110,29 @@
             font-size: 16px;
             line-height: 1.8;
             color: #374151;
+            overflow-wrap: break-word;
+        }
+        
+        .article-body img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 24px auto;
+            border-radius: 8px;
+        }
+        
+        .article-body video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 24px auto;
+            border-radius: 8px;
+        }
+        
+        .article-body table {
+            display: block;
+            max-width: 100%;
+            overflow-x: auto;
         }
         
         .article-body p {
