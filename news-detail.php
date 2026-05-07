@@ -502,6 +502,19 @@
     xhr.send();
 })();
 </script>
+
+<style>
+/* 文章详情页 - 页脚只保留版权和免责 */
+.footer .footer-main {
+    display: none !important;
+}
+.footer .footer-container > .footer-bottom {
+    display: block !important;
+    border-top: none !important;
+    padding-top: 30px !important;
+    text-align: center !important;
+}
+</style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">跳转到主要内容</a>

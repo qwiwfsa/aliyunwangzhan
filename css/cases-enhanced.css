@@ -146,7 +146,7 @@
 /* 案例网格 - 响应式4/2/1列 */
 .cases-grid-enhanced {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     margin-bottom: 48px;
 }

@@ -227,6 +227,8 @@ footer {
 .service-v2-list {
     list-style: none;
     margin-bottom: 24px;
+    max-height: 86px;
+    overflow: hidden;
 }
 
 .service-v2-list li {
@@ -666,7 +668,7 @@ footer {
 /* 案例统计 */
 .cases-stats-custom {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     background: white;
     padding: 40px;
@@ -1021,7 +1023,8 @@ footer {
     
     .news-thumb {
         width: 100%;
-        height: 180px;
+        aspect-ratio: 4 / 3;
+        height: auto;
     }
     
     .news-content h3 {
